@@ -17,23 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:385px;width:365px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			id: 'ТаблицаОМД',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:349px;height:369px;',
@@ -106,6 +89,26 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:385px;width:365px;height:25px;',
+			width: 365,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
 	]
 	});
 });

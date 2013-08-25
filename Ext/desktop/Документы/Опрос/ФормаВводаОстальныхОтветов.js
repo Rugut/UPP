@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:10px;width:899px;height:249px;',
 			height: 249,width: 899,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Несколько вариантов ответа',
 					items:
 					[
 		{
@@ -108,7 +107,6 @@
 					]
 				},
 				{
-					title:'Табличный',
 					items:
 					[
 		{
@@ -160,6 +158,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:265px;width:915px;height:25px;',
+			width: 915,
+			height: 25,
 			items:
 			[
 				{

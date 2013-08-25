@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -216,9 +218,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры печати',
-			style: 'position:absolute;left:8px;top:168px;width:764px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры печати',
+			style: 'position:absolute;left:8px;top:168px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -248,6 +250,8 @@
 			value: 0,
 			name: 'ШиринаЭтикетки',
 			style: 'position:absolute;left:349px;top:206px;width:21px;height:19px;',
+			width: 21,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -263,6 +267,8 @@
 			value: 0,
 			name: 'ВысотаЭтикетки',
 			style: 'position:absolute;left:449px;top:206px;width:20px;height:19px;',
+			width: 20,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -276,14 +282,13 @@
 			style: 'position:absolute;left:104px;top:185px;width:220px;height:18px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:130px;',
 			height: 130,width: 764,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -512,9 +517,9 @@
 			style: 'position:absolute;left:6px;top:105px;width:81px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры расчета цены',
-			style: 'position:absolute;left:6px;top:85px;width:752px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры расчета цены',
+			style: 'position:absolute;left:6px;top:85px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -574,9 +579,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Строки для этикеток',
-			style: 'position:absolute;left:8px;top:231px;width:764px;height:16px;',
+			xtype: 'label',
+			text: 'Строки для этикеток',
+			style: 'position:absolute;left:8px;top:231px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -592,6 +597,8 @@
 			value: 0,
 			name: 'КоличествоКопий',
 			style: 'position:absolute;left:576px;top:206px;width:51px;height:19px;',
+			width: 51,
+			height: 19,
 		},
 		],
 	}],

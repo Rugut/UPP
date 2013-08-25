@@ -19,19 +19,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			width: 656,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:640px;height:326px;',
 			height: 326,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -273,6 +274,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:67px;width:640px;height:24px;',
+			width: 640,
+			height: 24,
 			items:
 			[
 				'-',
@@ -282,9 +285,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Список консолидируемых организаций',
-			style: 'position:absolute;left:0px;top:51px;width:640px;height:16px;',
+			xtype: 'label',
+			text: 'Список консолидируемых организаций',
+			style: 'position:absolute;left:0px;top:51px;width:640px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -295,7 +298,6 @@
 					]
 				},
 				{
-					title:'Страница2',
 					items:
 					[
 		{
@@ -343,9 +345,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Элиминирование статей отчетности',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;',
+			xtype: 'label',
+			text: 'Элиминирование статей отчетности',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеДвижения',
@@ -482,13 +484,12 @@
 					]
 				},
 				{
-					title:'Страница3',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Сформированная консолидированная отчетность',
-			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;',
+			xtype: 'label',
+			text: 'Сформированная консолидированная отчетность',
+			style: 'position:absolute;left:0px;top:0px;width:640px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеРезультат',
@@ -561,6 +562,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:656px;height:25px;',
+			width: 656,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

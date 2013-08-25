@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:494px;height:25px;',
+			width: 494,
+			height: 25,
 			items:
 			[
 				{
@@ -50,37 +52,34 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:703px;top:33px;width:225px;height:521px;',
 			height: 521,width: 225,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:689px;height:528px;',
 			height: 528,width: 689,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:24px;width:689px;height:159px;',
 			height: 159,width: 689,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -476,6 +475,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:689px;height:24px;',
+			width: 689,
+			height: 24,
 			items:
 			[
 				{
@@ -505,19 +506,20 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:187px;width:689px;height:333px;',
 			height: 333,width: 689,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:27px;width:689px;height:24px;',
+			width: 689,
+			height: 24,
 			items:
 			[
 				'-',
@@ -876,14 +878,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:59px;width:221px;height:274px;',
 			height: 274,width: 221,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подразделения организаций',
 					items:
 					[
 		{
@@ -958,7 +959,6 @@
 					]
 				},
 				{
-					title:'По ЦФО',
 					items:
 					[
 		{
@@ -1042,6 +1042,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:881px;top:0px;width:55px;height:25px;',
+			width: 55,
+			height: 25,
 			items:
 			[
 				{
@@ -1053,14 +1055,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:471px;top:0px;width:410px;height:25px;',
 			height: 25,width: 410,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

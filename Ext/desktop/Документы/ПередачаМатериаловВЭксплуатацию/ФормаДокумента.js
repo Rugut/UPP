@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -394,6 +396,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:123px;width:636px;height:26px;',
+			width: 636,
+			height: 26,
 			items:
 			[
 				'-',
@@ -548,6 +552,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:358px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -624,9 +630,9 @@
 			style: 'position:absolute;left:571px;top:33px;width:71px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Материалы',
-			style: 'position:absolute;left:8px;top:107px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Материалы',
+			style: 'position:absolute;left:8px;top:107px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

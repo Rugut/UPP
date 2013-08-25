@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				'-',
@@ -44,14 +46,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:654px;height:310px;',
 			height: 310,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Заявление',
 					items:
 					[
 		{
@@ -107,14 +108,13 @@
 			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:48px;',
 			height: 48,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -125,6 +125,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -162,20 +164,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:554px;top:24px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:391px;width:654px;height:24px;',
 			height: 24,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -242,6 +245,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

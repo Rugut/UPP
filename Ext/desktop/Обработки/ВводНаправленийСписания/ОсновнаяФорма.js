@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
+			width: 600,
+			height: 25,
 			items:
 			[
 			]
@@ -157,6 +159,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:142px;top:86px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -215,6 +219,8 @@
 			value: 0,
 			name: 'НомерСтрокиТабличнойЧасти',
 			style: 'position:absolute;left:142px;top:33px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			id: 'НаправленияСписания',
@@ -558,6 +564,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:125px;width:584px;height:24px;',
+			width: 584,
+			height: 24,
 			items:
 			[
 				{
@@ -569,9 +577,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Направления списания продукции (услуг)',
-			style: 'position:absolute;left:8px;top:109px;width:584px;height:16px;',
+			xtype: 'label',
+			text: 'Направления списания продукции (услуг)',
+			style: 'position:absolute;left:8px;top:109px;width:584px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -580,6 +588,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:600px;height:25px;',
+			width: 600,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

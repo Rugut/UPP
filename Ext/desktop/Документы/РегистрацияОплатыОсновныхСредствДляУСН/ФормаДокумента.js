@@ -96,6 +96,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:540px;height:25px;',
+			width: 540,
+			height: 25,
 			items:
 			[
 				{
@@ -114,18 +116,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:524px;height:195px;',
 			height: 195,width: 524,
 			items:
 			[
 				{
-					title:'Основные средства',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			width: 510,
+			height: 24,
 			items:
 			[
 			]
@@ -211,7 +214,6 @@
 					]
 				},
 				{
-					title:'Нематериальные активы',
 					items:
 					[
 		{
@@ -295,6 +297,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			width: 510,
+			height: 24,
 			items:
 			[
 			]
@@ -302,7 +306,6 @@
 					]
 				},
 				{
-					title:'Модернизации ОС',
 					items:
 					[
 		{
@@ -386,6 +389,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:510px;height:24px;',
+			width: 510,
+			height: 24,
 			items:
 			[
 			]
@@ -462,6 +467,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:334px;width:540px;height:25px;',
+			width: 540,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

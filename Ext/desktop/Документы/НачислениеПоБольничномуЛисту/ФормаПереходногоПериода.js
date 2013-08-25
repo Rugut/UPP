@@ -120,6 +120,8 @@
 			value: 0,
 			name: 'ПроцентОплатыПереходногоПериода',
 			style: 'position:absolute;left:169px;top:62px;width:74px;height:19px;',
+			width: 74,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -173,6 +175,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:117px;width:377px;height:25px;',
+			width: 377,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

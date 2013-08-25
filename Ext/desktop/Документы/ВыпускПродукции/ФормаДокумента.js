@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			items:
 			[
 			]
@@ -268,32 +270,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:381px;width:672px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
@@ -345,13 +321,12 @@
 			style: 'position:absolute;left:572px;top:33px;width:71px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:656px;height:213px;',
 			height: 213,width: 656,
 			items:
 			[
 				{
-					title:'Продукция',
 					items:
 					[
 		{
@@ -579,6 +554,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:642px;height:26px;',
+			width: 642,
+			height: 26,
 			items:
 			[
 				'-',
@@ -590,7 +567,6 @@
 					]
 				},
 				{
-					title:'Счета затрат',
 					items:
 					[
 		{
@@ -683,6 +659,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:381px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

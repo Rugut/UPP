@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
 			items:
 			[
 				'-',
@@ -35,14 +37,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:210px;width:648px;height:250px;',
 			height: 250,width: 648,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Каталог',
 					items:
 					[
 		{
@@ -144,6 +145,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
+			width: 648,
+			height: 24,
 			items:
 			[
 				{
@@ -157,7 +160,6 @@
 					]
 				},
 				{
-					title:'Прайс',
 					items:
 					[
 		{
@@ -304,6 +306,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
+			width: 648,
+			height: 24,
 			items:
 			[
 				{
@@ -327,7 +331,6 @@
 					]
 				},
 				{
-					title:'Документ',
 					items:
 					[
 		{
@@ -537,6 +540,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
+			width: 648,
+			height: 24,
 			items:
 			[
 				{
@@ -560,7 +565,6 @@
 					]
 				},
 				{
-					title:'Счет фактура',
 					items:
 					[
 		{
@@ -635,6 +639,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -983,6 +989,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:81px;width:648px;height:24px;',
+			width: 648,
+			height: 24,
 			items:
 			[
 				{
@@ -1011,14 +1019,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:648px;height:19px;',
 			height: 19,width: 648,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1039,7 +1046,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1095,6 +1101,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:466px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
 			items:
 			[
 				{

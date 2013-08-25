@@ -91,6 +91,8 @@
 			value: 0,
 			name: 'СеверныйСтажДней',
 			style: 'position:absolute;left:251px;top:73px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -106,6 +108,8 @@
 			value: 0,
 			name: 'НачальныйПроцентСевернойНадбавки',
 			style: 'position:absolute;left:176px;top:32px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -114,9 +118,9 @@
 			style: 'position:absolute;left:99px;top:73px;width:54px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Северный стаж',
-			style: 'position:absolute;left:8px;top:55px;width:288px;height:16px;',
+			xtype: 'label',
+			text: 'Северный стаж',
+			style: 'position:absolute;left:8px;top:55px;width:288px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -126,11 +130,13 @@
 			value: 0,
 			name: 'СеверныйСтажМесяцев',
 			style: 'position:absolute;left:154px;top:73px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:103px;width:288px;height:6px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:103px;width:288px;height:6px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -146,6 +152,8 @@
 			value: 0,
 			name: 'СеверныйСтажЛет',
 			style: 'position:absolute;left:47px;top:73px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		],
 	}],
@@ -154,6 +162,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:140px;width:304px;height:25px;',
+			width: 304,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

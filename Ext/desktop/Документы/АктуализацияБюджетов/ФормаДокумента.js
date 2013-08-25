@@ -135,6 +135,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:661px;height:25px;',
+			width: 661,
+			height: 25,
 			items:
 			[
 				{
@@ -159,28 +161,6 @@
 				},
 				{
 					text:'Перенос транзакций',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:152px;width:661px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -303,6 +283,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:152px;width:661px;height:25px;',
+			width: 661,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

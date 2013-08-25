@@ -80,6 +80,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:751px;height:25px;',
+			width: 751,
+			height: 25,
 			items:
 			[
 				{
@@ -116,13 +118,12 @@
 			style: 'position:absolute;left:8px;top:59px;width:113px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:199px;width:735px;height:219px;',
 			height: 219,width: 735,
 			items:
 			[
 				{
-					title:'Параметры расчета (по строке таблицы)',
 					items:
 					[
 		{
@@ -484,6 +485,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:175px;height:25px;',
+			width: 175,
+			height: 25,
 			items:
 			[
 				{
@@ -608,7 +611,6 @@
 					]
 				},
 				{
-					title:'Параметры расчета (таблица)',
 					items:
 					[
 		{
@@ -791,6 +793,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:720px;height:24px;',
+			width: 720,
+			height: 24,
 			items:
 			[
 			]
@@ -798,7 +802,6 @@
 					]
 				},
 				{
-					title:'Комментарий',
 					items:
 					[
 		{
@@ -936,13 +939,12 @@
 			style: 'position:absolute;left:203px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:366px;top:33px;width:377px;height:159px;',
 			height: 159,width: 377,
 			items:
 			[
 				{
-					title:'Показатели для расчета',
 					items:
 					[
 		{
@@ -1026,6 +1028,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:363px;height:25px;',
+			width: 363,
+			height: 25,
 			items:
 			[
 				{
@@ -1048,7 +1052,6 @@
 					]
 				},
 				{
-					title:'Дополнительные источники данных',
 					items:
 					[
 		{
@@ -1114,6 +1117,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:363px;height:25px;',
+			width: 363,
+			height: 25,
 			items:
 			[
 				{
@@ -1162,6 +1167,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:445px;width:751px;height:25px;',
+			width: 751,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

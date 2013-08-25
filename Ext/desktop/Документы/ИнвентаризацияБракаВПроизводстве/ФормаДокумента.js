@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				'-',
@@ -31,32 +33,6 @@
 				'-',
 				{
 					text:'Показать/скрыть счета учета',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:433px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -210,6 +186,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:130px;width:636px;height:25px;',
+			width: 636,
+			height: 25,
 			items:
 			[
 				{
@@ -425,9 +403,9 @@
 			style: 'position:absolute;left:574px;top:33px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Затраты по браку в производстве',
-			style: 'position:absolute;left:8px;top:114px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Затраты по браку в производстве',
+			style: 'position:absolute;left:8px;top:114px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -479,6 +457,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:433px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

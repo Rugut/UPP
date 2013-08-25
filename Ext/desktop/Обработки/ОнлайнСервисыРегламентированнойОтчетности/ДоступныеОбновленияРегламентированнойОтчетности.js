@@ -17,43 +17,23 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:512px;width:439px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:109px;width:423px;height:395px;',
 			height: 395,width: 423,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:62px;width:423px;height:333px;',
 			height: 333,width: 423,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -146,7 +126,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -160,19 +139,18 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнения для текущей версии конфигурации',
-			style: 'position:absolute;left:0px;top:15px;width:423px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнения для текущей версии конфигурации',
+			style: 'position:absolute;left:0px;top:15px;width:423px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:38px;width:423px;height:24px;',
 			height: 24,width: 423,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -196,19 +174,18 @@
 			style: 'position:absolute;left:8px;top:83px;width:423px;height:26px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Обновление конфигурации',
-			style: 'position:absolute;left:8px;top:12px;width:423px;height:16px;',
+			xtype: 'label',
+			text: 'Обновление конфигурации',
+			style: 'position:absolute;left:8px;top:12px;width:423px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:58px;width:423px;height:25px;',
 			height: 25,width: 423,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -222,14 +199,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:423px;height:18px;',
 			height: 18,width: 423,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -247,7 +223,6 @@
 					]
 				},
 				{
-					title:'Обновление не требуется',
 					items:
 					[
 		{
@@ -264,6 +239,27 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:512px;width:439px;height:25px;',
+			width: 439,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

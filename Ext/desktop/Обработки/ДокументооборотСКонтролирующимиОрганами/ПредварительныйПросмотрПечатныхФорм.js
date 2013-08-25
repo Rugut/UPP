@@ -86,13 +86,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Печатаемые документы',
-			style: 'position:absolute;left:8px;top:7px;width:198px;height:17px;',
+			xtype: 'label',
+			text: 'Печатаемые документы',
+			style: 'position:absolute;left:8px;top:7px;width:198px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:25px;width:198px;height:24px;',
+			width: 198,
+			height: 24,
 			items:
 			[
 				{
@@ -118,14 +120,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Содержание',
-			style: 'position:absolute;left:212px;top:7px;width:521px;height:17px;',
+			xtype: 'label',
+			text: 'Содержание',
+			style: 'position:absolute;left:212px;top:7px;width:521px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры печати',
-			style: 'position:absolute;left:8px;top:377px;width:198px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры печати',
+			style: 'position:absolute;left:8px;top:377px;width:198px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -135,6 +137,8 @@
 			value: 0,
 			name: 'КоличествоКопий',
 			style: 'position:absolute;left:160px;top:398px;width:46px;height:19px;',
+			width: 46,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -149,6 +153,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:740px;height:25px;',
+			width: 740,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

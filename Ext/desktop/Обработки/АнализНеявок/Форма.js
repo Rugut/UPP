@@ -256,13 +256,15 @@
 			style: 'position:absolute;left:281px;top:30px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Неявки',
-			style: 'position:absolute;left:8px;top:78px;width:603px;height:16px;',
+			xtype: 'label',
+			text: 'Неявки',
+			style: 'position:absolute;left:8px;top:78px;width:603px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:94px;width:603px;height:24px;',
+			width: 603,
+			height: 24,
 			items:
 			[
 				{
@@ -273,6 +275,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:619px;height:25px;',
+			width: 619,
+			height: 25,
 			items:
 			[
 				{
@@ -322,9 +326,9 @@
 			style: 'position:absolute;left:110px;top:361px;width:133px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Формирование расчетных документов',
-			style: 'position:absolute;left:8px;top:339px;width:603px;height:16px;',
+			xtype: 'label',
+			text: 'Формирование расчетных документов',
+			style: 'position:absolute;left:8px;top:339px;width:603px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',

@@ -17,9 +17,9 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Прочие общие настройки',
-			style: 'position:absolute;left:8px;top:357px;width:430px;height:16px;',
+			xtype: 'label',
+			text: 'Прочие общие настройки',
+			style: 'position:absolute;left:8px;top:357px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -34,6 +34,8 @@
 			value: 0,
 			name: 'ИнтервалАвтосохранения',
 			style: 'position:absolute;left:169px;top:381px;width:54px;height:19px;',
+			width: 54,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -42,9 +44,9 @@
 			style: 'position:absolute;left:228px;top:383px;width:39px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройки формы управления отчетностью',
-			style: 'position:absolute;left:8px;top:12px;width:430px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки формы управления отчетностью',
+			style: 'position:absolute;left:8px;top:12px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -62,20 +64,19 @@
 			style: 'position:absolute;left:19px;top:37px;width:264px;height:16px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:118px;width:430px;height:100px;',
 			height: 100,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Настройки календаря',
-			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки календаря',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -85,6 +86,8 @@
 			value: 0,
 			name: 'ИнтервалНапоминаний',
 			style: 'position:absolute;left:218px;top:77px;width:54px;height:19px;',
+			width: 54,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -113,9 +116,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Печать машиночитаемых форм',
-			style: 'position:absolute;left:8px;top:227px;width:430px;height:16px;',
+			xtype: 'label',
+			text: 'Печать машиночитаемых форм',
+			style: 'position:absolute;left:8px;top:227px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -136,14 +139,13 @@
 			style: 'position:absolute;left:392px;top:276px;width:5px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:251px;width:430px;height:16px;',
 			height: 16,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Установить',
 					items:
 					[
 		{
@@ -167,7 +169,6 @@
 					]
 				},
 				{
-					title:'Переустановить',
 					items:
 					[
 		{
@@ -193,9 +194,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Оповещения',
-			style: 'position:absolute;left:8px;top:303px;width:430px;height:16px;',
+			xtype: 'label',
+			text: 'Оповещения',
+			style: 'position:absolute;left:8px;top:303px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -216,20 +217,19 @@
 			style: 'position:absolute;left:248px;top:328px;width:5px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:415px;width:430px;height:46px;',
 			height: 46,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Документооборот с контролирующими органами',
-			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;',
+			xtype: 'label',
+			text: 'Документооборот с контролирующими органами',
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -260,6 +260,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:472px;width:446px;height:25px;',
+			width: 446,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

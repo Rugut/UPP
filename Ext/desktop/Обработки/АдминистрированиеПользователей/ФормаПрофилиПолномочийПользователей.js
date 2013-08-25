@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:674px;height:25px;',
+			width: 674,
+			height: 25,
 			items:
 			[
 				{
@@ -295,6 +297,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:246px;top:258px;width:420px;height:24px;',
+			width: 420,
+			height: 24,
 			items:
 			[
 				{
@@ -324,6 +328,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:246px;top:105px;width:420px;height:24px;',
+			width: 420,
+			height: 24,
 			items:
 			[
 				{
@@ -334,6 +340,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:418px;width:674px;height:25px;',
+			width: 674,
+			height: 25,
 			items:
 			[
 				{

@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:258px;width:457px;height:162px;',
 			height: 162,width: 457,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -88,23 +87,22 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Было получено следующее содержимое:',
-			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+			xtype: 'label',
+			text: 'Было получено следующее содержимое:',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:457px;height:25px;',
 			height: 25,width: 457,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -124,20 +122,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:457px;height:82px;',
 			height: 82,width: 457,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Причина отказа в приеме',
-			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+			xtype: 'label',
+			text: 'Причина отказа в приеме',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textarea',
@@ -151,14 +148,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:206px;width:457px;height:52px;',
 			height: 52,width: 457,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -178,25 +174,24 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:115px;width:457px;height:86px;',
 			height: 86,width: 457,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:81px;width:457px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:81px;width:457px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Протоколы проверки',
-			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;',
+			xtype: 'label',
+			text: 'Протоколы проверки',
+			style: 'position:absolute;left:0px;top:0px;width:457px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Протоколы',
@@ -269,6 +264,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:428px;width:473px;height:25px;',
+			width: 473,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -160,6 +160,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:799px;height:25px;',
+			width: 799,
+			height: 25,
 			items:
 			[
 				{
@@ -312,14 +314,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:783px;height:19px;',
 			height: 19,width: 783,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

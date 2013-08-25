@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:740px;height:25px;',
+			width: 740,
+			height: 25,
 			items:
 			[
 				{
@@ -126,13 +128,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:724px;height:283px;',
 			height: 283,width: 724,
 			items:
 			[
 				{
-					title:'Соответствия счетов',
 					items:
 					[
 		{
@@ -297,6 +298,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:710px;height:24px;',
+			width: 710,
+			height: 24,
 			items:
 			[
 				'-',
@@ -312,7 +315,6 @@
 					]
 				},
 				{
-					title:'Исключения проводок',
 					items:
 					[
 		{
@@ -450,6 +452,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:710px;height:24px;',
+			width: 710,
+			height: 24,
 			items:
 			[
 				'-',
@@ -473,6 +477,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:397px;width:740px;height:25px;',
+			width: 740,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

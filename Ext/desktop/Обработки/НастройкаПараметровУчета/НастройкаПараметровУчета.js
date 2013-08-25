@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:8px;width:689px;height:506px;',
 			height: 506,width: 689,
 			items:
 			[
 				{
-					title:'Алгоритмы расчетов',
 					items:
 					[
 		{
@@ -101,7 +100,6 @@
 					]
 				},
 				{
-					title:'Кадровый учет',
 					items:
 					[
 		{
@@ -216,14 +214,14 @@
 			style: 'position:absolute;left:42px;top:376px;width:404px;height:28px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:26px;top:408px;width:460px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:26px;top:408px;width:460px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:26px;top:203px;width:460px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:26px;top:203px;width:460px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -261,7 +259,6 @@
 					]
 				},
 				{
-					title:'Расчет зарплаты',
 					items:
 					[
 		{
@@ -360,6 +357,8 @@
 			value: 0,
 			name: 'ПроцентДоплатыЗаРаботуВНочноеВремя',
 			style: 'position:absolute;left:200px;top:383px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -375,6 +374,8 @@
 			value: 0,
 			name: 'ПроцентДоплатыЗаРаботуВВечернееВремя',
 			style: 'position:absolute;left:457px;top:383px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -458,7 +459,6 @@
 					]
 				},
 				{
-					title:'Выплата зарплаты',
 					items:
 					[
 		{
@@ -486,6 +486,8 @@
 			value: 0,
 			name: 'ДатаРасчетаПлановогоАванса',
 			style: 'position:absolute;left:222px;top:342px;width:55px;height:19px;',
+			width: 55,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -562,7 +564,6 @@
 					]
 				},
 				{
-					title:'Бухучет зарплаты',
 					items:
 					[
 		{
@@ -623,6 +624,8 @@
 			value: 0,
 			name: 'ПериодРБП',
 			style: 'position:absolute;left:123px;top:263px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -678,7 +681,6 @@
 					]
 				},
 				{
-					title:'Оценочные обязательства',
 					items:
 					[
 		{
@@ -816,6 +818,8 @@
 			value: 0,
 			name: 'ПериодОО',
 			style: 'position:absolute;left:112px;top:300px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -918,6 +922,8 @@
 			value: 0,
 			name: 'ГодРазмерыОО',
 			style: 'position:absolute;left:402px;top:337px;width:62px;height:19px;',
+			width: 62,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -934,6 +940,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:10px;top:356px;width:496px;height:24px;',
+			width: 496,
+			height: 24,
 			items:
 			[
 				{
@@ -948,6 +956,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:351px;top:430px;width:133px;height:24px;',
+			width: 133,
+			height: 24,
 			items:
 			[
 				{
@@ -964,7 +974,6 @@
 					]
 				},
 				{
-					title:'Страховые взносы',
 					items:
 					[
 		{
@@ -981,6 +990,8 @@
 			value: 0,
 			name: 'ПериодПредельнаяВеличинаБазыСтраховыхВзносов',
 			style: 'position:absolute;left:109px;top:284px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1014,6 +1025,8 @@
 			value: 0,
 			name: 'ПредельнаяВеличинаБазыСтраховыхВзносов',
 			style: 'position:absolute;left:109px;top:260px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			id: 'ТарифСтраховыхВзносов',
@@ -1138,6 +1151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:281px;top:193px;width:192px;height:27px;',
+			width: 192,
+			height: 27,
 			items:
 			[
 				{
@@ -1233,6 +1248,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:326px;top:405px;width:133px;height:24px;',
+			width: 133,
+			height: 24,
 			items:
 			[
 				{
@@ -1249,6 +1266,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:10px;top:371px;width:496px;height:24px;',
+			width: 496,
+			height: 24,
 			items:
 			[
 				{
@@ -1314,7 +1333,6 @@
 					]
 				},
 				{
-					title:'Расчет страховых взносов',
 					items:
 					[
 		{
@@ -1381,7 +1399,6 @@
 					]
 				},
 				{
-					title:'НДФЛ',
 					items:
 					[
 		{
@@ -1442,6 +1459,8 @@
 			value: 0,
 			name: 'ПериодНДФЛ',
 			style: 'position:absolute;left:109px;top:231px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1498,7 +1517,6 @@
 					]
 				},
 				{
-					title:'Гос. пособия',
 					items:
 					[
 		{
@@ -1579,6 +1597,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:323px;top:215px;width:122px;height:24px;',
+			width: 122,
+			height: 24,
 			items:
 			[
 				{
@@ -1660,14 +1680,13 @@
 			style: 'position:absolute;left:10px;top:76px;width:196px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:362px;width:496px;height:105px;',
 			height: 105,width: 496,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1684,6 +1703,8 @@
 			value: 0,
 			name: 'ПособиеПоВременнойНетрудоспособности',
 			style: 'position:absolute;left:204px;top:27px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1699,6 +1720,8 @@
 			value: 0,
 			name: 'ПособиеПоБеременности',
 			style: 'position:absolute;left:204px;top:52px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -1742,7 +1765,6 @@
 					]
 				},
 				{
-					title:'Прочие ставки',
 					items:
 					[
 		{
@@ -1759,6 +1781,8 @@
 			value: 0,
 			name: 'СтавкаРефинансированияЦБ',
 			style: 'position:absolute;left:110px;top:74px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -1779,6 +1803,8 @@
 			value: 0,
 			name: 'МинимальнаяОплатаТрудаРФ',
 			style: 'position:absolute;left:110px;top:157px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -1854,7 +1880,6 @@
 					]
 				},
 				{
-					title:'Расчет ЕСН',
 					items:
 					[
 		{
@@ -1954,7 +1979,6 @@
 					]
 				},
 				{
-					title:'Управленческий учет',
 					items:
 					[
 		{
@@ -2059,6 +2083,8 @@
 			value: 0,
 			name: 'КоличествоДнейОтпускаВГод',
 			style: 'position:absolute;left:278px;top:277px;width:43px;height:19px;',
+			width: 43,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2082,14 +2108,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:522px;width:421px;height:25px;',
 			height: 25,width: 421,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2108,6 +2133,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:387px;top:522px;width:317px;height:25px;',
+			width: 317,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

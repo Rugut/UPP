@@ -17,28 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:407px;width:676px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись3',
 			text: 'Организация:',
@@ -244,6 +222,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:99px;width:660px;height:24px;',
+			width: 660,
+			height: 24,
 			items:
 			[
 				{
@@ -280,6 +260,8 @@
 			value: 0,
 			name: 'ОстатокНаНачалоДня',
 			style: 'position:absolute;left:548px;top:308px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -300,6 +282,8 @@
 			value: 0,
 			name: 'СуммаПриходИтого',
 			style: 'position:absolute;left:548px;top:332px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -315,6 +299,8 @@
 			value: 0,
 			name: 'СуммаРасходИтого',
 			style: 'position:absolute;left:548px;top:356px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -330,6 +316,8 @@
 			value: 0,
 			name: 'ОстатокНаКонецДня',
 			style: 'position:absolute;left:548px;top:380px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -340,6 +328,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:303px;width:124px;height:24px;',
+			width: 124,
+			height: 24,
 			items:
 			[
 				{
@@ -363,14 +353,39 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Банковские расчетные документы',
-			style: 'position:absolute;left:8px;top:83px;width:660px;height:16px;',
+			xtype: 'label',
+			text: 'Банковские расчетные документы',
+			style: 'position:absolute;left:8px;top:83px;width:660px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:407px;width:676px;height:25px;',
+			width: 676,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

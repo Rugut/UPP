@@ -17,14 +17,14 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Всего за налоговый период',
-			style: 'position:absolute;left:12px;top:172px;width:599px;height:16px;',
+			xtype: 'label',
+			text: 'Всего за налоговый период',
+			style: 'position:absolute;left:12px;top:172px;width:599px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Удержано и перечислено по физическим лицам',
-			style: 'position:absolute;left:12px;top:8px;width:599px;height:16px;',
+			xtype: 'label',
+			text: 'Удержано и перечислено по физическим лицам',
+			style: 'position:absolute;left:12px;top:8px;width:599px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ПеречисленоНДФЛПоФизлицам',

@@ -66,23 +66,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:25px;',
+			width: 648,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:156px;width:632px;height:152px;',
 			height: 152,width: 632,
 			items:
 			[
 				{
-					title:'Возвратная тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:618px;height:24px;',
+			width: 618,
+			height: 24,
 			items:
 			[
 				{
@@ -198,7 +201,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -282,14 +284,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:618px;height:17px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:618px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:55px;width:618px;height:17px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:55px;width:618px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -554,10 +556,14 @@
 			value: 0,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:234px;top:81px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:362px;width:648px;height:25px;',
+			width: 648,
+			height: 25,
 			items:
 			[
 				{

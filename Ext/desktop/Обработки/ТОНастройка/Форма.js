@@ -17,18 +17,19 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:88px;width:850px;height:398px;',
 			height: 398,width: 850,
 			items:
 			[
 				{
-					title:'Сканеры штрихкода',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -112,12 +113,13 @@
 					]
 				},
 				{
-					title:'Фискальные регистраторы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -210,12 +212,13 @@
 					]
 				},
 				{
-					title:'Терминалы сбора данных',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -299,12 +302,13 @@
 					]
 				},
 				{
-					title:'Дисплеи покупателя',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -397,12 +401,13 @@
 					]
 				},
 				{
-					title:'Считыватели магнитных карт',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -486,12 +491,13 @@
 					]
 				},
 				{
-					title:'Электронные весы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -575,12 +581,13 @@
 					]
 				},
 				{
-					title:'Весы с печатью этикеток',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -664,12 +671,13 @@
 					]
 				},
 				{
-					title:'ККМ в режиме Offline',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -762,12 +770,13 @@
 					]
 				},
 				{
-					title:'ККМ в режиме Online',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -860,12 +869,13 @@
 					]
 				},
 				{
-					title:'Эквайринговые системы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -949,12 +959,13 @@
 					]
 				},
 				{
-					title:'Считыватели RFID меток',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
+			width: 612,
+			height: 25,
 			items:
 			[
 				{
@@ -1076,6 +1087,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:494px;width:866px;height:25px;',
+			width: 866,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

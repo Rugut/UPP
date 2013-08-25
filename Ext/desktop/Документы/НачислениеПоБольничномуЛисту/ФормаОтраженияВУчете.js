@@ -337,6 +337,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:132px;width:628px;height:24px;',
+			width: 628,
+			height: 24,
 			items:
 			[
 				{
@@ -374,14 +376,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:54px;width:628px;height:62px;',
 			height: 62,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ЕНВД',
 					items:
 					[
 		{
@@ -392,6 +393,8 @@
 			value: 0,
 			name: 'ПодпадаетПодЕНВД',
 			style: 'position:absolute;left:153px;top:37px;width:74px;height:19px;',
+			width: 74,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -431,9 +434,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Проводки и данные для ЕСН',
-			style: 'position:absolute;left:8px;top:116px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Проводки и данные для ЕСН',
+			style: 'position:absolute;left:8px;top:116px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -458,6 +461,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:319px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

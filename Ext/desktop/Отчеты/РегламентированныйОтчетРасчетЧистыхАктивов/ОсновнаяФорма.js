@@ -47,14 +47,14 @@
 			style: 'position:absolute;left:14px;top:184px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Период составления отчета',
-			style: 'position:absolute;left:8px;top:62px;width:260px;height:16px;',
+			xtype: 'label',
+			text: 'Период составления отчета',
+			style: 'position:absolute;left:8px;top:62px;width:260px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Форма',
-			style: 'position:absolute;left:8px;top:115px;width:260px;height:16px;',
+			xtype: 'label',
+			text: 'Форма',
+			style: 'position:absolute;left:8px;top:115px;width:260px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -108,6 +108,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:211px;width:276px;height:25px;',
+			width: 276,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

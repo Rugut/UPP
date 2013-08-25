@@ -80,6 +80,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:149px;width:605px;height:24px;',
+			width: 605,
+			height: 24,
 			items:
 			[
 				{
@@ -242,6 +244,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:621px;height:25px;',
+			width: 621,
+			height: 25,
 			items:
 			[
 				{
@@ -309,9 +313,9 @@
 			style: 'position:absolute;left:195px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники учреждения',
-			style: 'position:absolute;left:8px;top:133px;width:605px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники учреждения',
+			style: 'position:absolute;left:8px;top:133px;width:605px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -372,6 +376,8 @@
 			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:113px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -386,6 +392,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:621px;height:25px;',
+			width: 621,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

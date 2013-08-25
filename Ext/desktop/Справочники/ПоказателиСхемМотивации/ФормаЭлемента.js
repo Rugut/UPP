@@ -122,6 +122,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:413px;height:25px;',
+			width: 413,
+			height: 25,
 			items:
 			[
 				{
@@ -232,13 +234,12 @@
 			style: 'position:absolute;left:8px;top:65px;width:83px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:193px;width:397px;height:167px;',
 			height: 167,width: 397,
 			items:
 			[
 				{
-					title:'Анализ показателей',
 					items:
 					[
 		{
@@ -323,7 +324,6 @@
 					]
 				},
 				{
-					title:'Использование',
 					items:
 					[
 		{
@@ -340,7 +340,6 @@
 					]
 				},
 				{
-					title:'Шкала оценки',
 					items:
 					[
 		{
@@ -429,6 +428,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:383px;height:24px;',
+			width: 383,
+			height: 24,
 			items:
 			[
 			]
@@ -436,7 +437,6 @@
 					]
 				},
 				{
-					title:'Суммовой показатель',
 					items:
 					[
 		{
@@ -448,7 +448,6 @@
 					]
 				},
 				{
-					title:'Использование',
 					items:
 					[
 		{
@@ -504,7 +503,6 @@
 					]
 				},
 				{
-					title:'Стаж',
 					items:
 					[
 		{
@@ -664,6 +662,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:368px;width:413px;height:25px;',
+			width: 413,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

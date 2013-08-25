@@ -137,6 +137,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:127px;width:390px;height:24px;',
+			width: 390,
+			height: 24,
 			items:
 			[
 			]
@@ -218,14 +220,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Доли подпериодов в периоде',
-			style: 'position:absolute;left:8px;top:111px;width:390px;height:16px;',
+			xtype: 'label',
+			text: 'Доли подпериодов в периоде',
+			style: 'position:absolute;left:8px;top:111px;width:390px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -234,6 +238,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:379px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

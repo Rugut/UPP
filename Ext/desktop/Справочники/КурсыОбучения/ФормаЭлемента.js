@@ -52,6 +52,8 @@
 			value: 0,
 			name: 'ДлительностьКурса',
 			style: 'position:absolute;left:188px;top:175px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -67,6 +69,8 @@
 			value: 0,
 			name: 'ЗатратыНаОдногоОбучающегося',
 			style: 'position:absolute;left:188px;top:200px;width:61px;height:19px;',
+			width: 61,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -161,23 +165,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
+			width: 414,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:268px;width:398px;height:176px;',
 			height: 176,width: 398,
 			items:
 			[
 				{
-					title:'Состав курса',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
+			width: 384,
+			height: 24,
 			items:
 			[
 			]
@@ -250,12 +257,13 @@
 					]
 				},
 				{
-					title:'Изучаемые компетенции*',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:384px;height:24px;',
+			width: 384,
+			height: 24,
 			items:
 			[
 				'-',
@@ -341,7 +349,6 @@
 					]
 				},
 				{
-					title:'Регламентированный учет',
 					items:
 					[
 		{
@@ -410,6 +417,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:452px;width:414px;height:25px;',
+			width: 414,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

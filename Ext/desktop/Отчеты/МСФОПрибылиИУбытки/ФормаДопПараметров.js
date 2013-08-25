@@ -42,6 +42,8 @@
 			value: 0,
 			name: 'ПолеВводаСуммаДивидендовКон',
 			style: 'position:absolute;left:206px;top:41px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -51,6 +53,8 @@
 			value: 0,
 			name: 'ПолеВводаСуммаДивидендовПред',
 			style: 'position:absolute;left:206px;top:65px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -65,6 +69,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:115px;width:334px;height:25px;',
+			width: 334,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

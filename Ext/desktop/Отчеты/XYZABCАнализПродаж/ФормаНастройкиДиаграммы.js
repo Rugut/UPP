@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:254px;height:353px;',
 			height: 353,width: 254,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -87,9 +86,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатель',
-			style: 'position:absolute;left:6px;top:68px;width:240px;height:16px;',
+			xtype: 'label',
+			text: 'Показатель',
+			style: 'position:absolute;left:6px;top:68px;width:240px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -116,18 +115,16 @@
 					]
 				},
 				{
-					title:'Настройка гистограммы',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:240px;height:159px;',
 			height: 159,width: 240,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -144,6 +141,8 @@
 			value: 0,
 			name: 'МаксимальноеЗначение',
 			style: 'position:absolute;left:135px;top:0px;width:105px;height:19px;',
+			width: 105,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -159,6 +158,8 @@
 			value: 0,
 			name: 'Интервал',
 			style: 'position:absolute;left:135px;top:24px;width:105px;height:19px;',
+			width: 105,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -179,6 +180,8 @@
 			value: 0,
 			name: 'ВысотаГистрограммы',
 			style: 'position:absolute;left:135px;top:48px;width:105px;height:19px;',
+			width: 105,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -217,6 +220,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:369px;width:270px;height:25px;',
+			width: 270,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

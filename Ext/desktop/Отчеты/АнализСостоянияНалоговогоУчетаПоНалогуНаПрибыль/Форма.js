@@ -102,14 +102,13 @@
 			style: 'position:absolute;left:440px;top:3px;width:75px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:861px;height:507px;',
 			height: 507,width: 861,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Схема',
 				},
 			]
 		},
@@ -126,6 +125,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:131px;height:27px;',
+			width: 131,
+			height: 27,
 			items:
 			[
 				{
@@ -139,6 +140,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:359px;height:27px;',
+			width: 359,
+			height: 27,
 			items:
 			[
 				{

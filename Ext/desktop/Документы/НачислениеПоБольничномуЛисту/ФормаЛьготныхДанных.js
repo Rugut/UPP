@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:580px;height:98px;',
 			height: 98,width: 580,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница отставников',
 					items:
 					[
 		{
@@ -53,6 +52,8 @@
 			value: 0,
 			name: 'ПроцентОплатыБезЛьгот1',
 			style: 'position:absolute;left:229px;top:48px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -107,6 +108,8 @@
 			value: 0,
 			name: 'СтажЛет',
 			style: 'position:absolute;left:229px;top:23px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -122,6 +125,8 @@
 			value: 0,
 			name: 'СтажМесяцев',
 			style: 'position:absolute;left:317px;top:23px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -132,7 +137,6 @@
 					]
 				},
 				{
-					title:'Страница облученных',
 					items:
 					[
 		{
@@ -154,6 +158,8 @@
 			value: 0,
 			name: 'ПроцентОплаты3',
 			style: 'position:absolute;left:217px;top:23px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -220,6 +226,8 @@
 			value: 0,
 			name: 'ПроцентОплатыБезЛьгот2',
 			style: 'position:absolute;left:408px;top:23px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -271,6 +279,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:114px;width:596px;height:25px;',
+			width: 596,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

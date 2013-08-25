@@ -64,6 +64,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			width: 604,
+			height: 25,
 			items:
 			[
 				{

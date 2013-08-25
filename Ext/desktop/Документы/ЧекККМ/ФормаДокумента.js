@@ -19,38 +19,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:413px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'Чек ККМ',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -255,6 +227,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:563px;top:340px;width:81px;height:17px;',
+			width: 81,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -287,13 +261,12 @@
 			style: 'position:absolute;left:623px;top:362px;width:21px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:109px;width:636px;height:225px;',
 			height: 225,width: 636,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -467,6 +440,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -496,14 +471,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:110px;width:622px;height:90px;',
 			height: 90,width: 622,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -578,6 +552,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:1px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 			]
@@ -589,7 +565,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -714,6 +689,8 @@
 			value: 0,
 			name: 'Сдача',
 			style: 'position:absolute;left:276px;top:362px;width:72px;height:17px;',
+			width: 72,
+			height: 17,
 		},
 		{
 			xtype: 'trigger',
@@ -762,6 +739,8 @@
 			value: 0,
 			name: 'СуммаОплаты',
 			style: 'position:absolute;left:110px;top:362px;width:91px;height:19px;',
+			width: 91,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -801,6 +780,39 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:413px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'Чек ККМ',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

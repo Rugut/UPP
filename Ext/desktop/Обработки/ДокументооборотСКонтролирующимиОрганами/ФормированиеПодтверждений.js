@@ -300,6 +300,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:82px;width:726px;height:24px;',
+			width: 726,
+			height: 24,
 			items:
 			[
 				{
@@ -315,9 +317,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:80px;width:726px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:80px;width:726px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -347,6 +349,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:493px;width:742px;height:25px;',
+			width: 742,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

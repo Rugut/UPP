@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:315px;',
 			height: 315,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -117,6 +116,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:159px;width:280px;height:24px;',
+			width: 280,
+			height: 24,
 			items:
 			[
 				{
@@ -149,19 +150,18 @@
 			style: 'position:absolute;left:290px;top:164px;width:176px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели',
-			style: 'position:absolute;left:6px;top:143px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Показатели',
+			style: 'position:absolute;left:6px;top:143px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:32px;width:460px;height:24px;',
 			height: 24,width: 460,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -181,19 +181,18 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры',
-			style: 'position:absolute;left:6px;top:59px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры',
+			style: 'position:absolute;left:6px;top:59px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:14px;top:75px;width:452px;height:20px;',
 			height: 20,width: 452,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -226,7 +225,6 @@
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -292,6 +290,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
+			width: 212,
+			height: 24,
 			items:
 			[
 			]
@@ -299,6 +299,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:258px;top:0px;width:208px;height:24px;',
+			width: 208,
+			height: 24,
 			items:
 			[
 			]
@@ -366,6 +368,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:227px;top:117px;width:24px;height:62px;',
+			width: 24,
+			height: 62,
 			items:
 			[
 				{
@@ -379,7 +383,6 @@
 					]
 				},
 				{
-					title:'Интервалы группировок',
 					items:
 					[
 		{
@@ -397,6 +400,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:32px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 				{
@@ -485,7 +490,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -593,6 +597,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -600,7 +606,6 @@
 					]
 				},
 				{
-					title:'Поля',
 					items:
 					[
 		{
@@ -662,6 +667,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:26px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -669,7 +676,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -735,6 +741,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -743,9 +751,16 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:334px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -765,10 +780,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

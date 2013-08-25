@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:653px;height:25px;',
+			width: 653,
+			height: 25,
 			items:
 			[
 				{
@@ -254,6 +256,8 @@
 			value: 0,
 			name: 'КоличествоИсточник',
 			style: 'position:absolute;left:98px;top:226px;width:64px;height:19px;',
+			width: 64,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -314,6 +318,8 @@
 			value: 0,
 			name: 'КурсИсточник',
 			style: 'position:absolute;left:238px;top:201px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -329,6 +335,8 @@
 			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:98px;top:250px;width:104px;height:19px;',
+			width: 104,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -441,9 +449,9 @@
 			style: 'position:absolute;left:98px;top:301px;width:548px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Источник',
-			style: 'position:absolute;left:8px;top:84px;width:319px;height:16px;',
+			xtype: 'label',
+			text: 'Источник',
+			style: 'position:absolute;left:8px;top:84px;width:319px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -654,11 +662,13 @@
 			value: 0,
 			name: 'КурсПриемник',
 			style: 'position:absolute;left:566px;top:202px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Приемник',
-			style: 'position:absolute;left:335px;top:84px;width:310px;height:16px;',
+			xtype: 'label',
+			text: 'Приемник',
+			style: 'position:absolute;left:335px;top:84px;width:310px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -874,6 +884,8 @@
 			value: 0,
 			name: 'КоличествоПриемник',
 			style: 'position:absolute;left:426px;top:226px;width:64px;height:19px;',
+			width: 64,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -906,6 +918,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:330px;width:653px;height:25px;',
+			width: 653,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:700px;height:25px;',
+			width: 700,
+			height: 25,
 			items:
 			[
 				{
@@ -204,6 +206,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:201px;width:684px;height:24px;',
+			width: 684,
+			height: 24,
 			items:
 			[
 				{
@@ -217,6 +221,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:24px;',
+			width: 700,
+			height: 24,
 			items:
 			[
 				'-',
@@ -231,24 +237,23 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выгружаемые товары',
-			style: 'position:absolute;left:8px;top:180px;width:684px;height:16px;',
+			xtype: 'label',
+			text: 'Выгружаемые товары',
+			style: 'position:absolute;left:8px;top:180px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор',
-			style: 'position:absolute;left:8px;top:51px;width:684px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор',
+			style: 'position:absolute;left:8px;top:51px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:71px;width:684px;height:107px;',
 			height: 107,width: 684,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

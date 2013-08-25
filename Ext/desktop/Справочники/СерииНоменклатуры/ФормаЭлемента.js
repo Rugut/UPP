@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			width: 604,
+			height: 25,
 			items:
 			[
 				{
@@ -75,13 +77,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:151px;top:33px;width:445px;height:251px;',
 			height: 251,width: 445,
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
@@ -298,7 +299,6 @@
 					]
 				},
 				{
-					title:'Сертификация',
 					items:
 					[
 		{
@@ -334,9 +334,9 @@
 			style: 'position:absolute;left:349px;top:27px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Внешняя сертификация',
-			style: 'position:absolute;left:6px;top:6px;width:431px;height:16px;',
+			xtype: 'label',
+			text: 'Внешняя сертификация',
+			style: 'position:absolute;left:6px;top:6px;width:431px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -362,9 +362,9 @@
 			style: 'position:absolute;left:6px;top:77px;width:431px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Внутренняя сертификация',
-			style: 'position:absolute;left:6px;top:115px;width:431px;height:17px;',
+			xtype: 'label',
+			text: 'Внутренняя сертификация',
+			style: 'position:absolute;left:6px;top:115px;width:431px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -432,6 +432,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:292px;width:604px;height:25px;',
+			width: 604,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -17,36 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:443px;width:765px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			id: 'СписокРазделов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:195px;height:427px;',
@@ -107,14 +77,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:209px;top:8px;width:548px;height:427px;',
 			height: 427,width: 548,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Производство',
 					items:
 					[
 		{
@@ -374,7 +343,6 @@
 					]
 				},
 				{
-					title:'Заказы',
 					items:
 					[
 		{
@@ -426,7 +394,6 @@
 					]
 				},
 				{
-					title:'Заказы на производство',
 					items:
 					[
 		{
@@ -458,7 +425,6 @@
 					]
 				},
 				{
-					title:'Планирование',
 					items:
 					[
 		{
@@ -508,7 +474,6 @@
 					]
 				},
 				{
-					title:'Валюты',
 					items:
 					[
 		{
@@ -631,7 +596,6 @@
 					]
 				},
 				{
-					title:'Учет товаров',
 					items:
 					[
 		{
@@ -667,7 +631,6 @@
 					]
 				},
 				{
-					title:'Печать, единицы',
 					items:
 					[
 		{
@@ -790,7 +753,6 @@
 					]
 				},
 				{
-					title:'Режим учета затрат',
 					items:
 					[
 		{
@@ -855,7 +817,6 @@
 					]
 				},
 				{
-					title:'Проекты',
 					items:
 					[
 		{
@@ -881,7 +842,6 @@
 					]
 				},
 				{
-					title:'Взаиморасчеты',
 					items:
 					[
 		{
@@ -942,7 +902,6 @@
 					]
 				},
 				{
-					title:'Расчеты с персоналом',
 					items:
 					[
 		{
@@ -964,7 +923,6 @@
 					]
 				},
 				{
-					title:'НДС',
 					items:
 					[
 		{
@@ -1061,7 +1019,6 @@
 					]
 				},
 				{
-					title:'НДС в валюте',
 					items:
 					[
 		{
@@ -1118,7 +1075,6 @@
 					]
 				},
 				{
-					title:'Налог на прибыль',
 					items:
 					[
 		{
@@ -1225,7 +1181,6 @@
 					]
 				},
 				{
-					title:'Розничные продажи',
 					items:
 					[
 		{
@@ -1247,7 +1202,6 @@
 					]
 				},
 				{
-					title:'Себестоимость',
 					items:
 					[
 		{
@@ -1320,7 +1274,6 @@
 					]
 				},
 				{
-					title:'Способы распределения затрат',
 					items:
 					[
 		{
@@ -1330,14 +1283,13 @@
 			style: 'position:absolute;left:12px;top:6px;width:350px;height:30px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:12px;top:48px;width:528px;height:371px;',
 			height: 371,width: 528,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Расширенная аналитика',
 					items:
 					[
 		{
@@ -1360,7 +1312,6 @@
 					]
 				},
 				{
-					title:'Традиционный режим',
 				},
 			]
 		},
@@ -1372,6 +1323,39 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:443px;width:765px;height:25px;',
+			width: 765,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

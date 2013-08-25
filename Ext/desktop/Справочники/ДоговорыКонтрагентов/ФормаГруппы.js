@@ -139,13 +139,22 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:442px;height:25px;',
+			width: 442,
+			height: 25,
 			items:
 			[
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:111px;width:442px;height:25px;',
+			width: 442,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -165,10 +174,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

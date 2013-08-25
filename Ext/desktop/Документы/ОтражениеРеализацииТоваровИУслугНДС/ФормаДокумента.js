@@ -216,6 +216,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			items:
 			[
 				{
@@ -261,18 +263,19 @@
 			style: 'position:absolute;left:316px;top:33px;width:287px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:153px;width:656px;height:220px;',
 			height: 220,width: 656,
 			items:
 			[
 				{
-					title:'Товары и услуги',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				{
@@ -517,12 +520,13 @@
 					]
 				},
 				{
-					title:'Документы оплаты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 			]
@@ -599,7 +603,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -770,6 +773,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:448px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

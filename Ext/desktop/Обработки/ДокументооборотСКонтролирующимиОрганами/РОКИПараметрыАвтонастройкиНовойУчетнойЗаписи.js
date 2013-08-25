@@ -23,9 +23,9 @@
 			style: 'position:absolute;left:8px;top:103px;width:440px;height:57px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:95px;width:440px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:95px;width:440px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -67,14 +67,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:25px;top:251px;width:171px;height:44px;',
 			height: 44,width: 171,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -118,14 +117,14 @@
 			style: 'position:absolute;left:8px;top:60px;width:440px;height:32px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:168px;width:440px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:168px;width:440px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:58px;width:440px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:58px;width:440px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -156,6 +155,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:311px;width:456px;height:25px;',
+			width: 456,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

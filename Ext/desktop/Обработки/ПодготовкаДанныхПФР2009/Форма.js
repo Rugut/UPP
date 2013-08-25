@@ -75,6 +75,8 @@
 			value: 0,
 			name: 'РасчетныйПериод',
 			style: 'position:absolute;left:393px;top:8px;width:72px;height:19px;',
+			width: 72,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -97,6 +99,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:81px;width:275px;height:24px;',
+			width: 275,
+			height: 24,
 			items:
 			[
 				'-',
@@ -177,14 +181,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:300px;top:81px;width:662px;height:154px;',
 			height: 154,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'АДВ11',
 					items:
 					[
 		{
@@ -237,9 +240,9 @@
 			style: 'position:absolute;left:546px;top:24px;width:92px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уплата страховых взносов на обязательное пенсионное страхование',
-			style: 'position:absolute;left:0px;top:53px;width:662px;height:16px;',
+			xtype: 'label',
+			text: 'Уплата страховых взносов на обязательное пенсионное страхование',
+			style: 'position:absolute;left:0px;top:53px;width:662px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -298,14 +301,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:69px;width:662px;height:85px;',
 			height: 85,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -407,6 +409,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:662px;height:24px;',
+			width: 662,
+			height: 24,
 			items:
 			[
 				{
@@ -431,7 +435,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -447,7 +450,6 @@
 					]
 				},
 				{
-					title:'СЗВ4',
 					items:
 					[
 		{
@@ -606,7 +608,6 @@
 					]
 				},
 				{
-					title:'',
 				},
 			]
 		},
@@ -679,14 +680,13 @@
 			style: 'position:absolute;left:818px;top:519px;width:81px;height:21px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:266px;width:954px;height:243px;',
 			height: 243,width: 954,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'СЗВ4',
 					items:
 					[
 		{
@@ -761,6 +761,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:275px;height:24px;',
+			width: 275,
+			height: 24,
 			items:
 			[
 				{
@@ -784,24 +786,25 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стаж работы за отчетный период',
-			style: 'position:absolute;left:290px;top:115px;width:664px;height:16px;',
+			xtype: 'label',
+			text: 'Стаж работы за отчетный период',
+			style: 'position:absolute;left:290px;top:115px;width:664px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:290px;top:131px;width:664px;height:112px;',
 			height: 112,width: 664,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница СЗВ41',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:24px;',
+			width: 664,
+			height: 24,
 			items:
 			[
 				{
@@ -1069,7 +1072,6 @@
 					]
 				},
 				{
-					title:'Страница СЗВ42',
 					items:
 					[
 		{
@@ -1111,25 +1113,24 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:290px;top:0px;width:664px;height:108px;',
 			height: 108,width: 664,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница со всеми взносами',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Сумма начисленных страховых взносов',
-			style: 'position:absolute;left:0px;top:0px;width:467px;height:16px;',
+			xtype: 'label',
+			text: 'Сумма начисленных страховых взносов',
+			style: 'position:absolute;left:0px;top:0px;width:467px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды отсутствия',
-			style: 'position:absolute;left:0px;top:45px;width:467px;height:16px;',
+			xtype: 'label',
+			text: 'Периоды отсутствия',
+			style: 'position:absolute;left:0px;top:45px;width:467px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -1139,6 +1140,8 @@
 			value: 0,
 			name: 'МесяцыБолезни',
 			style: 'position:absolute;left:225px;top:66px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1154,6 +1157,8 @@
 			value: 0,
 			name: 'МесяцыОтпускаЗаСвойСчет',
 			style: 'position:absolute;left:225px;top:89px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1175,6 +1180,8 @@
 			value: 0,
 			name: 'ДниОтпускаЗаСвойСчет',
 			style: 'position:absolute;left:324px;top:89px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1202,11 +1209,13 @@
 			value: 0,
 			name: 'ДниБолезни',
 			style: 'position:absolute;left:324px;top:66px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Адрес для информирования',
-			style: 'position:absolute;left:476px;top:69px;width:188px;height:16px;',
+			xtype: 'label',
+			text: 'Адрес для информирования',
+			style: 'position:absolute;left:476px;top:69px;width:188px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1218,14 +1227,13 @@
 			style: 'position:absolute;left:476px;top:89px;width:188px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:21px;width:467px;height:19px;',
 			height: 19,width: 467,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1236,6 +1244,8 @@
 			value: 0,
 			name: 'НачисленоНаСтраховуюЧастьПФР',
 			style: 'position:absolute;left:59px;top:0px;width:75px;height:19px;',
+			width: 75,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1245,6 +1255,8 @@
 			value: 0,
 			name: 'НачисленоНаНакопительнуюЧастьПФР',
 			style: 'position:absolute;left:224px;top:0px;width:75px;height:19px;',
+			width: 75,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1265,14 +1277,13 @@
 			style: 'position:absolute;left:24px;top:0px;width:443px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:304px;top:0px;width:163px;height:19px;',
 			height: 19,width: 163,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1283,6 +1294,8 @@
 			value: 0,
 			name: 'НачисленоПоДополнительномуТарифу',
 			style: 'position:absolute;left:90px;top:0px;width:73px;height:19px;',
+			width: 73,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1297,25 +1310,23 @@
 					]
 				},
 				{
-					title:'',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:476px;top:0px;width:188px;height:64px;',
 			height: 64,width: 188,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Всего взносов',
-			style: 'position:absolute;left:0px;top:0px;width:186px;height:16px;',
+			xtype: 'label',
+			text: 'Всего взносов',
+			style: 'position:absolute;left:0px;top:0px;width:186px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -1325,6 +1336,8 @@
 			value: 0,
 			name: 'НачисленоПоВсейОрганизацииНаСтраховуюЧастьПФР',
 			style: 'position:absolute;left:115px;top:21px;width:71px;height:19px;',
+			width: 71,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1340,6 +1353,8 @@
 			value: 0,
 			name: 'НачисленоПоВсейОрганизацииНаНакопительнуюЧастьПФР',
 			style: 'position:absolute;left:115px;top:45px;width:71px;height:19px;',
+			width: 71,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1354,18 +1369,17 @@
 					]
 				},
 				{
-					title:'Страница без всех взносов',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Сумма начисленных страховых взносов',
-			style: 'position:absolute;left:0px;top:0px;width:664px;height:16px;',
+			xtype: 'label',
+			text: 'Сумма начисленных страховых взносов',
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды отсутствия',
-			style: 'position:absolute;left:0px;top:45px;width:428px;height:16px;',
+			xtype: 'label',
+			text: 'Периоды отсутствия',
+			style: 'position:absolute;left:0px;top:45px;width:428px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -1375,6 +1389,8 @@
 			value: 0,
 			name: 'МесяцыБолезни1',
 			style: 'position:absolute;left:225px;top:66px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1390,6 +1406,8 @@
 			value: 0,
 			name: 'МесяцыОтпускаЗаСвойСчет1',
 			style: 'position:absolute;left:225px;top:89px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1411,6 +1429,8 @@
 			value: 0,
 			name: 'ДниОтпускаЗаСвойСчет1',
 			style: 'position:absolute;left:324px;top:89px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1438,11 +1458,13 @@
 			value: 0,
 			name: 'ДниБолезни1',
 			style: 'position:absolute;left:324px;top:66px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Адрес для информирования',
-			style: 'position:absolute;left:439px;top:45px;width:225px;height:16px;',
+			xtype: 'label',
+			text: 'Адрес для информирования',
+			style: 'position:absolute;left:439px;top:45px;width:225px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1454,14 +1476,13 @@
 			style: 'position:absolute;left:439px;top:65px;width:225px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:21px;width:664px;height:19px;',
 			height: 19,width: 664,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1472,6 +1493,8 @@
 			value: 0,
 			name: 'НачисленоНаСтраховуюЧастьПФР1',
 			style: 'position:absolute;left:60px;top:0px;width:110px;height:19px;',
+			width: 110,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1481,6 +1504,8 @@
 			value: 0,
 			name: 'НачисленоНаНакопительнуюЧастьПФР1',
 			style: 'position:absolute;left:304px;top:0px;width:110px;height:19px;',
+			width: 110,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1495,14 +1520,13 @@
 			style: 'position:absolute;left:217px;top:0px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:425px;top:0px;width:239px;height:19px;',
 			height: 19,width: 239,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1513,6 +1537,8 @@
 			value: 0,
 			name: 'НачисленоПоДополнительномуТарифу1',
 			style: 'position:absolute;left:129px;top:0px;width:110px;height:19px;',
+			width: 110,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1527,7 +1553,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1547,7 +1572,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 					items:
 					[
 		{
@@ -1618,9 +1642,9 @@
 			style: 'position:absolute;left:8px;top:32px;width:80px;height:21px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:513px;width:954px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:513px;width:954px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',

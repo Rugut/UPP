@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:176px;width:216px;height:25px;',
+			width: 216,
+			height: 25,
 			items:
 			[
 				{
@@ -60,9 +62,9 @@
 			style: 'position:absolute;left:24px;top:124px;width:184px;height:44px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:116px;width:200px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:116px;width:200px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -108,13 +110,12 @@
 			style: 'position:absolute;left:501px;top:33px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:131px;width:636px;height:177px;',
 			height: 177,width: 636,
 			items:
 			[
 				{
-					title:'Материалы',
 					items:
 					[
 		{
@@ -342,6 +343,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				'-',
@@ -354,7 +357,6 @@
 					]
 				},
 				{
-					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -530,7 +532,6 @@
 					]
 				},
 				{
-					title:'Налоговый учет',
 					items:
 					[
 		{
@@ -840,6 +841,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:364px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{

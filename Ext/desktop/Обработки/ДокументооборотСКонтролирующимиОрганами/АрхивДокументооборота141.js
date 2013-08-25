@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
+			width: 794,
+			height: 25,
 			items:
 			[
 				{
@@ -35,6 +37,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
+			width: 233,
+			height: 24,
 			items:
 			[
 				{
@@ -81,14 +85,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
 			height: 23,width: 778,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -142,35 +145,32 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:56px;width:778px;height:456px;',
 			height: 456,width: 778,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:201px;top:0px;width:577px;height:456px;',
 			height: 456,width: 577,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ФНС',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:577px;height:456px;',
 			height: 456,width: 577,
 			items:
 			[
 				{
-					title:'Отчетность',
 					items:
 					[
 		{
@@ -369,14 +369,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:562px;height:22px;',
 			height: 22,width: 562,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -389,14 +388,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:152px;top:0px;width:410px;height:21px;',
 			height: 21,width: 410,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По отчету',
 					items:
 					[
 		{
@@ -420,7 +418,6 @@
 					]
 				},
 				{
-					title:'По виду отчета',
 					items:
 					[
 		{
@@ -465,10 +462,8 @@
 					]
 				},
 				{
-					title:'По периоду отчета',
 				},
 				{
-					title:'По виду документа',
 					items:
 					[
 		{
@@ -479,6 +474,8 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:310px;top:0px;width:41px;height:19px;',
+			width: 41,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -504,7 +501,6 @@
 					]
 				},
 				{
-					title:'По электронному представлению',
 					items:
 					[
 		{
@@ -555,14 +551,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:52px;width:562px;height:33px;',
 			height: 33,width: 562,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -573,6 +568,8 @@
 			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:93px;top:4px;width:55px;height:20px;',
+			width: 55,
+			height: 20,
 		},
 					]
 				},
@@ -581,6 +578,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:562px;height:24px;',
+			width: 562,
+			height: 24,
 			items:
 			[
 				{
@@ -598,7 +597,6 @@
 					]
 				},
 				{
-					title:'Исходящие документы',
 					items:
 					[
 		{
@@ -718,6 +716,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:563px;height:24px;',
+			width: 563,
+			height: 24,
 			items:
 			[
 				{
@@ -730,14 +730,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:563px;height:22px;',
 			height: 22,width: 563,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -792,7 +791,6 @@
 					]
 				},
 				{
-					title:'Входящие документы',
 					items:
 					[
 		{
@@ -894,6 +892,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:563px;height:24px;',
+			width: 563,
+			height: 24,
 			items:
 			[
 				{
@@ -906,14 +906,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:563px;height:22px;',
 			height: 22,width: 563,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -968,12 +967,13 @@
 					]
 				},
 				{
-					title:'Запросы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:563px;height:24px;',
+			width: 563,
+			height: 24,
 			items:
 			[
 				{
@@ -1181,14 +1181,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:563px;height:22px;',
 			height: 22,width: 563,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1201,14 +1200,13 @@
 			style: 'position:absolute;left:0px;top:1px;width:148px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:153px;top:1px;width:410px;height:21px;',
 			height: 21,width: 410,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По запросу',
 					items:
 					[
 		{
@@ -1253,7 +1251,6 @@
 					]
 				},
 				{
-					title:'По виду услуги',
 					items:
 					[
 		{
@@ -1311,14 +1308,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:195px;height:456px;',
 			height: 456,width: 195,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1382,21 +1378,23 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учетные записи',
-			style: 'position:absolute;left:0px;top:2px;width:195px;height:16px;',
+			xtype: 'label',
+			text: 'Учетные записи',
+			style: 'position:absolute;left:0px;top:2px;width:195px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:23px;width:195px;height:24px;',
+			width: 195,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:21px;width:195px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:21px;width:195px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},

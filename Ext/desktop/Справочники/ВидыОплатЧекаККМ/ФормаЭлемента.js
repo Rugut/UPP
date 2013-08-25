@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:454px;height:25px;',
+			width: 454,
+			height: 25,
 			items:
 			[
 			]
@@ -98,14 +100,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:80px;width:438px;height:67px;',
 			height: 67,width: 438,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -212,6 +213,8 @@
 			value: 0,
 			name: 'ПроцентБанковскойКомиссии',
 			style: 'position:absolute;left:140px;top:48px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 					]
 				},
@@ -224,6 +227,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:155px;width:454px;height:25px;',
+			width: 454,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

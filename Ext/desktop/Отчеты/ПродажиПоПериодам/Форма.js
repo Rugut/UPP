@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			width: 900,
+			height: 25,
 			items:
 			[
 				{
@@ -55,13 +57,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:884px;height:539px;',
 			height: 539,width: 884,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -1216,6 +1217,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
+			width: 870,
+			height: 24,
 			items:
 			[
 				{
@@ -1268,7 +1271,6 @@
 					]
 				},
 				{
-					title:'Настройки',
 					items:
 					[
 		{
@@ -1285,11 +1287,13 @@
 			value: 0,
 			name: 'КоличествоПериодов',
 			style: 'position:absolute;left:482px;top:27px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры',
-			style: 'position:absolute;left:6px;top:6px;width:870px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры',
+			style: 'position:absolute;left:6px;top:6px;width:870px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -1316,6 +1320,8 @@
 			value: 0,
 			name: 'КоличествоРабочихДней',
 			style: 'position:absolute;left:604px;top:27px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1369,19 +1375,18 @@
 			style: 'position:absolute;left:6px;top:51px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:75px;width:870px;height:437px;',
 			height: 437,width: 870,
 			items:
 			[
 				{
-					title:'Поля',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Остатки (не более 10)',
-			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;',
+			xtype: 'label',
+			text: 'Остатки (не более 10)',
+			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеСклады',
@@ -1455,6 +1460,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:438px;top:22px;width:424px;height:24px;',
+			width: 424,
+			height: 24,
 			items:
 			[
 				{
@@ -1487,9 +1494,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Типы цен (не более 10)',
-			style: 'position:absolute;left:438px;top:213px;width:424px;height:16px;',
+			xtype: 'label',
+			text: 'Типы цен (не более 10)',
+			style: 'position:absolute;left:438px;top:213px;width:424px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеТипыЦен',
@@ -1554,6 +1561,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:438px;top:229px;width:424px;height:24px;',
+			width: 424,
+			height: 24,
 			items:
 			[
 				{
@@ -1586,9 +1595,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Поля (не более 40)',
-			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;',
+			xtype: 'label',
+			text: 'Поля (не более 40)',
+			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеВыбранныеПоля',
@@ -1644,6 +1653,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:424px;height:24px;',
+			width: 424,
+			height: 24,
 			items:
 			[
 				{
@@ -1663,13 +1674,12 @@
 					]
 				},
 				{
-					title:'Отбор и сортировка',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Отборы',
-			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;',
+			xtype: 'label',
+			text: 'Отборы',
+			style: 'position:absolute;left:6px;top:6px;width:424px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеОтбор',
@@ -1770,6 +1780,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:424px;height:24px;',
+			width: 424,
+			height: 24,
 			items:
 			[
 				{
@@ -1787,9 +1799,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сортировка',
-			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;',
+			xtype: 'label',
+			text: 'Сортировка',
+			style: 'position:absolute;left:438px;top:6px;width:424px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеСортировка',
@@ -1854,6 +1866,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:438px;top:22px;width:424px;height:24px;',
+			width: 424,
+			height: 24,
 			items:
 			[
 				{

@@ -190,6 +190,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:84px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -512,6 +514,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
 			items:
 			[
 				{
@@ -537,8 +541,21 @@
 			]
 		},
 		{
+			xtype: 'button',
+			name: 'КнопкаВыбораПериода',
+			text: '...',
+			style: 'position:absolute;left:622px;top:33px;width:19px;height:19px;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:360px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -562,16 +579,6 @@
 				},
 			]
 		},
-		{
-			xtype: 'button',
-			name: 'КнопкаВыбораПериода',
-			text: '...',
-			style: 'position:absolute;left:622px;top:33px;width:19px;height:19px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

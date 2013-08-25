@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			items:
 			[
 			]
@@ -81,13 +83,12 @@
 			style: 'position:absolute;left:506px;top:33px;width:72px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:128px;width:656px;height:257px;',
 			height: 257,width: 656,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -576,6 +577,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				'-',
@@ -596,7 +599,6 @@
 					]
 				},
 				{
-					title:'Услуги',
 					items:
 					[
 		{
@@ -896,6 +898,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				'-',
@@ -914,7 +918,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -958,9 +961,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:39px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:39px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1132,9 +1135,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:82px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:82px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1252,32 +1255,6 @@
 			style: 'position:absolute;left:542px;top:410px;width:122px;height:17px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:460px;width:672px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:584px;top:33px;width:80px;height:19px;',
@@ -1340,6 +1317,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:460px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

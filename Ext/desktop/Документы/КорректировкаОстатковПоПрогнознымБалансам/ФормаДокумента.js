@@ -175,6 +175,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:143px;width:514px;height:25px;',
+			width: 514,
+			height: 25,
 			items:
 			[
 				{
@@ -317,6 +319,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:530px;height:25px;',
+			width: 530,
+			height: 25,
 			items:
 			[
 				{
@@ -399,14 +403,14 @@
 			style: 'position:absolute;left:8px;top:417px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Новые остатки по счетам бюджетирования',
-			style: 'position:absolute;left:8px;top:127px;width:514px;height:16px;',
+			xtype: 'label',
+			text: 'Новые остатки по счетам бюджетирования',
+			style: 'position:absolute;left:8px;top:127px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ корректировки остатков',
-			style: 'position:absolute;left:8px;top:81px;width:514px;height:16px;',
+			xtype: 'label',
+			text: 'Способ корректировки остатков',
+			style: 'position:absolute;left:8px;top:81px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -431,6 +435,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:468px;width:530px;height:25px;',
+			width: 530,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

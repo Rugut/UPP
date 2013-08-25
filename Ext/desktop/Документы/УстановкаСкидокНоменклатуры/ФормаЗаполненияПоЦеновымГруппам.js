@@ -48,6 +48,8 @@
 			value: 0,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:102px;top:32px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -63,6 +65,8 @@
 			value: 0,
 			name: 'ОграничениеСкидкиНаценки',
 			style: 'position:absolute;left:289px;top:32px;width:55px;height:19px;',
+			width: 55,
+			height: 19,
 		},
 		{
 			xtype: 'label',

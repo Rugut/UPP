@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:668px;height:25px;',
+			width: 668,
+			height: 25,
 			items:
 			[
 				{
@@ -61,32 +63,6 @@
 					text:'Показать/скрыть счета учета',
 				},
 				'-',
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:496px;width:668px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -237,13 +213,12 @@
 			style: 'position:absolute;left:84px;top:469px;width:576px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:652px;height:264px;',
 			height: 264,width: 652,
 			items:
 			[
 				{
-					title:'Услуги',
 					items:
 					[
 		{
@@ -534,6 +509,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			width: 638,
+			height: 24,
 			items:
 			[
 				{
@@ -554,12 +531,13 @@
 					]
 				},
 				{
-					title:'Материалы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			width: 638,
+			height: 24,
 			items:
 			[
 				{
@@ -760,7 +738,6 @@
 					]
 				},
 				{
-					title:'Распределение материалов',
 					items:
 					[
 		{
@@ -940,6 +917,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			width: 638,
+			height: 24,
 			items:
 			[
 				'-',
@@ -948,7 +927,6 @@
 					]
 				},
 				{
-					title:'Прочие затраты',
 					items:
 					[
 		{
@@ -1059,6 +1037,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			width: 638,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1071,7 +1051,6 @@
 					]
 				},
 				{
-					title:'Распределение прочих затрат',
 					items:
 					[
 		{
@@ -1083,6 +1062,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			width: 638,
+			height: 24,
 			items:
 			[
 				{
@@ -1234,7 +1215,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1278,14 +1258,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:638px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:638px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:93px;width:638px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:93px;width:638px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1388,9 +1368,9 @@
 			style: 'position:absolute;left:108px;top:70px;width:536px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:200px;width:638px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:200px;width:638px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1489,9 +1469,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:134px;width:313px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:134px;width:313px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1554,14 +1534,13 @@
 			style: 'position:absolute;left:415px;top:179px;width:229px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:331px;top:134px;width:313px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:331px;top:134px;width:313px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Предоплата',
 					items:
 					[
 		{
@@ -1654,6 +1633,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:638px;height:24px;',
+			width: 638,
+			height: 24,
 			items:
 			[
 				{
@@ -1968,6 +1949,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:496px;width:668px;height:25px;',
+			width: 668,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

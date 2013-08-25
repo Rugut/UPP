@@ -97,6 +97,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			items:
 			[
 				{
@@ -134,18 +136,19 @@
 			style: 'position:absolute;left:94px;top:368px;width:634px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:86px;width:720px;height:253px;',
 			height: 253,width: 720,
 			items:
 			[
 				{
-					title:'I. Доходы и расходы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:698px;height:24px;',
+			width: 698,
+			height: 24,
 			items:
 			[
 			]
@@ -285,7 +288,6 @@
 					]
 				},
 				{
-					title:'II. Расчет расходов на приобретение ОС',
 					items:
 					[
 		{
@@ -459,6 +461,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:706px;height:24px;',
+			width: 706,
+			height: 24,
 			items:
 			[
 			]
@@ -466,7 +470,6 @@
 					]
 				},
 				{
-					title:'II. Расчет расходов на приобретение НМА',
 					items:
 					[
 		{
@@ -631,6 +634,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:706px;height:24px;',
+			width: 706,
+			height: 24,
 			items:
 			[
 			]
@@ -691,6 +696,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:395px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

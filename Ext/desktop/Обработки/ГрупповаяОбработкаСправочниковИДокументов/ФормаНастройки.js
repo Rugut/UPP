@@ -42,6 +42,8 @@
 			value: 0,
 			name: 'ОграничениеНаСтрокиНеограниченнойДлины',
 			style: 'position:absolute;left:258px;top:111px;width:50px;height:19px;',
+			width: 50,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -68,6 +70,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:138px;width:316px;height:25px;',
+			width: 316,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

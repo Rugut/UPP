@@ -40,6 +40,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:804px;height:25px;',
+			width: 804,
+			height: 25,
 			items:
 			[
 				{
@@ -47,32 +49,6 @@
 				},
 				{
 					text:'Отправить по эл. почте',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:557px;width:804px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -88,14 +64,13 @@
 			style: 'position:absolute;left:215px;top:32px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:461px;top:55px;width:337px;height:85px;',
 			height: 85,width: 337,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница корректировочный исправленный',
 					items:
 					[
 		{
@@ -138,6 +113,8 @@
 			value: 0,
 			name: 'НомерИсправленияИсходногоДокумента',
 			style: 'position:absolute;left:133px;top:66px;width:91px;height:19px;',
+			width: 91,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -208,7 +185,6 @@
 					]
 				},
 				{
-					title:'Страница корректировочный',
 					items:
 					[
 		{
@@ -240,7 +216,6 @@
 					]
 				},
 				{
-					title:'Страница обычный',
 					items:
 					[
 		{
@@ -291,7 +266,6 @@
 					]
 				},
 				{
-					title:'Страница исправленный',
 					items:
 					[
 		{
@@ -370,14 +344,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:461px;top:32px;width:337px;height:19px;',
 			height: 19,width: 337,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -393,20 +366,21 @@
 			value: 0,
 			name: 'НомерИсправления',
 			style: 'position:absolute;left:132px;top:0px;width:91px;height:19px;',
+			width: 91,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:55px;width:433px;height:85px;',
 			height: 85,width: 433,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -593,30 +567,28 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:149px;width:790px;height:401px;',
 			height: 401,width: 790,
 			items:
 			[
 				{
-					title:'Основное',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:776px;height:241px;',
 			height: 241,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'На реализацию',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ДокументыОснования',
@@ -739,13 +711,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:129px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:129px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
+			width: 776,
+			height: 24,
 			items:
 			[
 			]
@@ -753,6 +727,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:149px;width:776px;height:24px;',
+			width: 776,
+			height: 24,
 			items:
 			[
 			]
@@ -765,13 +741,12 @@
 					]
 				},
 				{
-					title:'На аванс',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -783,9 +758,9 @@
 			style: 'position:absolute;left:0px;top:20px;width:494px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты счета-фактуры на аванс',
-			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты счета-фактуры на аванс',
+			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Авансы',
@@ -884,9 +859,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:192px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:192px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -923,6 +898,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
+			width: 776,
+			height: 24,
 			items:
 			[
 			]
@@ -930,13 +907,12 @@
 					]
 				},
 				{
-					title:'На суммовую разницу',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -948,9 +924,9 @@
 			style: 'position:absolute;left:0px;top:20px;width:494px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:98px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:98px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1042,6 +1018,8 @@
 			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:79px;top:44px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1057,17 +1035,18 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:79px;top:74px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Налоговый агент',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1079,9 +1058,9 @@
 			style: 'position:absolute;left:0px;top:20px;width:494px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты счета-фактуры налогового агента',
-			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты счета-фактуры налогового агента',
+			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'НалоговыйАгент',
@@ -1180,9 +1159,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:194px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Платежно-расчетный документ',
+			style: 'position:absolute;left:0px;top:194px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1219,6 +1198,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
+			width: 776,
+			height: 24,
 			items:
 			[
 				{
@@ -1229,13 +1210,12 @@
 					]
 				},
 				{
-					title:'Корректировочный',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ДокументыОснованияКорректировка',
@@ -1300,6 +1280,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
+			width: 776,
+			height: 24,
 			items:
 			[
 			]
@@ -1314,14 +1296,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:351px;width:776px;height:24px;',
 			height: 24,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница всего',
 					items:
 					[
 		{
@@ -1344,6 +1325,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:40px;top:0px;width:108px;height:19px;',
+			width: 108,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1359,11 +1342,12 @@
 			value: 0,
 			name: 'СуммаНДСДокумента',
 			style: 'position:absolute;left:328px;top:0px;width:108px;height:19px;',
+			width: 108,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница увеличение/уменьшение',
 					items:
 					[
 		{
@@ -1380,6 +1364,8 @@
 			value: 0,
 			name: 'СуммаУвеличение',
 			style: 'position:absolute;left:72px;top:0px;width:95px;height:19px;',
+			width: 95,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1395,6 +1381,8 @@
 			value: 0,
 			name: 'СуммаУменьшение',
 			style: 'position:absolute;left:475px;top:0px;width:95px;height:19px;',
+			width: 95,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1422,6 +1410,8 @@
 			value: 0,
 			name: 'СуммаНДСУменьшение',
 			style: 'position:absolute;left:694px;top:0px;width:69px;height:19px;',
+			width: 69,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1437,20 +1427,21 @@
 			value: 0,
 			name: 'СуммаНДСУвеличение',
 			style: 'position:absolute;left:291px;top:0px;width:69px;height:19px;',
+			width: 69,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:252px;width:776px;height:92px;',
 			height: 92,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1490,9 +1481,9 @@
 			style: 'position:absolute;left:201px;top:21px;width:108px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выставление счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:775px;height:16px;',
+			xtype: 'label',
+			text: 'Выставление счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:775px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1523,7 +1514,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1681,6 +1671,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:557px;width:804px;height:25px;',
+			width: 804,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

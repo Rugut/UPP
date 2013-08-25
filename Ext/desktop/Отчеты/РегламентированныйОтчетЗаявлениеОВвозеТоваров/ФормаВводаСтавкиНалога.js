@@ -17,9 +17,9 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'НДС',
-			style: 'position:absolute;left:8px;top:10px;width:286px;height:16px;',
+			xtype: 'label',
+			text: 'НДС',
+			style: 'position:absolute;left:8px;top:10px;width:286px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -29,11 +29,13 @@
 			value: 0,
 			name: 'СтавкаНДС',
 			style: 'position:absolute;left:160px;top:45px;width:127px;height:19px;',
+			width: 127,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Акциз',
-			style: 'position:absolute;left:8px;top:105px;width:286px;height:16px;',
+			xtype: 'label',
+			text: 'Акциз',
+			style: 'position:absolute;left:8px;top:105px;width:286px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -43,6 +45,8 @@
 			value: 0,
 			name: 'СтавкаАкциз',
 			style: 'position:absolute;left:160px;top:211px;width:127px;height:19px;',
+			width: 127,
+			height: 19,
 		},
 		{
 			xtype: 'fieldset',
@@ -124,6 +128,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:305px;width:304px;height:25px;',
+			width: 304,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

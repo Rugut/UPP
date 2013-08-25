@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:416px;height:220px;',
 			height: 220,width: 416,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -103,9 +102,9 @@
 			style: 'position:absolute;left:266px;top:141px;width:142px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выводить данные',
-			style: 'position:absolute;left:260px;top:100px;width:148px;height:16px;',
+			xtype: 'label',
+			text: 'Выводить данные',
+			style: 'position:absolute;left:260px;top:100px;width:148px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -113,9 +112,9 @@
 			style: 'position:absolute;left:266px;top:76px;width:142px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показывать обороты',
-			style: 'position:absolute;left:260px;top:56px;width:148px;height:16px;',
+			xtype: 'label',
+			text: 'Показывать обороты',
+			style: 'position:absolute;left:260px;top:56px;width:148px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Субконто',
@@ -180,19 +179,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:72px;width:242px;height:24px;',
+			width: 242,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Виды субконто',
-			style: 'position:absolute;left:8px;top:56px;width:240px;height:16px;',
+			xtype: 'label',
+			text: 'Виды субконто',
+			style: 'position:absolute;left:8px;top:56px;width:240px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -294,6 +294,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:402px;height:24px;',
+			width: 402,
+			height: 24,
 			items:
 			[
 			]
@@ -301,7 +303,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -430,6 +431,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:24px;width:182px;height:24px;',
+			width: 182,
+			height: 24,
 			items:
 			[
 				{
@@ -467,6 +470,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:236px;width:432px;height:25px;',
+			width: 432,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

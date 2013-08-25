@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -112,13 +114,12 @@
 			style: 'position:absolute;left:510px;top:32px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:131px;width:638px;height:195px;',
 			height: 195,width: 638,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -319,6 +320,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:624px;height:24px;',
+			width: 624,
+			height: 24,
 			items:
 			[
 				{
@@ -334,7 +337,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -417,14 +419,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:624px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:624px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:55px;width:624px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:55px;width:624px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -645,10 +647,14 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:537px;top:330px;width:103px;height:17px;',
+			width: 103,
+			height: 17,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:378px;width:654px;height:25px;',
+			width: 654,
+			height: 25,
 			items:
 			[
 				{

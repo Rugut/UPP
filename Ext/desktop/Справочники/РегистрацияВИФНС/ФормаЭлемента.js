@@ -43,6 +43,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:480px;height:25px;',
+			width: 480,
+			height: 25,
 			items:
 			[
 				{
@@ -92,14 +94,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:218px;top:60px;width:198px;height:19px;',
 			height: 19,width: 198,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -131,9 +132,9 @@
 			style: 'position:absolute;left:14px;top:187px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Наименование налогового органа',
-			style: 'position:absolute;left:8px;top:86px;width:464px;height:16px;',
+			xtype: 'label',
+			text: 'Наименование налогового органа',
+			style: 'position:absolute;left:8px;top:86px;width:464px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -148,19 +149,18 @@
 			style: 'position:absolute;left:14px;top:109px;width:125px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения о представителе',
-			style: 'position:absolute;left:8px;top:164px;width:464px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения о представителе',
+			style: 'position:absolute;left:8px;top:164px;width:464px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:14px;top:210px;width:458px;height:115px;',
 			height: 115,width: 458,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -192,14 +192,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:128px;height:27px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:28px;width:458px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:28px;width:458px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -218,9 +217,9 @@
 			style: 'position:absolute;left:130px;top:9px;width:328px;height:106px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:2px;width:458px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:2px;width:458px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -333,6 +332,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:357px;width:480px;height:25px;',
+			width: 480,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

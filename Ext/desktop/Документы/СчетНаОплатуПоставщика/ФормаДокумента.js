@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			items:
 			[
 				{
@@ -92,13 +94,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:156px;width:642px;height:197px;',
 			height: 197,width: 642,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -326,6 +327,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			width: 628,
+			height: 24,
 			items:
 			[
 				{
@@ -350,12 +353,13 @@
 					]
 				},
 				{
-					title:'Оборудование',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			width: 628,
+			height: 24,
 			items:
 			[
 				'-',
@@ -535,7 +539,6 @@
 					]
 				},
 				{
-					title:'Услуги',
 					items:
 					[
 		{
@@ -670,6 +673,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			width: 628,
+			height: 24,
 			items:
 			[
 				'-',
@@ -681,12 +686,13 @@
 					]
 				},
 				{
-					title:'Возвратная тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:628px;height:24px;',
+			width: 628,
+			height: 24,
 			items:
 			[
 				'-',
@@ -812,7 +818,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -894,14 +899,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:54px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:54px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -911,6 +916,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:98px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1224,6 +1231,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:547px;top:355px;width:103px;height:17px;',
+			width: 103,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -1239,6 +1248,8 @@
 			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:547px;top:377px;width:103px;height:17px;',
+			width: 103,
+			height: 17,
 		},
 		{
 			xtype: 'textfield',
@@ -1290,8 +1301,21 @@
 			style: 'position:absolute;left:8px;top:105px;width:80px;height:19px;text-align:left;',
 		},
 		{
+			xtype: 'label',
+			name: 'ИнфНадписьИтоговоеОтклонениеОтПлановойСебестоимости',
+			text: 'Отклонение от плановой себестоимости',
+			style: 'position:absolute;left:8px;top:377px;width:454px;height:17px;text-align:left;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:430px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -1315,16 +1339,6 @@
 				},
 			]
 		},
-		{
-			xtype: 'label',
-			name: 'ИнфНадписьИтоговоеОтклонениеОтПлановойСебестоимости',
-			text: 'Отклонение от плановой себестоимости',
-			style: 'position:absolute;left:8px;top:377px;width:454px;height:17px;text-align:left;',
-		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

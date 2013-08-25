@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:653px;height:25px;',
+			width: 653,
+			height: 25,
 			items:
 			[
 				{
@@ -168,19 +170,20 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:637px;height:25px;',
 			height: 25,width: 637,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:637px;height:25px;',
+			width: 637,
+			height: 25,
 			items:
 			[
 				{
@@ -223,6 +226,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:346px;width:653px;height:25px;',
+			width: 653,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

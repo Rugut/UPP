@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
 			items:
 			[
 				{
@@ -141,13 +143,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:634px;height:225px;',
 			height: 225,width: 634,
 			items:
 			[
 				{
-					title:'Заполнение движений',
 					items:
 					[
 		{
@@ -156,14 +157,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:27px;width:620px;height:168px;',
 			height: 168,width: 620,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подсказка заполнение движений',
 					items:
 					[
 		{
@@ -174,7 +174,6 @@
 					]
 				},
 				{
-					title:'Таблица заполнение движений',
 					items:
 					[
 		{
@@ -258,6 +257,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:620px;height:24px;',
+			width: 620,
+			height: 24,
 			items:
 			[
 				'-',
@@ -279,17 +280,15 @@
 					]
 				},
 				{
-					title:'Регистры бухгалтерии',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			height: 189,width: 620,
 			items:
 			[
 				{
-					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -517,6 +516,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:606px;height:24px;',
+			width: 606,
+			height: 24,
 			items:
 			[
 				'-',
@@ -545,7 +546,6 @@
 					]
 				},
 				{
-					title:'Налоговый учет',
 					items:
 					[
 		{
@@ -755,6 +755,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:606px;height:24px;',
+			width: 606,
+			height: 24,
 			items:
 			[
 				'-',
@@ -779,7 +781,6 @@
 					]
 				},
 				{
-					title:'Международный учет',
 					items:
 					[
 		{
@@ -998,6 +999,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:606px;height:24px;',
+			width: 606,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1022,7 +1025,6 @@
 					]
 				},
 				{
-					title:'Бюджетирование',
 					items:
 					[
 		{
@@ -1241,6 +1243,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:606px;height:24px;',
+			width: 606,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1265,7 +1269,6 @@
 					]
 				},
 				{
-					title:'Подсказка',
 					items:
 					[
 		{
@@ -1287,17 +1290,15 @@
 					]
 				},
 				{
-					title:'Регистры накопления',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			height: 189,width: 620,
 			items:
 			[
 				{
-					title:'Подсказка',
 					items:
 					[
 		{
@@ -1319,17 +1320,15 @@
 					]
 				},
 				{
-					title:'Регистры сведений',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			height: 189,width: 620,
 			items:
 			[
 				{
-					title:'Подсказка',
 					items:
 					[
 		{
@@ -1359,6 +1358,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:338px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

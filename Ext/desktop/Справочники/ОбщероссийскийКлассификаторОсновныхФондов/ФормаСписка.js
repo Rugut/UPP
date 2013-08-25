@@ -120,6 +120,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			width: 769,
+			height: 25,
 			items:
 			[
 				'-',

@@ -211,6 +211,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:655px;height:25px;',
+			width: 655,
+			height: 25,
 			items:
 			[
 				{
@@ -239,32 +241,6 @@
 				},
 				{
 					text:'Дт/кт',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:475px;width:655px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -370,18 +346,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:151px;width:639px;height:267px;',
 			height: 267,width: 639,
 			items:
 			[
 				{
-					title:'Основные средства',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:625px;height:24px;',
+			width: 625,
+			height: 24,
 			items:
 			[
 				{
@@ -824,7 +801,6 @@
 					]
 				},
 				{
-					title:'Вложения во внеоборотные активы',
 					items:
 					[
 		{
@@ -878,14 +854,13 @@
 			style: 'position:absolute;left:310px;top:6px;width:106px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:25px;width:625px;height:25px;',
 			height: 25,width: 625,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -902,6 +877,8 @@
 			value: 0,
 			name: 'Стоимость',
 			style: 'position:absolute;left:79px;top:6px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -914,14 +891,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:50px;width:625px;height:72px;',
 			height: 72,width: 625,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -983,6 +959,8 @@
 			value: 0,
 			name: 'СтоимостьБУ',
 			style: 'position:absolute;left:79px;top:53px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1004,6 +982,8 @@
 			value: 0,
 			name: 'СтоимостьБУХоз',
 			style: 'position:absolute;left:404px;top:53px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1012,23 +992,22 @@
 			style: 'position:absolute;left:529px;top:53px;width:60px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Бухгалтерский учет',
-			style: 'position:absolute;left:0px;top:8px;width:625px;height:16px;',
+			xtype: 'label',
+			text: 'Бухгалтерский учет',
+			style: 'position:absolute;left:0px;top:8px;width:625px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:122px;width:625px;height:119px;',
 			height: 119,width: 625,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'НУ',
 					items:
 					[
 		{
@@ -1090,6 +1069,8 @@
 			value: 0,
 			name: 'СтоимостьНУ',
 			style: 'position:absolute;left:79px;top:52px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1117,11 +1098,13 @@
 			value: 0,
 			name: 'СтоимостьНУХоз',
 			style: 'position:absolute;left:404px;top:52px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Налоговый учет (по налогу на прибыль)',
-			style: 'position:absolute;left:0px;top:7px;width:625px;height:16px;',
+			xtype: 'label',
+			text: 'Налоговый учет (по налогу на прибыль)',
+			style: 'position:absolute;left:0px;top:7px;width:625px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1137,6 +1120,8 @@
 			value: 0,
 			name: 'СтоимостьПР',
 			style: 'position:absolute;left:79px;top:76px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1164,6 +1149,8 @@
 			value: 0,
 			name: 'СтоимостьПРХоз',
 			style: 'position:absolute;left:404px;top:76px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1179,6 +1166,8 @@
 			value: 0,
 			name: 'СтоимостьВР',
 			style: 'position:absolute;left:79px;top:100px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1206,11 +1195,12 @@
 			value: 0,
 			name: 'СтоимостьВРХоз',
 			style: 'position:absolute;left:404px;top:100px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'УСН',
 					items:
 					[
 		{
@@ -1227,11 +1217,13 @@
 			value: 0,
 			name: 'СтоимостьУСН',
 			style: 'position:absolute;left:79px;top:26px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расходы УСН',
-			style: 'position:absolute;left:0px;top:6px;width:625px;height:17px;',
+			xtype: 'label',
+			text: 'Расходы УСН',
+			style: 'position:absolute;left:0px;top:6px;width:625px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Оплата',
@@ -1305,6 +1297,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:2px;top:47px;width:623px;height:24px;',
+			width: 623,
+			height: 24,
 			items:
 			[
 				{
@@ -1367,7 +1361,6 @@
 					]
 				},
 				{
-					title:'Амортизационная премия',
 					items:
 					[
 		{
@@ -1590,6 +1583,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:475px;width:655px;height:25px;',
+			width: 655,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

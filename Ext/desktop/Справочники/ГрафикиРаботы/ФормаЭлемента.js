@@ -1031,6 +1031,8 @@
 			value: 0,
 			name: 'НомерТекущегоГода',
 			style: 'position:absolute;left:742px;top:8px;width:63px;height:19px;',
+			width: 63,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1045,6 +1047,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:505px;width:813px;height:25px;',
+			width: 813,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

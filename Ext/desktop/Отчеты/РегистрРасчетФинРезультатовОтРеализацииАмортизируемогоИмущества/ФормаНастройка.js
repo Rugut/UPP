@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:8px;width:358px;height:288px;',
 			height: 288,width: 358,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -115,10 +114,8 @@
 					]
 				},
 				{
-					title:'Условия выбытия',
 				},
 				{
-					title:'Виды Доходов',
 				},
 			]
 		},
@@ -129,6 +126,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:303px;width:372px;height:25px;',
+			width: 372,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

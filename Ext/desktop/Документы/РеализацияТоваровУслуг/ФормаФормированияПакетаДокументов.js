@@ -110,6 +110,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровРеализации',
 			style: 'position:absolute;left:264px;top:48px;width:97px;height:19px;',
+			width: 97,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -125,6 +127,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровСчетаФактуры',
 			style: 'position:absolute;left:264px;top:247px;width:97px;height:19px;',
+			width: 97,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -155,6 +159,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровПКО',
 			style: 'position:absolute;left:264px;top:369px;width:97px;height:19px;',
+			width: 97,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -218,6 +224,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровРасходныйОрдерНаТовары',
 			style: 'position:absolute;left:264px;top:147px;width:97px;height:19px;',
+			width: 97,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -258,6 +266,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:476px;width:376px;height:25px;',
+			width: 376,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

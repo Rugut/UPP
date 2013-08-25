@@ -141,6 +141,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
+			width: 659,
+			height: 25,
 			items:
 			[
 				{
@@ -183,18 +185,19 @@
 			style: 'position:absolute;left:8px;top:33px;width:104px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:110px;width:643px;height:312px;',
 			height: 312,width: 643,
 			items:
 			[
 				{
-					title:'Проводки',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:629px;height:24px;',
+			width: 629,
+			height: 24,
 			items:
 			[
 				{
@@ -543,12 +546,13 @@
 					]
 				},
 				{
-					title:'Основные начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:629px;height:24px;',
+			width: 629,
+			height: 24,
 			items:
 			[
 				{
@@ -927,12 +931,13 @@
 					]
 				},
 				{
-					title:'Дополнительные начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:629px;height:24px;',
+			width: 629,
+			height: 24,
 			items:
 			[
 				{
@@ -1340,6 +1345,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:454px;width:659px;height:25px;',
+			width: 659,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

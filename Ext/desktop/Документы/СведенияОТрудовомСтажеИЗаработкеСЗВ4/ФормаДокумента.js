@@ -156,6 +156,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:262px;width:984px;height:24px;',
+			width: 984,
+			height: 24,
 			items:
 			[
 				{
@@ -368,14 +370,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Застрахованные лица',
-			style: 'position:absolute;left:8px;top:246px;width:984px;height:16px;',
+			xtype: 'label',
+			text: 'Застрахованные лица',
+			style: 'position:absolute;left:8px;top:246px;width:984px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -486,14 +490,13 @@
 			style: 'position:absolute;left:102px;top:57px;width:318px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:107px;width:984px;height:69px;',
 			height: 69,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница2010',
 					items:
 					[
 		{
@@ -606,7 +609,6 @@
 					]
 				},
 				{
-					title:'Страница описания',
 					items:
 					[
 		{
@@ -618,7 +620,6 @@
 					]
 				},
 				{
-					title:'Страница2009',
 					items:
 					[
 		{
@@ -757,14 +758,13 @@
 			style: 'position:absolute;left:553px;top:81px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:176px;width:984px;height:65px;',
 			height: 65,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -790,6 +790,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:495px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

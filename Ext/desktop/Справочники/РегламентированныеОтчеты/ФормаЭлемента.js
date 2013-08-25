@@ -100,19 +100,18 @@
 			style: 'position:absolute;left:94px;top:125px;width:368px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:67px;width:454px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:67px;width:454px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:199px;width:454px;height:300px;',
 			height: 300,width: 454,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -129,23 +128,22 @@
 			style: 'position:absolute;left:0px;top:12px;width:84px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:0px;width:454px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:0px;width:454px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:454px;height:41px;',
 			height: 41,width: 454,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -187,6 +185,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:509px;width:470px;height:25px;',
+			width: 470,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

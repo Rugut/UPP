@@ -22,25 +22,24 @@
 			style: 'position:absolute;left:14px;top:33px;width:397px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общие',
-			style: 'position:absolute;left:8px;top:8px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Общие',
+			style: 'position:absolute;left:8px;top:8px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:216px;width:452px;height:37px;',
 			height: 37,width: 452,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительные возможности',
-			style: 'position:absolute;left:0px;top:0px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительные возможности',
+			style: 'position:absolute;left:0px;top:0px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -63,14 +62,13 @@
 			style: 'position:absolute;left:14px;top:56px;width:379px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:154px;width:452px;height:31px;',
 			height: 31,width: 452,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -97,14 +95,13 @@
 			style: 'position:absolute;left:14px;top:79px;width:358px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:30px;top:96px;width:430px;height:50px;',
 			height: 50,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -157,14 +154,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:185px;width:452px;height:31px;',
 			height: 31,width: 452,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -192,6 +188,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:448px;width:468px;height:25px;',
+			width: 468,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

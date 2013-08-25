@@ -225,6 +225,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:182px;width:646px;height:24px;',
+			width: 646,
+			height: 24,
 			items:
 			[
 				{
@@ -304,6 +306,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
+			width: 662,
+			height: 25,
 			items:
 			[
 				{
@@ -325,32 +329,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:384px;width:662px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -382,9 +360,9 @@
 			style: 'position:absolute;left:422px;top:79px;width:140px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные средства',
-			style: 'position:absolute;left:8px;top:166px;width:646px;height:16px;',
+			xtype: 'label',
+			text: 'Основные средства',
+			style: 'position:absolute;left:8px;top:166px;width:646px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -434,6 +412,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:384px;width:662px;height:25px;',
+			width: 662,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

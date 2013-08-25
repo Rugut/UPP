@@ -74,14 +74,13 @@
 			style: 'position:absolute;left:150px;top:112px;width:258px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:32px;width:400px;height:24px;',
 			height: 24,width: 400,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -134,6 +133,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:139px;width:416px;height:25px;',
+			width: 416,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

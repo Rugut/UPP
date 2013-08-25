@@ -64,18 +64,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
+			width: 582,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:566px;height:312px;',
 			height: 312,width: 566,
 			items:
 			[
 				{
-					title:'Подключение',
 					items:
 					[
 		{
@@ -122,6 +123,8 @@
 			value: 0,
 			name: 'ПортSMTP',
 			style: 'position:absolute;left:492px;top:26px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -137,6 +140,8 @@
 			value: 0,
 			name: 'ПортPOP3',
 			style: 'position:absolute;left:492px;top:120px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -169,14 +174,14 @@
 			style: 'position:absolute;left:354px;top:144px;width:204px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отправка почты',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Отправка почты',
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Получение почты',
-			style: 'position:absolute;left:6px;top:99px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Получение почты',
+			style: 'position:absolute;left:6px;top:99px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -227,6 +232,8 @@
 			value: 0,
 			name: 'ВремяОжиданияСервера',
 			style: 'position:absolute;left:157px;top:178px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -243,7 +250,6 @@
 					]
 				},
 				{
-					title:'Письма',
 					items:
 					[
 		{
@@ -270,6 +276,8 @@
 			value: 0,
 			name: 'КоличествоДнейУдаленияПисемССервера',
 			style: 'position:absolute;left:212px;top:25px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -290,6 +298,8 @@
 			value: 0,
 			name: 'ИнтервалАвтоПолученияОтправкиСообщений',
 			style: 'position:absolute;left:63px;top:71px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -398,6 +408,8 @@
 			value: 0,
 			name: 'ИнтервалАвтоматическойУстановкиОтметкиРассмотрено',
 			style: 'position:absolute;left:212px;top:145px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -418,6 +430,8 @@
 			value: 0,
 			name: 'ИнтервалАвтосохраненияПисем',
 			style: 'position:absolute;left:212px;top:95px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -432,9 +446,9 @@
 			style: 'position:absolute;left:162px;top:95px;width:47px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Помечать письмо как "Рассмотрено":',
-			style: 'position:absolute;left:6px;top:124px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Помечать письмо как "Рассмотрено":',
+			style: 'position:absolute;left:6px;top:124px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -449,13 +463,12 @@
 					]
 				},
 				{
-					title:'Предметы',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Классификация писем по предметам',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Классификация писем по предметам',
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -483,9 +496,9 @@
 			style: 'position:absolute;left:18px;top:106px;width:488px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Классификация писем по объектам',
-			style: 'position:absolute;left:6px;top:130px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Классификация писем по объектам',
+			style: 'position:absolute;left:6px;top:130px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -495,7 +508,6 @@
 					]
 				},
 				{
-					title:'Доступ',
 					items:
 					[
 		{
@@ -593,6 +605,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:552px;height:24px;',
+			width: 552,
+			height: 24,
 			items:
 			[
 			]
@@ -600,7 +614,6 @@
 					]
 				},
 				{
-					title:'Подпись',
 					items:
 					[
 		{
@@ -616,7 +629,6 @@
 					]
 				},
 				{
-					title:'Группы писем',
 					items:
 					[
 		{
@@ -678,6 +690,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:26px;width:552px;height:24px;',
+			width: 552,
+			height: 24,
 			items:
 			[
 				{
@@ -710,7 +724,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -861,9 +874,9 @@
 			style: 'position:absolute;left:6px;top:175px;width:146px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Значения по умолчанию',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Значения по умолчанию',
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -941,7 +954,6 @@
 					]
 				},
 				{
-					title:'Фильтры',
 					items:
 					[
 		{
@@ -1030,6 +1042,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:552px;height:24px;',
+			width: 552,
+			height: 24,
 			items:
 			[
 				{
@@ -1057,7 +1071,6 @@
 					]
 				},
 				{
-					title:'Электронные документы',
 					items:
 					[
 		{
@@ -1126,6 +1139,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:582px;height:25px;',
+			width: 582,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -40,6 +40,8 @@
 			value: 0,
 			name: 'МаксимальноеКоличествоСтрокВТранзакции',
 			style: 'position:absolute;left:284px;top:112px;width:94px;height:19px;',
+			width: 94,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -55,6 +57,8 @@
 			value: 0,
 			name: 'МаксимальноеКоличествоДокументовВВыборке',
 			style: 'position:absolute;left:284px;top:135px;width:94px;height:19px;',
+			width: 94,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -95,6 +99,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:216px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

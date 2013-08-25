@@ -107,6 +107,8 @@
 			value: 0,
 			name: 'СуммаОперации',
 			style: 'position:absolute;left:98px;top:81px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -172,6 +174,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:634px;height:25px;',
+			width: 634,
+			height: 25,
 			items:
 			[
 				{
@@ -197,44 +201,19 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:634px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:132px;width:618px;height:261px;',
 			height: 261,width: 618,
 			items:
 			[
 				{
-					title:'Бухгалтерский учет',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:7px;width:604px;height:24px;',
+			width: 604,
+			height: 24,
 			items:
 			[
 				{
@@ -468,12 +447,13 @@
 					]
 				},
 				{
-					title:'Налоговый учет',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:604px;height:24px;',
+			width: 604,
+			height: 24,
 			items:
 			[
 				{
@@ -705,6 +685,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:634px;height:25px;',
+			width: 634,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

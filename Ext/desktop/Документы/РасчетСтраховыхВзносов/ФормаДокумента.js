@@ -203,6 +203,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:782px;height:25px;',
+			width: 782,
+			height: 25,
 			items:
 			[
 			]
@@ -223,18 +225,19 @@
 			style: 'position:absolute;left:96px;top:479px;width:678px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:131px;width:766px;height:341px;',
 			height: 341,width: 766,
 			items:
 			[
 				{
-					title:'Взносы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -455,7 +458,6 @@
 					]
 				},
 				{
-					title:'Осн. начисления',
 					items:
 					[
 		{
@@ -638,6 +640,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -677,7 +681,6 @@
 					]
 				},
 				{
-					title:'Доп. начисления',
 					items:
 					[
 		{
@@ -842,6 +845,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -881,7 +886,6 @@
 					]
 				},
 				{
-					title:'Необлагаемые суммы',
 					items:
 					[
 		{
@@ -965,6 +969,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -1008,7 +1014,6 @@
 					]
 				},
 				{
-					title:'Пособия по соц. страхованию',
 					items:
 					[
 		{
@@ -1263,6 +1268,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -1302,7 +1309,6 @@
 					]
 				},
 				{
-					title:'По уходу за ребенком до полутора лет',
 					items:
 					[
 		{
@@ -1512,6 +1518,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -1565,6 +1573,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:506px;width:782px;height:25px;',
+			width: 782,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

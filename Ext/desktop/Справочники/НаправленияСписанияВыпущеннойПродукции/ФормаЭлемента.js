@@ -64,6 +64,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:616px;height:25px;',
+			width: 616,
+			height: 25,
 			items:
 			[
 			]
@@ -71,6 +73,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:96px;width:600px;height:24px;',
+			width: 600,
+			height: 24,
 			items:
 			[
 			]
@@ -447,9 +451,9 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Направления',
-			style: 'position:absolute;left:8px;top:80px;width:600px;height:16px;',
+			xtype: 'label',
+			text: 'Направления',
+			style: 'position:absolute;left:8px;top:80px;width:600px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -458,6 +462,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:616px;height:25px;',
+			width: 616,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

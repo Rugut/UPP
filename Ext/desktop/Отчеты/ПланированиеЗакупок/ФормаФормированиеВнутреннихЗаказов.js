@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:624px;height:439px;',
 			height: 439,width: 624,
 			items:
 			[
 				{
-					title:'Потребности',
 					items:
 					[
 		{
@@ -107,6 +106,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
+			width: 610,
+			height: 24,
 			items:
 			[
 				{
@@ -124,7 +125,6 @@
 					]
 				},
 				{
-					title:'Внутренние заказы',
 					items:
 					[
 		{
@@ -190,6 +190,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:610px;height:24px;',
+			width: 610,
+			height: 24,
 			items:
 			[
 				{
@@ -229,6 +231,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:455px;width:640px;height:25px;',
+			width: 640,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

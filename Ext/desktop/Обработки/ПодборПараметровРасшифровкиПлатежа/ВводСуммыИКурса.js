@@ -23,14 +23,13 @@
 			style: 'position:absolute;left:8px;top:8px;width:244px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:32px;width:244px;height:73px;',
 			height: 73,width: 244,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПоСуммеВзаиморасчетов',
 					items:
 					[
 		{
@@ -53,6 +52,8 @@
 			value: 0,
 			name: 'СуммаПлатежа',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -62,6 +63,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -71,6 +74,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -81,7 +86,6 @@
 					]
 				},
 				{
-					title:'ПоСуммеПлатежа',
 					items:
 					[
 		{
@@ -104,6 +108,8 @@
 			value: 0,
 			name: 'СуммаПлатежа1',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -113,6 +119,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -122,6 +130,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -140,6 +150,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:113px;width:260px;height:25px;',
+			width: 260,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

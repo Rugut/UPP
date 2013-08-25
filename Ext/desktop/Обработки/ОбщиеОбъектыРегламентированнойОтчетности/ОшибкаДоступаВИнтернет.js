@@ -23,9 +23,9 @@
 			style: 'position:absolute;left:8px;top:8px;width:380px;height:29px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:46px;width:380px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:46px;width:380px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -34,9 +34,9 @@
 			style: 'position:absolute;left:8px;top:63px;width:380px;height:135px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры доступа в Интернет',
-			style: 'position:absolute;left:8px;top:213px;width:380px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры доступа в Интернет',
+			style: 'position:absolute;left:8px;top:213px;width:380px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -44,14 +44,13 @@
 			style: 'position:absolute;left:8px;top:241px;width:333px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:64px;top:299px;width:263px;height:47px;',
 			height: 47,width: 263,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -94,9 +93,9 @@
 			style: 'position:absolute;left:14px;top:256px;width:2px;height:104px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:16px;top:325px;width:20px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:16px;top:325px;width:20px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'fieldset',
@@ -104,14 +103,14 @@
 			style: 'position:absolute;left:35px;top:312px;width:2px;height:26px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:37px;top:312px;width:25px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:37px;top:312px;width:25px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:37px;top:337px;width:25px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:37px;top:337px;width:25px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -120,9 +119,9 @@
 			style: 'position:absolute;left:25px;top:257px;width:363px;height:29px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:16px;top:359px;width:365px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:16px;top:359px;width:365px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'fieldset',
@@ -130,19 +129,19 @@
 			style: 'position:absolute;left:380px;top:325px;width:2px;height:34px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:361px;top:325px;width:20px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:361px;top:325px;width:20px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:334px;top:312px;width:25px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:334px;top:312px;width:25px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:334px;top:337px;width:25px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:334px;top:337px;width:25px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'fieldset',
@@ -156,6 +155,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:396px;height:25px;',
+			width: 396,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

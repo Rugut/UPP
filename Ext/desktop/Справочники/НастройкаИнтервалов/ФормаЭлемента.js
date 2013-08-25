@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:76px;width:369px;height:24px;',
+			width: 369,
+			height: 24,
 			items:
 			[
 			]
@@ -115,18 +117,27 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:384px;height:25px;',
+			width: 384,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Границы интервала',
-			style: 'position:absolute;left:8px;top:60px;width:369px;height:16px;',
+			xtype: 'label',
+			text: 'Границы интервала',
+			style: 'position:absolute;left:8px;top:60px;width:369px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:348px;width:384px;height:25px;',
+			width: 384,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -146,10 +157,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

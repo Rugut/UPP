@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:675px;height:25px;',
+			width: 675,
+			height: 25,
 			items:
 			[
 			]
@@ -75,28 +77,6 @@
 			name: 'НадписьСчетФактура',
 			text: 'Счет-фактура:\r\n',
 			style: 'position:absolute;left:8px;top:104px;width:92px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:420px;width:675px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -318,13 +298,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:129px;width:659px;height:232px;',
 			height: 232,width: 659,
 			items:
 			[
 				{
-					title:'Реквизиты счета-фактуры',
 					items:
 					[
 		{
@@ -405,6 +384,8 @@
 			value: 0,
 			name: 'РазницаСНДСКУменьшению',
 			style: 'position:absolute;left:138px;top:128px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -420,6 +401,8 @@
 			value: 0,
 			name: 'РазницаНДСКУменьшению',
 			style: 'position:absolute;left:418px;top:128px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -523,6 +506,8 @@
 			value: 0,
 			name: 'РазницаСНДСКДоплате',
 			style: 'position:absolute;left:138px;top:152px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -538,6 +523,8 @@
 			value: 0,
 			name: 'РазницаНДСКДоплате',
 			style: 'position:absolute;left:418px;top:152px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -548,7 +535,6 @@
 					]
 				},
 				{
-					title:'Восстановление НДС',
 					items:
 					[
 		{
@@ -641,6 +627,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
+			width: 645,
+			height: 24,
 			items:
 			[
 			]
@@ -648,7 +636,6 @@
 					]
 				},
 				{
-					title:'Вычет НДС',
 					items:
 					[
 		{
@@ -750,6 +737,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:29px;width:645px;height:24px;',
+			width: 645,
+			height: 24,
 			items:
 			[
 			]
@@ -768,6 +757,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:420px;width:675px;height:25px;',
+			width: 675,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

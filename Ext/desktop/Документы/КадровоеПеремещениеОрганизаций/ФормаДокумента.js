@@ -111,6 +111,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:632px;height:25px;',
+			width: 632,
+			height: 25,
 			items:
 			[
 				{
@@ -176,16 +178,17 @@
 			value: 0,
 			name: 'КоэффициентИндексацииЗаработка',
 			style: 'position:absolute;left:248px;top:108px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:335px;top:33px;width:289px;height:94px;',
 			height: 94,width: 289,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -283,18 +286,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:131px;width:616px;height:278px;',
 			height: 278,width: 616,
 			items:
 			[
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:601px;height:24px;',
+			width: 601,
+			height: 24,
 			items:
 			[
 				{
@@ -511,6 +515,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:138px;top:145px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -575,7 +581,6 @@
 					]
 				},
 				{
-					title:'Начисления',
 					items:
 					[
 		{
@@ -947,6 +952,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:601px;height:24px;',
+			width: 601,
+			height: 24,
 			items:
 			[
 				{
@@ -982,6 +989,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:63px;top:145px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -1054,14 +1063,13 @@
 			style: 'position:absolute;left:30px;top:415px;width:381px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:411px;top:415px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1075,14 +1083,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:495px;top:415px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1102,6 +1109,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:268px;top:481px;width:364px;height:25px;',
+			width: 364,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[
@@ -1125,6 +1134,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:481px;width:268px;height:25px;',
+			width: 268,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

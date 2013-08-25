@@ -17,24 +17,22 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:9px;width:465px;height:519px;',
 			height: 519,width: 465,
 			items:
 			[
 				{
-					title:'Результаты проверки',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:450px;height:422px;',
 			height: 422,width: 450,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -138,14 +136,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:428px;width:450px;height:65px;',
 			height: 65,width: 450,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -156,9 +153,9 @@
 			style: 'position:absolute;left:0px;top:27px;width:450px;height:38px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Обобщенный результат',
-			style: 'position:absolute;left:0px;top:8px;width:450px;height:16px;',
+			xtype: 'label',
+			text: 'Обобщенный результат',
+			style: 'position:absolute;left:0px;top:8px;width:450px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -167,7 +164,6 @@
 					]
 				},
 				{
-					title:'Общие сведения',
 					items:
 					[
 		{
@@ -361,6 +357,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:536px;width:481px;height:25px;',
+			width: 481,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

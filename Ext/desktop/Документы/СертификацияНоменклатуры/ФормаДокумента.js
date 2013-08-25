@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:666px;height:25px;',
+			width: 666,
+			height: 25,
 			items:
 			[
 			]
@@ -436,13 +438,12 @@
 			style: 'position:absolute;left:563px;top:129px;width:95px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:156px;width:650px;height:158px;',
 			height: 158,width: 650,
 			items:
 			[
 				{
-					title:'Анализы',
 					items:
 					[
 		{
@@ -553,6 +554,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -566,7 +569,6 @@
 					]
 				},
 				{
-					title:'Сертификат',
 					items:
 					[
 		{
@@ -682,6 +684,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:666px;height:25px;',
+			width: 666,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

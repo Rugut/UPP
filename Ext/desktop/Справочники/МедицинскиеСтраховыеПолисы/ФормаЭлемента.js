@@ -339,6 +339,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
+			width: 460,
+			height: 25,
 			items:
 			[
 				'-',
@@ -407,9 +409,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения о застрахованном лице',
-			style: 'position:absolute;left:8px;top:235px;width:444px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения о застрахованном лице',
+			style: 'position:absolute;left:8px;top:235px;width:444px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -434,6 +436,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:490px;width:460px;height:25px;',
+			width: 460,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

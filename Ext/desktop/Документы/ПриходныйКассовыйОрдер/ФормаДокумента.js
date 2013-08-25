@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			items:
 			[
 			]
@@ -253,13 +255,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:363px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:363px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:435px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			items:
 			[
 				{
@@ -309,24 +313,22 @@
 			style: 'position:absolute;left:568px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:642px;height:277px;',
 			height: 277,width: 642,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:26px;width:628px;height:221px;',
 			height: 221,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПКО',
 					items:
 					[
 		{
@@ -363,14 +365,13 @@
 			style: 'position:absolute;left:511px;top:26px;width:36px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:24px;width:628px;height:197px;',
 			height: 197,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -580,6 +581,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:300px;height:24px;',
+			width: 300,
+			height: 24,
 			items:
 			[
 				{
@@ -594,9 +597,9 @@
 			style: 'position:absolute;left:314px;top:21px;width:307px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Расшифровка платежа',
+			style: 'position:absolute;left:0px;top:0px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -637,7 +640,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -736,6 +738,8 @@
 			value: 0,
 			name: 'СуммаДокументаРасчеты',
 			style: 'position:absolute;left:408px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -745,6 +749,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:82px;top:24px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -793,6 +799,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:82px;top:72px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -863,6 +871,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан',
 			style: 'position:absolute;left:408px;top:144px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -872,6 +882,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан',
 			style: 'position:absolute;left:408px;top:168px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1031,7 +1043,6 @@
 					]
 				},
 				{
-					title:'Возврат подотчетника',
 					items:
 					[
 		{
@@ -1080,9 +1091,9 @@
 			style: 'position:absolute;left:0px;top:6px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1122,6 +1133,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПодотчетник',
 			style: 'position:absolute;left:547px;top:26px;width:81px;height:19px;',
+			width: 81,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1131,6 +1144,8 @@
 			value: 0,
 			name: 'СуммаДокументаПодотчетник',
 			style: 'position:absolute;left:408px;top:50px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1189,7 +1204,6 @@
 					]
 				},
 				{
-					title:'Прием розничной выручки',
 					items:
 					[
 		{
@@ -1428,17 +1442,18 @@
 			value: 0,
 			name: 'СуммаНДСРозница',
 			style: 'position:absolute;left:212px;top:31px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Прочие поступления',
-			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Прочие поступления',
+			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1710,7 +1725,6 @@
 					]
 				},
 				{
-					title:'Получение наличности в банке',
 					items:
 					[
 		{
@@ -1857,6 +1871,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:88px;top:6px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1883,7 +1899,6 @@
 					]
 				},
 				{
-					title:'Печать',
 					items:
 					[
 		{

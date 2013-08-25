@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:358px;height:312px;',
 			height: 312,width: 358,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -178,6 +177,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:102px;width:344px;height:24px;',
+			width: 344,
+			height: 24,
 			items:
 			[
 				{
@@ -195,9 +196,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели',
-			style: 'position:absolute;left:6px;top:86px;width:344px;height:16px;',
+			xtype: 'label',
+			text: 'Показатели',
+			style: 'position:absolute;left:6px;top:86px;width:344px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'combobox',
@@ -214,12 +215,13 @@
 					]
 				},
 				{
-					title:'Виды расходов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:326px;top:6px;width:24px;height:280px;',
+			width: 24,
+			height: 280,
 			items:
 			[
 				{
@@ -241,6 +243,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:328px;width:374px;height:25px;',
+			width: 374,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

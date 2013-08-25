@@ -107,6 +107,8 @@
 			value: 0,
 			name: 'СуммаОперации',
 			style: 'position:absolute;left:98px;top:81px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -172,6 +174,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:108px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 				{
@@ -188,6 +192,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:653px;height:25px;',
+			width: 653,
+			height: 25,
 			items:
 			[
 				{
@@ -423,6 +429,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:653px;height:25px;',
+			width: 653,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -32,9 +32,9 @@
 			style: 'position:absolute;left:173px;top:8px;width:467px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Полученные файлы',
-			style: 'position:absolute;left:8px;top:35px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Полученные файлы',
+			style: 'position:absolute;left:8px;top:35px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Файлы',
@@ -94,6 +94,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:154px;width:648px;height:25px;',
+			width: 648,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

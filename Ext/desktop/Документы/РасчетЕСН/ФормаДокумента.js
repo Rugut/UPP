@@ -202,6 +202,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			width: 604,
+			height: 25,
 			items:
 			[
 			]
@@ -222,18 +224,19 @@
 			style: 'position:absolute;left:96px;top:380px;width:500px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:588px;height:267px;',
 			height: 267,width: 588,
 			items:
 			[
 				{
-					title:'Расчет ЕСН',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:574px;height:24px;',
+			width: 574,
+			height: 24,
 			items:
 			[
 				{
@@ -436,12 +439,13 @@
 					]
 				},
 				{
-					title:'Основные начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:574px;height:24px;',
+			width: 574,
+			height: 24,
 			items:
 			[
 				{
@@ -622,12 +626,13 @@
 					]
 				},
 				{
-					title:'Дополнительные начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:574px;height:24px;',
+			width: 574,
+			height: 24,
 			items:
 			[
 				{
@@ -803,12 +808,13 @@
 					]
 				},
 				{
-					title:'Пособия по социальному страхованию',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:574px;height:24px;',
+			width: 574,
+			height: 24,
 			items:
 			[
 				{
@@ -1043,12 +1049,13 @@
 					]
 				},
 				{
-					title:'Пособия по уходу за ребенком',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:574px;height:24px;',
+			width: 574,
+			height: 24,
 			items:
 			[
 				{
@@ -1246,6 +1253,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:407px;width:604px;height:25px;',
+			width: 604,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

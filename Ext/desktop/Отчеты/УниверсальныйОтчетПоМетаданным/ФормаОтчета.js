@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
+			width: 414,
+			height: 25,
 			items:
 			[
 				{
@@ -58,14 +60,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:678px;height:103px;',
 			height: 103,width: 678,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -225,19 +226,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:414px;top:0px;width:280px;height:25px;',
+			width: 280,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:427px;top:2px;width:258px;height:19px;',
 			height: 19,width: 258,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Интервал',
 					items:
 					[
 		{
@@ -289,7 +291,6 @@
 					]
 				},
 				{
-					title:'Период',
 					items:
 					[
 		{
@@ -306,7 +307,6 @@
 					]
 				},
 				{
-					title:'Пустой',
 				},
 			]
 		},

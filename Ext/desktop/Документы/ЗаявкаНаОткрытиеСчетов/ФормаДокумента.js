@@ -222,6 +222,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:244px;width:631px;height:24px;',
+			width: 631,
+			height: 24,
 			items:
 			[
 				{
@@ -640,6 +642,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:647px;height:25px;',
+			width: 647,
+			height: 25,
 			items:
 			[
 				{
@@ -686,14 +690,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники ',
-			style: 'position:absolute;left:8px;top:228px;width:631px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники ',
+			style: 'position:absolute;left:8px;top:228px;width:631px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Банк',
-			style: 'position:absolute;left:8px;top:81px;width:631px;height:16px;',
+			xtype: 'label',
+			text: 'Банк',
+			style: 'position:absolute;left:8px;top:81px;width:631px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -702,9 +706,9 @@
 			style: 'position:absolute;left:14px;top:102px;width:70px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения о вкладе',
-			style: 'position:absolute;left:8px;top:156px;width:298px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения о вкладе',
+			style: 'position:absolute;left:8px;top:156px;width:298px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -805,9 +809,9 @@
 			style: 'position:absolute;left:325px;top:33px;width:162px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительные сведения для банка',
-			style: 'position:absolute;left:325px;top:155px;width:314px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительные сведения для банка',
+			style: 'position:absolute;left:325px;top:155px;width:314px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -823,6 +827,8 @@
 			value: 0,
 			name: 'ДатаВыплатыЗаработнойПлаты',
 			style: 'position:absolute;left:504px;top:177px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 		],
 	}],
@@ -831,6 +837,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:647px;height:25px;',
+			width: 647,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

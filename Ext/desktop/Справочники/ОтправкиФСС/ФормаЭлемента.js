@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:352px;height:25px;',
+			width: 352,
+			height: 25,
 			items:
 			[
 				{
@@ -57,19 +59,19 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Субъекты переписки',
-			style: 'position:absolute;left:8px;top:55px;width:336px;height:16px;',
+			xtype: 'label',
+			text: 'Субъекты переписки',
+			style: 'position:absolute;left:8px;top:55px;width:336px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Предмет переписки',
-			style: 'position:absolute;left:8px;top:115px;width:336px;height:16px;',
+			xtype: 'label',
+			text: 'Предмет переписки',
+			style: 'position:absolute;left:8px;top:115px;width:336px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сообщения',
-			style: 'position:absolute;left:8px;top:220px;width:336px;height:16px;',
+			xtype: 'label',
+			text: 'Сообщения',
+			style: 'position:absolute;left:8px;top:220px;width:336px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -90,9 +92,9 @@
 			style: 'position:absolute;left:14px;top:180px;width:46px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Активность',
-			style: 'position:absolute;left:8px;top:156px;width:336px;height:16px;',
+			xtype: 'label',
+			text: 'Активность',
+			style: 'position:absolute;left:8px;top:156px;width:336px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -152,6 +154,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:283px;width:352px;height:25px;',
+			width: 352,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

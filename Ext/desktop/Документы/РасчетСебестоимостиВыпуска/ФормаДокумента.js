@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:363px;height:25px;',
+			width: 363,
+			height: 25,
 			items:
 			[
 			]
@@ -131,13 +133,12 @@
 			style: 'position:absolute;left:107px;top:58px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:173px;width:347px;height:233px;',
 			height: 233,width: 347,
 			items:
 			[
 				{
-					title:'Выполняемые действия',
 					items:
 					[
 		{
@@ -203,6 +204,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:333px;height:24px;',
+			width: 333,
+			height: 24,
 			items:
 			[
 				{
@@ -213,7 +216,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -263,9 +265,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Распределение продукции и затрат по переделам',
-			style: 'position:absolute;left:6px;top:31px;width:333px;height:16px;',
+			xtype: 'label',
+			text: 'Распределение продукции и затрат по переделам',
+			style: 'position:absolute;left:6px;top:31px;width:333px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -277,14 +279,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:83px;width:347px;height:19px;',
 			height: 19,width: 347,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Расширенная аналитика',
 					items:
 					[
 		{
@@ -306,7 +307,6 @@
 					]
 				},
 				{
-					title:'Основная',
 					items:
 					[
 		{
@@ -397,6 +397,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:439px;width:363px;height:25px;',
+			width: 363,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

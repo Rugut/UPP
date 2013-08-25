@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
+			width: 595,
+			height: 25,
 			items:
 			[
 				{
@@ -68,13 +70,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:579px;height:270px;',
 			height: 270,width: 579,
 			items:
 			[
 				{
-					title:'Адреса и телефоны',
 					items:
 					[
 		{
@@ -172,6 +173,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -254,7 +257,6 @@
 					]
 				},
 				{
-					title:'Контрагенты',
 					items:
 					[
 		{
@@ -352,6 +354,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 			]
@@ -359,7 +363,6 @@
 					]
 				},
 				{
-					title:'События',
 					items:
 					[
 		{
@@ -484,6 +487,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -617,18 +622,16 @@
 					]
 				},
 				{
-					title:'Дополнительная информация',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:238px;',
 			height: 238,width: 565,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -662,11 +665,13 @@
 			value: 0,
 			name: 'КоличествоДнейДоНапоминания',
 			style: 'position:absolute;left:376px;top:0px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочее',
-			style: 'position:absolute;left:0px;top:49px;width:565px;height:16px;',
+			xtype: 'label',
+			text: 'Прочее',
+			style: 'position:absolute;left:0px;top:49px;width:565px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -734,7 +739,6 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
@@ -814,6 +818,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 			]
@@ -821,7 +827,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -901,6 +906,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -961,6 +968,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:362px;width:595px;height:25px;',
+			width: 595,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -140,19 +140,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
+			width: 531,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:515px;height:152px;',
 			height: 152,width: 515,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Числовой диапазон',
 					items:
 					[
 		{
@@ -169,6 +170,8 @@
 			value: 0,
 			name: 'МинЗначение',
 			style: 'position:absolute;left:131px;top:6px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -184,6 +187,8 @@
 			value: 0,
 			name: 'МаксЗначение',
 			style: 'position:absolute;left:131px;top:31px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -233,12 +238,13 @@
 					]
 				},
 				{
-					title:'Вхождение в список',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:6px;width:515px;height:24px;',
+			width: 515,
+			height: 24,
 			items:
 			[
 			]
@@ -325,6 +331,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:295px;width:531px;height:25px;',
+			width: 531,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

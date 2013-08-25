@@ -17,36 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:302px;width:749px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			id: 'СписокРазделов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:166px;height:286px;',
@@ -107,14 +77,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:179px;top:8px;width:562px;height:286px;',
 			height: 286,width: 562,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Обмен данными',
 					items:
 					[
 		{
@@ -151,6 +120,8 @@
 			value: 0,
 			name: 'ПрефиксВнутреннегоШтрихкода',
 			style: 'position:absolute;left:268px;top:88px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -172,7 +143,6 @@
 					]
 				},
 				{
-					title:'Обмен ЮНИСКАН',
 					items:
 					[
 		{
@@ -234,6 +204,39 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:302px;width:749px;height:25px;',
+			width: 749,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

@@ -231,34 +231,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:431px;width:657px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -277,14 +253,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:641px;height:203px;',
 			height: 203,width: 641,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -346,6 +321,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:84px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -355,6 +332,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:84px;top:72px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -364,6 +343,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:421px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -581,6 +562,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан',
 			style: 'position:absolute;left:420px;top:144px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -596,6 +579,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан',
 			style: 'position:absolute;left:420px;top:168px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -753,7 +738,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -945,6 +929,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:294px;height:24px;',
+			width: 294,
+			height: 24,
 			items:
 			[
 				{
@@ -959,14 +945,13 @@
 			style: 'position:absolute;left:328px;top:21px;width:313px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:641px;height:16px;',
+			xtype: 'label',
+			text: 'Расшифровка платежа',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'ПлатежПрочие',
 					items:
 					[
 		{
@@ -1420,7 +1405,6 @@
 					]
 				},
 				{
-					title:'Перечисление ЗП',
 					items:
 					[
 		{
@@ -1529,13 +1513,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Зачислено по ведомостям на счета работников',
-			style: 'position:absolute;left:0px;top:0px;width:641px;height:16px;',
+			xtype: 'label',
+			text: 'Зачислено по ведомостям на счета работников',
+			style: 'position:absolute;left:0px;top:0px;width:641px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:641px;height:24px;',
+			width: 641,
+			height: 24,
 			items:
 			[
 				{
@@ -1570,7 +1556,6 @@
 					]
 				},
 				{
-					title:'Перевод на другой счет',
 					items:
 					[
 		{
@@ -1621,7 +1606,6 @@
 					]
 				},
 				{
-					title:'Выдача подотчетнику',
 					items:
 					[
 		{
@@ -1779,6 +1763,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПодотчетник',
 			style: 'position:absolute;left:226px;top:24px;width:78px;height:19px;',
+			width: 78,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1847,6 +1833,8 @@
 			value: 0,
 			name: 'СуммаДокументаПодотчетник',
 			style: 'position:absolute;left:424px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1895,6 +1883,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПланПодотчетник',
 			style: 'position:absolute;left:424px;top:73px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1904,6 +1894,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПланПодотчетник',
 			style: 'position:absolute;left:424px;top:97px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1935,6 +1927,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:92px;top:129px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2062,9 +2056,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:359px;width:641px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:359px;width:641px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -2133,6 +2127,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:431px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

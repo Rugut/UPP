@@ -443,5 +443,101 @@ namespace V82.Справочники//Менеджер
 			Объект.Ссылка = Guid.NewGuid();/*http://msdn.microsoft.com/ru-ru/library/aa379322(VS.85).aspx*/
 			return Объект;
 		}
+		
+		public static СправочникиВыборка.ФильтрыДляЭлектронныхПисем ИерархияВыбратьПоСсылке(Guid Родитель,int Режим,int Первые,Guid Мин,Guid Макс)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2239 [ОперацияУсловия]
+					,_Fld2240 [Порядок]
+					,_Fld2241 [Использование]
+					From _Reference191(NOLOCK)
+					Where _IDRRef between @Мин and @Макс 
+					AND _ParentIDRRef = @Родитель
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Родитель", Родитель);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.ФильтрыДляЭлектронныхПисем();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ФильтрыДляЭлектронныхПисем();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+								Ссылка.ОперацияУсловия = ((byte[])Читалка.GetValue(6))[0]==1;
+								Ссылка.Порядок = Читалка.GetDecimal(7);
+								Ссылка.Использование = ((byte[])Читалка.GetValue(8))[0]==1;
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.ФильтрыДляЭлектронныхПисем ИерархияСтраницаПоСсылке(Guid Родитель,int Режим,int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2239 [ОперацияУсловия]
+					,_Fld2240 [Порядок]
+					,_Fld2241 [Использование]
+					From _Reference191(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.ФильтрыДляЭлектронныхПисем();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.ФильтрыДляЭлектронныхПисем();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Код = Читалка.GetString(4);
+							Ссылка.Наименование = Читалка.GetString(5);
+								Ссылка.ОперацияУсловия = ((byte[])Читалка.GetValue(6))[0]==1;
+								Ссылка.Порядок = Читалка.GetDecimal(7);
+								Ссылка.Использование = ((byte[])Читалка.GetValue(8))[0]==1;
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
 	}
 }

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
 			items:
 			[
 				{
@@ -170,13 +172,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:99px;width:693px;height:267px;',
 			height: 267,width: 693,
 			items:
 			[
 				{
-					title:'Вычет НДС по приобретенным ценностям',
 					items:
 					[
 		{
@@ -359,6 +360,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -367,7 +370,6 @@
 					]
 				},
 				{
-					title:'Вычет НДС с полученных авансов',
 					items:
 					[
 		{
@@ -550,6 +552,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -558,7 +562,6 @@
 					]
 				},
 				{
-					title:'Вычет НДС с выданных авансов',
 					items:
 					[
 		{
@@ -696,6 +699,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				{
@@ -706,7 +711,6 @@
 					]
 				},
 				{
-					title:'Вычет НДС по налоговому агенту',
 					items:
 					[
 		{
@@ -898,6 +902,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -906,7 +912,6 @@
 					]
 				},
 				{
-					title:'Вычет НДС по уменьшению стоимости реализации',
 					items:
 					[
 		{
@@ -1035,6 +1040,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				{
@@ -1058,6 +1065,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

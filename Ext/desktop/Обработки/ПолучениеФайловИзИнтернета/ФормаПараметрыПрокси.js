@@ -80,6 +80,8 @@
 			value: 0,
 			name: 'ПортПроксиСервера',
 			style: 'position:absolute;left:93px;top:81px;width:183px;height:19px;',
+			width: 183,
+			height: 19,
 		},
 		],
 	}],
@@ -88,6 +90,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:129px;width:284px;height:25px;',
+			width: 284,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

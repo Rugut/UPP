@@ -41,14 +41,13 @@
 			style: 'position:absolute;left:91px;top:26px;width:268px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:44px;width:351px;height:51px;',
 			height: 51,width: 351,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница отсчета',
 					items:
 					[
 		{
@@ -60,7 +59,6 @@
 					]
 				},
 				{
-					title:'Страница результата',
 					items:
 					[
 		{

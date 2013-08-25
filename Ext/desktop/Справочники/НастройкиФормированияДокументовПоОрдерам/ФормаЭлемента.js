@@ -94,6 +94,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:561px;height:25px;',
+			width: 561,
+			height: 25,
 			items:
 			[
 				{
@@ -105,13 +107,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:545px;height:173px;',
 			height: 173,width: 545,
 			items:
 			[
 				{
-					title:'Отобрать ордера',
 					items:
 					[
 		{
@@ -715,6 +716,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:238px;height:24px;',
+			width: 238,
+			height: 24,
 			items:
 			[
 			]
@@ -722,7 +725,6 @@
 					]
 				},
 				{
-					title:'Создавать документы',
 					items:
 					[
 		{
@@ -788,7 +790,6 @@
 					]
 				},
 				{
-					title:'Расписание',
 					items:
 					[
 		{
@@ -816,6 +817,8 @@
 			value: 0,
 			name: 'Задержка',
 			style: 'position:absolute;left:278px;top:54px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -845,6 +848,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:292px;width:561px;height:25px;',
+			width: 561,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

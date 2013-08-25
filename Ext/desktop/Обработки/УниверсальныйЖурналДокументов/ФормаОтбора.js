@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:5px;top:5px;width:450px;height:266px;',
 			height: 266,width: 450,
 			items:
 			[
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -125,6 +124,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 			]
@@ -132,12 +133,13 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 			]
@@ -213,6 +215,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:277px;width:460px;height:25px;',
+			width: 460,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

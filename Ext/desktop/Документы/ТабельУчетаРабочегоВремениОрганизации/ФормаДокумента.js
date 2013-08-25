@@ -19,29 +19,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
+			width: 676,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:525px;width:726px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:502px;height:482px;',
 			height: 482,width: 502,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Основная Панель Документа',
 					items:
 					[
 		{
@@ -205,14 +196,13 @@
 			style: 'position:absolute;left:87px;top:463px;width:415px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:210px;width:502px;height:245px;',
 			height: 245,width: 502,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По дням',
 					items:
 					[
 		{
@@ -575,6 +565,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:502px;height:24px;',
+			width: 502,
+			height: 24,
 			items:
 			[
 				{
@@ -609,7 +601,6 @@
 					]
 				},
 				{
-					title:'В целом за период',
 					items:
 					[
 		{
@@ -846,6 +837,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:300px;height:24px;',
+			width: 300,
+			height: 24,
 			items:
 			[
 				{
@@ -860,6 +853,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:316px;top:0px;width:186px;height:24px;',
+			width: 186,
+			height: 24,
 			items:
 			[
 				{
@@ -886,19 +881,18 @@
 			style: 'position:absolute;left:396px;top:0px;width:106px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники организации',
-			style: 'position:absolute;left:0px;top:194px;width:502px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники организации',
+			style: 'position:absolute;left:0px;top:194px;width:502px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:60px;width:502px;height:128px;',
 			height: 128,width: 502,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -911,9 +905,9 @@
 			style: 'position:absolute;left:46px;top:8px;width:183px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ ввода времени',
-			style: 'position:absolute;left:255px;top:11px;width:236px;height:16px;',
+			xtype: 'label',
+			text: 'Способ ввода времени',
+			style: 'position:absolute;left:255px;top:11px;width:236px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -994,14 +988,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:516px;top:33px;width:202px;height:482px;',
 			height: 482,width: 202,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1017,6 +1010,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:676px;top:0px;width:50px;height:25px;',
+			width: 50,
+			height: 25,
 			items:
 			[
 				{
@@ -1031,6 +1026,19 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:525px;width:726px;height:25px;',
+			width: 726,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+			]
+		},
 	]
 	});
 });

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:731px;height:25px;',
+			width: 731,
+			height: 25,
 			items:
 			[
 				'-',
@@ -164,14 +166,13 @@
 			style: 'position:absolute;left:248px;top:32px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:56px;width:715px;height:122px;',
 			height: 122,width: 715,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -237,6 +238,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:19px;width:320px;height:24px;',
+			width: 320,
+			height: 24,
 			items:
 			[
 			]
@@ -340,19 +343,21 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:326px;top:19px;width:388px;height:24px;',
+			width: 388,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор',
-			style: 'position:absolute;left:326px;top:0px;width:388px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор',
+			style: 'position:absolute;left:326px;top:0px;width:388px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Виды субконто',
-			style: 'position:absolute;left:0px;top:0px;width:320px;height:16px;',
+			xtype: 'label',
+			text: 'Виды субконто',
+			style: 'position:absolute;left:0px;top:0px;width:320px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},

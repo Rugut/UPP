@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			items:
 			[
 				{
@@ -116,13 +118,12 @@
 			style: 'position:absolute;left:505px;top:33px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:153px;width:656px;height:227px;',
 			height: 227,width: 656,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -359,6 +360,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				'-',
@@ -375,7 +378,6 @@
 					]
 				},
 				{
-					title:'Услуги',
 					items:
 					[
 		{
@@ -771,6 +773,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				'-',
@@ -789,7 +793,6 @@
 					]
 				},
 				{
-					title:'Использованные материалы',
 					items:
 					[
 		{
@@ -1077,6 +1080,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				{
@@ -1090,7 +1095,6 @@
 					]
 				},
 				{
-					title:'Учет затрат',
 					items:
 					[
 		{
@@ -1279,7 +1283,6 @@
 					]
 				},
 				{
-					title:'Счета учета расчетов',
 					items:
 					[
 		{
@@ -1369,7 +1372,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1412,9 +1414,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:51px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:51px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1446,9 +1448,9 @@
 			style: 'position:absolute;left:94px;top:26px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1468,7 +1470,6 @@
 					]
 				},
 				{
-					title:'Предоплата',
 					items:
 					[
 		{
@@ -1567,6 +1568,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				{
@@ -1943,32 +1946,6 @@
 			style: 'position:absolute;left:546px;top:406px;width:100px;height:17px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:455px;width:672px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:580px;top:33px;width:83px;height:19px;',
@@ -2023,6 +2000,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:455px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

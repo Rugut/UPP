@@ -151,6 +151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:245px;width:592px;height:24px;',
+			width: 592,
+			height: 24,
 			items:
 			[
 				'-',
@@ -331,6 +333,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			width: 608,
+			height: 25,
 			items:
 			[
 				{
@@ -387,14 +391,14 @@
 			style: 'position:absolute;left:176px;top:33px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники организации',
-			style: 'position:absolute;left:8px;top:105px;width:592px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники организации',
+			style: 'position:absolute;left:8px;top:105px;width:592px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Распределение основного заработка',
-			style: 'position:absolute;left:8px;top:229px;width:592px;height:16px;',
+			xtype: 'label',
+			text: 'Распределение основного заработка',
+			style: 'position:absolute;left:8px;top:229px;width:592px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'РаботникиОрганизации',
@@ -468,6 +472,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:121px;width:592px;height:24px;',
+			width: 592,
+			height: 24,
 			items:
 			[
 				{
@@ -482,6 +488,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:450px;width:608px;height:25px;',
+			width: 608,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -70,6 +70,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:10px;top:8px;width:220px;height:24px;',
+			width: 220,
+			height: 24,
 			items:
 			[
 				{
@@ -87,6 +89,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:269px;width:238px;height:25px;',
+			width: 238,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

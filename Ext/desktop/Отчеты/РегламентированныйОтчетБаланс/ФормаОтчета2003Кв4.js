@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			items:
 			[
 				{
@@ -43,6 +45,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:462px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			items:
 			[
 				{
@@ -57,14 +61,13 @@
 			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:700px;height:52px;',
 			height: 52,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -81,6 +84,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -107,20 +112,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:301px;top:24px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:124px;width:700px;height:304px;',
 			height: 304,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -137,6 +143,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиБаланс',
 			style: 'position:absolute;left:226px;top:261px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -170,14 +178,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:432px;width:700px;height:22px;',
 			height: 22,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -238,25 +245,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:700px;height:37px;',
 			height: 37,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:2px;top:0px;width:698px;height:35px;',
 			height: 35,width: 698,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]

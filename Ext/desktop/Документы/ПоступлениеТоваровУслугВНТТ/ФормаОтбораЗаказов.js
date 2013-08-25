@@ -71,6 +71,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:227px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			items:
 			[
 				{
@@ -111,13 +113,15 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Заказы',
-			style: 'position:absolute;left:8px;top:212px;width:644px;height:16px;',
+			xtype: 'label',
+			text: 'Заказы',
+			style: 'position:absolute;left:8px;top:212px;width:644px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:390px;width:660px;height:25px;',
+			width: 660,
+			height: 25,
 			items:
 			[
 				{
@@ -138,13 +142,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:92px;width:644px;height:280px;',
 			height: 280,width: 644,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -318,6 +321,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			width: 630,
+			height: 24,
 			items:
 			[
 				{
@@ -331,7 +336,6 @@
 					]
 				},
 				{
-					title:'Тара',
 					items:
 					[
 		{
@@ -496,6 +500,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			width: 630,
+			height: 24,
 			items:
 			[
 				{
@@ -509,12 +515,13 @@
 					]
 				},
 				{
-					title:'Услуги',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:630px;height:24px;',
+			width: 630,
+			height: 24,
 			items:
 			[
 				{
@@ -671,9 +678,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Заполнение табличных частей',
-			style: 'position:absolute;left:8px;top:14px;width:644px;height:16px;',
+			xtype: 'label',
+			text: 'Заполнение табличных частей',
+			style: 'position:absolute;left:8px;top:14px;width:644px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -970,13 +977,12 @@
 			style: 'position:absolute;left:311px;top:36px;width:104px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:41px;width:644px;height:167px;',
 			height: 167,width: 644,
 			items:
 			[
 				{
-					title:'Настройки',
 					items:
 					[
 		{
@@ -1040,6 +1046,8 @@
 			value: 0,
 			name: 'ПолеПросроченоДнейОтгрузки',
 			style: 'position:absolute;left:318px;top:64px;width:42px;height:19px;',
+			width: 42,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -1055,6 +1063,8 @@
 			value: 0,
 			name: 'ПолеПросроченоДнейОплаты',
 			style: 'position:absolute;left:318px;top:120px;width:42px;height:19px;',
+			width: 42,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -1088,7 +1098,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -1190,6 +1199,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
+			width: 281,
+			height: 24,
 			items:
 			[
 			]
@@ -1210,6 +1221,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:390px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

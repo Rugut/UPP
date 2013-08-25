@@ -32,14 +32,14 @@
 			style: 'position:absolute;left:8px;top:66px;width:384px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка страниц',
-			style: 'position:absolute;left:8px;top:6px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка страниц',
+			style: 'position:absolute;left:8px;top:6px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка реквизитов',
-			style: 'position:absolute;left:8px;top:86px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка реквизитов',
+			style: 'position:absolute;left:8px;top:86px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -73,6 +73,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:209px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

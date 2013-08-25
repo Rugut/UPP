@@ -234,6 +234,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				'-',
@@ -257,40 +259,13 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:459px;width:780px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:213px;width:764px;height:187px;',
 			height: 187,width: 764,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Дополнительные сведения',
 					items:
 					[
 		{
@@ -419,14 +394,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:764px;height:24px;',
+			width: 764,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные по счетам-фактурам',
-			style: 'position:absolute;left:0px;top:0px;width:764px;height:16px;',
+			xtype: 'label',
+			text: 'Данные по счетам-фактурам',
+			style: 'position:absolute;left:0px;top:0px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -435,14 +412,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:79px;width:764px;height:24px;',
+			width: 764,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные по партиям',
-			style: 'position:absolute;left:8px;top:63px;width:764px;height:16px;',
+			xtype: 'label',
+			text: 'Данные по партиям',
+			style: 'position:absolute;left:8px;top:63px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -493,6 +472,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:459px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

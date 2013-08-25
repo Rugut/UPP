@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:624px;height:25px;',
+			width: 624,
+			height: 25,
 			items:
 			[
 			]
@@ -73,6 +75,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:352px;width:624px;height:25px;',
+			width: 624,
+			height: 25,
 			items:
 			[
 				{
@@ -139,13 +143,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:608px;height:259px;',
 			height: 259,width: 608,
 			items:
 			[
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
@@ -310,6 +313,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:594px;height:24px;',
+			width: 594,
+			height: 24,
 			items:
 			[
 				{
@@ -323,7 +328,6 @@
 					]
 				},
 				{
-					title:'Начисления',
 					items:
 					[
 		{
@@ -686,6 +690,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:594px;height:24px;',
+			width: 594,
+			height: 24,
 			items:
 			[
 				{
@@ -722,7 +728,6 @@
 					]
 				},
 				{
-					title:'Взыскания',
 					items:
 					[
 		{
@@ -968,6 +973,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:594px;height:24px;',
+			width: 594,
+			height: 24,
 			items:
 			[
 				{

@@ -111,6 +111,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:813px;height:25px;',
+			width: 813,
+			height: 25,
 			items:
 			[
 				{
@@ -146,13 +148,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:797px;height:351px;',
 			height: 351,width: 797,
 			items:
 			[
 				{
-					title:'НДФЛ: доходы и налоги',
 					items:
 					[
 		{
@@ -326,6 +327,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -363,19 +366,20 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учет доходов по всем ставкам и налогов по ставкам 9% и 35%',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Учет доходов по всем ставкам и налогов по ставкам 9% и 35%',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'НДФЛ по ставке 13%',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -527,14 +531,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Исчислено налога',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Исчислено налога',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Предоставлено вычетов',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Предоставлено вычетов',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'НДФЛПредоставленныеВычеты',
@@ -662,6 +666,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -701,12 +707,13 @@
 					]
 				},
 				{
-					title:'НДФЛ удержанный',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -847,14 +854,13 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учет удержанных сумм НДФЛ по всем ставкам ',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Учет удержанных сумм НДФЛ по всем ставкам ',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Страховые взносы',
 					items:
 					[
 		{
@@ -1212,18 +1218,20 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учет доходов ',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Учет доходов ',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Исчислено взносов в ПФР, ФСС и ФОМС',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Исчислено взносов в ПФР, ФСС и ФОМС',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -1234,6 +1242,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 			]
@@ -1241,7 +1251,6 @@
 					]
 				},
 				{
-					title:'ЕСН: доходы и налоги',
 					items:
 					[
 		{
@@ -1352,6 +1361,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -1559,6 +1570,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -1596,19 +1609,18 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Исчислено налога',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Исчислено налога',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учет доходов ',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Учет доходов ',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Страховое обеспечение',
 					items:
 					[
 		{
@@ -1755,6 +1767,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -1794,6 +1808,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -1981,14 +1997,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособия по уходу за ребенком до 1.5 лет',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Пособия по уходу за ребенком до 1.5 лет',
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособия по временной нетрудоспособности и другие пособия',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Пособия по временной нетрудоспособности и другие пособия',
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -2054,6 +2070,8 @@
 			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:182px;top:57px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2068,6 +2086,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:470px;width:813px;height:25px;',
+			width: 813,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -17,25 +17,23 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:32px;width:219px;height:403px;',
 			height: 403,width: 219,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:1px;width:219px;height:318px;',
 			height: 318,width: 219,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Виды отчетов',
 					items:
 					[
 		{
@@ -164,6 +162,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:18px;width:219px;height:24px;',
+			width: 219,
+			height: 24,
 			items:
 			[
 				{
@@ -197,9 +197,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Виды отчетов',
-			style: 'position:absolute;left:0px;top:0px;width:219px;height:16px;',
+			xtype: 'label',
+			text: 'Виды отчетов',
+			style: 'position:absolute;left:0px;top:0px;width:219px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -210,25 +210,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:232px;top:32px;width:540px;height:404px;',
 			height: 404,width: 540,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:2px;top:313px;width:538px;height:90px;',
 			height: 90,width: 538,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -298,25 +296,23 @@
 			style: 'position:absolute;left:10px;top:32px;width:72px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:84px;top:27px;width:454px;height:62px;',
 			height: 62,width: 454,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:452px;height:60px;',
 			height: 60,width: 452,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Произвольный период',
 					items:
 					[
 		{
@@ -422,7 +418,6 @@
 					]
 				},
 				{
-					title:'Стандартный период',
 					items:
 					[
 		{
@@ -439,6 +434,8 @@
 			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:29px;top:4px;width:60px;height:20px;',
+			width: 60,
+			height: 20,
 		},
 		{
 			xtype: 'label',
@@ -475,13 +472,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:540px;height:313px;',
 			height: 313,width: 540,
 			items:
 			[
 				{
-					title:'Журнал отчетов',
 					items:
 					[
 		{
@@ -646,6 +642,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:5px;top:1px;width:526px;height:24px;',
+			width: 526,
+			height: 24,
 			items:
 			[
 				'-',
@@ -679,14 +677,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:5px;top:161px;width:526px;height:126px;',
 			height: 126,width: 526,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница ФНС',
 					items:
 					[
 		{
@@ -833,6 +830,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
+			width: 526,
+			height: 24,
 			items:
 			[
 				{
@@ -846,7 +845,6 @@
 					]
 				},
 				{
-					title:'Страница ПФР',
 					items:
 					[
 		{
@@ -957,6 +955,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
+			width: 526,
+			height: 24,
 			items:
 			[
 				{
@@ -970,7 +970,6 @@
 					]
 				},
 				{
-					title:'Страница ФСС',
 					items:
 					[
 		{
@@ -1063,7 +1062,6 @@
 					]
 				},
 				{
-					title:'Страница Заявление',
 					items:
 					[
 		{
@@ -1228,6 +1226,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
+			width: 526,
+			height: 24,
 			items:
 			[
 				{
@@ -1241,7 +1241,6 @@
 					]
 				},
 				{
-					title:'Страница ФСГС',
 					items:
 					[
 		{
@@ -1370,6 +1369,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:526px;height:24px;',
+			width: 526,
+			height: 24,
 			items:
 			[
 				{
@@ -1387,7 +1388,6 @@
 					]
 				},
 				{
-					title:'Журнал выгрузки',
 					items:
 					[
 		{
@@ -1507,6 +1507,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:5px;top:1px;width:231px;height:24px;',
+			width: 231,
+			height: 24,
 			items:
 			[
 				{
@@ -1560,6 +1562,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{

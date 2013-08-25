@@ -21,18 +21,20 @@
 			style: 'position:absolute;left:442px;top:54px;width:190px;height:259px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Исходный текст',
-			style: 'position:absolute;left:8px;top:10px;width:428px;height:16px;',
+			xtype: 'label',
+			text: 'Исходный текст',
+			style: 'position:absolute;left:8px;top:10px;width:428px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Найденные значения',
-			style: 'position:absolute;left:442px;top:10px;width:190px;height:16px;',
+			xtype: 'label',
+			text: 'Найденные значения',
+			style: 'position:absolute;left:442px;top:10px;width:190px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:30px;width:428px;height:24px;',
+			width: 428,
+			height: 24,
 			items:
 			[
 				{
@@ -47,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:442px;top:30px;width:190px;height:24px;',
+			width: 190,
+			height: 24,
 			items:
 			[
 				{

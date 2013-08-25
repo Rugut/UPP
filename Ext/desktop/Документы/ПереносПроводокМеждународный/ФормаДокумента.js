@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:85px;width:468px;height:24px;',
+			width: 468,
+			height: 24,
 			items:
 			[
 				{
@@ -51,6 +53,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			width: 654,
+			height: 25,
 			items:
 			[
 				{
@@ -470,6 +474,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:354px;width:654px;height:25px;',
+			width: 654,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

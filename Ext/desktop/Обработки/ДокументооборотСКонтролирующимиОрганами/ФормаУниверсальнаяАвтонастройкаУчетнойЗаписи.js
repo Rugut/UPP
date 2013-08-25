@@ -23,9 +23,9 @@
 			style: 'position:absolute;left:8px;top:166px;width:581px;height:18px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:249px;width:581px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:249px;width:581px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -34,9 +34,9 @@
 			style: 'position:absolute;left:70px;top:265px;width:519px;height:52px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:62px;width:581px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:62px;width:581px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -139,6 +139,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:325px;width:597px;height:25px;',
+			width: 597,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

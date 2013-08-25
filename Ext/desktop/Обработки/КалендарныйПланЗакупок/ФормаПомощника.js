@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:153px;top:8px;width:619px;height:389px;',
 			height: 389,width: 619,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
@@ -115,13 +114,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Номенклатура, для подбора поставщиков',
-			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;',
+			xtype: 'label',
+			text: 'Номенклатура, для подбора поставщиков',
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:619px;height:24px;',
+			width: 619,
+			height: 24,
 			items:
 			[
 				{
@@ -148,13 +149,12 @@
 					]
 				},
 				{
-					title:'Настройки',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Настройка отборов по свойствам и категориям контрагентов',
-			style: 'position:absolute;left:0px;top:95px;width:619px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка отборов по свойствам и категориям контрагентов',
+			style: 'position:absolute;left:0px;top:95px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'СвойстваИКатегорииКонтрагентов',
@@ -237,14 +237,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:115px;width:619px;height:24px;',
+			width: 619,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка основных отборов',
-			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка основных отборов',
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -363,6 +365,8 @@
 			value: 0,
 			name: 'ЗначениеСрокВыполненияЗаказаНач',
 			style: 'position:absolute;left:381px;top:69px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -372,11 +376,12 @@
 			value: 0,
 			name: 'ЗначениеСрокВыполненияЗаказаКон',
 			style: 'position:absolute;left:502px;top:69px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Результат',
 					items:
 					[
 		{
@@ -422,43 +427,22 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Подбор номенклатуры по ценам и поставщикам',
-			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:511px;top:365px;width:108px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть договор',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Открыть условия поставки',
-				},
-				{
-					text:'',
-				},
-			]
+			xtype: 'label',
+			text: 'Подбор номенклатуры по ценам и поставщикам',
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:138px;height:389px;',
 			height: 389,width: 138,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -469,6 +453,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

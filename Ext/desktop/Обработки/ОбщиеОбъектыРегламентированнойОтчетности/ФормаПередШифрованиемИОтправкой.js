@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:9px;width:362px;height:74px;',
 			height: 74,width: 362,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Описание',
 					items:
 					[
 		{
@@ -44,6 +43,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:91px;width:378px;height:25px;',
+			width: 378,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

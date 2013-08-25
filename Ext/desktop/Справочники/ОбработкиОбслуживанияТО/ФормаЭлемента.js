@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:473px;height:25px;',
+			width: 473,
+			height: 25,
 			items:
 			[
 				{
@@ -103,9 +105,9 @@
 			style: 'position:absolute;left:385px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры обработки обслуживания',
-			style: 'position:absolute;left:8px;top:57px;width:457px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры обработки обслуживания',
+			style: 'position:absolute;left:8px;top:57px;width:457px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -179,9 +181,9 @@
 			style: 'position:absolute;left:113px;top:126px;width:352px;height:46px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Список моделей поддерживаемого оборудования',
-			style: 'position:absolute;left:8px;top:253px;width:457px;height:16px;',
+			xtype: 'label',
+			text: 'Список моделей поддерживаемого оборудования',
+			style: 'position:absolute;left:8px;top:253px;width:457px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Модели',
@@ -262,6 +264,8 @@
 			value: 0,
 			name: 'Версия',
 			style: 'position:absolute;left:113px;top:201px;width:352px;height:19px;',
+			width: 352,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -292,6 +296,8 @@
 			value: 0,
 			name: 'ВерсияAPI',
 			style: 'position:absolute;left:113px;top:177px;width:352px;height:19px;',
+			width: 352,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -312,6 +318,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:476px;width:473px;height:25px;',
+			width: 473,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

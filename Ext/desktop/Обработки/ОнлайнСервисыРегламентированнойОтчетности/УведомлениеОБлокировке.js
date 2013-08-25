@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:302px;width:529px;height:25px;',
 			height: 25,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Мягкая блокировка',
 					items:
 					[
 		{
@@ -54,7 +53,6 @@
 					]
 				},
 				{
-					title:'Жесткая блокировка',
 					items:
 					[
 		{
@@ -80,14 +78,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:258px;width:529px;height:35px;',
 			height: 35,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -96,9 +93,9 @@
 			style: 'position:absolute;left:0px;top:9px;width:396px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:32px;width:529px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:32px;width:529px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},

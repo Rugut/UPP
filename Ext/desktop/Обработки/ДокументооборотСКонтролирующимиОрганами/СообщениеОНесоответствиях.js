@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:497px;height:506px;',
 			height: 506,width: 497,
 			items:
 			[
 				{
-					title:'Ошибки ФЛК',
 					items:
 					[
 		{
@@ -89,7 +88,6 @@
 					]
 				},
 				{
-					title:'Ошибки идентификации',
 					items:
 					[
 		{
@@ -155,7 +153,6 @@
 					]
 				},
 				{
-					title:'Общие сведения',
 					items:
 					[
 		{
@@ -304,6 +301,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
+			width: 513,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

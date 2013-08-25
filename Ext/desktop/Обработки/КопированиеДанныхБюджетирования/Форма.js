@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
+			width: 732,
+			height: 25,
 			items:
 			[
 				{
@@ -232,13 +234,12 @@
 			style: 'position:absolute;left:372px;top:79px;width:352px;height:69px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:157px;width:716px;height:251px;',
 			height: 251,width: 716,
 			items:
 			[
 				{
-					title:'Настройка',
 					items:
 					[
 		{
@@ -416,19 +417,18 @@
 			style: 'position:absolute;left:366px;top:6px;width:342px;height:141px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры копирования',
-			style: 'position:absolute;left:6px;top:156px;width:702px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры копирования',
+			style: 'position:absolute;left:6px;top:156px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:177px;width:701px;height:48px;',
 			height: 48,width: 701,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПоПериодам',
 					items:
 					[
 		{
@@ -439,6 +439,8 @@
 			value: 0,
 			name: 'КоэффициентПериоды',
 			style: 'position:absolute;left:505px;top:5px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -471,6 +473,8 @@
 			value: 0,
 			name: 'АбсолютноеЗначениеПериодыСумма',
 			style: 'position:absolute;left:212px;top:5px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -486,6 +490,8 @@
 			value: 0,
 			name: 'АбсолютноеЗначениеПериодыКоличество',
 			style: 'position:absolute;left:212px;top:29px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -496,7 +502,6 @@
 					]
 				},
 				{
-					title:'Нормировать',
 					items:
 					[
 		{
@@ -507,6 +512,8 @@
 			value: 0,
 			name: 'КоэффициентБазовый',
 			style: 'position:absolute;left:117px;top:5px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -522,6 +529,8 @@
 			value: 0,
 			name: 'ИзменениеЗаПериод',
 			style: 'position:absolute;left:481px;top:29px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -738,6 +747,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:26px;width:339px;height:24px;',
+			width: 339,
+			height: 24,
 			items:
 			[
 				{
@@ -757,12 +768,13 @@
 					]
 				},
 				{
-					title:'Новые бюджетные операции',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
+			width: 702,
+			height: 25,
 			items:
 			[
 				{
@@ -874,12 +886,13 @@
 					]
 				},
 				{
-					title:'Новые документы расчетов по моделям',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
+			width: 702,
+			height: 25,
 			items:
 			[
 				{
@@ -1139,6 +1152,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:440px;width:732px;height:25px;',
+			width: 732,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

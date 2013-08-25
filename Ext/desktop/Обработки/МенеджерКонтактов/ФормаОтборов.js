@@ -591,27 +591,6 @@
 			style: 'position:absolute;left:434px;top:225px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:252px;width:562px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'Контактное лицо:',
 			style: 'position:absolute;left:8px;top:57px;width:115px;height:19px;',
@@ -667,6 +646,30 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:252px;width:562px;height:25px;',
+			width: 562,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

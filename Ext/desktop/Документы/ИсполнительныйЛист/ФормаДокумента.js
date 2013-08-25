@@ -180,6 +180,8 @@
 			value: 0,
 			name: 'Размер',
 			style: 'position:absolute;left:121px;top:294px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -199,6 +201,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
+			width: 708,
+			height: 25,
 			items:
 			[
 			]
@@ -289,6 +293,8 @@
 			value: 0,
 			name: 'Предел',
 			style: 'position:absolute;left:121px;top:317px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -342,14 +348,14 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты исполнительного документа',
-			style: 'position:absolute;left:8px;top:84px;width:692px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты исполнительного документа',
+			style: 'position:absolute;left:8px;top:84px;width:692px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Удержание',
-			style: 'position:absolute;left:8px;top:156px;width:692px;height:16px;',
+			xtype: 'label',
+			text: 'Удержание',
+			style: 'position:absolute;left:8px;top:156px;width:692px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -369,19 +375,18 @@
 			style: 'position:absolute;left:100px;top:177px;width:79px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок выплаты получателю',
-			style: 'position:absolute;left:8px;top:345px;width:692px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок выплаты получателю',
+			style: 'position:absolute;left:8px;top:345px;width:692px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:338px;top:368px;width:362px;height:65px;',
 			height: 65,width: 362,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Банковский перевод',
 					items:
 					[
 		{
@@ -426,7 +431,6 @@
 					]
 				},
 				{
-					title:'Почтовый перевод',
 					items:
 					[
 		{
@@ -437,6 +441,8 @@
 			value: 0,
 			name: 'ПроцентПочтовогоСбора',
 			style: 'position:absolute;left:180px;top:46px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -609,6 +615,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:473px;width:708px;height:25px;',
+			width: 708,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

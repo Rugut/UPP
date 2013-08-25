@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:686px;height:25px;',
+			width: 686,
+			height: 25,
 			items:
 			[
 			]
@@ -177,13 +179,12 @@
 			style: 'position:absolute;left:113px;top:57px;width:203px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:113px;width:670px;height:346px;',
 			height: 346,width: 670,
 			items:
 			[
 				{
-					title:'Условия',
 					items:
 					[
 		{
@@ -283,6 +284,8 @@
 			value: 0,
 			name: 'ОплачиватьЧасов',
 			style: 'position:absolute;left:346px;top:121px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -386,12 +389,13 @@
 					]
 				},
 				{
-					title:'Оплата',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -786,6 +790,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:67px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -843,12 +849,13 @@
 					]
 				},
 				{
-					title:'Расчет среднего заработка',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:73px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -1138,14 +1145,13 @@
 			style: 'position:absolute;left:31px;top:468px;width:434px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:466px;top:468px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1159,14 +1165,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:549px;top:468px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1186,6 +1191,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:236px;top:533px;width:450px;height:25px;',
+			width: 450,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[
@@ -1209,6 +1216,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:533px;width:236px;height:25px;',
+			width: 236,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

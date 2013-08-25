@@ -111,6 +111,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:227px;width:585px;height:24px;',
+			width: 585,
+			height: 24,
 			items:
 			[
 				{
@@ -543,30 +545,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:25px;',
+			width: 600,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:551px;width:600px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -678,6 +660,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:101px;width:585px;height:24px;',
+			width: 585,
+			height: 24,
 			items:
 			[
 				{
@@ -686,19 +670,44 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Плановые начисления',
-			style: 'position:absolute;left:8px;top:211px;width:585px;height:16px;',
+			xtype: 'label',
+			text: 'Плановые начисления',
+			style: 'position:absolute;left:8px;top:211px;width:585px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники',
-			style: 'position:absolute;left:8px;top:85px;width:585px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:85px;width:585px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:551px;width:600px;height:25px;',
+			width: 600,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

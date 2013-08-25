@@ -64,6 +64,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:518px;height:25px;',
+			width: 518,
+			height: 25,
 			items:
 			[
 			]
@@ -159,9 +161,9 @@
 			style: 'position:absolute;left:132px;top:188px;width:378px;height:43px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Коды для запросов в ФСС',
-			style: 'position:absolute;left:8px;top:114px;width:502px;height:16px;',
+			xtype: 'label',
+			text: 'Коды для запросов в ФСС',
+			style: 'position:absolute;left:8px;top:114px;width:502px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -170,6 +172,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:239px;width:518px;height:25px;',
+			width: 518,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

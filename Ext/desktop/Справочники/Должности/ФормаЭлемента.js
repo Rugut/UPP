@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:446px;height:25px;',
+			width: 446,
+			height: 25,
 			items:
 			[
 				{
@@ -64,13 +66,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:430px;height:334px;',
 			height: 334,width: 430,
 			items:
 			[
 				{
-					title:'Описание должности',
 					items:
 					[
 		{
@@ -161,7 +162,6 @@
 					]
 				},
 				{
-					title:'Компетенции',
 					items:
 					[
 		{
@@ -241,6 +241,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:416px;height:24px;',
+			width: 416,
+			height: 24,
 			items:
 			[
 				{
@@ -275,6 +277,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:399px;width:446px;height:25px;',
+			width: 446,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

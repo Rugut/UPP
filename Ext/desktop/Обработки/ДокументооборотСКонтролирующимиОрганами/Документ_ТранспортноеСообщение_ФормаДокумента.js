@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
+			width: 582,
+			height: 25,
 			items:
 			[
 				{
@@ -66,14 +68,13 @@
 			style: 'position:absolute;left:87px;top:64px;width:487px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:142px;width:566px;height:191px;',
 			height: 191,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Первичное сообщение, содержащее отчетность',
 					items:
 					[
 		{
@@ -85,7 +86,6 @@
 					]
 				},
 				{
-					title:'Подтверждение отправки',
 					items:
 					[
 		{
@@ -95,9 +95,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -114,7 +114,6 @@
 					]
 				},
 				{
-					title:'Протокол входного контроля',
 					items:
 					[
 		{
@@ -148,9 +147,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -161,7 +160,6 @@
 					]
 				},
 				{
-					title:'Подтверждение доставки',
 					items:
 					[
 		{
@@ -209,7 +207,6 @@
 					]
 				},
 				{
-					title:'Переподписанное налогоплательщиком подтверждение отправки отчетности',
 					items:
 					[
 		{
@@ -231,9 +228,9 @@
 			style: 'position:absolute;left:0px;top:92px;width:452px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -268,7 +265,6 @@
 					]
 				},
 				{
-					title:'Подтверждение налогоплательщика на протокол проверки',
 					items:
 					[
 		{
@@ -332,14 +328,13 @@
 			style: 'position:absolute;left:371px;top:134px;width:35px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Уведомление об уточнении',
 					items:
 					[
 		{
@@ -375,7 +370,6 @@
 					]
 				},
 				{
-					title:'Протокол 2-НДФЛ',
 					items:
 					[
 		{
@@ -423,7 +417,6 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
@@ -434,14 +427,13 @@
 			style: 'position:absolute;left:0px;top:3px;width:566px;height:168px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:171px;width:566px;height:20px;',
 			height: 20,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -463,7 +455,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -485,14 +476,13 @@
 			style: 'position:absolute;left:507px;top:33px;width:59px;height:15px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:58px;width:566px;height:93px;',
 			height: 93,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -530,9 +520,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -543,7 +533,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -559,14 +548,13 @@
 			style: 'position:absolute;left:31px;top:33px;width:535px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:58px;width:566px;height:93px;',
 			height: 93,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -594,7 +582,6 @@
 					]
 				},
 				{
-					title:'Неформализованный документ налогоплательщика',
 					items:
 					[
 		{
@@ -630,7 +617,6 @@
 					]
 				},
 				{
-					title:'Подтверждение отправки неформализованного документа налогоплательщика',
 					items:
 					[
 		{
@@ -652,9 +638,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -671,7 +657,6 @@
 					]
 				},
 				{
-					title:'Переподписанное подтверждение отправки неформализованного документа налогоплательщика',
 					items:
 					[
 		{
@@ -693,9 +678,9 @@
 			style: 'position:absolute;left:0px;top:66px;width:452px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:58px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:58px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -730,7 +715,6 @@
 					]
 				},
 				{
-					title:'Подтверждение доставки неформализованного документа налогоплательщика',
 					items:
 					[
 		{
@@ -766,7 +750,6 @@
 					]
 				},
 				{
-					title:'Запрос ИОН',
 					items:
 					[
 		{
@@ -796,7 +779,6 @@
 					]
 				},
 				{
-					title:'Подтверждение отправки запроса',
 					items:
 					[
 		{
@@ -806,9 +788,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -837,7 +819,6 @@
 					]
 				},
 				{
-					title:'Протокол проверки запроса',
 					items:
 					[
 		{
@@ -865,9 +846,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -878,7 +859,6 @@
 					]
 				},
 				{
-					title:'Подтверждение доставки запроса',
 					items:
 					[
 		{
@@ -914,7 +894,6 @@
 					]
 				},
 				{
-					title:'Подтверждение налогоплательщика на подтверждение отправки запроса',
 					items:
 					[
 		{
@@ -942,9 +921,9 @@
 			style: 'position:absolute;left:0px;top:92px;width:452px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -979,7 +958,6 @@
 					]
 				},
 				{
-					title:'Подтверждение налогоплательщика на протокол проверки запроса',
 					items:
 					[
 		{
@@ -1037,14 +1015,13 @@
 			style: 'position:absolute;left:371px;top:134px;width:35px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Ответ на запрос ИОН',
 					items:
 					[
 		{
@@ -1072,9 +1049,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1091,7 +1068,6 @@
 					]
 				},
 				{
-					title:'Подтверждение на ответ на запрос ИОН',
 					items:
 					[
 		{
@@ -1137,14 +1113,13 @@
 			style: 'position:absolute;left:404px;top:112px;width:35px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Зашифрованное сообщение входящее',
 					items:
 					[
 		{
@@ -1156,7 +1131,6 @@
 					]
 				},
 				{
-					title:'Зашифрованное сообщение исходящее',
 					items:
 					[
 		{
@@ -1174,7 +1148,6 @@
 					]
 				},
 				{
-					title:'Первичное сообщение содержащее отчетность ПФР',
 					items:
 					[
 		{
@@ -1285,7 +1258,6 @@
 					]
 				},
 				{
-					title:'Подтверждение получения ПФР',
 					items:
 					[
 		{
@@ -1396,7 +1368,6 @@
 					]
 				},
 				{
-					title:'Протокол ПФР',
 					items:
 					[
 		{
@@ -1511,9 +1482,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1524,7 +1495,6 @@
 					]
 				},
 				{
-					title:'Протокол квитанция ПФР',
 					items:
 					[
 		{
@@ -1635,7 +1605,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1648,7 +1617,6 @@
 					]
 				},
 				{
-					title:'Неформализованное входящее ПФР',
 					items:
 					[
 		{
@@ -1763,9 +1731,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1776,7 +1744,6 @@
 					]
 				},
 				{
-					title:'Неформализованное исходящее ПФР',
 					items:
 					[
 		{
@@ -1887,7 +1854,6 @@
 					]
 				},
 				{
-					title:'Неформализованное исходящее квитанция ПФР',
 					items:
 					[
 		{
@@ -1998,7 +1964,6 @@
 					]
 				},
 				{
-					title:'Неформализованное входящее квитанция ПФР',
 					items:
 					[
 		{
@@ -2109,7 +2074,6 @@
 					]
 				},
 				{
-					title:'Декларация НП',
 					items:
 					[
 		{
@@ -2220,7 +2184,6 @@
 					]
 				},
 				{
-					title:'Извещение декларация НО',
 					items:
 					[
 		{
@@ -2331,7 +2294,6 @@
 					]
 				},
 				{
-					title:'Результат приема декларация НО',
 					items:
 					[
 		{
@@ -2446,9 +2408,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2459,7 +2421,6 @@
 					]
 				},
 				{
-					title:'Извещение результат приема НП',
 					items:
 					[
 		{
@@ -2570,7 +2531,6 @@
 					]
 				},
 				{
-					title:'Результат обработки декларация НО',
 					items:
 					[
 		{
@@ -2685,9 +2645,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2698,7 +2658,6 @@
 					]
 				},
 				{
-					title:'Извещение результат обработки НП',
 					items:
 					[
 		{
@@ -2809,7 +2768,6 @@
 					]
 				},
 				{
-					title:'Подтверждение декларация НО',
 					items:
 					[
 		{
@@ -2924,9 +2882,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2937,7 +2895,6 @@
 					]
 				},
 				{
-					title:'Извещение подтверждение НП',
 					items:
 					[
 		{
@@ -3048,7 +3005,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -3159,7 +3115,6 @@
 					]
 				},
 				{
-					title:'Подтверждение форма2 НДФЛНО',
 					items:
 					[
 		{
@@ -3274,9 +3229,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -3287,7 +3242,6 @@
 					]
 				},
 				{
-					title:'Извещение форма2 НДФЛНО',
 					items:
 					[
 		{
@@ -3398,7 +3352,6 @@
 					]
 				},
 				{
-					title:'Результат приема форма2 НДФЛНО',
 					items:
 					[
 		{
@@ -3513,9 +3466,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -3526,7 +3479,6 @@
 					]
 				},
 				{
-					title:'Обращение НП',
 					items:
 					[
 		{
@@ -3637,7 +3589,6 @@
 					]
 				},
 				{
-					title:'Извещение обращение НО',
 					items:
 					[
 		{
@@ -3748,7 +3699,6 @@
 					]
 				},
 				{
-					title:'Результат приема обращение НО',
 					items:
 					[
 		{
@@ -3863,9 +3813,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -3876,7 +3826,6 @@
 					]
 				},
 				{
-					title:'Подтверждение обращение НО',
 					items:
 					[
 		{
@@ -3991,9 +3940,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -4004,7 +3953,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4119,9 +4067,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -4132,7 +4080,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4243,7 +4190,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4358,9 +4304,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -4371,7 +4317,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4482,7 +4427,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4593,7 +4537,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4704,7 +4647,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4819,9 +4761,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -4832,7 +4774,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -4943,7 +4884,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -5058,9 +4998,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -5071,7 +5011,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -5186,9 +5125,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -5199,7 +5138,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -5310,7 +5248,6 @@
 					]
 				},
 				{
-					title:'Подтверждение заявление НО',
 					items:
 					[
 		{
@@ -5425,9 +5362,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -5438,7 +5375,6 @@
 					]
 				},
 				{
-					title:'Извещение заявление НО',
 					items:
 					[
 		{
@@ -5549,7 +5485,6 @@
 					]
 				},
 				{
-					title:'Результат приема заявление НО',
 					items:
 					[
 		{
@@ -5664,9 +5599,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -5677,7 +5612,6 @@
 					]
 				},
 				{
-					title:'Результат обработки заявление РФНО',
 					items:
 					[
 		{
@@ -5792,9 +5726,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -5805,7 +5739,6 @@
 					]
 				},
 				{
-					title:'Извещение результат обработки РФНП',
 					items:
 					[
 		{
@@ -5916,7 +5849,6 @@
 					]
 				},
 				{
-					title:'Извещение об отзыве заявление РФНП',
 					items:
 					[
 		{
@@ -6027,7 +5959,6 @@
 					]
 				},
 				{
-					title:'Извещение результат обработки ТСНП',
 					items:
 					[
 		{
@@ -6138,7 +6069,6 @@
 					]
 				},
 				{
-					title:'Сообщение об отзыве заявление РФНО',
 					items:
 					[
 		{
@@ -6253,9 +6183,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -6266,7 +6196,6 @@
 					]
 				},
 				{
-					title:'Результат обработки заявление ТСНО',
 					items:
 					[
 		{
@@ -6381,9 +6310,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -6394,7 +6323,6 @@
 					]
 				},
 				{
-					title:'Документ НО',
 					items:
 					[
 		{
@@ -6509,9 +6437,9 @@
 			style: 'position:absolute;left:0px;top:130px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:127px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:127px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -6534,7 +6462,6 @@
 					]
 				},
 				{
-					title:'Извещение документ НП',
 					items:
 					[
 		{
@@ -6645,7 +6572,6 @@
 					]
 				},
 				{
-					title:'Результат приема документ НП',
 					items:
 					[
 		{
@@ -6756,7 +6682,6 @@
 					]
 				},
 				{
-					title:'Извещение результат приема НО',
 					items:
 					[
 		{
@@ -6867,7 +6792,6 @@
 					]
 				},
 				{
-					title:'Первичное сообщение содержащее отчетность ФСГС',
 					items:
 					[
 		{
@@ -6978,7 +6902,6 @@
 					]
 				},
 				{
-					title:'Подтверждение даты отправки ФСГС',
 					items:
 					[
 		{
@@ -7093,9 +7016,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -7106,7 +7029,6 @@
 					]
 				},
 				{
-					title:'Извещение подтверждение даты отправки ФСГС',
 					items:
 					[
 		{
@@ -7217,7 +7139,6 @@
 					]
 				},
 				{
-					title:'Извещение о получении отчетности ФСГС',
 					items:
 					[
 		{
@@ -7328,7 +7249,6 @@
 					]
 				},
 				{
-					title:'Протокол входного контроля отчетности ФСГС',
 					items:
 					[
 		{
@@ -7443,9 +7363,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -7456,7 +7376,6 @@
 					]
 				},
 				{
-					title:'Извещение протокол входного контроля отчетности ФСГС',
 					items:
 					[
 		{
@@ -7567,7 +7486,6 @@
 					]
 				},
 				{
-					title:'Письмо входящее ФСГС',
 					items:
 					[
 		{
@@ -7682,9 +7600,9 @@
 			style: 'position:absolute;left:0px;top:161px;width:194px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -7695,7 +7613,6 @@
 					]
 				},
 				{
-					title:'Извещение письмо входящее ФСГС',
 					items:
 					[
 		{
@@ -7806,7 +7723,6 @@
 					]
 				},
 				{
-					title:'Письмо исходящее ФСГС',
 					items:
 					[
 		{
@@ -7917,7 +7833,6 @@
 					]
 				},
 				{
-					title:'Извещение письмо исходящее ФСГС',
 					items:
 					[
 		{
@@ -8030,9 +7945,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Содержимое',
-			style: 'position:absolute;left:8px;top:126px;width:566px;height:16px;',
+			xtype: 'label',
+			text: 'Содержимое',
+			style: 'position:absolute;left:8px;top:126px;width:566px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -8043,6 +7958,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:372px;top:64px;width:190px;height:24px;',
+			width: 190,
+			height: 24,
 			items:
 			[
 				{
@@ -8057,6 +7974,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:341px;width:582px;height:25px;',
+			width: 582,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

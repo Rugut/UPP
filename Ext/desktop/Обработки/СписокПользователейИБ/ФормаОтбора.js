@@ -43,6 +43,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:216px;top:21px;width:49px;height:24px;',
+			width: 49,
+			height: 24,
 			items:
 			[
 				{
@@ -59,6 +61,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:473px;top:147px;width:49px;height:24px;',
+			width: 49,
+			height: 24,
 			items:
 			[
 				{
@@ -75,6 +79,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:473px;top:21px;width:49px;height:24px;',
+			width: 49,
+			height: 24,
 			items:
 			[
 				{
@@ -242,9 +248,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Роли',
-			style: 'position:absolute;left:8px;top:5px;width:257px;height:16px;',
+			xtype: 'label',
+			text: 'Роли',
+			style: 'position:absolute;left:8px;top:5px;width:257px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'combobox',
@@ -253,14 +259,14 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Интерфейсы',
-			style: 'position:absolute;left:270px;top:5px;width:252px;height:16px;',
+			xtype: 'label',
+			text: 'Интерфейсы',
+			style: 'position:absolute;left:270px;top:5px;width:252px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Языки',
-			style: 'position:absolute;left:270px;top:131px;width:252px;height:16px;',
+			xtype: 'label',
+			text: 'Языки',
+			style: 'position:absolute;left:270px;top:131px;width:252px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -269,6 +275,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:294px;width:530px;height:25px;',
+			width: 530,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

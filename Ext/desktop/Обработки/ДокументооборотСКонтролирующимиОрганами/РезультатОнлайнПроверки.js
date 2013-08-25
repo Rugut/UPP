@@ -17,19 +17,18 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Электронное представление отчета',
-			style: 'position:absolute;left:8px;top:8px;width:847px;height:16px;',
+			xtype: 'label',
+			text: 'Электронное представление отчета',
+			style: 'position:absolute;left:8px;top:8px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:28px;width:847px;height:200px;',
 			height: 200,width: 847,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -42,25 +41,23 @@
 					]
 				},
 				{
-					title:'',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:234px;width:847px;height:389px;',
 			height: 389,width: 847,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница TXT',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Протокол проверки',
-			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;',
+			xtype: 'label',
+			text: 'Протокол проверки',
+			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textarea',
@@ -72,13 +69,12 @@
 					]
 				},
 				{
-					title:'Страница HTML',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Протокол проверки',
-			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;',
+			xtype: 'label',
+			text: 'Протокол проверки',
+			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -97,6 +93,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:631px;width:863px;height:25px;',
+			width: 863,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

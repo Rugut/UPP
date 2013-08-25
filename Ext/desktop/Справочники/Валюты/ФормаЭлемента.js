@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:432px;height:25px;',
+			width: 432,
+			height: 25,
 			items:
 			[
 			]
@@ -163,6 +165,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:220px;width:416px;height:24px;',
+			width: 416,
+			height: 24,
 			items:
 			[
 			]
@@ -174,9 +178,9 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры прописи целой части для русского языка',
-			style: 'position:absolute;left:8px;top:85px;width:416px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры прописи целой части для русского языка',
+			style: 'position:absolute;left:8px;top:85px;width:416px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -236,9 +240,9 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры прописи дробной части для русского языка',
-			style: 'position:absolute;left:8px;top:133px;width:416px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры прописи дробной части для русского языка',
+			style: 'position:absolute;left:8px;top:133px;width:416px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -304,8 +308,20 @@
 			height: 19,
 		},
 		{
+			xtype: 'label',
+			text: 'История курсов',
+			style: 'position:absolute;left:8px;top:204px;width:416px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:372px;width:432px;height:25px;',
+			width: 432,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -325,15 +341,6 @@
 				},
 			]
 		},
-		{
-			xtype: 'fieldset',
-			title: 'История курсов',
-			style: 'position:absolute;left:8px;top:204px;width:416px;height:16px;',
-		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

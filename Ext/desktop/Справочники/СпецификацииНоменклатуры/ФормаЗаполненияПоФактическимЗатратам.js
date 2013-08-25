@@ -199,6 +199,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:112px;width:684px;height:24px;',
+			width: 684,
+			height: 24,
 			items:
 			[
 				'-',
@@ -208,9 +210,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Фактический расход материалов за месяц',
-			style: 'position:absolute;left:8px;top:90px;width:684px;height:17px;',
+			xtype: 'label',
+			text: 'Фактический расход материалов за месяц',
+			style: 'position:absolute;left:8px;top:90px;width:684px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -344,6 +346,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:325px;top:56px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -402,6 +406,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:312px;width:700px;height:25px;',
+			width: 700,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

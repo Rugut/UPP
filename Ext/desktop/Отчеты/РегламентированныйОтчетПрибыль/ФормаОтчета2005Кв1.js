@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -53,16 +55,14 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:122px;width:654px;height:310px;',
 			height: 310,width: 654,
 			items:
 			[
 				{
-					title:'Титульный',
 				},
 				{
-					title:'Физ. лица',
 					items:
 					[
 		{
@@ -98,7 +98,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.1',
 					items:
 					[
 		{
@@ -122,7 +121,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.2',
 					items:
 					[
 		{
@@ -146,7 +144,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.3',
 					items:
 					[
 		{
@@ -188,7 +185,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.4',
 					items:
 					[
 		{
@@ -242,7 +238,6 @@
 					]
 				},
 				{
-					title:'Лист 02',
 					items:
 					[
 		{
@@ -259,6 +254,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -284,7 +281,6 @@
 					]
 				},
 				{
-					title:'Прил.1 к Листу 02',
 					items:
 					[
 		{
@@ -301,6 +297,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил1',
 			style: 'position:absolute;left:233px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -314,7 +312,6 @@
 					]
 				},
 				{
-					title:'Прил.2 к Листу 02',
 					items:
 					[
 		{
@@ -331,6 +328,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил2',
 			style: 'position:absolute;left:233px;top:266px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -356,7 +355,6 @@
 					]
 				},
 				{
-					title:'Прил.4 к Листу 02',
 					items:
 					[
 		{
@@ -373,6 +371,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил4',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -386,10 +386,8 @@
 					]
 				},
 				{
-					title:'Прил.5 к Листу 02',
 				},
 				{
-					title:'Прил.5а к Листу 02',
 					items:
 					[
 		{
@@ -425,7 +423,6 @@
 					]
 				},
 				{
-					title:'Прил.6 к Листу 02',
 					items:
 					[
 		{
@@ -442,6 +439,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил6',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -455,7 +454,6 @@
 					]
 				},
 				{
-					title:'Прил.7 к Листу 02',
 					items:
 					[
 		{
@@ -472,6 +470,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил7',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -485,7 +485,6 @@
 					]
 				},
 				{
-					title:'Лист 03 (Раздел А)',
 					items:
 					[
 		{
@@ -533,17 +532,15 @@
 					]
 				},
 				{
-					title:'Лист 03 (Разделы Б, В)',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:278px;',
 			height: 278,width: 640,
 			items:
 			[
 				{
-					title:'Решения о распределении доходов',
 					items:
 					[
 		{
@@ -571,7 +568,6 @@
 					]
 				},
 				{
-					title:'По ставке 9%',
 					items:
 					[
 		{
@@ -607,7 +603,6 @@
 					]
 				},
 				{
-					title:'По ставке 15%',
 					items:
 					[
 		{
@@ -647,7 +642,6 @@
 					]
 				},
 				{
-					title:'Лист 04 (Раздел А)',
 					items:
 					[
 		{
@@ -664,6 +658,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист04_РазделА',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -707,7 +703,6 @@
 					]
 				},
 				{
-					title:'Лист 04 (Раздел Б)',
 					items:
 					[
 		{
@@ -724,6 +719,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист04_РазделБ',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -737,7 +734,6 @@
 					]
 				},
 				{
-					title:'Лист 05',
 					items:
 					[
 		{
@@ -754,6 +750,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист05',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -767,7 +765,6 @@
 					]
 				},
 				{
-					title:'Лист 06',
 					items:
 					[
 		{
@@ -784,6 +781,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист06',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -797,7 +796,6 @@
 					]
 				},
 				{
-					title:'Лист 07',
 					items:
 					[
 		{
@@ -814,6 +812,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист07',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -827,7 +827,6 @@
 					]
 				},
 				{
-					title:'Лист 08',
 					items:
 					[
 		{
@@ -844,6 +843,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист08',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -857,17 +858,15 @@
 					]
 				},
 				{
-					title:'Лист 09',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:278px;',
 			height: 278,width: 640,
 			items:
 			[
 				{
-					title:'Пенсионные резервы 9%',
 					items:
 					[
 		{
@@ -879,7 +878,6 @@
 					]
 				},
 				{
-					title:'Пенсионные резервы 15%',
 					items:
 					[
 		{
@@ -891,7 +889,6 @@
 					]
 				},
 				{
-					title:'Пенсионные накопления 9%',
 					items:
 					[
 		{
@@ -903,7 +900,6 @@
 					]
 				},
 				{
-					title:'Пенсионные накопления 15%',
 					items:
 					[
 		{
@@ -919,7 +915,6 @@
 					]
 				},
 				{
-					title:'Лист 10',
 					items:
 					[
 		{
@@ -937,13 +932,10 @@
 					]
 				},
 				{
-					title:'Лист 11',
 				},
 				{
-					title:'Прил.1 к Листу 11',
 				},
 				{
-					title:'Прил.2 к Листу 11',
 				},
 			]
 		},
@@ -954,14 +946,13 @@
 			style: 'position:absolute;left:584px;top:6px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:48px;',
 			height: 48,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -972,6 +963,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -1009,20 +1002,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:561px;top:24px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:432px;width:654px;height:25px;',
 			height: 25,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1083,25 +1077,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:37px;',
 			height: 37,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:2px;top:0px;width:652px;height:35px;',
 			height: 35,width: 652,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -1119,6 +1111,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

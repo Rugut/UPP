@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:684px;height:433px;',
 			height: 433,width: 684,
 			items:
 			[
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -154,9 +153,9 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры цен',
-			style: 'position:absolute;left:6px;top:155px;width:669px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры цен',
+			style: 'position:absolute;left:6px;top:155px;width:669px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -220,9 +219,9 @@
 			style: 'position:absolute;left:535px;top:201px;width:128px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:252px;width:669px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:252px;width:669px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -309,9 +308,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры документов',
-			style: 'position:absolute;left:6px;top:42px;width:669px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры документов',
+			style: 'position:absolute;left:6px;top:42px;width:669px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -326,9 +325,9 @@
 			style: 'position:absolute;left:417px;top:272px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Действия с документами',
-			style: 'position:absolute;left:6px;top:330px;width:669px;height:16px;',
+			xtype: 'label',
+			text: 'Действия с документами',
+			style: 'position:absolute;left:6px;top:330px;width:669px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -364,6 +363,8 @@
 			value: 0,
 			name: 'ПолеВводаПроцентСкидкиНаценки',
 			style: 'position:absolute;left:113px;top:223px;width:101px;height:19px;',
+			width: 101,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -373,6 +374,8 @@
 			value: 0,
 			name: 'ПолеВводаКоличествоЭкземпляров',
 			style: 'position:absolute;left:431px;top:350px;width:85px;height:19px;',
+			width: 85,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -458,7 +461,6 @@
 					]
 				},
 				{
-					title:'Таблица',
 					items:
 					[
 		{
@@ -605,6 +607,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			width: 670,
+			height: 24,
 			items:
 			[
 				{
@@ -631,9 +635,16 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:449px;width:698px;height:25px;',
+			width: 698,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -653,10 +664,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

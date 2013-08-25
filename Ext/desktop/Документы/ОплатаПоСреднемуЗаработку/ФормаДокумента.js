@@ -142,30 +142,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:686px;height:25px;',
+			width: 686,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:555px;width:686px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -244,13 +224,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:107px;width:670px;height:380px;',
 			height: 380,width: 670,
 			items:
 			[
 				{
-					title:'Условия',
 					items:
 					[
 		{
@@ -312,6 +291,8 @@
 			value: 0,
 			name: 'ПроцентОплаты',
 			style: 'position:absolute;left:187px;top:167px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -372,6 +353,8 @@
 			value: 0,
 			name: 'ОплачиватьЧасов',
 			style: 'position:absolute;left:354px;top:87px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -475,7 +458,6 @@
 					]
 				},
 				{
-					title:'Оплата',
 					items:
 					[
 		{
@@ -838,6 +820,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -875,6 +859,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:72px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -932,12 +918,13 @@
 					]
 				},
 				{
-					title:'Расчет среднего заработка',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:73px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -1186,6 +1173,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:233px;height:25px;',
+			width: 233,
+			height: 25,
 			items:
 			[
 				{
@@ -1203,14 +1192,13 @@
 			style: 'position:absolute;left:31px;top:491px;width:435px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:466px;top:491px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1224,14 +1212,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:549px;top:491px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1248,6 +1235,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:555px;width:686px;height:25px;',
+			width: 686,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

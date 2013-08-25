@@ -57,13 +57,12 @@
 			style: 'position:absolute;left:76px;top:32px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:59px;width:516px;height:200px;',
 			height: 200,width: 516,
 			items:
 			[
 				{
-					title:'Сформированные документы',
 					items:
 					[
 		{
@@ -165,6 +164,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:502px;height:24px;',
+			width: 502,
+			height: 24,
 			items:
 			[
 				{
@@ -207,6 +208,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:20px;top:80px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				{
@@ -265,7 +268,6 @@
 					]
 				},
 				{
-					title:'Учтенные документы',
 					items:
 					[
 		{
@@ -367,6 +369,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:502px;height:24px;',
+			width: 502,
+			height: 24,
 			items:
 			[
 				{
@@ -395,6 +399,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:20px;top:80px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				{
@@ -476,6 +482,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:532px;height:25px;',
+			width: 532,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

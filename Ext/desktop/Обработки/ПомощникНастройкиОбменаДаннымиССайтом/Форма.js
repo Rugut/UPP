@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:183px;top:0px;width:557px;height:399px;',
 			height: 399,width: 557,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Главная',
 					items:
 					[
 		{
@@ -77,7 +76,6 @@
 					]
 				},
 				{
-					title:'Настройка обмена с WEB - сайтом',
 					items:
 					[
 		{
@@ -92,14 +90,13 @@
 			style: 'position:absolute;left:160px;top:145px;width:124px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:170px;width:545px;height:116px;',
 			height: 116,width: 545,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница каталог',
 					items:
 					[
 		{
@@ -162,7 +159,6 @@
 					]
 				},
 				{
-					title:'Страница сайт',
 					items:
 					[
 		{
@@ -214,6 +210,8 @@
 			value: 0,
 			name: 'HTTPОбменПроксиПорт',
 			style: 'position:absolute;left:378px;top:74px;width:167px;height:19px;',
+			width: 167,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -284,7 +282,6 @@
 					]
 				},
 				{
-					title:'Настройки товары',
 					items:
 					[
 		{
@@ -403,6 +400,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:97px;width:545px;height:24px;',
+			width: 545,
+			height: 24,
 			items:
 			[
 			]
@@ -410,7 +409,6 @@
 					]
 				},
 				{
-					title:'Настройки заказы',
 					items:
 					[
 		{
@@ -702,19 +700,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры для подстановки в заказы с WEB-сайта',
-			style: 'position:absolute;left:6px;top:74px;width:545px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры для подстановки в заказы с WEB-сайта',
+			style: 'position:absolute;left:6px;top:74px;width:545px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры для создания новых элементов',
-			style: 'position:absolute;left:6px;top:167px;width:545px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры для создания новых элементов',
+			style: 'position:absolute;left:6px;top:167px;width:545px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Действия с заказами',
 					items:
 					[
 		{
@@ -774,7 +771,6 @@
 					]
 				},
 				{
-					title:'Настройки типа выполнения обмена данными',
 					items:
 					[
 		{
@@ -845,14 +841,13 @@
 			style: 'position:absolute;left:26px;top:118px;width:316px;height:16px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:139px;width:545px;height:43px;',
 			height: 43,width: 545,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Главная',
 					items:
 					[
 		{
@@ -907,7 +902,6 @@
 					]
 				},
 				{
-					title:'Настройки автоматического обмена данными',
 					items:
 					[
 		{
@@ -954,7 +948,6 @@
 					]
 				},
 				{
-					title:'Итоговая страница завершения обмена',
 					items:
 					[
 		{
@@ -1013,14 +1006,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:399px;',
 			height: 399,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница настройки',
 				},
 			]
 		},
@@ -1031,6 +1023,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
+			width: 740,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -30,6 +30,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			items:
 			[
 				{
@@ -38,24 +40,6 @@
 				'-',
 				{
 					text:'Установка границы последовательности',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:352px;width:400px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -179,6 +163,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:136px;width:384px;height:24px;',
+			width: 384,
+			height: 24,
 			items:
 			[
 				{
@@ -198,19 +184,40 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: ' По видам учета:',
-			style: 'position:absolute;left:8px;top:57px;width:384px;height:16px;',
+			xtype: 'label',
+			text: ' По видам учета:',
+			style: 'position:absolute;left:8px;top:57px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: ' По организациям:',
-			style: 'position:absolute;left:8px;top:117px;width:384px;height:16px;',
+			xtype: 'label',
+			text: ' По организациям:',
+			style: 'position:absolute;left:8px;top:117px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:352px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

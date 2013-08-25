@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -49,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:404px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -63,26 +67,24 @@
 			style: 'position:absolute;left:586px;top:5px;width:76px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:654px;height:290px;',
 			height: 290,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Расчет',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:48px;',
 			height: 48,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -99,6 +101,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -130,20 +134,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:293px;top:26px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:374px;width:654px;height:22px;',
 			height: 22,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

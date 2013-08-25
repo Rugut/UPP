@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:766px;height:429px;',
 			height: 429,width: 766,
 			items:
 			[
 				{
-					title:'Экспорт заявок на открытие счетов',
 					items:
 					[
 		{
@@ -59,9 +58,9 @@
 			style: 'position:absolute;left:6px;top:6px;width:112px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Заявки на открытие счетов',
-			style: 'position:absolute;left:6px;top:81px;width:752px;height:16px;',
+			xtype: 'label',
+			text: 'Заявки на открытие счетов',
+			style: 'position:absolute;left:6px;top:81px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ЗявкиНаОткрытиеСчетов',
@@ -180,6 +179,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:97px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -255,6 +256,8 @@
 			value: 0,
 			name: 'НомерСНачалаГода',
 			style: 'position:absolute;left:120px;top:54px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -426,13 +429,12 @@
 					]
 				},
 				{
-					title:'Экспорт зачисления зарплаты',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Платежные документы на зачисление зарплаты ',
-			style: 'position:absolute;left:6px;top:81px;width:752px;height:16px;',
+			xtype: 'label',
+			text: 'Платежные документы на зачисление зарплаты ',
+			style: 'position:absolute;left:6px;top:81px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -484,6 +486,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:97px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -677,6 +681,8 @@
 			value: 0,
 			name: 'НомерСНачалаГодаЗЗ',
 			style: 'position:absolute;left:120px;top:54px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -705,13 +711,12 @@
 					]
 				},
 				{
-					title:'Импорт',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Файлы для импорта ',
-			style: 'position:absolute;left:6px;top:32px;width:752px;height:16px;',
+			xtype: 'label',
+			text: 'Файлы для импорта ',
+			style: 'position:absolute;left:6px;top:32px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -731,6 +736,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:48px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -969,7 +976,6 @@
 					]
 				},
 				{
-					title:'Протоколы обмена',
 					items:
 					[
 		{
@@ -1053,6 +1059,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1101,6 +1109,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:457px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:704px;height:25px;',
+			width: 704,
+			height: 25,
 			items:
 			[
 				{
@@ -268,13 +270,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:190px;width:688px;height:193px;',
 			height: 193,width: 688,
 			items:
 			[
 				{
-					title:'Отчеты',
 					items:
 					[
 		{
@@ -340,7 +341,6 @@
 					]
 				},
 				{
-					title:'Тексты выгрузки',
 					items:
 					[
 		{

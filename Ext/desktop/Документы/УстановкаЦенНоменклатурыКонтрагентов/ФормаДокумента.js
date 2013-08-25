@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:514px;height:25px;',
+			width: 514,
+			height: 25,
 			items:
 			[
 				'-',
@@ -224,6 +226,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:318px;width:514px;height:25px;',
+			width: 514,
+			height: 25,
 			items:
 			[
 				{
@@ -248,19 +252,20 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:80px;width:498px;height:179px;',
 			height: 179,width: 498,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Цены номенклатуры',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:47px;width:497px;height:26px;',
+			width: 497,
+			height: 26,
 			items:
 			[
 				{

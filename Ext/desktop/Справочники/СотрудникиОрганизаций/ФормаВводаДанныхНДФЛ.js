@@ -17,28 +17,29 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:536px;height:348px;',
 			height: 348,width: 536,
 			items:
 			[
 				{
-					title:'Стандартные вычеты',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Личный стандартный вычет',
-			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;',
+			xtype: 'label',
+			text: 'Личный стандартный вычет',
+			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стандартные вычеты на детей',
-			style: 'position:absolute;left:6px;top:142px;width:522px;height:16px;',
+			xtype: 'label',
+			text: 'Стандартные вычеты на детей',
+			style: 'position:absolute;left:6px;top:142px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:158px;width:522px;height:24px;',
+			width: 522,
+			height: 24,
 			items:
 			[
 				{
@@ -264,6 +265,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:522px;height:24px;',
+			width: 522,
+			height: 24,
 			items:
 			[
 				{
@@ -300,7 +303,6 @@
 					]
 				},
 				{
-					title:'Статус налогоплательщика',
 					items:
 					[
 		{
@@ -343,19 +345,18 @@
 			style: 'position:absolute;left:17px;top:6px;width:511px;height:31px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:6px;top:43px;width:522px;height:5px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:6px;top:43px;width:522px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:40px;top:183px;width:488px;height:28px;',
 			height: 28,width: 488,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -402,7 +403,6 @@
 					]
 				},
 				{
-					title:'Доходы на предыдущих местах работы',
 					items:
 					[
 		{
@@ -478,11 +478,13 @@
 			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:67px;top:24px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Справка с предыдущего места работы',
-			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;',
+			xtype: 'label',
+			text: 'Справка с предыдущего места работы',
+			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -501,6 +503,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:364px;width:552px;height:25px;',
+			width: 552,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

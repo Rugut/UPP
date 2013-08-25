@@ -406,6 +406,15 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
+			items:
+			[
+			]
+		},
+		{
 			id: 'Дерево',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:33px;width:174px;height:380px;',
@@ -474,14 +483,6 @@
 	}],
 	dockedItems:
 	[
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
 	]
 	});
 });

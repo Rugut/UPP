@@ -17,18 +17,19 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:8px;width:434px;height:379px;',
 			height: 379,width: 434,
 			items:
 			[
 				{
-					title:'Показатели',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:420px;height:24px;',
+			width: 420,
+			height: 24,
 			items:
 			[
 				{
@@ -115,7 +116,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -188,6 +188,8 @@
 			value: 0,
 			name: 'ПолеВводаИнтервалАвтообновления',
 			style: 'position:absolute;left:122px;top:99px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -195,9 +197,9 @@
 			style: 'position:absolute;left:297px;top:50px;width:129px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дата формирования',
-			style: 'position:absolute;left:6px;top:6px;width:420px;height:16px;',
+			xtype: 'label',
+			text: 'Дата формирования',
+			style: 'position:absolute;left:6px;top:6px;width:420px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'combobox',
@@ -224,14 +226,14 @@
 			style: 'position:absolute;left:126px;top:50px;width:119px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры публикации',
-			style: 'position:absolute;left:6px;top:146px;width:420px;height:17px;',
+			xtype: 'label',
+			text: 'Параметры публикации',
+			style: 'position:absolute;left:6px;top:146px;width:420px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:77px;width:420px;height:17px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:77px;width:420px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -299,6 +301,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:150px;top:248px;width:276px;height:24px;',
+			width: 276,
+			height: 24,
 			items:
 			[
 				{
@@ -342,9 +346,16 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:395px;width:448px;height:25px;',
+			width: 448,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -362,10 +373,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -61,14 +63,13 @@
 			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:48px;',
 			height: 48,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -79,6 +80,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -116,20 +119,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:554px;top:24px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:433px;width:654px;height:24px;',
 			height: 24,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -190,16 +194,14 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:122px;width:654px;height:310px;',
 			height: 310,width: 654,
 			items:
 			[
 				{
-					title:'Титульный',
 				},
 				{
-					title:'Раздел 1.1',
 					items:
 					[
 		{
@@ -235,7 +237,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.2',
 					items:
 					[
 		{
@@ -259,7 +260,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.3',
 					items:
 					[
 		{
@@ -337,7 +337,6 @@
 					]
 				},
 				{
-					title:'Лист 02',
 					items:
 					[
 		{
@@ -385,7 +384,6 @@
 					]
 				},
 				{
-					title:'Прил.1 к Листу 02',
 					items:
 					[
 		{
@@ -433,7 +431,6 @@
 					]
 				},
 				{
-					title:'Прил.2 к Листу 02',
 					items:
 					[
 		{
@@ -481,7 +478,6 @@
 					]
 				},
 				{
-					title:'Прил. 3 к Листу 02',
 					items:
 					[
 		{
@@ -529,7 +525,6 @@
 					]
 				},
 				{
-					title:'Прил. 4 к Листу 02',
 					items:
 					[
 		{
@@ -577,7 +572,6 @@
 					]
 				},
 				{
-					title:'Прил.5 к Листу 02',
 					items:
 					[
 		{
@@ -630,7 +624,6 @@
 					]
 				},
 				{
-					title:'Лист 03 (Раздел А)',
 					items:
 					[
 		{
@@ -684,7 +677,6 @@
 					]
 				},
 				{
-					title:'Лист 03 (Раздел Б)',
 					items:
 					[
 		{
@@ -732,7 +724,6 @@
 					]
 				},
 				{
-					title:'Лист 03 (Реестр)',
 					items:
 					[
 		{
@@ -780,7 +771,6 @@
 					]
 				},
 				{
-					title:'Лист 04',
 					items:
 					[
 		{
@@ -828,7 +818,6 @@
 					]
 				},
 				{
-					title:'Лист 05',
 					items:
 					[
 		{
@@ -876,10 +865,8 @@
 					]
 				},
 				{
-					title:'Лист 06',
 				},
 				{
-					title:'Лист 07',
 					items:
 					[
 		{
@@ -903,7 +890,6 @@
 					]
 				},
 				{
-					title:'Приложение',
 					items:
 					[
 		{
@@ -923,25 +909,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:37px;',
 			height: 37,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:35px;',
 			height: 35,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -959,6 +943,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

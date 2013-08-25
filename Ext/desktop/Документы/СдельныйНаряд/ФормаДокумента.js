@@ -210,6 +210,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
+			width: 692,
+			height: 25,
 			items:
 			[
 				{
@@ -255,18 +257,19 @@
 			style: 'position:absolute;left:336px;top:33px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:189px;width:676px;height:331px;',
 			height: 331,width: 676,
 			items:
 			[
 				{
-					title:'Выполненные работы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -542,12 +545,13 @@
 					]
 				},
 				{
-					title:'Исполнители',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:140px;width:668px;height:24px;',
+			width: 668,
+			height: 24,
 			items:
 			[
 				{
@@ -1096,20 +1100,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:35px;width:668px;height:105px;',
 			height: 105,width: 668,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Порядок расчета',
-			style: 'position:absolute;left:0px;top:0px;width:668px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок расчета',
+			style: 'position:absolute;left:0px;top:0px;width:668px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1127,9 +1130,9 @@
 			style: 'position:absolute;left:8px;top:59px;width:117px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники',
-			style: 'position:absolute;left:0px;top:83px;width:668px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:0px;top:83px;width:668px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1249,14 +1252,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:106px;width:676px;height:78px;',
 			height: 78,width: 676,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1280,9 +1282,9 @@
 			style: 'position:absolute;left:228px;top:27px;width:110px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Период наряда',
-			style: 'position:absolute;left:6px;top:6px;width:332px;height:16px;',
+			xtype: 'label',
+			text: 'Период наряда',
+			style: 'position:absolute;left:6px;top:6px;width:332px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -1311,6 +1313,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:552px;width:692px;height:25px;',
+			width: 692,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

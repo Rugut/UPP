@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -435,6 +437,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:126px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				'-',
@@ -546,32 +550,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:359px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
@@ -623,14 +601,43 @@
 			style: 'position:absolute;left:571px;top:33px;width:71px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Материалы',
-			style: 'position:absolute;left:8px;top:109px;width:636px;height:17px;',
+			xtype: 'label',
+			text: 'Материалы',
+			style: 'position:absolute;left:8px;top:109px;width:636px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:359px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

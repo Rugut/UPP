@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:7px;width:752px;height:360px;',
 			height: 360,width: 752,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ЗаполнениеТаблицыПолей',
 					items:
 					[
 		{
@@ -99,6 +98,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -120,14 +121,13 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка соответствия полей файла и контактных данных объектов',
-			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка соответствия полей файла и контактных данных объектов',
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'НастройкаПоискаОбъектов',
 					items:
 					[
 		{
@@ -220,6 +220,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -244,14 +246,13 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка критериев поиска объектов в текущей информационной базе',
-			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка критериев поиска объектов в текущей информационной базе',
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'НастройкаЗагрузкиЗначений',
 					items:
 					[
 		{
@@ -362,6 +363,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:45px;width:752px;height:24px;',
+			width: 752,
+			height: 24,
 			items:
 			[
 				{
@@ -390,9 +393,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка загрузки данных в текущую информационную базу',
-			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка загрузки данных в текущую информационную базу',
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -425,6 +428,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:395px;width:767px;height:25px;',
+			width: 767,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

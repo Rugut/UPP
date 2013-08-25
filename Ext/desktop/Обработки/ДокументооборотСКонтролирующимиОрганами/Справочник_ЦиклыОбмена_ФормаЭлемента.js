@@ -61,6 +61,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
+			width: 718,
+			height: 25,
 			items:
 			[
 				{
@@ -72,14 +74,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Субъекты переписки',
-			style: 'position:absolute;left:8px;top:112px;width:702px;height:16px;',
+			xtype: 'label',
+			text: 'Субъекты переписки',
+			style: 'position:absolute;left:8px;top:112px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Предмет переписки',
-			style: 'position:absolute;left:8px;top:172px;width:702px;height:16px;',
+			xtype: 'label',
+			text: 'Предмет переписки',
+			style: 'position:absolute;left:8px;top:172px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -94,20 +96,19 @@
 			style: 'position:absolute;left:8px;top:603px;width:534px;height:18px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:236px;width:702px;height:357px;',
 			height: 357,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Сообщения',
-			style: 'position:absolute;left:0px;top:57px;width:702px;height:16px;',
+			xtype: 'label',
+			text: 'Сообщения',
+			style: 'position:absolute;left:0px;top:57px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -122,9 +123,9 @@
 			style: 'position:absolute;left:6px;top:20px;width:54px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Активность',
-			style: 'position:absolute;left:0px;top:0px;width:702px;height:16px;',
+			xtype: 'label',
+			text: 'Активность',
+			style: 'position:absolute;left:0px;top:0px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -151,25 +152,23 @@
 			style: 'position:absolute;left:265px;top:20px;width:106px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:75px;width:702px;height:249px;',
 			height: 249,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:128px;width:702px;height:16px;',
 			height: 16,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -185,13 +184,10 @@
 					]
 				},
 				{
-					title:'',
 				},
 				{
-					title:'',
 				},
 				{
-					title:'СтраницаЗапросНаИнформационноеОбслуживание',
 					items:
 					[
 		{
@@ -221,7 +217,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -237,14 +232,13 @@
 			style: 'position:absolute;left:45px;top:23px;width:657px;height:16px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:37px;width:702px;height:44px;',
 			height: 44,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -272,7 +266,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -296,7 +289,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -338,7 +330,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -396,14 +387,13 @@
 			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -431,7 +421,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -485,7 +474,6 @@
 					]
 				},
 				{
-					title:'Обращение НП',
 					items:
 					[
 		{
@@ -537,14 +525,13 @@
 			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:80px;width:702px;height:44px;',
 			height: 44,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -572,7 +559,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -614,7 +600,6 @@
 					]
 				},
 				{
-					title:'Рассылка',
 					items:
 					[
 		{
@@ -626,7 +611,6 @@
 					]
 				},
 				{
-					title:'Рассылка групповая',
 					items:
 					[
 		{
@@ -650,7 +634,6 @@
 					]
 				},
 				{
-					title:'ИОН',
 					items:
 					[
 		{
@@ -720,14 +703,13 @@
 			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -755,7 +737,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -807,14 +788,13 @@
 			style: 'position:absolute;left:563px;top:45px;width:139px;height:15px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -840,14 +820,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:165px;width:702px;height:42px;',
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -873,14 +852,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:207px;width:702px;height:42px;',
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -908,7 +886,6 @@
 					]
 				},
 				{
-					title:'Документ',
 					items:
 					[
 		{
@@ -950,7 +927,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1016,7 +992,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1052,7 +1027,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1078,9 +1052,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:336px;width:702px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:336px;width:702px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1099,14 +1073,13 @@
 			style: 'position:absolute;left:8px;top:90px;width:108px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:702px;height:19px;',
 			height: 19,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Налоговый орган',
 					items:
 					[
 		{
@@ -1124,7 +1097,6 @@
 					]
 				},
 				{
-					title:'Орган ПФР',
 					items:
 					[
 		{
@@ -1142,7 +1114,6 @@
 					]
 				},
 				{
-					title:'Орган ФСГС',
 					items:
 					[
 		{
@@ -1183,14 +1154,13 @@
 			style: 'position:absolute;left:118px;top:89px;width:513px;height:17px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:213px;width:702px;height:23px;',
 			height: 23,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1210,6 +1180,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:599px;width:718px;height:25px;',
+			width: 718,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

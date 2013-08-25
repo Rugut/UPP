@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:270px;',
 			height: 270,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -147,9 +146,9 @@
 			style: 'position:absolute;left:12px;top:190px;width:142px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выводить данные',
-			style: 'position:absolute;left:6px;top:149px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:149px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'combobox',
@@ -163,14 +162,13 @@
 			style: 'position:absolute;left:12px;top:126px;width:220px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показывать обороты',
-			style: 'position:absolute;left:6px;top:81px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Показывать обороты',
+			style: 'position:absolute;left:6px;top:81px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Детализация счета',
 					items:
 					[
 		{
@@ -236,6 +234,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:45px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -246,19 +246,20 @@
 			style: 'position:absolute;left:6px;top:6px;width:92px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'По субконто',
-			style: 'position:absolute;left:6px;top:29px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'По субконто',
+			style: 'position:absolute;left:6px;top:29px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Детализация кор. счетов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -335,7 +336,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -437,6 +437,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -452,6 +454,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:286px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

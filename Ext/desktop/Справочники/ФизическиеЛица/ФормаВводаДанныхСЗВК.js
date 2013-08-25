@@ -383,6 +383,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:339px;width:740px;height:24px;',
+			width: 740,
+			height: 24,
 			items:
 			[
 				{
@@ -455,6 +457,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:141px;width:740px;height:24px;',
+			width: 740,
+			height: 24,
 			items:
 			[
 				{
@@ -596,6 +600,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициентДляСЗВК',
 			style: 'position:absolute;left:387px;top:8px;width:52px;height:19px;',
+			width: 52,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -696,6 +702,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:430px;width:756px;height:25px;',
+			width: 756,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

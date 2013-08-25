@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
 			items:
 			[
 				{
@@ -101,23 +103,21 @@
 			style: 'position:absolute;left:86px;top:350px;width:556px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:634px;height:225px;',
 			height: 225,width: 634,
 			items:
 			[
 				{
-					title:'Регистры сведений',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			height: 189,width: 620,
 			items:
 			[
 				{
-					title:'Подсказка',
 					items:
 					[
 		{
@@ -133,17 +133,15 @@
 					]
 				},
 				{
-					title:'Регистры накопления',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			height: 189,width: 620,
 			items:
 			[
 				{
-					title:'Подсказка',
 					items:
 					[
 		{
@@ -159,17 +157,15 @@
 					]
 				},
 				{
-					title:'Регистры расчета',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			height: 189,width: 620,
 			items:
 			[
 				{
-					title:'Подсказка',
 					items:
 					[
 		{
@@ -284,14 +280,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:559px;top:312px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -332,6 +327,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:239px;top:377px;width:411px;height:25px;',
+			width: 411,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[
@@ -355,6 +352,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:377px;width:239px;height:25px;',
+			width: 239,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

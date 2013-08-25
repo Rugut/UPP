@@ -17,14 +17,14 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Заполнение',
-			style: 'position:absolute;left:8px;top:25px;width:298px;height:16px;',
+			xtype: 'label',
+			text: 'Заполнение',
+			style: 'position:absolute;left:8px;top:25px;width:298px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок погашения',
-			style: 'position:absolute;left:8px;top:95px;width:298px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок погашения',
+			style: 'position:absolute;left:8px;top:95px;width:298px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -39,10 +39,14 @@
 			value: 0,
 			name: 'СуммаДляПодбора',
 			style: 'position:absolute;left:126px;top:185px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:314px;height:25px;',
+			width: 314,
+			height: 25,
 			items:
 			[
 				{
@@ -118,6 +122,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:212px;width:314px;height:25px;',
+			width: 314,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

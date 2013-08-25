@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -50,14 +52,13 @@
 			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:654px;height:295px;',
 			height: 295,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Раздел 1',
 					items:
 					[
 		{
@@ -125,14 +126,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:49px;',
 			height: 49,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -159,20 +159,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:131px;top:24px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:377px;width:654px;height:25px;',
 			height: 25,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -239,6 +240,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:408px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

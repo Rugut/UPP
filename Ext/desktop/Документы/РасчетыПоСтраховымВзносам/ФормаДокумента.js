@@ -142,6 +142,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 			]
@@ -162,14 +164,13 @@
 			style: 'position:absolute;left:96px;top:458px;width:566px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:110px;width:654px;height:340px;',
 			height: 340,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Уплата',
 					items:
 					[
 		{
@@ -186,6 +187,8 @@
 			value: 0,
 			name: 'ПФРСтраховая',
 			style: 'position:absolute;left:49px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -201,11 +204,13 @@
 			value: 0,
 			name: 'ПФРНакопительная',
 			style: 'position:absolute;left:49px;top:161px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Страховая часть пенсии',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Страховая часть пенсии',
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -214,14 +219,13 @@
 			style: 'position:absolute;left:0px;top:304px;width:140px;height:36px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -286,9 +290,9 @@
 			style: 'position:absolute;left:384px;top:23px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Платеж',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -301,14 +305,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:223px;width:654px;height:75px;',
 			height: 75,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -325,21 +328,22 @@
 			value: 0,
 			name: 'ПФРНаДоплатуКПенсииШахтерам',
 			style: 'position:absolute;left:320px;top:48px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительные тарифы',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительные тарифы',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:15px;width:414px;height:25px;',
 			height: 25,width: 414,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -356,6 +360,8 @@
 			value: 0,
 			name: 'ПФРПоДополнительномуТарифу',
 			style: 'position:absolute;left:320px;top:6px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 					]
 				},
@@ -372,14 +378,13 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Накопительная часть пенсии',
-			style: 'position:absolute;left:0px;top:139px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Накопительная часть пенсии',
+			style: 'position:absolute;left:0px;top:139px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Уплата ФСС',
 					items:
 					[
 		{
@@ -396,6 +401,8 @@
 			value: 0,
 			name: 'ФСС',
 			style: 'position:absolute;left:53px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -411,6 +418,8 @@
 			value: 0,
 			name: 'ФССНесчастныеСлучаи',
 			style: 'position:absolute;left:53px;top:161px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -428,9 +437,9 @@
 			style: 'position:absolute;left:205px;top:107px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -482,14 +491,13 @@
 			style: 'position:absolute;left:304px;top:188px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -554,9 +562,9 @@
 			style: 'position:absolute;left:384px;top:23px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Платеж',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -569,9 +577,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -582,7 +590,6 @@
 					]
 				},
 				{
-					title:'Уплата ФОМС',
 					items:
 					[
 		{
@@ -599,6 +606,8 @@
 			value: 0,
 			name: 'ФФОМС',
 			style: 'position:absolute;left:138px;top:67px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -614,16 +623,17 @@
 			value: 0,
 			name: 'ТФОМС',
 			style: 'position:absolute;left:138px;top:95px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -688,9 +698,9 @@
 			style: 'position:absolute;left:384px;top:23px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Платеж',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -711,7 +721,6 @@
 					]
 				},
 				{
-					title:'Начисление',
 					items:
 					[
 		{
@@ -728,6 +737,8 @@
 			value: 0,
 			name: 'ПФРСтраховая1',
 			style: 'position:absolute;left:138px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -743,6 +754,8 @@
 			value: 0,
 			name: 'ПФРНакопительная1',
 			style: 'position:absolute;left:138px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -758,6 +771,8 @@
 			value: 0,
 			name: 'ФСС1',
 			style: 'position:absolute;left:313px;top:159px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -773,6 +788,8 @@
 			value: 0,
 			name: 'ФФОМС1',
 			style: 'position:absolute;left:113px;top:240px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -788,6 +805,8 @@
 			value: 0,
 			name: 'ТФОМС1',
 			style: 'position:absolute;left:313px;top:240px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -803,6 +822,8 @@
 			value: 0,
 			name: 'ФССНесчастныеСлучаи1',
 			style: 'position:absolute;left:313px;top:187px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -818,21 +839,23 @@
 			value: 0,
 			name: 'ПФРПоДополнительномуТарифу1',
 			style: 'position:absolute;left:412px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начислено в ПФР',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начислено в ПФР',
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начислено в ФСС',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начислено в ФСС',
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начислено в ФОМС',
-			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начислено в ФОМС',
+			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -848,16 +871,17 @@
 			value: 0,
 			name: 'ПФРНаДоплатуКПенсииШахтерам1',
 			style: 'position:absolute;left:412px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -935,11 +959,13 @@
 			value: 0,
 			name: 'МесяцРасчетногоПериода1',
 			style: 'position:absolute;left:521px;top:23px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начисление',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начисление',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -954,18 +980,17 @@
 					]
 				},
 				{
-					title:'Пособия по страхованию',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -975,6 +1000,8 @@
 			value: 0,
 			name: 'ФСС2',
 			style: 'position:absolute;left:257px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -984,6 +1011,8 @@
 			value: 0,
 			name: 'ФСС3',
 			style: 'position:absolute;left:257px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1011,16 +1040,17 @@
 			value: 0,
 			name: 'ФССНесчастныеСлучаи2',
 			style: 'position:absolute;left:54px;top:161px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1085,9 +1115,9 @@
 			style: 'position:absolute;left:412px;top:23px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособия по страхованию',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Пособия по страхованию',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1103,6 +1133,8 @@
 			value: 0,
 			name: 'МесяцРасчетногоПериода2',
 			style: 'position:absolute;left:521px;top:23px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1117,18 +1149,17 @@
 					]
 				},
 				{
-					title:'Пособия по страхованию2011',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
-			style: 'position:absolute;left:0px;top:108px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
+			style: 'position:absolute;left:0px;top:108px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -1138,6 +1169,8 @@
 			value: 0,
 			name: 'ФСС4',
 			style: 'position:absolute;left:54px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1159,16 +1192,17 @@
 			value: 0,
 			name: 'ФССНесчастныеСлучаи3',
 			style: 'position:absolute;left:54px;top:133px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1233,9 +1267,9 @@
 			style: 'position:absolute;left:412px;top:23px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособия по страхованию',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Пособия по страхованию',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1251,6 +1285,8 @@
 			value: 0,
 			name: 'МесяцРасчетногоПериода3',
 			style: 'position:absolute;left:521px;top:23px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1265,7 +1301,6 @@
 					]
 				},
 				{
-					title:'Устаревшие данные',
 					items:
 					[
 		{
@@ -1288,6 +1323,8 @@
 			value: 0,
 			name: 'ПФРСтраховая2',
 			style: 'position:absolute;left:138px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1303,6 +1340,8 @@
 			value: 0,
 			name: 'ПФРНакопительная2',
 			style: 'position:absolute;left:138px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1318,6 +1357,8 @@
 			value: 0,
 			name: 'ФСС5',
 			style: 'position:absolute;left:113px;top:159px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1333,6 +1374,8 @@
 			value: 0,
 			name: 'ФФОМС2',
 			style: 'position:absolute;left:113px;top:244px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1348,6 +1391,8 @@
 			value: 0,
 			name: 'ТФОМС2',
 			style: 'position:absolute;left:334px;top:244px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1363,6 +1408,8 @@
 			value: 0,
 			name: 'ФССНесчастныеСлучаи4',
 			style: 'position:absolute;left:113px;top:187px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1378,6 +1425,8 @@
 			value: 0,
 			name: 'ПФРПоДополнительномуТарифу2',
 			style: 'position:absolute;left:412px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1395,14 +1444,14 @@
 			style: 'position:absolute;left:401px;top:159px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уплачено в ПФР',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Уплачено в ПФР',
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уплачено в ФСС',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Уплачено в ФСС',
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1420,9 +1469,9 @@
 			style: 'position:absolute;left:401px;top:187px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уплачено в ФОМС',
-			style: 'position:absolute;left:0px;top:219px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Уплачено в ФОМС',
+			style: 'position:absolute;left:0px;top:219px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -1472,16 +1521,17 @@
 			value: 0,
 			name: 'ПФРНаДоплатуКПенсииШахтерам2',
 			style: 'position:absolute;left:412px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1559,11 +1609,13 @@
 			value: 0,
 			name: 'МесяцРасчетногоПериода6',
 			style: 'position:absolute;left:521px;top:23px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Платеж',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1578,7 +1630,6 @@
 					]
 				},
 				{
-					title:'Доначисление взносов',
 					items:
 					[
 		{
@@ -1595,6 +1646,8 @@
 			value: 0,
 			name: 'ПФРСтраховая3',
 			style: 'position:absolute;left:138px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1610,6 +1663,8 @@
 			value: 0,
 			name: 'ПФРНакопительная3',
 			style: 'position:absolute;left:138px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1625,6 +1680,8 @@
 			value: 0,
 			name: 'ФСС6',
 			style: 'position:absolute;left:313px;top:159px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1640,6 +1697,8 @@
 			value: 0,
 			name: 'ФФОМС3',
 			style: 'position:absolute;left:113px;top:240px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1655,6 +1714,8 @@
 			value: 0,
 			name: 'ТФОМС3',
 			style: 'position:absolute;left:313px;top:240px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1670,6 +1731,8 @@
 			value: 0,
 			name: 'ФССНесчастныеСлучаи5',
 			style: 'position:absolute;left:313px;top:187px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1685,21 +1748,23 @@
 			value: 0,
 			name: 'ПФРПоДополнительномуТарифу3',
 			style: 'position:absolute;left:412px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начислено в ПФР',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начислено в ПФР',
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начислено в ФСС',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начислено в ФСС',
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начислено в ФОМС',
-			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начислено в ФОМС',
+			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1715,16 +1780,17 @@
 			value: 0,
 			name: 'ПФРНаДоплатуКПенсииШахтерам3',
 			style: 'position:absolute;left:412px;top:107px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1789,9 +1855,9 @@
 			style: 'position:absolute;left:412px;top:23px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начисление',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;',
+			xtype: 'label',
+			text: 'Начисление',
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1873,6 +1939,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:485px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

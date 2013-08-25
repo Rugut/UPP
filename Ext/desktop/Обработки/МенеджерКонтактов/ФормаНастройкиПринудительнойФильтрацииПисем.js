@@ -17,9 +17,9 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Параметры обрабатываемых писем',
-			style: 'position:absolute;left:8px;top:8px;width:240px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры обрабатываемых писем',
+			style: 'position:absolute;left:8px;top:8px;width:240px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -70,6 +70,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:201px;width:256px;height:25px;',
+			width: 256,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

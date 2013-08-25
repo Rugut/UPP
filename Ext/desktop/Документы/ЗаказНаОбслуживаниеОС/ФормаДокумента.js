@@ -218,6 +218,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:172px;width:370px;height:24px;',
+			width: 370,
+			height: 24,
 			items:
 			[
 				'-',
@@ -308,6 +310,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:386px;height:25px;',
+			width: 386,
+			height: 25,
 			items:
 			[
 				{
@@ -378,9 +382,9 @@
 			style: 'position:absolute;left:8px;top:105px;width:136px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные средства',
-			style: 'position:absolute;left:8px;top:156px;width:370px;height:16px;',
+			xtype: 'label',
+			text: 'Основные средства',
+			style: 'position:absolute;left:8px;top:156px;width:370px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -389,6 +393,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:386px;height:25px;',
+			width: 386,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

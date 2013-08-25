@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:506px;height:330px;',
 			height: 330,width: 506,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -139,6 +138,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:140px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 				{
@@ -188,14 +189,13 @@
 			style: 'position:absolute;left:250px;top:6px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели',
-			style: 'position:absolute;left:6px;top:124px;width:492px;height:16px;',
+			xtype: 'label',
+			text: 'Показатели',
+			style: 'position:absolute;left:6px;top:124px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -261,6 +261,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 			]
@@ -268,7 +270,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -370,6 +371,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:49px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 			]
@@ -395,14 +398,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор',
-			style: 'position:absolute;left:6px;top:33px;width:492px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор',
+			style: 'position:absolute;left:6px;top:33px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -468,6 +470,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 			]
@@ -475,7 +479,6 @@
 					]
 				},
 				{
-					title:'АВС-классы',
 					items:
 					[
 		{
@@ -492,6 +495,8 @@
 			value: 0,
 			name: 'ПроцентAКласса',
 			style: 'position:absolute;left:65px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -507,6 +512,8 @@
 			value: 0,
 			name: 'ПроцентBКласса',
 			style: 'position:absolute;left:65px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -522,6 +529,8 @@
 			value: 0,
 			name: 'ПолеВвода3',
 			style: 'position:absolute;left:65px;top:75px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -542,9 +551,9 @@
 			style: 'position:absolute;left:147px;top:75px;width:13px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Критерии распределения (процент от общей суммы параметров распределения)',
-			style: 'position:absolute;left:6px;top:6px;width:492px;height:16px;',
+			xtype: 'label',
+			text: 'Критерии распределения (процент от общей суммы параметров распределения)',
+			style: 'position:absolute;left:6px;top:6px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -557,6 +566,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:346px;width:522px;height:25px;',
+			width: 522,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

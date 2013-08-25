@@ -64,18 +64,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:620px;height:25px;',
+			width: 620,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:184px;width:604px;height:222px;',
 			height: 222,width: 604,
 			items:
 			[
 				{
-					title:'База распределения',
 					items:
 					[
 		{
@@ -330,6 +331,8 @@
 			value: 0,
 			name: 'Процент',
 			style: 'position:absolute;left:482px;top:54px;width:114px;height:19px;',
+			width: 114,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -339,6 +342,8 @@
 			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:482px;top:78px;width:114px;height:19px;',
+			width: 114,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -401,7 +406,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -413,6 +417,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:590px;height:25px;',
+			width: 590,
+			height: 25,
 			items:
 			[
 			]
@@ -521,7 +527,6 @@
 					]
 				},
 				{
-					title:'Фильтры',
 					items:
 					[
 		{
@@ -565,6 +570,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:42px;width:590px;height:24px;',
+			width: 590,
+			height: 24,
 			items:
 			[
 			]
@@ -653,9 +660,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Фильтры',
-			style: 'position:absolute;left:6px;top:26px;width:590px;height:16px;',
+			xtype: 'label',
+			text: 'Фильтры',
+			style: 'position:absolute;left:6px;top:26px;width:590px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -737,6 +744,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:438px;width:620px;height:25px;',
+			width: 620,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

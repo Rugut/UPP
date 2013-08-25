@@ -61,13 +61,12 @@
 			style: 'position:absolute;left:8px;top:33px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:388px;height:179px;',
 			height: 179,width: 388,
 			items:
 			[
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -133,7 +132,6 @@
 					]
 				},
 				{
-					title:'Индикаторы',
 					items:
 					[
 		{
@@ -144,6 +142,8 @@
 			value: 0,
 			name: 'ТрендНижняяГраница',
 			style: 'position:absolute;left:63px;top:27px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -153,6 +153,8 @@
 			value: 0,
 			name: 'ТрендВерхняяГраница',
 			style: 'position:absolute;left:243px;top:27px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -207,6 +209,8 @@
 			value: 0,
 			name: 'СостояниеНижняяГраница',
 			style: 'position:absolute;left:63px;top:81px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -216,6 +220,8 @@
 			value: 0,
 			name: 'СостояниеВерхняяГраница',
 			style: 'position:absolute;left:243px;top:81px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -259,7 +265,6 @@
 					]
 				},
 				{
-					title:'Расшифровки',
 					items:
 					[
 		{
@@ -334,6 +339,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:374px;height:24px;',
+			width: 374,
+			height: 24,
 			items:
 			[
 				{
@@ -427,6 +434,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:271px;width:404px;height:25px;',
+			width: 404,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

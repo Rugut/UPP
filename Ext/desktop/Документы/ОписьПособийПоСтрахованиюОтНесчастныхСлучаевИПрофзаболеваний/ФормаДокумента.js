@@ -157,23 +157,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:707px;height:25px;',
+			width: 707,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:691px;height:357px;',
 			height: 357,width: 691,
 			items:
 			[
 				{
-					title:'Пособия',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:677px;height:24px;',
+			width: 677,
+			height: 24,
 			items:
 			[
 				{
@@ -343,6 +346,8 @@
 			value: 0,
 			name: 'КоличествоСтраниц',
 			style: 'position:absolute;left:547px;top:272px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -370,7 +375,6 @@
 					]
 				},
 				{
-					title:'Данные страхователя',
 					items:
 					[
 		{
@@ -605,6 +609,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:474px;width:707px;height:25px;',
+			width: 707,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

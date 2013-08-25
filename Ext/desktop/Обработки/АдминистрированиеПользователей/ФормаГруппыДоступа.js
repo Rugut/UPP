@@ -19,30 +19,30 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:627px;height:25px;',
+			width: 627,
+			height: 25,
 			items:
 			[
 				'-',
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:611px;height:291px;',
 			height: 291,width: 611,
 			items:
 			[
 				{
-					title:'Группы доступа к контрагентам',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:597px;height:259px;',
 			height: 259,width: 597,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Группы доступа контрагентов',
 					items:
 					[
 		{
@@ -159,7 +159,6 @@
 					]
 				},
 				{
-					title:'Настройка недоступна',
 					items:
 					[
 		{
@@ -187,18 +186,16 @@
 					]
 				},
 				{
-					title:'Группы доступа физических лиц',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:603px;height:259px;',
 			height: 259,width: 603,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Группы доступа физических лиц',
 					items:
 					[
 		{
@@ -315,7 +312,6 @@
 					]
 				},
 				{
-					title:'Настройка недоступна',
 					items:
 					[
 		{
@@ -343,18 +339,16 @@
 					]
 				},
 				{
-					title:'Группы заявок кандидатов',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:6px;width:603px;height:261px;',
 			height: 261,width: 603,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Группы заявок кандидатов',
 					items:
 					[
 		{
@@ -471,7 +465,6 @@
 					]
 				},
 				{
-					title:'Настройка недоступна',
 					items:
 					[
 		{

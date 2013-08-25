@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:338px;height:25px;',
+			width: 338,
+			height: 25,
 			items:
 			[
 			]
@@ -71,6 +73,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:153px;width:322px;height:24px;',
+			width: 322,
+			height: 24,
 			items:
 			[
 				{
@@ -86,9 +90,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Организации',
-			style: 'position:absolute;left:8px;top:137px;width:322px;height:16px;',
+			xtype: 'label',
+			text: 'Организации',
+			style: 'position:absolute;left:8px;top:137px;width:322px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'itemselector',
@@ -116,6 +120,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:338px;height:25px;',
+			width: 338,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

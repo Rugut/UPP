@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:212px;',
 			height: 212,width: 384,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -188,6 +187,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:228px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

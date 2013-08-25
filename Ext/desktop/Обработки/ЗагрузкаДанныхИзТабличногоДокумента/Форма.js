@@ -17,18 +17,19 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:56px;width:667px;height:466px;',
 			height: 466,width: 667,
 			items:
 			[
 				{
-					title:'Табличный документ',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:653px;height:24px;',
+			width: 653,
+			height: 24,
 			items:
 			[
 				{
@@ -57,6 +58,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:398px;top:6px;width:214px;height:24px;',
+			width: 214,
+			height: 24,
 			items:
 			[
 				{
@@ -67,12 +70,13 @@
 					]
 				},
 				{
-					title:'Настройка',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:30px;width:653px;height:24px;',
+			width: 653,
+			height: 24,
 			items:
 			[
 				{
@@ -307,6 +311,8 @@
 			value: 0,
 			name: 'ПерваяСтрокаДанныхТабличногоДокумента',
 			style: 'position:absolute;left:249px;top:6px;width:41px;height:19px;',
+			width: 41,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -325,14 +331,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:32px;width:632px;height:19px;',
 			height: 19,width: 632,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Загрузка в справочник',
 					items:
 					[
 		{
@@ -344,7 +349,6 @@
 					]
 				},
 				{
-					title:'Загрузка в табличную часть',
 					items:
 					[
 		{
@@ -417,7 +421,6 @@
 					]
 				},
 				{
-					title:'Загрузка в регистр сведений',
 					items:
 					[
 		{
@@ -449,6 +452,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:548px;width:683px;height:25px;',
+			width: 683,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

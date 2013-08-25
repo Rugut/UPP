@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
+			width: 692,
+			height: 25,
 			items:
 			[
 				{
@@ -170,13 +172,12 @@
 			style: 'position:absolute;left:355px;top:33px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:109px;width:676px;height:224px;',
 			height: 224,width: 676,
 			items:
 			[
 				{
-					title:'Авансы',
 					items:
 					[
 		{
@@ -278,6 +279,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
+			width: 662,
+			height: 24,
 			items:
 			[
 				'-',
@@ -286,7 +289,6 @@
 					]
 				},
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -631,6 +633,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
+			width: 662,
+			height: 24,
 			items:
 			[
 				{
@@ -652,6 +656,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:564px;top:161px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 		{
 			xtype: 'numberfield',
@@ -661,11 +667,12 @@
 			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:564px;top:181px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 					]
 				},
 				{
-					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -893,6 +900,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				'-',
@@ -904,7 +913,6 @@
 					]
 				},
 				{
-					title:'Оплата',
 					items:
 					[
 		{
@@ -1096,6 +1104,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
+			width: 662,
+			height: 24,
 			items:
 			[
 			]
@@ -1109,7 +1119,6 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
@@ -1607,6 +1616,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
+			width: 662,
+			height: 24,
 			items:
 			[
 				{
@@ -1617,7 +1628,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1810,6 +1820,8 @@
 			value: 0,
 			name: 'ВсегоПоОтчету',
 			style: 'position:absolute;left:575px;top:359px;width:103px;height:17px;',
+			width: 103,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -1825,28 +1837,8 @@
 			value: 0,
 			name: 'ВсегоАвансов',
 			style: 'position:absolute;left:575px;top:339px;width:104px;height:17px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:407px;width:692px;height:27px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
+			width: 104,
+			height: 17,
 		},
 		{
 			xtype: 'trigger',
@@ -1946,6 +1938,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:407px;width:692px;height:27px;',
+			width: 692,
+			height: 27,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

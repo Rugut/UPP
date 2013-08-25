@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			items:
 			[
 			]
@@ -207,13 +209,12 @@
 			style: 'position:absolute;left:96px;top:361px;width:578px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:111px;width:666px;height:245px;',
 			height: 245,width: 666,
 			items:
 			[
 				{
-					title:'Данные о заработке',
 					items:
 					[
 		{
@@ -297,6 +298,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:33px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -365,7 +368,6 @@
 					]
 				},
 				{
-					title:'Данные о страхователе',
 					items:
 					[
 		{
@@ -582,14 +584,14 @@
 			style: 'position:absolute;left:119px;top:173px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Регистрация в ФСС',
-			style: 'position:absolute;left:6px;top:6px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Регистрация в ФСС',
+			style: 'position:absolute;left:6px;top:6px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Подписи',
-			style: 'position:absolute;left:6px;top:102px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Подписи',
+			style: 'position:absolute;left:6px;top:102px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -600,7 +602,6 @@
 					]
 				},
 				{
-					title:'Данные о застрахованном лице',
 					items:
 					[
 		{
@@ -787,9 +788,9 @@
 			style: 'position:absolute;left:95px;top:110px;width:359px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Паспортные данные',
-			style: 'position:absolute;left:6px;top:62px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Паспортные данные',
+			style: 'position:absolute;left:6px;top:62px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -815,6 +816,8 @@
 			value: 0,
 			name: 'ГодС',
 			style: 'position:absolute;left:113px;top:83px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -830,6 +833,8 @@
 			value: 0,
 			name: 'ГодПо',
 			style: 'position:absolute;left:224px;top:83px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		],
 	}],
@@ -838,6 +843,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

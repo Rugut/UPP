@@ -167,6 +167,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			items:
 			[
 				{
@@ -191,18 +193,19 @@
 			style: 'position:absolute;left:411px;top:33px;width:83px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:151px;width:704px;height:231px;',
 			height: 231,width: 704,
 			items:
 			[
 				{
-					title:'Начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -502,7 +505,6 @@
 					]
 				},
 				{
-					title:'Удержания',
 					items:
 					[
 		{
@@ -748,6 +750,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -780,7 +784,6 @@
 					]
 				},
 				{
-					title:'Погашение займов',
 					items:
 					[
 		{
@@ -882,6 +885,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -916,14 +921,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:123px;width:704px;height:29px;',
 			height: 29,width: 704,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -974,14 +978,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:408px;width:704px;height:91px;',
 			height: 91,width: 704,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -1022,6 +1025,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:530px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:107px;width:712px;height:24px;',
+			width: 712,
+			height: 24,
 			items:
 			[
 				{
@@ -369,31 +371,9 @@
 			style: 'position:absolute;left:448px;top:353px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:380px;width:728px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Товары',
-			style: 'position:absolute;left:8px;top:89px;width:712px;height:16px;',
+			xtype: 'label',
+			text: 'Товары',
+			style: 'position:absolute;left:8px;top:89px;width:712px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -401,14 +381,13 @@
 			style: 'position:absolute;left:8px;top:353px;width:290px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:25px;width:712px;height:60px;',
 			height: 60,width: 712,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Установить серию по ГТД',
 					items:
 					[
 		{
@@ -459,7 +438,6 @@
 					]
 				},
 				{
-					title:'Упорядочить строки',
 					items:
 					[
 		{
@@ -530,6 +508,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:380px;width:728px;height:25px;',
+			width: 728,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:54px;width:430px;height:279px;',
 			height: 279,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Настройка выбор вида показателя',
 					items:
 					[
 		{
@@ -75,7 +74,6 @@
 					]
 				},
 				{
-					title:'Настройка факт',
 					items:
 					[
 		{
@@ -186,7 +184,6 @@
 					]
 				},
 				{
-					title:'Настройка факт прогноз',
 					items:
 					[
 		{
@@ -252,7 +249,6 @@
 					]
 				},
 				{
-					title:'Настройка план',
 					items:
 					[
 		{
@@ -338,6 +334,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:341px;width:446px;height:25px;',
+			width: 446,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

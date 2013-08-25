@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:137px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -587,6 +589,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -610,9 +614,9 @@
 			style: 'position:absolute;left:113px;top:57px;width:203px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начисления',
-			style: 'position:absolute;left:8px;top:121px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Начисления',
+			style: 'position:absolute;left:8px;top:121px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -627,14 +631,13 @@
 			style: 'position:absolute;left:30px;top:340px;width:401px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:431px;top:340px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -648,14 +651,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:515px;top:340px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -671,6 +673,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:406px;width:246px;height:25px;',
+			width: 246,
+			height: 25,
 			items:
 			[
 				'-',
@@ -682,6 +686,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:219px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -759,6 +765,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:406px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

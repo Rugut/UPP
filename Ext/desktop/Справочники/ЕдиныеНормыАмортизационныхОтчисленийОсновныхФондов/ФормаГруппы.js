@@ -30,6 +30,8 @@
 			value: 0,
 			name: 'Код',
 			style: 'position:absolute;left:388px;top:33px;width:67px;height:19px;',
+			width: 67,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -49,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:463px;height:25px;',
+			width: 463,
+			height: 25,
 			items:
 			[
 			]
@@ -60,6 +64,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:60px;width:463px;height:25px;',
+			width: 463,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -323,6 +323,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:184px;width:649px;height:24px;',
+			width: 649,
+			height: 24,
 			items:
 			[
 				{
@@ -402,6 +404,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			width: 665,
+			height: 25,
 			items:
 			[
 				{
@@ -448,14 +452,14 @@
 			style: 'position:absolute;left:338px;top:33px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные для управленческого учета:',
-			style: 'position:absolute;left:8px;top:79px;width:319px;height:16px;',
+			xtype: 'label',
+			text: 'Данные для управленческого учета:',
+			style: 'position:absolute;left:8px;top:79px;width:319px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные средства:',
-			style: 'position:absolute;left:8px;top:169px;width:649px;height:16px;',
+			xtype: 'label',
+			text: 'Основные средства:',
+			style: 'position:absolute;left:8px;top:169px;width:649px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -470,9 +474,9 @@
 			style: 'position:absolute;left:338px;top:122px;width:86px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные для бухгалтерского учета:',
-			style: 'position:absolute;left:338px;top:79px;width:319px;height:16px;',
+			xtype: 'label',
+			text: 'Данные для бухгалтерского учета:',
+			style: 'position:absolute;left:338px;top:79px;width:319px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -571,6 +575,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:439px;width:665px;height:25px;',
+			width: 665,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

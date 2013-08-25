@@ -17,39 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:400px;width:664px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Помощь',
-				},
-				'-',
-				{
-					text:'Применить соответствия',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:67px;width:648px;height:326px;',
 			height: 326,width: 648,
 			items:
 			[
 				{
-					title:'Валюты',
 					items:
 					[
 		{
@@ -124,6 +97,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -145,7 +120,6 @@
 					]
 				},
 				{
-					title:'Организации',
 					items:
 					[
 		{
@@ -229,6 +203,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -250,7 +226,6 @@
 					]
 				},
 				{
-					title:'Контрагенты',
 					items:
 					[
 		{
@@ -334,6 +309,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -358,7 +335,6 @@
 					]
 				},
 				{
-					title:'Банки',
 					items:
 					[
 		{
@@ -460,6 +436,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -481,7 +459,6 @@
 					]
 				},
 				{
-					title:'Банковские счета',
 					items:
 					[
 		{
@@ -583,6 +560,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -604,7 +583,6 @@
 					]
 				},
 				{
-					title:'Единицы измерения',
 					items:
 					[
 		{
@@ -679,6 +657,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -703,7 +683,6 @@
 					]
 				},
 				{
-					title:'Виды номенклатуры',
 					items:
 					[
 		{
@@ -787,6 +766,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -811,12 +792,13 @@
 					]
 				},
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -973,7 +955,6 @@
 					]
 				},
 				{
-					title:'Качество',
 					items:
 					[
 		{
@@ -1048,6 +1029,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -1072,7 +1055,6 @@
 					]
 				},
 				{
-					title:'Типы цен',
 					items:
 					[
 		{
@@ -1183,6 +1165,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -1209,14 +1193,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:6px;width:648px;height:60px;',
 			height: 60,width: 648,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница основная',
 					items:
 					[
 					]
@@ -1227,6 +1210,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:400px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Помощь',
+				},
+				'-',
+				{
+					text:'Применить соответствия',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

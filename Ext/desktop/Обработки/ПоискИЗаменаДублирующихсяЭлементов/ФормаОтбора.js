@@ -92,6 +92,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:359px;height:25px;',
+			width: 359,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

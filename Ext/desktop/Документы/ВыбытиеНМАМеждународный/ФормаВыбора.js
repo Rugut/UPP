@@ -103,14 +103,11 @@
 				}
 			},
 		},
-		],
-	}],
-	dockedItems:
-	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:516px;height:25px;',
-			dock: 'top',
+			width: 516,
+			height: 25,
 			items:
 			[
 				{
@@ -132,6 +129,10 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 	]
 	});
 });

@@ -65,6 +65,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:591px;height:25px;',
+			width: 591,
+			height: 25,
 			items:
 			[
 				{
@@ -126,31 +128,9 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:451px;width:591px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Содержание',
-			style: 'position:absolute;left:8px;top:112px;width:575px;height:16px;',
+			xtype: 'label',
+			text: 'Содержание',
+			style: 'position:absolute;left:8px;top:112px;width:575px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -191,14 +171,13 @@
 			style: 'position:absolute;left:8px;top:134px;width:95px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:575px;height:291px;',
 			height: 291,width: 575,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Текст',
 					items:
 					[
 		{
@@ -232,6 +211,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:526px;top:0px;width:49px;height:25px;',
+			width: 49,
+			height: 25,
 			items:
 			[
 				{
@@ -248,12 +229,13 @@
 					]
 				},
 				{
-					title:'Документ',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:526px;top:0px;width:49px;height:25px;',
+			width: 49,
+			height: 25,
 			items:
 			[
 				{
@@ -342,6 +324,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:451px;width:591px;height:25px;',
+			width: 591,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

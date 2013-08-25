@@ -50,14 +50,13 @@
 			style: 'position:absolute;left:14px;top:418px;width:54px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:215px;width:447px;height:161px;',
 			height: 161,width: 447,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По запросу',
 					items:
 					[
 		{
@@ -384,6 +383,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:73px;top:75px;width:301px;height:25px;',
+			width: 301,
+			height: 25,
 			items:
 			[
 				{
@@ -394,7 +395,6 @@
 					]
 				},
 				{
-					title:'По справочнику',
 					items:
 					[
 		{
@@ -503,14 +503,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:1px;top:66px;width:445px;height:95px;',
 			height: 95,width: 445,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Остатки товаров',
 					items:
 					[
 		{
@@ -778,7 +777,6 @@
 					]
 				},
 				{
-					title:'По спецификациям',
 					items:
 					[
 		{
@@ -974,19 +972,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
+			width: 364,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:448px;height:102px;',
 			height: 102,width: 448,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'БезИзображения',
 					items:
 					[
 		{
@@ -1043,6 +1042,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:291px;top:19px;width:157px;height:24px;',
+			width: 157,
+			height: 24,
 			items:
 			[
 				{
@@ -1064,14 +1065,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:100px;height:100px;',
 			height: 100,width: 100,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -1081,7 +1081,6 @@
 					]
 				},
 				{
-					title:'Дерево спецификаций',
 					items:
 					[
 		{
@@ -1142,6 +1141,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:79px;width:84px;height:24px;',
+			width: 84,
+			height: 24,
 			items:
 			[
 				{

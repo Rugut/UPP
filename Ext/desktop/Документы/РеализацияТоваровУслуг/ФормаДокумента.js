@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
+			width: 676,
+			height: 25,
 			items:
 			[
 				{
@@ -87,13 +89,12 @@
 			style: 'position:absolute;left:506px;top:33px;width:72px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:128px;width:660px;height:262px;',
 			height: 262,width: 660,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -510,6 +511,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:646px;height:24px;',
+			width: 646,
+			height: 24,
 			items:
 			[
 				{
@@ -529,12 +532,13 @@
 					]
 				},
 				{
-					title:'Возв. тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:646px;height:24px;',
+			width: 646,
+			height: 24,
 			items:
 			[
 				{
@@ -716,7 +720,6 @@
 					]
 				},
 				{
-					title:'Услуги',
 					items:
 					[
 		{
@@ -932,6 +935,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:646px;height:24px;',
+			width: 646,
+			height: 24,
 			items:
 			[
 				'-',
@@ -949,7 +954,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1039,9 +1043,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1158,9 +1162,9 @@
 			style: 'position:absolute;left:6px;top:179px;width:354px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:163px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:163px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1265,14 +1269,13 @@
 			style: 'position:absolute;left:121px;top:140px;width:527px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:202px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:202px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Счета учета',
 					items:
 					[
 		{
@@ -1393,9 +1396,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отражение разницы между залоговой и фактической стоимостью тары',
-			style: 'position:absolute;left:6px;top:36px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Отражение разницы между залоговой и фактической стоимостью тары',
+			style: 'position:absolute;left:6px;top:36px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1595,7 +1598,6 @@
 					]
 				},
 				{
-					title:'Авто. скидки',
 					items:
 					[
 		{
@@ -1706,7 +1708,6 @@
 					]
 				},
 				{
-					title:'Печать',
 					items:
 					[
 		{
@@ -1716,14 +1717,14 @@
 			style: 'position:absolute;left:6px;top:57px;width:186px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:646px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:646px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:101px;width:642px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:101px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1934,7 +1935,6 @@
 					]
 				},
 				{
-					title:'Предоплата',
 					items:
 					[
 		{
@@ -2036,6 +2036,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:646px;height:24px;',
+			width: 646,
+			height: 24,
 			items:
 			[
 				{
@@ -2357,32 +2359,6 @@
 			style: 'position:absolute;left:542px;top:414px;width:122px;height:17px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:463px;width:676px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
@@ -2429,6 +2405,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:463px;width:676px;height:25px;',
+			width: 676,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

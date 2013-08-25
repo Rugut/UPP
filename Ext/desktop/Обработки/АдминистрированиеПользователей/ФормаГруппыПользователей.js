@@ -70,6 +70,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:739px;height:25px;',
+			width: 739,
+			height: 25,
 			items:
 			[
 				{
@@ -192,6 +194,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:361px;width:739px;height:25px;',
+			width: 739,
+			height: 25,
 			items:
 			[
 				{
@@ -212,14 +216,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:462px;top:32px;width:269px;height:322px;',
 			height: 322,width: 269,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Пользователи',
 					items:
 					[
 		{
@@ -317,14 +320,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:231px;top:32px;width:225px;height:322px;',
 			height: 322,width: 225,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Состав группы',
 					items:
 					[
 		{

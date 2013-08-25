@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			items:
 			[
 				{
@@ -118,14 +120,13 @@
 			style: 'position:absolute;left:354px;top:57px;width:68px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:138px;width:704px;height:258px;',
 			height: 258,width: 704,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Отчеты',
 					items:
 					[
 		{
@@ -236,6 +237,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:19px;width:704px;height:24px;',
+			width: 704,
+			height: 24,
 			items:
 			[
 				{
@@ -255,9 +258,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отчеты',
-			style: 'position:absolute;left:0px;top:0px;width:704px;height:16px;',
+			xtype: 'label',
+			text: 'Отчеты',
+			style: 'position:absolute;left:0px;top:0px;width:704px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -367,6 +370,8 @@
 			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:93px;top:81px;width:60px;height:20px;',
+			width: 60,
+			height: 20,
 		},
 		{
 			xtype: 'label',
@@ -386,6 +391,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

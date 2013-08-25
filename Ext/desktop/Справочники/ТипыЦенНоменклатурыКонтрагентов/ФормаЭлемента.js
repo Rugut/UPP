@@ -148,24 +148,11 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:213px;width:409px;height:25px;',
+			style: 'position:absolute;left:0px;top:0px;width:409px;height:25px;',
+			width: 409,
+			height: 25,
 			items:
 			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -241,10 +228,27 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:409px;height:25px;',
-			dock: 'top',
+			style: 'position:absolute;left:0px;top:213px;width:409px;height:25px;',
+			width: 409,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
 			]
 		},
 	]

@@ -17,19 +17,20 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:6px;width:484px;height:153px;',
 			height: 153,width: 484,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Исходные комплектующие',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:484px;height:24px;',
+			width: 484,
+			height: 24,
 			items:
 			[
 			]
@@ -102,12 +103,13 @@
 					]
 				},
 				{
-					title:'Возвратные отходы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:484px;height:24px;',
+			width: 484,
+			height: 24,
 			items:
 			[
 			]
@@ -188,6 +190,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:167px;width:500px;height:25px;',
+			width: 500,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

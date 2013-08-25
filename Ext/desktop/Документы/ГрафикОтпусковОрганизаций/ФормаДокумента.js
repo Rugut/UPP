@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			width: 430,
+			height: 25,
 			items:
 			[
 				{
@@ -244,6 +246,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:124px;width:414px;height:24px;',
+			width: 414,
+			height: 24,
 			items:
 			[
 				{
@@ -254,6 +258,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:400px;width:430px;height:25px;',
+			width: 430,
+			height: 25,
 			items:
 			[
 				{
@@ -320,9 +326,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники',
-			style: 'position:absolute;left:8px;top:108px;width:414px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:108px;width:414px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

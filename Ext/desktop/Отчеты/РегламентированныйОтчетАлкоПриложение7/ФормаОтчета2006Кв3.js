@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
+			width: 800,
+			height: 25,
 			items:
 			[
 				{
@@ -49,13 +51,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:784px;height:312px;',
 			height: 312,width: 784,
 			items:
 			[
 				{
-					title:'Титульный',
 					items:
 					[
 		{
@@ -89,14 +90,13 @@
 			style: 'position:absolute;left:696px;top:264px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:239px;width:770px;height:21px;',
 			height: 21,width: 770,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -118,7 +118,6 @@
 					]
 				},
 				{
-					title:'Физ. лица',
 					items:
 					[
 		{
@@ -154,7 +153,6 @@
 					]
 				},
 				{
-					title:'Декларация',
 					items:
 					[
 		{
@@ -172,7 +170,6 @@
 					]
 				},
 				{
-					title:'Возвраты',
 					items:
 					[
 		{
@@ -222,14 +219,13 @@
 			style: 'position:absolute;left:715px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:784px;height:48px;',
 			height: 48,width: 784,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -262,6 +258,8 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:331px;top:23px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -273,14 +271,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:393px;width:784px;height:24px;',
 			height: 24,width: 784,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -347,6 +344,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:800px;height:25px;',
+			width: 800,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

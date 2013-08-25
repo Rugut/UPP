@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:354px;height:270px;',
 			height: 270,width: 354,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -123,6 +122,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:90px;width:340px;height:24px;',
+			width: 340,
+			height: 24,
 			items:
 			[
 				{
@@ -141,9 +142,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели',
-			style: 'position:absolute;left:6px;top:74px;width:340px;height:16px;',
+			xtype: 'label',
+			text: 'Показатели',
+			style: 'position:absolute;left:6px;top:74px;width:340px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -157,14 +158,13 @@
 			style: 'position:absolute;left:246px;top:8px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры',
-			style: 'position:absolute;left:6px;top:32px;width:340px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры',
+			style: 'position:absolute;left:6px;top:32px;width:340px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -239,6 +239,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:340px;height:24px;',
+			width: 340,
+			height: 24,
 			items:
 			[
 				{
@@ -258,12 +260,13 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:340px;height:24px;',
+			width: 340,
+			height: 24,
 			items:
 			[
 				{
@@ -369,6 +372,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:286px;width:370px;height:25px;',
+			width: 370,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

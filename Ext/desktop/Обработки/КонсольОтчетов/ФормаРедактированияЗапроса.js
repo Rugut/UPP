@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:388px;height:270px;',
 			height: 270,width: 388,
 			items:
 			[
 				{
-					title:'Запрос',
 					items:
 					[
 		{
@@ -49,6 +48,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:234px;top:238px;width:128px;height:24px;',
+			width: 128,
+			height: 24,
 			items:
 			[
 				{
@@ -65,12 +66,13 @@
 					]
 				},
 				{
-					title:'Параметры',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:356px;height:24px;',
+			width: 356,
+			height: 24,
 			items:
 			[
 				{
@@ -178,7 +180,6 @@
 					]
 				},
 				{
-					title:'Представления',
 					items:
 					[
 		{
@@ -253,7 +254,6 @@
 					]
 				},
 				{
-					title:'Вывод отчета',
 					items:
 					[
 		{
@@ -315,6 +315,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:285px;width:400px;height:24px;',
+			width: 400,
+			height: 24,
 			items:
 			[
 				{

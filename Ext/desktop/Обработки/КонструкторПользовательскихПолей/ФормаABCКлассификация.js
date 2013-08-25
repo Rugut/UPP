@@ -42,6 +42,8 @@
 			value: 0,
 			name: 'Процент1',
 			style: 'position:absolute;left:157px;top:109px;width:54px;height:19px;',
+			width: 54,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -57,6 +59,8 @@
 			value: 0,
 			name: 'Процент2',
 			style: 'position:absolute;left:157px;top:134px;width:54px;height:19px;',
+			width: 54,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -72,6 +76,8 @@
 			value: 0,
 			name: 'Процент3',
 			style: 'position:absolute;left:157px;top:159px;width:54px;height:19px;',
+			width: 54,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -80,9 +86,9 @@
 			style: 'position:absolute;left:8px;top:159px;width:142px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Критерии распределения (процент от общей суммы параметров распределения)',
-			style: 'position:absolute;left:8px;top:86px;width:495px;height:16px;',
+			xtype: 'label',
+			text: 'Критерии распределения (процент от общей суммы параметров распределения)',
+			style: 'position:absolute;left:8px;top:86px;width:495px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -133,6 +139,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:186px;width:511px;height:25px;',
+			width: 511,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

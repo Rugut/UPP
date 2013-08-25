@@ -17,19 +17,18 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:7px;width:474px;height:282px;',
 			height: 282,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:125px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:125px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Показатели',
@@ -166,6 +165,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:141px;width:200px;height:24px;',
+			width: 200,
+			height: 24,
 			items:
 			[
 				{
@@ -188,14 +189,13 @@
 			style: 'position:absolute;left:12px;top:100px;width:213px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры',
-			style: 'position:absolute;left:6px;top:33px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры',
+			style: 'position:absolute;left:6px;top:33px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -261,6 +261,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -268,7 +270,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -370,6 +371,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -377,7 +380,6 @@
 					]
 				},
 				{
-					title:'Поля',
 					items:
 					[
 		{
@@ -434,6 +436,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -441,7 +445,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -507,6 +510,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -518,6 +523,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:297px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
 			items:
 			[
 				{

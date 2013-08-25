@@ -64,6 +64,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:25px;',
+			width: 529,
+			height: 25,
 			items:
 			[
 				{
@@ -129,13 +131,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:513px;height:177px;',
 			height: 177,width: 513,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -287,6 +288,8 @@
 			value: 0,
 			name: 'НомерСекции',
 			style: 'position:absolute;left:94px;top:86px;width:33px;height:19px;',
+			width: 33,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -347,12 +350,13 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:499px;height:24px;',
+			width: 499,
+			height: 24,
 			items:
 			[
 			]
@@ -434,12 +438,13 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:499px;height:24px;',
+			width: 499,
+			height: 24,
 			items:
 			[
 				{
@@ -541,6 +546,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:295px;width:529px;height:25px;',
+			width: 529,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

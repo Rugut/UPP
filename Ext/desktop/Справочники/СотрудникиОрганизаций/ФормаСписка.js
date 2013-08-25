@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			items:
 			[
 				{
@@ -27,14 +29,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:276px;top:159px;width:716px;height:249px;',
 			height: 249,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -201,6 +202,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:28px;width:175px;height:24px;',
+			width: 175,
+			height: 24,
 			items:
 			[
 				{
@@ -227,14 +230,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:180px;width:716px;height:67px;',
 			height: 67,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -254,25 +256,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:262px;height:539px;',
 			height: 539,width: 262,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:24px;width:262px;height:515px;',
 			height: 515,width: 262,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По группам',
 					items:
 					[
 		{
@@ -334,6 +334,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:20px;top:113px;width:182px;height:24px;',
+			width: 182,
+			height: 24,
 			items:
 			[
 				{
@@ -363,7 +365,6 @@
 					]
 				},
 				{
-					title:'По подразделениям',
 					items:
 					[
 		{
@@ -443,6 +444,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:33px;top:166px;width:203px;height:24px;',
+			width: 203,
+			height: 24,
 			items:
 			[
 				{
@@ -469,7 +472,6 @@
 					]
 				},
 				{
-					title:'По виду договора',
 					items:
 					[
 		{
@@ -552,19 +554,20 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:276px;top:414px;width:716px;height:158px;',
 			height: 158,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Форма медицинского страхования',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:1px;top:25px;width:715px;height:24px;',
+			width: 715,
+			height: 24,
 			items:
 			[
 				{
@@ -691,12 +694,13 @@
 					]
 				},
 				{
-					title:'Форма остатков отпусков',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:55px;width:716px;height:24px;',
+			width: 716,
+			height: 24,
 			items:
 			[
 				{
@@ -809,14 +813,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:276px;top:33px;width:716px;height:126px;',
 			height: 126,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:93px;width:362px;height:25px;',
+			width: 362,
+			height: 25,
 			items:
 			[
 				{
@@ -89,14 +91,13 @@
 			style: 'position:absolute;left:8px;top:6px;width:76px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:58px;width:346px;height:28px;',
 			height: 28,width: 346,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Сумма',
 					items:
 					[
 		{
@@ -113,11 +114,12 @@
 			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:82px;top:0px;width:102px;height:19px;',
+			width: 102,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'СтатьяЗатрат',
 					items:
 					[
 		{

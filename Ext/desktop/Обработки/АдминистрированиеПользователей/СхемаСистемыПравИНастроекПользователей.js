@@ -16,9 +16,16 @@
 		xtype: 'form',
 		items:
 		[
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:364px;width:844px;height:25px;',
+			width: 844,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -34,10 +41,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

@@ -273,6 +273,8 @@
 			value: 0,
 			name: 'КоличествоПериодов',
 			style: 'position:absolute;left:136px;top:202px;width:85px;height:19px;',
+			width: 85,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -333,10 +335,14 @@
 			value: 0,
 			name: 'ЗначениеПараметраВыработкиОС',
 			style: 'position:absolute;left:136px;top:250px;width:85px;height:19px;',
+			width: 85,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:293px;width:390px;height:24px;',
+			width: 390,
+			height: 24,
 			items:
 			[
 				'-',
@@ -422,6 +428,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
+			width: 404,
+			height: 25,
 			items:
 			[
 			]
@@ -429,6 +437,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:429px;width:404px;height:25px;',
+			width: 404,
+			height: 25,
 			items:
 			[
 				{
@@ -449,14 +459,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные средства:',
-			style: 'position:absolute;left:6px;top:277px;width:390px;height:16px;',
+			xtype: 'label',
+			text: 'Основные средства:',
+			style: 'position:absolute;left:6px;top:277px;width:390px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры обслуживания основных средств:',
-			style: 'position:absolute;left:6px;top:157px;width:390px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры обслуживания основных средств:',
+			style: 'position:absolute;left:6px;top:157px;width:390px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -472,6 +482,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:92px;top:107px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',

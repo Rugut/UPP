@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:628px;height:25px;',
+			width: 628,
+			height: 25,
 			items:
 			[
 				{
@@ -101,13 +103,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:107px;width:612px;height:220px;',
 			height: 220,width: 612,
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -206,6 +207,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:359px;width:628px;height:25px;',
+			width: 628,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

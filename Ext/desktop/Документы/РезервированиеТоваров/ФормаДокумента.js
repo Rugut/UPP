@@ -66,18 +66,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:636px;height:175px;',
 			height: 175,width: 636,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -287,6 +288,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -302,12 +305,13 @@
 					]
 				},
 				{
-					title:'Возвратная тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -454,7 +458,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -550,9 +553,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:5px;width:622px;height:17px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:5px;width:622px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -561,6 +564,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:320px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{

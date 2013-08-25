@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:239px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				{
@@ -283,6 +285,8 @@
 			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:437px;top:57px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -300,9 +304,9 @@
 			style: 'position:absolute;left:437px;top:105px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения формируются для ...',
-			style: 'position:absolute;left:8px;top:131px;width:614px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения формируются для ...',
+			style: 'position:absolute;left:8px;top:131px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -365,13 +369,15 @@
 			style: 'position:absolute;left:519px;top:152px;width:22px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Справки о доходах',
-			style: 'position:absolute;left:8px;top:223px;width:614px;height:16px;',
+			xtype: 'label',
+			text: 'Справки о доходах',
+			style: 'position:absolute;left:8px;top:223px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
+			width: 630,
+			height: 25,
 			items:
 			[
 			]
@@ -404,6 +410,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:630px;height:25px;',
+			width: 630,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

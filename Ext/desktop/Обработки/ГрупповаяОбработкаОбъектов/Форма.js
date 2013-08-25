@@ -17,13 +17,21 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
+			width: 500,
+			height: 25,
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:32px;width:484px;height:264px;',
 			height: 264,width: 484,
 			items:
 			[
 				{
-					title:'Настройка',
 					items:
 					[
 		{
@@ -88,9 +96,31 @@
 					]
 				},
 				{
-					title:'Обрабатываемые объекты',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:466px;height:24px;',
+			width: 466,
+			height: 24,
+			items:
+			[
+				'-',
+				{
+					text:'Установить все пометки',
+				},
+				{
+					text:'Снять все пометки',
+				},
+				{
+					text:'Инвертировать пометки',
+				},
+				'-',
+				{
+					text:'Подбор',
+				},
+			]
+		},
 		{
 			id: 'ОбрабатываемыеОбъекты',
 			xtype: 'grid',
@@ -168,9 +198,27 @@
 					]
 				},
 				{
-					title:'Устанавливаемые свойства',
 					items:
 					[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:8px;width:466px;height:24px;',
+			width: 466,
+			height: 24,
+			items:
+			[
+				'-',
+				{
+					text:'Установить все пометки',
+				},
+				{
+					text:'Снять все пометки',
+				},
+				{
+					text:'Инвертировать пометки',
+				},
+			]
+		},
 		{
 			id: 'УстанавливаемыеСвойства',
 			xtype: 'grid',
@@ -259,15 +307,9 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:500px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:303px;width:500px;height:25px;',
+			width: 500,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -61,22 +63,18 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:122px;width:654px;height:310px;',
 			height: 310,width: 654,
 			items:
 			[
 				{
-					title:'Титульный',
 				},
 				{
-					title:'Раздел 1.1',
 				},
 				{
-					title:'Раздел 1.2',
 				},
 				{
-					title:'Раздел 1.3',
 					items:
 					[
 		{
@@ -148,7 +146,6 @@
 					]
 				},
 				{
-					title:'Лист 02',
 					items:
 					[
 		{
@@ -165,6 +162,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -208,7 +207,6 @@
 					]
 				},
 				{
-					title:'Прил.1 к Листу 02',
 					items:
 					[
 		{
@@ -225,6 +223,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил1',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -298,7 +298,6 @@
 					]
 				},
 				{
-					title:'Прил.2 к Листу 02',
 					items:
 					[
 		{
@@ -315,6 +314,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил2',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -400,7 +401,6 @@
 					]
 				},
 				{
-					title:'Прил. 3 к Листу 02',
 					items:
 					[
 		{
@@ -417,6 +417,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил3',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -460,7 +462,6 @@
 					]
 				},
 				{
-					title:'Прил. 4 к Листу 02',
 					items:
 					[
 		{
@@ -477,6 +478,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил4',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -562,7 +565,6 @@
 					]
 				},
 				{
-					title:'Прил.5 к Листу 02',
 					items:
 					[
 		{
@@ -609,6 +611,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист02_Прил5',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -627,7 +631,6 @@
 					]
 				},
 				{
-					title:'Лист 03 (Раздел А)',
 					items:
 					[
 		{
@@ -663,7 +666,6 @@
 					]
 				},
 				{
-					title:'Лист 03 (Раздел Б)',
 					items:
 					[
 		{
@@ -699,7 +701,6 @@
 					]
 				},
 				{
-					title:'Лист 03 (Реестр)',
 					items:
 					[
 		{
@@ -735,7 +736,6 @@
 					]
 				},
 				{
-					title:'Лист 04',
 					items:
 					[
 		{
@@ -752,6 +752,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист04',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -795,7 +797,6 @@
 					]
 				},
 				{
-					title:'Лист 05',
 					items:
 					[
 		{
@@ -812,6 +813,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист05',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -855,7 +858,6 @@
 					]
 				},
 				{
-					title:'Лист 06',
 					items:
 					[
 		{
@@ -872,6 +874,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиЛист06',
 			style: 'position:absolute;left:232px;top:265px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -885,7 +889,6 @@
 					]
 				},
 				{
-					title:'Лист 07',
 					items:
 					[
 		{
@@ -911,14 +914,13 @@
 			style: 'position:absolute;left:584px;top:6px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:48px;',
 			height: 48,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -929,6 +931,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -966,20 +970,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:561px;top:24px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:432px;width:654px;height:25px;',
 			height: 25,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1040,25 +1045,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:37px;',
 			height: 37,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:2px;top:0px;width:652px;height:35px;',
 			height: 35,width: 652,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -1076,6 +1079,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

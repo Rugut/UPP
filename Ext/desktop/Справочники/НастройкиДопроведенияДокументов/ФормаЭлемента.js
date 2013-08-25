@@ -49,18 +49,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:458px;height:25px;',
+			width: 458,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:59px;width:442px;height:124px;',
 			height: 124,width: 442,
 			items:
 			[
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -100,7 +101,6 @@
 					]
 				},
 				{
-					title:'Автоматическое выполнение',
 					items:
 					[
 		{
@@ -127,6 +127,8 @@
 			value: 0,
 			name: 'НомерДняНачалоЗапуска',
 			style: 'position:absolute;left:148px;top:78px;width:22px;height:19px;',
+			width: 22,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -142,6 +144,8 @@
 			value: 0,
 			name: 'НомерДняКонецЗапуска',
 			style: 'position:absolute;left:187px;top:78px;width:22px;height:19px;',
+			width: 22,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -160,6 +164,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:218px;width:458px;height:25px;',
+			width: 458,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -79,9 +79,9 @@
 			style: 'position:absolute;left:78px;top:54px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:78px;width:290px;height:6px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:78px;width:290px;height:6px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -90,6 +90,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:116px;width:306px;height:25px;',
+			width: 306,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

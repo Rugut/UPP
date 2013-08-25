@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:733px;height:25px;',
+			width: 733,
+			height: 25,
 			items:
 			[
 				{
@@ -183,14 +185,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:717px;height:306px;',
 			height: 306,width: 717,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ВыборНоменклатуры',
 					items:
 					[
 		{
@@ -369,14 +370,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:161px;width:160px;height:144px;',
 			height: 144,width: 160,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -384,20 +384,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:166px;top:161px;width:551px;height:144px;',
 			height: 144,width: 551,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Остатки товаров на складах',
-			style: 'position:absolute;left:0px;top:0px;width:551px;height:16px;',
+			xtype: 'label',
+			text: 'Остатки товаров на складах',
+			style: 'position:absolute;left:0px;top:0px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеОстаткиТоваров',
@@ -683,6 +682,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:292px;top:64px;width:157px;height:24px;',
+			width: 157,
+			height: 24,
 			items:
 			[
 				{
@@ -712,7 +713,6 @@
 					]
 				},
 				{
-					title:'ВыборНоменклатурыКонтрагента',
 					items:
 					[
 		{
@@ -808,14 +808,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:180px;height:305px;',
 			height: 305,width: 180,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]

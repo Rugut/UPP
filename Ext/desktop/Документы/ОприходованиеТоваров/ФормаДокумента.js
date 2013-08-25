@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:668px;height:25px;',
+			width: 668,
+			height: 25,
 			items:
 			[
 			]
@@ -303,6 +305,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:561px;top:313px;width:99px;height:17px;',
+			width: 99,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -351,44 +355,17 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:410px;width:668px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:580px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:652px;height:204px;',
 			height: 204,width: 652,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -670,6 +647,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:638px;height:24px;',
+			width: 638,
+			height: 24,
 			items:
 			[
 				{
@@ -700,7 +679,6 @@
 					]
 				},
 				{
-					title:'Корреспондирующий счет',
 					items:
 					[
 		{
@@ -1065,6 +1043,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:410px;width:668px;height:25px;',
+			width: 668,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

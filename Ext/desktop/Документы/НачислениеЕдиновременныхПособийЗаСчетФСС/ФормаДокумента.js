@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
+			width: 651,
+			height: 25,
 			items:
 			[
 				{
@@ -44,6 +46,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:398px;width:651px;height:25px;',
+			width: 651,
+			height: 25,
 			items:
 			[
 				{
@@ -162,6 +166,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:104px;width:635px;height:24px;',
+			width: 635,
+			height: 24,
 			items:
 			[
 				{
@@ -197,9 +203,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начисления',
-			style: 'position:absolute;left:8px;top:88px;width:635px;height:16px;',
+			xtype: 'label',
+			text: 'Начисления',
+			style: 'position:absolute;left:8px;top:88px;width:635px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -346,14 +352,13 @@
 			style: 'position:absolute;left:30px;top:333px;width:401px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:431px;top:333px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -367,14 +372,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:514px;top:333px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -390,6 +394,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:398px;width:246px;height:25px;',
+			width: 246,
+			height: 25,
 			items:
 			[
 				'-',
@@ -401,6 +407,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:171px;width:635px;height:24px;',
+			width: 635,
+			height: 24,
 			items:
 			[
 				{

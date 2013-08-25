@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:506px;height:309px;',
 			height: 309,width: 506,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -89,6 +88,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:140px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 				{
@@ -178,6 +179,8 @@
 			value: 0,
 			name: 'КоличествоПериодовАнализа',
 			style: 'position:absolute;left:121px;top:30px;width:48px;height:19px;',
+			width: 48,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -225,14 +228,13 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели',
-			style: 'position:absolute;left:6px;top:124px;width:492px;height:16px;',
+			xtype: 'label',
+			text: 'Показатели',
+			style: 'position:absolute;left:6px;top:124px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -298,6 +300,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:89px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 			]
@@ -365,6 +369,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 				{
@@ -378,7 +384,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -480,6 +485,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:62px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 			]
@@ -527,7 +534,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -593,6 +599,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 			]
@@ -600,7 +608,6 @@
 					]
 				},
 				{
-					title:'Классы',
 					items:
 					[
 		{
@@ -617,6 +624,8 @@
 			value: 0,
 			name: 'ПараметрXКлассаНач',
 			style: 'position:absolute;left:68px;top:30px;width:81px;height:19px;',
+			width: 81,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -632,6 +641,8 @@
 			value: 0,
 			name: 'ПараметрYКлассаНач',
 			style: 'position:absolute;left:68px;top:55px;width:81px;height:19px;',
+			width: 81,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -647,11 +658,13 @@
 			value: 0,
 			name: 'ПараметрZКлассаНач',
 			style: 'position:absolute;left:68px;top:80px;width:81px;height:19px;',
+			width: 81,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Критерии распределения XYZ',
-			style: 'position:absolute;left:6px;top:6px;width:492px;height:16px;',
+			xtype: 'label',
+			text: 'Критерии распределения XYZ',
+			style: 'position:absolute;left:6px;top:6px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -673,6 +686,8 @@
 			value: 0,
 			name: 'ПараметрXКлассаКон',
 			style: 'position:absolute;left:176px;top:30px;width:81px;height:19px;',
+			width: 81,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -682,6 +697,8 @@
 			value: 0,
 			name: 'ПараметрYКлассаКон',
 			style: 'position:absolute;left:176px;top:55px;width:81px;height:19px;',
+			width: 81,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -691,6 +708,8 @@
 			value: 0,
 			name: 'ПараметрZКлассаКон',
 			style: 'position:absolute;left:176px;top:80px;width:81px;height:19px;',
+			width: 81,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -712,6 +731,8 @@
 			value: 0,
 			name: 'ПроцентAКласса',
 			style: 'position:absolute;left:68px;top:144px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -727,6 +748,8 @@
 			value: 0,
 			name: 'ПроцентBКласса',
 			style: 'position:absolute;left:68px;top:168px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -742,6 +765,8 @@
 			value: 0,
 			name: 'ПроцентCКласса',
 			style: 'position:absolute;left:68px;top:192px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -762,9 +787,9 @@
 			style: 'position:absolute;left:150px;top:192px;width:13px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Критерии распределения ABC (процент от общей суммы параметров)',
-			style: 'position:absolute;left:6px;top:119px;width:492px;height:16px;',
+			xtype: 'label',
+			text: 'Критерии распределения ABC (процент от общей суммы параметров)',
+			style: 'position:absolute;left:6px;top:119px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -777,6 +802,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:325px;width:522px;height:25px;',
+			width: 522,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

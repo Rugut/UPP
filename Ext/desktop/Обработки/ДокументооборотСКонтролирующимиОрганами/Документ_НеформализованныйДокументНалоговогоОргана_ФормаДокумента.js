@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			width: 640,
+			height: 25,
 			items:
 			[
 				{
@@ -64,14 +66,13 @@
 			style: 'position:absolute;left:134px;top:53px;width:498px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:116px;width:624px;height:289px;',
 			height: 289,width: 624,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -82,23 +83,22 @@
 			style: 'position:absolute;left:0px;top:18px;width:624px;height:271px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Содержание',
-			style: 'position:absolute;left:0px;top:0px;width:624px;height:16px;',
+			xtype: 'label',
+			text: 'Содержание',
+			style: 'position:absolute;left:0px;top:0px;width:624px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:88px;width:624px;height:22px;',
 			height: 22,width: 624,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:413px;width:640px;height:25px;',
+			width: 640,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

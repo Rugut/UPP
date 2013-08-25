@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
+			width: 618,
+			height: 25,
 			items:
 			[
 				{
@@ -75,16 +77,14 @@
 			style: 'position:absolute;left:328px;top:33px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:602px;height:392px;',
 			height: 392,width: 602,
 			items:
 			[
 				{
-					title:'Диаграмма',
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -186,6 +186,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:588px;height:24px;',
+			width: 588,
+			height: 24,
 			items:
 			[
 				{

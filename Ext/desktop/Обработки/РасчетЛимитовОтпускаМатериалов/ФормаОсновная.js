@@ -19,18 +19,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			width: 769,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:753px;height:384px;',
 			height: 384,width: 753,
 			items:
 			[
 				{
-					title:'Стратегия расчета',
 					items:
 					[
 		{
@@ -51,6 +52,8 @@
 			value: 0,
 			name: 'ПланыПроизводстваПроцент',
 			style: 'position:absolute;left:228px;top:26px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -60,6 +63,8 @@
 			value: 0,
 			name: 'ПланыПродажПроцент',
 			style: 'position:absolute;left:228px;top:50px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -142,9 +147,9 @@
 			style: 'position:absolute;left:583px;top:50px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Производство',
-			style: 'position:absolute;left:6px;top:6px;width:739px;height:16px;',
+			xtype: 'label',
+			text: 'Производство',
+			style: 'position:absolute;left:6px;top:6px;width:739px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -169,6 +174,8 @@
 			value: 0,
 			name: 'ЗаказыПокупателейПроцент',
 			style: 'position:absolute;left:228px;top:97px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -211,9 +218,9 @@
 			style: 'position:absolute;left:583px;top:97px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Заказы',
-			style: 'position:absolute;left:6px;top:76px;width:739px;height:16px;',
+			xtype: 'label',
+			text: 'Заказы',
+			style: 'position:absolute;left:6px;top:76px;width:739px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -233,6 +240,8 @@
 			value: 0,
 			name: 'ВнутренниеЗаказыПроцент',
 			style: 'position:absolute;left:228px;top:121px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -297,6 +306,8 @@
 			value: 0,
 			name: 'РасходСоСкладаПроцент',
 			style: 'position:absolute;left:228px;top:167px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -306,6 +317,8 @@
 			value: 0,
 			name: 'РасходНаВыпускПроцент',
 			style: 'position:absolute;left:228px;top:191px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -388,9 +401,9 @@
 			style: 'position:absolute;left:583px;top:191px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Фактический расход',
-			style: 'position:absolute;left:6px;top:146px;width:739px;height:16px;',
+			xtype: 'label',
+			text: 'Фактический расход',
+			style: 'position:absolute;left:6px;top:146px;width:739px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -403,9 +416,9 @@
 			style: 'position:absolute;left:618px;top:191px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:217px;width:739px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:217px;width:739px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -420,6 +433,8 @@
 			value: 0,
 			name: 'ИзменитьРезультатРасчетаПроцент',
 			style: 'position:absolute;left:228px;top:238px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -442,7 +457,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -544,6 +558,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:70px;width:739px;height:24px;',
+			width: 739,
+			height: 24,
 			items:
 			[
 			]
@@ -644,19 +660,20 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор',
-			style: 'position:absolute;left:6px;top:54px;width:739px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор',
+			style: 'position:absolute;left:6px;top:54px;width:739px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Результат',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:733px;height:24px;',
+			width: 733,
+			height: 24,
 			items:
 			[
 				'-',
@@ -794,6 +811,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:769px;height:25px;',
+			width: 769,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

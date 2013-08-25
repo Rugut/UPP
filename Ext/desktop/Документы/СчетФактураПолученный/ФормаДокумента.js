@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:792px;height:25px;',
+			width: 792,
+			height: 25,
 			items:
 			[
 				{
@@ -81,31 +83,9 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:464px;width:792px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:8px;top:154px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Документ-основание счета-фактуры',
+			style: 'position:absolute;left:8px;top:154px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -158,14 +138,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:175px;width:776px;height:143px;',
 			height: 143,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Одно основание',
 					items:
 					[
 		{
@@ -184,17 +163,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:73px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:41px;width:776px;height:97px;',
 			height: 97,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Описание возможностей',
 				},
 				{
-					title:'Данные по авансу',
 					items:
 					[
 		{
@@ -334,9 +311,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты счета-фактуры на аванс',
-			style: 'position:absolute;left:5px;top:6px;width:771px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты счета-фактуры на аванс',
+			style: 'position:absolute;left:5px;top:6px;width:771px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -357,6 +334,8 @@
 			value: 0,
 			name: 'Увеличение',
 			style: 'position:absolute;left:79px;top:33px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -372,6 +351,8 @@
 			value: 0,
 			name: 'НДСУвеличение',
 			style: 'position:absolute;left:276px;top:33px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -387,6 +368,8 @@
 			value: 0,
 			name: 'Уменьшение',
 			style: 'position:absolute;left:79px;top:58px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -402,17 +385,18 @@
 			value: 0,
 			name: 'НДСУменьшение',
 			style: 'position:absolute;left:276px;top:58px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Данные по авансу несколько',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты счета-фактуры на аванс',
-			style: 'position:absolute;left:0px;top:12px;width:776px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты счета-фактуры на аванс',
+			style: 'position:absolute;left:0px;top:12px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -514,7 +498,6 @@
 					]
 				},
 				{
-					title:'Несколько оснований',
 					items:
 					[
 		{
@@ -587,20 +570,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:317px;width:776px;height:67px;',
 			height: 67,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница 1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Получение счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:774px;height:16px;',
+			xtype: 'label',
+			text: 'Получение счета-фактуры',
+			style: 'position:absolute;left:0px;top:0px;width:774px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -650,14 +632,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:387px;width:776px;height:24px;',
 			height: 24,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница всего',
 					items:
 					[
 		{
@@ -680,6 +661,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:40px;top:1px;width:105px;height:19px;',
+			width: 105,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -695,11 +678,12 @@
 			value: 0,
 			name: 'СуммаНДСДокумента',
 			style: 'position:absolute;left:336px;top:1px;width:105px;height:19px;',
+			width: 105,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница увеличениеи уменьшение',
 					items:
 					[
 		{
@@ -716,6 +700,8 @@
 			value: 0,
 			name: 'СуммаУвеличение',
 			style: 'position:absolute;left:72px;top:0px;width:95px;height:19px;',
+			width: 95,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -731,6 +717,8 @@
 			value: 0,
 			name: 'СуммаУменьшение',
 			style: 'position:absolute;left:475px;top:0px;width:95px;height:19px;',
+			width: 95,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -758,6 +746,8 @@
 			value: 0,
 			name: 'СуммаНДСУменьшение',
 			style: 'position:absolute;left:694px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -773,20 +763,21 @@
 			value: 0,
 			name: 'СуммаНДСУвеличение',
 			style: 'position:absolute;left:291px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:364px;height:92px;',
 			height: 92,width: 364,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -973,14 +964,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:379px;top:82px;width:376px;height:44px;',
 			height: 44,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница корректировочный',
 					items:
 					[
 		{
@@ -1017,6 +1007,8 @@
 			value: 0,
 			name: 'НомерИсправленияИсходногоДокумента',
 			style: 'position:absolute;left:172px;top:25px;width:91px;height:19px;',
+			width: 91,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1049,19 +1041,17 @@
 					]
 				},
 				{
-					title:'Страница обычный',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:379px;top:32px;width:376px;height:19px;',
 			height: 19,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1101,14 +1091,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:379px;top:57px;width:376px;height:19px;',
 			height: 19,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница исправление',
 					items:
 					[
 		{
@@ -1124,6 +1113,8 @@
 			value: 0,
 			name: 'НомерИсправления',
 			style: 'position:absolute;left:172px;top:0px;width:91px;height:19px;',
+			width: 91,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1145,7 +1136,6 @@
 					]
 				},
 				{
-					title:'Страница корректировка',
 					items:
 					[
 		{
@@ -1188,6 +1178,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:464px;width:792px;height:25px;',
+			width: 792,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

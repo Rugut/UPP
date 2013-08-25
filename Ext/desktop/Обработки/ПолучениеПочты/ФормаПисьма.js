@@ -120,13 +120,15 @@
 			style: 'position:absolute;left:118px;top:32px;width:370px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Вложенные файлы',
-			style: 'position:absolute;left:8px;top:270px;width:480px;height:16px;',
+			xtype: 'label',
+			text: 'Вложенные файлы',
+			style: 'position:absolute;left:8px;top:270px;width:480px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:286px;width:480px;height:24px;',
+			width: 480,
+			height: 24,
 			items:
 			[
 				{
@@ -156,9 +158,16 @@
 			text: 'Добавить контактную информацию',
 			style: 'position:absolute;left:118px;top:32px;width:200px;height:19px;',
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:418px;width:496px;height:25px;',
+			width: 496,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -174,10 +183,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

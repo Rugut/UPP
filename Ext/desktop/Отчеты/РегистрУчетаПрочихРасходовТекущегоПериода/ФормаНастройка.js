@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:8px;width:484px;height:238px;',
 			height: 238,width: 484,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -134,12 +133,13 @@
 					]
 				},
 				{
-					title:'Виды расходов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:452px;top:6px;width:24px;height:206px;',
+			width: 24,
+			height: 206,
 			items:
 			[
 				{
@@ -161,6 +161,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:253px;width:498px;height:25px;',
+			width: 498,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -288,6 +288,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:750px;height:25px;',
+			width: 750,
+			height: 25,
 			items:
 			[
 				{
@@ -389,9 +391,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники',
-			style: 'position:absolute;left:8px;top:191px;width:734px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:191px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -447,6 +449,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:207px;width:734px;height:24px;',
+			width: 734,
+			height: 24,
 			items:
 			[
 				{
@@ -484,14 +488,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:734px;height:58px;',
 			height: 58,width: 734,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -554,14 +557,13 @@
 			style: 'position:absolute;left:6px;top:31px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:422px;top:31px;width:304px;height:19px;',
 			height: 19,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По документу',
 					items:
 					[
 		{
@@ -622,14 +624,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:422px;top:6px;width:304px;height:19px;',
 			height: 19,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По документу',
 					items:
 					[
 		{
@@ -694,6 +695,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:38px;top:330px;width:500px;height:24px;',
+			width: 500,
+			height: 24,
 			items:
 			[
 				{
@@ -758,6 +761,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:750px;height:25px;',
+			width: 750,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

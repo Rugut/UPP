@@ -37,19 +37,19 @@
 			style: 'position:absolute;left:8px;top:86px;width:384px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Материалы',
-			style: 'position:absolute;left:8px;top:6px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Материалы',
+			style: 'position:absolute;left:8px;top:6px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочие затраты',
-			style: 'position:absolute;left:8px;top:66px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Прочие затраты',
+			style: 'position:absolute;left:8px;top:66px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Другие настройки',
-			style: 'position:absolute;left:8px;top:186px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Другие настройки',
+			style: 'position:absolute;left:8px;top:186px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -67,9 +67,9 @@
 			style: 'position:absolute;left:8px;top:146px;width:384px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Возвратные отходы',
-			style: 'position:absolute;left:8px;top:126px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Возвратные отходы',
+			style: 'position:absolute;left:8px;top:126px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -78,6 +78,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:229px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

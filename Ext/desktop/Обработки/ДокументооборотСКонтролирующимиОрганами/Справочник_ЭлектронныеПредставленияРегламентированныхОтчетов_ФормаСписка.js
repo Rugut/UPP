@@ -169,6 +169,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:848px;height:25px;',
+			width: 848,
+			height: 25,
 			items:
 			[
 				{
@@ -221,25 +223,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:56px;width:832px;height:25px;',
 			height: 25,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:236px;top:1px;width:596px;height:21px;',
 			height: 21,width: 596,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По виду отчета',
 					items:
 					[
 		{
@@ -284,10 +284,8 @@
 					]
 				},
 				{
-					title:'По периоду отчета',
 				},
 				{
-					title:'По виду документа',
 					items:
 					[
 		{
@@ -298,6 +296,8 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:310px;top:1px;width:41px;height:19px;',
+			width: 41,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -344,14 +344,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:832px;height:30px;',
 			height: 30,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -362,20 +361,21 @@
 			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:174px;top:4px;width:55px;height:20px;',
+			width: 55,
+			height: 20,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:832px;height:20px;',
 			height: 20,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -478,14 +478,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:309px;width:832px;height:126px;',
 			height: 126,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница ФНС',
 					items:
 					[
 		{
@@ -632,7 +631,6 @@
 					]
 				},
 				{
-					title:'Страница заявление',
 					items:
 					[
 		{
@@ -797,7 +795,6 @@
 					]
 				},
 				{
-					title:'Страница ПФР',
 					items:
 					[
 		{
@@ -908,7 +905,6 @@
 					]
 				},
 				{
-					title:'Страница ФСС',
 					items:
 					[
 		{
@@ -1001,7 +997,6 @@
 					]
 				},
 				{
-					title:'Страница ФСГС',
 					items:
 					[
 		{

@@ -45,6 +45,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
+			width: 630,
+			height: 25,
 			items:
 			[
 				{
@@ -70,13 +72,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:614px;height:290px;',
 			height: 290,width: 614,
 			items:
 			[
 				{
-					title:'Распределение',
 					items:
 					[
 		{
@@ -116,6 +117,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:31px;width:600px;height:24px;',
+			width: 600,
+			height: 24,
 			items:
 			[
 				{
@@ -237,7 +240,6 @@
 					]
 				},
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -260,6 +262,8 @@
 			value: 0,
 			name: 'ПолеВвода1',
 			style: 'position:absolute;left:66px;top:72px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -275,6 +279,8 @@
 			value: 0,
 			name: 'ПолеВвода2',
 			style: 'position:absolute;left:66px;top:97px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -290,6 +296,8 @@
 			value: 0,
 			name: 'ПолеВвода3',
 			style: 'position:absolute;left:66px;top:122px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -310,14 +318,14 @@
 			style: 'position:absolute;left:148px;top:122px;width:13px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Критерии распределения (процент от общей суммы параметров распределения)',
-			style: 'position:absolute;left:6px;top:50px;width:600px;height:16px;',
+			xtype: 'label',
+			text: 'Критерии распределения (процент от общей суммы параметров распределения)',
+			style: 'position:absolute;left:6px;top:50px;width:600px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметр распределения (из учетной политики)',
-			style: 'position:absolute;left:6px;top:6px;width:600px;height:16px;',
+			xtype: 'label',
+			text: 'Параметр распределения (из учетной политики)',
+			style: 'position:absolute;left:6px;top:6px;width:600px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -397,6 +405,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:409px;width:630px;height:25px;',
+			width: 630,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

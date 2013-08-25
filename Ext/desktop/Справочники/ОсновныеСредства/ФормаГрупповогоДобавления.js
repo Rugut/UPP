@@ -214,9 +214,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Постоянные сведения об объектах основных средств',
-			style: 'position:absolute;left:8px;top:272px;width:398px;height:16px;',
+			xtype: 'label',
+			text: 'Постоянные сведения об объектах основных средств',
+			style: 'position:absolute;left:8px;top:272px;width:398px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -254,9 +254,9 @@
 			style: 'position:absolute;left:160px;top:221px;width:246px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные сведения об объектах основных средств',
-			style: 'position:absolute;left:8px;top:104px;width:398px;height:16px;',
+			xtype: 'label',
+			text: 'Основные сведения об объектах основных средств',
+			style: 'position:absolute;left:8px;top:104px;width:398px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -287,11 +287,13 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:160px;top:77px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры группового добавления элементов справочника',
-			style: 'position:absolute;left:8px;top:8px;width:398px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры группового добавления элементов справочника',
+			style: 'position:absolute;left:8px;top:8px;width:398px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -360,6 +362,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:392px;width:414px;height:25px;',
+			width: 414,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

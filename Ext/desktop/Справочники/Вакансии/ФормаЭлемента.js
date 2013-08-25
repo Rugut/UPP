@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:811px;height:25px;',
+			width: 811,
+			height: 25,
 			items:
 			[
 				{
@@ -143,14 +145,13 @@
 			style: 'position:absolute;left:656px;top:57px;width:62px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:388px;height:24px;',
 			height: 24,width: 388,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По структуре юридических лиц',
 					items:
 					[
 		{
@@ -394,9 +395,9 @@
 			style: 'position:absolute;left:415px;top:286px;width:388px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Описание вакансии',
-			style: 'position:absolute;left:8px;top:130px;width:795px;height:16px;',
+			xtype: 'label',
+			text: 'Описание вакансии',
+			style: 'position:absolute;left:8px;top:130px;width:795px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -449,6 +450,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:383px;width:811px;height:25px;',
+			width: 811,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

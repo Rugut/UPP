@@ -120,6 +120,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			items:
 			[
 				{
@@ -141,18 +143,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:158px;width:704px;height:231px;',
 			height: 231,width: 704,
 			items:
 			[
 				{
-					title:'Основные начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -601,6 +604,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:60px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -658,7 +663,6 @@
 					]
 				},
 				{
-					title:'Договоры (подряда)',
 					items:
 					[
 		{
@@ -832,6 +836,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -869,6 +875,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:56px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -926,7 +934,6 @@
 					]
 				},
 				{
-					title:'Дополнительные начисления',
 					items:
 					[
 		{
@@ -1253,6 +1260,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -1290,6 +1299,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:70px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -1347,7 +1358,6 @@
 					]
 				},
 				{
-					title:'Погашение займов',
 					items:
 					[
 		{
@@ -1494,6 +1504,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -1531,6 +1543,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:81px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -1588,12 +1602,13 @@
 					]
 				},
 				{
-					title:'НДФЛ',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -1631,6 +1646,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:61px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -1964,12 +1981,13 @@
 					]
 				},
 				{
-					title:'Прочие удержания',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -2301,6 +2319,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:101px;width:690px;height:24px;',
+			width: 690,
+			height: 24,
 			items:
 			[
 				{
@@ -2458,14 +2478,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:414px;width:704px;height:75px;',
 			height: 75,width: 704,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -2580,6 +2599,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:553px;width:246px;height:25px;',
+			width: 246,
+			height: 25,
 			items:
 			[
 				'-',
@@ -2595,14 +2616,13 @@
 			style: 'position:absolute;left:30px;top:492px;width:466px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:500px;top:492px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2616,14 +2636,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:583px;top:492px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2643,6 +2662,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:246px;top:553px;width:474px;height:25px;',
+			width: 474,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -53,6 +55,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:409px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -61,13 +65,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:765px;height:298px;',
 			height: 298,width: 765,
 			items:
 			[
 				{
-					title:'1. Дочерние компании',
 					items:
 					[
 		{
@@ -84,6 +87,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПримечания',
 			style: 'position:absolute;left:172px;top:251px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -109,7 +114,6 @@
 					]
 				},
 				{
-					title:'2. Совместная деятельность',
 					items:
 					[
 		{
@@ -126,6 +130,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПримечанияСД',
 			style: 'position:absolute;left:172px;top:252px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -151,7 +157,6 @@
 					]
 				},
 				{
-					title:'3. ДС от операционной деятельности',
 					items:
 					[
 		{
@@ -168,6 +173,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиДСОтОперДеят',
 			style: 'position:absolute;left:172px;top:253px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -189,14 +196,13 @@
 			style: 'position:absolute;left:694px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:765px;height:49px;',
 			height: 49,width: 765,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -213,6 +219,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:224px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -272,14 +280,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:380px;width:765px;height:21px;',
 			height: 21,width: 765,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

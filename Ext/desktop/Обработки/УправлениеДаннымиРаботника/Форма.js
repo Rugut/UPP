@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:51px;width:780px;height:399px;',
 			height: 399,width: 780,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Основное',
 					items:
 					[
 		{
@@ -110,6 +109,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
+			width: 475,
+			height: 25,
 			items:
 			[
 				{
@@ -205,7 +206,6 @@
 					]
 				},
 				{
-					title:'Расчеты зарплата',
 					items:
 					[
 		{
@@ -316,6 +316,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
+			width: 475,
+			height: 25,
 			items:
 			[
 				{
@@ -386,7 +388,6 @@
 					]
 				},
 				{
-					title:'Плановые данные',
 					items:
 					[
 		{
@@ -461,6 +462,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
+			width: 475,
+			height: 25,
 			items:
 			[
 				{
@@ -507,7 +510,6 @@
 					]
 				},
 				{
-					title:'Кадровые данные',
 					items:
 					[
 		{
@@ -621,6 +623,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
+			width: 475,
+			height: 25,
 			items:
 			[
 				{
@@ -675,7 +679,6 @@
 					]
 				},
 				{
-					title:'Налоги',
 					items:
 					[
 		{
@@ -801,6 +804,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
+			width: 475,
+			height: 25,
 			items:
 			[
 				{
@@ -851,6 +856,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:26px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -877,6 +884,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:727px;top:2px;width:53px;height:24px;',
+			width: 53,
+			height: 24,
 			items:
 			[
 				{
@@ -931,6 +940,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:380px;top:2px;width:201px;height:24px;',
+			width: 201,
+			height: 24,
 			items:
 			[
 				{

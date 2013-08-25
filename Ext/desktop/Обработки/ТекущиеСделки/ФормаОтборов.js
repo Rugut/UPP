@@ -17,34 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:235px;width:478px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:462px;height:219px;',
 			height: 219,width: 462,
 			items:
 			[
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -232,6 +210,8 @@
 			value: 0,
 			name: 'ЗначениеОтбораСумма',
 			style: 'position:absolute;left:234px;top:78px;width:220px;height:19px;',
+			width: 220,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -523,6 +503,30 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:235px;width:478px;height:25px;',
+			width: 478,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

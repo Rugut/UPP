@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
+			width: 690,
+			height: 25,
 			items:
 			[
 				{
@@ -45,24 +47,22 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:190px;top:58px;width:492px;height:464px;',
 			height: 464,width: 492,
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:79px;width:478px;height:116px;',
 			height: 116,width: 478,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница каталог',
 					items:
 					[
 		{
@@ -89,7 +89,6 @@
 					]
 				},
 				{
-					title:'Страница сайт',
 					items:
 					[
 		{
@@ -165,6 +164,8 @@
 			value: 0,
 			name: 'HTTPОбменПроксиПорт',
 			style: 'position:absolute;left:311px;top:74px;width:167px;height:19px;',
+			width: 167,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -246,14 +247,13 @@
 			style: 'position:absolute;left:6px;top:30px;width:117px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:14px;top:225px;width:468px;height:24px;',
 			height: 24,width: 468,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -300,14 +300,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:14px;top:249px;width:468px;height:25px;',
 			height: 25,width: 468,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -388,7 +387,6 @@
 					]
 				},
 				{
-					title:'Выгрузка товаров',
 					items:
 					[
 		{
@@ -399,6 +397,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:52px;width:478px;height:24px;',
+			width: 478,
+			height: 24,
 			items:
 			[
 			]
@@ -513,7 +513,6 @@
 					]
 				},
 				{
-					title:'Обмен заказами',
 					items:
 					[
 		{
@@ -811,19 +810,19 @@
 			style: 'position:absolute;left:6px;top:307px;width:124px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры для подстановки в заказы с WEB-сайта',
-			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры для подстановки в заказы с WEB-сайта',
+			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры для создания новых элементов',
-			style: 'position:absolute;left:6px;top:123px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры для создания новых элементов',
+			style: 'position:absolute;left:6px;top:123px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Действия с документами, пришедшими с WEB-сайта',
-			style: 'position:absolute;left:6px;top:216px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Действия с документами, пришедшими с WEB-сайта',
+			style: 'position:absolute;left:6px;top:216px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -965,6 +964,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:554px;width:690px;height:25px;',
+			width: 690,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

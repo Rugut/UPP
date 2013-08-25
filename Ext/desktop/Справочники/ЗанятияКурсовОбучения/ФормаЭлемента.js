@@ -52,10 +52,14 @@
 			value: 0,
 			name: 'ДлительностьЗанятия',
 			style: 'position:absolute;left:170px;top:162px;width:75px;height:19px;',
+			width: 75,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:239px;width:384px;height:24px;',
+			width: 384,
+			height: 24,
 			items:
 			[
 				'-',
@@ -141,14 +145,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Изучаемые компетенции',
-			style: 'position:absolute;left:8px;top:223px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Изучаемые компетенции',
+			style: 'position:absolute;left:8px;top:223px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -196,9 +202,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Описание занятия:',
-			style: 'position:absolute;left:8px;top:56px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Описание занятия:',
+			style: 'position:absolute;left:8px;top:56px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -207,6 +213,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:381px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

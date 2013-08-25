@@ -39,6 +39,8 @@
 			value: 0,
 			name: 'Пароль',
 			style: 'position:absolute;left:117px;top:32px;width:343px;height:19px;',
+			width: 343,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -53,6 +55,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:59px;width:468px;height:25px;',
+			width: 468,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

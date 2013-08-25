@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:338px;height:311px;',
 			height: 311,width: 338,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -182,6 +181,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:75px;width:324px;height:24px;',
+			width: 324,
+			height: 24,
 			items:
 			[
 				{
@@ -199,14 +200,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные группировки',
-			style: 'position:absolute;left:6px;top:54px;width:324px;height:16px;',
+			xtype: 'label',
+			text: 'Основные группировки',
+			style: 'position:absolute;left:6px;top:54px;width:324px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительные группировки',
-			style: 'position:absolute;left:6px;top:172px;width:324px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительные группировки',
+			style: 'position:absolute;left:6px;top:172px;width:324px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ДополнительныеГруппировки',
@@ -280,6 +281,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:193px;width:324px;height:24px;',
+			width: 324,
+			height: 24,
 			items:
 			[
 				{
@@ -299,7 +302,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -401,6 +403,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:324px;height:24px;',
+			width: 324,
+			height: 24,
 			items:
 			[
 			]
@@ -409,9 +413,16 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:327px;width:354px;height:25px;',
+			width: 354,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -431,10 +442,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

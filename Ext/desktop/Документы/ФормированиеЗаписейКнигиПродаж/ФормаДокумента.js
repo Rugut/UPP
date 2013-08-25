@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
 			items:
 			[
 			]
@@ -167,13 +169,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:102px;width:693px;height:286px;',
 			height: 286,width: 693,
 			items:
 			[
 				{
-					title:'По реализации',
 					items:
 					[
 		{
@@ -356,6 +357,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -364,7 +367,6 @@
 					]
 				},
 				{
-					title:'С авансов',
 					items:
 					[
 		{
@@ -520,6 +522,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -528,7 +532,6 @@
 					]
 				},
 				{
-					title:'Начислен к уплате',
 					items:
 					[
 		{
@@ -675,6 +678,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -683,7 +688,6 @@
 					]
 				},
 				{
-					title:'Восстановление по авансам',
 					items:
 					[
 		{
@@ -830,6 +834,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				{
@@ -840,7 +846,6 @@
 					]
 				},
 				{
-					title:'Восстановление по другим операциям',
 					items:
 					[
 		{
@@ -969,6 +974,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -977,7 +984,6 @@
 					]
 				},
 				{
-					title:'Не отражается в книге',
 					items:
 					[
 		{
@@ -1124,6 +1130,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1145,6 +1153,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

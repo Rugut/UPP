@@ -96,6 +96,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:728px;height:25px;',
+			width: 728,
+			height: 25,
 			items:
 			[
 				'-',
@@ -149,6 +151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:424px;width:728px;height:25px;',
+			width: 728,
+			height: 25,
 			items:
 			[
 				{
@@ -170,18 +174,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:713px;height:303px;',
 			height: 303,width: 713,
 			items:
 			[
 				{
-					title:'Дебиторская задолженность',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:699px;height:24px;',
+			width: 699,
+			height: 24,
 			items:
 			[
 				{
@@ -309,12 +314,13 @@
 					]
 				},
 				{
-					title:'Кредиторская задолженность',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:699px;height:24px;',
+			width: 699,
+			height: 24,
 			items:
 			[
 				{
@@ -462,13 +468,12 @@
 					]
 				},
 				{
-					title:'Счета расчетов',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:699px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:699px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'СчетаРасчетов',
@@ -533,6 +538,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:699px;height:24px;',
+			width: 699,
+			height: 24,
 			items:
 			[
 				{
@@ -578,13 +585,12 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Инвентаризационная комиссия',
-			style: 'position:absolute;left:6px;top:106px;width:699px;height:16px;',
+			xtype: 'label',
+			text: 'Инвентаризационная комиссия',
+			style: 'position:absolute;left:6px;top:106px;width:699px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ИнвентаризационнаяКомиссия',
@@ -658,6 +664,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:122px;width:699px;height:24px;',
+			width: 699,
+			height: 24,
 			items:
 			[
 				'-',
@@ -703,9 +711,9 @@
 			style: 'position:absolute;left:409px;top:26px;width:18px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Проведение инвентаризации',
-			style: 'position:absolute;left:6px;top:6px;width:699px;height:16px;',
+			xtype: 'label',
+			text: 'Проведение инвентаризации',
+			style: 'position:absolute;left:6px;top:6px;width:699px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',

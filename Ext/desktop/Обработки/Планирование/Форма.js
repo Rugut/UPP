@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			items:
 			[
 				{
@@ -84,13 +86,12 @@
 			style: 'position:absolute;left:872px;top:2px;width:16px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:984px;height:539px;',
 			height: 539,width: 984,
 			items:
 			[
 				{
-					title:'Планы',
 					items:
 					[
 		{
@@ -315,6 +316,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:242px;top:22px;width:734px;height:24px;',
+			width: 734,
+			height: 24,
 			items:
 			[
 				{
@@ -364,9 +367,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состав плана',
-			style: 'position:absolute;left:242px;top:6px;width:734px;height:16px;',
+			xtype: 'label',
+			text: 'Состав плана',
+			style: 'position:absolute;left:242px;top:6px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Потребности',
@@ -521,6 +524,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:242px;top:257px;width:734px;height:24px;',
+			width: 734,
+			height: 24,
 			items:
 			[
 				{
@@ -529,13 +534,15 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Потребности',
-			style: 'position:absolute;left:242px;top:241px;width:734px;height:16px;',
+			xtype: 'label',
+			text: 'Потребности',
+			style: 'position:absolute;left:242px;top:241px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:230px;height:24px;',
+			width: 230,
+			height: 24,
 			items:
 			[
 				{
@@ -548,29 +555,29 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планы',
-			style: 'position:absolute;left:6px;top:6px;width:230px;height:16px;',
+			xtype: 'label',
+			text: 'Планы',
+			style: 'position:absolute;left:6px;top:6px;width:230px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Производственная программа',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:970px;height:507px;',
 			height: 507,width: 970,
 			items:
 			[
 				{
-					title:'Плановые задания',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
+			width: 956,
+			height: 24,
 			items:
 			[
 				{
@@ -740,12 +747,13 @@
 					]
 				},
 				{
-					title:'Диаграмма Ганта',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
+			width: 956,
+			height: 24,
 			items:
 			[
 				{

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:34px;width:484px;height:24px;',
+			width: 484,
+			height: 24,
 			items:
 			[
 				{
@@ -189,6 +191,8 @@
 			value: 0,
 			name: 'ПолеВводаВеличиныИзменения',
 			style: 'position:absolute;left:464px;top:6px;width:48px;height:19px;',
+			width: 48,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -237,6 +241,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:306px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{

@@ -157,23 +157,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:984px;height:463px;',
 			height: 463,width: 984,
 			items:
 			[
 				{
-					title:'Пособия',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:970px;height:24px;',
+			width: 970,
+			height: 24,
 			items:
 			[
 				{
@@ -251,13 +254,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:303px;top:33px;width:673px;height:404px;',
 			height: 404,width: 673,
 			items:
 			[
 				{
-					title:'Застрахованное лицо',
 					items:
 					[
 		{
@@ -878,7 +880,6 @@
 					]
 				},
 				{
-					title:'Листок нетрудоспособности',
 					items:
 					[
 		{
@@ -1144,6 +1145,8 @@
 			value: 0,
 			name: 'УходЗаРодственникомМесяцев1',
 			style: 'position:absolute;left:115px;top:240px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1153,6 +1156,8 @@
 			value: 0,
 			name: 'УходЗаРодственникомЛет1',
 			style: 'position:absolute;left:65px;top:240px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1216,6 +1221,8 @@
 			value: 0,
 			name: 'УходЗаРодственникомМесяцев2',
 			style: 'position:absolute;left:115px;top:294px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1225,6 +1232,8 @@
 			value: 0,
 			name: 'УходЗаРодственникомЛет2',
 			style: 'position:absolute;left:65px;top:294px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1270,6 +1279,8 @@
 			value: 0,
 			name: 'УходЗаРодственникомИспользованоДней1',
 			style: 'position:absolute;left:641px;top:240px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1285,6 +1296,8 @@
 			value: 0,
 			name: 'УходЗаРодственникомИспользованоДней2',
 			style: 'position:absolute;left:641px;top:294px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1369,7 +1382,6 @@
 					]
 				},
 				{
-					title:'Листок (продолжение)',
 					items:
 					[
 		{
@@ -1969,7 +1981,6 @@
 					]
 				},
 				{
-					title:'Расчет пособия',
 					items:
 					[
 		{
@@ -2026,6 +2037,8 @@
 			value: 0,
 			name: 'СтажМесяцев',
 			style: 'position:absolute;left:171px;top:60px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2035,6 +2048,8 @@
 			value: 0,
 			name: 'СтажЛет',
 			style: 'position:absolute;left:121px;top:60px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2050,6 +2065,8 @@
 			value: 0,
 			name: 'СтажБезНестраховыхПериодовЛет',
 			style: 'position:absolute;left:451px;top:60px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2065,6 +2082,8 @@
 			value: 0,
 			name: 'СтажБезНестраховыхПериодовСтажМесяцев',
 			style: 'position:absolute;left:503px;top:60px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2175,6 +2194,8 @@
 			value: 0,
 			name: 'ПервыйГодРасчета',
 			style: 'position:absolute;left:24px;top:186px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2190,6 +2211,8 @@
 			value: 0,
 			name: 'ВторойГодРасчета',
 			style: 'position:absolute;left:351px;top:186px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2217,6 +2240,8 @@
 			value: 0,
 			name: 'ТарифнаяСтавкаОклад',
 			style: 'position:absolute;left:451px;top:359px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2232,6 +2257,8 @@
 			value: 0,
 			name: 'ЗаработокЗаПериодРасчета',
 			style: 'position:absolute;left:154px;top:282px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2241,6 +2268,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициент',
 			style: 'position:absolute;left:103px;top:108px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2256,6 +2285,8 @@
 			value: 0,
 			name: 'КалендарныхДнейРасчетногоПериода',
 			style: 'position:absolute;left:398px;top:282px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2303,6 +2334,8 @@
 			value: 0,
 			name: 'ЗаработокПервыйГодРасчета',
 			style: 'position:absolute;left:233px;top:186px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2318,6 +2351,8 @@
 			value: 0,
 			name: 'СреднийДневнойЗаработок',
 			style: 'position:absolute;left:154px;top:359px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2333,6 +2368,8 @@
 			value: 0,
 			name: 'ЗамененныйПервыйГодРасчета',
 			style: 'position:absolute;left:124px;top:186px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2348,6 +2385,8 @@
 			value: 0,
 			name: 'ЗамененныйВторойГодРасчета',
 			style: 'position:absolute;left:450px;top:186px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2369,6 +2408,8 @@
 			value: 0,
 			name: 'ЗаработокПервыйГодРасчета',
 			style: 'position:absolute;left:557px;top:186px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2378,6 +2419,8 @@
 			value: 0,
 			name: 'МРОТ1',
 			style: 'position:absolute;left:373px;top:330px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2393,6 +2436,8 @@
 			value: 0,
 			name: 'СреднийЗаработокНаПериодПростоя',
 			style: 'position:absolute;left:451px;top:6px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2492,7 +2537,6 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
@@ -2503,6 +2547,8 @@
 			value: 0,
 			name: 'МРОТ',
 			style: 'position:absolute;left:255px;top:78px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2518,6 +2564,8 @@
 			value: 0,
 			name: 'ДоляВремени',
 			style: 'position:absolute;left:255px;top:6px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2586,6 +2634,8 @@
 			value: 0,
 			name: 'КоличествоСтраниц',
 			style: 'position:absolute;left:264px;top:226px;width:24px;height:19px;',
+			width: 24,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -2617,7 +2667,6 @@
 					]
 				},
 				{
-					title:'Данные страхователя',
 					items:
 					[
 		{
@@ -2978,6 +3027,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:575px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

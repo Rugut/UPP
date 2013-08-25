@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -138,14 +140,13 @@
 			style: 'position:absolute;left:94px;top:392px;width:550px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:102px;width:636px;height:285px;',
 			height: 285,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Полная',
 					items:
 					[
 		{
@@ -155,13 +156,12 @@
 			style: 'position:absolute;left:86px;top:270px;width:550px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:95px;width:636px;height:169px;',
 			height: 169,width: 636,
 			items:
 			[
 				{
-					title:'Исходные комплектующие',
 					items:
 					[
 		{
@@ -173,6 +173,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -410,7 +412,6 @@
 					]
 				},
 				{
-					title:'Возвратные отходы',
 					items:
 					[
 		{
@@ -616,6 +617,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -626,7 +629,6 @@
 					]
 				},
 				{
-					title:'Параметры выпуска продукции',
 					items:
 					[
 		{
@@ -712,6 +714,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -725,7 +729,6 @@
 					]
 				},
 				{
-					title:'Документация',
 					items:
 					[
 		{
@@ -805,6 +808,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -815,7 +820,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -961,20 +965,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:89px;',
 			height: 89,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Сборочная',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Выходное изделие',
-			style: 'position:absolute;left:0px;top:1px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Выходное изделие',
+			style: 'position:absolute;left:0px;top:1px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1074,6 +1077,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:86px;top:46px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1175,6 +1180,8 @@
 			value: 0,
 			name: 'Кратность',
 			style: 'position:absolute;left:226px;top:70px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1184,6 +1191,8 @@
 			value: 0,
 			name: 'МинимальнаяПартия',
 			style: 'position:absolute;left:416px;top:70px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1200,12 +1209,13 @@
 					]
 				},
 				{
-					title:'Полная',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1370,9 +1380,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выходные изделия',
-			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Выходные изделия',
+			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -1387,22 +1397,22 @@
 					]
 				},
 				{
-					title:'Узел',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:285px;',
 			height: 285,width: 636,
 			items:
 			[
 				{
-					title:'Исходные комплектующие',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
+			width: 622,
+			height: 25,
 			items:
 			[
 				'-',
@@ -1615,7 +1625,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1789,6 +1798,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:419px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

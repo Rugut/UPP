@@ -274,6 +274,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
+			width: 410,
+			height: 25,
 			items:
 			[
 				{
@@ -294,6 +296,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:433px;width:410px;height:25px;',
+			width: 410,
+			height: 25,
 			items:
 			[
 				{
@@ -318,19 +322,20 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:176px;width:394px;height:177px;',
 			height: 177,width: 394,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Выборочно',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:8px;width:394px;height:25px;',
+			width: 394,
+			height: 25,
 			items:
 			[
 			]
@@ -461,7 +466,6 @@
 					]
 				},
 				{
-					title:'ПоВсем',
 					items:
 					[
 		{
@@ -495,6 +499,8 @@
 			value: 0,
 			name: 'Отклонение',
 			style: 'position:absolute;left:174px;top:77px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',

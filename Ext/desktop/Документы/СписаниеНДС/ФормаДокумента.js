@@ -51,30 +51,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:445px;width:709px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -138,13 +118,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:693px;height:331px;',
 			height: 331,width: 693,
 			items:
 			[
 				{
-					title:'НДС к списанию',
 					items:
 					[
 		{
@@ -273,6 +252,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				'-',
@@ -305,7 +286,6 @@
 					]
 				},
 				{
-					title:'Счета списания НДС',
 					items:
 					[
 		{
@@ -489,9 +469,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счет списания НДС в БУ',
-			style: 'position:absolute;left:6px;top:6px;width:329px;height:19px;',
+			xtype: 'label',
+			text: 'Счет списания НДС в БУ',
+			style: 'position:absolute;left:6px;top:6px;width:329px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -650,9 +630,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счет списания НДС в НУ',
-			style: 'position:absolute;left:356px;top:6px;width:329px;height:19px;',
+			xtype: 'label',
+			text: 'Счет списания НДС в НУ',
+			style: 'position:absolute;left:356px;top:6px;width:329px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -718,6 +698,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:445px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

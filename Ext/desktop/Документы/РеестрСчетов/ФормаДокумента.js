@@ -274,6 +274,8 @@
 			value: 0,
 			name: 'СуммаАккредитива',
 			style: 'position:absolute;left:424px;top:104px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -295,6 +297,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:152px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 			]
@@ -389,6 +393,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				'-',
@@ -464,6 +470,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:342px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{

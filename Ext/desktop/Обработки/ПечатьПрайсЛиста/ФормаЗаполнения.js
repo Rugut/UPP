@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:671px;height:25px;',
+			width: 671,
+			height: 25,
 			items:
 			[
 				'-',
@@ -59,14 +61,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:57px;width:657px;height:46px;',
 			height: 46,width: 657,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Поля',
 					items:
 					[
 		{

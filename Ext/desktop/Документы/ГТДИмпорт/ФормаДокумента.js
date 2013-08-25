@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:667px;height:25px;',
+			width: 667,
+			height: 25,
 			items:
 			[
 				{
@@ -116,13 +118,12 @@
 			style: 'position:absolute;left:500px;top:33px;width:72px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:116px;width:651px;height:258px;',
 			height: 258,width: 651,
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
@@ -177,6 +178,8 @@
 			value: 0,
 			name: 'ТаможенныйСборВал',
 			style: 'position:absolute;left:168px;top:59px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -198,6 +201,8 @@
 			value: 0,
 			name: 'ТаможенныйШтрафВал',
 			style: 'position:absolute;left:168px;top:113px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -213,6 +218,8 @@
 			value: 0,
 			name: 'ТаможенныйСбор',
 			style: 'position:absolute;left:168px;top:86px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -228,16 +235,17 @@
 			value: 0,
 			name: 'ТаможенныйШтраф',
 			style: 'position:absolute;left:168px;top:137px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Таможенный сбор',
-			style: 'position:absolute;left:6px;top:38px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Таможенный сбор',
+			style: 'position:absolute;left:6px;top:38px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Разделы ГТД',
 					items:
 					[
 		{
@@ -249,6 +257,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:107px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -561,14 +571,13 @@
 			style: 'position:absolute;left:562px;top:212px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:636px;height:88px;',
 			height: 88,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Несколько разделов',
 					items:
 					[
 		{
@@ -706,7 +715,6 @@
 					]
 				},
 				{
-					title:'Один раздел',
 					items:
 					[
 		{
@@ -727,6 +735,8 @@
 			value: 0,
 			name: 'СтавкаПошлины',
 			style: 'position:absolute;left:241px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -736,6 +746,8 @@
 			value: 0,
 			name: 'ТаможеннаяСтоимость',
 			style: 'position:absolute;left:445px;top:0px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -783,6 +795,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:445px;top:54px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -792,6 +806,8 @@
 			value: 0,
 			name: 'СуммаПошлины',
 			style: 'position:absolute;left:445px;top:27px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -803,14 +819,13 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:91px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:91px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -922,7 +937,6 @@
 					]
 				},
 				{
-					title:'Счета учета расчетов',
 					items:
 					[
 		{
@@ -1082,14 +1096,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: ' Расчеты в валюте регламентированного учета',
-			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;',
+			xtype: 'label',
+			text: ' Расчеты в валюте регламентированного учета',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: ' Расчеты в иностранной валюте ',
-			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;',
+			xtype: 'label',
+			text: ' Расчеты в иностранной валюте ',
+			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1428,32 +1442,6 @@
 			style: 'position:absolute;left:336px;top:81px;width:84px;height:35px;text-align:left;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:408px;width:667px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'trigger',
 			hideLabel: true,
 			disabled: false,
@@ -1496,6 +1484,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:408px;width:667px;height:25px;',
+			width: 667,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

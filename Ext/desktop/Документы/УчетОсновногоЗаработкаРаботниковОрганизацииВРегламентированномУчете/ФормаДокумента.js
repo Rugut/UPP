@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
+			width: 643,
+			height: 25,
 			items:
 			[
 				{
@@ -117,28 +119,6 @@
 			width: 539,
 			height: 19,
 			style: 'position:absolute;left:96px;top:349px;width:539px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:376px;width:643px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
 		},
 		{
 			id: 'РаботникиОрганизации',
@@ -248,6 +228,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:97px;width:627px;height:24px;',
+			width: 627,
+			height: 24,
 			items:
 			[
 				{
@@ -346,14 +328,39 @@
 			style: 'position:absolute;left:327px;top:33px;width:86px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники организации',
-			style: 'position:absolute;left:8px;top:81px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники организации',
+			style: 'position:absolute;left:8px;top:81px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:376px;width:643px;height:25px;',
+			width: 643,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

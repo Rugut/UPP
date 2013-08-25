@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:190px;top:0px;width:365px;height:386px;',
 			height: 386,width: 365,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -61,14 +60,13 @@
 			style: 'position:absolute;left:79px;top:282px;width:232px;height:34px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:16px;top:209px;width:265px;height:43px;',
 			height: 43,width: 265,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -109,7 +107,6 @@
 					]
 				},
 				{
-					title:'Страница2',
 					items:
 					[
 		{
@@ -170,6 +167,8 @@
 			value: 0,
 			name: 'ЧасовВНеделе',
 			style: 'position:absolute;left:92px;top:76px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -281,7 +280,6 @@
 					]
 				},
 				{
-					title:'Страница3',
 					items:
 					[
 		{
@@ -325,14 +323,13 @@
 			style: 'position:absolute;left:124px;top:281px;width:59px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:3px;top:41px;width:360px;height:219px;',
 			height: 219,width: 360,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Обычный',
 					items:
 					[
 		{
@@ -409,7 +406,6 @@
 					]
 				},
 				{
-					title:'СУчетомНочных',
 					items:
 					[
 		{
@@ -638,16 +634,17 @@
 			value: 0,
 			name: 'КоличествоПерерывов',
 			style: 'position:absolute;left:106px;top:17px;width:33px;height:19px;',
+			width: 33,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:6px;width:360px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:6px;width:360px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Сменный',
 					items:
 					[
 		{
@@ -733,6 +730,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:9px;width:132px;height:24px;',
+			width: 132,
+			height: 24,
 			items:
 			[
 			]
@@ -753,14 +752,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:3px;top:306px;width:190px;height:23px;',
 			height: 23,width: 190,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -791,6 +789,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:387px;width:561px;height:24px;',
+			width: 561,
+			height: 24,
 			items:
 			[
 				{
@@ -802,14 +802,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:12px;width:181px;height:374px;',
 			height: 374,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -823,6 +822,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:386px;width:561px;height:25px;',
+			width: 561,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

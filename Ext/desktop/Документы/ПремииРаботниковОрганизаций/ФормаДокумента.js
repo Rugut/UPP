@@ -182,6 +182,8 @@
 			value: 0,
 			name: 'ЧислоМесяцев',
 			style: 'position:absolute;left:424px;top:128px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -266,6 +268,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:170px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -453,6 +457,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -465,18 +471,20 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начислено по итогам работы за период',
-			style: 'position:absolute;left:8px;top:106px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Начислено по итогам работы за период',
+			style: 'position:absolute;left:8px;top:106px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники',
-			style: 'position:absolute;left:8px;top:154px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:154px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:247px;height:25px;',
+			width: 247,
+			height: 25,
 			items:
 			[
 				'-',
@@ -492,14 +500,13 @@
 			style: 'position:absolute;left:30px;top:434px;width:401px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:431px;top:434px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -513,14 +520,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:515px;top:434px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -536,6 +542,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:300px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -597,6 +605,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

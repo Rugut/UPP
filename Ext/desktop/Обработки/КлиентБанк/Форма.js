@@ -17,18 +17,19 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:7px;width:774px;height:565px;',
 			height: 565,width: 774,
 			items:
 			[
 				{
-					title:'  Выгрузка  ',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:113px;width:757px;height:24px;',
+			width: 757,
+			height: 24,
 			items:
 			[
 				'-',
@@ -698,6 +699,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:200px;top:220px;width:380px;height:24px;',
+			width: 380,
+			height: 24,
 			items:
 			[
 				{
@@ -902,6 +905,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:605px;top:498px;width:160px;height:25px;',
+			width: 160,
+			height: 25,
 			items:
 			[
 				{
@@ -922,12 +927,13 @@
 					]
 				},
 				{
-					title:'  Загрузка  ',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:113px;width:757px;height:24px;',
+			width: 757,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1169,6 +1175,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:38px;top:187px;width:228px;height:24px;',
+			width: 228,
+			height: 24,
 			items:
 			[
 				{
@@ -1315,6 +1323,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:605px;top:498px;width:160px;height:25px;',
+			width: 160,
+			height: 25,
 			items:
 			[
 				{

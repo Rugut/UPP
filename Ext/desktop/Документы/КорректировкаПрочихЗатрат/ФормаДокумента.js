@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -108,13 +110,12 @@
 			style: 'position:absolute;left:501px;top:33px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:110px;width:636px;height:313px;',
 			height: 313,width: 636,
 			items:
 			[
 				{
-					title:'Затраты',
 					items:
 					[
 		{
@@ -459,6 +460,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				'-',
@@ -471,7 +474,6 @@
 					]
 				},
 				{
-					title:'Получатели',
 					items:
 					[
 		{
@@ -843,6 +845,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				'-',
@@ -997,6 +1001,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:480px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{

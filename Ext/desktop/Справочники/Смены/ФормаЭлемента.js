@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:76px;width:430px;height:24px;',
+			width: 430,
+			height: 24,
 			items:
 			[
 			]
@@ -130,6 +132,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:446px;height:25px;',
+			width: 446,
+			height: 25,
 			items:
 			[
 				{
@@ -145,9 +149,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды смены:',
-			style: 'position:absolute;left:8px;top:60px;width:430px;height:16px;',
+			xtype: 'label',
+			text: 'Периоды смены:',
+			style: 'position:absolute;left:8px;top:60px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -156,6 +160,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:328px;width:446px;height:25px;',
+			width: 446,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

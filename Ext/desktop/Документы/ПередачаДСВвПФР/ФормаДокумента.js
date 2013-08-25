@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:778px;height:25px;',
+			width: 778,
+			height: 25,
 			items:
 			[
 				{
@@ -69,25 +71,23 @@
 			style: 'position:absolute;left:94px;top:397px;width:676px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:762px;height:41px;',
 			height: 41,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:762px;height:35px;',
 			height: 35,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -99,14 +99,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:762px;height:74px;',
 			height: 74,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -267,20 +266,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:148px;width:762px;height:244px;',
 			height: 244,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Пачка документов',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Пачка документов',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'РаботникиОрганизации',
@@ -399,6 +397,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:762px;height:24px;',
+			width: 762,
+			height: 24,
 			items:
 			[
 				{
@@ -446,6 +446,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:424px;width:778px;height:25px;',
+			width: 778,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

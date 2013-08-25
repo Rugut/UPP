@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:351px;height:25px;',
+			width: 351,
+			height: 25,
 			items:
 			[
 				{
@@ -228,6 +230,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:162px;width:351px;height:25px;',
+			width: 351,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

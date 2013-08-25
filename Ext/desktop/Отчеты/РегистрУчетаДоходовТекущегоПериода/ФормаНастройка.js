@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:8px;width:358px;height:312px;',
 			height: 312,width: 358,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -118,12 +117,13 @@
 					]
 				},
 				{
-					title:'Виды доходов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:326px;top:6px;width:24px;height:280px;',
+			width: 24,
+			height: 280,
 			items:
 			[
 				{
@@ -145,6 +145,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:327px;width:372px;height:25px;',
+			width: 372,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

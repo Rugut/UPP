@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:378px;height:25px;',
+			width: 378,
+			height: 25,
 			items:
 			[
 				{
@@ -130,14 +132,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:134px;width:362px;height:19px;',
 			height: 19,width: 362,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Занято',
 					items:
 					[
 		{
@@ -154,6 +155,8 @@
 			value: 0,
 			name: 'ПродолжительностьДней',
 			style: 'position:absolute;left:88px;top:0px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -175,7 +178,6 @@
 					]
 				},
 				{
-					title:'Недоступно',
 					items:
 					[
 		{
@@ -300,6 +302,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:284px;width:378px;height:25px;',
+			width: 378,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

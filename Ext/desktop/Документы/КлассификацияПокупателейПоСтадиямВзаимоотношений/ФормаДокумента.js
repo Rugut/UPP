@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			width: 660,
+			height: 25,
 			items:
 			[
 				{
@@ -76,13 +78,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:58px;width:644px;height:290px;',
 			height: 290,width: 644,
 			items:
 			[
 				{
-					title:'Распределение',
 					items:
 					[
 		{
@@ -161,10 +162,14 @@
 			value: 0,
 			name: 'КоличествоПериодов',
 			style: 'position:absolute;left:358px;top:6px;width:66px;height:19px;',
+			width: 66,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:32px;width:630px;height:24px;',
+			width: 630,
+			height: 24,
 			items:
 			[
 				{
@@ -307,7 +312,6 @@
 					]
 				},
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -324,6 +328,8 @@
 			value: 0,
 			name: 'РазовыйПокупательНач',
 			style: 'position:absolute;left:109px;top:98px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -333,6 +339,8 @@
 			value: 0,
 			name: 'РазовыйПокупательКон',
 			style: 'position:absolute;left:227px;top:98px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -348,6 +356,8 @@
 			value: 0,
 			name: 'XКлассНач',
 			style: 'position:absolute;left:109px;top:154px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -357,6 +367,8 @@
 			value: 0,
 			name: 'XКлассКон',
 			style: 'position:absolute;left:227px;top:154px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -372,6 +384,8 @@
 			value: 0,
 			name: 'YКлассНач',
 			style: 'position:absolute;left:109px;top:179px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -381,6 +395,8 @@
 			value: 0,
 			name: 'YКлассКон',
 			style: 'position:absolute;left:227px;top:179px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -396,6 +412,8 @@
 			value: 0,
 			name: 'ZКлассНач',
 			style: 'position:absolute;left:109px;top:204px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -405,6 +423,8 @@
 			value: 0,
 			name: 'ZКлассКон',
 			style: 'position:absolute;left:227px;top:204px;width:86px;height:19px;',
+			width: 86,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -413,14 +433,14 @@
 			style: 'position:absolute;left:23px;top:27px;width:613px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Критерии распределения',
-			style: 'position:absolute;left:6px;top:53px;width:630px;height:16px;',
+			xtype: 'label',
+			text: 'Критерии распределения',
+			style: 'position:absolute;left:6px;top:53px;width:630px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметр распределения (из учетной политики)',
-			style: 'position:absolute;left:6px;top:6px;width:630px;height:16px;',
+			xtype: 'label',
+			text: 'Параметр распределения (из учетной политики)',
+			style: 'position:absolute;left:6px;top:6px;width:630px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -530,6 +550,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:405px;width:660px;height:25px;',
+			width: 660,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

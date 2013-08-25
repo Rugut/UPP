@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:636px;height:276px;',
 			height: 276,width: 636,
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
@@ -121,6 +120,8 @@
 			value: 0,
 			name: 'ЗначениеНеобходимоеКоличествоНач',
 			style: 'position:absolute;left:382px;top:131px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -130,6 +131,8 @@
 			value: 0,
 			name: 'ЗначениеНеобходимоеКоличествоКон',
 			style: 'position:absolute;left:508px;top:131px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -153,6 +156,8 @@
 			value: 0,
 			name: 'ЗначениеЗаказанноеКоличествоНач',
 			style: 'position:absolute;left:382px;top:156px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -162,6 +167,8 @@
 			value: 0,
 			name: 'ЗначениеЗаказанноеКоличествоКон',
 			style: 'position:absolute;left:508px;top:156px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -185,6 +192,8 @@
 			value: 0,
 			name: 'ЗначениеЦенаУпрУчетаНач',
 			style: 'position:absolute;left:382px;top:181px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -194,6 +203,8 @@
 			value: 0,
 			name: 'ЗначениеЦенаУпрУчетаКон',
 			style: 'position:absolute;left:508px;top:181px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -217,6 +228,8 @@
 			value: 0,
 			name: 'ЗначениеСуммаУпрУчетаНач',
 			style: 'position:absolute;left:382px;top:206px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -226,6 +239,8 @@
 			value: 0,
 			name: 'ЗначениеСуммаУпрУчетаКон',
 			style: 'position:absolute;left:508px;top:206px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -249,6 +264,8 @@
 			value: 0,
 			name: 'ЗначениеСуммаВзаиморасчетовНач',
 			style: 'position:absolute;left:382px;top:231px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -258,6 +275,8 @@
 			value: 0,
 			name: 'ЗначениеСуммаВзаиморасчетовКон',
 			style: 'position:absolute;left:508px;top:231px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -341,7 +360,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{

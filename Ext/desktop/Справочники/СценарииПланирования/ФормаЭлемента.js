@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:543px;height:25px;',
+			width: 543,
+			height: 25,
 			items:
 			[
 				{
@@ -65,13 +67,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:529px;height:225px;',
 			height: 225,width: 529,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
@@ -257,7 +258,6 @@
 					]
 				},
 				{
-					title:'Курсы валют',
 					items:
 					[
 		{
@@ -390,14 +390,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:55px;width:515px;height:24px;',
+			width: 515,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'История курсов',
-			style: 'position:absolute;left:6px;top:35px;width:515px;height:16px;',
+			xtype: 'label',
+			text: 'История курсов',
+			style: 'position:absolute;left:6px;top:35px;width:515px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -416,6 +418,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:266px;width:543px;height:25px;',
+			width: 543,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

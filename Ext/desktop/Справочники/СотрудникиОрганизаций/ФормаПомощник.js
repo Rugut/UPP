@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:182px;top:0px;width:418px;height:425px;',
 			height: 425,width: 418,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Персональные данные',
 					items:
 					[
 		{
@@ -155,14 +154,13 @@
 			style: 'position:absolute;left:105px;top:280px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:254px;width:402px;height:26px;',
 			height: 26,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -237,7 +235,6 @@
 					]
 				},
 				{
-					title:'Условия приема',
 					items:
 					[
 		{
@@ -247,14 +244,13 @@
 			style: 'position:absolute;left:10px;top:10px;width:219px;height:25px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:384px;',
 			height: 384,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Трудовой договор',
 					items:
 					[
 		{
@@ -343,6 +339,8 @@
 			value: 0,
 			name: 'ИспытательныйСрок',
 			style: 'position:absolute;left:359px;top:226px;width:43px;height:19px;',
+			width: 43,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -492,16 +490,17 @@
 			value: 0,
 			name: 'ЗанимаемыхСтавок',
 			style: 'position:absolute;left:97px;top:226px;width:43px;height:19px;',
+			width: 43,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:1px;top:125px;width:401px;height:24px;',
 			height: 24,width: 401,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -559,14 +558,13 @@
 			style: 'position:absolute;left:10px;top:279px;width:141px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:348px;height:25px;',
 			height: 25,width: 348,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -607,7 +605,6 @@
 					]
 				},
 				{
-					title:'Договор подряда',
 					items:
 					[
 		{
@@ -627,14 +624,13 @@
 			style: 'position:absolute;left:10px;top:77px;width:315px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:92px;width:402px;height:292px;',
 			height: 292,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -736,6 +732,8 @@
 			value: 0,
 			name: 'СуммаЗаРаботу',
 			style: 'position:absolute;left:107px;top:146px;width:95px;height:19px;',
+			width: 95,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -962,14 +960,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:402px;height:24px;',
 			height: 24,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1122,18 +1119,16 @@
 					]
 				},
 				{
-					title:'Договор управленческий',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:348px;height:25px;',
 			height: 25,width: 348,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1146,14 +1141,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:35px;width:402px;height:173px;',
 			height: 173,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1292,6 +1286,8 @@
 			value: 0,
 			name: 'ЗанимаемыхСтавокУпр',
 			style: 'position:absolute;left:97px;top:97px;width:43px;height:19px;',
+			width: 43,
+			height: 19,
 		},
 					]
 				},
@@ -1304,7 +1300,6 @@
 					]
 				},
 				{
-					title:'Оплата труда',
 					items:
 					[
 		{
@@ -1314,14 +1309,13 @@
 			style: 'position:absolute;left:10px;top:10px;width:149px;height:25px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:384px;',
 			height: 384,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Трудовой договор',
 					items:
 					[
 		{
@@ -1714,14 +1708,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:29px;width:402px;height:24px;',
 			height: 24,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'В рублях',
 					items:
 					[
 		{
@@ -1732,6 +1725,8 @@
 			value: 0,
 			name: 'ТарифнаяСтавка',
 			style: 'position:absolute;left:150px;top:5px;width:91px;height:19px;',
+			width: 91,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1786,7 +1781,6 @@
 					]
 				},
 				{
-					title:'Тарифный разряд',
 					items:
 					[
 		{
@@ -1847,6 +1841,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:82px;width:402px;height:24px;',
+			width: 402,
+			height: 24,
 			items:
 			[
 				{
@@ -1860,6 +1856,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:119px;top:218px;width:217px;height:24px;',
+			width: 217,
+			height: 24,
 			items:
 			[
 				{
@@ -1877,7 +1875,6 @@
 					]
 				},
 				{
-					title:'Договор управленческий',
 					items:
 					[
 		{
@@ -2457,6 +2454,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:18px;width:402px;height:24px;',
+			width: 402,
+			height: 24,
 			items:
 			[
 				{
@@ -2470,6 +2469,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:74px;top:136px;width:217px;height:24px;',
+			width: 217,
+			height: 24,
 			items:
 			[
 				{
@@ -2487,6 +2488,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:222px;width:402px;height:24px;',
+			width: 402,
+			height: 24,
 			items:
 			[
 				{
@@ -2500,6 +2503,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:86px;top:296px;width:217px;height:24px;',
+			width: 217,
+			height: 24,
 			items:
 			[
 				{
@@ -2521,7 +2526,6 @@
 					]
 				},
 				{
-					title:'Дополнительная информация',
 					items:
 					[
 		{
@@ -2531,14 +2535,13 @@
 			style: 'position:absolute;left:10px;top:10px;width:325px;height:25px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:197px;width:402px;height:165px;',
 			height: 165,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2596,14 +2599,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:91px;width:402px;height:106px;',
 			height: 106,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Трудовой договор',
 					items:
 					[
 		{
@@ -2633,7 +2635,6 @@
 					]
 				},
 				{
-					title:'Договор подряда',
 					items:
 					[
 		{
@@ -2665,14 +2666,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:56px;',
 			height: 56,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2712,7 +2712,6 @@
 					]
 				},
 				{
-					title:'Готово',
 					items:
 					[
 		{
@@ -2797,14 +2796,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:425px;',
 			height: 425,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница настройки',
 					items:
 					[
 		{
@@ -2840,7 +2838,6 @@
 					]
 				},
 				{
-					title:'Страница готово',
 				},
 			]
 		},
@@ -2857,6 +2854,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:600px;height:25px;',
+			width: 600,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[
@@ -2876,6 +2875,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:324px;top:425px;width:151px;height:25px;',
+			width: 151,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

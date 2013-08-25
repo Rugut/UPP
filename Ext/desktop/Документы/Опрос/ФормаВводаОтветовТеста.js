@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:261px;width:350px;height:249px;',
 			height: 249,width: 350,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Строка',
 					items:
 					[
 		{
@@ -69,7 +68,6 @@
 					]
 				},
 				{
-					title:'Булево',
 					items:
 					[
 		{
@@ -81,7 +79,6 @@
 					]
 				},
 				{
-					title:'Один из вариантов ответа',
 					items:
 					[
 		{
@@ -110,7 +107,6 @@
 					]
 				},
 				{
-					title:'Несколько вариантов ответа',
 					items:
 					[
 		{
@@ -194,7 +190,6 @@
 					]
 				},
 				{
-					title:'Адрес',
 					items:
 					[
 		{
@@ -350,7 +345,6 @@
 					]
 				},
 				{
-					title:'Телефон',
 					items:
 					[
 		{
@@ -431,16 +425,12 @@
 					]
 				},
 				{
-					title:'Адрес электронной почты',
 				},
 				{
-					title:'Веб страница',
 				},
 				{
-					title:'Другое',
 				},
 				{
-					title:'Табличный',
 					items:
 					[
 		{
@@ -488,7 +478,6 @@
 					]
 				},
 				{
-					title:'Текст',
 					items:
 					[
 		{
@@ -509,14 +498,14 @@
 			style: 'position:absolute;left:8px;top:195px;width:350px;height:38px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Вопрос:',
-			style: 'position:absolute;left:8px;top:10px;width:350px;height:16px;',
+			xtype: 'label',
+			text: 'Вопрос:',
+			style: 'position:absolute;left:8px;top:10px;width:350px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Ответ:',
-			style: 'position:absolute;left:8px;top:240px;width:350px;height:16px;',
+			xtype: 'label',
+			text: 'Ответ:',
+			style: 'position:absolute;left:8px;top:240px;width:350px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -527,6 +516,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:536px;width:366px;height:25px;',
+			width: 366,
+			height: 25,
 			items:
 			[
 				{
@@ -550,14 +541,13 @@
 			style: 'position:absolute;left:8px;top:515px;width:50px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:29px;width:350px;height:162px;',
 			height: 162,width: 350,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]

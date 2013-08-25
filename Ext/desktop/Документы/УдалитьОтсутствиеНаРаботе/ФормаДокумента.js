@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:447px;height:25px;',
+			width: 447,
+			height: 25,
 			items:
 			[
 				{
@@ -223,6 +225,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:73px;width:431px;height:24px;',
+			width: 431,
+			height: 24,
 			items:
 			[
 				{
@@ -237,6 +241,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:273px;width:447px;height:25px;',
+			width: 447,
+			height: 25,
 			items:
 			[
 				{
@@ -303,9 +309,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Работники',
-			style: 'position:absolute;left:8px;top:57px;width:431px;height:16px;',
+			xtype: 'label',
+			text: 'Работники',
+			style: 'position:absolute;left:8px;top:57px;width:431px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

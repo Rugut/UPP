@@ -156,6 +156,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
 			items:
 			[
 				{
@@ -229,18 +231,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:650px;height:315px;',
 			height: 315,width: 650,
 			items:
 			[
 				{
-					title:'Основные средства',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 				'-',
@@ -403,7 +406,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -523,6 +525,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:117px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 				'-',
@@ -573,14 +577,14 @@
 			style: 'position:absolute;left:12px;top:51px;width:69px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Инвентаризационная комиссия',
-			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;',
+			xtype: 'label',
+			text: 'Инвентаризационная комиссия',
+			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Проведение инвентаризации',
-			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;',
+			xtype: 'label',
+			text: 'Проведение инвентаризации',
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -636,6 +640,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:429px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

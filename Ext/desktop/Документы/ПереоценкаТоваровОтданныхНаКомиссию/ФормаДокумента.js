@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:25px;',
+			width: 648,
+			height: 25,
 			items:
 			[
 				{
@@ -77,13 +79,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:132px;width:632px;height:210px;',
 			height: 210,width: 632,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -266,6 +267,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:618px;height:24px;',
+			width: 618,
+			height: 24,
 			items:
 			[
 				{
@@ -281,7 +284,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -365,14 +367,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:618px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:618px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:54px;width:618px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:54px;width:618px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -382,6 +384,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:93px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 					]
 				},
@@ -542,10 +546,14 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:535px;top:347px;width:105px;height:17px;',
+			width: 105,
+			height: 17,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:648px;height:25px;',
+			width: 648,
+			height: 25,
 			items:
 			[
 				{

@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -257,32 +259,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:436px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьПодразделениеОрганизации',
 			text: 'Подразделение организации:',
@@ -334,13 +310,12 @@
 			style: 'position:absolute;left:563px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:636px;height:299px;',
 			height: 299,width: 636,
 			items:
 			[
 				{
-					title:'Материалы',
 					items:
 					[
 		{
@@ -847,6 +822,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				{
@@ -889,7 +866,6 @@
 					]
 				},
 				{
-					title:'НДС',
 					items:
 					[
 		{
@@ -1015,14 +991,13 @@
 			style: 'position:absolute;left:6px;top:36px;width:622px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -1210,7 +1185,6 @@
 					]
 				},
 				{
-					title:'Надпись',
 					items:
 					[
 		{
@@ -1224,19 +1198,18 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счет и аналитика списания НДС',
-			style: 'position:absolute;left:6px;top:57px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Счет и аналитика списания НДС',
+			style: 'position:absolute;left:6px;top:57px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:324px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -1424,7 +1397,6 @@
 					]
 				},
 				{
-					title:'Надпись',
 					items:
 					[
 		{
@@ -1440,7 +1412,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1521,6 +1492,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:436px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

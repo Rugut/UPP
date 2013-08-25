@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:626px;height:25px;',
+			width: 626,
+			height: 25,
 			items:
 			[
 				{
@@ -42,13 +44,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:28px;width:618px;height:545px;',
 			height: 545,width: 618,
 			items:
 			[
 				{
-					title:'Выгрузка данных',
 					items:
 					[
 		{
@@ -79,13 +80,12 @@
 			style: 'position:absolute;left:493px;top:6px;width:117px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:245px;width:604px;height:249px;',
 			height: 249,width: 604,
 			items:
 			[
 				{
-					title:'Правила выгрузки данных',
 					items:
 					[
 		{
@@ -151,6 +151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:273px;height:25px;',
+			width: 273,
+			height: 25,
 			items:
 			[
 				{
@@ -269,6 +271,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:285px;top:6px;width:311px;height:25px;',
+			width: 311,
+			height: 25,
 			items:
 			[
 				'-',
@@ -280,7 +284,6 @@
 					]
 				},
 				{
-					title:'Параметры выгрузки',
 					items:
 					[
 		{
@@ -346,7 +349,6 @@
 					]
 				},
 				{
-					title:'Комментарий',
 					items:
 					[
 		{
@@ -411,14 +413,13 @@
 			style: 'position:absolute;left:6px;top:223px;width:206px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:55px;width:604px;height:92px;',
 			height: 92,width: 604,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Выгрузка в файл',
 					items:
 					[
 		{
@@ -468,7 +469,6 @@
 					]
 				},
 				{
-					title:'Выгрузка в ИБ приемник',
 					items:
 					[
 		{
@@ -484,14 +484,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:604px;height:19px;',
 			height: 19,width: 604,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подключение файловая ИБ',
 					items:
 					[
 		{
@@ -524,7 +523,6 @@
 					]
 				},
 				{
-					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -653,6 +651,8 @@
 			value: 0,
 			name: 'КоличествоОбъектовДляФоновогоОбмена',
 			style: 'position:absolute;left:485px;top:199px;width:125px;height:19px;',
+			width: 125,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -684,7 +684,6 @@
 					]
 				},
 				{
-					title:'Загрузка данных',
 					items:
 					[
 		{
@@ -739,6 +738,8 @@
 			value: 0,
 			name: 'КоличествоОбъектовНаТранзакцию',
 			style: 'position:absolute;left:304px;top:54px;width:107px;height:19px;',
+			width: 107,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -775,7 +776,6 @@
 					]
 				},
 				{
-					title:'Дополнительные настройки',
 					items:
 					[
 		{
@@ -804,9 +804,9 @@
 			style: 'position:absolute;left:6px;top:258px;width:266px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Протокол обмена',
-			style: 'position:absolute;left:6px;top:167px;width:604px;height:16px;',
+			xtype: 'label',
+			text: 'Протокол обмена',
+			style: 'position:absolute;left:6px;top:167px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -819,9 +819,9 @@
 			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройки выгрузки данных',
-			style: 'position:absolute;left:6px;top:54px;width:604px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки выгрузки данных',
+			style: 'position:absolute;left:6px;top:54px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -842,6 +842,8 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииПриВыгрузкеДляПлановОбмена',
 			style: 'position:absolute;left:352px;top:98px;width:137px;height:19px;',
+			width: 137,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -857,6 +859,8 @@
 			value: 0,
 			name: 'КоличествоОбъектовЗагрузкиДляОбновленияСтатуса',
 			style: 'position:absolute;left:352px;top:30px;width:137px;height:19px;',
+			width: 137,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',

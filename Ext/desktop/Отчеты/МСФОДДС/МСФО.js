@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
+			width: 732,
+			height: 25,
 			items:
 			[
 				{
@@ -53,6 +55,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:391px;width:732px;height:25px;',
+			width: 732,
+			height: 25,
 			items:
 			[
 				{
@@ -61,13 +65,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:109px;width:716px;height:253px;',
 			height: 253,width: 716,
 			items:
 			[
 				{
-					title:'Отчет о движении денежных средств',
 					items:
 					[
 		{
@@ -84,6 +87,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиДДС',
 			style: 'position:absolute;left:233px;top:208px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -105,14 +110,13 @@
 			style: 'position:absolute;left:646px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:5px;top:362px;width:719px;height:23px;',
 			height: 23,width: 719,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -135,14 +139,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:5px;top:33px;width:719px;height:75px;',
 			height: 75,width: 719,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -159,6 +162,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:379px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',

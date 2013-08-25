@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:461px;width:396px;height:25px;',
+			width: 396,
+			height: 25,
 			items:
 			[
 				{
@@ -37,6 +39,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:29px;width:380px;height:24px;',
+			width: 380,
+			height: 24,
 			items:
 			[
 				{
@@ -196,13 +200,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Значения свойств для отбора характеристик номенклатуры',
-			style: 'position:absolute;left:8px;top:8px;width:380px;height:16px;',
+			xtype: 'label',
+			text: 'Значения свойств для отбора характеристик номенклатуры',
+			style: 'position:absolute;left:8px;top:8px;width:380px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:257px;width:380px;height:24px;',
+			width: 380,
+			height: 24,
 			items:
 			[
 				{
@@ -226,9 +232,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Характеристики, отобранные по значениям свойств',
-			style: 'position:absolute;left:8px;top:236px;width:380px;height:16px;',
+			xtype: 'label',
+			text: 'Характеристики, отобранные по значениям свойств',
+			style: 'position:absolute;left:8px;top:236px;width:380px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

@@ -17,19 +17,18 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:9px;top:7px;width:340px;height:431px;',
 			height: 431,width: 340,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Настройка режимов "День", "Неделя", "Месяц"',
-			style: 'position:absolute;left:6px;top:52px;width:326px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка режимов "День", "Неделя", "Месяц"',
+			style: 'position:absolute;left:6px;top:52px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -132,9 +131,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отображать календарь по ответственным:',
-			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;',
+			xtype: 'label',
+			text: 'Отображать календарь по ответственным:',
+			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -213,13 +212,12 @@
 					]
 				},
 				{
-					title:'Заказы',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Заказы',
-			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;',
+			xtype: 'label',
+			text: 'Заказы',
+			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -264,6 +262,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:446px;width:357px;height:25px;',
+			width: 357,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

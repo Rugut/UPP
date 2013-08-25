@@ -231,6 +231,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 			]
@@ -238,6 +240,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:430px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 				{
@@ -262,14 +266,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:641px;height:201px;',
 			height: 201,width: 641,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -367,6 +370,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:88px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -415,6 +420,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:88px;top:72px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -472,6 +479,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:418px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -566,6 +575,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан',
 			style: 'position:absolute;left:418px;top:144px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -581,6 +592,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан',
 			style: 'position:absolute;left:418px;top:168px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -726,7 +739,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -918,6 +930,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:294px;height:24px;',
+			width: 294,
+			height: 24,
 			items:
 			[
 				{
@@ -955,14 +969,13 @@
 			style: 'position:absolute;left:322px;top:21px;width:296px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Расшифровка платежа',
+			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'ПлатежПрочие',
 					items:
 					[
 		{
@@ -1422,7 +1435,6 @@
 					]
 				},
 				{
-					title:'Купля продажа валюты',
 					items:
 					[
 		{
@@ -1478,6 +1490,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов1',
 			style: 'position:absolute;left:88px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1526,6 +1540,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов1',
 			style: 'position:absolute;left:418px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -1590,6 +1606,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан1',
 			style: 'position:absolute;left:418px;top:120px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1599,6 +1617,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан1',
 			style: 'position:absolute;left:418px;top:144px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1653,6 +1673,8 @@
 			value: 0,
 			name: 'КурсНаДатуПриобретенияРеализацииВалюты',
 			style: 'position:absolute;left:88px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -1662,7 +1684,6 @@
 					]
 				},
 				{
-					title:'Оплата по платежным картам',
 					items:
 					[
 		{
@@ -1836,6 +1857,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан2',
 			style: 'position:absolute;left:420px;top:54px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1891,7 +1914,6 @@
 					]
 				},
 				{
-					title:'Учет затрат',
 					items:
 					[
 		{
@@ -2044,6 +2066,8 @@
 			value: 0,
 			name: 'СуммаУслуг',
 			style: 'position:absolute;left:88px;top:54px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2467,6 +2491,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:96px;top:128px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',

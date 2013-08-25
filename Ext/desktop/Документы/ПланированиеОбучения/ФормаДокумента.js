@@ -112,6 +112,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:73px;width:408px;height:24px;',
+			width: 408,
+			height: 24,
 			items:
 			[
 				{
@@ -229,6 +231,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:424px;height:25px;',
+			width: 424,
+			height: 25,
 			items:
 			[
 				{
@@ -264,9 +268,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учебный план',
-			style: 'position:absolute;left:8px;top:57px;width:408px;height:16px;',
+			xtype: 'label',
+			text: 'Учебный план',
+			style: 'position:absolute;left:8px;top:57px;width:408px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -275,6 +279,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:313px;width:424px;height:25px;',
+			width: 424,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,18 +19,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:628px;height:384px;',
 			height: 384,width: 628,
 			items:
 			[
 				{
-					title:'Настройка',
 					items:
 					[
 		{
@@ -230,6 +231,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:70px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				{
@@ -247,14 +250,13 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор документов',
-			style: 'position:absolute;left:6px;top:54px;width:614px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор документов',
+			style: 'position:absolute;left:6px;top:54px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Обработка',
 					items:
 					[
 		{
@@ -338,6 +340,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:241px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				{
@@ -364,9 +368,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документы для обработки',
-			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;',
+			xtype: 'label',
+			text: 'Документы для обработки',
+			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабДокументовФорма',
@@ -413,6 +417,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				{
@@ -436,9 +442,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выполняемые действия',
-			style: 'position:absolute;left:6px;top:225px;width:614px;height:16px;',
+			xtype: 'label',
+			text: 'Выполняемые действия',
+			style: 'position:absolute;left:6px;top:225px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -451,6 +457,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				'-',
@@ -46,19 +48,16 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:104px;width:654px;height:310px;',
 			height: 310,width: 654,
 			items:
 			[
 				{
-					title:'МП(микро)',
 				},
 				{
-					title:'Приложение № 1 к форме МП(микро) ',
 				},
 				{
-					title:'Приложение № 2 к форме МП(микро)',
 					items:
 					[
 		{
@@ -76,7 +75,6 @@
 					]
 				},
 				{
-					title:'Приложение № 3 к форме МП(микро)',
 					items:
 					[
 		{
@@ -114,14 +112,13 @@
 			style: 'position:absolute;left:582px;top:5px;width:80px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:76px;width:654px;height:28px;',
 			height: 28,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -149,20 +146,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:299px;top:0px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:414px;width:654px;height:24px;',
 			height: 24,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -223,25 +221,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:43px;',
 			height: 43,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:35px;',
 			height: 35,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -259,6 +255,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:447px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -17,24 +17,22 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:837px;height:471px;',
 			height: 471,width: 837,
 			items:
 			[
 				{
-					title:'Календарь',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:804px;height:457px;',
 			height: 457,width: 804,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Список',
 					items:
 					[
 		{
@@ -55,6 +53,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:24px;width:804px;height:24px;',
+			width: 804,
+			height: 24,
 			items:
 			[
 				{
@@ -262,7 +262,6 @@
 					]
 				},
 				{
-					title:'День',
 					items:
 					[
 		{
@@ -290,14 +289,13 @@
 			style: 'position:absolute;left:730px;top:0px;width:74px;height:22px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:30px;width:671px;height:427px;',
 			height: 427,width: 671,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Грид',
 					items:
 					[
 		{
@@ -381,7 +379,6 @@
 					]
 				},
 				{
-					title:'Моксель',
 				},
 			]
 		},
@@ -394,6 +391,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:671px;top:420px;width:133px;height:26px;',
+			width: 133,
+			height: 26,
 			items:
 			[
 			]
@@ -401,7 +400,6 @@
 					]
 				},
 				{
-					title:'Неделя',
 					items:
 					[
 		{
@@ -419,7 +417,6 @@
 					]
 				},
 				{
-					title:'Месяц',
 					items:
 					[
 		{
@@ -447,7 +444,6 @@
 					]
 				},
 				{
-					title:'Почта',
 					items:
 					[
 		{
@@ -684,6 +680,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:283px;top:373px;width:473px;height:24px;',
+			width: 473,
+			height: 24,
 			items:
 			[
 				{
@@ -754,47 +752,9 @@
 		},
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:650px;top:439px;width:106px;height:24px;',
-			items:
-			[
-				{
-					text:'Найти/Добавить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:650px;top:439px;width:106px;height:24px;',
-			items:
-			[
-				{
-					text:'Найти/Добавить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:650px;top:439px;width:106px;height:24px;',
-			items:
-			[
-				{
-					text:'Найти/Добавить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:652px;top:439px;width:104px;height:24px;',
-			items:
-			[
-				{
-					text:'Открыть ссылку',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:310px;top:330px;width:200px;height:24px;',
+			width: 200,
+			height: 24,
 			items:
 			[
 				{
@@ -816,38 +776,13 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:765px;top:439px;width:44px;height:24px;',
-			items:
-			[
-				{
-					text:'Переместить вверх',
-				},
-				{
-					text:'Переместить вниз',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Установить """"Рассмотрено""""',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:231px;top:197px;width:578px;height:49px;',
 			height: 49,width: 578,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -927,14 +862,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:220px;height:433px;',
 			height: 433,width: 220,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Список предметов',
 					items:
 					[
 		{
@@ -1051,7 +985,6 @@
 					]
 				},
 				{
-					title:'Дерево групп',
 					items:
 					[
 		{
@@ -1125,6 +1058,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:705px;height:25px;',
+			width: 705,
+			height: 25,
 			items:
 			[
 				{
@@ -1147,6 +1082,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:705px;top:0px;width:132px;height:25px;',
+			width: 132,
+			height: 25,
 			items:
 			[
 				{
@@ -1168,6 +1105,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:755px;height:25px;',
+			width: 755,
+			height: 25,
 			items:
 			[
 			]
@@ -1175,6 +1114,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:755px;top:0px;width:82px;height:25px;',
+			width: 82,
+			height: 25,
 			items:
 			[
 				{

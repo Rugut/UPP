@@ -32,9 +32,9 @@
 			style: 'position:absolute;left:120px;top:45px;width:478px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Алгоритмы',
-			style: 'position:absolute;left:8px;top:68px;width:590px;height:16px;',
+			xtype: 'label',
+			text: 'Алгоритмы',
+			style: 'position:absolute;left:8px;top:68px;width:590px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -97,9 +97,9 @@
 			style: 'position:absolute;left:8px;top:169px;width:108px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:39px;width:590px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:39px;width:590px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -114,6 +114,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:194px;width:606px;height:25px;',
+			width: 606,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

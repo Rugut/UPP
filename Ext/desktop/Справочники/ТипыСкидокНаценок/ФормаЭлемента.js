@@ -19,18 +19,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:483px;height:25px;',
+			width: 483,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:61px;width:467px;height:226px;',
 			height: 226,width: 467,
 			items:
 			[
 				{
-					title:'Параметры скидки',
 					items:
 					[
 		{
@@ -47,6 +48,8 @@
 			value: 0,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:115px;top:85px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -121,6 +124,8 @@
 			value: 0,
 			name: 'ОграничениеСкидки',
 			style: 'position:absolute;left:269px;top:85px;width:65px;height:19px;',
+			width: 65,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -167,9 +172,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Условие скидки',
-			style: 'position:absolute;left:6px;top:109px;width:453px;height:16px;',
+			xtype: 'label',
+			text: 'Условие скидки',
+			style: 'position:absolute;left:6px;top:109px;width:453px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -283,7 +288,6 @@
 					]
 				},
 				{
-					title:'Время действия',
 					items:
 					[
 		{
@@ -394,6 +398,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:453px;height:24px;',
+			width: 453,
+			height: 24,
 			items:
 			[
 				{
@@ -445,6 +451,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:295px;width:483px;height:25px;',
+			width: 483,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

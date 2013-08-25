@@ -142,6 +142,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:616px;height:25px;',
+			width: 616,
+			height: 25,
 			items:
 			[
 				'-',

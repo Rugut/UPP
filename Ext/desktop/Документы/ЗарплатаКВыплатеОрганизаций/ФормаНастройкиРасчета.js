@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:45px;width:336px;height:93px;',
 			height: 93,width: 336,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Плановый аванс',
 					items:
 					[
 		{
@@ -47,11 +46,12 @@
 			value: 0,
 			name: 'ПлановыйАванс_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:0px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Аванс за первую половину месяца',
 					items:
 					[
 		{
@@ -74,6 +74,8 @@
 			value: 0,
 			name: 'АвансЗаПервуюПоловинуМесяца_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:30px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -121,7 +123,6 @@
 					]
 				},
 				{
-					title:'Зарплата',
 					items:
 					[
 		{
@@ -132,6 +133,8 @@
 			value: 0,
 			name: 'Зарплата_ПроцентВыплаты',
 			style: 'position:absolute;left:107px;top:43px;width:61px;height:19px;',
+			width: 61,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -158,6 +161,8 @@
 			value: 0,
 			name: 'Зарплата_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:72px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -166,9 +171,9 @@
 			style: 'position:absolute;left:0px;top:43px;width:99px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:30px;width:336px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:30px;width:336px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -211,7 +216,6 @@
 					]
 				},
 				{
-					title:'Дивиденды',
 					items:
 					[
 		{
@@ -222,6 +226,8 @@
 			value: 0,
 			name: 'Дивиденды_ПроцентВыплаты',
 			style: 'position:absolute;left:107px;top:43px;width:61px;height:19px;',
+			width: 61,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -235,9 +241,9 @@
 			style: 'position:absolute;left:1px;top:43px;width:99px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:30px;width:336px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:30px;width:336px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -281,7 +287,6 @@
 					]
 				},
 				{
-					title:'Прочие выплаты',
 					items:
 					[
 		{
@@ -320,6 +325,8 @@
 			value: 0,
 			name: 'ПрочиеВыплаты_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:74px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -362,7 +369,6 @@
 					]
 				},
 				{
-					title:'Прочие выплаты без удержаний',
 					items:
 					[
 		{
@@ -385,6 +391,8 @@
 			value: 0,
 			name: 'ПрочиеВыплатыБезУдержаний_ДнейНеВыплаты',
 			style: 'position:absolute;left:266px;top:30px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -447,6 +455,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:148px;width:352px;height:25px;',
+			width: 352,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

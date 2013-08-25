@@ -107,14 +107,13 @@
 			style: 'position:absolute;left:202px;top:140px;width:303px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:30px;width:497px;height:80px;',
 			height: 80,width: 497,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -148,14 +147,14 @@
 			style: 'position:absolute;left:194px;top:50px;width:303px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уведомление об отказе',
-			style: 'position:absolute;left:0px;top:0px;width:495px;height:16px;',
+			xtype: 'label',
+			text: 'Уведомление об отказе',
+			style: 'position:absolute;left:0px;top:0px;width:495px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:2px;top:75px;width:495px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:2px;top:75px;width:495px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -168,6 +167,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:263px;width:513px;height:25px;',
+			width: 513,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:878px;height:25px;',
+			width: 878,
+			height: 25,
 			items:
 			[
 				{
@@ -68,37 +70,34 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:703px;top:33px;width:214px;height:539px;',
 			height: 539,width: 214,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:689px;height:539px;',
 			height: 539,width: 689,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:24px;width:689px;height:159px;',
 			height: 159,width: 689,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -227,6 +226,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:609px;height:24px;',
+			width: 609,
+			height: 24,
 			items:
 			[
 				{
@@ -251,6 +252,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:609px;top:0px;width:80px;height:24px;',
+			width: 80,
+			height: 24,
 			items:
 			[
 				{
@@ -272,14 +275,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:191px;width:689px;height:348px;',
 			height: 348,width: 689,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -372,6 +374,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:25px;width:596px;height:24px;',
+			width: 596,
+			height: 24,
 			items:
 			[
 				'-',
@@ -380,6 +384,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:588px;top:25px;width:101px;height:24px;',
+			width: 101,
+			height: 24,
 			items:
 			[
 				{
@@ -471,6 +477,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:264px;top:212px;width:342px;height:24px;',
+			width: 342,
+			height: 24,
 			items:
 			[
 				{
@@ -506,14 +514,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:235px;top:68px;width:454px;height:96px;',
 			height: 96,width: 454,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -528,6 +535,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:878px;top:0px;width:47px;height:25px;',
+			width: 47,
+			height: 25,
 			items:
 			[
 				{

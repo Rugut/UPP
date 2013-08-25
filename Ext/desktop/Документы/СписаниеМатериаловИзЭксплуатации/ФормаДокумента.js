@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -112,13 +114,12 @@
 			style: 'position:absolute;left:501px;top:33px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:636px;height:177px;',
 			height: 177,width: 636,
 			items:
 			[
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
@@ -346,6 +347,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				'-',
@@ -354,7 +357,6 @@
 					]
 				},
 				{
-					title:'Списание расходов',
 					items:
 					[
 		{
@@ -402,14 +404,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:35px;width:622px;height:116px;',
 			height: 116,width: 622,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1065,6 +1066,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:341px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{

@@ -49,23 +49,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:430px;height:25px;',
+			width: 430,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:414px;height:260px;',
 			height: 260,width: 414,
 			items:
 			[
 				{
-					title:'Состав группы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:400px;height:24px;',
+			width: 400,
+			height: 24,
 			items:
 			[
 			]
@@ -147,7 +150,6 @@
 					]
 				},
 				{
-					title:'Подчиненные рабочие центры',
 					items:
 					[
 		{
@@ -223,6 +225,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:26px;width:400px;height:24px;',
+			width: 400,
+			height: 24,
 			items:
 			[
 			]
@@ -238,6 +242,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:328px;width:430px;height:25px;',
+			width: 430,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -97,34 +97,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
+			width: 618,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:405px;width:618px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -187,13 +163,12 @@
 			style: 'position:absolute;left:332px;top:33px;width:90px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:83px;width:602px;height:266px;',
 			height: 266,width: 602,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -240,14 +215,13 @@
 			style: 'position:absolute;left:90px;top:102px;width:504px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:304px;height:96px;',
 			height: 96,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Контрагенты',
 					items:
 					[
 		{
@@ -301,7 +275,6 @@
 					]
 				},
 				{
-					title:'Прочие',
 					items:
 					[
 		{
@@ -361,7 +334,6 @@
 					]
 				},
 				{
-					title:'Кандидаты',
 					items:
 					[
 		{
@@ -393,14 +365,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:322px;top:78px;width:272px;height:24px;',
 			height: 24,width: 272,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -461,7 +432,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -676,7 +646,6 @@
 					]
 				},
 				{
-					title:'Участники',
 					items:
 					[
 		{
@@ -811,6 +780,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:252px;height:24px;',
+			width: 252,
+			height: 24,
 			items:
 			[
 			]
@@ -818,19 +789,21 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:263px;top:22px;width:331px;height:24px;',
+			width: 331,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Работники',
-			style: 'position:absolute;left:6px;top:6px;width:252px;height:16px;',
+			xtype: 'label',
+			text: 'Работники',
+			style: 'position:absolute;left:6px;top:6px;width:252px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сторонние лица',
-			style: 'position:absolute;left:263px;top:6px;width:331px;height:16px;',
+			xtype: 'label',
+			text: 'Сторонние лица',
+			style: 'position:absolute;left:263px;top:6px;width:331px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -929,6 +902,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:405px;width:618px;height:25px;',
+			width: 618,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

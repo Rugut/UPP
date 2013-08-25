@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -69,6 +71,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:147px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -303,6 +307,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:564px;top:284px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -318,6 +324,8 @@
 			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:564px;top:306px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -328,6 +336,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:355px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -352,9 +362,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состав плана',
-			style: 'position:absolute;left:8px;top:131px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Состав плана',
+			style: 'position:absolute;left:8px;top:131px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',

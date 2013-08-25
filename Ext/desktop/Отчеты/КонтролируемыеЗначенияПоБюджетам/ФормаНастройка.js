@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:333px;',
 			height: 333,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -159,6 +158,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:162px;width:264px;height:25px;',
+			width: 264,
+			height: 25,
 			items:
 			[
 				{
@@ -176,9 +177,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели',
-			style: 'position:absolute;left:6px;top:146px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Показатели',
+			style: 'position:absolute;left:6px;top:146px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -264,14 +265,13 @@
 			style: 'position:absolute;left:290px;top:167px;width:176px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Контролируемые значения',
-			style: 'position:absolute;left:6px;top:54px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Контролируемые значения',
+			style: 'position:absolute;left:6px;top:54px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -337,6 +337,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
+			width: 212,
+			height: 24,
 			items:
 			[
 			]
@@ -344,6 +346,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
+			width: 212,
+			height: 24,
 			items:
 			[
 			]
@@ -411,6 +415,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:224px;top:117px;width:24px;height:109px;',
+			width: 24,
+			height: 109,
 			items:
 			[
 				{
@@ -424,7 +430,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -526,6 +531,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -533,7 +540,6 @@
 					]
 				},
 				{
-					title:'Поля',
 					items:
 					[
 		{
@@ -595,6 +601,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:29px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -609,9 +617,16 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:352px;width:488px;height:25px;',
+			width: 488,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -631,10 +646,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

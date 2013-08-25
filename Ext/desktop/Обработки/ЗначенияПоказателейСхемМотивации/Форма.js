@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
+			width: 692,
+			height: 25,
 			items:
 			[
 				{
@@ -64,13 +66,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:29px;width:676px;height:324px;',
 			height: 324,width: 676,
 			items:
 			[
 				{
-					title:'Ежемесячные',
 					items:
 					[
 		{
@@ -179,30 +180,29 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:662px;height:73px;',
 			height: 73,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Что вводим',
-			style: 'position:absolute;left:6px;top:6px;width:242px;height:16px;',
+			xtype: 'label',
+			text: 'Что вводим',
+			style: 'position:absolute;left:6px;top:6px;width:242px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Режим ввода',
-			style: 'position:absolute;left:320px;top:6px;width:126px;height:16px;',
+			xtype: 'label',
+			text: 'Режим ввода',
+			style: 'position:absolute;left:320px;top:6px;width:126px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Период',
-			style: 'position:absolute;left:504px;top:6px;width:133px;height:16px;',
+			xtype: 'label',
+			text: 'Период',
+			style: 'position:absolute;left:504px;top:6px;width:133px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -250,14 +250,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:87px;width:234px;height:209px;',
 			height: 209,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
@@ -339,14 +338,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:234px;height:19px;',
 			height: 19,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -400,7 +398,6 @@
 					]
 				},
 				{
-					title:'Подразделения',
 					items:
 					[
 		{
@@ -466,7 +463,6 @@
 					]
 				},
 				{
-					title:'Показатели',
 					items:
 					[
 		{
@@ -532,7 +528,6 @@
 					]
 				},
 				{
-					title:'ЦФО',
 					items:
 					[
 		{
@@ -593,6 +588,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:246px;top:87px;width:422px;height:24px;',
+			width: 422,
+			height: 24,
 			items:
 			[
 				{
@@ -617,6 +614,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:401px;top:192px;width:267px;height:24px;',
+			width: 267,
+			height: 24,
 			items:
 			[
 				{
@@ -641,24 +640,22 @@
 					]
 				},
 				{
-					title:'Постоянные',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:662px;height:73px;',
 			height: 73,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Что вводим',
-			style: 'position:absolute;left:6px;top:6px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Что вводим',
+			style: 'position:absolute;left:6px;top:6px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -720,14 +717,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:85px;width:662px;height:211px;',
 			height: 211,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По организации',
 					items:
 					[
 		{
@@ -811,6 +807,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:240px;top:1px;width:422px;height:24px;',
+			width: 422,
+			height: 24,
 			items:
 			[
 				{
@@ -829,14 +827,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:233px;height:211px;',
 			height: 211,width: 233,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подразделения организаций',
 					items:
 					[
 		{
@@ -893,7 +890,6 @@
 					]
 				},
 				{
-					title:'Подразделения',
 					items:
 					[
 		{
@@ -954,7 +950,6 @@
 					]
 				},
 				{
-					title:'Общие данные',
 					items:
 					[
 		{
@@ -1038,6 +1033,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:662px;height:24px;',
+			width: 662,
+			height: 24,
 			items:
 			[
 				{

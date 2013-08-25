@@ -157,23 +157,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			width: 900,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:107px;width:884px;height:414px;',
 			height: 414,width: 884,
 			items:
 			[
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
+			width: 870,
+			height: 24,
 			items:
 			[
 				{
@@ -262,7 +265,6 @@
 					]
 				},
 				{
-					title:'Данные страхователя',
 					items:
 					[
 		{
@@ -418,14 +420,14 @@
 			style: 'position:absolute;left:258px;top:27px;width:618px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Регистрация в ФСС',
-			style: 'position:absolute;left:6px;top:6px;width:870px;height:16px;',
+			xtype: 'label',
+			text: 'Регистрация в ФСС',
+			style: 'position:absolute;left:6px;top:6px;width:870px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Подписи',
-			style: 'position:absolute;left:6px;top:255px;width:868px;height:16px;',
+			xtype: 'label',
+			text: 'Подписи',
+			style: 'position:absolute;left:6px;top:255px;width:868px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -449,9 +451,9 @@
 			style: 'position:absolute;left:6px;top:366px;width:82px;height:21px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Банковские реквизиты',
-			style: 'position:absolute;left:8px;top:112px;width:868px;height:16px;',
+			xtype: 'label',
+			text: 'Банковские реквизиты',
+			style: 'position:absolute;left:8px;top:112px;width:868px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -591,6 +593,8 @@
 			value: 0,
 			name: 'СуммаПособий',
 			style: 'position:absolute;left:312px;top:81px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -606,6 +610,8 @@
 			value: 0,
 			name: 'КоличествоСтраниц',
 			style: 'position:absolute;left:138px;top:81px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -629,6 +635,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:900px;height:25px;',
+			width: 900,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

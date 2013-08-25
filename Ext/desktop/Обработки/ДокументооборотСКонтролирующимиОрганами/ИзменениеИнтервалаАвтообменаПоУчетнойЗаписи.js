@@ -47,9 +47,9 @@
 			style: 'position:absolute;left:106px;top:71px;width:290px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:92px;width:388px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:92px;width:388px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -65,6 +65,8 @@
 			value: 0,
 			name: 'ИнтервалАвтообмена',
 			style: 'position:absolute;left:244px;top:120px;width:55px;height:19px;',
+			width: 55,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -73,9 +75,9 @@
 			style: 'position:absolute;left:304px;top:123px;width:28px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:41px;width:388px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:41px;width:388px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -100,6 +102,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:147px;width:404px;height:25px;',
+			width: 404,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

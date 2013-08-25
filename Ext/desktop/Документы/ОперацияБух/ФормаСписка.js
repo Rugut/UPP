@@ -115,6 +115,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -156,13 +158,12 @@
 			style: 'position:absolute;left:102px;top:33px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:220px;width:764px;height:242px;',
 			height: 242,width: 764,
 			items:
 			[
 				{
-					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -381,7 +382,6 @@
 					]
 				},
 				{
-					title:'Налоговый учет',
 					items:
 					[
 		{

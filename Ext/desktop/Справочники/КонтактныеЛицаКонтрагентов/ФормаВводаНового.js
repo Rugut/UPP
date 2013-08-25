@@ -306,9 +306,9 @@
 			style: 'position:absolute;left:240px;top:314px;width:132px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Телефоны',
-			style: 'position:absolute;left:8px;top:218px;width:517px;height:16px;',
+			xtype: 'label',
+			text: 'Телефоны',
+			style: 'position:absolute;left:8px;top:218px;width:517px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -387,14 +387,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Личные данные',
-			style: 'position:absolute;left:8px;top:36px;width:517px;height:16px;',
+			xtype: 'label',
+			text: 'Личные данные',
+			style: 'position:absolute;left:8px;top:36px;width:517px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные работника',
-			style: 'position:absolute;left:8px;top:113px;width:517px;height:16px;',
+			xtype: 'label',
+			text: 'Данные работника',
+			style: 'position:absolute;left:8px;top:113px;width:517px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -409,6 +409,8 @@
 			value: 0,
 			name: 'КоличествоДнейДоНапоминания',
 			style: 'position:absolute;left:392px;top:59px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -417,9 +419,9 @@
 			style: 'position:absolute;left:438px;top:59px;width:40px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Е-mail:',
-			style: 'position:absolute;left:8px;top:290px;width:517px;height:16px;',
+			xtype: 'label',
+			text: 'Е-mail:',
+			style: 'position:absolute;left:8px;top:290px;width:517px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -564,6 +566,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:395px;width:533px;height:25px;',
+			width: 533,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

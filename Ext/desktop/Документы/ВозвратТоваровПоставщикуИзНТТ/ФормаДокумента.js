@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:662px;height:25px;',
+			width: 662,
+			height: 25,
 			items:
 			[
 				'-',
@@ -120,13 +122,12 @@
 			style: 'position:absolute;left:497px;top:33px;width:72px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:131px;width:646px;height:210px;',
 			height: 210,width: 646,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -390,6 +391,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:632px;height:24px;',
+			width: 632,
+			height: 24,
 			items:
 			[
 				{
@@ -414,7 +417,6 @@
 					]
 				},
 				{
-					title:'Возвратная тара',
 					items:
 					[
 		{
@@ -426,6 +428,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:632px;height:24px;',
+			width: 632,
+			height: 24,
 			items:
 			[
 				{
@@ -565,7 +569,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -661,14 +664,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:50px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:50px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -678,6 +681,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:90px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -788,7 +793,6 @@
 					]
 				},
 				{
-					title:'Счета учета расчетов',
 					items:
 					[
 		{
@@ -948,14 +952,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счета учета расчетов',
-			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Счета учета расчетов',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'и фактической стоимости товаров (залоговой и фактической стоимости тары)',
-			style: 'position:absolute;left:6px;top:92px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'и фактической стоимости товаров (залоговой и фактической стоимости тары)',
+			style: 'position:absolute;left:6px;top:92px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1155,7 +1159,6 @@
 					]
 				},
 				{
-					title:'Документы поступления',
 					items:
 					[
 		{
@@ -1254,6 +1257,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			width: 632,
+			height: 24,
 			items:
 			[
 				{
@@ -1270,7 +1275,6 @@
 					]
 				},
 				{
-					title:'НДС',
 					items:
 					[
 		{
@@ -1515,6 +1519,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:557px;top:346px;width:97px;height:17px;',
+			width: 97,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -1530,32 +1536,8 @@
 			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:558px;top:366px;width:96px;height:17px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:417px;width:662px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
+			width: 96,
+			height: 17,
 		},
 		{
 			xtype: 'checkbox',
@@ -1584,6 +1566,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:417px;width:662px;height:25px;',
+			width: 662,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

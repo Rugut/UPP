@@ -48,6 +48,8 @@
 			value: 0,
 			name: 'КоличествоОбъектовДляФоновогоОбмена',
 			style: 'position:absolute;left:328px;top:133px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'radiogroup',
@@ -72,6 +74,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:184px;width:494px;height:25px;',
+			width: 494,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

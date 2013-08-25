@@ -37,6 +37,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:782px;height:25px;',
+			width: 782,
+			height: 25,
 			items:
 			[
 				{
@@ -57,14 +59,13 @@
 			style: 'position:absolute;left:13px;top:395px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:5px;width:766px;height:336px;',
 			height: 336,width: 766,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{

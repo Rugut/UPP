@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 				{
@@ -77,13 +79,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:154px;width:641px;height:242px;',
 			height: 242,width: 641,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -347,6 +348,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:4px;top:0px;width:631px;height:24px;',
+			width: 631,
+			height: 24,
 			items:
 			[
 				{
@@ -370,12 +373,13 @@
 					]
 				},
 				{
-					title:'Возвратная тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:4px;top:0px;width:630px;height:24px;',
+			width: 630,
+			height: 24,
 			items:
 			[
 				{
@@ -512,7 +516,6 @@
 					]
 				},
 				{
-					title:'Услуги',
 					items:
 					[
 		{
@@ -674,6 +677,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:4px;top:0px;width:631px;height:24px;',
+			width: 631,
+			height: 24,
 			items:
 			[
 				'-',
@@ -686,7 +691,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -776,14 +780,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:3px;top:5px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:3px;top:5px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:3px;top:49px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:3px;top:49px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -793,6 +797,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:87px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -826,9 +832,9 @@
 			style: 'position:absolute;left:430px;top:113px;width:126px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:3px;top:93px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:3px;top:93px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1011,7 +1017,6 @@
 					]
 				},
 				{
-					title:'Автоматические скидки',
 					items:
 					[
 		{
@@ -1305,6 +1310,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:546px;top:409px;width:99px;height:17px;',
+			width: 99,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -1320,6 +1327,8 @@
 			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:546px;top:433px;width:99px;height:17px;',
+			width: 99,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -1371,8 +1380,21 @@
 			style: 'position:absolute;left:429px;top:129px;width:220px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'ИнфНадписьИтоговоеОтклонениеОтПлановойСебестоимости',
+			text: 'Отклонение от плановой себест��имости',
+			style: 'position:absolute;left:8px;top:433px;width:460px;height:17px;text-align:left;',
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:483px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -1396,16 +1418,6 @@
 				},
 			]
 		},
-		{
-			xtype: 'label',
-			name: 'ИнфНадписьИтоговоеОтклонениеОтПлановойСебестоимости',
-			text: 'Отклонение от плановой себест��имости',
-			style: 'position:absolute;left:8px;top:433px;width:460px;height:17px;text-align:left;',
-		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

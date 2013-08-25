@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			items:
 			[
 			]
@@ -631,6 +633,8 @@
 			value: 0,
 			name: 'ГодС',
 			style: 'position:absolute;left:485px;top:83px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -646,6 +650,8 @@
 			value: 0,
 			name: 'ГодПо',
 			style: 'position:absolute;left:594px;top:83px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		],
 	}],
@@ -654,6 +660,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:510px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

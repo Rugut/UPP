@@ -34,36 +34,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:452px;height:25px;',
+			width: 452,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:452px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'fieldset',
-			title: 'Единицы измерения',
-			style: 'position:absolute;left:8px;top:110px;width:436px;height:16px;',
+			xtype: 'label',
+			text: 'Единицы измерения',
+			style: 'position:absolute;left:8px;top:110px;width:436px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -270,13 +250,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:178px;width:436px;height:239px;',
 			height: 239,width: 436,
 			items:
 			[
 				{
-					title:'Состав группы',
 					items:
 					[
 		{
@@ -374,6 +353,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
+			width: 422,
+			height: 24,
 			items:
 			[
 				{
@@ -439,7 +420,6 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
@@ -519,6 +499,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
+			width: 422,
+			height: 24,
 			items:
 			[
 			]
@@ -526,7 +508,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -606,6 +587,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:422px;height:24px;',
+			width: 422,
+			height: 24,
 			items:
 			[
 				{
@@ -630,6 +613,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:452px;height:25px;',
+			width: 452,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

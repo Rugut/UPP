@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:426px;height:25px;',
+			width: 426,
+			height: 25,
 			items:
 			[
 			]
@@ -99,13 +101,15 @@
 			style: 'position:absolute;left:8px;top:33px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выгружаемые объекты',
-			style: 'position:absolute;left:8px;top:58px;width:410px;height:16px;',
+			xtype: 'label',
+			text: 'Выгружаемые объекты',
+			style: 'position:absolute;left:8px;top:58px;width:410px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:79px;width:410px;height:24px;',
+			width: 410,
+			height: 24,
 			items:
 			[
 				{
@@ -127,6 +131,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:292px;width:426px;height:25px;',
+			width: 426,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

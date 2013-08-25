@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:438px;height:25px;',
+			width: 438,
+			height: 25,
 			items:
 			[
 				{
@@ -99,9 +101,9 @@
 			style: 'position:absolute;left:94px;top:33px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Шкала зависимости от стажа',
-			style: 'position:absolute;left:8px;top:59px;width:422px;height:16px;',
+			xtype: 'label',
+			text: 'Шкала зависимости от стажа',
+			style: 'position:absolute;left:8px;top:59px;width:422px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Шкала',
@@ -180,6 +182,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:75px;width:422px;height:24px;',
+			width: 422,
+			height: 24,
 			items:
 			[
 				{
@@ -216,6 +220,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:438px;height:25px;',
+			width: 438,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

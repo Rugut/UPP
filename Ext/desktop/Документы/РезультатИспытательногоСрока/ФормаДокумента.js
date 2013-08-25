@@ -52,6 +52,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:699px;height:25px;',
+			width: 699,
+			height: 25,
 			items:
 			[
 				{
@@ -95,6 +97,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:287px;width:699px;height:25px;',
+			width: 699,
+			height: 25,
 			items:
 			[
 				{
@@ -161,9 +165,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Комментарий',
-			style: 'position:absolute;left:8px;top:181px;width:683px;height:16px;',
+			xtype: 'label',
+			text: 'Комментарий',
+			style: 'position:absolute;left:8px;top:181px;width:683px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -228,19 +232,18 @@
 			style: 'position:absolute;left:356px;top:104px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Решение по испытательному сроку',
-			style: 'position:absolute;left:8px;top:80px;width:683px;height:16px;',
+			xtype: 'label',
+			text: 'Решение по испытательному сроку',
+			style: 'position:absolute;left:8px;top:80px;width:683px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:260px;top:132px;width:431px;height:19px;',
 			height: 19,width: 431,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},

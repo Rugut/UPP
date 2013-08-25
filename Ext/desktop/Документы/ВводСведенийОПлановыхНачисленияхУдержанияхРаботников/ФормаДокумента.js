@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:640px;height:25px;',
+			width: 640,
+			height: 25,
 			items:
 			[
 				{
@@ -148,18 +150,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:624px;height:333px;',
 			height: 333,width: 624,
 			items:
 			[
 				{
-					title:'Начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			width: 610,
+			height: 24,
 			items:
 			[
 				{
@@ -588,7 +591,6 @@
 					]
 				},
 				{
-					title:'Удержания',
 					items:
 					[
 		{
@@ -870,6 +872,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:610px;height:24px;',
+			width: 610,
+			height: 24,
 			items:
 			[
 				{
@@ -959,6 +963,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:445px;width:640px;height:25px;',
+			width: 640,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

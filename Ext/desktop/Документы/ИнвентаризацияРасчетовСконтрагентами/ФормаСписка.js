@@ -106,6 +106,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
+			width: 630,
+			height: 25,
 			items:
 			[
 				{

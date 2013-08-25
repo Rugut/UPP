@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:580px;height:25px;',
+			width: 580,
+			height: 25,
 			items:
 			[
 				{
@@ -44,9 +46,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры заполнения',
-			style: 'position:absolute;left:8px;top:33px;width:564px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры заполнения',
+			style: 'position:absolute;left:8px;top:33px;width:564px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -94,13 +96,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Номенклатура, для которой необходима печать штрихкодов',
-			style: 'position:absolute;left:8px;top:79px;width:564px;height:16px;',
+			xtype: 'label',
+			text: 'Номенклатура, для которой необходима печать штрихкодов',
+			style: 'position:absolute;left:8px;top:79px;width:564px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:103px;width:564px;height:25px;',
+			width: 564,
+			height: 25,
 			items:
 			[
 				{

@@ -210,6 +210,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:219px;width:395px;height:25px;',
+			width: 395,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

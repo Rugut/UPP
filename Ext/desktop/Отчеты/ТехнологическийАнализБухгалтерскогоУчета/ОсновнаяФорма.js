@@ -25,6 +25,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -72,13 +74,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:64px;width:654px;height:305px;',
 			height: 305,width: 654,
 			items:
 			[
 				{
-					title:'Технологический анализ',
 				},
 			]
 		},
@@ -153,6 +154,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:377px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

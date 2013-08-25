@@ -116,6 +116,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			items:
 			[
 				{
@@ -152,18 +154,19 @@
 			style: 'position:absolute;left:419px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:628px;height:321px;',
 			height: 321,width: 628,
 			items:
 			[
 				{
-					title:'Объекты недвижимости',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				'-',
@@ -340,6 +343,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:164px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				'-',
@@ -503,7 +508,6 @@
 					]
 				},
 				{
-					title:'Счета списания НДС',
 					items:
 					[
 		{
@@ -873,7 +877,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -932,6 +935,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:434px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

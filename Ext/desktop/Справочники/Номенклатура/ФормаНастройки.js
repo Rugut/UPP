@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:698px;height:25px;',
+			width: 698,
+			height: 25,
 			items:
 			[
 				{
@@ -30,18 +32,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:682px;height:226px;',
 			height: 226,width: 682,
 			items:
 			[
 				{
-					title:'Настройка страниц',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:668px;height:24px;',
+			width: 668,
+			height: 24,
 			items:
 			[
 				{
@@ -129,12 +132,13 @@
 					]
 				},
 				{
-					title:'Настройка реквизитов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:668px;height:24px;',
+			width: 668,
+			height: 24,
 			items:
 			[
 				{
@@ -256,12 +260,13 @@
 					]
 				},
 				{
-					title:'Настройка цен номенклатуры',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:668px;height:24px;',
+			width: 668,
+			height: 24,
 			items:
 			[
 				{
@@ -371,6 +376,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:698px;height:25px;',
+			width: 698,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

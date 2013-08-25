@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			items:
 			[
 			]
@@ -100,13 +102,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:390px;height:320px;',
 			height: 320,width: 390,
 			items:
 			[
 				{
-					title:'Состав группы',
 					items:
 					[
 		{
@@ -177,6 +178,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
+			width: 376,
+			height: 24,
 			items:
 			[
 				'-',
@@ -193,7 +196,6 @@
 					]
 				},
 				{
-					title:'Использование в учетных записях',
 					items:
 					[
 		{
@@ -264,6 +266,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:376px;height:24px;',
+			width: 376,
+			height: 24,
 			items:
 			[
 				{
@@ -303,6 +307,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:412px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

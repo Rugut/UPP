@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
 			items:
 			[
 				{
@@ -71,32 +73,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:384px;width:650px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -235,6 +211,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:124px;width:634px;height:25px;',
+			width: 634,
+			height: 25,
 			items:
 			[
 				{
@@ -507,14 +485,43 @@
 			style: 'position:absolute;left:102px;top:358px;width:540px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'БюджетныеОперации',
-			style: 'position:absolute;left:8px;top:108px;width:634px;height:16px;',
+			xtype: 'label',
+			text: 'БюджетныеОперации',
+			style: 'position:absolute;left:8px;top:108px;width:634px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:384px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:335px;height:25px;',
+			width: 335,
+			height: 25,
 			items:
 			[
 			]
@@ -82,6 +84,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:95px;top:105px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -135,6 +139,8 @@
 			value: 0,
 			name: 'ДоляСтоимости',
 			style: 'position:absolute;left:95px;top:129px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -209,6 +215,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:156px;width:335px;height:25px;',
+			width: 335,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

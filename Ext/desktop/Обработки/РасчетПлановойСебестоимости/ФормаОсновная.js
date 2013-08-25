@@ -19,18 +19,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
+			width: 643,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:627px;height:384px;',
 			height: 384,width: 627,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
@@ -149,6 +150,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:90px;width:613px;height:24px;',
+			width: 613,
+			height: 24,
 			items:
 			[
 			]
@@ -159,19 +162,18 @@
 			style: 'position:absolute;left:6px;top:50px;width:613px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры',
-			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры',
+			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор',
-			style: 'position:absolute;left:6px;top:74px;width:613px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор',
+			style: 'position:absolute;left:6px;top:74px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
@@ -291,6 +293,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:609px;height:24px;',
+			width: 609,
+			height: 24,
 			items:
 			[
 				'-',
@@ -302,7 +306,6 @@
 					]
 				},
 				{
-					title:'Настройка расчета',
 					items:
 					[
 		{
@@ -366,6 +369,8 @@
 			value: 0,
 			name: 'Процент',
 			style: 'position:absolute;left:309px;top:80px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -375,6 +380,8 @@
 			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:309px;top:105px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -449,9 +456,9 @@
 			style: 'position:absolute;left:273px;top:55px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общие настройки расчета себестоимости',
-			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;',
+			xtype: 'label',
+			text: 'Общие настройки расчета себестоимости',
+			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -481,7 +488,6 @@
 					]
 				},
 				{
-					title:'Производственные расходы',
 					items:
 					[
 		{
@@ -551,6 +557,8 @@
 			value: 0,
 			name: 'ПроцентМатериальные',
 			style: 'position:absolute;left:516px;top:25px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -560,6 +568,8 @@
 			value: 0,
 			name: 'СуммаМатериальные',
 			style: 'position:absolute;left:516px;top:47px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -706,6 +716,8 @@
 			value: 0,
 			name: 'ПроцентОплатаТруда',
 			style: 'position:absolute;left:516px;top:131px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -715,6 +727,8 @@
 			value: 0,
 			name: 'СуммаОплатаТруда',
 			style: 'position:absolute;left:516px;top:153px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -777,6 +791,8 @@
 			value: 0,
 			name: 'ПроцентАмортизация',
 			style: 'position:absolute;left:516px;top:213px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -786,6 +802,8 @@
 			value: 0,
 			name: 'СуммаАмортизация',
 			style: 'position:absolute;left:516px;top:235px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -848,6 +866,8 @@
 			value: 0,
 			name: 'ПроцентПрочие',
 			style: 'position:absolute;left:516px;top:295px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -857,6 +877,8 @@
 			value: 0,
 			name: 'СуммаПрочие',
 			style: 'position:absolute;left:516px;top:317px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1136,29 +1158,28 @@
 			style: 'position:absolute;left:6px;top:91px;width:130px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Материальные',
-			style: 'position:absolute;left:6px;top:6px;width:610px;height:16px;',
+			xtype: 'label',
+			text: 'Материальные',
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Оплата труда',
-			style: 'position:absolute;left:6px;top:112px;width:610px;height:16px;',
+			xtype: 'label',
+			text: 'Оплата труда',
+			style: 'position:absolute;left:6px;top:112px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Амортизация',
-			style: 'position:absolute;left:6px;top:194px;width:610px;height:16px;',
+			xtype: 'label',
+			text: 'Амортизация',
+			style: 'position:absolute;left:6px;top:194px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочие',
-			style: 'position:absolute;left:6px;top:276px;width:610px;height:16px;',
+			xtype: 'label',
+			text: 'Прочие',
+			style: 'position:absolute;left:6px;top:276px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Косвенные расходы',
 					items:
 					[
 		{
@@ -1184,6 +1205,8 @@
 			value: 0,
 			name: 'ПроцентОбщепроизводственные',
 			style: 'position:absolute;left:517px;top:26px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1193,6 +1216,8 @@
 			value: 0,
 			name: 'СуммаОбщепроизводственные',
 			style: 'position:absolute;left:517px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1255,6 +1280,8 @@
 			value: 0,
 			name: 'ПроцентОбщехозяйственные',
 			style: 'position:absolute;left:517px;top:109px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1264,6 +1291,8 @@
 			value: 0,
 			name: 'СуммаОбщехозяйственные',
 			style: 'position:absolute;left:517px;top:131px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1326,6 +1355,8 @@
 			value: 0,
 			name: 'ПроцентБракВПроизводстве',
 			style: 'position:absolute;left:517px;top:192px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1335,6 +1366,8 @@
 			value: 0,
 			name: 'СуммаБракВПроизводстве',
 			style: 'position:absolute;left:517px;top:214px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1540,24 +1573,23 @@
 			style: 'position:absolute;left:216px;top:214px;width:20px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общепроизводственные',
-			style: 'position:absolute;left:6px;top:6px;width:611px;height:16px;',
+			xtype: 'label',
+			text: 'Общепроизводственные',
+			style: 'position:absolute;left:6px;top:6px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общехозяйственные',
-			style: 'position:absolute;left:6px;top:89px;width:611px;height:16px;',
+			xtype: 'label',
+			text: 'Общехозяйственные',
+			style: 'position:absolute;left:6px;top:89px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Брак в производстве',
-			style: 'position:absolute;left:6px;top:172px;width:611px;height:16px;',
+			xtype: 'label',
+			text: 'Брак в производстве',
+			style: 'position:absolute;left:6px;top:172px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Результат',
 					items:
 					[
 		{
@@ -1686,6 +1718,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:611px;height:24px;',
+			width: 611,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1702,7 +1736,6 @@
 					]
 				},
 				{
-					title:'Установить',
 					items:
 					[
 		{
@@ -1736,6 +1769,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:643px;height:25px;',
+			width: 643,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

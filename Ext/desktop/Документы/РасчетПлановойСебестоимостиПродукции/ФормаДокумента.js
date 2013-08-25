@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			width: 608,
+			height: 25,
 			items:
 			[
 				{
@@ -93,13 +95,12 @@
 			style: 'position:absolute;left:152px;top:33px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:592px;height:226px;',
 			height: 226,width: 592,
 			items:
 			[
 				{
-					title:'Параметры расчета',
 					items:
 					[
 		{
@@ -116,6 +117,8 @@
 			value: 0,
 			name: 'ПроцентНакладныхРасходов',
 			style: 'position:absolute;left:166px;top:154px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -758,12 +761,13 @@
 					]
 				},
 				{
-					title:'Себестоимость',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:578px;height:24px;',
+			width: 578,
+			height: 24,
 			items:
 			[
 			]
@@ -894,12 +898,13 @@
 					]
 				},
 				{
-					title:'Состав затрат',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:578px;height:24px;',
+			width: 578,
+			height: 24,
 			items:
 			[
 			]
@@ -1124,6 +1129,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:345px;width:608px;height:25px;',
+			width: 608,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

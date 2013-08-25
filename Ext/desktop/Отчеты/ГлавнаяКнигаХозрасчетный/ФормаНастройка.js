@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:192px;',
 			height: 192,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -105,9 +104,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выводить данные',
-			style: 'position:absolute;left:6px;top:88px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:88px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'combobox',
@@ -144,7 +143,6 @@
 					]
 				},
 				{
-					title:'Развернутое сальдо',
 					items:
 					[
 		{
@@ -219,6 +217,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 				'-',
@@ -238,6 +238,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:211px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

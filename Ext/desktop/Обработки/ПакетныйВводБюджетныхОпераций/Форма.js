@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 			]
@@ -68,13 +70,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:764px;height:360px;',
 			height: 360,width: 764,
 			items:
 			[
 				{
-					title:'Бюджетные операции',
 					items:
 					[
 		{
@@ -248,6 +249,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:750px;height:24px;',
+			width: 750,
+			height: 24,
 			items:
 			[
 				{
@@ -280,9 +283,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Зависимые обороты',
-			style: 'position:absolute;left:6px;top:189px;width:750px;height:16px;',
+			xtype: 'label',
+			text: 'Зависимые обороты',
+			style: 'position:absolute;left:6px;top:189px;width:750px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабЗависимыеОбороты',
@@ -329,7 +332,6 @@
 					]
 				},
 				{
-					title:'Общие реквизиты бюджетных операций',
 					items:
 					[
 		{
@@ -707,7 +709,6 @@
 					]
 				},
 				{
-					title:'Сформированные документы',
 					items:
 					[
 		{
@@ -800,6 +801,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:750px;height:24px;',
+			width: 750,
+			height: 24,
 			items:
 			[
 				{
@@ -832,6 +835,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

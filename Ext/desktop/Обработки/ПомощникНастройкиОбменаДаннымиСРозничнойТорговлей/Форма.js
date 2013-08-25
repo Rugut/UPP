@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:183px;top:0px;width:557px;height:399px;',
 			height: 399,width: 557,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Главная',
 					items:
 					[
 		{
@@ -63,7 +62,6 @@
 					]
 				},
 				{
-					title:'Возможность подключения ко второй информационной базе',
 					items:
 					[
 		{
@@ -95,14 +93,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:161px;top:111px;width:390px;height:19px;',
 			height: 19,width: 390,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подключение файловая ИБ',
 					items:
 					[
 		{
@@ -135,7 +132,6 @@
 					]
 				},
 				{
-					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -210,7 +206,6 @@
 					]
 				},
 				{
-					title:'Создание нового обмена',
 					items:
 					[
 		{
@@ -241,14 +236,13 @@
 			style: 'position:absolute;left:28px;top:117px;width:413px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:141px;width:546px;height:253px;',
 			height: 253,width: 546,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Настройки обмена по организации',
 					items:
 					[
 		{
@@ -258,13 +252,12 @@
 			style: 'position:absolute;left:0px;top:37px;width:546px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:61px;width:546px;height:192px;',
 			height: 192,width: 546,
 			items:
 			[
 				{
-					title:'Соответствия магазинов и складов',
 					items:
 					[
 		{
@@ -366,6 +359,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:532px;height:24px;',
+			width: 532,
+			height: 24,
 			items:
 			[
 			]
@@ -373,7 +368,6 @@
 					]
 				},
 				{
-					title:'Типы цен, передаваемые в РТ',
 					items:
 					[
 		{
@@ -439,6 +433,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:532px;height:24px;',
+			width: 532,
+			height: 24,
 			items:
 			[
 			]
@@ -446,7 +442,6 @@
 					]
 				},
 				{
-					title:'Выгрузка себестоимости',
 					items:
 					[
 		{
@@ -561,7 +556,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
@@ -580,7 +574,6 @@
 					]
 				},
 				{
-					title:'Фильтрация справочников',
 					items:
 					[
 		{
@@ -634,13 +627,12 @@
 			style: 'position:absolute;left:6px;top:49px;width:364px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:178px;width:543px;height:215px;',
 			height: 215,width: 543,
 			items:
 			[
 				{
-					title:'Организации',
 					items:
 					[
 		{
@@ -703,7 +695,6 @@
 					]
 				},
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
@@ -805,6 +796,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			width: 529,
+			height: 24,
 			items:
 			[
 			]
@@ -812,7 +805,6 @@
 					]
 				},
 				{
-					title:'Контрагенты',
 					items:
 					[
 		{
@@ -914,6 +906,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			width: 529,
+			height: 24,
 			items:
 			[
 			]
@@ -921,7 +915,6 @@
 					]
 				},
 				{
-					title:'Склады',
 					items:
 					[
 		{
@@ -1023,6 +1016,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			width: 529,
+			height: 24,
 			items:
 			[
 			]
@@ -1030,7 +1025,6 @@
 					]
 				},
 				{
-					title:'Кассы',
 					items:
 					[
 		{
@@ -1132,6 +1126,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
+			width: 529,
+			height: 24,
 			items:
 			[
 			]
@@ -1148,7 +1144,6 @@
 					]
 				},
 				{
-					title:'Ответные пакеты второй информационной базы',
 					items:
 					[
 		{
@@ -1176,7 +1171,6 @@
 					]
 				},
 				{
-					title:'Редактирование существующего обмена',
 					items:
 					[
 		{
@@ -1221,18 +1215,16 @@
 					]
 				},
 				{
-					title:'Основные параметры настройки обмена данными',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:13px;top:206px;width:539px;height:160px;',
 			height: 160,width: 539,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Файловый',
 					items:
 					[
 		{
@@ -1319,7 +1311,6 @@
 					]
 				},
 				{
-					title:'FTPОбмен',
 					items:
 					[
 		{
@@ -1363,11 +1354,13 @@
 			value: 0,
 			name: 'ПортFTPСоединения',
 			style: 'position:absolute;left:419px;top:0px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройки прокси-сервера',
-			style: 'position:absolute;left:6px;top:72px;width:533px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки прокси-сервера',
+			style: 'position:absolute;left:6px;top:72px;width:533px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1404,6 +1397,8 @@
 			value: 0,
 			name: 'ПортПроксиFTP',
 			style: 'position:absolute;left:419px;top:115px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -1427,11 +1422,12 @@
 			value: 0,
 			name: 'МаксимальныйРазмерОтправляемогоПолучаемогоПакетаЧерезFTP1',
 			style: 'position:absolute;left:302px;top:48px;width:95px;height:19px;',
+			width: 95,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Обмен через COM',
 					items:
 					[
 		{
@@ -1441,14 +1437,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:49px;width:533px;height:19px;',
 			height: 19,width: 533,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подключение файловая ИБ',
 					items:
 					[
 		{
@@ -1475,7 +1470,6 @@
 					]
 				},
 				{
-					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -1544,7 +1538,6 @@
 					]
 				},
 				{
-					title:'Обмен через почту',
 					items:
 					[
 		{
@@ -1659,26 +1652,22 @@
 			style: 'position:absolute;left:246px;top:235px;width:306px;height:56px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:50px;width:210px;height:150px;',
 			height: 150,width: 210,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница каталог',
 					items:
 					[
 					]
 				},
 				{
-					title:'Страница FTP',
 				},
 				{
-					title:'Страница подключение',
 				},
 				{
-					title:'Страница почта',
 				},
 			]
 		},
@@ -1706,7 +1695,6 @@
 					]
 				},
 				{
-					title:'Настройки знакомства информационных баз',
 					items:
 					[
 		{
@@ -1745,7 +1733,6 @@
 					]
 				},
 				{
-					title:'Итоговая страница завершения обмена',
 					items:
 					[
 		{
@@ -1828,7 +1815,6 @@
 					]
 				},
 				{
-					title:'Итоговая страница завершения обмена COM',
 					items:
 					[
 		{
@@ -1902,7 +1888,6 @@
 					]
 				},
 				{
-					title:'Параметры обмена документами',
 					items:
 					[
 		{
@@ -1929,13 +1914,12 @@
 			style: 'position:absolute;left:282px;top:50px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:120px;width:545px;height:273px;',
 			height: 273,width: 545,
 			items:
 			[
 				{
-					title:'Настройки выгрузки',
 					items:
 					[
 		{
@@ -2055,6 +2039,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
+			width: 531,
+			height: 24,
 			items:
 			[
 				{
@@ -2072,12 +2058,13 @@
 					]
 				},
 				{
-					title:'Сопоставление объектов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:531px;height:24px;',
+			width: 531,
+			height: 24,
 			items:
 			[
 				{
@@ -2241,20 +2228,18 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:399px;',
 			height: 399,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница настройки',
 					items:
 					[
 					]
 				},
 				{
-					title:'Страница готово',
 				},
 			]
 		},
@@ -2265,6 +2250,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
+			width: 740,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

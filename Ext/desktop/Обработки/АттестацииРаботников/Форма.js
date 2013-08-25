@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:611px;height:352px;',
 			height: 352,width: 611,
 			items:
 			[
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
@@ -80,6 +79,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:32px;width:597px;height:24px;',
+			width: 597,
+			height: 24,
 			items:
 			[
 				{
@@ -95,14 +96,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:597px;height:25px;',
 			height: 25,width: 597,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -157,7 +157,6 @@
 					]
 				},
 				{
-					title:'Аттестации',
 					items:
 					[
 		{
@@ -259,6 +258,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:597px;height:24px;',
+			width: 597,
+			height: 24,
 			items:
 			[
 			]
@@ -266,7 +267,6 @@
 					]
 				},
 				{
-					title:'Анализ оценок',
 					items:
 					[
 		{
@@ -363,6 +363,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:336px;height:25px;',
+			width: 336,
+			height: 25,
 			items:
 			[
 				{
@@ -374,24 +376,25 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:342px;top:6px;width:261px;height:25px;',
+			width: 261,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Распределение полученных оценок',
-			style: 'position:absolute;left:6px;top:69px;width:597px;height:16px;',
+			xtype: 'label',
+			text: 'Распределение полученных оценок',
+			style: 'position:absolute;left:6px;top:69px;width:597px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:344px;top:8px;width:259px;height:19px;',
 			height: 19,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Произвольный период',
 					items:
 					[
 		{
@@ -449,6 +452,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:368px;width:627px;height:25px;',
+			width: 627,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

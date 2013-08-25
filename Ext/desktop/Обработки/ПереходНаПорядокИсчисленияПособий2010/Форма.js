@@ -65,14 +65,13 @@
 			style: 'position:absolute;left:46px;top:284px;width:532px;height:40px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:611px;top:116px;width:181px;height:56px;',
 			height: 56,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Информация не введена',
 					items:
 					[
 		{
@@ -84,7 +83,6 @@
 					]
 				},
 				{
-					title:'Информация введена',
 					items:
 					[
 		{
@@ -104,14 +102,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:611px;top:218px;width:181px;height:56px;',
 			height: 56,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Информация не введена',
 					items:
 					[
 		{
@@ -129,7 +126,6 @@
 					]
 				},
 				{
-					title:'Информация введена',
 					items:
 					[
 		{
@@ -143,14 +139,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:611px;top:284px;width:181px;height:40px;',
 			height: 40,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Документы не обнаружены',
 					items:
 					[
 		{
@@ -168,10 +163,8 @@
 					]
 				},
 				{
-					title:'Документы обнаружены',
 				},
 				{
-					title:'Документы обработаны',
 					items:
 					[
 		{
@@ -185,14 +178,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:329px;width:784px;height:85px;',
 			height: 85,width: 784,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -283,14 +275,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:472px;width:784px;height:85px;',
 			height: 85,width: 784,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -381,25 +372,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:426px;width:784px;height:40px;',
 			height: 40,width: 784,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:603px;top:0px;width:181px;height:40px;',
 			height: 40,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Документы не обнаружены',
 					items:
 					[
 		{
@@ -423,10 +412,8 @@
 					]
 				},
 				{
-					title:'Документы обнаружены',
 				},
 				{
-					title:'Документы обработаны',
 				},
 			]
 		},

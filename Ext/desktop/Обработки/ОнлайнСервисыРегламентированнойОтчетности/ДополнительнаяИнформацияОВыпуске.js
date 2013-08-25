@@ -30,6 +30,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:544px;width:532px;height:25px;',
+			width: 532,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

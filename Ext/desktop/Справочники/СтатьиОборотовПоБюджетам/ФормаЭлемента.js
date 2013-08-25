@@ -19,18 +19,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:495px;height:25px;',
+			width: 495,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:479px;height:316px;',
 			height: 316,width: 479,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
@@ -312,7 +313,6 @@
 					]
 				},
 				{
-					title:'Проводки',
 					items:
 					[
 		{
@@ -410,6 +410,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:465px;height:27px;',
+			width: 465,
+			height: 27,
 			items:
 			[
 				{
@@ -444,7 +446,6 @@
 					]
 				},
 				{
-					title:'Данные',
 					items:
 					[
 		{
@@ -581,6 +582,8 @@
 			value: 0,
 			name: 'КоэффициентДляФактаСум',
 			style: 'position:absolute;left:251px;top:54px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -596,6 +599,8 @@
 			value: 0,
 			name: 'КоэффициентДляФактаКол',
 			style: 'position:absolute;left:251px;top:126px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -674,6 +679,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:432px;width:495px;height:25px;',
+			width: 495,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

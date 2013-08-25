@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:526px;height:25px;',
+			width: 526,
+			height: 25,
 			items:
 			[
 				{
@@ -93,13 +95,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:135px;width:510px;height:183px;',
 			height: 183,width: 510,
 			items:
 			[
 				{
-					title:'Обособленное подразделение',
 					items:
 					[
 		{
@@ -140,6 +141,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициент',
 			style: 'position:absolute;left:248px;top:89px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -149,6 +152,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициентРФ',
 			style: 'position:absolute;left:248px;top:113px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -208,9 +213,9 @@
 			style: 'position:absolute;left:38px;top:137px;width:209px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Территориальные особенности',
-			style: 'position:absolute;left:22px;top:69px;width:306px;height:16px;',
+			xtype: 'label',
+			text: 'Территориальные особенности',
+			style: 'position:absolute;left:22px;top:69px;width:306px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -220,7 +225,6 @@
 					]
 				},
 				{
-					title:'Бухучет зарплаты',
 					items:
 					[
 		{
@@ -244,18 +248,16 @@
 					]
 				},
 				{
-					title:'Страховые взносы',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:496px;height:81px;',
 			height: 81,width: 496,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -276,7 +278,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -433,6 +434,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:257px;top:61px;width:245px;height:24px;',
+			width: 245,
+			height: 24,
 			items:
 			[
 				{
@@ -446,6 +449,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:61px;width:245px;height:24px;',
+			width: 245,
+			height: 24,
 			items:
 			[
 			]
@@ -512,14 +517,13 @@
 			style: 'position:absolute;left:8px;top:96px;width:81px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:115px;width:510px;height:16px;',
 			height: 16,width: 510,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -530,6 +534,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:326px;width:526px;height:25px;',
+			width: 526,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

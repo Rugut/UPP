@@ -118,6 +118,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
+			width: 638,
+			height: 25,
 			items:
 			[
 			]
@@ -125,6 +127,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:445px;width:638px;height:25px;',
+			width: 638,
+			height: 25,
 			items:
 			[
 				{
@@ -202,6 +206,8 @@
 			value: 0,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:352px;top:182px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -277,6 +283,8 @@
 			value: 0,
 			name: 'ОграничениеСкидки',
 			style: 'position:absolute;left:524px;top:182px;width:106px;height:19px;',
+			width: 106,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -323,18 +331,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:209px;width:622px;height:180px;',
 			height: 180,width: 622,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			width: 608,
+			height: 24,
 			items:
 			[
 				{
@@ -468,7 +477,6 @@
 					]
 				},
 				{
-					title:'Ценовые группы',
 					items:
 					[
 		{
@@ -561,6 +569,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			width: 608,
+			height: 24,
 			items:
 			[
 				'-',
@@ -572,7 +582,6 @@
 					]
 				},
 				{
-					title:'Бонусы',
 					items:
 					[
 		{
@@ -710,6 +719,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			width: 608,
+			height: 24,
 			items:
 			[
 				{
@@ -723,7 +734,6 @@
 					]
 				},
 				{
-					title:'Получатели скидки',
 					items:
 					[
 		{
@@ -804,6 +814,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			width: 608,
+			height: 24,
 			items:
 			[
 				'-',
@@ -816,7 +828,6 @@
 					]
 				},
 				{
-					title:'Время действия скидки',
 					items:
 					[
 		{
@@ -922,6 +933,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
+			width: 608,
+			height: 24,
 			items:
 			[
 				{
@@ -1025,9 +1038,9 @@
 			style: 'position:absolute;left:162px;top:138px;width:137px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Значения по умолчанию для таблицы товаров и ценовых групп',
-			style: 'position:absolute;left:8px;top:161px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Значения по умолчанию для таблицы товаров и ценовых групп',
+			style: 'position:absolute;left:8px;top:161px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',

@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 			]
@@ -76,13 +78,12 @@
 			style: 'position:absolute;left:424px;top:33px;width:70px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:133px;width:636px;height:230px;',
 			height: 230,width: 636,
 			items:
 			[
 				{
-					title:'Комплект',
 					items:
 					[
 		{
@@ -132,6 +133,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:427px;top:8px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -179,6 +182,8 @@
 			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:427px;top:56px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -579,6 +584,8 @@
 			value: 0,
 			name: 'ЦенаПередачи',
 			style: 'position:absolute;left:427px;top:80px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -594,11 +601,12 @@
 			value: 0,
 			name: 'СуммаПередачи',
 			style: 'position:absolute;left:427px;top:104px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Комплектующие',
 					items:
 					[
 		{
@@ -817,6 +825,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:4px;top:0px;width:626px;height:24px;',
+			width: 626,
+			height: 24,
 			items:
 			[
 				{
@@ -838,7 +848,6 @@
 					]
 				},
 				{
-					title:'НДС',
 					items:
 					[
 		{
@@ -892,19 +901,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счет и аналитика списания НДС',
-			style: 'position:absolute;left:6px;top:31px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Счет и аналитика списания НДС',
+			style: 'position:absolute;left:6px;top:31px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -1098,19 +1106,17 @@
 					]
 				},
 				{
-					title:'Надпись',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:324px;top:104px;width:304px;height:100px;',
 			height: 100,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -1304,7 +1310,6 @@
 					]
 				},
 				{
-					title:'Надпись',
 				},
 			]
 		},
@@ -1447,7 +1452,6 @@
 					]
 				},
 				{
-					title:'Учет затрат',
 					items:
 					[
 		{
@@ -1738,7 +1742,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1940,6 +1943,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{

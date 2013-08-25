@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			items:
 			[
 				{
@@ -99,6 +101,8 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:311px;top:33px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -151,6 +155,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:370px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

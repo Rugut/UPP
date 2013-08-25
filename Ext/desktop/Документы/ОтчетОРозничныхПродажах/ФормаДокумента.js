@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			items:
 			[
 			]
@@ -360,32 +362,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:432px;width:672px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'checkbox',
 			boxLabel: 'налог. учете',
 			style: 'position:absolute;left:584px;top:33px;width:80px;height:19px;',
@@ -451,13 +427,12 @@
 			style: 'position:absolute;left:322px;top:355px;width:98px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:656px;height:244px;',
 			height: 244,width: 656,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -793,6 +768,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 				{
@@ -817,6 +794,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:553px;top:180px;width:95px;height:17px;',
+			width: 95,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -832,6 +811,8 @@
 			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:552px;top:201px;width:96px;height:17px;',
+			width: 96,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -842,7 +823,6 @@
 					]
 				},
 				{
-					title:'Оплата платежными картами',
 					items:
 					[
 		{
@@ -935,6 +915,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:48px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 			]
@@ -947,6 +929,8 @@
 			value: 0,
 			name: 'ВсегоОплатаПлатежнымиКартами',
 			style: 'position:absolute;left:568px;top:180px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 		{
 			xtype: 'numberfield',
@@ -956,6 +940,8 @@
 			value: 0,
 			name: 'ВсегоТорговаяУступка',
 			style: 'position:absolute;left:568px;top:201px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -1062,7 +1048,6 @@
 					]
 				},
 				{
-					title:'Оплата банковскими кредитами',
 					items:
 					[
 		{
@@ -1188,6 +1173,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 			]
@@ -1200,6 +1187,8 @@
 			value: 0,
 			name: 'ВсегоОплатаБанковскимиКредитами',
 			style: 'position:absolute;left:568px;top:180px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 		{
 			xtype: 'numberfield',
@@ -1209,11 +1198,12 @@
 			value: 0,
 			name: 'ВсегоСуммаКомиссии',
 			style: 'position:absolute;left:568px;top:201px;width:80px;height:17px;',
+			width: 80,
+			height: 17,
 		},
 					]
 				},
 				{
-					title:'Продажи по дисконтным картам',
 					items:
 					[
 		{
@@ -1303,6 +1293,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:642px;height:24px;',
+			width: 642,
+			height: 24,
 			items:
 			[
 			]
@@ -1315,6 +1307,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:432px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

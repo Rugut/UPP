@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			items:
 			[
 				{
@@ -36,14 +38,13 @@
 			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:365px;width:700px;height:22px;',
 			height: 22,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -104,14 +105,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:313px;width:700px;height:24px;',
 			height: 24,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -128,6 +128,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиФормаОтчета',
 			style: 'position:absolute;left:226px;top:5px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -143,14 +145,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:700px;height:34px;',
 			height: 34,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -190,6 +191,8 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:319px;top:6px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
@@ -225,6 +228,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:395px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

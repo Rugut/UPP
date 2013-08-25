@@ -169,14 +169,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:404px;height:25px;',
+			width: 404,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учет',
-			style: 'position:absolute;left:8px;top:60px;width:388px;height:17px;',
+			xtype: 'label',
+			text: 'Учет',
+			style: 'position:absolute;left:8px;top:60px;width:388px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -230,6 +232,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:181px;width:404px;height:25px;',
+			width: 404,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

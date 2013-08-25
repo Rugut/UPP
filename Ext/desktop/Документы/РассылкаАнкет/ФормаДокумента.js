@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:449px;height:25px;',
+			width: 449,
+			height: 25,
 			items:
 			[
 				{
@@ -186,14 +188,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:433px;height:44px;',
 			height: 44,width: 433,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Внешний почтовый клиент',
 					items:
 					[
 		{
@@ -219,7 +220,6 @@
 					]
 				},
 				{
-					title:'Встроенный почтовый клиент',
 					items:
 					[
 		{
@@ -287,13 +287,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:131px;width:433px;height:196px;',
 			height: 196,width: 433,
 			items:
 			[
 				{
-					title:'Письмо',
 					items:
 					[
 		{
@@ -306,12 +305,13 @@
 					]
 				},
 				{
-					title:'Получатели',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:419px;height:24px;',
+			width: 419,
+			height: 24,
 			items:
 			[
 				{
@@ -424,12 +424,13 @@
 					]
 				},
 				{
-					title:'Вложения',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:419px;height:24px;',
+			width: 419,
+			height: 24,
 			items:
 			[
 				{
@@ -515,9 +516,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочее',
-			style: 'position:absolute;left:8px;top:334px;width:433px;height:16px;',
+			xtype: 'label',
+			text: 'Прочее',
+			style: 'position:absolute;left:8px;top:334px;width:433px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -633,6 +634,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:433px;width:449px;height:25px;',
+			width: 449,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

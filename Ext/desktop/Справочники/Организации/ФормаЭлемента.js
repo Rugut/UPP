@@ -64,6 +64,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:579px;height:25px;',
+			width: 579,
+			height: 25,
 			items:
 			[
 				{
@@ -156,6 +158,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:644px;width:579px;height:25px;',
+			width: 579,
+			height: 25,
 			items:
 			[
 				{
@@ -279,13 +283,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:331px;width:563px;height:305px;',
 			height: 305,width: 563,
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
@@ -319,9 +322,9 @@
 			style: 'position:absolute;left:350px;top:25px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты',
-			style: 'position:absolute;left:7px;top:6px;width:548px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты',
+			style: 'position:absolute;left:7px;top:6px;width:548px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -401,14 +404,14 @@
 			style: 'position:absolute;left:57px;top:178px;width:34px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Налоговый орган, выдавший свидетельство',
-			style: 'position:absolute;left:13px;top:160px;width:542px;height:17px;',
+			xtype: 'label',
+			text: 'Налоговый орган, выдавший свидетельство',
+			style: 'position:absolute;left:13px;top:160px;width:542px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Свидетельство о постановке на учет в налоговом органе',
-			style: 'position:absolute;left:6px;top:120px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Свидетельство о постановке на учет в налоговом органе',
+			style: 'position:absolute;left:6px;top:120px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -458,14 +461,14 @@
 			style: 'position:absolute;left:255px;top:92px;width:300px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'ИФНС',
-			style: 'position:absolute;left:6px;top:74px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'ИФНС',
+			style: 'position:absolute;left:6px;top:74px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Нумерация счетов-фактур',
-			style: 'position:absolute;left:6px;top:204px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Нумерация счетов-фактур',
+			style: 'position:absolute;left:6px;top:204px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -481,11 +484,12 @@
 			value: 0,
 			name: 'ЦифровойИндексОбособленногоПодразделения',
 			style: 'position:absolute;left:288px;top:225px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Контактная информация',
 					items:
 					[
 		{
@@ -583,6 +587,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:7px;width:549px;height:24px;',
+			width: 549,
+			height: 24,
 			items:
 			[
 				{
@@ -626,7 +632,6 @@
 					]
 				},
 				{
-					title:'Коды',
 					items:
 					[
 		{
@@ -681,9 +686,9 @@
 			style: 'position:absolute;left:231px;top:72px;width:324px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Организационно-правовая форма по ОКОПФ',
-			style: 'position:absolute;left:6px;top:53px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Организационно-правовая форма по ОКОПФ',
+			style: 'position:absolute;left:6px;top:53px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -716,14 +721,14 @@
 			style: 'position:absolute;left:231px;top:118px;width:324px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Форма собственности по ОКФС',
-			style: 'position:absolute;left:6px;top:99px;width:549px;height:17px;',
+			xtype: 'label',
+			text: 'Форма собственности по ОКФС',
+			style: 'position:absolute;left:6px;top:99px;width:549px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Вид деятельности по ОКВЭД',
-			style: 'position:absolute;left:6px;top:145px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Вид деятельности по ОКВЭД',
+			style: 'position:absolute;left:6px;top:145px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -756,9 +761,9 @@
 			style: 'position:absolute;left:231px;top:164px;width:324px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Коды',
-			style: 'position:absolute;left:6px;top:6px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Коды',
+			style: 'position:absolute;left:6px;top:6px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -787,7 +792,6 @@
 					]
 				},
 				{
-					title:'Расчет зарплаты',
 					items:
 					[
 		{
@@ -819,6 +823,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициент',
 			style: 'position:absolute;left:216px;top:31px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -834,6 +840,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициентРФ',
 			style: 'position:absolute;left:216px;top:56px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -896,9 +904,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Внебюджетные фонды',
-			style: 'position:absolute;left:6px;top:108px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Внебюджетные фонды',
+			style: 'position:absolute;left:6px;top:108px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1038,7 +1046,6 @@
 					]
 				},
 				{
-					title:'Индивидуальный предприниматель',
 					items:
 					[
 		{
@@ -1048,14 +1055,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:549px;height:28px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:40px;width:555px;height:130px;',
 			height: 130,width: 555,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1131,7 +1137,6 @@
 					]
 				},
 				{
-					title:'Бухучет зарплаты',
 					items:
 					[
 		{
@@ -1155,7 +1160,6 @@
 					]
 				},
 				{
-					title:'Иностранная организация',
 					items:
 					[
 		{
@@ -1281,18 +1285,16 @@
 					]
 				},
 				{
-					title:'Документооборот',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:85px;width:549px;height:19px;',
 			height: 19,width: 549,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1346,14 +1348,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:178px;width:548px;height:18px;',
 			height: 18,width: 548,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1373,9 +1374,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документооборот с ФСС',
-			style: 'position:absolute;left:6px;top:234px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Документооборот с ФСС',
+			style: 'position:absolute;left:6px;top:234px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -1384,9 +1385,9 @@
 			style: 'position:absolute;left:21px;top:257px;width:279px;height:21px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документооборот с ФНС, ПФР и Росстатом',
-			style: 'position:absolute;left:6px;top:35px;width:549px;height:16px;',
+			xtype: 'label',
+			text: 'Документооборот с ФНС, ПФР и Росстатом',
+			style: 'position:absolute;left:6px;top:35px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1424,7 +1425,6 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
@@ -1433,9 +1433,9 @@
 			style: 'position:absolute;left:6px;top:8px;width:224px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:6px;top:33px;width:549px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:6px;top:33px;width:549px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1482,7 +1482,6 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
@@ -1562,6 +1561,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:549px;height:24px;',
+			width: 549,
+			height: 24,
 			items:
 			[
 			]
@@ -1569,7 +1570,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -1649,6 +1649,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:549px;height:24px;',
+			width: 549,
+			height: 24,
 			items:
 			[
 				{

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -26,24 +28,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -153,14 +137,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Группировки',
-			style: 'position:absolute;left:8px;top:57px;width:379px;height:16px;',
+			xtype: 'label',
+			text: 'Группировки',
+			style: 'position:absolute;left:8px;top:57px;width:379px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Поля',
-			style: 'position:absolute;left:8px;top:179px;width:378px;height:16px;',
+			xtype: 'label',
+			text: 'Поля',
+			style: 'position:absolute;left:8px;top:179px;width:378px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Поля',
@@ -214,9 +198,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сортировка',
-			style: 'position:absolute;left:393px;top:57px;width:379px;height:16px;',
+			xtype: 'label',
+			text: 'Сортировка',
+			style: 'position:absolute;left:393px;top:57px;width:379px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Сортировка',
@@ -287,6 +271,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:195px;width:379px;height:24px;',
+			width: 379,
+			height: 24,
 			items:
 			[
 			]
@@ -294,6 +280,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:393px;top:72px;width:379px;height:24px;',
+			width: 379,
+			height: 24,
 			items:
 			[
 			]
@@ -301,18 +289,22 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:73px;width:379px;height:24px;',
+			width: 379,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Печать',
-			style: 'position:absolute;left:393px;top:179px;width:379px;height:16px;',
+			xtype: 'label',
+			text: 'Печать',
+			style: 'position:absolute;left:393px;top:179px;width:379px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:393px;top:195px;width:379px;height:24px;',
+			width: 379,
+			height: 24,
 			items:
 			[
 				{
@@ -472,9 +464,9 @@
 			style: 'position:absolute;left:397px;top:385px;width:294px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:393px;top:322px;width:379px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:393px;top:322px;width:379px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -495,15 +487,19 @@
 			value: 0,
 			name: 'КоличествоУровнейМестХранения',
 			style: 'position:absolute;left:587px;top:338px;width:104px;height:19px;',
+			width: 104,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:322px;width:379px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:322px;width:379px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:338px;width:379px;height:24px;',
+			width: 379,
+			height: 24,
 			items:
 			[
 			]
@@ -572,6 +568,27 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:425px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

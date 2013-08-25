@@ -87,6 +87,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			items:
 			[
 			]
@@ -97,9 +99,16 @@
 			text: 'Код:',
 			style: 'position:absolute;left:316px;top:33px;width:40px;height:19px;text-align:center;',
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:84px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -119,10 +128,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

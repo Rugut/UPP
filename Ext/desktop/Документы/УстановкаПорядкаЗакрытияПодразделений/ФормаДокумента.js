@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:25px;',
+			width: 636,
+			height: 25,
 			items:
 			[
 				{
@@ -253,14 +255,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:98px;width:619px;height:24px;',
+			width: 619,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок закрытия',
-			style: 'position:absolute;left:8px;top:82px;width:619px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок закрытия',
+			style: 'position:absolute;left:8px;top:82px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -291,6 +295,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:321px;width:636px;height:25px;',
+			width: 636,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

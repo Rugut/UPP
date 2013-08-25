@@ -94,6 +94,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
+			width: 758,
+			height: 25,
 			items:
 			[
 				{
@@ -128,14 +130,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:668px;width:742px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:668px;width:742px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты отчета',
-			style: 'position:absolute;left:8px;top:85px;width:742px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты отчета',
+			style: 'position:absolute;left:8px;top:85px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -201,6 +203,8 @@
 			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:511px;top:186px;width:59px;height:19px;',
+			width: 59,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -256,14 +260,13 @@
 			style: 'position:absolute;left:106px;top:160px;width:644px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:212px;width:742px;height:28px;',
 			height: 28,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -298,6 +301,8 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:225px;top:0px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
@@ -351,19 +356,20 @@
 			style: 'position:absolute;left:232px;top:134px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:240px;width:742px;height:423px;',
 			height: 423,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:17px;width:742px;height:25px;',
+			width: 742,
+			height: 25,
 			items:
 			[
 				{
@@ -473,30 +479,28 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Файлы комплекта',
-			style: 'position:absolute;left:0px;top:0px;width:742px;height:16px;',
+			xtype: 'label',
+			text: 'Файлы комплекта',
+			style: 'position:absolute;left:0px;top:0px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Электронное представление',
-			style: 'position:absolute;left:0px;top:2px;width:742px;height:16px;',
+			xtype: 'label',
+			text: 'Электронное представление',
+			style: 'position:absolute;left:0px;top:2px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:51px;width:742px;height:261px;',
 			height: 261,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -509,7 +513,6 @@
 					]
 				},
 				{
-					title:'',
 				},
 			]
 		},
@@ -529,20 +532,19 @@
 			style: 'position:absolute;left:98px;top:25px;width:644px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:312px;width:742px;height:111px;',
 			height: 111,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Приложения к бухгалтерской отчетности',
-			style: 'position:absolute;left:0px;top:11px;width:742px;height:16px;',
+			xtype: 'label',
+			text: 'Приложения к бухгалтерской отчетности',
+			style: 'position:absolute;left:0px;top:11px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -604,6 +606,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:701px;width:758px;height:25px;',
+			width: 758,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

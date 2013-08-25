@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:349px;height:324px;',
 			height: 324,width: 349,
 			items:
 			[
 				{
-					title:'Накопления',
 					items:
 					[
 		{
@@ -33,6 +32,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			width: 335,
+			height: 24,
 			items:
 			[
 				{
@@ -49,7 +50,6 @@
 					]
 				},
 				{
-					title:'Сведений',
 					items:
 					[
 		{
@@ -59,6 +59,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			width: 335,
+			height: 24,
 			items:
 			[
 				{
@@ -75,7 +77,6 @@
 					]
 				},
 				{
-					title:'Бухгалтерии',
 					items:
 					[
 		{
@@ -85,6 +86,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:335px;height:24px;',
+			width: 335,
+			height: 24,
 			items:
 			[
 				{
@@ -109,6 +112,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:340px;width:365px;height:25px;',
+			width: 365,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

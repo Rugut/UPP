@@ -90,6 +90,8 @@
 			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:220px;top:33px;width:108px;height:19px;',
+			width: 108,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -105,10 +107,14 @@
 			value: 0,
 			name: 'НомерУпаковки',
 			style: 'position:absolute;left:101px;top:33px;width:35px;height:19px;',
+			width: 35,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			items:
 			[
 			]
@@ -120,6 +126,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:108px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

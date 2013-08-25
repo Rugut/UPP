@@ -229,24 +229,22 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:128px;width:641px;height:251px;',
 			height: 251,width: 641,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:627px;height:195px;',
 			height: 195,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -308,6 +306,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:77px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -317,6 +317,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:77px;top:72px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -326,6 +328,8 @@
 			value: 0,
 			name: 'СуммаДокументаРасчеты',
 			style: 'position:absolute;left:414px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -543,6 +547,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан',
 			style: 'position:absolute;left:414px;top:144px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -558,6 +564,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан',
 			style: 'position:absolute;left:414px;top:168px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -679,7 +687,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -871,6 +878,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:290px;height:24px;',
+			width: 290,
+			height: 24,
 			items:
 			[
 				{
@@ -885,14 +894,13 @@
 			style: 'position:absolute;left:327px;top:21px;width:300px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Расшифровка платежа',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'ПлатежПрочие',
 					items:
 					[
 		{
@@ -1361,6 +1369,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:83px;top:6px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1393,7 +1403,6 @@
 					]
 				},
 				{
-					title:'Печать',
 					items:
 					[
 		{
@@ -1418,19 +1427,19 @@
 			style: 'position:absolute;left:194px;top:81px;width:441px;height:40px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Текст плательщика',
-			style: 'position:absolute;left:3px;top:4px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Текст плательщика',
+			style: 'position:absolute;left:3px;top:4px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Текст получателя',
-			style: 'position:absolute;left:3px;top:64px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Текст получателя',
+			style: 'position:absolute;left:3px;top:64px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Текст назначения платежа',
-			style: 'position:absolute;left:3px;top:125px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Текст назначения платежа',
+			style: 'position:absolute;left:3px;top:125px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1529,34 +1538,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:456px;width:657px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -1566,14 +1551,13 @@
 			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
 			height: 19,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'СтраницаОплата',
 					items:
 					[
 		{
@@ -1595,7 +1579,6 @@
 					]
 				},
 				{
-					title:'СтраницаЧастичнаяОплата',
 					items:
 					[
 		{
@@ -1628,6 +1611,8 @@
 			value: 0,
 			name: 'ОчередностьПлатежа',
 			style: 'position:absolute;left:429px;top:56px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -1746,9 +1731,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:384px;width:641px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:384px;width:641px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1769,6 +1754,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:456px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

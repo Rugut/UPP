@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:675px;height:25px;',
+			width: 675,
+			height: 25,
 			items:
 			[
 			]
@@ -102,18 +104,17 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочее',
-			style: 'position:absolute;left:8px;top:373px;width:659px;height:16px;',
+			xtype: 'label',
+			text: 'Прочее',
+			style: 'position:absolute;left:8px;top:373px;width:659px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:102px;width:659px;height:226px;',
 			height: 226,width: 659,
 			items:
 			[
 				{
-					title:'Встреча',
 					items:
 					[
 		{
@@ -128,7 +129,6 @@
 					]
 				},
 				{
-					title:'Планирование',
 					items:
 					[
 		{
@@ -140,6 +140,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:245px;top:6px;width:130px;height:24px;',
+			width: 130,
+			height: 24,
 			items:
 			[
 				{
@@ -150,6 +152,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:527px;top:6px;width:123px;height:24px;',
+			width: 123,
+			height: 24,
 			items:
 			[
 				{
@@ -160,6 +164,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:27px;width:75px;height:24px;',
+			width: 75,
+			height: 24,
 			items:
 			[
 				{
@@ -219,13 +225,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Участники ',
-			style: 'position:absolute;left:6px;top:6px;width:222px;height:16px;',
+			xtype: 'label',
+			text: 'Участники ',
+			style: 'position:absolute;left:6px;top:6px;width:222px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:81px;top:27px;width:147px;height:24px;',
+			width: 147,
+			height: 24,
 			items:
 			[
 				{
@@ -239,6 +247,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:18px;top:111px;width:175px;height:24px;',
+			width: 175,
+			height: 24,
 			items:
 			[
 				{
@@ -413,6 +423,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:675px;height:25px;',
+			width: 675,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

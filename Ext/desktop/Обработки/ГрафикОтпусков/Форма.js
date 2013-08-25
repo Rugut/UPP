@@ -17,37 +17,34 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:777px;top:33px;width:215px;height:539px;',
 			height: 539,width: 215,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:33px;width:764px;height:539px;',
 			height: 539,width: 764,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:107px;top:3px;width:322px;height:19px;',
 			height: 19,width: 322,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По центрам ответственности',
 					items:
 					[
 		{
@@ -104,7 +101,6 @@
 					]
 				},
 				{
-					title:'По структуре юридических лиц',
 					items:
 					[
 		{
@@ -224,6 +220,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:926px;top:0px;width:74px;height:25px;',
+			width: 74,
+			height: 25,
 			items:
 			[
 				{
@@ -237,6 +235,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:926px;height:25px;',
+			width: 926,
+			height: 25,
 			items:
 			[
 				'-',

@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:375px;height:25px;',
+			width: 375,
+			height: 25,
 			items:
 			[
 			]
@@ -259,14 +261,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Аналитика регламентированного учета',
-			style: 'position:absolute;left:8px;top:200px;width:359px;height:16px;',
+			xtype: 'label',
+			text: 'Аналитика регламентированного учета',
+			style: 'position:absolute;left:8px;top:200px;width:359px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Аналитика управленческого учета',
-			style: 'position:absolute;left:8px;top:130px;width:359px;height:16px;',
+			xtype: 'label',
+			text: 'Аналитика управленческого учета',
+			style: 'position:absolute;left:8px;top:130px;width:359px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -377,6 +379,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:273px;width:375px;height:25px;',
+			width: 375,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

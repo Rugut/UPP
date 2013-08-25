@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			items:
 			[
 				'-',
@@ -70,6 +72,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:76px;width:720px;height:24px;',
+			width: 720,
+			height: 24,
 			items:
 			[
 				'-',
@@ -125,9 +129,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Список',
-			style: 'position:absolute;left:8px;top:60px;width:720px;height:16px;',
+			xtype: 'label',
+			text: 'Список',
+			style: 'position:absolute;left:8px;top:60px;width:720px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Список',
@@ -259,6 +263,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:365px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

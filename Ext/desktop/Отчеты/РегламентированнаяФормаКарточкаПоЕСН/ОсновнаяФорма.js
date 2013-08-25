@@ -109,6 +109,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			width: 660,
+			height: 25,
 			items:
 			[
 				{
@@ -164,6 +166,8 @@
 			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:432px;top:33px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',

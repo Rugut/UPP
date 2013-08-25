@@ -70,18 +70,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:394px;height:25px;',
+			width: 394,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:169px;width:378px;height:189px;',
 			height: 189,width: 378,
 			items:
 			[
 				{
-					title:'Выполняемые действия',
 					items:
 					[
 		{
@@ -143,6 +144,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:363px;height:24px;',
+			width: 363,
+			height: 24,
 			items:
 			[
 				{
@@ -163,7 +166,6 @@
 					]
 				},
 				{
-					title:'Автоматическое выполнение',
 					items:
 					[
 		{
@@ -185,6 +187,8 @@
 			value: 0,
 			name: 'Задержка',
 			style: 'position:absolute;left:218px;top:89px;width:25px;height:19px;',
+			width: 25,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -351,6 +355,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:393px;width:394px;height:25px;',
+			width: 394,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

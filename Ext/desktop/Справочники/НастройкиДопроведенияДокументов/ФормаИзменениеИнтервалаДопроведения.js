@@ -68,6 +68,8 @@
 			value: 0,
 			name: 'КоличествоПериодовОтставанияКонецИнтервала',
 			style: 'position:absolute;left:290px;top:77px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -94,6 +96,8 @@
 			value: 0,
 			name: 'КоличествоПериодовОтставанияНачалоИнтервала',
 			style: 'position:absolute;left:34px;top:77px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -199,6 +203,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:115px;width:513px;height:25px;',
+			width: 513,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

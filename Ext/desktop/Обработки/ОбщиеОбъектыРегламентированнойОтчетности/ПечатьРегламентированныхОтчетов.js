@@ -92,14 +92,14 @@
 			style: 'position:absolute;left:11px;top:430px;width:417px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Печатаемые листы',
-			style: 'position:absolute;left:8px;top:7px;width:198px;height:17px;',
+			xtype: 'label',
+			text: 'Печатаемые листы',
+			style: 'position:absolute;left:8px;top:7px;width:198px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры печати',
-			style: 'position:absolute;left:8px;top:301px;width:198px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры печати',
+			style: 'position:absolute;left:8px;top:301px;width:198px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -109,6 +109,8 @@
 			value: 0,
 			name: 'КоличествоКопий',
 			style: 'position:absolute;left:117px;top:319px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -122,9 +124,9 @@
 			style: 'position:absolute;left:14px;top:340px;width:131px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры таблицы',
-			style: 'position:absolute;left:8px;top:361px;width:197px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры таблицы',
+			style: 'position:absolute;left:8px;top:361px;width:197px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -139,6 +141,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:25px;width:198px;height:24px;',
+			width: 198,
+			height: 24,
 			items:
 			[
 				{
@@ -164,9 +168,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Содержание',
-			style: 'position:absolute;left:212px;top:7px;width:521px;height:17px;',
+			xtype: 'label',
+			text: 'Содержание',
+			style: 'position:absolute;left:212px;top:7px;width:521px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -175,6 +179,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:740px;height:25px;',
+			width: 740,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:630px;height:377px;',
 			height: 377,width: 630,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница индексирование',
 					items:
 					[
 		{
@@ -156,6 +155,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:99px;width:213px;height:25px;',
+			width: 213,
+			height: 25,
 			items:
 			[
 				{
@@ -170,13 +171,15 @@
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'История индексации пособий на детей',
-			style: 'position:absolute;left:0px;top:83px;width:630px;height:16px;',
+			xtype: 'label',
+			text: 'История индексации пособий на детей',
+			style: 'position:absolute;left:0px;top:83px;width:630px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:165px;width:213px;height:24px;',
+			width: 213,
+			height: 24,
 			items:
 			[
 				{
@@ -190,7 +193,6 @@
 					]
 				},
 				{
-					title:'Страница перерасчет пособий',
 					items:
 					[
 		{
@@ -224,14 +226,13 @@
 			style: 'position:absolute;left:333px;top:35px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:89px;width:630px;height:160px;',
 			height: 160,width: 630,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -351,6 +352,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:483px;top:19px;width:147px;height:24px;',
+			width: 147,
+			height: 24,
 			items:
 			[
 				{
@@ -361,6 +364,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:519px;top:19px;width:111px;height:24px;',
+			width: 111,
+			height: 24,
 			items:
 			[
 				{
@@ -391,14 +396,13 @@
 			style: 'position:absolute;left:0px;top:61px;width:182px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:277px;width:630px;height:76px;',
 			height: 76,width: 630,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -473,6 +477,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:322px;top:0px;width:202px;height:24px;',
+			width: 202,
+			height: 24,
 			items:
 			[
 				{
@@ -536,6 +542,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:393px;width:646px;height:25px;',
+			width: 646,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

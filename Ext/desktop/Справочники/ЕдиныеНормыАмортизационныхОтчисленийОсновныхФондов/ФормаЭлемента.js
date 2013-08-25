@@ -30,6 +30,8 @@
 			value: 0,
 			name: 'Код',
 			style: 'position:absolute;left:121px;top:33px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -58,6 +60,8 @@
 			value: 0,
 			name: 'НормаАмортизационныхОтчислений',
 			style: 'position:absolute;left:302px;top:154px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -73,10 +77,14 @@
 			value: 0,
 			name: 'ПроцентОтСтоимостиМашины',
 			style: 'position:absolute;left:302px;top:179px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:522px;height:25px;',
+			width: 522,
+			height: 25,
 			items:
 			[
 			]
@@ -88,6 +96,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:522px;height:25px;',
+			width: 522,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

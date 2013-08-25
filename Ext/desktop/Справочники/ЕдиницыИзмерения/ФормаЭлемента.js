@@ -119,6 +119,8 @@
 			value: 0,
 			name: 'Вес',
 			style: 'position:absolute;left:118px;top:102px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -134,10 +136,14 @@
 			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:118px;top:148px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
+			width: 470,
+			height: 25,
 			items:
 			[
 			]
@@ -156,6 +162,8 @@
 			value: 0,
 			name: 'Объем',
 			style: 'position:absolute;left:118px;top:125px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -171,6 +179,8 @@
 			value: 0,
 			name: 'ПорогОкругления',
 			style: 'position:absolute;left:118px;top:171px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -190,6 +200,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:225px;width:470px;height:25px;',
+			width: 470,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

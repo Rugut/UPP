@@ -17,24 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:379px;width:429px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Выполнить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьДатаАктуальности',
 			text: 'По состоянию на:',
@@ -150,6 +132,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:72px;width:413px;height:24px;',
+			width: 413,
+			height: 24,
 			items:
 			[
 				{
@@ -168,25 +152,24 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отборы',
-			style: 'position:absolute;left:8px;top:56px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Отборы',
+			style: 'position:absolute;left:8px;top:56px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:204px;width:413px;height:167px;',
 			height: 167,width: 413,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Премии сотрудников организаций',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ПоказателиПремии',
@@ -410,7 +393,6 @@
 					]
 				},
 				{
-					title:'Разовые расчеты',
 					items:
 					[
 		{
@@ -463,9 +445,9 @@
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -695,7 +677,6 @@
 					]
 				},
 				{
-					title:'Разовые расчеты для части смены',
 					items:
 					[
 		{
@@ -729,6 +710,8 @@
 			value: 0,
 			name: 'ОплачиватьЧасовНачисления',
 			style: 'position:absolute;left:90px;top:73px;width:85px;height:19px;',
+			width: 85,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -746,14 +729,13 @@
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Разовые дополнительные начисления',
 					items:
 					[
 		{
@@ -851,9 +833,9 @@
 			style: 'position:absolute;left:6px;top:77px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -1083,7 +1065,6 @@
 					]
 				},
 				{
-					title:'Ввод процента деятельности ЕНВД',
 					items:
 					[
 		{
@@ -1094,6 +1075,8 @@
 			value: 0,
 			name: 'ПодпадаетПодЕНВД',
 			style: 'position:absolute;left:139px;top:25px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1102,9 +1085,9 @@
 			style: 'position:absolute;left:6px;top:25px;width:128px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1154,7 +1137,6 @@
 					]
 				},
 				{
-					title:'Невыходы в организациях для целой смены',
 					items:
 					[
 		{
@@ -1207,9 +1189,9 @@
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -1220,7 +1202,6 @@
 					]
 				},
 				{
-					title:'Невыходы в организациях для части смены',
 					items:
 					[
 		{
@@ -1254,6 +1235,8 @@
 			value: 0,
 			name: 'ОплачиватьЧасовНевыхода',
 			style: 'position:absolute;left:90px;top:73px;width:85px;height:19px;',
+			width: 85,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1271,14 +1254,13 @@
 			style: 'position:absolute;left:90px;top:25px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Оплата сверхурочных часов',
 					items:
 					[
 		{
@@ -1306,6 +1288,8 @@
 			value: 0,
 			name: 'ЧасовПолуторных',
 			style: 'position:absolute;left:147px;top:49px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1315,6 +1299,8 @@
 			value: 0,
 			name: 'ЧасовДвойных',
 			style: 'position:absolute;left:147px;top:73px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1329,14 +1315,13 @@
 			style: 'position:absolute;left:6px;top:73px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Оплата праздничных и выходных дней организаций',
 					items:
 					[
 		{
@@ -1358,11 +1343,13 @@
 			value: 0,
 			name: 'ОтработаноЧасов',
 			style: 'position:absolute;left:166px;top:49px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1379,13 +1366,12 @@
 					]
 				},
 				{
-					title:'Ввод способа отражения в регламентированном учете',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1499,13 +1485,12 @@
 					]
 				},
 				{
-					title:'Ввод распределения основного заработка',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Распределение основного заработка',
-			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Распределение основного заработка',
+			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'РаспределениеНачислений',
@@ -1588,6 +1573,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:25px;width:413px;height:24px;',
+			width: 413,
+			height: 24,
 			items:
 			[
 				{
@@ -1601,13 +1588,12 @@
 					]
 				},
 				{
-					title:'Перенос задолженности',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1627,7 +1613,6 @@
 					]
 				},
 				{
-					title:'Разовые удержания',
 					items:
 					[
 		{
@@ -1680,9 +1665,9 @@
 			style: 'position:absolute;left:90px;top:49px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -1912,13 +1897,12 @@
 					]
 				},
 				{
-					title:'Ввод распределения заработка',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Распределение заработка',
-			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Распределение заработка',
+			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'РаспределениеУпрНачислений',
@@ -1983,6 +1967,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:22px;width:413px;height:24px;',
+			width: 413,
+			height: 24,
 			items:
 			[
 				{
@@ -1996,7 +1982,6 @@
 					]
 				},
 				{
-					title:'Реестр ДСВ-3',
 					items:
 					[
 		{
@@ -2007,6 +1992,8 @@
 			value: 0,
 			name: 'РазмерВзносов',
 			style: 'position:absolute;left:124px;top:36px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2015,14 +2002,13 @@
 			style: 'position:absolute;left:6px;top:36px;width:117px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:11px;width:413px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:0px;top:11px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Постоянные начисления',
 					items:
 					[
 		{
@@ -2355,13 +2341,12 @@
 					]
 				},
 				{
-					title:'Кадровое перемещение организаций',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:8px;width:407px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:8px;width:407px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2546,14 +2531,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:32px;width:413px;height:19px;',
 			height: 19,width: 413,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2580,6 +2564,27 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:379px;width:429px;height:25px;',
+			width: 429,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Выполнить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:356px;',
 			height: 356,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -115,6 +114,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:89px;width:250px;height:24px;',
+			width: 250,
+			height: 24,
 			items:
 			[
 				{
@@ -154,9 +155,9 @@
 			style: 'position:absolute;left:7px;top:311px;width:459px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Виды контактной информации',
-			style: 'position:absolute;left:6px;top:73px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Виды контактной информации',
+			style: 'position:absolute;left:6px;top:73px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -166,7 +167,6 @@
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -232,6 +232,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:459px;height:24px;',
+			width: 459,
+			height: 24,
 			items:
 			[
 			]
@@ -239,7 +241,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -341,6 +342,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -354,7 +357,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -420,6 +422,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -435,6 +439,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:372px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

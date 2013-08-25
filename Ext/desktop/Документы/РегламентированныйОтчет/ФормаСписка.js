@@ -124,6 +124,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:688px;height:25px;',
+			width: 688,
+			height: 25,
 			items:
 			[
 				{
@@ -244,14 +246,13 @@
 			style: 'position:absolute;left:17px;top:86px;width:87px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:238px;top:80px;width:257px;height:31px;',
 			height: 31,width: 257,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Произвольный период',
 					items:
 					[
 		{
@@ -303,7 +304,6 @@
 					]
 				},
 				{
-					title:'Стандартный период',
 					items:
 					[
 		{

@@ -126,6 +126,8 @@
 			value: 0,
 			name: 'СуммаЗаРаботу',
 			style: 'position:absolute;left:102px;top:307px;width:99px;height:19px;',
+			width: 99,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -231,6 +233,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:350px;height:25px;',
+			width: 350,
+			height: 25,
 			items:
 			[
 			]
@@ -398,9 +402,9 @@
 			style: 'position:absolute;left:14px;top:259px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стороны',
-			style: 'position:absolute;left:8px;top:59px;width:334px;height:16px;',
+			xtype: 'label',
+			text: 'Стороны',
+			style: 'position:absolute;left:8px;top:59px;width:334px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -513,24 +517,23 @@
 			style: 'position:absolute;left:14px;top:355px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Условия договора',
-			style: 'position:absolute;left:8px;top:158px;width:334px;height:16px;',
+			xtype: 'label',
+			text: 'Условия договора',
+			style: 'position:absolute;left:8px;top:158px;width:334px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочее',
-			style: 'position:absolute;left:8px;top:335px;width:334px;height:16px;',
+			xtype: 'label',
+			text: 'Прочее',
+			style: 'position:absolute;left:8px;top:335px;width:334px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:14px;top:202px;width:328px;height:28px;',
 			height: 28,width: 328,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница авторских',
 					items:
 					[
 		{
@@ -580,7 +583,6 @@
 					]
 				},
 				{
-					title:'Страница студ отрядов',
 					items:
 					[
 		{
@@ -599,6 +601,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:455px;width:350px;height:25px;',
+			width: 350,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

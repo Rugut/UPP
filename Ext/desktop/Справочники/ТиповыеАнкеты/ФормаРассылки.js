@@ -19,40 +19,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:473px;height:25px;',
+			width: 473,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:367px;width:473px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Отправить',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:457px;height:254px;',
 			height: 254,width: 457,
 			items:
 			[
 				{
-					title:'Письмо',
 					items:
 					[
 		{
@@ -65,12 +44,13 @@
 					]
 				},
 				{
-					title:'Получатели',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
+			width: 443,
+			height: 24,
 			items:
 			[
 				{
@@ -156,12 +136,13 @@
 					]
 				},
 				{
-					title:'Вложения',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:443px;height:24px;',
+			width: 443,
+			height: 24,
 			items:
 			[
 				{
@@ -284,14 +265,13 @@
 			style: 'position:absolute;left:8px;top:33px;width:80px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:457px;height:43px;',
 			height: 43,width: 457,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ВнешнийПочтовыйКлиент',
 					items:
 					[
 		{
@@ -311,7 +291,6 @@
 					]
 				},
 				{
-					title:'ВстроенныйПочтовыйКлиент',
 					items:
 					[
 		{
@@ -355,6 +334,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:367px;width:473px;height:25px;',
+			width: 473,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Отправить',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

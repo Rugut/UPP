@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:615px;height:25px;',
+			width: 615,
+			height: 25,
 			items:
 			[
 				{
@@ -169,13 +171,12 @@
 			style: 'position:absolute;left:225px;top:57px;width:172px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:79px;width:599px;height:399px;',
 			height: 399,width: 599,
 			items:
 			[
 				{
-					title:'Основной раздел',
 				},
 			]
 		},

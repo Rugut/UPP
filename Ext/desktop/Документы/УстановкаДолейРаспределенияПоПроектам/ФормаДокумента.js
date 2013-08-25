@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
+			width: 669,
+			height: 25,
 			items:
 			[
 				{
@@ -182,32 +184,6 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:377px;width:669px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			id: 'РаспределениеПоПроектам',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:136px;width:652px;height:179px;',
@@ -279,14 +255,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:111px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Доли распределения',
-			style: 'position:absolute;left:8px;top:91px;width:652px;height:17px;',
+			xtype: 'label',
+			text: 'Доли распределения',
+			style: 'position:absolute;left:8px;top:91px;width:652px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -337,6 +315,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:377px;width:669px;height:25px;',
+			width: 669,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

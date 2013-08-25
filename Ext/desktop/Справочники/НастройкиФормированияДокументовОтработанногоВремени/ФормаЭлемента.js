@@ -80,6 +80,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:416px;height:25px;',
+			width: 416,
+			height: 25,
 			items:
 			[
 			]
@@ -102,13 +104,12 @@
 			style: 'position:absolute;left:203px;top:82px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:106px;width:400px;height:172px;',
 			height: 172,width: 400,
 			items:
 			[
 				{
-					title:'Создавать документы',
 					items:
 					[
 		{
@@ -157,9 +158,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ ввода времени',
-			style: 'position:absolute;left:6px;top:79px;width:386px;height:19px;',
+			xtype: 'label',
+			text: 'Способ ввода времени',
+			style: 'position:absolute;left:6px;top:79px;width:386px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -240,7 +241,6 @@
 					]
 				},
 				{
-					title:'Расписание',
 					items:
 					[
 		{
@@ -262,6 +262,8 @@
 			value: 0,
 			name: 'Задержка',
 			style: 'position:absolute;left:278px;top:78px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -306,6 +308,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:310px;width:416px;height:25px;',
+			width: 416,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

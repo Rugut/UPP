@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:426px;height:25px;',
+			width: 426,
+			height: 25,
 			items:
 			[
 				{
@@ -44,14 +46,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:410px;height:52px;',
 			height: 52,width: 410,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -197,9 +198,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочее',
-			style: 'position:absolute;left:8px;top:378px;width:410px;height:16px;',
+			xtype: 'label',
+			text: 'Прочее',
+			style: 'position:absolute;left:8px;top:378px;width:410px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -223,14 +224,13 @@
 			style: 'position:absolute;left:30px;top:351px;width:388px;height:17px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:85px;width:410px;height:258px;',
 			height: 258,width: 410,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Опрос',
 					items:
 					[
 		{
@@ -314,7 +314,6 @@
 					]
 				},
 				{
-					title:'Тестирование',
 					items:
 					[
 		{
@@ -334,14 +333,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:448px;width:410px;height:24px;',
 			height: 24,width: 410,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -401,6 +399,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:426px;height:25px;',
+			width: 426,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

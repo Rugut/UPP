@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -49,32 +51,6 @@
 				'-',
 				{
 					text:'Показать/скрыть счета учета',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:391px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -241,18 +217,19 @@
 			style: 'position:absolute;left:96px;top:353px;width:548px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:135px;width:636px;height:186px;',
 			height: 186,width: 636,
 			items:
 			[
 				{
-					title:'Продукция',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
+			width: 622,
+			height: 25,
 			items:
 			[
 				{
@@ -428,7 +405,6 @@
 					]
 				},
 				{
-					title:'Прочие затраты',
 					items:
 					[
 		{
@@ -593,6 +569,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
+			width: 622,
+			height: 25,
 			items:
 			[
 				'-',
@@ -605,7 +583,6 @@
 					]
 				},
 				{
-					title:'Распределение прочих затрат',
 					items:
 					[
 		{
@@ -824,6 +801,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
+			width: 622,
+			height: 25,
 			items:
 			[
 				'-',
@@ -1020,6 +999,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:391px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

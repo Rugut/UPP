@@ -229,24 +229,22 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:128px;width:641px;height:244px;',
 			height: 244,width: 641,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:627px;height:188px;',
 			height: 188,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -308,6 +306,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:77px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -317,6 +317,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:77px;top:72px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -326,6 +328,8 @@
 			value: 0,
 			name: 'СуммаДокументаРасчеты',
 			style: 'position:absolute;left:414px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -543,6 +547,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан',
 			style: 'position:absolute;left:414px;top:144px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -558,6 +564,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан',
 			style: 'position:absolute;left:414px;top:168px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -685,7 +693,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -877,6 +884,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:300px;height:24px;',
+			width: 300,
+			height: 24,
 			items:
 			[
 				{
@@ -891,14 +900,13 @@
 			style: 'position:absolute;left:322px;top:21px;width:299px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Расшифровка платежа',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'ПлатежПрочие',
 					items:
 					[
 		{
@@ -1187,6 +1195,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:83px;top:6px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1231,7 +1241,6 @@
 					]
 				},
 				{
-					title:'Условия платежа',
 					items:
 					[
 		{
@@ -1391,7 +1400,6 @@
 					]
 				},
 				{
-					title:'Печать',
 					items:
 					[
 		{
@@ -1416,19 +1424,19 @@
 			style: 'position:absolute;left:194px;top:87px;width:441px;height:36px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Текст плательщика',
-			style: 'position:absolute;left:3px;top:4px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Текст плательщика',
+			style: 'position:absolute;left:3px;top:4px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Текст получателя',
-			style: 'position:absolute;left:3px;top:66px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Текст получателя',
+			style: 'position:absolute;left:3px;top:66px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Текст назначения платежа',
-			style: 'position:absolute;left:3px;top:128px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Текст назначения платежа',
+			style: 'position:absolute;left:3px;top:128px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1479,6 +1487,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 			]
@@ -1497,32 +1507,6 @@
 			width: 557,
 			height: 19,
 			style: 'position:absolute;left:92px;top:420px;width:557px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:447px;width:657px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -1586,14 +1570,13 @@
 			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:56px;width:304px;height:19px;',
 			height: 19,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'СтраницаОплата',
 					items:
 					[
 		{
@@ -1615,7 +1598,6 @@
 					]
 				},
 				{
-					title:'СтраницаЧастичнаяОплата',
 					items:
 					[
 		{
@@ -1634,9 +1616,9 @@
 			style: 'position:absolute;left:577px;top:32px;width:72px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:9px;top:377px;width:640px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:9px;top:377px;width:640px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1687,6 +1669,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:447px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

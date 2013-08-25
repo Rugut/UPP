@@ -19,18 +19,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:408px;',
 			height: 408,width: 764,
 			items:
 			[
 				{
-					title:'Конструктор спецификации',
 					items:
 					[
 		{
@@ -231,6 +232,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:374px;height:24px;',
+			width: 374,
+			height: 24,
 			items:
 			[
 				{
@@ -249,24 +252,23 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дерево спецификаций',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Дерево спецификаций',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Номенклатура',
-			style: 'position:absolute;left:386px;top:6px;width:370px;height:16px;',
+			xtype: 'label',
+			text: 'Номенклатура',
+			style: 'position:absolute;left:386px;top:6px;width:370px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:386px;top:207px;width:370px;height:175px;',
 			height: 175,width: 370,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Спецификации и характеристики',
 					items:
 					[
 		{
@@ -455,6 +457,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:72px;width:369px;height:26px;',
+			width: 369,
+			height: 26,
 			items:
 			[
 				{
@@ -468,12 +472,13 @@
 					]
 				},
 				{
-					title:'Спецификации',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:369px;height:24px;',
+			width: 369,
+			height: 24,
 			items:
 			[
 				{
@@ -708,14 +713,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:386px;top:22px;width:370px;height:179px;',
 			height: 179,width: 370,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Дерево номенклатуры',
 					items:
 					[
 		{
@@ -808,6 +812,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:370px;height:24px;',
+			width: 370,
+			height: 24,
 			items:
 			[
 			]
@@ -866,12 +872,13 @@
 					]
 				},
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:370px;height:25px;',
+			width: 370,
+			height: 25,
 			items:
 			[
 			]
@@ -970,7 +977,6 @@
 					]
 				},
 				{
-					title:'Настройка',
 					items:
 					[
 		{
@@ -1016,14 +1022,14 @@
 			style: 'position:absolute;left:6px;top:279px;width:378px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка дерева спецификаций',
-			style: 'position:absolute;left:6px;top:30px;width:750px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка дерева спецификаций',
+			style: 'position:absolute;left:6px;top:30px;width:750px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'При изменении спецификации',
-			style: 'position:absolute;left:6px;top:238px;width:750px;height:16px;',
+			xtype: 'label',
+			text: 'При изменении спецификации',
+			style: 'position:absolute;left:6px;top:238px;width:750px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1031,9 +1037,9 @@
 			style: 'position:absolute;left:384px;top:73px;width:372px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'При вводе новой строки',
-			style: 'position:absolute;left:6px;top:168px;width:378px;height:16px;',
+			xtype: 'label',
+			text: 'При вводе новой строки',
+			style: 'position:absolute;left:6px;top:168px;width:378px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1189,6 +1195,8 @@
 			value: 0,
 			name: 'КоличествоУровней',
 			style: 'position:absolute;left:274px;top:144px;width:110px;height:19px;',
+			width: 110,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -1196,9 +1204,9 @@
 			style: 'position:absolute;left:6px;top:257px;width:378px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Формировать отчеты по дереву спецификаций',
-			style: 'position:absolute;left:384px;top:168px;width:372px;height:16px;',
+			xtype: 'label',
+			text: 'Формировать отчеты по дереву спецификаций',
+			style: 'position:absolute;left:384px;top:168px;width:372px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',

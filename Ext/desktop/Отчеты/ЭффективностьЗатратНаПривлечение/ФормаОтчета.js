@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:478px;height:25px;',
+			width: 478,
+			height: 25,
 			items:
 			[
 				{
@@ -97,14 +99,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:345px;top:33px;width:397px;height:107px;',
 			height: 107,width: 397,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -264,19 +265,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:475px;top:0px;width:275px;height:25px;',
+			width: 275,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:485px;top:2px;width:260px;height:19px;',
 			height: 19,width: 260,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Интервал',
 					items:
 					[
 		{
@@ -328,7 +330,6 @@
 					]
 				},
 				{
-					title:'Период',
 					items:
 					[
 		{
@@ -345,19 +346,17 @@
 					]
 				},
 				{
-					title:'Пустой',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:331px;height:109px;',
 			height: 109,width: 331,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -441,9 +440,9 @@
 			style: 'position:absolute;left:310px;top:43px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды затрат и оценки результатов',
-			style: 'position:absolute;left:0px;top:0px;width:331px;height:16px;',
+			xtype: 'label',
+			text: 'Периоды затрат и оценки результатов',
+			style: 'position:absolute;left:0px;top:0px;width:331px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',

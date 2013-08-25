@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:750px;height:25px;',
+			width: 750,
+			height: 25,
 			items:
 			[
 				{
@@ -271,18 +273,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:109px;width:734px;height:277px;',
 			height: 277,width: 734,
 			items:
 			[
 				{
-					title:'Выпуск',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			items:
 			[
 				{
@@ -481,12 +484,13 @@
 					]
 				},
 				{
-					title:'Технологические параметры',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			items:
 			[
 			]
@@ -563,12 +567,13 @@
 					]
 				},
 				{
-					title:'Расход материалов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:720px;height:25px;',
+			width: 720,
+			height: 25,
 			items:
 			[
 				{
@@ -814,6 +819,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:750px;height:25px;',
+			width: 750,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

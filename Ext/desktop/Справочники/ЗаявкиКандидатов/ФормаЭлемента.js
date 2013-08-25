@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:665px;height:25px;',
+			width: 665,
+			height: 25,
 			items:
 			[
 				{
@@ -254,19 +256,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:366px;top:370px;width:291px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:366px;top:370px;width:291px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:63px;width:649px;height:127px;',
 			height: 127,width: 649,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -419,14 +420,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Позиционирование',
-			style: 'position:absolute;left:6px;top:6px;width:335px;height:16px;',
+			xtype: 'label',
+			text: 'Позиционирование',
+			style: 'position:absolute;left:6px;top:6px;width:335px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состояние',
-			style: 'position:absolute;left:359px;top:6px;width:282px;height:16px;',
+			xtype: 'label',
+			text: 'Состояние',
+			style: 'position:absolute;left:359px;top:6px;width:282px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -474,14 +475,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:76px;width:335px;height:24px;',
 			height: 24,width: 335,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Организация',
 					items:
 					[
 		{
@@ -813,6 +813,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:16px;top:500px;width:251px;height:24px;',
+			width: 251,
+			height: 24,
 			items:
 			[
 				{
@@ -827,6 +829,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:665px;height:25px;',
+			width: 665,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

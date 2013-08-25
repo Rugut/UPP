@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			items:
 			[
 			]
@@ -26,6 +28,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:439px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			items:
 			[
 				{
@@ -55,14 +59,13 @@
 			style: 'position:absolute;left:90px;top:412px;width:546px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:628px;height:115px;',
 			height: 115,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -143,9 +146,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Вид заявлений',
-			style: 'position:absolute;left:0px;top:51px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Вид заявлений',
+			style: 'position:absolute;left:0px;top:51px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -228,29 +231,29 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:189px;width:628px;height:197px;',
 			height: 197,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:21px;width:628px;height:176px;',
 			height: 176,width: 628,
 			items:
 			[
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
+			width: 614,
+			height: 25,
 			items:
 			[
 				{
@@ -369,7 +372,6 @@
 					]
 				},
 				{
-					title:'Данные, указанные в свидетельстве',
 					items:
 					[
 		{
@@ -498,6 +500,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
+			width: 614,
+			height: 25,
 			items:
 			[
 				{
@@ -524,7 +528,6 @@
 					]
 				},
 				{
-					title:'Изменившиеся данные',
 					items:
 					[
 		{
@@ -698,6 +701,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:614px;height:25px;',
+			width: 614,
+			height: 25,
 			items:
 			[
 				{
@@ -726,34 +731,32 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Список заявлений',
-			style: 'position:absolute;left:0px;top:0px;width:628px;height:16px;',
+			xtype: 'label',
+			text: 'Список заявлений',
+			style: 'position:absolute;left:0px;top:0px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:628px;height:41px;',
 			height: 41,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:628px;height:35px;',
 			height: 35,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]

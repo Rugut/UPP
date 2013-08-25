@@ -17,9 +17,9 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Поля поиска',
-			style: 'position:absolute;left:8px;top:4px;width:560px;height:16px;',
+			xtype: 'label',
+			text: 'Поля поиска',
+			style: 'position:absolute;left:8px;top:4px;width:560px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'СписокИменПолей',
@@ -73,14 +73,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:256px;width:560px;height:192px;',
 			height: 192,width: 560,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -182,14 +181,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:17px;width:560px;height:24px;',
+			width: 560,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительные ограничения на область поиска',
-			style: 'position:absolute;left:0px;top:0px;width:560px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительные ограничения на область поиска',
+			style: 'position:absolute;left:0px;top:0px;width:560px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -198,6 +199,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:24px;width:560px;height:24px;',
+			width: 560,
+			height: 24,
 			items:
 			[
 				{
@@ -215,6 +218,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:455px;width:576px;height:25px;',
+			width: 576,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

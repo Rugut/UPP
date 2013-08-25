@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:594px;height:394px;',
 			height: 394,width: 594,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'СтраницаНачало',
 					items:
 					[
 		{
@@ -60,7 +59,6 @@
 					]
 				},
 				{
-					title:'ИБСтраница1',
 					items:
 					[
 		{
@@ -208,7 +206,6 @@
 					]
 				},
 				{
-					title:'ФСтраница1',
 					items:
 					[
 		{
@@ -323,7 +320,6 @@
 					]
 				},
 				{
-					title:'ИБСтраница2',
 					items:
 					[
 		{
@@ -357,14 +353,13 @@
 			style: 'position:absolute;left:179px;top:152px;width:415px;height:33px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:138px;top:269px;width:456px;height:125px;',
 			height: 125,width: 456,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница ошибка',
 					items:
 					[
 		{
@@ -406,7 +401,6 @@
 					]
 				},
 				{
-					title:'Страница успех проф',
 					items:
 					[
 		{
@@ -448,7 +442,6 @@
 					]
 				},
 				{
-					title:'Страница успех базовая',
 					items:
 					[
 		{
@@ -472,7 +465,6 @@
 					]
 				},
 				{
-					title:'Страница процесс',
 					items:
 					[
 		{
@@ -506,7 +498,6 @@
 					]
 				},
 				{
-					title:'ФСтраница2',
 					items:
 					[
 		{
@@ -528,14 +519,13 @@
 			style: 'position:absolute;left:179px;top:77px;width:415px;height:33px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:138px;top:269px;width:456px;height:125px;',
 			height: 125,width: 456,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница ошибка',
 					items:
 					[
 		{
@@ -577,7 +567,6 @@
 					]
 				},
 				{
-					title:'Страница успех проф',
 					items:
 					[
 		{
@@ -619,7 +608,6 @@
 					]
 				},
 				{
-					title:'Страница успех базовая',
 					items:
 					[
 		{
@@ -643,7 +631,6 @@
 					]
 				},
 				{
-					title:'Страница процесс',
 					items:
 					[
 		{
@@ -671,7 +658,6 @@
 					]
 				},
 				{
-					title:'ИБСтраница3',
 					items:
 					[
 		{

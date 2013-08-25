@@ -138,19 +138,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:384px;height:76px;',
 			height: 76,width: 384,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Автоматическое выполнение',
 					items:
 					[
 		{
@@ -175,6 +176,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

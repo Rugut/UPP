@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:33px;width:627px;height:407px;',
 			height: 407,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Основная страница',
 					items:
 					[
 		{
@@ -43,9 +42,9 @@
 			style: 'position:absolute;left:0px;top:24px;width:83px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройки поиска',
-			style: 'position:absolute;left:0px;top:49px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки поиска',
+			style: 'position:absolute;left:0px;top:49px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'НастройкиПоиска',
@@ -146,6 +145,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:92px;width:627px;height:24px;',
+			width: 627,
+			height: 24,
 			items:
 			[
 				{
@@ -179,14 +180,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:210px;width:627px;height:197px;',
 			height: 197,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница отображения результатов',
 					items:
 					[
 		{
@@ -232,13 +232,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Результаты поиска',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Результаты поиска',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:19px;width:627px;height:24px;',
+			width: 627,
+			height: 24,
 			items:
 			[
 				{
@@ -301,6 +303,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
+			width: 639,
+			height: 25,
 			items:
 			[
 				{
@@ -316,19 +320,20 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:448px;width:639px;height:25px;',
 			height: 25,width: 639,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
+			width: 639,
+			height: 25,
 			items:
 			[
 				{

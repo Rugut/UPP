@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:548px;height:25px;',
+			width: 548,
+			height: 25,
 			items:
 			[
 			]
@@ -154,13 +156,12 @@
 			style: 'position:absolute;left:371px;top:58px;width:81px;height:16px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:154px;width:532px;height:183px;',
 			height: 183,width: 532,
 			items:
 			[
 				{
-					title:'Данные контрагента',
 					items:
 					[
 		{
@@ -433,7 +434,6 @@
 					]
 				},
 				{
-					title:'Данные контактного лица',
 					items:
 					[
 		{
@@ -654,6 +654,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:345px;width:548px;height:25px;',
+			width: 548,
+			height: 25,
 			items:
 			[
 				{
@@ -761,6 +763,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:345px;width:548px;height:25px;',
+			width: 548,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

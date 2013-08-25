@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:73px;width:488px;height:24px;',
+			width: 488,
+			height: 24,
 			items:
 			[
 				{
@@ -182,6 +184,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:504px;height:25px;',
+			width: 504,
+			height: 25,
 			items:
 			[
 				{
@@ -219,6 +223,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:373px;width:504px;height:25px;',
+			width: 504,
+			height: 25,
 			items:
 			[
 				{
@@ -300,9 +306,9 @@
 			style: 'position:absolute;left:94px;top:346px;width:402px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Затраты',
-			style: 'position:absolute;left:8px;top:57px;width:488px;height:16px;',
+			xtype: 'label',
+			text: 'Затраты',
+			style: 'position:absolute;left:8px;top:57px;width:488px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

@@ -30,6 +30,8 @@
 			value: 0,
 			name: 'НомерОтправленного',
 			style: 'position:absolute;left:190px;top:10px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -45,6 +47,8 @@
 			value: 0,
 			name: 'НомерПринятого',
 			style: 'position:absolute;left:190px;top:35px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		],
 	}],
@@ -53,6 +57,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:62px;width:278px;height:25px;',
+			width: 278,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

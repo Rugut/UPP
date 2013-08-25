@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				'-',
@@ -110,6 +112,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:150px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -289,6 +293,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:386px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -519,6 +525,8 @@
 			value: 0,
 			name: 'ИтогоПлатежи',
 			style: 'position:absolute;left:556px;top:311px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -528,6 +536,8 @@
 			value: 0,
 			name: 'ЧДП',
 			style: 'position:absolute;left:556px;top:335px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -537,11 +547,13 @@
 			value: 0,
 			name: 'ИтогоПоступления',
 			style: 'position:absolute;left:556px;top:287px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Движения денежных средств',
-			style: 'position:absolute;left:8px;top:129px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Движения денежных средств',
+			style: 'position:absolute;left:8px;top:129px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

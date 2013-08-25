@@ -79,19 +79,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:585px;height:25px;',
+			width: 585,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:79px;width:569px;height:296px;',
 			height: 296,width: 569,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Настройка способа отражения',
 					items:
 					[
 		{
@@ -830,19 +831,19 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Бухгалтерский учет',
-			style: 'position:absolute;left:0px;top:7px;width:569px;height:16px;',
+			xtype: 'label',
+			text: 'Бухгалтерский учет',
+			style: 'position:absolute;left:0px;top:7px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Налоговый учет',
-			style: 'position:absolute;left:0px;top:142px;width:569px;height:16px;',
+			xtype: 'label',
+			text: 'Налоговый учет',
+			style: 'position:absolute;left:0px;top:142px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Налоговый учет УСН',
-			style: 'position:absolute;left:0px;top:257px;width:569px;height:16px;',
+			xtype: 'label',
+			text: 'Налоговый учет УСН',
+			style: 'position:absolute;left:0px;top:257px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1036,7 +1037,6 @@
 					]
 				},
 				{
-					title:'Не отражать в бухучете',
 					items:
 					[
 		{
@@ -1048,7 +1048,6 @@
 					]
 				},
 				{
-					title:'Распределять по базовым начислениям',
 				},
 			]
 		},
@@ -1059,6 +1058,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:383px;width:585px;height:25px;',
+			width: 585,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

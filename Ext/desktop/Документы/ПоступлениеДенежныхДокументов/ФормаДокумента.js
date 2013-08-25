@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 			]
@@ -77,24 +79,22 @@
 			style: 'position:absolute;left:346px;top:33px;width:84px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:107px;width:654px;height:159px;',
 			height: 159,width: 654,
 			items:
 			[
 				{
-					title:'От кого',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:126px;',
 			height: 126,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'От контрагента',
 					items:
 					[
 		{
@@ -219,7 +219,6 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
@@ -419,7 +418,6 @@
 					]
 				},
 				{
-					title:'От подотчетного лица',
 					items:
 					[
 		{
@@ -474,12 +472,13 @@
 					]
 				},
 				{
-					title:'Денежные документы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:640px;height:24px;',
+			width: 640,
+			height: 24,
 			items:
 			[
 				'-',
@@ -655,28 +654,6 @@
 			style: 'position:absolute;left:542px;top:271px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:346px;width:670px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьОрганизация',
 			text: 'Организация:',
@@ -813,6 +790,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:346px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

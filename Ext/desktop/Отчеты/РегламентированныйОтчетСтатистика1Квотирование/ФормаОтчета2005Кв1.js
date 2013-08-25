@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			items:
 			[
 				{
@@ -49,14 +51,13 @@
 			style: 'position:absolute;left:630px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:700px;height:48px;',
 			height: 48,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -78,6 +79,8 @@
 			value: 0,
 			name: 'Ставка',
 			style: 'position:absolute;left:297px;top:23px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -93,6 +96,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:262px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -108,20 +113,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:530px;top:23px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:394px;width:700px;height:23px;',
 			height: 23,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -188,6 +194,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:716px;height:25px;',
+			width: 716,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

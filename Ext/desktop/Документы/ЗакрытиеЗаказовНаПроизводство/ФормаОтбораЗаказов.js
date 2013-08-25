@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:30px;width:579px;height:176px;',
 			height: 176,width: 579,
 			items:
 			[
 				{
-					title:'Настройки',
 					items:
 					[
 		{
@@ -87,6 +86,8 @@
 			value: 0,
 			name: 'ПолеПросроченоДнейОтгрузки',
 			style: 'position:absolute;left:318px;top:128px;width:42px;height:19px;',
+			width: 42,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -127,7 +128,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -229,6 +229,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:281px;height:24px;',
+			width: 281,
+			height: 24,
 			items:
 			[
 			]
@@ -245,6 +247,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:260px;width:579px;height:25px;',
+			width: 579,
+			height: 25,
 			items:
 			[
 				{
@@ -477,9 +481,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Заказы',
-			style: 'position:absolute;left:8px;top:245px;width:579px;height:16px;',
+			xtype: 'label',
+			text: 'Заказы',
+			style: 'position:absolute;left:8px;top:245px;width:579px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'combobox',
@@ -585,6 +589,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:424px;width:595px;height:25px;',
+			width: 595,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

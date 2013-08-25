@@ -96,6 +96,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:681px;height:25px;',
+			width: 681,
+			height: 25,
 			items:
 			[
 				{
@@ -114,23 +116,21 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:86px;width:665px;height:286px;',
 			height: 286,width: 665,
 			items:
 			[
 				{
-					title:'Взаиморасчеты',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:651px;height:254px;',
 			height: 254,width: 651,
 			items:
 			[
 				{
-					title:'С поставщиками',
 					items:
 					[
 		{
@@ -241,6 +241,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -248,7 +250,6 @@
 					]
 				},
 				{
-					title:'С покупателями',
 					items:
 					[
 		{
@@ -377,6 +378,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -384,7 +387,6 @@
 					]
 				},
 				{
-					title:'С подотчетниками',
 					items:
 					[
 		{
@@ -477,6 +479,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -484,7 +488,6 @@
 					]
 				},
 				{
-					title:'С сотрудниками',
 					items:
 					[
 		{
@@ -568,6 +571,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -575,7 +580,6 @@
 					]
 				},
 				{
-					title:'По налогам',
 					items:
 					[
 		{
@@ -659,6 +663,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -670,7 +676,6 @@
 					]
 				},
 				{
-					title:'Партии товаров на складах',
 					items:
 					[
 		{
@@ -790,6 +795,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:651px;height:24px;',
+			width: 651,
+			height: 24,
 			items:
 			[
 			]
@@ -797,7 +804,6 @@
 					]
 				},
 				{
-					title:'Партии товаров переданные',
 					items:
 					[
 		{
@@ -926,6 +932,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:651px;height:24px;',
+			width: 651,
+			height: 24,
 			items:
 			[
 			]
@@ -933,17 +941,15 @@
 					]
 				},
 				{
-					title:'Расходы УСН',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:651px;height:254px;',
 			height: 254,width: 651,
 			items:
 			[
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
@@ -1117,6 +1123,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -1124,7 +1132,6 @@
 					]
 				},
 				{
-					title:'Нематериальные активы',
 					items:
 					[
 		{
@@ -1253,6 +1260,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -1260,7 +1269,6 @@
 					]
 				},
 				{
-					title:'Услуги',
 					items:
 					[
 		{
@@ -1389,6 +1397,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -1396,7 +1406,6 @@
 					]
 				},
 				{
-					title:'РБП',
 					items:
 					[
 		{
@@ -1534,6 +1543,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -1541,7 +1552,6 @@
 					]
 				},
 				{
-					title:'Расходы на оплату труда',
 					items:
 					[
 		{
@@ -1625,6 +1635,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -1632,7 +1644,6 @@
 					]
 				},
 				{
-					title:'Налоги и взносы',
 					items:
 					[
 		{
@@ -1716,6 +1727,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -1727,17 +1740,15 @@
 					]
 				},
 				{
-					title:'Корректировка сведений',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:651px;height:254px;',
 			height: 254,width: 651,
 			items:
 			[
 				{
-					title:'Основные средства',
 					items:
 					[
 		{
@@ -1848,6 +1859,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -1855,7 +1868,6 @@
 					]
 				},
 				{
-					title:'Нематериальные активы',
 					items:
 					[
 		{
@@ -1966,6 +1978,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 			]
@@ -2051,6 +2065,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:428px;width:681px;height:25px;',
+			width: 681,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

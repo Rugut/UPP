@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:31px;width:557px;height:377px;',
 			height: 377,width: 557,
 			items:
 			[
 				{
-					title:'Загрузка из почты',
 					items:
 					[
 		{
@@ -238,6 +237,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:74px;width:222px;height:25px;',
+			width: 222,
+			height: 25,
 			items:
 			[
 				{
@@ -305,6 +306,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:234px;top:256px;width:315px;height:25px;',
+			width: 315,
+			height: 25,
 			items:
 			[
 				{
@@ -359,7 +362,6 @@
 					]
 				},
 				{
-					title:'Загрузка из каталога',
 					items:
 					[
 		{
@@ -452,6 +454,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:105px;width:273px;height:24px;',
+			width: 273,
+			height: 24,
 			items:
 			[
 				{
@@ -550,6 +554,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:285px;top:105px;width:264px;height:24px;',
+			width: 264,
+			height: 24,
 			items:
 			[
 				{
@@ -558,9 +564,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Результаты опросов ',
-			style: 'position:absolute;left:6px;top:66px;width:543px;height:16px;',
+			xtype: 'label',
+			text: 'Результаты опросов ',
+			style: 'position:absolute;left:6px;top:66px;width:543px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -637,6 +643,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:573px;height:25px;',
+			width: 573,
+			height: 25,
 			items:
 			[
 				{

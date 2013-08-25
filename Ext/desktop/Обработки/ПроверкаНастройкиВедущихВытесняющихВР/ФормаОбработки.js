@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:9px;width:622px;height:327px;',
 			height: 327,width: 622,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Начальная страница',
 					items:
 					[
 		{
@@ -34,14 +33,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:610px;height:27px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:40px;width:610px;height:60px;',
 			height: 60,width: 610,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -62,7 +60,6 @@
 					]
 				},
 				{
-					title:'Обязательные к удалению',
 					items:
 					[
 		{
@@ -137,14 +134,13 @@
 			style: 'position:absolute;left:6px;top:33px;width:610px;height:7px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:191px;width:610px;height:130px;',
 			height: 130,width: 610,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -182,7 +178,6 @@
 					]
 				},
 				{
-					title:'Редактирование списка',
 					items:
 					[
 		{
@@ -254,14 +249,13 @@
 			style: 'position:absolute;left:329px;top:43px;width:287px;height:130px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:179px;width:610px;height:142px;',
 			height: 142,width: 610,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -395,7 +389,6 @@
 					]
 				},
 				{
-					title:'Сохранение настроек',
 					items:
 					[
 		{
@@ -405,14 +398,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:610px;height:27px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:40px;width:610px;height:60px;',
 			height: 60,width: 610,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

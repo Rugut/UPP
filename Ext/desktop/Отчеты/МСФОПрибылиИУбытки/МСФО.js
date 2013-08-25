@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -57,6 +59,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:408px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -65,13 +69,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:107px;width:767px;height:270px;',
 			height: 270,width: 767,
 			items:
 			[
 				{
-					title:'Отчет о прибылях и убытках',
 					items:
 					[
 		{
@@ -88,6 +91,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиПрибыляИУбытки',
 			style: 'position:absolute;left:232px;top:225px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -109,14 +114,13 @@
 			style: 'position:absolute;left:695px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:33px;width:767px;height:74px;',
 			height: 74,width: 767,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -133,6 +137,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:372px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -281,14 +287,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:377px;width:767px;height:24px;',
 			height: 24,width: 767,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

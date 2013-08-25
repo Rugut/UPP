@@ -135,6 +135,8 @@
 			value: 0,
 			name: 'СуммаЗайма',
 			style: 'position:absolute;left:94px;top:129px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -194,6 +196,8 @@
 			value: 0,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:278px;top:155px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -209,6 +213,8 @@
 			value: 0,
 			name: 'ПроцентЗаПользованиеЗаймом',
 			style: 'position:absolute;left:278px;top:129px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -229,10 +235,14 @@
 			value: 0,
 			name: 'СрокПогашения',
 			style: 'position:absolute;left:405px;top:182px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
+			width: 534,
+			height: 25,
 			items:
 			[
 			]
@@ -316,9 +326,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Условия займа',
-			style: 'position:absolute;left:8px;top:108px;width:518px;height:16px;',
+			xtype: 'label',
+			text: 'Условия займа',
+			style: 'position:absolute;left:8px;top:108px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -327,9 +337,9 @@
 			style: 'position:absolute;left:447px;top:182px;width:47px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Регламентированный учет',
-			style: 'position:absolute;left:8px;top:209px;width:518px;height:16px;',
+			xtype: 'label',
+			text: 'Регламентированный учет',
+			style: 'position:absolute;left:8px;top:209px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -565,20 +575,19 @@
 			style: 'position:absolute;left:94px;top:182px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:334px;top:33px;width:192px;height:67px;',
 			height: 67,width: 192,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Учет',
-			style: 'position:absolute;left:0px;top:0px;width:192px;height:19px;',
+			xtype: 'label',
+			text: 'Учет',
+			style: 'position:absolute;left:0px;top:0px;width:192px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -623,6 +632,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:407px;width:534px;height:25px;',
+			width: 534,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

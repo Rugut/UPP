@@ -57,6 +57,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:254px;height:25px;',
+			width: 254,
+			height: 25,
 			items:
 			[
 			]
@@ -87,6 +89,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:78px;top:33px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -96,6 +100,8 @@
 			value: 0,
 			name: 'Цена',
 			style: 'position:absolute;left:78px;top:57px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -116,8 +122,27 @@
 			style: 'position:absolute;left:162px;top:57px;width:84px;height:19px;',
 		},
 		{
+			xtype: 'label',
+			name: 'НадписьВесы',
+			text: 'Весы:',
+			style: 'position:absolute;left:8px;top:105px;width:68px;height:19px;',
+		},
+		{
+			xtype: 'combobox',
+			style: 'position:absolute;left:78px;top:105px;width:168px;height:19px;',
+			width: 168,
+			height: 19,
+		},
+		],
+	}],
+	dockedItems:
+	[
+		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:132px;width:254px;height:25px;',
+			width: 254,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -137,22 +162,6 @@
 				},
 			]
 		},
-		{
-			xtype: 'label',
-			name: 'НадписьВесы',
-			text: 'Весы:',
-			style: 'position:absolute;left:8px;top:105px;width:68px;height:19px;',
-		},
-		{
-			xtype: 'combobox',
-			style: 'position:absolute;left:78px;top:105px;width:168px;height:19px;',
-			width: 168,
-			height: 19,
-		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:251px;',
 			height: 251,width: 384,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -234,6 +233,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:84px;width:182px;height:24px;',
+			width: 182,
+			height: 24,
 			items:
 			[
 			]
@@ -241,6 +242,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:194px;top:84px;width:182px;height:24px;',
+			width: 182,
+			height: 24,
 			items:
 			[
 			]
@@ -248,7 +251,6 @@
 					]
 				},
 				{
-					title:'Детализация',
 					items:
 					[
 		{
@@ -314,6 +316,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:24px;width:222px;height:24px;',
+			width: 222,
+			height: 24,
 			items:
 			[
 			]
@@ -384,7 +388,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -486,6 +489,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:370px;height:24px;',
+			width: 370,
+			height: 24,
 			items:
 			[
 			]
@@ -501,6 +506,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

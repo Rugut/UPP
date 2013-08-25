@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
+			width: 531,
+			height: 25,
 			items:
 			[
 				{
@@ -34,13 +36,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:515px;height:275px;',
 			height: 275,width: 515,
 			items:
 			[
 				{
-					title:'Порядок расчета',
 					items:
 					[
 		{
@@ -781,7 +782,6 @@
 					]
 				},
 				{
-					title:'Автоматическое выполнение',
 					items:
 					[
 		{
@@ -881,6 +881,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:394px;width:531px;height:25px;',
+			width: 531,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,34 +19,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:375px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -278,13 +254,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:132px;width:636px;height:208px;',
 			height: 208,width: 636,
 			items:
 			[
 				{
-					title:'Распределение по лабораториям',
 					items:
 					[
 		{
@@ -377,6 +352,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 			]
@@ -384,7 +361,6 @@
 					]
 				},
 				{
-					title:'Пробы для внешней сертификации',
 					items:
 					[
 		{
@@ -435,6 +411,8 @@
 			value: 0,
 			name: 'Испытания',
 			style: 'position:absolute;left:151px;top:31px;width:156px;height:19px;',
+			width: 156,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -444,11 +422,12 @@
 			value: 0,
 			name: 'КонтрольнаяПроба',
 			style: 'position:absolute;left:505px;top:29px;width:123px;height:19px;',
+			width: 123,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Изъятие проб',
 					items:
 					[
 		{
@@ -479,6 +458,8 @@
 			value: 0,
 			name: 'КоличествоВскрытыхУпаковок',
 			style: 'position:absolute;left:173px;top:162px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -499,19 +480,18 @@
 			style: 'position:absolute;left:548px;top:162px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Результат наружного осмотра:',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Результат наружного осмотра:',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Замечания к упаковке, маркировке:',
-			style: 'position:absolute;left:6px;top:86px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Замечания к упаковке, маркировке:',
+			style: 'position:absolute;left:6px;top:86px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -612,9 +592,9 @@
 			style: 'position:absolute;left:6px;top:27px;width:145px;height:27px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительная информация',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительная информация',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -716,6 +696,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:375px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

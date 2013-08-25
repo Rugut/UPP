@@ -125,6 +125,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
 			items:
 			[
 				{
@@ -178,13 +180,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:175px;width:648px;height:257px;',
 			height: 257,width: 648,
 			items:
 			[
 				{
-					title:'Пособия',
 					items:
 					[
 		{
@@ -212,6 +213,8 @@
 			value: 0,
 			name: 'КоличествоДетей',
 			style: 'position:absolute;left:110px;top:50px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -219,14 +222,14 @@
 			style: 'position:absolute;left:207px;top:50px;width:237px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособие до 1,5 лет (за счет ФСС)',
-			style: 'position:absolute;left:6px;top:6px;width:634px;height:16px;',
+			xtype: 'label',
+			text: 'Пособие до 1,5 лет (за счет ФСС)',
+			style: 'position:absolute;left:6px;top:6px;width:634px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособие до 3 лет (за счет работодателя)',
-			style: 'position:absolute;left:6px;top:169px;width:634px;height:16px;',
+			xtype: 'label',
+			text: 'Пособие до 3 лет (за счет работодателя)',
+			style: 'position:absolute;left:6px;top:169px;width:634px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -252,7 +255,6 @@
 					]
 				},
 				{
-					title:'Плановые начисления',
 					items:
 					[
 		{
@@ -642,6 +644,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -677,6 +681,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:74px;top:156px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -741,7 +747,6 @@
 					]
 				},
 				{
-					title:'Плановые удержания',
 					items:
 					[
 		{
@@ -1005,6 +1010,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -1040,6 +1047,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:74px;top:156px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -1194,9 +1203,9 @@
 			style: 'position:absolute;left:536px;top:33px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отпуск',
-			style: 'position:absolute;left:8px;top:80px;width:648px;height:16px;',
+			xtype: 'label',
+			text: 'Отпуск',
+			style: 'position:absolute;left:8px;top:80px;width:648px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -1221,14 +1230,13 @@
 			style: 'position:absolute;left:30px;top:438px;width:414px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:444px;top:438px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1242,14 +1250,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:527px;top:438px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1285,6 +1292,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:251px;top:504px;width:413px;height:25px;',
+			width: 413,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[
@@ -1308,6 +1317,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:504px;width:251px;height:25px;',
+			width: 251,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -157,23 +157,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:991px;height:25px;',
+			width: 991,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:975px;height:441px;',
 			height: 441,width: 975,
 			items:
 			[
 				{
-					title:'Пособия',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:961px;height:24px;',
+			width: 961,
+			height: 24,
 			items:
 			[
 				{
@@ -269,13 +272,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:388px;top:33px;width:579px;height:380px;',
 			height: 380,width: 579,
 			items:
 			[
 				{
-					title:'Застрахованное лицо',
 					items:
 					[
 		{
@@ -647,7 +649,6 @@
 					]
 				},
 				{
-					title:'Выплата пособия',
 					items:
 					[
 		{
@@ -955,7 +956,6 @@
 					]
 				},
 				{
-					title:'Документы',
 					items:
 					[
 		{
@@ -1228,6 +1228,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:98px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -1333,7 +1335,6 @@
 					]
 				},
 				{
-					title:'Расчет пособия',
 					items:
 					[
 		{
@@ -1372,6 +1373,8 @@
 			value: 0,
 			name: 'ПервыйГодРасчета',
 			style: 'position:absolute;left:32px;top:54px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1387,6 +1390,8 @@
 			value: 0,
 			name: 'ВторойГодРасчета',
 			style: 'position:absolute;left:32px;top:77px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1402,6 +1407,8 @@
 			value: 0,
 			name: 'ТарифнаяСтавкаОклад',
 			style: 'position:absolute;left:340px;top:173px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1417,6 +1424,8 @@
 			value: 0,
 			name: 'ЗаработокЗаПериодРасчета',
 			style: 'position:absolute;left:162px;top:149px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1432,6 +1441,8 @@
 			value: 0,
 			name: 'КалендарныхДнейРасчетногоПериода',
 			style: 'position:absolute;left:407px;top:149px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1464,6 +1475,8 @@
 			value: 0,
 			name: 'ЗаработокПервыйГодРасчета',
 			style: 'position:absolute;left:246px;top:54px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1479,6 +1492,8 @@
 			value: 0,
 			name: 'СреднийМесячныйЗаработок',
 			style: 'position:absolute;left:171px;top:234px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1494,6 +1509,8 @@
 			value: 0,
 			name: 'ЗамененныйПервыйГодРасчета',
 			style: 'position:absolute;left:132px;top:54px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1509,6 +1526,8 @@
 			value: 0,
 			name: 'ЗамененныйВторойГодРасчета',
 			style: 'position:absolute;left:132px;top:77px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1524,6 +1543,8 @@
 			value: 0,
 			name: 'ЗаработокПервыйГодРасчета',
 			style: 'position:absolute;left:246px;top:77px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1533,6 +1554,8 @@
 			value: 0,
 			name: 'МРОТ1',
 			style: 'position:absolute;left:340px;top:197px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1542,6 +1565,8 @@
 			value: 0,
 			name: 'ДоляВремени',
 			style: 'position:absolute;left:258px;top:272px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1557,6 +1582,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициент',
 			style: 'position:absolute;left:103px;top:296px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1641,7 +1668,6 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
@@ -1671,6 +1697,8 @@
 			value: 0,
 			name: 'КоличествоСтраниц',
 			style: 'position:absolute;left:264px;top:6px;width:45px;height:19px;',
+			width: 45,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1698,7 +1726,6 @@
 					]
 				},
 				{
-					title:'Данные страхователя',
 					items:
 					[
 		{
@@ -2059,6 +2086,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:991px;height:25px;',
+			width: 991,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

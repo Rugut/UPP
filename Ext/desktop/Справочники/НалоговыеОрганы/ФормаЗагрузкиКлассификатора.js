@@ -32,9 +32,9 @@
 			style: 'position:absolute;left:66px;top:10px;width:528px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройки импорта',
-			style: 'position:absolute;left:66px;top:87px;width:520px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки импорта',
+			style: 'position:absolute;left:66px;top:87px;width:520px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -71,14 +71,14 @@
 			style: 'position:absolute;left:585px;top:29px;width:2px;height:38px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:241px;top:45px;width:345px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:241px;top:45px;width:345px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:241px;top:66px;width:345px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:241px;top:66px;width:345px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -87,6 +87,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:139px;width:602px;height:25px;',
+			width: 602,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -24,19 +24,16 @@
 			style: 'position:absolute;left:8px;top:8px;width:702px;height:105px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:111px;width:702px;height:148px;',
 			height: 148,width: 702,
 			items:
 			[
 				{
-					title:'Перед записью объекта',
 				},
 				{
-					title:'При записи объекта',
 				},
 				{
-					title:'После добавления строки',
 				},
 			]
 		},
@@ -47,6 +44,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:718px;height:25px;',
+			width: 718,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

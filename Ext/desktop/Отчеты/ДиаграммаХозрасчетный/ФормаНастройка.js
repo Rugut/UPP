@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:251px;',
 			height: 251,width: 384,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -233,7 +232,6 @@
 					]
 				},
 				{
-					title:'Серии и точки',
 					items:
 					[
 		{
@@ -359,6 +357,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:28px;width:182px;height:24px;',
+			width: 182,
+			height: 24,
 			items:
 			[
 			]
@@ -366,6 +366,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:194px;top:28px;width:182px;height:24px;',
+			width: 182,
+			height: 24,
 			items:
 			[
 			]
@@ -384,11 +386,12 @@
 			value: 0,
 			name: 'МаксЗначСерий',
 			style: 'position:absolute;left:284px;top:205px;width:92px;height:20px;',
+			width: 92,
+			height: 20,
 		},
 					]
 				},
 				{
-					title:'Диаграмма',
 					items:
 					[
 		{
@@ -443,14 +446,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:184px;width:150px;height:28px;',
 			height: 28,width: 150,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Плоская',
 					items:
 					[
 		{
@@ -461,7 +463,6 @@
 					]
 				},
 				{
-					title:'Объемная',
 					items:
 					[
 		{
@@ -482,7 +483,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -584,6 +584,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:370px;height:24px;',
+			width: 370,
+			height: 24,
 			items:
 			[
 			]
@@ -605,6 +607,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

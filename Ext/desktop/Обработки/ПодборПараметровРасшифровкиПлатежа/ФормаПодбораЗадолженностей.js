@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:51px;width:764px;height:24px;',
+			width: 764,
+			height: 24,
 			items:
 			[
 			]
@@ -153,9 +155,9 @@
 			style: 'position:absolute;left:8px;top:300px;width:664px;height:46px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Задолженность для оплаты',
-			style: 'position:absolute;left:8px;top:35px;width:764px;height:16px;',
+			xtype: 'label',
+			text: 'Задолженность для оплаты',
+			style: 'position:absolute;left:8px;top:35px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',

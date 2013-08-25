@@ -17,19 +17,19 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Действие при некритичных уведомлениях',
-			style: 'position:absolute;left:8px;top:100px;width:518px;height:16px;',
+			xtype: 'label',
+			text: 'Действие при некритичных уведомлениях',
+			style: 'position:absolute;left:8px;top:100px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Действие при возникновении ошибок',
-			style: 'position:absolute;left:8px;top:243px;width:518px;height:16px;',
+			xtype: 'label',
+			text: 'Действие при возникновении ошибок',
+			style: 'position:absolute;left:8px;top:243px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:29px;width:518px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:29px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -86,19 +86,19 @@
 			style: 'position:absolute;left:268px;top:75px;width:258px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:93px;width:518px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:93px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:359px;width:518px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:359px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:8px;width:518px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:8px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -144,6 +144,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:370px;width:534px;height:25px;',
+			width: 534,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

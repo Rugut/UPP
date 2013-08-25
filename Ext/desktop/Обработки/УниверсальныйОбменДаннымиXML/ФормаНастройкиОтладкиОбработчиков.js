@@ -17,24 +17,24 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: '1. Выберите режим отладки кода алгоритмов',
-			style: 'position:absolute;left:8px;top:5px;width:551px;height:16px;',
+			xtype: 'label',
+			text: '1. Выберите режим отладки кода алгоритмов',
+			style: 'position:absolute;left:8px;top:5px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '2. Выгрузите код обработчиков',
-			style: 'position:absolute;left:8px;top:97px;width:551px;height:16px;',
+			xtype: 'label',
+			text: '2. Выгрузите код обработчиков',
+			style: 'position:absolute;left:8px;top:97px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '3. Пояснения к созданию файла внешней обработки',
-			style: 'position:absolute;left:8px;top:157px;width:551px;height:16px;',
+			xtype: 'label',
+			text: '3. Пояснения к созданию файла внешней обработки',
+			style: 'position:absolute;left:8px;top:157px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '4. Создайте (обновите) файл внешней обработки',
-			style: 'position:absolute;left:8px;top:265px;width:551px;height:16px;',
+			xtype: 'label',
+			text: '4. Создайте (обновите) файл внешней обработки',
+			style: 'position:absolute;left:8px;top:265px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -58,28 +58,13 @@
 			style: 'position:absolute;left:8px;top:311px;width:551px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:336px;width:567px;height:24px;',
-			items:
-			[
-				{
-					text:'Готово',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:290px;top:25px;width:269px;height:67px;',
 			height: 67,width: 269,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подсказка 0',
 					items:
 					[
 		{
@@ -91,7 +76,6 @@
 					]
 				},
 				{
-					title:'Подсказка 1',
 					items:
 					[
 		{
@@ -103,7 +87,6 @@
 					]
 				},
 				{
-					title:'Подсказка 2',
 					items:
 					[
 		{
@@ -153,6 +136,23 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:336px;width:567px;height:24px;',
+			width: 567,
+			height: 24,
+			dock: 'bottom',
+			items:
+			[
+				{
+					text:'Готово',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
 	]
 	});
 });

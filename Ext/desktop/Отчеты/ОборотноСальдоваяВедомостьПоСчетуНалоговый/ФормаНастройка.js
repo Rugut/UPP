@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:415px;height:245px;',
 			height: 245,width: 415,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -160,9 +159,9 @@
 			style: 'position:absolute;left:14px;top:159px;width:142px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выводить данные',
-			style: 'position:absolute;left:6px;top:119px;width:401px;height:16px;',
+			xtype: 'label',
+			text: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:119px;width:401px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -211,7 +210,6 @@
 					]
 				},
 				{
-					title:'Детализация',
 					items:
 					[
 		{
@@ -277,6 +275,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:51px;width:401px;height:24px;',
+			width: 401,
+			height: 24,
 			items:
 			[
 			]
@@ -295,7 +295,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -397,6 +396,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:401px;height:24px;',
+			width: 401,
+			height: 24,
 			items:
 			[
 			]
@@ -412,6 +413,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:261px;width:431px;height:25px;',
+			width: 431,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

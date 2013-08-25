@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:854px;height:25px;',
+			width: 854,
+			height: 25,
 			items:
 			[
 				{
@@ -36,13 +38,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:230px;top:33px;width:616px;height:312px;',
 			height: 312,width: 616,
 			items:
 			[
 				{
-					title:'Контрагенты',
 					items:
 					[
 		{
@@ -195,6 +196,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -225,7 +228,6 @@
 					]
 				},
 				{
-					title:'Организации',
 					items:
 					[
 		{
@@ -336,6 +338,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -366,7 +370,6 @@
 					]
 				},
 				{
-					title:'Подразделения',
 					items:
 					[
 		{
@@ -477,6 +480,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -507,7 +512,6 @@
 					]
 				},
 				{
-					title:'Проекты',
 					items:
 					[
 		{
@@ -618,6 +622,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -648,7 +654,6 @@
 					]
 				},
 				{
-					title:'Склады',
 					items:
 					[
 		{
@@ -759,6 +764,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -789,7 +796,6 @@
 					]
 				},
 				{
-					title:'Физические лица',
 					items:
 					[
 		{
@@ -918,6 +924,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -948,7 +956,6 @@
 					]
 				},
 				{
-					title:'Внешние обработки',
 					items:
 					[
 		{
@@ -1059,6 +1066,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -1089,7 +1098,6 @@
 					]
 				},
 				{
-					title:'Заметки',
 					items:
 					[
 		{
@@ -1200,6 +1208,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -1230,7 +1240,6 @@
 					]
 				},
 				{
-					title:'Подразделения организаций',
 					items:
 					[
 		{
@@ -1341,6 +1350,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -1371,7 +1382,6 @@
 					]
 				},
 				{
-					title:'Кандидаты',
 					items:
 					[
 		{
@@ -1482,6 +1492,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -1512,7 +1524,6 @@
 					]
 				},
 				{
-					title:'Номенклатура',
 					items:
 					[
 		{
@@ -1614,6 +1625,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -1644,12 +1657,13 @@
 					]
 				},
 				{
-					title:'Спецификации',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -1785,7 +1799,6 @@
 					]
 				},
 				{
-					title:'Цены номенклатуры',
 					items:
 					[
 		{
@@ -1932,6 +1945,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -1962,7 +1977,6 @@
 					]
 				},
 				{
-					title:'Страница служебная',
 				},
 			]
 		},
@@ -2024,6 +2038,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:353px;width:854px;height:25px;',
+			width: 854,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

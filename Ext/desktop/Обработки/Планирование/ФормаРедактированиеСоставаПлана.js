@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:684px;height:309px;',
 			height: 309,width: 684,
 			items:
 			[
 				{
-					title:'Состав плана',
 					items:
 					[
 		{
@@ -179,6 +178,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			width: 670,
+			height: 24,
 			items:
 			[
 			]
@@ -186,12 +187,13 @@
 					]
 				},
 				{
-					title:'Производственная программа',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
+			width: 670,
+			height: 24,
 			items:
 			[
 				'-',
@@ -376,6 +378,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:325px;width:700px;height:25px;',
+			width: 700,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

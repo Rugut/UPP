@@ -24,6 +24,8 @@
 			value: 0,
 			name: 'НеОблагаемаяНалогомСумма',
 			style: 'position:absolute;left:351px;top:180px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -38,6 +40,8 @@
 			value: 0,
 			name: 'ДоляНеОблагаемойНалогомПлощадиЧислитель',
 			style: 'position:absolute;left:241px;top:104px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -47,6 +51,8 @@
 			value: 0,
 			name: 'ПроцентУменьшенияСуммыНалога',
 			style: 'position:absolute;left:128px;top:285px;width:52px;height:19px;',
+			width: 52,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -56,6 +62,8 @@
 			value: 0,
 			name: 'СниженнаяНалоговаяСтавка',
 			style: 'position:absolute;left:62px;top:385px;width:52px;height:19px;',
+			width: 52,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -65,6 +73,8 @@
 			value: 0,
 			name: 'СуммаУменьшенияСуммыНалога',
 			style: 'position:absolute;left:103px;top:310px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -114,18 +124,20 @@
 			style: 'position:absolute;left:301px;top:154px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Льгота по налоговой базе',
-			style: 'position:absolute;left:8px;top:8px;width:492px;height:17px;',
+			xtype: 'label',
+			text: 'Льгота по налоговой базе',
+			style: 'position:absolute;left:8px;top:8px;width:492px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Льгота по сумме налога',
-			style: 'position:absolute;left:8px;top:214px;width:492px;height:17px;',
+			xtype: 'label',
+			text: 'Льгота по сумме налога',
+			style: 'position:absolute;left:8px;top:214px;width:492px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:417px;width:508px;height:25px;',
+			width: 508,
+			height: 25,
 			items:
 			[
 				{
@@ -148,6 +160,8 @@
 			value: 0,
 			name: 'ДоляНеОблагаемойНалогомПлощадиЗнаменатель',
 			style: 'position:absolute;left:336px;top:104px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',

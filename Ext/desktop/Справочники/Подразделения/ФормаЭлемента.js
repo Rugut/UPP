@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:538px;height:25px;',
+			width: 538,
+			height: 25,
 			items:
 			[
 				{
@@ -213,13 +215,12 @@
 			style: 'position:absolute;left:93px;top:143px;width:295px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:186px;width:522px;height:253px;',
 			height: 253,width: 522,
 			items:
 			[
 				{
-					title:'Соответствие подразделений',
 					items:
 					[
 		{
@@ -296,7 +297,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -450,6 +450,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:63px;width:247px;height:24px;',
+			width: 247,
+			height: 24,
 			items:
 			[
 			]
@@ -457,6 +459,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:257px;top:63px;width:247px;height:24px;',
+			width: 247,
+			height: 24,
 			items:
 			[
 			]
@@ -466,14 +470,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:170px;width:522px;height:16px;',
 			height: 16,width: 522,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -484,6 +487,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:447px;width:538px;height:25px;',
+			width: 538,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

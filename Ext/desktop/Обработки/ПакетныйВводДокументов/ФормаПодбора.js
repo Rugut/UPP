@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:620px;height:295px;',
 			height: 295,width: 620,
 			items:
 			[
 				{
-					title:'Настройка',
 					items:
 					[
 		{
@@ -131,6 +130,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:290px;height:24px;',
+			width: 290,
+			height: 24,
 			items:
 			[
 				{
@@ -150,6 +151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:301px;top:6px;width:187px;height:24px;',
+			width: 187,
+			height: 24,
 			items:
 			[
 				{
@@ -193,7 +196,6 @@
 					]
 				},
 				{
-					title:'Обработка',
 					items:
 					[
 		{
@@ -311,6 +313,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:311px;width:636px;height:25px;',
+			width: 636,
+			height: 25,
 			items:
 			[
 				{

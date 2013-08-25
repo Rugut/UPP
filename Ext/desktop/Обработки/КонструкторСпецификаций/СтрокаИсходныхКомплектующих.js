@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:365px;height:25px;',
+			width: 365,
+			height: 25,
 			items:
 			[
 			]
@@ -52,6 +54,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:148px;top:129px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -209,6 +213,8 @@
 			value: 0,
 			name: 'МинимальнаяПартия',
 			style: 'position:absolute;left:148px;top:177px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -490,6 +496,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:348px;width:365px;height:25px;',
+			width: 365,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -17,18 +17,19 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:267px;',
 			height: 267,width: 400,
 			items:
 			[
 				{
-					title:'Макет',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:398px;height:25px;',
+			width: 398,
+			height: 25,
 			items:
 			[
 				{
@@ -47,7 +48,6 @@
 					]
 				},
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -71,6 +71,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

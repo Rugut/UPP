@@ -139,18 +139,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:595px;height:25px;',
+			width: 595,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:112px;width:579px;height:243px;',
 			height: 243,width: 579,
 			items:
 			[
 				{
-					title:'Адреса и телефоны',
 					items:
 					[
 		{
@@ -248,6 +249,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:26px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -332,9 +335,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Работника контрагента',
-			style: 'position:absolute;left:6px;top:8px;width:565px;height:16px;',
+			xtype: 'label',
+			text: 'Работника контрагента',
+			style: 'position:absolute;left:6px;top:8px;width:565px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'КонтактнаяИнформацияЛичная',
@@ -431,6 +434,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:138px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -511,14 +516,13 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Личная',
-			style: 'position:absolute;left:6px;top:120px;width:565px;height:16px;',
+			xtype: 'label',
+			text: 'Личная',
+			style: 'position:absolute;left:6px;top:120px;width:565px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'События',
 					items:
 					[
 		{
@@ -643,6 +647,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -776,13 +782,12 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Комментарий',
-			style: 'position:absolute;left:6px;top:82px;width:565px;height:16px;',
+			xtype: 'label',
+			text: 'Комментарий',
+			style: 'position:absolute;left:6px;top:82px;width:565px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -868,7 +873,6 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
@@ -948,6 +952,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 			]
@@ -955,7 +961,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -1035,6 +1040,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -1077,6 +1084,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:595px;height:25px;',
+			width: 595,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

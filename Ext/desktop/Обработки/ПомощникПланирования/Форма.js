@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:814px;height:25px;',
+			width: 814,
+			height: 25,
 			items:
 			[
 				{
@@ -63,13 +65,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:798px;height:475px;',
 			height: 475,width: 798,
 			items:
 			[
 				{
-					title:'Конечные планы',
 					items:
 					[
 		{
@@ -189,30 +190,31 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			width: 784,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Конечные планы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
+			xtype: 'label',
+			text: 'Конечные планы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Стратегия расчета количества',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стратегии расчета количества',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
+			xtype: 'label',
+			text: 'Стратегии расчета количества',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -227,6 +229,8 @@
 			value: 0,
 			name: 'ПолеВводаИзменитьРезультатРасчетаКоличестваПроцент',
 			style: 'position:absolute;left:198px;top:430px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -252,6 +256,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			width: 784,
+			height: 24,
 			items:
 			[
 			]
@@ -397,13 +403,12 @@
 					]
 				},
 				{
-					title:'Стратегия расчета суммы',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -418,6 +423,8 @@
 			value: 0,
 			name: 'ПолеВводаИзменитьРезультатРасчетаСуммыПроцент',
 			style: 'position:absolute;left:198px;top:430px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -434,14 +441,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			width: 784,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стратегии расчета суммы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
+			xtype: 'label',
+			text: 'Стратегии расчета суммы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеСтратегииРасчетаСуммы',
@@ -542,7 +551,6 @@
 					]
 				},
 				{
-					title:'Отборы',
 					items:
 					[
 		{
@@ -644,6 +652,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			width: 784,
+			height: 24,
 			items:
 			[
 			]
@@ -654,14 +664,13 @@
 			style: 'position:absolute;left:6px;top:430px;width:210px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отборы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
+			xtype: 'label',
+			text: 'Отборы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Сформированные документы',
 					items:
 					[
 		{
@@ -736,6 +745,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
+			width: 784,
+			height: 24,
 			items:
 			[
 				{
@@ -765,9 +776,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сформированные документы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;',
+			xtype: 'label',
+			text: 'Сформированные документы',
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -780,6 +791,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:516px;width:814px;height:25px;',
+			width: 814,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

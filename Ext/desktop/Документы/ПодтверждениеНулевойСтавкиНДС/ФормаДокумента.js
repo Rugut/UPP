@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
+			width: 654,
+			height: 25,
 			items:
 			[
 				{
@@ -149,13 +151,12 @@
 			style: 'position:absolute;left:327px;top:33px;width:72px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:87px;width:638px;height:224px;',
 			height: 224,width: 638,
 			items:
 			[
 				{
-					title:'Документы реализации',
 					items:
 					[
 		{
@@ -284,6 +285,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:624px;height:24px;',
+			width: 624,
+			height: 24,
 			items:
 			[
 				{
@@ -294,7 +297,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -404,6 +406,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:346px;width:654px;height:25px;',
+			width: 654,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

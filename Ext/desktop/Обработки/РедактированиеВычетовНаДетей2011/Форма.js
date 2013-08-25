@@ -355,6 +355,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:226px;top:411px;width:762px;height:24px;',
+			width: 762,
+			height: 24,
 			items:
 			[
 				{
@@ -391,14 +393,13 @@
 			style: 'position:absolute;left:8px;top:63px;width:980px;height:32px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:226px;top:246px;width:762px;height:140px;',
 			height: 140,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница переключателей',
 					items:
 					[
 		{
@@ -408,14 +409,13 @@
 			style: 'position:absolute;left:0px;top:116px;width:186px;height:24px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:254px;height:110px;',
 			height: 110,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -425,14 +425,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:126px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница многих детей',
 					items:
 					[
 		{
@@ -464,7 +463,6 @@
 					]
 				},
 				{
-					title:'Страница одного ребенка',
 					items:
 					[
 		{
@@ -491,14 +489,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:254px;top:0px;width:254px;height:110px;',
 			height: 110,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -508,14 +505,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:125px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница многих детей',
 					items:
 					[
 		{
@@ -547,7 +543,6 @@
 					]
 				},
 				{
-					title:'Страница одного ребенка',
 					items:
 					[
 		{
@@ -574,14 +569,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:508px;top:0px;width:254px;height:110px;',
 			height: 110,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -591,14 +585,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:125px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			height: 85,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница многих детей',
 					items:
 					[
 		{
@@ -630,7 +623,6 @@
 					]
 				},
 				{
-					title:'Страница одного ребенка',
 					items:
 					[
 		{
@@ -667,6 +659,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:564px;width:996px;height:25px;',
+			width: 996,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

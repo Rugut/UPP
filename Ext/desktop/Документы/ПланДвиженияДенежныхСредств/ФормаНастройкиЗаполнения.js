@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
+			width: 810,
+			height: 25,
 			items:
 			[
 				{
@@ -27,24 +29,22 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:31px;width:794px;height:351px;',
 			height: 351,width: 794,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Поступления',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:28px;width:782px;height:262px;',
 			height: 262,width: 782,
 			items:
 			[
 				{
-					title:'Поступления денежных средств',
 					items:
 					[
 		{
@@ -60,6 +60,8 @@
 			value: 0,
 			name: 'ПроцентПоступления',
 			style: 'position:absolute;left:176px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -96,9 +98,9 @@
 			style: 'position:absolute;left:361px;top:27px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Поступления денежных средств',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Поступления денежных средств',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -119,6 +121,8 @@
 			value: 0,
 			name: 'ПроцентПланПоступления',
 			style: 'position:absolute;left:570px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -155,9 +159,9 @@
 			style: 'position:absolute;left:755px;top:27px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планы поступлений денежных средств',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Планы поступлений денежных средств',
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -166,9 +170,9 @@
 			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -186,9 +190,9 @@
 			style: 'position:absolute;left:20px;top:196px;width:88px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -384,7 +388,6 @@
 					]
 				},
 				{
-					title:'Продажи',
 					items:
 					[
 		{
@@ -405,6 +408,8 @@
 			value: 0,
 			name: 'ПроцентОбъемПродаж',
 			style: 'position:absolute;left:176px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -475,9 +480,9 @@
 			style: 'position:absolute;left:755px;top:27px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Продажи',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Продажи',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -570,9 +575,9 @@
 			style: 'position:absolute;left:13px;top:51px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планы продаж',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Планы продаж',
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -582,6 +587,8 @@
 			value: 0,
 			name: 'ПроцентПланыПродаж',
 			style: 'position:absolute;left:570px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -674,9 +681,9 @@
 			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -706,13 +713,12 @@
 					]
 				},
 				{
-					title:'Дебиторская задолженность контрагентов',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Дебиторская задолженность контрагентов',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Дебиторская задолженность контрагентов',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -828,6 +834,8 @@
 			value: 0,
 			name: 'ПроцентДебиторскаяЗадолженность',
 			style: 'position:absolute;left:176px;top:76px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -854,11 +862,13 @@
 			value: 0,
 			name: 'ГраницаОтбораДебиторскаяЗадолженность',
 			style: 'position:absolute;left:269px;top:51px;width:111px;height:19px;',
+			width: 111,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Неоплаченные заказы покупателей',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Неоплаченные заказы покупателей',
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -958,6 +968,8 @@
 			value: 0,
 			name: 'ПроцентЗаказыПокупателей',
 			style: 'position:absolute;left:571px;top:74px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -984,11 +996,13 @@
 			value: 0,
 			name: 'ГраницаОтбораЗаказыПокупателей',
 			style: 'position:absolute;left:663px;top:51px;width:111px;height:19px;',
+			width: 111,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1006,9 +1020,9 @@
 			style: 'position:absolute;left:20px;top:220px;width:149px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1067,7 +1081,6 @@
 					]
 				},
 				{
-					title:'Отборы',
 					items:
 					[
 		{
@@ -1169,6 +1182,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:768px;height:24px;',
+			width: 768,
+			height: 24,
 			items:
 			[
 				{
@@ -1195,9 +1210,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1212,6 +1227,8 @@
 			value: 0,
 			name: 'ИзменитьРезультатРасчетаСуммыПроцентПоступления',
 			style: 'position:absolute;left:199px;top:315px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1226,24 +1243,22 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планирование поступлений денежных средств',
-			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;',
+			xtype: 'label',
+			text: 'Планирование поступлений денежных средств',
+			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Платежи',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:28px;width:782px;height:262px;',
 			height: 262,width: 782,
 			items:
 			[
 				{
-					title:'Платежи за период',
 					items:
 					[
 		{
@@ -1331,6 +1346,8 @@
 			value: 0,
 			name: 'ПроцентПлатежи',
 			style: 'position:absolute;left:176px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -1367,9 +1384,9 @@
 			style: 'position:absolute;left:361px;top:27px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платежи',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Платежи',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1390,6 +1407,8 @@
 			value: 0,
 			name: 'ПроцентПланПлатежи',
 			style: 'position:absolute;left:570px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -1426,9 +1445,9 @@
 			style: 'position:absolute;left:755px;top:27px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планы платежей',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Планы платежей',
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1437,9 +1456,9 @@
 			style: 'position:absolute;left:407px;top:51px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1457,9 +1476,9 @@
 			style: 'position:absolute;left:20px;top:196px;width:88px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1655,7 +1674,6 @@
 					]
 				},
 				{
-					title:'Закупки',
 					items:
 					[
 		{
@@ -1676,6 +1694,8 @@
 			value: 0,
 			name: 'ПроцентОбъемЗакупок',
 			style: 'position:absolute;left:176px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -1734,9 +1754,9 @@
 			style: 'position:absolute;left:755px;top:27px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Закупки',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Закупки',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1817,9 +1837,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планы закупок',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Планы закупок',
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -1829,6 +1849,8 @@
 			value: 0,
 			name: 'ПроцентПланыЗакупок',
 			style: 'position:absolute;left:570px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1909,9 +1931,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1941,13 +1963,12 @@
 					]
 				},
 				{
-					title:'Кредиторская задолженность контрагентов',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Кредиторская задолженность контрагентов',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Кредиторская задолженность контрагентов',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -2051,6 +2072,8 @@
 			value: 0,
 			name: 'ПроцентКредиторскаяЗадолженность',
 			style: 'position:absolute;left:176px;top:76px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -2071,11 +2094,13 @@
 			value: 0,
 			name: 'ГраницаОтбораКредиторскаяЗадолженность',
 			style: 'position:absolute;left:269px;top:51px;width:111px;height:19px;',
+			width: 111,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Неоплаченные заказы поставщикам',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Неоплаченные заказы поставщикам',
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -2163,6 +2188,8 @@
 			value: 0,
 			name: 'ПроцентЗаказыПоставщикам',
 			style: 'position:absolute;left:571px;top:74px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -2183,11 +2210,13 @@
 			value: 0,
 			name: 'ГраницаОтбораЗаказыПоставщикам',
 			style: 'position:absolute;left:663px;top:51px;width:111px;height:19px;',
+			width: 111,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -2205,9 +2234,9 @@
 			style: 'position:absolute;left:20px;top:220px;width:149px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация',
-			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация',
+			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -2266,13 +2295,12 @@
 					]
 				},
 				{
-					title:'Задолженность по заработной плате',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Задолженность по заработной плате',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;',
+			xtype: 'label',
+			text: 'Задолженность по заработной плате',
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -2388,6 +2416,8 @@
 			value: 0,
 			name: 'ПроцентЗаработнаяПлата',
 			style: 'position:absolute;left:176px;top:52px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2398,7 +2428,6 @@
 					]
 				},
 				{
-					title:'Отборы',
 					items:
 					[
 		{
@@ -2500,6 +2529,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:768px;height:24px;',
+			width: 768,
+			height: 24,
 			items:
 			[
 				{
@@ -2526,9 +2557,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно',
+			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -2543,6 +2574,8 @@
 			value: 0,
 			name: 'ИзменитьРезультатРасчетаСуммыПроцентПлатежи',
 			style: 'position:absolute;left:199px;top:315px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2557,9 +2590,9 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планирование платежей',
-			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;',
+			xtype: 'label',
+			text: 'Планирование платежей',
+			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -2572,6 +2605,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:388px;width:810px;height:25px;',
+			width: 810,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

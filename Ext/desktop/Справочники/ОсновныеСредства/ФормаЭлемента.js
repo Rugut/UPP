@@ -56,6 +56,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:764px;height:25px;',
+			width: 764,
+			height: 25,
 			items:
 			[
 				{
@@ -75,35 +77,12 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:470px;width:764px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:748px;height:334px;',
 			height: 334,width: 748,
 			items:
 			[
 				{
-					title:'Основные сведения',
 					items:
 					[
 		{
@@ -327,14 +306,14 @@
 			style: 'position:absolute;left:6px;top:266px;width:101px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные изготовителя',
-			style: 'position:absolute;left:6px;top:54px;width:734px;height:16px;',
+			xtype: 'label',
+			text: 'Данные изготовителя',
+			style: 'position:absolute;left:6px;top:54px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Постоянные сведения',
-			style: 'position:absolute;left:6px;top:171px;width:734px;height:16px;',
+			xtype: 'label',
+			text: 'Постоянные сведения',
+			style: 'position:absolute;left:6px;top:171px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -381,7 +360,6 @@
 					]
 				},
 				{
-					title:'Управленческий учет',
 					items:
 					[
 		{
@@ -638,6 +616,8 @@
 			value: 0,
 			name: 'ТекущаяСтоимостьУУ',
 			style: 'position:absolute;left:182px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -647,6 +627,8 @@
 			value: 0,
 			name: 'ПервоначальнаяСтоимостьУУ',
 			style: 'position:absolute;left:182px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -656,6 +638,8 @@
 			value: 0,
 			name: 'ОбъемРаботУУ',
 			style: 'position:absolute;left:182px;top:99px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -665,6 +649,8 @@
 			value: 0,
 			name: 'СрокИспользованияУУ',
 			style: 'position:absolute;left:182px;top:75px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -707,6 +693,8 @@
 			value: 0,
 			name: 'ТекАмортизацияУУ',
 			style: 'position:absolute;left:492px;top:168px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -716,6 +704,8 @@
 			value: 0,
 			name: 'ПроцентГодовойАмортизацииУУ',
 			style: 'position:absolute;left:492px;top:216px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -725,6 +715,8 @@
 			value: 0,
 			name: 'КоэфУскоренияУУ',
 			style: 'position:absolute;left:492px;top:240px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -765,34 +757,33 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Местонахождение и состав: ',
-			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Местонахождение и состав: ',
+			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'До принятия к учету являлось:',
-			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'До принятия к учету являлось:',
+			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стоимость и срок использования:',
-			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Стоимость и срок использования:',
+			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состояния учета:',
-			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;',
+			xtype: 'label',
+			text: 'Состояния учета:',
+			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные амортизации:',
-			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;',
+			xtype: 'label',
+			text: 'Данные амортизации:',
+			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -888,6 +879,8 @@
 			value: 0,
 			name: 'ТекущаяСтоимостьБУ',
 			style: 'position:absolute;left:182px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -897,6 +890,8 @@
 			value: 0,
 			name: 'ПервоначальнаяСтоимостьБУ',
 			style: 'position:absolute;left:182px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -906,6 +901,8 @@
 			value: 0,
 			name: 'ОбъемРаботБУ',
 			style: 'position:absolute;left:182px;top:99px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -915,6 +912,8 @@
 			value: 0,
 			name: 'СрокИспользованияБУ',
 			style: 'position:absolute;left:182px;top:75px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -1042,6 +1041,8 @@
 			value: 0,
 			name: 'ТекАмортизацияБУ',
 			style: 'position:absolute;left:492px;top:168px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1051,6 +1052,8 @@
 			value: 0,
 			name: 'ПроцентГодовойАмортизацииБУ',
 			style: 'position:absolute;left:492px;top:216px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1060,6 +1063,8 @@
 			value: 0,
 			name: 'КоэфУскоренияБУ',
 			style: 'position:absolute;left:492px;top:240px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1176,29 +1181,29 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счета учета и способ поступления: ',
-			style: 'position:absolute;left:6px;top:195px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Счета учета и способ поступления: ',
+			style: 'position:absolute;left:6px;top:195px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стоимость и срок использования:',
-			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Стоимость и срок использования:',
+			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состояния учета:',
-			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;',
+			xtype: 'label',
+			text: 'Состояния учета:',
+			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные амортизации:',
-			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;',
+			xtype: 'label',
+			text: 'Данные амортизации:',
+			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Местонахождение и состав: ',
-			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Местонахождение и состав: ',
+			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1209,7 +1214,6 @@
 					]
 				},
 				{
-					title:'Налоговый учет',
 					items:
 					[
 		{
@@ -1232,6 +1236,8 @@
 			value: 0,
 			name: 'ТекущаяСтоимостьНУ',
 			style: 'position:absolute;left:182px;top:51px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1241,6 +1247,8 @@
 			value: 0,
 			name: 'ПервоначальнаяСтоимостьНУ',
 			style: 'position:absolute;left:182px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1250,6 +1258,8 @@
 			value: 0,
 			name: 'СрокИспользованияНУ',
 			style: 'position:absolute;left:182px;top:75px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -1306,6 +1316,8 @@
 			value: 0,
 			name: 'ТекАмортизацияНУ',
 			style: 'position:absolute;left:500px;top:145px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1424,31 +1436,33 @@
 			value: 0,
 			name: 'СпецКоэффициентНУ',
 			style: 'position:absolute;left:500px;top:193px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стоимость и срок использования:',
-			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Стоимость и срок использования:',
+			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные амортизации:',
-			style: 'position:absolute;left:344px;top:100px;width:396px;height:16px;',
+			xtype: 'label',
+			text: 'Данные амортизации:',
+			style: 'position:absolute;left:344px;top:100px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счета учета и способ поступления: ',
-			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Счета учета и способ поступления: ',
+			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состояния учета:',
-			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;',
+			xtype: 'label',
+			text: 'Состояния учета:',
+			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Налогообложение',
-			style: 'position:absolute;left:344px;top:219px;width:396px;height:16px;',
+			xtype: 'label',
+			text: 'Налогообложение',
+			style: 'position:absolute;left:344px;top:219px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1466,9 +1480,9 @@
 			style: 'position:absolute;left:12px;top:121px;width:54px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок включения стоимости в состав расходов:',
-			style: 'position:absolute;left:6px;top:100px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок включения стоимости в состав расходов:',
+			style: 'position:absolute;left:6px;top:100px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1491,7 +1505,6 @@
 					]
 				},
 				{
-					title:'Налоговый учет (УСН)',
 					items:
 					[
 		{
@@ -1577,6 +1590,8 @@
 			value: 0,
 			name: 'ПервоначальнаяСтоимостьУСН',
 			style: 'position:absolute;left:176px;top:102px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1598,6 +1613,8 @@
 			value: 0,
 			name: 'СрокИспользованияУСН',
 			style: 'position:absolute;left:176px;top:126px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1640,7 +1657,6 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
@@ -1738,6 +1754,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:733px;height:24px;',
+			width: 733,
+			height: 24,
 			items:
 			[
 			]
@@ -1745,7 +1763,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -1855,6 +1872,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:733px;height:24px;',
+			width: 733,
+			height: 24,
 			items:
 			[
 				{
@@ -1874,7 +1893,6 @@
 					]
 				},
 				{
-					title:'Сведения о недвижимости',
 					items:
 					[
 		{
@@ -1927,14 +1945,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:134px;height:59px;',
 			height: 59,width: 134,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1958,14 +1975,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:141px;top:30px;width:599px;height:59px;',
 			height: 59,width: 599,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2080,6 +2096,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:470px;width:764px;height:25px;',
+			width: 764,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

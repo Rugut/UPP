@@ -182,6 +182,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:220px;width:458px;height:24px;',
+			width: 458,
+			height: 24,
 			items:
 			[
 				'-',
@@ -193,6 +195,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:474px;height:25px;',
+			width: 474,
+			height: 25,
 			items:
 			[
 			]
@@ -208,9 +212,9 @@
 			style: 'position:absolute;left:8px;top:159px;width:250px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Элементы для распределения:',
-			style: 'position:absolute;left:8px;top:204px;width:458px;height:16px;',
+			xtype: 'label',
+			text: 'Элементы для распределения:',
+			style: 'position:absolute;left:8px;top:204px;width:458px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ЭлементыДляРаспределения',
@@ -308,6 +312,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:412px;width:474px;height:25px;',
+			width: 474,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

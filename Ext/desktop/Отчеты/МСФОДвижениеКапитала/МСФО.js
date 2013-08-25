@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			items:
 			[
 				{
@@ -53,6 +55,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:457px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			items:
 			[
 				{
@@ -61,13 +65,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:114px;width:722px;height:309px;',
 			height: 309,width: 722,
 			items:
 			[
 				{
-					title:'Отчет об изменениях в капитале',
 					items:
 					[
 		{
@@ -84,6 +87,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиДвижениеКапитала',
 			style: 'position:absolute;left:232px;top:264px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -105,14 +110,13 @@
 			style: 'position:absolute;left:647px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:33px;width:722px;height:81px;',
 			height: 81,width: 722,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -129,6 +133,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:372px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -272,14 +278,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:423px;width:722px;height:25px;',
 			height: 25,width: 722,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

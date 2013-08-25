@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
+			width: 676,
+			height: 25,
 			items:
 			[
 				{
@@ -198,18 +200,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:106px;width:660px;height:237px;',
 			height: 237,width: 660,
 			items:
 			[
 				{
-					title:'Депоненты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:646px;height:24px;',
+			width: 646,
+			height: 24,
 			items:
 			[
 				{
@@ -328,18 +331,16 @@
 					]
 				},
 				{
-					title:'Счета учета доходов',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:334px;top:6px;width:318px;height:205px;',
 			height: 205,width: 318,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -523,23 +524,22 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Налоговый учет',
-			style: 'position:absolute;left:0px;top:0px;width:318px;height:16px;',
+			xtype: 'label',
+			text: 'Налоговый учет',
+			style: 'position:absolute;left:0px;top:0px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:322px;height:205px;',
 			height: 205,width: 322,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -723,9 +723,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Бухгалтерский учет',
-			style: 'position:absolute;left:0px;top:0px;width:317px;height:16px;',
+			xtype: 'label',
+			text: 'Бухгалтерский учет',
+			style: 'position:absolute;left:0px;top:0px;width:317px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -753,6 +753,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:376px;width:676px;height:25px;',
+			width: 676,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

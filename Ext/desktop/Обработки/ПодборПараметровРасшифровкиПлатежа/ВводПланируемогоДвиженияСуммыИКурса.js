@@ -32,9 +32,9 @@
 			style: 'position:absolute;left:8px;top:151px;width:283px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планируемое поступление денежных средств',
-			style: 'position:absolute;left:8px;top:109px;width:286px;height:16px;',
+			xtype: 'label',
+			text: 'Планируемое поступление денежных средств',
+			style: 'position:absolute;left:8px;top:109px;width:286px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -42,14 +42,13 @@
 			style: 'position:absolute;left:8px;top:176px;width:256px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:31px;width:244px;height:73px;',
 			height: 73,width: 244,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПоСуммеВзаиморасчетов',
 					items:
 					[
 		{
@@ -72,6 +71,8 @@
 			value: 0,
 			name: 'СуммаПлатежа',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -81,6 +82,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -90,6 +93,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -118,7 +123,6 @@
 					]
 				},
 				{
-					title:'ПоСуммеПлатежа',
 					items:
 					[
 		{
@@ -129,6 +133,8 @@
 			value: 0,
 			name: 'СуммаПлатежа1',
 			style: 'position:absolute;left:126px;top:6px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -138,6 +144,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:30px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -147,6 +155,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов1',
 			style: 'position:absolute;left:126px;top:54px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 					]
 				},
@@ -191,6 +201,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:203px;width:302px;height:25px;',
+			width: 302,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

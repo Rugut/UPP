@@ -38,14 +38,14 @@
 			style: 'position:absolute;left:13px;top:122px;width:230px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Режим преобразования источников:',
-			style: 'position:absolute;left:8px;top:8px;width:235px;height:16px;',
+			xtype: 'label',
+			text: 'Режим преобразования источников:',
+			style: 'position:absolute;left:8px;top:8px;width:235px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выполнять преобразование с учетом:',
-			style: 'position:absolute;left:8px;top:53px;width:235px;height:16px;',
+			xtype: 'label',
+			text: 'Выполнять преобразование с учетом:',
+			style: 'position:absolute;left:8px;top:53px;width:235px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -69,6 +69,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:221px;width:251px;height:25px;',
+			width: 251,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

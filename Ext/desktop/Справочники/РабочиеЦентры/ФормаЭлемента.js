@@ -94,18 +94,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
+			width: 439,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:423px;height:201px;',
 			height: 201,width: 423,
 			items:
 			[
 				{
-					title:'Подчиненные рабочие центры',
 					items:
 					[
 		{
@@ -176,6 +177,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:27px;width:409px;height:24px;',
+			width: 409,
+			height: 24,
 			items:
 			[
 			]
@@ -188,7 +191,6 @@
 					]
 				},
 				{
-					title:'Описание',
 					items:
 					[
 		{
@@ -209,6 +211,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:293px;width:439px;height:25px;',
+			width: 439,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

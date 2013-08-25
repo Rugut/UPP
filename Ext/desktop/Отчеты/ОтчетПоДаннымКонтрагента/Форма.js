@@ -79,16 +79,14 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:35px;width:794px;height:418px;',
 			height: 418,width: 794,
 			items:
 			[
 				{
-					title:'Отчет',
 				},
 				{
-					title:'Настройка формы',
 					items:
 					[
 		{
@@ -96,9 +94,9 @@
 			style: 'position:absolute;left:6px;top:46px;width:780px;height:324px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состав и порядок отчета',
-			style: 'position:absolute;left:6px;top:6px;width:780px;height:16px;',
+			xtype: 'label',
+			text: 'Состав и порядок отчета',
+			style: 'position:absolute;left:6px;top:6px;width:780px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -108,6 +106,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:780px;height:24px;',
+			width: 780,
+			height: 24,
 			items:
 			[
 				{
@@ -136,6 +136,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:461px;width:810px;height:25px;',
+			width: 810,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

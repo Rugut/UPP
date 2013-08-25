@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:668px;height:460px;',
 			height: 460,width: 668,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Старт',
 					items:
 					[
 		{
@@ -54,7 +53,6 @@
 					]
 				},
 				{
-					title:'Номер основной поставки',
 					items:
 					[
 		{
@@ -99,7 +97,6 @@
 					]
 				},
 				{
-					title:'Выбор УЦ',
 					items:
 					[
 		{
@@ -144,7 +141,6 @@
 					]
 				},
 				{
-					title:'Используемый криптопровайдер',
 					items:
 					[
 		{
@@ -184,9 +180,9 @@
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:76px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Криптопровайдер',
-			style: 'position:absolute;left:16px;top:156px;width:644px;height:16px;',
+			xtype: 'label',
+			text: 'Криптопровайдер',
+			style: 'position:absolute;left:16px;top:156px;width:644px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -213,7 +209,6 @@
 					]
 				},
 				{
-					title:'Соглашение о присоединении к регламенту УЦ',
 					items:
 					[
 		{
@@ -240,9 +235,9 @@
 			style: 'position:absolute;left:8px;top:5px;width:652px;height:50px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:424px;width:652px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:424px;width:652px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -253,7 +248,6 @@
 					]
 				},
 				{
-					title:'Реквизиты',
 					items:
 					[
 		{
@@ -488,14 +482,14 @@
 			style: 'position:absolute;left:140px;top:320px;width:193px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные сведения',
-			style: 'position:absolute;left:8px;top:156px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Основные сведения',
+			style: 'position:absolute;left:8px;top:156px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Контактная информация',
-			style: 'position:absolute;left:8px;top:340px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Контактная информация',
+			style: 'position:absolute;left:8px;top:340px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -533,7 +527,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -653,9 +646,9 @@
 			style: 'position:absolute;left:116px;top:379px;width:544px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Кадровые данные',
-			style: 'position:absolute;left:8px;top:247px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Кадровые данные',
+			style: 'position:absolute;left:8px;top:247px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -688,9 +681,9 @@
 			style: 'position:absolute;left:116px;top:269px;width:188px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документ, удостоверяющий личность',
-			style: 'position:absolute;left:8px;top:305px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Документ, удостоверяющий личность',
+			style: 'position:absolute;left:8px;top:305px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -762,9 +755,9 @@
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:40px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:196px;width:652px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:196px;width:652px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -796,7 +789,6 @@
 					]
 				},
 				{
-					title:'Направления',
 					items:
 					[
 		{
@@ -880,6 +872,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:115px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -919,14 +913,13 @@
 			style: 'position:absolute;left:8px;top:68px;width:652px;height:24px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Контролирующие органы (направления документооборота)',
-			style: 'position:absolute;left:8px;top:96px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Контролирующие органы (направления документооборота)',
+			style: 'position:absolute;left:8px;top:96px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Подтверждение',
 					items:
 					[
 		{
@@ -976,6 +969,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:460px;width:668px;height:25px;',
+			width: 668,
+			height: 25,
 			items:
 			[
 				{

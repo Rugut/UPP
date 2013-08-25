@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:196px;width:255px;height:24px;',
+			width: 255,
+			height: 24,
 			items:
 			[
 				{
@@ -27,14 +29,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:7px;width:609px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:7px;width:609px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:180px;width:665px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:180px;width:665px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'РеквизитыДокументов',
@@ -150,6 +152,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:618px;top:5px;width:55px;height:24px;',
+			width: 55,
+			height: 24,
 			items:
 			[
 				{
@@ -166,6 +170,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:614px;top:196px;width:59px;height:24px;',
+			width: 59,
+			height: 24,
 			items:
 			[
 				{
@@ -234,6 +240,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:374px;width:681px;height:25px;',
+			width: 681,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

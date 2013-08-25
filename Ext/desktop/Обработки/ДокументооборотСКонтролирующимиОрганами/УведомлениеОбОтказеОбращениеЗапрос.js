@@ -17,30 +17,28 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:497px;height:506px;',
 			height: 506,width: 497,
 			items:
 			[
 				{
-					title:'Выявленные нарушения',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:177px;width:483px;height:303px;',
 			height: 303,width: 483,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'По файлам',
-			style: 'position:absolute;left:0px;top:3px;width:483px;height:16px;',
+			xtype: 'label',
+			text: 'По файлам',
+			style: 'position:absolute;left:0px;top:3px;width:483px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ВыявлНарФайл',
@@ -107,14 +105,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:483px;height:171px;',
 			height: 171,width: 483,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -184,7 +181,6 @@
 					]
 				},
 				{
-					title:'Общие сведения',
 					items:
 					[
 		{
@@ -273,6 +269,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:522px;width:513px;height:25px;',
+			width: 513,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

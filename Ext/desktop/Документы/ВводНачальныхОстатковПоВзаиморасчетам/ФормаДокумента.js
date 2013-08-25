@@ -111,6 +111,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:723px;height:25px;',
+			width: 723,
+			height: 25,
 			items:
 			[
 			]
@@ -118,6 +120,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:419px;width:723px;height:25px;',
+			width: 723,
+			height: 25,
 			items:
 			[
 				{
@@ -142,13 +146,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:104px;width:707px;height:258px;',
 			height: 258,width: 707,
 			items:
 			[
 				{
-					title:'Расчеты с контрагентами',
 					items:
 					[
 		{
@@ -313,6 +316,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:5px;top:6px;width:695px;height:24px;',
+			width: 695,
+			height: 24,
 			items:
 			[
 				'-',
@@ -322,12 +327,13 @@
 					]
 				},
 				{
-					title:'Авансы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:694px;height:24px;',
+			width: 694,
+			height: 24,
 			items:
 			[
 				'-',
@@ -496,7 +502,6 @@
 					]
 				},
 				{
-					title:'Резервы по сомнительным долгам',
 					items:
 					[
 		{
@@ -607,6 +612,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:41px;width:693px;height:24px;',
+			width: 693,
+			height: 24,
 			items:
 			[
 				{
@@ -615,14 +622,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:693px;height:36px;',
 			height: 36,width: 693,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница надпись',
 				},
 			]
 		},

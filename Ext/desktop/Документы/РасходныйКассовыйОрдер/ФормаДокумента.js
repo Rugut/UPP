@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			items:
 			[
 			]
@@ -238,13 +240,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:364px;width:640px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:364px;width:640px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:437px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			items:
 			[
 				{
@@ -309,24 +313,22 @@
 			style: 'position:absolute;left:12px;top:409px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:642px;height:278px;',
 			height: 278,width: 642,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:628px;height:222px;',
 			height: 222,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'РКО',
 					items:
 					[
 		{
@@ -357,14 +359,13 @@
 			style: 'position:absolute;left:322px;top:25px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:22px;width:627px;height:199px;',
 			height: 199,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -432,6 +433,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:82px;top:26px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -480,6 +483,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:82px;top:74px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -529,6 +534,8 @@
 			value: 0,
 			name: 'СуммаДокументаРасчеты',
 			style: 'position:absolute;left:408px;top:50px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -644,6 +651,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан',
 			style: 'position:absolute;left:408px;top:146px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -659,6 +668,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан',
 			style: 'position:absolute;left:408px;top:170px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -780,7 +791,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -972,6 +982,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:294px;height:24px;',
+			width: 294,
+			height: 24,
 			items:
 			[
 				{
@@ -1009,9 +1021,9 @@
 			style: 'position:absolute;left:312px;top:21px;width:315px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:625px;height:16px;',
+			xtype: 'label',
+			text: 'Расшифровка платежа',
+			style: 'position:absolute;left:0px;top:0px;width:625px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -1084,7 +1096,6 @@
 					]
 				},
 				{
-					title:'Выдача подотчетнику',
 					items:
 					[
 		{
@@ -1132,9 +1143,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:5px;width:620px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:5px;width:620px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1185,6 +1196,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПодотчетник',
 			style: 'position:absolute;left:228px;top:49px;width:78px;height:19px;',
+			width: 78,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1194,6 +1207,8 @@
 			value: 0,
 			name: 'СуммаДокументаПодотчетник',
 			style: 'position:absolute;left:408px;top:49px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1291,6 +1306,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПланПодотчет',
 			style: 'position:absolute;left:408px;top:97px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1300,6 +1317,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПланПодотчет',
 			style: 'position:absolute;left:408px;top:121px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1361,7 +1380,6 @@
 					]
 				},
 				{
-					title:'Выдача кассе ККМ',
 					items:
 					[
 		{
@@ -1507,18 +1525,16 @@
 					]
 				},
 				{
-					title:'Выплата заработной платы',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:626px;height:220px;',
 			height: 220,width: 626,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'По ведомостям',
 					items:
 					[
 		{
@@ -1620,6 +1636,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:21px;width:618px;height:24px;',
+			width: 618,
+			height: 24,
 			items:
 			[
 				{
@@ -1628,9 +1646,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выплата заработной платы',
-			style: 'position:absolute;left:6px;top:5px;width:618px;height:16px;',
+			xtype: 'label',
+			text: 'Выплата заработной платы',
+			style: 'position:absolute;left:6px;top:5px;width:618px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -1639,13 +1657,12 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Прочие выплаты',
-			style: 'position:absolute;left:6px;top:5px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Прочие выплаты',
+			style: 'position:absolute;left:6px;top:5px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2103,7 +2120,6 @@
 					]
 				},
 				{
-					title:'Взнос наличными в банк',
 					items:
 					[
 		{
@@ -2247,7 +2263,6 @@
 					]
 				},
 				{
-					title:'Депоненты',
 					items:
 					[
 		{
@@ -2355,6 +2370,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				'-',
@@ -2367,7 +2384,6 @@
 					]
 				},
 				{
-					title:'Расшифровка по статьям',
 					items:
 					[
 		{
@@ -2457,6 +2473,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				{
@@ -2501,6 +2519,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:88px;top:6px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2527,7 +2547,6 @@
 					]
 				},
 				{
-					title:'Печать',
 					items:
 					[
 		{

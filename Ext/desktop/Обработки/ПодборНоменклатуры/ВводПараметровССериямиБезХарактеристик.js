@@ -57,6 +57,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:254px;height:25px;',
+			width: 254,
+			height: 25,
 			items:
 			[
 			]
@@ -87,6 +89,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:78px;top:33px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -96,6 +100,8 @@
 			value: 0,
 			name: 'Цена',
 			style: 'position:absolute;left:78px;top:58px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -114,28 +120,6 @@
 			name: 'НадписьВалютаЦены',
 			text: 'Надпись',
 			style: 'position:absolute;left:162px;top:58px;width:84px;height:19px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:157px;width:254px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Получить вес',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -199,6 +183,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:157px;width:254px;height:25px;',
+			width: 254,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Получить вес',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

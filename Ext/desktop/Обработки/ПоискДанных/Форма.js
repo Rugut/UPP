@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:44px;top:210px;width:183px;height:19px;',
 			height: 19,width: 183,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -38,14 +37,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:57px;width:259px;height:153px;',
 			height: 153,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -61,6 +59,8 @@
 			value: 0,
 			name: 'Нечеткость',
 			style: 'position:absolute;left:104px;top:81px;width:41px;height:19px;',
+			width: 41,
+			height: 19,
 		},
 		{
 			xtype: 'itemselector',
@@ -96,20 +96,21 @@
 			value: 0,
 			name: 'РазмерПорции',
 			style: 'position:absolute;left:104px;top:129px;width:41px;height:19px;',
+			width: 41,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:271px;height:53px;',
 			height: 53,width: 271,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -124,6 +125,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:175px;top:26px;width:90px;height:24px;',
+			width: 90,
+			height: 24,
 			items:
 			[
 				{
@@ -140,6 +143,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:26px;width:76px;height:24px;',
+			width: 76,
+			height: 24,
 			items:
 			[
 				{
@@ -152,14 +157,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:464px;width:259px;height:21px;',
 			height: 21,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

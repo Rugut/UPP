@@ -157,18 +157,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
+			width: 690,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:85px;width:674px;height:300px;',
 			height: 300,width: 674,
 			items:
 			[
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
@@ -324,6 +325,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:660px;height:24px;',
+			width: 660,
+			height: 24,
 			items:
 			[
 				{
@@ -334,6 +337,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:79px;top:161px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -398,7 +403,6 @@
 					]
 				},
 				{
-					title:'Начисления',
 					items:
 					[
 		{
@@ -761,6 +765,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:660px;height:24px;',
+			width: 660,
+			height: 24,
 			items:
 			[
 				{
@@ -796,6 +802,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:18px;top:143px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -868,14 +876,13 @@
 			style: 'position:absolute;left:30px;top:391px;width:439px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:469px;top:391px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -889,14 +896,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:553px;top:391px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -912,6 +918,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:457px;width:268px;height:25px;',
+			width: 268,
+			height: 25,
 			items:
 			[
 				'-',
@@ -927,6 +935,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:268px;top:457px;width:422px;height:25px;',
+			width: 422,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:283px;',
 			height: 283,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -109,9 +108,9 @@
 			style: 'position:absolute;left:12px;top:126px;width:128px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выводить данные',
-			style: 'position:absolute;left:6px;top:105px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Выводить данные',
+			style: 'position:absolute;left:6px;top:105px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'combobox',
@@ -216,7 +215,6 @@
 					]
 				},
 				{
-					title:'Детализация счета',
 					items:
 					[
 		{
@@ -282,19 +280,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'По субконто',
-			style: 'position:absolute;left:6px;top:6px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'По субконто',
+			style: 'position:absolute;left:6px;top:6px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -387,6 +386,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -402,6 +403,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:298px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -51,6 +51,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:460px;height:25px;',
+			width: 460,
+			height: 25,
 			items:
 			[
 				{
@@ -76,18 +78,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:153px;width:444px;height:236px;',
 			height: 236,width: 444,
 			items:
 			[
 				{
-					title:'ОС и Инвестиционная собственность',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			width: 430,
+			height: 24,
 			items:
 			[
 			]
@@ -173,12 +176,13 @@
 					]
 				},
 				{
-					title:'НМА',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			width: 430,
+			height: 24,
 			items:
 			[
 			]
@@ -255,12 +259,13 @@
 					]
 				},
 				{
-					title:'Финансовые активы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:430px;height:24px;',
+			width: 430,
+			height: 24,
 			items:
 			[
 			]
@@ -559,6 +564,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:421px;width:460px;height:25px;',
+			width: 460,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

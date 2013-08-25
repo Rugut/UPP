@@ -32,19 +32,18 @@
 			style: 'position:absolute;left:90px;top:4px;width:430px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:3px;top:30px;width:990px;height:544px;',
 			height: 544,width: 990,
 			items:
 			[
 				{
-					title:'1-Т',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: ' Автотранспортное средство ',
-			style: 'position:absolute;left:0px;top:0px;width:512px;height:16px;',
+			xtype: 'label',
+			text: ' Автотранспортное средство ',
+			style: 'position:absolute;left:0px;top:0px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -107,9 +106,9 @@
 			style: 'position:absolute;left:376px;top:45px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Контрагенты ',
-			style: 'position:absolute;left:0px;top:138px;width:512px;height:16px;',
+			xtype: 'label',
+			text: 'Контрагенты ',
+			style: 'position:absolute;left:0px;top:138px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -172,14 +171,14 @@
 			style: 'position:absolute;left:112px;top:228px;width:400px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Места назначения ',
-			style: 'position:absolute;left:0px;top:207px;width:512px;height:16px;',
+			xtype: 'label',
+			text: 'Места назначения ',
+			style: 'position:absolute;left:0px;top:207px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочие сведения о доставке ',
-			style: 'position:absolute;left:0px;top:276px;width:512px;height:16px;',
+			xtype: 'label',
+			text: 'Прочие сведения о доставке ',
+			style: 'position:absolute;left:0px;top:276px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -241,9 +240,9 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Водитель ',
-			style: 'position:absolute;left:0px;top:69px;width:512px;height:16px;',
+			xtype: 'label',
+			text: 'Водитель ',
+			style: 'position:absolute;left:0px;top:69px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -270,9 +269,9 @@
 			style: 'position:absolute;left:376px;top:21px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Цены',
-			style: 'position:absolute;left:0px;top:346px;width:512px;height:16px;',
+			xtype: 'label',
+			text: 'Цены',
+			style: 'position:absolute;left:0px;top:346px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -322,6 +321,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:988px;height:25px;',
+			width: 988,
+			height: 25,
 			items:
 			[
 				{
@@ -340,12 +341,13 @@
 					]
 				},
 				{
-					title:'Транспортная накладная',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:988px;height:25px;',
+			width: 988,
+			height: 25,
 			items:
 			[
 				{
@@ -364,12 +366,13 @@
 					]
 				},
 				{
-					title:'Сопроводительная ведомость',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:499px;width:988px;height:25px;',
+			width: 988,
+			height: 25,
 			items:
 			[
 				{

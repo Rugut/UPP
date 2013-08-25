@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:330px;height:25px;',
+			width: 330,
+			height: 25,
 			items:
 			[
 				{
@@ -36,6 +38,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:412px;width:330px;height:25px;',
+			width: 330,
+			height: 25,
 			items:
 			[
 				{
@@ -56,19 +60,18 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Адрес',
-			style: 'position:absolute;left:8px;top:131px;width:314px;height:16px;',
+			xtype: 'label',
+			text: 'Адрес',
+			style: 'position:absolute;left:8px;top:131px;width:314px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:314px;height:228px;',
 			height: 228,width: 314,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'РегламентированныйАдрес',
 					items:
 					[
 		{
@@ -318,7 +321,6 @@
 					]
 				},
 				{
-					title:'ПроизвольныйАдрес',
 					items:
 					[
 		{
@@ -354,14 +356,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:314px;height:92px;',
 			height: 92,width: 314,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Для контактной информации',
 					items:
 					[
 		{
@@ -413,7 +414,6 @@
 					]
 				},
 				{
-					title:'Для регламентированной отчетности',
 					items:
 					[
 		{
@@ -447,23 +447,22 @@
 			style: 'position:absolute;left:88px;top:51px;width:40px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Коды',
-			style: 'position:absolute;left:0px;top:6px;width:314px;height:19px;',
+			xtype: 'label',
+			text: 'Коды',
+			style: 'position:absolute;left:0px;top:6px;width:314px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:384px;width:314px;height:20px;',
 			height: 20,width: 314,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

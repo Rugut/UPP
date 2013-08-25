@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:392px;height:25px;',
+			width: 392,
+			height: 25,
 			items:
 			[
 				{
@@ -40,32 +42,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:434px;width:392px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -209,6 +185,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:194px;width:376px;height:24px;',
+			width: 376,
+			height: 24,
 			items:
 			[
 				'-',
@@ -343,14 +321,14 @@
 			style: 'position:absolute;left:8px;top:129px;width:109px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ отражения расходов по амортизации:',
-			style: 'position:absolute;left:8px;top:108px;width:376px;height:16px;',
+			xtype: 'label',
+			text: 'Способ отражения расходов по амортизации:',
+			style: 'position:absolute;left:8px;top:108px;width:376px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Нематериальные активы и НИОКР',
-			style: 'position:absolute;left:8px;top:178px;width:376px;height:16px;',
+			xtype: 'label',
+			text: 'Нематериальные активы и НИОКР',
+			style: 'position:absolute;left:8px;top:178px;width:376px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -406,6 +384,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:434px;width:392px;height:25px;',
+			width: 392,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

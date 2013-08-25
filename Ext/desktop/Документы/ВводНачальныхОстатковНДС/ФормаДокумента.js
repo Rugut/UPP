@@ -111,6 +111,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 			]
@@ -118,6 +120,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:495px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -142,13 +146,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:59px;width:764px;height:382px;',
 			height: 382,width: 764,
 			items:
 			[
 				{
-					title:'Данные по НДС',
 					items:
 					[
 		{
@@ -628,6 +631,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:748px;height:24px;',
+			width: 748,
+			height: 24,
 			items:
 			[
 				{
@@ -1043,24 +1048,25 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:192px;width:748px;height:24px;',
+			width: 748,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные по остаткам',
-			style: 'position:absolute;left:6px;top:6px;width:748px;height:16px;',
+			xtype: 'label',
+			text: 'Данные по остаткам',
+			style: 'position:absolute;left:6px;top:6px;width:748px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительные сведения',
-			style: 'position:absolute;left:6px;top:176px;width:748px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительные сведения',
+			style: 'position:absolute;left:6px;top:176px;width:748px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Расчеты с контрагентами',
 					items:
 					[
 		{
@@ -1216,6 +1222,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:6px;width:746px;height:24px;',
+			width: 746,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1224,12 +1232,13 @@
 					]
 				},
 				{
-					title:'Авансы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:6px;width:746px;height:24px;',
+			width: 746,
+			height: 24,
 			items:
 			[
 				'-',

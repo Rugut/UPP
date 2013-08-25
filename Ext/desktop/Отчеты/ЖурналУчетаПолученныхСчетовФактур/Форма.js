@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:604px;height:25px;',
+			width: 604,
+			height: 25,
 			items:
 			[
 				{
@@ -153,14 +155,13 @@
 			style: 'position:absolute;left:8px;top:57px;width:247px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:14px;top:76px;width:581px;height:48px;',
 			height: 48,width: 581,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Дополнительные настройки',
 					items:
 					[
 		{
@@ -221,7 +222,6 @@
 					]
 				},
 				{
-					title:'Стандартные настройки',
 				},
 			]
 		},

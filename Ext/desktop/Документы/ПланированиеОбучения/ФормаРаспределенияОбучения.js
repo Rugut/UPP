@@ -75,6 +75,8 @@
 			value: 0,
 			name: 'РаспределяемоеКоличество',
 			style: 'position:absolute;left:151px;top:36px;width:31px;height:19px;',
+			width: 31,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -123,6 +125,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:63px;width:458px;height:25px;',
+			width: 458,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

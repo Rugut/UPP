@@ -94,6 +94,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:99px;width:347px;height:24px;',
+			width: 347,
+			height: 24,
 			items:
 			[
 			]
@@ -184,6 +186,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:359px;top:99px;width:347px;height:24px;',
+			width: 347,
+			height: 24,
 			items:
 			[
 			]
@@ -274,6 +278,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:714px;height:25px;',
+			width: 714,
+			height: 25,
 			items:
 			[
 			]
@@ -291,14 +297,14 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Условия фильтра',
-			style: 'position:absolute;left:8px;top:81px;width:347px;height:16px;',
+			xtype: 'label',
+			text: 'Условия фильтра',
+			style: 'position:absolute;left:8px;top:81px;width:347px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Действия фильтра',
-			style: 'position:absolute;left:359px;top:81px;width:347px;height:16px;',
+			xtype: 'label',
+			text: 'Действия фильтра',
+			style: 'position:absolute;left:359px;top:81px;width:347px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -312,6 +318,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:398px;width:714px;height:25px;',
+			width: 714,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

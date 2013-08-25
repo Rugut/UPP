@@ -17,34 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:226px;width:408px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:8px;width:394px;height:210px;',
 			height: 210,width: 394,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -161,12 +139,13 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:380px;height:24px;',
+			width: 380,
+			height: 24,
 			items:
 			[
 			]
@@ -281,6 +260,30 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:226px;width:408px;height:25px;',
+			width: 408,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

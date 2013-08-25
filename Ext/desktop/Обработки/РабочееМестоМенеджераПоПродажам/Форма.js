@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				'-',
@@ -199,13 +201,12 @@
 			style: 'position:absolute;left:208px;top:56px;width:128px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:341px;top:56px;width:431px;height:341px;',
 			height: 341,width: 431,
 			items:
 			[
 				{
-					title:'Дерево',
 					items:
 					[
 		{
@@ -262,7 +263,6 @@
 					]
 				},
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -508,7 +508,6 @@
 					]
 				},
 				{
-					title:'Остатки, цены',
 					items:
 					[
 		{
@@ -610,6 +609,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:417px;height:27px;',
+			width: 417,
+			height: 27,
 			items:
 			[
 				{
@@ -782,6 +783,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:66px;top:54px;width:157px;height:24px;',
+			width: 157,
+			height: 24,
 			items:
 			[
 				{
@@ -805,13 +808,12 @@
 					]
 				},
 				{
-					title:'Заказы',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Остатки неотгруженного товара по заказам покупателя',
-			style: 'position:absolute;left:6px;top:6px;width:417px;height:16px;',
+			xtype: 'label',
+			text: 'Остатки неотгруженного товара по заказам покупателя',
+			style: 'position:absolute;left:6px;top:6px;width:417px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ЗаказыТекущегоПокупателя',
@@ -919,9 +921,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Товар текущего покупателя размещенный в заказах поставщикам',
-			style: 'position:absolute;left:6px;top:161px;width:417px;height:16px;',
+			xtype: 'label',
+			text: 'Товар текущего покупателя размещенный в заказах поставщикам',
+			style: 'position:absolute;left:6px;top:161px;width:417px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ЗакзаыТекущегоПокупателяВЗаказахПоставщикам',
@@ -1030,19 +1032,18 @@
 			style: 'position:absolute;left:341px;top:33px;width:66px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Номенклатура',
-			style: 'position:absolute;left:8px;top:33px;width:328px;height:16px;',
+			xtype: 'label',
+			text: 'Номенклатура',
+			style: 'position:absolute;left:8px;top:33px;width:328px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:266px;width:328px;height:131px;',
 			height: 131,width: 328,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]

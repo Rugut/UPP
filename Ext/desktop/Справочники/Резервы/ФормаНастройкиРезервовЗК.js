@@ -17,18 +17,19 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:31px;width:467px;height:185px;',
 			height: 185,width: 467,
 			items:
 			[
 				{
-					title:'Базовые начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:453px;height:24px;',
+			width: 453,
+			height: 24,
 			items:
 			[
 				{
@@ -107,12 +108,13 @@
 					]
 				},
 				{
-					title:'Размеры отчислений',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:453px;height:25px;',
+			width: 453,
+			height: 25,
 			items:
 			[
 				{
@@ -239,6 +241,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:224px;width:483px;height:25px;',
+			width: 483,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

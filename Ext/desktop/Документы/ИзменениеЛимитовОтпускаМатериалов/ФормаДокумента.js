@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
+			width: 669,
+			height: 25,
 			items:
 			[
 				{
@@ -180,32 +182,6 @@
 					});
 				};
 			},
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:377px;width:669px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
 		},
 		{
 			id: 'Лимиты',
@@ -324,6 +300,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:124px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -332,9 +310,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Лимиты',
-			style: 'position:absolute;left:8px;top:107px;width:652px;height:17px;',
+			xtype: 'label',
+			text: 'Лимиты',
+			style: 'position:absolute;left:8px;top:107px;width:652px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -492,6 +470,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:377px;width:669px;height:25px;',
+			width: 669,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

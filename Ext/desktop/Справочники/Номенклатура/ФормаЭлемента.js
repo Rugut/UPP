@@ -99,6 +99,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:616px;height:25px;',
+			width: 616,
+			height: 25,
 			items:
 			[
 				{
@@ -275,42 +277,12 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:450px;width:616px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<< Назад',
-				},
-				{
-					text:'Далее >>',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:218px;width:600px;height:201px;',
 			height: 201,width: 600,
 			items:
 			[
 				{
-					title:'По умолчанию',
 					items:
 					[
 		{
@@ -541,9 +513,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Аналитика затрат',
-			style: 'position:absolute;left:6px;top:51px;width:586px;height:16px;',
+			xtype: 'label',
+			text: 'Аналитика затрат',
+			style: 'position:absolute;left:6px;top:51px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -683,9 +655,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Спецодежда, спецоснастка и инвентарь',
-			style: 'position:absolute;left:6px;top:129px;width:586px;height:16px;',
+			xtype: 'label',
+			text: 'Спецодежда, спецоснастка и инвентарь',
+			style: 'position:absolute;left:6px;top:129px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -735,7 +707,6 @@
 					]
 				},
 				{
-					title:'Дополнительные',
 					items:
 					[
 		{
@@ -786,6 +757,8 @@
 			value: 0,
 			name: 'ВесовойКоэффициентВхождения',
 			style: 'position:absolute;left:512px;top:154px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -938,9 +911,9 @@
 			style: 'position:absolute;left:6px;top:55px;width:114px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Номенклатурная группа',
-			style: 'position:absolute;left:6px;top:133px;width:586px;height:16px;',
+			xtype: 'label',
+			text: 'Номенклатурная группа',
+			style: 'position:absolute;left:6px;top:133px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1037,7 +1010,6 @@
 					]
 				},
 				{
-					title:'Настройка учета',
 					items:
 					[
 		{
@@ -1046,9 +1018,9 @@
 			style: 'position:absolute;left:6px;top:26px;width:354px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сертификация',
-			style: 'position:absolute;left:6px;top:137px;width:586px;height:16px;',
+			xtype: 'label',
+			text: 'Сертификация',
+			style: 'position:absolute;left:6px;top:137px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1117,19 +1089,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Серийные номера',
-			style: 'position:absolute;left:6px;top:71px;width:586px;height:16px;',
+			xtype: 'label',
+			text: 'Серийные номера',
+			style: 'position:absolute;left:6px;top:71px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учет в незавершенном производстве',
-			style: 'position:absolute;left:6px;top:6px;width:586px;height:16px;',
+			xtype: 'label',
+			text: 'Учет в незавершенном производстве',
+			style: 'position:absolute;left:6px;top:6px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Единицы',
 					items:
 					[
 		{
@@ -1263,6 +1234,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				{
@@ -1379,7 +1352,6 @@
 					]
 				},
 				{
-					title:'Характеристики',
 					items:
 					[
 		{
@@ -1450,6 +1422,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -1457,7 +1431,6 @@
 					]
 				},
 				{
-					title:'Серии',
 					items:
 					[
 		{
@@ -1537,6 +1510,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -1544,7 +1519,6 @@
 					]
 				},
 				{
-					title:'Проекты',
 					items:
 					[
 		{
@@ -1633,6 +1607,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -1640,12 +1616,13 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -1727,7 +1704,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -1807,6 +1783,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				{
@@ -1826,7 +1804,6 @@
 					]
 				},
 				{
-					title:'Комплектующие',
 					items:
 					[
 		{
@@ -1915,6 +1892,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				{
@@ -2027,7 +2006,6 @@
 					]
 				},
 				{
-					title:'Штрихкоды',
 					items:
 					[
 		{
@@ -2152,6 +2130,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				{
@@ -2268,12 +2248,13 @@
 					]
 				},
 				{
-					title:'Коды весового товара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -2382,7 +2363,6 @@
 					]
 				},
 				{
-					title:'Места хранения',
 					items:
 					[
 		{
@@ -2471,6 +2451,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -2478,12 +2460,13 @@
 					]
 				},
 				{
-					title:'Спецификации',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				{
@@ -2632,12 +2615,13 @@
 					]
 				},
 				{
-					title:'Плановая себестоимость',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:102px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				'-',
@@ -2885,13 +2869,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Плановая себестоимость номенклатуры',
-			style: 'position:absolute;left:6px;top:86px;width:586px;height:16px;',
+			xtype: 'label',
+			text: 'Плановая себестоимость номенклатуры',
+			style: 'position:absolute;left:6px;top:86px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -2899,7 +2885,6 @@
 					]
 				},
 				{
-					title:'Номенклатура поставщика',
 					items:
 					[
 		{
@@ -3043,6 +3028,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:101px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				'-',
@@ -3168,6 +3155,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 			]
@@ -3175,7 +3164,6 @@
 					]
 				},
 				{
-					title:'Цены номенклатуры',
 					items:
 					[
 		{
@@ -3291,6 +3279,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:29px;width:586px;height:24px;',
+			width: 586,
+			height: 24,
 			items:
 			[
 				{
@@ -3364,7 +3354,6 @@
 					]
 				},
 				{
-					title:'Описание',
 					items:
 					[
 		{
@@ -3473,14 +3462,13 @@
 			style: 'position:absolute;left:346px;top:79px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:131px;height:131px;',
 			height: 131,width: 131,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -3633,6 +3621,38 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:450px;width:616px;height:25px;',
+			width: 616,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<< Назад',
+				},
+				{
+					text:'Далее >>',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

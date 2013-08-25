@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:445px;height:25px;',
+			width: 445,
+			height: 25,
 			items:
 			[
 				{
@@ -118,6 +120,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:445px;width:445px;height:25px;',
+			width: 445,
+			height: 25,
 			items:
 			[
 				{
@@ -150,13 +154,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:166px;width:430px;height:272px;',
 			height: 272,width: 430,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
@@ -232,11 +235,12 @@
 			value: 0,
 			name: 'СекундОтвета',
 			style: 'position:absolute;left:86px;top:90px;width:46px;height:19px;',
+			width: 46,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Состав вопросов',
 					items:
 					[
 		{
@@ -343,6 +347,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:142px;width:416px;height:24px;',
+			width: 416,
+			height: 24,
 			items:
 			[
 			]
@@ -424,6 +430,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:416px;height:24px;',
+			width: 416,
+			height: 24,
 			items:
 			[
 				{
@@ -448,24 +456,25 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Вопросы',
-			style: 'position:absolute;left:6px;top:126px;width:416px;height:16px;',
+			xtype: 'label',
+			text: 'Вопросы',
+			style: 'position:absolute;left:6px;top:126px;width:416px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Разделы',
-			style: 'position:absolute;left:6px;top:6px;width:416px;height:16px;',
+			xtype: 'label',
+			text: 'Разделы',
+			style: 'position:absolute;left:6px;top:6px;width:416px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Макет печатной формы анкеты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:416px;height:24px;',
+			width: 416,
+			height: 24,
 			items:
 			[
 			]

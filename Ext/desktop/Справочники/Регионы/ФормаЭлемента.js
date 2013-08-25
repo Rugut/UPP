@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:502px;height:25px;',
+			width: 502,
+			height: 25,
 			items:
 			[
 			]
@@ -142,6 +144,8 @@
 			value: 0,
 			name: 'КодАдресногоЭлемента',
 			style: 'position:absolute;left:288px;top:58px;width:208px;height:19px;',
+			width: 208,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -165,6 +169,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:207px;width:504px;height:25px;',
+			width: 504,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			items:
 			[
 				{
@@ -187,13 +189,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:132px;width:642px;height:147px;',
 			height: 147,width: 642,
 			items:
 			[
 				{
-					title:'Создавать документы',
 					items:
 					[
 		{
@@ -368,7 +369,6 @@
 					]
 				},
 				{
-					title:'Расписание',
 					items:
 					[
 		{
@@ -379,6 +379,8 @@
 			value: 0,
 			name: 'Задержка',
 			style: 'position:absolute;left:278px;top:78px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -435,6 +437,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:314px;width:658px;height:25px;',
+			width: 658,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

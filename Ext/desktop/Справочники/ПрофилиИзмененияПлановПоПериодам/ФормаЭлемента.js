@@ -77,6 +77,19 @@
 			},
 		},
 		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:8px;top:100px;width:446px;height:24px;',
+			width: 446,
+			height: 24,
+			items:
+			[
+				'-',
+				{
+					text:'Заполнить',
+				},
+			]
+		},
+		{
 			id: 'ПрофильИзменения',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:124px;width:446px;height:220px;',
@@ -151,9 +164,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Профиль изменения:',
-			style: 'position:absolute;left:8px;top:84px;width:446px;height:16px;',
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:0px;width:462px;height:25px;',
+			width: 462,
+			height: 25,
+			items:
+			[
+			]
+		},
+		{
+			xtype: 'label',
+			text: 'Профиль изменения:',
+			style: 'position:absolute;left:8px;top:84px;width:446px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -176,27 +198,9 @@
 	[
 		{
 			xtype: 'toolbar',
-			style: 'position:absolute;left:8px;top:100px;width:446px;height:24px;',
-			dock: 'top',
-			items:
-			[
-				'-',
-				{
-					text:'Заполнить',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:0px;width:462px;height:25px;',
-			dock: 'top',
-			items:
-			[
-			]
-		},
-		{
-			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:352px;width:462px;height:25px;',
+			width: 462,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

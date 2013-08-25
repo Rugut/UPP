@@ -25,18 +25,19 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:85px;width:641px;height:159px;',
 			height: 159,width: 641,
 			items:
 			[
 				{
-					title:'Расчеты с контрагентами',
 					items:
 					[
 		{
@@ -91,14 +92,13 @@
 			style: 'position:absolute;left:6px;top:54px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:633px;height:103px;',
 			height: 103,width: 633,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -181,6 +181,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:81px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -190,6 +192,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:81px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -250,6 +254,8 @@
 			value: 0,
 			name: 'СуммаПлатежа',
 			style: 'position:absolute;left:409px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -296,7 +302,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -425,6 +430,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:294px;height:24px;',
+			width: 294,
+			height: 24,
 			items:
 			[
 				{
@@ -497,7 +504,6 @@
 					]
 				},
 				{
-					title:'Выдача подотчетнику',
 					items:
 					[
 		{
@@ -605,6 +611,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПодотчетника',
 			style: 'position:absolute;left:87px;top:54px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -614,6 +622,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетовПодотчетника',
 			style: 'position:absolute;left:87px;top:30px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -668,6 +678,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПодотчет',
 			style: 'position:absolute;left:415px;top:54px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -693,7 +705,6 @@
 					]
 				},
 				{
-					title:'Выдача кассе ККМ',
 					items:
 					[
 		{
@@ -758,6 +769,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетовККМ',
 			style: 'position:absolute;left:87px;top:6px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -821,7 +834,6 @@
 					]
 				},
 				{
-					title:'Прочие расходы',
 					items:
 					[
 		{
@@ -877,6 +889,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетовПрочие',
 			style: 'position:absolute;left:87px;top:6px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -941,7 +955,6 @@
 					]
 				},
 				{
-					title:'Описание',
 					items:
 					[
 		{
@@ -954,7 +967,6 @@
 					]
 				},
 				{
-					title:'Размещение',
 					items:
 					[
 		{
@@ -976,6 +988,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:30px;width:358px;height:24px;',
+			width: 358,
+			height: 24,
 			items:
 			[
 				{
@@ -1061,7 +1075,6 @@
 					]
 				},
 				{
-					title:'Бюджетирование',
 					items:
 					[
 		{
@@ -1282,6 +1295,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:347px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 				{
@@ -1516,6 +1531,8 @@
 			value: 0,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:233px;top:57px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',

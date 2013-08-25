@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:891px;height:25px;',
+			width: 891,
+			height: 25,
 			items:
 			[
 			]
@@ -44,19 +46,20 @@
 			style: 'position:absolute;left:775px;top:502px;width:106px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:149px;width:875px;height:347px;',
 			height: 347,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'АДВ11',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:27px;width:875px;height:24px;',
+			width: 875,
+			height: 24,
 			items:
 			[
 				{
@@ -161,19 +164,20 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расчеты с ПФР за 2002 - 2009 годы',
-			style: 'position:absolute;left:0px;top:6px;width:875px;height:16px;',
+			xtype: 'label',
+			text: 'Расчеты с ПФР за 2002 - 2009 годы',
+			style: 'position:absolute;left:0px;top:6px;width:875px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Страница2010',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:84px;width:514px;height:24px;',
+			width: 514,
+			height: 24,
 			items:
 			[
 				{
@@ -363,18 +367,20 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состав пачки (реестра)',
-			style: 'position:absolute;left:523px;top:68px;width:352px;height:16px;',
+			xtype: 'label',
+			text: 'Состав пачки (реестра)',
+			style: 'position:absolute;left:523px;top:68px;width:352px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пачки СЗВ-6-1 и Реестры СЗВ-6-2',
-			style: 'position:absolute;left:0px;top:68px;width:514px;height:16px;',
+			xtype: 'label',
+			text: 'Пачки СЗВ-6-1 и Реестры СЗВ-6-2',
+			style: 'position:absolute;left:0px;top:68px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:523px;top:84px;width:352px;height:24px;',
+			width: 352,
+			height: 24,
 			items:
 			[
 				{
@@ -420,14 +426,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:68px;',
 			height: 68,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -494,22 +499,22 @@
 					]
 				},
 				{
-					title:'Страница2009',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:33px;width:875px;height:314px;',
 			height: 314,width: 875,
 			items:
 			[
 				{
-					title:'Пачки',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:503px;height:24px;',
+			width: 503,
+			height: 24,
 			items:
 			[
 				{
@@ -712,18 +717,20 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состав пачки',
-			style: 'position:absolute;left:515px;top:6px;width:352px;height:16px;',
+			xtype: 'label',
+			text: 'Состав пачки',
+			style: 'position:absolute;left:515px;top:6px;width:352px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пачки СЗВ-4',
-			style: 'position:absolute;left:6px;top:6px;width:503px;height:16px;',
+			xtype: 'label',
+			text: 'Пачки СЗВ-4',
+			style: 'position:absolute;left:6px;top:6px;width:503px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:515px;top:22px;width:352px;height:24px;',
+			width: 352,
+			height: 24,
 			items:
 			[
 				{
@@ -771,12 +778,13 @@
 					]
 				},
 				{
-					title:'Расчеты с ПФР',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:861px;height:24px;',
+			width: 861,
+			height: 24,
 			items:
 			[
 				{
@@ -885,14 +893,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:25px;',
 			height: 25,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница обычная',
 					items:
 					[
 		{
@@ -937,7 +944,6 @@
 					]
 				},
 				{
-					title:'Страница специальная',
 					items:
 					[
 		{
@@ -955,25 +961,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:875px;height:41px;',
 			height: 41,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:35px;',
 			height: 35,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -985,14 +989,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:875px;height:75px;',
 			height: 75,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1237,14 +1240,13 @@
 			style: 'position:absolute;left:529px;top:48px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:611px;top:48px;width:243px;height:19px;',
 			height: 19,width: 243,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1284,6 +1286,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:529px;width:891px;height:25px;',
+			width: 891,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

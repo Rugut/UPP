@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:361px;height:25px;',
+			width: 361,
+			height: 25,
 			items:
 			[
 			]
@@ -58,6 +60,8 @@
 			value: 0,
 			name: 'НомерУд',
 			style: 'position:absolute;left:31px;top:218px;width:101px;height:19px;',
+			width: 101,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -122,6 +126,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:358px;width:361px;height:25px;',
+			width: 361,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

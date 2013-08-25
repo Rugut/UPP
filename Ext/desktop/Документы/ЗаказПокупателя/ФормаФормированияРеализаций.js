@@ -76,6 +76,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:744px;height:25px;',
+			width: 744,
+			height: 25,
 			items:
 			[
 				{
@@ -206,6 +208,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровРеализации',
 			style: 'position:absolute;left:251px;top:149px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -221,6 +225,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровДокументаОрдер',
 			style: 'position:absolute;left:626px;top:149px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -236,6 +242,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровСФ',
 			style: 'position:absolute;left:251px;top:319px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -251,6 +259,8 @@
 			value: 0,
 			name: 'КоличествоЭкземпляровПКО',
 			style: 'position:absolute;left:626px;top:319px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'radiogroup',
@@ -339,6 +349,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:376px;width:744px;height:25px;',
+			width: 744,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

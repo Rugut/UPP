@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:1px;width:498px;height:416px;',
 			height: 416,width: 498,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Выбор режима',
 					items:
 					[
 		{
@@ -46,9 +45,9 @@
 			style: 'position:absolute;left:129px;top:118px;width:364px;height:44px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Вариант заполнения регистров',
-			style: 'position:absolute;left:6px;top:49px;width:487px;height:16px;',
+			xtype: 'label',
+			text: 'Вариант заполнения регистров',
+			style: 'position:absolute;left:6px;top:49px;width:487px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -80,7 +79,6 @@
 					]
 				},
 				{
-					title:'Изменить настройку выборочная',
 					items:
 					[
 		{
@@ -207,13 +205,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные для заполнения регистров',
-			style: 'position:absolute;left:6px;top:73px;width:486px;height:16px;',
+			xtype: 'label',
+			text: 'Данные для заполнения регистров',
+			style: 'position:absolute;left:6px;top:73px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:93px;width:370px;height:24px;',
+			width: 370,
+			height: 24,
 			items:
 			[
 				{
@@ -233,9 +233,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сформированные остатки',
-			style: 'position:absolute;left:6px;top:247px;width:486px;height:16px;',
+			xtype: 'label',
+			text: 'Сформированные остатки',
+			style: 'position:absolute;left:6px;top:247px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТаблицаОтображаемыхДокументов',
@@ -318,6 +318,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:266px;width:486px;height:24px;',
+			width: 486,
+			height: 24,
 			items:
 			[
 				{
@@ -345,7 +347,6 @@
 					]
 				},
 				{
-					title:'Изменить настройку полная',
 					items:
 					[
 		{
@@ -369,14 +370,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:488px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:53px;width:488px;height:89px;',
 			height: 89,width: 488,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Отключение режима',
 					items:
 					[
 		{
@@ -388,7 +388,6 @@
 					]
 				},
 				{
-					title:'Расчет не окончен',
 					items:
 					[
 		{
@@ -404,7 +403,6 @@
 					]
 				},
 				{
-					title:'Режим использования расширенной аналитики',
 					items:
 					[
 		{
@@ -418,9 +416,9 @@
 			style: 'position:absolute;left:24px;top:89px;width:468px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Режим использования расширенной аналитики:',
-			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;',
+			xtype: 'label',
+			text: 'Режим использования расширенной аналитики:',
+			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -443,7 +441,6 @@
 					]
 				},
 				{
-					title:'Настройка аналитики учета затрат',
 					items:
 					[
 		{
@@ -516,9 +513,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Детализация затрат:',
-			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;',
+			xtype: 'label',
+			text: 'Детализация затрат:',
+			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -531,6 +528,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:417px;width:498px;height:25px;',
+			width: 498,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

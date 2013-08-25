@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			items:
 			[
 			]
@@ -207,13 +209,12 @@
 			style: 'position:absolute;left:96px;top:358px;width:578px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:111px;width:666px;height:241px;',
 			height: 241,width: 666,
 			items:
 			[
 				{
-					title:'Другие работодатели (страхователи)',
 					items:
 					[
 		{
@@ -288,6 +289,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:293px;height:24px;',
+			width: 293,
+			height: 24,
 			items:
 			[
 				{
@@ -451,7 +454,6 @@
 					]
 				},
 				{
-					title:'Данные организации',
 					items:
 					[
 		{
@@ -607,14 +609,14 @@
 			style: 'position:absolute;left:258px;top:27px;width:401px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Регистрация в ФСС',
-			style: 'position:absolute;left:6px;top:6px;width:653px;height:16px;',
+			xtype: 'label',
+			text: 'Регистрация в ФСС',
+			style: 'position:absolute;left:6px;top:6px;width:653px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Подписи',
-			style: 'position:absolute;left:8px;top:108px;width:651px;height:16px;',
+			xtype: 'label',
+			text: 'Подписи',
+			style: 'position:absolute;left:8px;top:108px;width:651px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -640,7 +642,6 @@
 					]
 				},
 				{
-					title:'Данные о застрахованном лице',
 					items:
 					[
 		{
@@ -779,6 +780,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:385px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

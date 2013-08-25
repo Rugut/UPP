@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:360px;width:479px;height:25px;',
+			width: 479,
+			height: 25,
 			items:
 			[
 				{
@@ -39,19 +41,18 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:463px;height:331px;',
 			height: 331,width: 463,
 			items:
 			[
 				{
-					title:'Выбор источника',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Укажите источник загрузки',
-			style: 'position:absolute;left:6px;top:6px;width:449px;height:16px;',
+			xtype: 'label',
+			text: 'Укажите источник загрузки',
+			style: 'position:absolute;left:6px;top:6px;width:449px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -72,7 +73,6 @@
 					]
 				},
 				{
-					title:'Классификатор',
 					items:
 					[
 		{
@@ -207,6 +207,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:449px;height:24px;',
+			width: 449,
+			height: 24,
 			items:
 			[
 				{
@@ -241,7 +243,6 @@
 					]
 				},
 				{
-					title:'Конфликты',
 					items:
 					[
 		{
@@ -349,6 +350,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:70px;width:449px;height:24px;',
+			width: 449,
+			height: 24,
 			items:
 			[
 				{
@@ -374,9 +377,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Различия информационной базы с классификатором',
-			style: 'position:absolute;left:6px;top:54px;width:449px;height:16px;',
+			xtype: 'label',
+			text: 'Различия информационной базы с классификатором',
+			style: 'position:absolute;left:6px;top:54px;width:449px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},

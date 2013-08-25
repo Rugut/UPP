@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
+			width: 810,
+			height: 25,
 			items:
 			[
 				{
@@ -160,6 +162,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:219px;width:792px;height:24px;',
+			width: 792,
+			height: 24,
 			items:
 			[
 				{
@@ -198,30 +202,28 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Файлы документа',
-			style: 'position:absolute;left:8px;top:203px;width:794px;height:16px;',
+			xtype: 'label',
+			text: 'Файлы документа',
+			style: 'position:absolute;left:8px;top:203px;width:794px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:794px;height:44px;',
 			height: 44,width: 794,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:794px;height:36px;',
 			height: 36,width: 794,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -246,6 +248,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:379px;width:810px;height:25px;',
+			width: 810,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

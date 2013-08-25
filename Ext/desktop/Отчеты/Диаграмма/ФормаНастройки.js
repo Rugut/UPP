@@ -42,6 +42,8 @@
 			value: 0,
 			name: 'КоличествоОграничения',
 			style: 'position:absolute;left:372px;top:54px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -62,14 +64,13 @@
 			style: 'position:absolute;left:434px;top:54px;width:44px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:122px;width:471px;height:127px;',
 			height: 127,width: 471,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Круговая',
 					items:
 					[
 		{
@@ -104,7 +105,6 @@
 					]
 				},
 				{
-					title:'КруговаяОбъемная',
 					items:
 					[
 		{
@@ -144,7 +144,6 @@
 					]
 				},
 				{
-					title:'ГистограммаПлоская',
 					items:
 					[
 		{
@@ -161,6 +160,8 @@
 			value: 0,
 			name: 'БазовоеЗначение',
 			style: 'position:absolute;left:136px;top:24px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -192,7 +193,6 @@
 					]
 				},
 				{
-					title:'ГистограммаОбъемная',
 					items:
 					[
 		{
@@ -209,6 +209,8 @@
 			value: 0,
 			name: 'БазовоеЗначение1',
 			style: 'position:absolute;left:136px;top:24px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -240,7 +242,6 @@
 					]
 				},
 				{
-					title:'Изометрическая',
 					items:
 					[
 		{
@@ -257,6 +258,8 @@
 			value: 0,
 			name: 'БазовоеЗначение2',
 			style: 'position:absolute;left:136px;top:48px;width:58px;height:19px;',
+			width: 58,
+			height: 19,
 		},
 		{
 			xtype: 'combobox',
@@ -300,7 +303,6 @@
 					]
 				},
 				{
-					title:'График',
 					items:
 					[
 		{
@@ -317,6 +319,8 @@
 			value: 0,
 			name: 'БазовоеЗначение3',
 			style: 'position:absolute;left:136px;top:0px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -326,7 +330,6 @@
 					]
 				},
 				{
-					title:'ГрафикСЗаливкой',
 					items:
 					[
 		{
@@ -343,6 +346,8 @@
 			value: 0,
 			name: 'БазовоеЗначение4',
 			style: 'position:absolute;left:136px;top:0px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -369,14 +374,14 @@
 			style: 'position:absolute;left:14px;top:78px;width:108px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общие',
-			style: 'position:absolute;left:8px;top:8px;width:471px;height:16px;',
+			xtype: 'label',
+			text: 'Общие',
+			style: 'position:absolute;left:8px;top:8px;width:471px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Индивидуальные, для текущего типа диаграммы',
-			style: 'position:absolute;left:8px;top:101px;width:471px;height:16px;',
+			xtype: 'label',
+			text: 'Индивидуальные, для текущего типа диаграммы',
+			style: 'position:absolute;left:8px;top:101px;width:471px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -385,6 +390,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:257px;width:487px;height:25px;',
+			width: 487,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:541px;height:226px;',
 			height: 226,width: 541,
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
@@ -121,6 +120,8 @@
 			value: 0,
 			name: 'ЗначениеКоличествоПотребностиНач',
 			style: 'position:absolute;left:295px;top:156px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -130,6 +131,8 @@
 			value: 0,
 			name: 'ЗначениеКоличествоПотребностиКон',
 			style: 'position:absolute;left:415px;top:156px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -153,6 +156,8 @@
 			value: 0,
 			name: 'ЗначениеКоличествоЗаказовНач',
 			style: 'position:absolute;left:295px;top:181px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -162,6 +167,8 @@
 			value: 0,
 			name: 'ЗначениеКоличествоЗаказовКон',
 			style: 'position:absolute;left:415px;top:181px;width:118px;height:19px;',
+			width: 118,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -247,7 +254,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{

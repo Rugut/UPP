@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:508px;height:25px;',
+			width: 508,
+			height: 25,
 			items:
 			[
 				'-',
@@ -58,13 +60,12 @@
 			style: 'position:absolute;left:90px;top:33px;width:319px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:492px;height:260px;',
 			height: 260,width: 492,
 			items:
 			[
 				{
-					title:'Обмен по расписанию',
 					items:
 					[
 		{
@@ -92,7 +93,6 @@
 					]
 				},
 				{
-					title:'Обмен по событиям',
 					items:
 					[
 		{
@@ -151,9 +151,9 @@
 			style: 'position:absolute;left:15px;top:73px;width:212px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Обмен данных по событиям (на клиентской части)',
-			style: 'position:absolute;left:7px;top:6px;width:477px;height:16px;',
+			xtype: 'label',
+			text: 'Обмен данных по событиям (на клиентской части)',
+			style: 'position:absolute;left:7px;top:6px;width:477px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -186,7 +186,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -203,6 +202,8 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЗапись1',
 			style: 'position:absolute;left:260px;top:26px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -218,6 +219,8 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЧтение1',
 			style: 'position:absolute;left:260px;top:50px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -225,9 +228,9 @@
 			style: 'position:absolute;left:6px;top:6px;width:277px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отправлять сообщения при ошибке обмена',
-			style: 'position:absolute;left:6px;top:73px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Отправлять сообщения при ошибке обмена',
+			style: 'position:absolute;left:6px;top:73px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -348,6 +351,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:16px;top:139px;width:468px;height:24px;',
+			width: 468,
+			height: 24,
 			items:
 			[
 				{
@@ -372,9 +377,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выполняемые действия',
-			style: 'position:absolute;left:8px;top:322px;width:492px;height:16px;',
+			xtype: 'label',
+			text: 'Выполняемые действия',
+			style: 'position:absolute;left:8px;top:322px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'НастройкиОбмена',
@@ -453,6 +458,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:340px;width:492px;height:24px;',
+			width: 492,
+			height: 24,
 			items:
 			[
 				{
@@ -517,6 +524,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:508px;height:25px;',
+			width: 508,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

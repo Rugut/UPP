@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:409px;height:394px;',
 			height: 394,width: 409,
 			items:
 			[
 				{
-					title:'Документы',
 					items:
 					[
 		{
@@ -85,7 +84,6 @@
 					]
 				},
 				{
-					title:'Справочники',
 					items:
 					[
 		{
@@ -147,7 +145,6 @@
 					]
 				},
 				{
-					title:'Отчеты',
 					items:
 					[
 		{
@@ -217,6 +214,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:410px;width:425px;height:25px;',
+			width: 425,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

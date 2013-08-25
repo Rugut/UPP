@@ -88,6 +88,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:69px;width:365px;height:24px;',
+			width: 365,
+			height: 24,
 			items:
 			[
 				{
@@ -186,19 +188,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:547px;width:984px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:547px;width:984px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:381px;top:69px;width:611px;height:155px;',
 			height: 155,width: 611,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница данных',
 					items:
 					[
 		{
@@ -533,19 +534,17 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:251px;width:984px;height:292px;',
 			height: 292,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Данные физлица',
 					items:
 					[
 		{
@@ -629,6 +628,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:349px;height:24px;',
+			width: 349,
+			height: 24,
 			items:
 			[
 				{
@@ -657,13 +658,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:358px;top:0px;width:626px;height:292px;',
 			height: 292,width: 626,
 			items:
 			[
 				{
-					title:'Доходы, вычеты, налоги',
 					items:
 					[
 		{
@@ -957,14 +957,13 @@
 			style: 'position:absolute;left:6px;top:133px;width:129px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:166px;width:612px;height:100px;',
 			height: 100,width: 612,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница2010',
 					items:
 					[
 		{
@@ -975,6 +974,8 @@
 			value: 0,
 			name: 'Исчислено',
 			style: 'position:absolute;left:249px;top:24px;width:72px;height:19px;',
+			width: 72,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -984,6 +985,8 @@
 			value: 0,
 			name: 'Удержано',
 			style: 'position:absolute;left:249px;top:48px;width:72px;height:19px;',
+			width: 72,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -993,6 +996,8 @@
 			value: 0,
 			name: 'Перечислено',
 			style: 'position:absolute;left:435px;top:48px;width:72px;height:19px;',
+			width: 72,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1002,6 +1007,8 @@
 			value: 0,
 			name: 'ОбщаяСуммаДохода',
 			style: 'position:absolute;left:68px;top:24px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1011,6 +1018,8 @@
 			value: 0,
 			name: 'ОблагаемаяСуммаДохода',
 			style: 'position:absolute;left:68px;top:48px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1020,6 +1029,8 @@
 			value: 0,
 			name: 'Задолженность',
 			style: 'position:absolute;left:249px;top:72px;width:72px;height:19px;',
+			width: 72,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1029,6 +1040,8 @@
 			value: 0,
 			name: 'ИзлишнеУдержано',
 			style: 'position:absolute;left:435px;top:24px;width:72px;height:19px;',
+			width: 72,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1093,7 +1106,6 @@
 					]
 				},
 				{
-					title:'Страница2011',
 					items:
 					[
 		{
@@ -1184,14 +1196,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:389px;top:9px;width:150px;height:57px;',
 			height: 57,width: 150,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1202,6 +1213,8 @@
 			value: 0,
 			name: 'Перечислено1',
 			style: 'position:absolute;left:90px;top:38px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1211,6 +1224,8 @@
 			value: 0,
 			name: 'ИзлишнеУдержано1',
 			style: 'position:absolute;left:90px;top:16px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1229,14 +1244,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:247px;top:47px;width:132px;height:22px;',
 			height: 22,width: 132,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1247,6 +1261,8 @@
 			value: 0,
 			name: 'Удержано1',
 			style: 'position:absolute;left:72px;top:0px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1266,6 +1282,8 @@
 			value: 0,
 			name: 'Задолженность1',
 			style: 'position:absolute;left:319px;top:70px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1275,6 +1293,8 @@
 			value: 0,
 			name: 'ОбщаяСуммаДохода1',
 			style: 'position:absolute;left:148px;top:24px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1284,6 +1304,8 @@
 			value: 0,
 			name: 'ОблагаемаяСуммаДохода1',
 			style: 'position:absolute;left:148px;top:48px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1293,6 +1315,8 @@
 			value: 0,
 			name: 'Исчислено1',
 			style: 'position:absolute;left:319px;top:24px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -1307,7 +1331,6 @@
 					]
 				},
 				{
-					title:'Личные данные налогоплательщика',
 					items:
 					[
 		{
@@ -1524,7 +1547,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
@@ -1554,6 +1576,8 @@
 			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:624px;top:8px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		],
 	}],

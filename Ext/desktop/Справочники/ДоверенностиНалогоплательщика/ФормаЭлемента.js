@@ -73,10 +73,14 @@
 			value: 0,
 			name: 'ПризнакДоверителя',
 			style: 'position:absolute;left:137px;top:85px;width:195px;height:19px;',
+			width: 195,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:499px;height:25px;',
+			width: 499,
+			height: 25,
 			items:
 			[
 			]
@@ -93,13 +97,12 @@
 			style: 'position:absolute;left:351px;top:89px;width:138px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:110px;width:483px;height:348px;',
 			height: 348,width: 483,
 			items:
 			[
 				{
-					title:'Представитель',
 					items:
 					[
 		{
@@ -112,14 +115,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -198,14 +200,13 @@
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Юридическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;',
+			xtype: 'label',
+			text: 'Юридическое лицо',
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -340,9 +341,9 @@
 			style: 'position:absolute;left:0px;top:131px;width:234px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Физическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;',
+			xtype: 'label',
+			text: 'Физическое лицо',
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -355,14 +356,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Уполномоченное лицо',
 					items:
 					[
 		{
@@ -396,9 +396,9 @@
 			style: 'position:absolute;left:88px;top:185px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уполномоченное лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;',
+			xtype: 'label',
+			text: 'Уполномоченное лицо',
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -504,7 +504,6 @@
 					]
 				},
 				{
-					title:'Доверитель',
 					items:
 					[
 		{
@@ -517,14 +516,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -603,9 +601,9 @@
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Юридическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;',
+			xtype: 'label',
+			text: 'Юридическое лицо',
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -682,7 +680,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -781,9 +778,9 @@
 			style: 'position:absolute;left:0px;top:131px;width:234px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Физическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;',
+			xtype: 'label',
+			text: 'Физическое лицо',
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -795,14 +792,13 @@
 			style: 'position:absolute;left:98px;top:9px;width:165px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Уполномоченное лицо',
 					items:
 					[
 		{
@@ -836,9 +832,9 @@
 			style: 'position:absolute;left:88px;top:185px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уполномоченное лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;',
+			xtype: 'label',
+			text: 'Уполномоченное лицо',
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -939,7 +935,6 @@
 					]
 				},
 				{
-					title:'Нотариус',
 					items:
 					[
 		{
@@ -952,14 +947,13 @@
 			style: 'position:absolute;left:6px;top:6px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1023,9 +1017,9 @@
 			style: 'position:absolute;left:39px;top:124px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Юридическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;',
+			xtype: 'label',
+			text: 'Юридическое лицо',
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1048,7 +1042,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1079,23 +1072,22 @@
 			style: 'position:absolute;left:0px;top:87px;width:234px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Физическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;',
+			xtype: 'label',
+			text: 'Физическое лицо',
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Уполномоченное лицо',
 					items:
 					[
 		{
@@ -1129,9 +1121,9 @@
 			style: 'position:absolute;left:38px;top:114px;width:90px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уполномоченное лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;',
+			xtype: 'label',
+			text: 'Уполномоченное лицо',
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1278,14 +1270,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:480px;width:483px;height:24px;',
+			width: 483,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения о полномочиях представителя',
-			style: 'position:absolute;left:8px;top:464px;width:483px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения о полномочиях представителя',
+			style: 'position:absolute;left:8px;top:464px;width:483px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -1294,6 +1288,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:583px;width:499px;height:25px;',
+			width: 499,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

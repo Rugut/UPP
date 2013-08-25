@@ -24,6 +24,8 @@
 			value: 0,
 			name: 'КоличествоПериодовРаспределения',
 			style: 'position:absolute;left:168px;top:54px;width:76px;height:19px;',
+			width: 76,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -39,6 +41,8 @@
 			value: 0,
 			name: 'СмещениеПервогоПериодаРаспределения',
 			style: 'position:absolute;left:168px;top:30px;width:76px;height:19px;',
+			width: 76,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -54,6 +58,8 @@
 			value: 0,
 			name: 'БазовыйКоэффициент',
 			style: 'position:absolute;left:124px;top:192px;width:140px;height:19px;',
+			width: 140,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -69,6 +75,8 @@
 			value: 0,
 			name: 'ПриращениеЗаПериод',
 			style: 'position:absolute;left:124px;top:216px;width:140px;height:19px;',
+			width: 140,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -165,19 +173,19 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды:',
-			style: 'position:absolute;left:8px;top:8px;width:280px;height:16px;',
+			xtype: 'label',
+			text: 'Периоды:',
+			style: 'position:absolute;left:8px;top:8px;width:280px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Установки:',
-			style: 'position:absolute;left:8px;top:90px;width:280px;height:16px;',
+			xtype: 'label',
+			text: 'Установки:',
+			style: 'position:absolute;left:8px;top:90px;width:280px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Значения:',
-			style: 'position:absolute;left:8px;top:171px;width:280px;height:16px;',
+			xtype: 'label',
+			text: 'Значения:',
+			style: 'position:absolute;left:8px;top:171px;width:280px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -186,6 +194,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:243px;width:296px;height:25px;',
+			width: 296,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

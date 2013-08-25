@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:624px;height:25px;',
+			width: 624,
+			height: 25,
 			items:
 			[
 				{
@@ -292,6 +294,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:125px;width:608px;height:24px;',
+			width: 608,
+			height: 24,
 			items:
 			[
 				{
@@ -329,9 +333,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Задолженность',
-			style: 'position:absolute;left:8px;top:109px;width:608px;height:16px;',
+			xtype: 'label',
+			text: 'Задолженность',
+			style: 'position:absolute;left:8px;top:109px;width:608px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -385,6 +389,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:364px;width:624px;height:25px;',
+			width: 624,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

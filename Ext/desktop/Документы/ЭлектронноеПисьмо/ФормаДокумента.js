@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			width: 660,
+			height: 25,
 			items:
 			[
 				{
@@ -47,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			width: 660,
+			height: 25,
 			items:
 			[
 				{
@@ -163,14 +167,13 @@
 			style: 'position:absolute;left:102px;top:81px;width:552px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:105px;width:647px;height:24px;',
 			height: 24,width: 647,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -214,13 +217,12 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:176px;width:647px;height:261px;',
 			height: 261,width: 647,
 			items:
 			[
 				{
-					title:'Письмо',
 					items:
 					[
 		{
@@ -232,6 +234,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			width: 106,
+			height: 24,
 			items:
 			[
 				{
@@ -242,6 +246,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			width: 106,
+			height: 24,
 			items:
 			[
 				{
@@ -252,6 +258,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			width: 106,
+			height: 24,
 			items:
 			[
 				{
@@ -262,6 +270,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:213px;width:106px;height:24px;',
+			width: 106,
+			height: 24,
 			items:
 			[
 				{
@@ -284,7 +294,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -461,7 +470,6 @@
 					]
 				},
 				{
-					title:'Вложения',
 					items:
 					[
 		{
@@ -536,6 +544,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			width: 632,
+			height: 24,
 			items:
 			[
 				{
@@ -644,7 +654,6 @@
 					]
 				},
 				{
-					title:'Вложения',
 					items:
 					[
 		{
@@ -719,6 +728,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:632px;height:24px;',
+			width: 632,
+			height: 24,
 			items:
 			[
 				{

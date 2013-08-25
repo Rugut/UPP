@@ -17,36 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:302px;width:650px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-				'-',
-				{
-					text:'Справка',
-				},
-			]
-		},
-		{
 			id: 'СписокРазделов',
 			xtype: 'grid',
 			style: 'position:absolute;left:8px;top:8px;width:166px;height:286px;',
@@ -107,14 +77,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:180px;top:8px;width:462px;height:286px;',
 			height: 286,width: 462,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Торговое оборудование',
 					items:
 					[
 		{
@@ -131,7 +100,6 @@
 					]
 				},
 				{
-					title:'Выгрузка товаров',
 					items:
 					[
 		{
@@ -193,7 +161,6 @@
 					]
 				},
 				{
-					title:'Штрихкоды',
 					items:
 					[
 		{
@@ -263,6 +230,8 @@
 			value: 0,
 			name: 'EAN13ДлинаКодаВесовогоТовара',
 			style: 'position:absolute;left:213px;top:165px;width:52px;height:19px;',
+			width: 52,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -284,6 +253,39 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:302px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+				'-',
+				{
+					text:'Справка',
+				},
+			]
+		},
 	]
 	});
 });

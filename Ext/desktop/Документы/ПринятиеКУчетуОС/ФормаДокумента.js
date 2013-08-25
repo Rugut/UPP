@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:706px;height:25px;',
+			width: 706,
+			height: 25,
 			items:
 			[
 				{
@@ -53,6 +55,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:534px;width:706px;height:25px;',
+			width: 706,
+			height: 25,
 			items:
 			[
 				{
@@ -185,13 +189,12 @@
 			style: 'position:absolute;left:90px;top:507px;width:608px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:690px;height:396px;',
 			height: 396,width: 690,
 			items:
 			[
 				{
-					title:'Основные средства',
 					items:
 					[
 		{
@@ -275,6 +278,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:188px;width:676px;height:24px;',
+			width: 676,
+			height: 24,
 			items:
 			[
 				'-',
@@ -297,14 +302,13 @@
 			style: 'position:absolute;left:6px;top:30px;width:202px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:676px;height:162px;',
 			height: 162,width: 676,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Основные средства со склада',
 					items:
 					[
 		{
@@ -556,7 +560,6 @@
 					]
 				},
 				{
-					title:'Объекты строительства',
 					items:
 					[
 		{
@@ -618,6 +621,8 @@
 			value: 0,
 			name: 'Стоимость',
 			style: 'position:absolute;left:228px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -723,6 +728,8 @@
 			value: 0,
 			name: 'СтоимостьБУ',
 			style: 'position:absolute;left:228px;top:24px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -756,6 +763,8 @@
 			value: 0,
 			name: 'СтоимостьНУ',
 			style: 'position:absolute;left:228px;top:48px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -777,6 +786,8 @@
 			value: 0,
 			name: 'СтоимостьБУХоз',
 			style: 'position:absolute;left:534px;top:24px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -798,6 +809,8 @@
 			value: 0,
 			name: 'СтоимостьНУХоз',
 			style: 'position:absolute;left:534px;top:48px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -851,6 +864,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:596px;top:120px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -883,6 +898,8 @@
 			value: 0,
 			name: 'СтоимостьПР',
 			style: 'position:absolute;left:228px;top:72px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -904,6 +921,8 @@
 			value: 0,
 			name: 'СтоимостьПРХоз',
 			style: 'position:absolute;left:534px;top:72px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -925,6 +944,8 @@
 			value: 0,
 			name: 'СтоимостьВР',
 			style: 'position:absolute;left:228px;top:96px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -946,6 +967,8 @@
 			value: 0,
 			name: 'СтоимостьВРХоз',
 			style: 'position:absolute;left:534px;top:96px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -956,7 +979,6 @@
 					]
 				},
 				{
-					title:'Источник не указан',
 					items:
 					[
 		{
@@ -979,6 +1001,8 @@
 			value: 0,
 			name: 'СтоимостьУУ',
 			style: 'position:absolute;left:118px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -997,14 +1021,13 @@
 			style: 'position:absolute;left:6px;top:33px;width:225px;height:32px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные средства',
-			style: 'position:absolute;left:6px;top:173px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'Основные средства',
+			style: 'position:absolute;left:6px;top:173px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Общие сведения',
 					items:
 					[
 		{
@@ -1089,7 +1112,6 @@
 					]
 				},
 				{
-					title:'Управленческий учет',
 					items:
 					[
 		{
@@ -1281,6 +1303,8 @@
 			value: 0,
 			name: 'СрокПолезногоИспользованияУУ',
 			style: 'position:absolute;left:210px;top:219px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1290,6 +1314,8 @@
 			value: 0,
 			name: 'ПредполагаемыйОбъемПродукцииУУ',
 			style: 'position:absolute;left:210px;top:195px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1299,6 +1325,8 @@
 			value: 0,
 			name: 'ГодоваяНормаАмортизацииУУ',
 			style: 'position:absolute;left:210px;top:243px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1348,6 +1376,8 @@
 			value: 0,
 			name: 'КоэффициентУскоренияУУ',
 			style: 'position:absolute;left:585px;top:195px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1447,9 +1477,9 @@
 			style: 'position:absolute;left:6px;top:6px;width:74px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры и графики амортизации:',
-			style: 'position:absolute;left:6px;top:126px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры и графики амортизации:',
+			style: 'position:absolute;left:6px;top:126px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -1458,9 +1488,9 @@
 			style: 'position:absolute;left:480px;top:147px;width:196px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'События основного средства:',
-			style: 'position:absolute;left:6px;top:54px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'События основного средства:',
+			style: 'position:absolute;left:6px;top:54px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1566,7 +1596,6 @@
 					]
 				},
 				{
-					title:'Бухгалтерский учет',
 					items:
 					[
 		{
@@ -1702,6 +1731,8 @@
 			value: 0,
 			name: 'СрокПолезногоИспользованияБУ',
 			style: 'position:absolute;left:210px;top:219px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -1833,6 +1864,8 @@
 			value: 0,
 			name: 'ГодоваяНормаАмортизацииБУ',
 			style: 'position:absolute;left:210px;top:243px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1842,6 +1875,8 @@
 			value: 0,
 			name: 'КоэффициентУскоренияБУ',
 			style: 'position:absolute;left:585px;top:195px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1851,6 +1886,8 @@
 			value: 0,
 			name: 'ПредполагаемыйОбъемПродукцииБУ',
 			style: 'position:absolute;left:210px;top:195px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -1899,9 +1936,9 @@
 			style: 'position:absolute;left:480px;top:147px;width:196px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры и графики амортизации:',
-			style: 'position:absolute;left:6px;top:126px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры и графики амортизации:',
+			style: 'position:absolute;left:6px;top:126px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -1943,9 +1980,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'События основного средства:',
-			style: 'position:absolute;left:6px;top:54px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'События основного средства:',
+			style: 'position:absolute;left:6px;top:54px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2051,7 +2088,6 @@
 					]
 				},
 				{
-					title:'Налоговый учет',
 					items:
 					[
 		{
@@ -2100,9 +2136,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общие сведения',
-			style: 'position:absolute;left:6px;top:6px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'Общие сведения',
+			style: 'position:absolute;left:6px;top:6px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2150,14 +2186,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:87px;width:676px;height:283px;',
 			height: 283,width: 676,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Начисление амортизации',
 					items:
 					[
 		{
@@ -2224,6 +2259,8 @@
 			value: 0,
 			name: 'СрокПолезногоИспользованияНУ',
 			style: 'position:absolute;left:241px;top:71px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2239,11 +2276,13 @@
 			value: 0,
 			name: 'СпециальныйКоэффициентНУ',
 			style: 'position:absolute;left:241px;top:95px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры амортизации',
-			style: 'position:absolute;left:0px;top:0px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры амортизации',
+			style: 'position:absolute;left:0px;top:0px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -2251,9 +2290,9 @@
 			style: 'position:absolute;left:6px;top:144px;width:427px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Амортизационная премия',
-			style: 'position:absolute;left:0px;top:123px;width:676px;height:16px;',
+			xtype: 'label',
+			text: 'Амортизационная премия',
+			style: 'position:absolute;left:0px;top:123px;width:676px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -2262,14 +2301,13 @@
 			style: 'position:absolute;left:326px;top:71px;width:155px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:168px;width:676px;height:115px;',
 			height: 115,width: 676,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2286,6 +2324,8 @@
 			value: 0,
 			name: 'ПроцентКапитальныхВложенийВключаемыхВРасходыНУ',
 			style: 'position:absolute;left:241px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -2472,14 +2512,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:47px;width:670px;height:24px;',
 			height: 24,width: 670,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2533,18 +2572,16 @@
 					]
 				},
 				{
-					title:'Включение в расходы при принятии к учету',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:27px;width:676px;height:256px;',
 			height: 256,width: 676,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2567,6 +2604,8 @@
 			value: 0,
 			name: 'СтоимостьНУ1',
 			style: 'position:absolute;left:72px;top:21px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2575,9 +2614,9 @@
 			style: 'position:absolute;left:154px;top:21px;width:60px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Со счета учета списать сумму',
-			style: 'position:absolute;left:6px;top:0px;width:664px;height:16px;',
+			xtype: 'label',
+			text: 'Со счета учета списать сумму',
+			style: 'position:absolute;left:6px;top:0px;width:664px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -2631,14 +2670,12 @@
 					]
 				},
 				{
-					title:'Стоимость не включается в расходы',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Налоговый учет (УСН)',
 					items:
 					[
 		{
@@ -2655,6 +2692,8 @@
 			value: 0,
 			name: 'СтоимостьУСН',
 			style: 'position:absolute;left:304px;top:6px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2670,6 +2709,8 @@
 			value: 0,
 			name: 'СрокПолезногоИспользованияУСН',
 			style: 'position:absolute;left:304px;top:31px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2838,6 +2879,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:7px;top:179px;width:675px;height:24px;',
+			width: 675,
+			height: 24,
 			items:
 			[
 			]
@@ -2890,7 +2933,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{

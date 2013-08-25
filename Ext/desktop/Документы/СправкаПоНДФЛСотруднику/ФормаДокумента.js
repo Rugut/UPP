@@ -168,6 +168,8 @@
 			value: 0,
 			name: 'НалоговыйПериод',
 			style: 'position:absolute;left:114px;top:58px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -233,6 +235,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
+			width: 742,
+			height: 25,
 			items:
 			[
 			]
@@ -305,13 +309,12 @@
 			style: 'position:absolute;left:34px;top:171px;width:700px;height:27px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:204px;width:726px;height:318px;',
 			height: 318,width: 726,
 			items:
 			[
 				{
-					title:'Доходы, вычеты, налоги',
 					items:
 					[
 		{
@@ -533,14 +536,13 @@
 			style: 'position:absolute;left:6px;top:272px;width:82px;height:21px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:172px;width:712px;height:94px;',
 			height: 94,width: 712,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница2010',
 					items:
 					[
 		{
@@ -551,6 +553,8 @@
 			value: 0,
 			name: 'Исчислено',
 			style: 'position:absolute;left:272px;top:25px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -560,6 +564,8 @@
 			value: 0,
 			name: 'Удержано',
 			style: 'position:absolute;left:272px;top:50px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -569,6 +575,8 @@
 			value: 0,
 			name: 'Перечислено',
 			style: 'position:absolute;left:473px;top:50px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -578,6 +586,8 @@
 			value: 0,
 			name: 'ОбщаяСуммаДохода',
 			style: 'position:absolute;left:68px;top:25px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -587,6 +597,8 @@
 			value: 0,
 			name: 'ОблагаемаяСуммаДохода',
 			style: 'position:absolute;left:68px;top:50px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -596,6 +608,8 @@
 			value: 0,
 			name: 'Задолженность',
 			style: 'position:absolute;left:272px;top:75px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -605,6 +619,8 @@
 			value: 0,
 			name: 'ИзлишнеУдержано',
 			style: 'position:absolute;left:473px;top:25px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -663,7 +679,6 @@
 					]
 				},
 				{
-					title:'Страница2011',
 					items:
 					[
 		{
@@ -761,6 +776,8 @@
 			value: 0,
 			name: 'Перечислено1',
 			style: 'position:absolute;left:535px;top:50px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -770,6 +787,8 @@
 			value: 0,
 			name: 'ИзлишнеУдержано1',
 			style: 'position:absolute;left:535px;top:25px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -791,6 +810,8 @@
 			value: 0,
 			name: 'Удержано1',
 			style: 'position:absolute;left:348px;top:50px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -806,6 +827,8 @@
 			value: 0,
 			name: 'Задолженность1',
 			style: 'position:absolute;left:348px;top:75px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -815,6 +838,8 @@
 			value: 0,
 			name: 'Исчислено1',
 			style: 'position:absolute;left:348px;top:25px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -824,6 +849,8 @@
 			value: 0,
 			name: 'ОблагаемаяСуммаДохода1',
 			style: 'position:absolute;left:162px;top:50px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -833,6 +860,8 @@
 			value: 0,
 			name: 'ОбщаяСуммаДохода1',
 			style: 'position:absolute;left:162px;top:25px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 					]
 				},
@@ -841,7 +870,6 @@
 					]
 				},
 				{
-					title:'Личные данные налогоплательщика',
 					items:
 					[
 		{
@@ -1185,14 +1213,13 @@
 			style: 'position:absolute;left:8px;top:108px;width:359px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:383px;top:136px;width:141px;height:30px;',
 			height: 30,width: 141,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1282,6 +1309,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:575px;width:742px;height:25px;',
+			width: 742,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

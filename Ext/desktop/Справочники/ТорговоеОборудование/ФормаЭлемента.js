@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:468px;height:25px;',
+			width: 468,
+			height: 25,
 			items:
 			[
 				{
@@ -81,28 +83,6 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:128px;width:468px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьНаименование',
 			text: 'Наименование:',
@@ -133,9 +113,9 @@
 			style: 'position:absolute;left:380px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры обслуживания',
-			style: 'position:absolute;left:8px;top:57px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры обслуживания',
+			style: 'position:absolute;left:8px;top:57px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -201,6 +181,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:128px;width:468px;height:25px;',
+			width: 468,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

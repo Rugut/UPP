@@ -17,24 +17,23 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Формы отчета',
-			style: 'position:absolute;left:8px;top:9px;width:511px;height:16px;',
+			xtype: 'label',
+			text: 'Формы отчета',
+			style: 'position:absolute;left:8px;top:9px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Возможные периоды представления отчета',
-			style: 'position:absolute;left:8px;top:284px;width:511px;height:16px;',
+			xtype: 'label',
+			text: 'Возможные периоды представления отчета',
+			style: 'position:absolute;left:8px;top:284px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:28px;width:511px;height:256px;',
 			height: 256,width: 511,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница информация о формах доступна',
 					items:
 					[
 		{
@@ -122,14 +121,13 @@
 			style: 'position:absolute;left:6px;top:189px;width:505px;height:67px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Описание формы',
-			style: 'position:absolute;left:0px;top:169px;width:511px;height:16px;',
+			xtype: 'label',
+			text: 'Описание формы',
+			style: 'position:absolute;left:0px;top:169px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Страница информация о формах не доступна',
 					items:
 					[
 		{
@@ -155,6 +153,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:378px;width:527px;height:25px;',
+			width: 527,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

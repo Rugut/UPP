@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			items:
 			[
 				{
@@ -235,6 +237,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:227px;top:33px;width:501px;height:24px;',
+			width: 501,
+			height: 24,
 			items:
 			[
 			]
@@ -242,6 +246,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:33px;width:215px;height:24px;',
+			width: 215,
+			height: 24,
 			items:
 			[
 				{
@@ -263,6 +269,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:366px;width:736px;height:25px;',
+			width: 736,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

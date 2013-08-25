@@ -96,6 +96,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:142px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 			]
@@ -208,6 +210,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			items:
 			[
 				{
@@ -229,32 +233,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:402px;width:672px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -349,9 +327,9 @@
 			style: 'position:absolute;left:14px;top:102px;width:82px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор по реквизитам',
-			style: 'position:absolute;left:8px;top:57px;width:656px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор по реквизитам',
+			style: 'position:absolute;left:8px;top:57px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -398,9 +376,9 @@
 			style: 'position:absolute;left:338px;top:102px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Планируемые поступления для закрытия',
-			style: 'position:absolute;left:8px;top:126px;width:656px;height:16px;',
+			xtype: 'label',
+			text: 'Планируемые поступления для закрытия',
+			style: 'position:absolute;left:8px;top:126px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -505,6 +483,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:402px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

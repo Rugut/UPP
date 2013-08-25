@@ -139,6 +139,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:121px;width:421px;height:24px;',
+			width: 421,
+			height: 24,
 			items:
 			[
 			]
@@ -220,14 +222,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:439px;height:25px;',
+			width: 439,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Тарифы за расчетное обслуживание',
-			style: 'position:absolute;left:8px;top:102px;width:421px;height:16px;',
+			xtype: 'label',
+			text: 'Тарифы за расчетное обслуживание',
+			style: 'position:absolute;left:8px;top:102px;width:421px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -236,6 +240,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:267px;width:439px;height:25px;',
+			width: 439,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

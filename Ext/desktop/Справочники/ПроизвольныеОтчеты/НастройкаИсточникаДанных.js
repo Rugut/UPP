@@ -100,14 +100,13 @@
 			style: 'position:absolute;left:8px;top:32px;width:85px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:56px;width:343px;height:45px;',
 			height: 45,width: 343,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Отчет',
 					items:
 					[
 		{
@@ -155,7 +154,6 @@
 					]
 				},
 				{
-					title:'Произвольный отчет',
 					items:
 					[
 		{
@@ -238,7 +236,6 @@
 					]
 				},
 				{
-					title:'Внешняя обработка',
 					items:
 					[
 		{
@@ -308,6 +305,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:266px;width:359px;height:25px;',
+			width: 359,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

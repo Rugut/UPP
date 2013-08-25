@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
+			width: 780,
+			height: 25,
 			items:
 			[
 				{
@@ -147,9 +149,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры печати',
-			style: 'position:absolute;left:8px;top:33px;width:764px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры печати',
+			style: 'position:absolute;left:8px;top:33px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -174,6 +176,8 @@
 			value: 0,
 			name: 'ШиринаЭтикетки',
 			style: 'position:absolute;left:450px;top:57px;width:21px;height:19px;',
+			width: 21,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -189,6 +193,8 @@
 			value: 0,
 			name: 'ВысотаЭтикетки',
 			style: 'position:absolute;left:553px;top:57px;width:20px;height:19px;',
+			width: 20,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -208,9 +214,9 @@
 			style: 'position:absolute;left:576px;top:57px;width:190px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Строки для печати',
-			style: 'position:absolute;left:8px;top:79px;width:764px;height:16px;',
+			xtype: 'label',
+			text: 'Строки для печати',
+			style: 'position:absolute;left:8px;top:79px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

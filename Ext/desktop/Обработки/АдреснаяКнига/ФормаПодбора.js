@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:9px;width:483px;height:408px;',
 			height: 408,width: 483,
 			items:
 			[
 				{
-					title:'Контрагенты (контактные лица)',
 					items:
 					[
 		{
@@ -185,6 +184,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				'-',
@@ -193,6 +194,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:206px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 			]
@@ -236,7 +239,6 @@
 					]
 				},
 				{
-					title:'Физические лица',
 					items:
 					[
 		{
@@ -317,6 +319,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				{
@@ -354,7 +358,6 @@
 					]
 				},
 				{
-					title:'Прочие контактные лица',
 					items:
 					[
 		{
@@ -429,6 +432,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				{
@@ -466,7 +471,6 @@
 					]
 				},
 				{
-					title:'Организации',
 					items:
 					[
 		{
@@ -541,6 +545,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				{
@@ -578,7 +584,6 @@
 					]
 				},
 				{
-					title:'Личные',
 					items:
 					[
 		{
@@ -653,6 +658,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 			]
@@ -678,7 +685,6 @@
 					]
 				},
 				{
-					title:'Пользователи',
 					items:
 					[
 		{
@@ -753,6 +759,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 			]
@@ -778,7 +786,6 @@
 					]
 				},
 				{
-					title:'Группы объектов',
 					items:
 					[
 		{
@@ -856,6 +863,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				'-',
@@ -945,7 +954,6 @@
 					]
 				},
 				{
-					title:'Поиск',
 					items:
 					[
 		{
@@ -1065,6 +1073,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:54px;width:436px;height:24px;',
+			width: 436,
+			height: 24,
 			items:
 			[
 				{
@@ -1098,13 +1108,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:495px;top:9px;width:276px;height:408px;',
 			height: 408,width: 276,
 			items:
 			[
 				{
-					title:'Кому',
 					items:
 					[
 		{
@@ -1179,6 +1188,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			width: 228,
+			height: 24,
 			items:
 			[
 				{
@@ -1223,12 +1234,13 @@
 					]
 				},
 				{
-					title:'Копии',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			width: 228,
+			height: 24,
 			items:
 			[
 				{
@@ -1342,12 +1354,13 @@
 					]
 				},
 				{
-					title:'Скрытые копии',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			width: 228,
+			height: 24,
 			items:
 			[
 				{
@@ -1461,12 +1474,13 @@
 					]
 				},
 				{
-					title:'Объекты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
+			width: 228,
+			height: 24,
 			items:
 			[
 				{
@@ -1567,6 +1581,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:779px;height:25px;',
+			width: 779,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

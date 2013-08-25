@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:508px;height:25px;',
+			width: 508,
+			height: 25,
 			items:
 			[
 				{
@@ -96,14 +98,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:513px;top:3px;width:259px;height:19px;',
 			height: 19,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Произвольный период',
 					items:
 					[
 		{
@@ -167,7 +168,6 @@
 					]
 				},
 				{
-					title:'На дату',
 					items:
 					[
 		{
@@ -184,7 +184,6 @@
 					]
 				},
 				{
-					title:'Период',
 					items:
 					[
 		{
@@ -206,6 +205,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:508px;top:0px;width:272px;height:25px;',
+			width: 272,
+			height: 25,
 			items:
 			[
 			]

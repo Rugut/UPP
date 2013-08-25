@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
+			width: 650,
+			height: 25,
 			items:
 			[
 				{
@@ -55,14 +57,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:480px;top:33px;width:212px;height:440px;',
 			height: 440,width: 212,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -76,25 +77,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:466px;height:440px;',
 			height: 440,width: 466,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница новый сотрудник',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:2px;top:0px;width:464px;height:69px;',
 			height: 69,width: 464,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -118,13 +117,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:142px;width:466px;height:275px;',
 			height: 275,width: 466,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -259,14 +257,14 @@
 			style: 'position:absolute;left:11px;top:162px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Личные данные',
-			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Личные данные',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные сотрудника',
-			style: 'position:absolute;left:6px;top:96px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Данные сотрудника',
+			style: 'position:absolute;left:6px;top:96px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -427,7 +425,6 @@
 					]
 				},
 				{
-					title:'Трудовой договор',
 					items:
 					[
 		{
@@ -509,9 +506,9 @@
 			style: 'position:absolute;left:11px;top:187px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основная оплата при приеме на работу',
-			style: 'position:absolute;left:6px;top:144px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Основная оплата при приеме на работу',
+			style: 'position:absolute;left:6px;top:144px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -569,6 +566,8 @@
 			value: 0,
 			name: 'ИспытательныйСрок',
 			style: 'position:absolute;left:423px;top:29px;width:35px;height:19px;',
+			width: 35,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -736,6 +735,8 @@
 			value: 0,
 			name: 'ЗанимаемыхСтавок',
 			style: 'position:absolute;left:414px;top:121px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -823,6 +824,8 @@
 			value: 0,
 			name: 'ТарифнаяСтавка',
 			style: 'position:absolute;left:96px;top:187px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -866,7 +869,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -943,6 +945,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:23px;top:101px;width:77px;height:24px;',
+			width: 77,
+			height: 24,
 			items:
 			[
 			]
@@ -1021,6 +1025,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:13px;top:146px;width:77px;height:24px;',
+			width: 77,
+			height: 24,
 			items:
 			[
 				{
@@ -1175,7 +1181,6 @@
 					]
 				},
 				{
-					title:'Страница сотрудник',
 					items:
 					[
 		{
@@ -1215,13 +1220,12 @@
 			style: 'position:absolute;left:0px;top:71px;width:82px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:119px;width:466px;height:298px;',
 			height: 298,width: 466,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -1320,9 +1324,9 @@
 			style: 'position:absolute;left:6px;top:52px;width:452px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Налоговые вычеты, статус налогоплательщика',
-			style: 'position:absolute;left:6px;top:120px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Налоговые вычеты, статус налогоплательщика',
+			style: 'position:absolute;left:6px;top:120px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1405,13 +1409,12 @@
 					]
 				},
 				{
-					title:'Кадровые данные',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Место работы',
-			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Место работы',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'МестоРаботы',
@@ -1661,13 +1664,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Кадровые документы',
-			style: 'position:absolute;left:6px;top:88px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Кадровые документы',
+			style: 'position:absolute;left:6px;top:88px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:104px;width:452px;height:24px;',
+			width: 452,
+			height: 24,
 			items:
 			[
 				{
@@ -1707,7 +1712,6 @@
 					]
 				},
 				{
-					title:'Начисления и удержания',
 					items:
 					[
 		{
@@ -2379,14 +2383,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Плановые начисления',
-			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Плановые начисления',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Плановые удержания',
-			style: 'position:absolute;left:6px;top:157px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Плановые удержания',
+			style: 'position:absolute;left:6px;top:157px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ПлановыеУдержания',
@@ -2834,6 +2838,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:324px;top:66px;width:125px;height:24px;',
+			width: 125,
+			height: 24,
 			items:
 			[
 				{
@@ -2847,6 +2853,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:316px;top:194px;width:125px;height:24px;',
+			width: 125,
+			height: 24,
 			items:
 			[
 				{
@@ -2860,7 +2868,6 @@
 					]
 				},
 				{
-					title:'Отражение в учете',
 					items:
 					[
 		{
@@ -2956,14 +2963,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отражение в учете плановых начислений',
-			style: 'position:absolute;left:6px;top:130px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Отражение в учете плановых начислений',
+			style: 'position:absolute;left:6px;top:130px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отражение в учете основных начислений',
-			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Отражение в учете основных начислений',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ОтражениеОсновныхНачислений',
@@ -3051,6 +3058,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:452px;height:24px;',
+			width: 452,
+			height: 24,
 			items:
 			[
 				{
@@ -3061,6 +3070,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:146px;width:452px;height:24px;',
+			width: 452,
+			height: 24,
 			items:
 			[
 				{
@@ -3071,7 +3082,6 @@
 					]
 				},
 				{
-					title:'Трудовой договор',
 					items:
 					[
 		{
@@ -3147,9 +3157,9 @@
 			style: 'position:absolute;left:11px;top:210px;width:83px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основная оплата при приеме на работу',
-			style: 'position:absolute;left:6px;top:167px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Основная оплата при приеме на работу',
+			style: 'position:absolute;left:6px;top:167px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -3213,6 +3223,8 @@
 			value: 0,
 			name: 'ИспытательныйСрок1',
 			style: 'position:absolute;left:423px;top:52px;width:35px;height:19px;',
+			width: 35,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -3222,6 +3234,8 @@
 			value: 0,
 			name: 'ЗанимаемыхСтавок1',
 			style: 'position:absolute;left:414px;top:144px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -3467,6 +3481,8 @@
 			value: 0,
 			name: 'ТарифнаяСтавка1',
 			style: 'position:absolute;left:96px;top:210px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -3510,7 +3526,6 @@
 					]
 				},
 				{
-					title:'Список договоров',
 					items:
 					[
 		{
@@ -3641,7 +3656,6 @@
 					]
 				},
 				{
-					title:'Кадровые данные',
 					items:
 					[
 		{
@@ -3651,14 +3665,14 @@
 			style: 'position:absolute;left:226px;top:29px;width:64px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Место работы',
-			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Место работы',
+			style: 'position:absolute;left:6px;top:6px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Кадровые документы',
-			style: 'position:absolute;left:6px;top:75px;width:452px;height:16px;',
+			xtype: 'label',
+			text: 'Кадровые документы',
+			style: 'position:absolute;left:6px;top:75px;width:452px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'МестоРаботыУпрУчет',
@@ -3764,6 +3778,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:91px;width:452px;height:24px;',
+			width: 452,
+			height: 24,
 			items:
 			[
 				{
@@ -3932,7 +3948,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -4015,6 +4030,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:21px;top:112px;width:95px;height:24px;',
+			width: 95,
+			height: 24,
 			items:
 			[
 			]
@@ -4093,6 +4110,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:25px;top:148px;width:91px;height:24px;',
+			width: 91,
+			height: 24,
 			items:
 			[
 				{
@@ -4304,6 +4323,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:650px;top:0px;width:50px;height:25px;',
+			width: 50,
+			height: 25,
 			items:
 			[
 				{
@@ -4321,6 +4342,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:481px;width:700px;height:25px;',
+			width: 700,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

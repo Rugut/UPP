@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
+			width: 651,
+			height: 25,
 			items:
 			[
 				{
@@ -174,6 +176,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:444px;width:651px;height:25px;',
+			width: 651,
+			height: 25,
 			items:
 			[
 				{
@@ -301,6 +305,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:173px;width:635px;height:24px;',
+			width: 635,
+			height: 24,
 			items:
 			[
 				{
@@ -316,6 +322,8 @@
 			value: 0,
 			name: 'ДивидендыОбщаяСумма',
 			style: 'position:absolute;left:111px;top:107px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -331,6 +339,8 @@
 			value: 0,
 			name: 'ДивидендыПолученные',
 			style: 'position:absolute;left:464px;top:107px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -348,9 +358,9 @@
 			style: 'position:absolute;left:113px;top:57px;width:205px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дивиденды к распределению',
-			style: 'position:absolute;left:8px;top:86px;width:310px;height:16px;',
+			xtype: 'label',
+			text: 'Дивиденды к распределению',
+			style: 'position:absolute;left:8px;top:86px;width:310px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -360,16 +370,18 @@
 			value: 0,
 			name: 'ДивидендыНаОднуАкцию',
 			style: 'position:absolute;left:111px;top:131px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Вычет по НДФЛ',
-			style: 'position:absolute;left:336px;top:86px;width:307px;height:16px;',
+			xtype: 'label',
+			text: 'Вычет по НДФЛ',
+			style: 'position:absolute;left:336px;top:86px;width:307px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Начисления',
-			style: 'position:absolute;left:8px;top:157px;width:635px;height:16px;',
+			xtype: 'label',
+			text: 'Начисления',
+			style: 'position:absolute;left:8px;top:157px;width:635px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -378,14 +390,13 @@
 			style: 'position:absolute;left:30px;top:380px;width:401px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:431px;top:380px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -399,14 +410,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:514px;top:380px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -422,6 +432,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:444px;width:257px;height:25px;',
+			width: 257,
+			height: 25,
 			items:
 			[
 				'-',
@@ -433,6 +445,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:241px;width:635px;height:24px;',
+			width: 635,
+			height: 24,
 			items:
 			[
 				{

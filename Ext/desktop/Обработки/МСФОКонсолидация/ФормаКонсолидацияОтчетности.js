@@ -17,36 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:430px;width:778px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'<< Назад',
-				},
-				'-',
-				{
-					text:'Далее >>',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:762px;height:414px;',
 			height: 414,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -250,9 +227,9 @@
 			style: 'position:absolute;left:309px;top:21px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выбор отчетов для консолидации',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Выбор отчетов для консолидации',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеОрганизации',
@@ -465,20 +442,19 @@
 			style: 'position:absolute;left:0px;top:171px;width:762px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прибыль от внутригрупповых операций в разрезе указанных активов',
-			style: 'position:absolute;left:0px;top:193px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Прибыль от внутригрупповых операций в разрезе указанных активов',
+			style: 'position:absolute;left:0px;top:193px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Страница2',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по долгосрочным займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по долгосрочным займам (полученным и выданным) за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗКон5',
@@ -542,11 +518,13 @@
 			value: 0,
 			name: 'СумКон5',
 			style: 'position:absolute;left:222px;top:186px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по долгосрочным займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по долгосрочным займам (полученным и выданным) за ',
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗПред5',
@@ -604,17 +582,18 @@
 			value: 0,
 			name: 'Пред5',
 			style: 'position:absolute;left:222px;top:375px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница3',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по текущим займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по текущим займам (полученным и выданным) за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗКон6',
@@ -678,11 +657,13 @@
 			value: 0,
 			name: 'СумКон6',
 			style: 'position:absolute;left:222px;top:186px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по текущим займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по текущим займам (полученным и выданным) за ',
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗПред6',
@@ -740,6 +721,8 @@
 			value: 0,
 			name: 'Пред6',
 			style: 'position:absolute;left:222px;top:375px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -756,13 +739,12 @@
 					]
 				},
 				{
-					title:'Страница4',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по авансам выданным и доходами буд.периодов (долгосрочные) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (долгосрочные) за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗКон7',
@@ -820,11 +802,13 @@
 			value: 0,
 			name: 'СумКон7',
 			style: 'position:absolute;left:222px;top:186px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по авансам выданным и доходами буд.периодов (долгосрочные) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (долгосрочные) за ',
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗПред7',
@@ -882,17 +866,18 @@
 			value: 0,
 			name: 'Пред7',
 			style: 'position:absolute;left:222px;top:375px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница5',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по авансам выданным и доходами буд.периодов (текущие) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (текущие) за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗКон8',
@@ -950,11 +935,13 @@
 			value: 0,
 			name: 'СумКон8',
 			style: 'position:absolute;left:222px;top:186px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по авансам выданным и доходами буд.периодов (текущие) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (текущие) за ',
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗПред8',
@@ -1012,17 +999,18 @@
 			value: 0,
 			name: 'Пред8',
 			style: 'position:absolute;left:222px;top:375px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница6',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по выручке от реализации за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по выручке от реализации за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗКон11',
@@ -1086,11 +1074,13 @@
 			value: 0,
 			name: 'СумКон11',
 			style: 'position:absolute;left:222px;top:197px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по выручке от реализации за ',
-			style: 'position:absolute;left:0px;top:222px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по выручке от реализации за ',
+			style: 'position:absolute;left:0px;top:222px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗПред11',
@@ -1148,17 +1138,18 @@
 			value: 0,
 			name: 'Пред11',
 			style: 'position:absolute;left:222px;top:375px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница7',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по себестоимости реализации за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по себестоимости реализации за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗКон12',
@@ -1222,11 +1213,13 @@
 			value: 0,
 			name: 'СумКон12',
 			style: 'position:absolute;left:222px;top:186px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по себестоимости реализации за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по себестоимости реализации за ',
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗПред12',
@@ -1284,17 +1277,18 @@
 			value: 0,
 			name: 'Пред12',
 			style: 'position:absolute;left:222px;top:375px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница8',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по дивидендам к выплате за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по дивидендам к выплате за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗКон21',
@@ -1358,11 +1352,13 @@
 			value: 0,
 			name: 'СумКон21',
 			style: 'position:absolute;left:222px;top:186px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Стыковка записей по дивидендам к выплате за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Стыковка записей по дивидендам к выплате за ',
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТЗПред21',
@@ -1420,22 +1416,23 @@
 			value: 0,
 			name: 'Пред21',
 			style: 'position:absolute;left:222px;top:374px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница9',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Текущая и долгосрочная дебиторская и кредиторская задолженность за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Текущая и долгосрочная дебиторская и кредиторская задолженность за ',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Текущая и долгосрочная дебиторская и кредиторская задолженность за ',
-			style: 'position:absolute;left:0px;top:151px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Текущая и долгосрочная дебиторская и кредиторская задолженность за ',
+			style: 'position:absolute;left:0px;top:151px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1451,6 +1448,8 @@
 			value: 0,
 			name: 'СумКон40',
 			style: 'position:absolute;left:245px;top:22px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1466,6 +1465,8 @@
 			value: 0,
 			name: 'СумКон41',
 			style: 'position:absolute;left:245px;top:46px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1481,6 +1482,8 @@
 			value: 0,
 			name: 'СумКон42',
 			style: 'position:absolute;left:245px;top:70px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1496,6 +1499,8 @@
 			value: 0,
 			name: 'СумКон43',
 			style: 'position:absolute;left:245px;top:94px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1511,6 +1516,8 @@
 			value: 0,
 			name: 'СумПред40',
 			style: 'position:absolute;left:245px;top:174px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1526,6 +1533,8 @@
 			value: 0,
 			name: 'СумПред41',
 			style: 'position:absolute;left:245px;top:198px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1541,6 +1550,8 @@
 			value: 0,
 			name: 'СумПред42',
 			style: 'position:absolute;left:245px;top:222px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1556,17 +1567,18 @@
 			value: 0,
 			name: 'СумПред43',
 			style: 'position:absolute;left:245px;top:246px;width:124px;height:19px;',
+			width: 124,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница10',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Сформированная консолидированная отчетность',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;',
+			xtype: 'label',
+			text: 'Сформированная консолидированная отчетность',
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеРезультат',
@@ -1636,6 +1648,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:430px;width:778px;height:25px;',
+			width: 778,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'<< Назад',
+				},
+				'-',
+				{
+					text:'Далее >>',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

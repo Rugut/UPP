@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:632px;height:25px;',
+			width: 632,
+			height: 25,
 			items:
 			[
 				{
@@ -42,13 +44,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:31px;width:618px;height:497px;',
 			height: 497,width: 618,
 			items:
 			[
 				{
-					title:'Выгрузка данных',
 					items:
 					[
 		{
@@ -67,13 +68,12 @@
 			style: 'position:absolute;left:111px;top:6px;width:475px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:150px;width:604px;height:295px;',
 			height: 295,width: 604,
 			items:
 			[
 				{
-					title:'Выгружаемые данные',
 					items:
 					[
 		{
@@ -139,6 +139,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:30px;width:273px;height:25px;',
+			width: 273,
+			height: 25,
 			items:
 			[
 				{
@@ -253,6 +255,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:285px;top:30px;width:311px;height:25px;',
+			width: 311,
+			height: 25,
 			items:
 			[
 				'-',
@@ -309,7 +313,6 @@
 					]
 				},
 				{
-					title:'Параметры выгрузки',
 					items:
 					[
 		{
@@ -375,6 +378,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:590px;height:24px;',
+			width: 590,
+			height: 24,
 			items:
 			[
 				{
@@ -388,7 +393,6 @@
 					]
 				},
 				{
-					title:'Комментарий',
 					items:
 					[
 		{
@@ -403,14 +407,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:54px;width:604px;height:92px;',
 			height: 92,width: 604,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Выгрузка в файл',
 					items:
 					[
 		{
@@ -451,7 +454,6 @@
 					]
 				},
 				{
-					title:'Выгрузка в ИБ приемник',
 					items:
 					[
 		{
@@ -479,14 +481,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:604px;height:19px;',
 			height: 19,width: 604,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подключение файловая ИБ',
 					items:
 					[
 		{
@@ -507,7 +508,6 @@
 					]
 				},
 				{
-					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -631,7 +631,6 @@
 					]
 				},
 				{
-					title:'Загрузка данных',
 					items:
 					[
 		{
@@ -662,6 +661,8 @@
 			value: 0,
 			name: 'КоличествоОбъектовНаТранзакцию',
 			style: 'position:absolute;left:304px;top:77px;width:107px;height:19px;',
+			width: 107,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -701,9 +702,9 @@
 			style: 'position:absolute;left:429px;top:337px;width:153px;height:17px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Информация о файле обмена',
-			style: 'position:absolute;left:6px;top:318px;width:604px;height:16px;',
+			xtype: 'label',
+			text: 'Информация о файле обмена',
+			style: 'position:absolute;left:6px;top:318px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textarea',
@@ -767,7 +768,6 @@
 					]
 				},
 				{
-					title:'Дополнительные настройки',
 					items:
 					[
 		{
@@ -802,9 +802,9 @@
 			style: 'position:absolute;left:6px;top:330px;width:266px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Протокол обмена',
-			style: 'position:absolute;left:6px;top:239px;width:604px;height:16px;',
+			xtype: 'label',
+			text: 'Протокол обмена',
+			style: 'position:absolute;left:6px;top:239px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -817,9 +817,9 @@
 			style: 'position:absolute;left:6px;top:6px;width:100px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройки выгрузки данных',
-			style: 'position:absolute;left:6px;top:77px;width:604px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки выгрузки данных',
+			style: 'position:absolute;left:6px;top:77px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -840,6 +840,8 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииПриВыгрузкеДляПлановОбмена',
 			style: 'position:absolute;left:352px;top:142px;width:137px;height:19px;',
+			width: 137,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -855,6 +857,8 @@
 			value: 0,
 			name: 'КоличествоОбъектовЗагрузкиДляОбновленияСтатуса',
 			style: 'position:absolute;left:352px;top:53px;width:137px;height:19px;',
+			width: 137,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -906,7 +910,6 @@
 					]
 				},
 				{
-					title:'Удаление данных',
 					items:
 					[
 		{
@@ -969,6 +972,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:76px;width:604px;height:24px;',
+			width: 604,
+			height: 24,
 			items:
 			[
 				{

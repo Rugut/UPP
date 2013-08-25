@@ -146,19 +146,6 @@
 			style: 'position:absolute;left:102px;top:197px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:224px;width:330px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись15',
 			text: 'Комментарий:',
@@ -180,14 +167,30 @@
 			style: 'position:absolute;left:102px;top:173px;width:60px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Адрес',
-			style: 'position:absolute;left:8px;top:8px;width:314px;height:16px;',
+			xtype: 'label',
+			text: 'Адрес',
+			style: 'position:absolute;left:8px;top:8px;width:314px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:224px;width:330px;height:25px;',
+			width: 330,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+			]
+		},
 	]
 	});
 });

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:745px;height:25px;',
+			width: 745,
+			height: 25,
 			items:
 			[
 				{
@@ -53,16 +55,14 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:122px;width:729px;height:310px;',
 			height: 310,width: 729,
 			items:
 			[
 				{
-					title:'Титульный',
 				},
 				{
-					title:'Физ. лица',
 					items:
 					[
 		{
@@ -104,7 +104,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.1',
 					items:
 					[
 		{
@@ -116,7 +115,6 @@
 					]
 				},
 				{
-					title:'Раздел 1.2',
 					items:
 					[
 		{
@@ -164,7 +162,6 @@
 					]
 				},
 				{
-					title:'Раздел 2.1',
 					items:
 					[
 		{
@@ -181,6 +178,8 @@
 			value: 0,
 			name: 'ПолеВводаЗначениеКорректировкиРаздел2_1',
 			style: 'position:absolute;left:232px;top:241px;width:117px;height:19px;',
+			width: 117,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -224,7 +223,6 @@
 					]
 				},
 				{
-					title:'Раздел 2.2',
 					items:
 					[
 		{
@@ -278,7 +276,6 @@
 					]
 				},
 				{
-					title:'Раздел 3',
 					items:
 					[
 		{
@@ -290,10 +287,8 @@
 					]
 				},
 				{
-					title:'Раздел 4',
 				},
 				{
-					title:'Раздел 5',
 					items:
 					[
 		{
@@ -347,7 +342,6 @@
 					]
 				},
 				{
-					title:'Раздел 6',
 					items:
 					[
 		{
@@ -373,14 +367,13 @@
 			style: 'position:absolute;left:584px;top:6px;width:153px;height:15px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:729px;height:48px;',
 			height: 48,width: 729,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -391,6 +384,8 @@
 			value: 0,
 			name: 'ПолеВводаТочностьЕдиницыИзмерения',
 			style: 'position:absolute;left:222px;top:0px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'datefield',
@@ -433,20 +428,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:396px;top:0px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:432px;width:729px;height:28px;',
 			height: 28,width: 729,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -507,25 +503,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:729px;height:37px;',
 			height: 37,width: 729,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:2px;top:0px;width:727px;height:35px;',
 			height: 35,width: 727,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -543,6 +537,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:466px;width:745px;height:25px;',
+			width: 745,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

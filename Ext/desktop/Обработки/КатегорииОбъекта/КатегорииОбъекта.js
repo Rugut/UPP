@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:25px;',
+			width: 376,
+			height: 25,
 			items:
 			[
 				{
@@ -114,9 +116,16 @@
 				}
 			},
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:275px;width:376px;height:25px;',
+			width: 376,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -132,10 +141,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

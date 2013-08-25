@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:908px;height:25px;',
+			width: 908,
+			height: 25,
 			items:
 			[
 				{
@@ -48,28 +50,6 @@
 			]
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:479px;width:908px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись21',
 			text: 'Почтовый адрес:',
@@ -90,25 +70,23 @@
 			style: 'position:absolute;left:155px;top:60px;width:91px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:200px;width:646px;height:271px;',
 			height: 271,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:49px;width:646px;height:27px;',
 			height: 27,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -162,14 +140,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:80px;width:646px;height:191px;',
 			height: 191,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -198,6 +175,8 @@
 			value: 0,
 			name: 'ПортSMTP',
 			style: 'position:absolute;left:287px;top:28px;width:58px;height:19px;',
+			width: 58,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -207,6 +186,8 @@
 			value: 0,
 			name: 'ПортPOP3',
 			style: 'position:absolute;left:287px;top:62px;width:58px;height:19px;',
+			width: 58,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -265,14 +246,14 @@
 			style: 'position:absolute;left:147px;top:118px;width:499px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:20px;width:646px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:20px;width:646px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:54px;width:532px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:54px;width:532px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'fieldset',
@@ -303,19 +284,18 @@
 			style: 'position:absolute;left:530px;top:0px;width:2px;height:81px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Цифровые сертификаты ответственных лиц организации',
-			style: 'position:absolute;left:0px;top:95px;width:646px;height:16px;',
+			xtype: 'label',
+			text: 'Цифровые сертификаты ответственных лиц организации',
+			style: 'position:absolute;left:0px;top:95px;width:646px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:172px;width:646px;height:19px;',
 			height: 19,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -338,14 +318,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:145px;width:646px;height:27px;',
 			height: 27,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -372,14 +351,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:646px;height:49px;',
 			height: 49,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -429,9 +407,9 @@
 			style: 'position:absolute;left:0px;top:23px;width:140px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Участники документооборота',
-			style: 'position:absolute;left:0px;top:0px;width:646px;height:16px;',
+			xtype: 'label',
+			text: 'Участники документооборота',
+			style: 'position:absolute;left:0px;top:0px;width:646px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -448,20 +426,19 @@
 			style: 'position:absolute;left:8px;top:34px;width:130px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:661px;top:33px;width:239px;height:438px;',
 			height: 438,width: 239,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Пользователи',
-			style: 'position:absolute;left:0px;top:0px;width:239px;height:16px;',
+			xtype: 'label',
+			text: 'Пользователи',
+			style: 'position:absolute;left:0px;top:0px;width:239px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Пользователи',
@@ -528,14 +505,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:111px;width:646px;height:24px;',
 			height: 24,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -573,14 +549,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:136px;width:646px;height:64px;',
 			height: 64,width: 646,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -596,9 +571,9 @@
 			style: 'position:absolute;left:147px;top:40px;width:499px;height:15px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:147px;top:31px;width:499px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:147px;top:31px;width:499px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -607,14 +582,13 @@
 			style: 'position:absolute;left:0px;top:2px;width:83px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:147px;top:2px;width:499px;height:30px;',
 			height: 30,width: 499,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -732,6 +706,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:479px;width:908px;height:25px;',
+			width: 908,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

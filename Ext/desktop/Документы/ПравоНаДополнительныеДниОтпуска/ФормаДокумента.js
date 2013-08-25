@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
+			width: 410,
+			height: 25,
 			items:
 			[
 			]
@@ -145,6 +147,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:74px;width:394px;height:24px;',
+			width: 394,
+			height: 24,
 			items:
 			[
 				{
@@ -183,14 +187,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники',
-			style: 'position:absolute;left:8px;top:58px;width:394px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:58px;width:394px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Прочее',
-			style: 'position:absolute;left:8px;top:324px;width:394px;height:16px;',
+			xtype: 'label',
+			text: 'Прочее',
+			style: 'position:absolute;left:8px;top:324px;width:394px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -260,6 +264,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:397px;width:410px;height:25px;',
+			width: 410,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

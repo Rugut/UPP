@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:715px;height:25px;',
+			width: 715,
+			height: 25,
 			items:
 			[
 				{
@@ -171,13 +173,12 @@
 			style: 'position:absolute;left:336px;top:33px;width:261px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:85px;width:699px;height:328px;',
 			height: 328,width: 699,
 			items:
 			[
 				{
-					title:'Выручка от реализации',
 					items:
 					[
 		{
@@ -188,6 +189,8 @@
 			value: 0,
 			name: 'ВыручкаБезНДС',
 			style: 'position:absolute;left:164px;top:58px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -197,6 +200,8 @@
 			value: 0,
 			name: 'ВыручкаНДС0',
 			style: 'position:absolute;left:164px;top:106px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -206,6 +211,8 @@
 			value: 0,
 			name: 'ВыручкаНДС',
 			style: 'position:absolute;left:164px;top:33px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -227,16 +234,19 @@
 			value: 0,
 			name: 'ВыручкаЕНВД',
 			style: 'position:absolute;left:164px;top:82px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Косвенные расходы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:1px;width:685px;height:24px;',
+			width: 685,
+			height: 24,
 			items:
 			[
 				{
@@ -760,7 +770,6 @@
 					]
 				},
 				{
-					title:'Счета списания НДС',
 					items:
 					[
 		{
@@ -865,14 +874,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:128px;width:333px;height:91px;',
 			height: 91,width: 333,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -1064,24 +1072,22 @@
 					]
 				},
 				{
-					title:'Надпись',
 				},
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счет и аналитика списания НДС',
-			style: 'position:absolute;left:6px;top:33px;width:685px;height:16px;',
+			xtype: 'label',
+			text: 'Счет и аналитика списания НДС',
+			style: 'position:absolute;left:6px;top:33px;width:685px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:359px;top:128px;width:332px;height:91px;',
 			height: 91,width: 332,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -1273,7 +1279,6 @@
 					]
 				},
 				{
-					title:'Надпись',
 				},
 			]
 		},
@@ -1333,6 +1338,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:445px;width:715px;height:25px;',
+			width: 715,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

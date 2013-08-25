@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:606px;height:284px;',
 			height: 284,width: 606,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -144,19 +143,19 @@
 			style: 'position:absolute;left:471px;top:6px;width:48px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Не включать в прайс-лист товары',
-			style: 'position:absolute;left:6px;top:73px;width:598px;height:16px;',
+			xtype: 'label',
+			text: 'Не включать в прайс-лист товары',
+			style: 'position:absolute;left:6px;top:73px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показать',
-			style: 'position:absolute;left:6px;top:31px;width:598px;height:16px;',
+			xtype: 'label',
+			text: 'Показать',
+			style: 'position:absolute;left:6px;top:31px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры',
-			style: 'position:absolute;left:6px;top:161px;width:598px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры',
+			style: 'position:absolute;left:6px;top:161px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -198,7 +197,6 @@
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -264,6 +262,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
+			width: 598,
+			height: 24,
 			items:
 			[
 			]
@@ -271,7 +271,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -373,6 +372,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
+			width: 598,
+			height: 24,
 			items:
 			[
 			]
@@ -380,7 +381,6 @@
 					]
 				},
 				{
-					title:'Поля',
 					items:
 					[
 		{
@@ -437,6 +437,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
+			width: 592,
+			height: 24,
 			items:
 			[
 			]
@@ -444,7 +446,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -510,6 +511,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
+			width: 592,
+			height: 24,
 			items:
 			[
 			]
@@ -517,7 +520,6 @@
 					]
 				},
 				{
-					title:'Печать',
 					items:
 					[
 		{
@@ -601,6 +603,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
+			width: 592,
+			height: 24,
 			items:
 			[
 			]
@@ -622,6 +626,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:300px;width:624px;height:25px;',
+			width: 624,
+			height: 25,
 			items:
 			[
 				{

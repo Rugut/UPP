@@ -60,6 +60,8 @@
 			value: 0,
 			name: 'МинимальныйТариф',
 			style: 'position:absolute;left:130px;top:91px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -75,6 +77,8 @@
 			value: 0,
 			name: 'МаксимальныйТариф',
 			style: 'position:absolute;left:130px;top:116px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -90,10 +94,14 @@
 			value: 0,
 			name: 'Процент',
 			style: 'position:absolute;left:130px;top:62px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			items:
 			[
 				{
@@ -115,6 +123,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:143px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

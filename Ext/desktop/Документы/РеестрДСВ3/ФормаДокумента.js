@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:765px;height:25px;',
+			width: 765,
+			height: 25,
 			items:
 			[
 				{
@@ -69,25 +71,23 @@
 			style: 'position:absolute;left:94px;top:446px;width:663px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:749px;height:41px;',
 			height: 41,width: 749,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:749px;height:35px;',
 			height: 35,width: 749,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -99,14 +99,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:749px;height:123px;',
 			height: 123,width: 749,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -216,9 +215,9 @@
 			style: 'position:absolute;left:105px;top:25px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Платежное поручение',
-			style: 'position:absolute;left:0px;top:75px;width:749px;height:16px;',
+			xtype: 'label',
+			text: 'Платежное поручение',
+			style: 'position:absolute;left:0px;top:75px;width:749px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -321,20 +320,19 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:197px;width:749px;height:244px;',
 			height: 244,width: 749,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Застрахованные лица',
-			style: 'position:absolute;left:0px;top:0px;width:749px;height:16px;',
+			xtype: 'label',
+			text: 'Застрахованные лица',
+			style: 'position:absolute;left:0px;top:0px;width:749px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'РаботникиОрганизации',
@@ -453,6 +451,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:749px;height:24px;',
+			width: 749,
+			height: 24,
 			items:
 			[
 				{
@@ -509,6 +509,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:473px;width:765px;height:25px;',
+			width: 765,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

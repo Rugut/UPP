@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
+			width: 643,
+			height: 25,
 			items:
 			[
 				{
@@ -149,19 +151,20 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:208px;width:627px;height:309px;',
 			height: 309,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:17px;width:627px;height:24px;',
+			width: 627,
+			height: 24,
 			items:
 			[
 				{
@@ -547,9 +550,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники и показатели для расчета',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники и показатели для расчета',
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -571,14 +574,13 @@
 			style: 'position:absolute;left:87px;top:521px;width:548px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:83px;width:624px;height:119px;',
 			height: 119,width: 624,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -676,6 +678,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:548px;width:643px;height:25px;',
+			width: 643,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

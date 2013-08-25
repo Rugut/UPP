@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:637px;height:352px;',
 			height: 352,width: 637,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Приветствие',
 					items:
 					[
 		{
@@ -54,7 +53,6 @@
 					]
 				},
 				{
-					title:'Выбор вида ТО',
 					items:
 					[
 		{
@@ -64,9 +62,9 @@
 			style: 'position:absolute;left:166px;top:0px;width:460px;height:36px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:286px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:286px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -144,7 +142,6 @@
 					]
 				},
 				{
-					title:'Выбор драйвера',
 					items:
 					[
 		{
@@ -164,9 +161,9 @@
 			style: 'position:absolute;left:166px;top:41px;width:307px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:250px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:250px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -255,7 +252,6 @@
 					]
 				},
 				{
-					title:'Добавление обработки обслуживания',
 					items:
 					[
 		{
@@ -328,9 +324,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:214px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:214px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -375,7 +371,6 @@
 					]
 				},
 				{
-					title:'Выбор устройства',
 					items:
 					[
 		{
@@ -395,9 +390,9 @@
 			style: 'position:absolute;left:166px;top:41px;width:228px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:283px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительная информация',
+			style: 'position:absolute;left:166px;top:283px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -512,7 +507,6 @@
 					]
 				},
 				{
-					title:'Добавление нового устройства',
 					items:
 					[
 		{
@@ -639,6 +633,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:367px;width:653px;height:25px;',
+			width: 653,
+			height: 25,
 			items:
 			[
 				{

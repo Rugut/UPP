@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:140px;width:844px;height:360px;',
 			height: 360,width: 844,
 			items:
 			[
 				{
-					title:'Сведения об организации',
 					items:
 					[
 		{
@@ -140,14 +139,14 @@
 			style: 'position:absolute;left:136px;top:184px;width:193px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные сведения',
-			style: 'position:absolute;left:8px;top:8px;width:828px;height:16px;',
+			xtype: 'label',
+			text: 'Основные сведения',
+			style: 'position:absolute;left:8px;top:8px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Контактная информация',
-			style: 'position:absolute;left:8px;top:204px;width:828px;height:16px;',
+			xtype: 'label',
+			text: 'Контактная информация',
+			style: 'position:absolute;left:8px;top:204px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -167,7 +166,6 @@
 					]
 				},
 				{
-					title:'Владелец ЭЦП',
 					items:
 					[
 		{
@@ -247,9 +245,9 @@
 			style: 'position:absolute;left:124px;top:268px;width:408px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Кадровые данные',
-			style: 'position:absolute;left:8px;top:132px;width:824px;height:16px;',
+			xtype: 'label',
+			text: 'Кадровые данные',
+			style: 'position:absolute;left:8px;top:132px;width:824px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -270,9 +268,9 @@
 			style: 'position:absolute;left:124px;top:155px;width:144px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документ, удостоверяющий личность',
-			style: 'position:absolute;left:8px;top:188px;width:824px;height:16px;',
+			xtype: 'label',
+			text: 'Документ, удостоверяющий личность',
+			style: 'position:absolute;left:8px;top:188px;width:824px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -317,9 +315,9 @@
 			style: 'position:absolute;left:8px;top:8px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:84px;width:824px;height:4px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:84px;width:824px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -351,7 +349,6 @@
 					]
 				},
 				{
-					title:'Контролирующие органы',
 					items:
 					[
 		{
@@ -441,6 +438,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:8px;width:828px;height:24px;',
+			width: 828,
+			height: 24,
 			items:
 			[
 				{
@@ -464,7 +463,6 @@
 					]
 				},
 				{
-					title:'Удостоверяющий центр',
 					items:
 					[
 		{
@@ -495,14 +493,13 @@
 			style: 'position:absolute;left:136px;top:32px;width:316px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Соглашение о предоставлении услуг удостоверяющего центра',
-			style: 'position:absolute;left:8px;top:64px;width:828px;height:16px;',
+			xtype: 'label',
+			text: 'Соглашение о предоставлении услуг удостоверяющего центра',
+			style: 'position:absolute;left:8px;top:64px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Криптопровайдер',
 					items:
 					[
 		{
@@ -542,7 +539,6 @@
 					]
 				},
 				{
-					title:'Служебная информация',
 					items:
 					[
 		{
@@ -626,6 +622,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:508px;width:860px;height:25px;',
+			width: 860,
+			height: 25,
 			items:
 			[
 				{
@@ -648,6 +646,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:860px;height:25px;',
+			width: 860,
+			height: 25,
 			items:
 			[
 				{
@@ -669,14 +669,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:844px;height:40px;',
 			height: 40,width: 844,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]

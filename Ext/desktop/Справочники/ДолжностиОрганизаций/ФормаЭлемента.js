@@ -54,6 +54,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
+			width: 565,
+			height: 25,
 			items:
 			[
 				{
@@ -84,13 +86,12 @@
 			style: 'position:absolute;left:98px;top:59px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:100px;width:549px;height:340px;',
 			height: 340,width: 549,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -229,19 +230,19 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Персонифицированный учет ПФР',
-			style: 'position:absolute;left:6px;top:102px;width:535px;height:16px;',
+			xtype: 'label',
+			text: 'Персонифицированный учет ПФР',
+			style: 'position:absolute;left:6px;top:102px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Категории регламентированного учета',
-			style: 'position:absolute;left:6px;top:6px;width:535px;height:16px;',
+			xtype: 'label',
+			text: 'Категории регламентированного учета',
+			style: 'position:absolute;left:6px;top:6px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Описание должности, используемое при наборе персонала',
-			style: 'position:absolute;left:6px;top:274px;width:535px;height:16px;',
+			xtype: 'label',
+			text: 'Описание должности, используемое при наборе персонала',
+			style: 'position:absolute;left:6px;top:274px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -380,25 +381,23 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:171px;width:535px;height:98px;',
 			height: 98,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:535px;height:21px;',
 			height: 21,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -411,14 +410,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:48px;width:535px;height:21px;',
 			height: 21,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -431,19 +429,18 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Страховые взносы во внебюджетные фонды',
-			style: 'position:absolute;left:0px;top:6px;width:535px;height:16px;',
+			xtype: 'label',
+			text: 'Страховые взносы во внебюджетные фонды',
+			style: 'position:absolute;left:0px;top:6px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:71px;width:535px;height:21px;',
 			height: 21,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -462,7 +459,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -598,6 +594,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:275px;top:89px;width:266px;height:24px;',
+			width: 266,
+			height: 24,
 			items:
 			[
 				{
@@ -611,6 +609,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:89px;width:263px;height:24px;',
+			width: 263,
+			height: 24,
 			items:
 			[
 			]
@@ -618,7 +618,6 @@
 					]
 				},
 				{
-					title:'Ежегодные отпуска',
 					items:
 					[
 		{
@@ -689,6 +688,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:535px;height:24px;',
+			width: 535,
+			height: 24,
 			items:
 			[
 				{
@@ -704,14 +705,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:549px;height:16px;',
 			height: 16,width: 549,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
@@ -722,6 +722,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:448px;width:565px;height:25px;',
+			width: 565,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

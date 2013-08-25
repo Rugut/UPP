@@ -248,6 +248,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:793px;height:25px;',
+			width: 793,
+			height: 25,
 			items:
 			[
 				{
@@ -284,14 +286,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:194px;width:160px;height:144px;',
 			height: 144,width: 160,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -299,14 +300,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:175px;top:194px;width:611px;height:144px;',
 			height: 144,width: 611,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -411,9 +411,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Остатки товаров на складах',
-			style: 'position:absolute;left:0px;top:0px;width:611px;height:16px;',
+			xtype: 'label',
+			text: 'Остатки товаров на складах',
+			style: 'position:absolute;left:0px;top:0px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'СписокЦенОстатков',
@@ -604,6 +604,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:357px;top:95px;width:157px;height:24px;',
+			width: 157,
+			height: 24,
 			items:
 			[
 				{

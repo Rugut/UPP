@@ -17,24 +17,22 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:525px;top:134px;width:306px;height:398px;',
 			height: 398,width: 306,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:306px;height:372px;',
 			height: 372,width: 306,
 			items:
 			[
 				{
-					title:'Настройка',
 					items:
 					[
 		{
@@ -137,6 +135,8 @@
 			value: 0,
 			name: 'СмещениеПериодаПоУмолчанию',
 			style: 'position:absolute;left:210px;top:155px;width:54px;height:19px;',
+			width: 54,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -189,14 +189,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:5px;top:53px;width:295px;height:49px;',
 			height: 49,width: 295,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Стандартная',
 					items:
 					[
 		{
@@ -219,7 +218,6 @@
 					]
 				},
 				{
-					title:'Произвольная',
 					items:
 					[
 		{
@@ -262,7 +260,6 @@
 					]
 				},
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -388,7 +385,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -982,7 +978,6 @@
 					]
 				},
 				{
-					title:'Показатели',
 					items:
 					[
 		{
@@ -1057,7 +1052,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -1132,6 +1126,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:269px;top:22px;width:24px;height:52px;',
+			width: 24,
+			height: 52,
 			items:
 			[
 				{
@@ -1155,6 +1151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:372px;width:306px;height:26px;',
+			width: 306,
+			height: 26,
 			items:
 			[
 				{
@@ -1177,19 +1175,20 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:838px;height:57px;',
 			height: 57,width: 838,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:101px;top:0px;width:220px;height:25px;',
+			width: 220,
+			height: 25,
 			items:
 			[
 				{
@@ -1219,20 +1218,21 @@
 			style: 'position:absolute;left:6px;top:98px;width:124px;height:30px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:9px;top:63px;width:821px;height:31px;',
 			height: 31,width: 821,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Горизонтальные отборы',
 				},
 			]
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:136px;top:101px;width:120px;height:24px;',
+			width: 120,
+			height: 24,
 			items:
 			[
 				{
@@ -1243,6 +1243,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:658px;top:101px;width:173px;height:24px;',
+			width: 173,
+			height: 24,
 			items:
 			[
 				{

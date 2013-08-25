@@ -142,6 +142,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:679px;height:25px;',
+			width: 679,
+			height: 25,
 			items:
 			[
 			]
@@ -222,13 +224,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:106px;width:664px;height:380px;',
 			height: 380,width: 664,
 			items:
 			[
 				{
-					title:'Условия',
 					items:
 					[
 		{
@@ -390,6 +391,8 @@
 			value: 0,
 			name: 'ПроцентОплаты',
 			style: 'position:absolute;left:467px;top:175px;width:58px;height:19px;',
+			width: 58,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -399,6 +402,8 @@
 			value: 0,
 			name: 'ДнейЧасовКомпенсацииОтпуска',
 			style: 'position:absolute;left:141px;top:223px;width:41px;height:19px;',
+			width: 41,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -492,6 +497,8 @@
 			value: 0,
 			name: 'ДнейДопОтпуска',
 			style: 'position:absolute;left:355px;top:151px;width:27px;height:19px;',
+			width: 27,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -501,6 +508,8 @@
 			value: 0,
 			name: 'ДнейОтпуска',
 			style: 'position:absolute;left:355px;top:52px;width:27px;height:19px;',
+			width: 27,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -621,7 +630,6 @@
 					]
 				},
 				{
-					title:'Оплата',
 					items:
 					[
 		{
@@ -984,6 +992,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:649px;height:24px;',
+			width: 649,
+			height: 24,
 			items:
 			[
 				{
@@ -1021,6 +1031,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:68px;width:649px;height:24px;',
+			width: 649,
+			height: 24,
 			items:
 			[
 				{
@@ -1084,7 +1096,6 @@
 					]
 				},
 				{
-					title:'Расчет среднего заработка',
 					items:
 					[
 		{
@@ -1146,19 +1157,20 @@
 			style: 'position:absolute;left:6px;top:320px;width:130px;height:34px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:50px;width:656px;height:267px;',
 			height: 267,width: 656,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Расчет среднего по календарным',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -1336,7 +1348,6 @@
 					]
 				},
 				{
-					title:'Расчет среднего по шестидневке',
 					items:
 					[
 		{
@@ -1474,6 +1485,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -1519,12 +1532,13 @@
 					]
 				},
 				{
-					title:'Оба расчета среднего',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -1694,14 +1708,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'По календарным дням',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:16px;',
+			xtype: 'label',
+			text: 'По календарным дням',
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'По рабочим дням (по шестидневке)',
-			style: 'position:absolute;left:0px;top:143px;width:656px;height:16px;',
+			xtype: 'label',
+			text: 'По рабочим дням (по шестидневке)',
+			style: 'position:absolute;left:0px;top:143px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'РасчетСреднегоПоШестидневке1',
@@ -1838,6 +1852,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:159px;width:656px;height:24px;',
+			width: 656,
+			height: 24,
 			items:
 			[
 				{
@@ -1881,7 +1897,6 @@
 					]
 				},
 				{
-					title:'Заявление на выплату пособия',
 					items:
 					[
 		{
@@ -2361,14 +2376,13 @@
 			style: 'position:absolute;left:30px;top:490px;width:422px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:452px;top:490px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2382,14 +2396,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:543px;top:490px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2409,6 +2422,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:679px;height:25px;',
+			width: 679,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[
@@ -2432,6 +2447,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:262px;height:25px;',
+			width: 262,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

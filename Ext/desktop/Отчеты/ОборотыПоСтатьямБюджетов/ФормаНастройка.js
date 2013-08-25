@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:341px;',
 			height: 341,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -225,6 +224,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:164px;width:142px;height:24px;',
+			width: 142,
+			height: 24,
 			items:
 			[
 				{
@@ -247,9 +248,9 @@
 			style: 'position:absolute;left:294px;top:169px;width:172px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели',
-			style: 'position:absolute;left:6px;top:148px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Показатели',
+			style: 'position:absolute;left:6px;top:148px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -303,7 +304,6 @@
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -369,6 +369,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
+			width: 212,
+			height: 24,
 			items:
 			[
 			]
@@ -376,6 +378,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
+			width: 212,
+			height: 24,
 			items:
 			[
 			]
@@ -443,6 +447,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:224px;top:100px;width:24px;height:80px;',
+			width: 24,
+			height: 80,
 			items:
 			[
 				{
@@ -456,7 +462,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -558,6 +563,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -565,7 +572,6 @@
 					]
 				},
 				{
-					title:'Поля',
 					items:
 					[
 		{
@@ -627,6 +633,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:28px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -635,9 +643,16 @@
 				},
 			]
 		},
+		],
+	}],
+	dockedItems:
+	[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:357px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
+			dock: 'bottom',
 			items:
 			[
 				{
@@ -657,10 +672,6 @@
 				},
 			]
 		},
-		],
-	}],
-	dockedItems:
-	[
 	]
 	});
 });

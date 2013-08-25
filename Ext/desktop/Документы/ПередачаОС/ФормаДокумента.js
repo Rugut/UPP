@@ -166,6 +166,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
 			items:
 			[
 				{
@@ -213,18 +215,19 @@
 			style: 'position:absolute;left:576px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:175px;width:648px;height:205px;',
 			height: 205,width: 648,
 			items:
 			[
 				{
-					title:'Основные средства',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:634px;height:24px;',
+			width: 634,
+			height: 24,
 			items:
 			[
 				{
@@ -514,7 +517,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -749,7 +751,6 @@
 					]
 				},
 				{
-					title:'Счета учета расчетов',
 					items:
 					[
 		{
@@ -843,7 +844,6 @@
 					]
 				},
 				{
-					title:'Предоплата',
 					items:
 					[
 		{
@@ -945,6 +945,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:615px;height:24px;',
+			width: 615,
+			height: 24,
 			items:
 			[
 				{
@@ -1326,6 +1328,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:455px;width:664px;height:25px;',
+			width: 664,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -75,10 +75,14 @@
 			value: 0,
 			name: 'ДлительностьОжиданияСервера',
 			style: 'position:absolute;left:208px;top:109px;width:63px;height:19px;',
+			width: 63,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:554px;height:25px;',
+			width: 554,
+			height: 25,
 			items:
 			[
 			]
@@ -99,9 +103,9 @@
 			style: 'position:absolute;left:208px;top:83px;width:338px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Адреса электронной почты',
-			style: 'position:absolute;left:8px;top:141px;width:538px;height:16px;',
+			xtype: 'label',
+			text: 'Адреса электронной почты',
+			style: 'position:absolute;left:8px;top:141px;width:538px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -140,6 +144,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:241px;width:554px;height:25px;',
+			width: 554,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

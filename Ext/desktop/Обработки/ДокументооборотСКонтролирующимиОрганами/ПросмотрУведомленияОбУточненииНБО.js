@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:9px;width:646px;height:654px;',
 			height: 654,width: 646,
 			items:
 			[
 				{
-					title:'Результаты проверки',
 					items:
 					[
 		{
@@ -33,14 +32,13 @@
 			style: 'position:absolute;left:6px;top:8px;width:154px;height:17px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:54px;width:632px;height:573px;',
 			height: 573,width: 632,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -152,9 +150,9 @@
 			style: 'position:absolute;left:0px;top:47px;width:154px;height:17px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Подробно',
-			style: 'position:absolute;left:0px;top:0px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Подробно',
+			style: 'position:absolute;left:0px;top:0px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -169,7 +167,6 @@
 					]
 				},
 				{
-					title:'Прочие сведения',
 					items:
 					[
 		{
@@ -275,24 +272,23 @@
 			style: 'position:absolute;left:166px;top:8px;width:472px;height:17px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общие сведения',
-			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Общие сведения',
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения о налогоплательщике',
-			style: 'position:absolute;left:6px;top:328px;width:632px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения о налогоплательщике',
+			style: 'position:absolute;left:6px;top:328px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:348px;width:632px;height:95px;',
 			height: 95,width: 632,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Юр. лицо',
 					items:
 					[
 		{
@@ -328,7 +324,6 @@
 					]
 				},
 				{
-					title:'Физ. лицо',
 					items:
 					[
 		{
@@ -382,6 +377,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:671px;width:662px;height:25px;',
+			width: 662,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

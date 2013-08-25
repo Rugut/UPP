@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:507px;height:25px;',
+			width: 507,
+			height: 25,
 			items:
 			[
 				{
@@ -147,13 +149,12 @@
 			style: 'position:absolute;left:102px;top:500px;width:398px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:57px;width:492px;height:438px;',
 			height: 438,width: 492,
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
@@ -247,14 +248,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:184px;width:478px;height:113px;',
 			height: 113,width: 478,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Файловый',
 					items:
 					[
 		{
@@ -287,7 +287,6 @@
 					]
 				},
 				{
-					title:'FTPОбмен',
 					items:
 					[
 		{
@@ -349,6 +348,8 @@
 			value: 0,
 			name: 'ПортFTPСоединения',
 			style: 'position:absolute;left:358px;top:0px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -364,6 +365,8 @@
 			value: 0,
 			name: 'МаксимальныйРазмерОтправляемогоПолучаемогоПакетаЧерезFTP',
 			style: 'position:absolute;left:87px;top:72px;width:185px;height:19px;',
+			width: 185,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -373,7 +376,6 @@
 					]
 				},
 				{
-					title:'Почта',
 					items:
 					[
 		{
@@ -455,11 +457,12 @@
 			value: 0,
 			name: 'МаксимальныйРазмерОтправляемогоПакетаЧерезПочту',
 			style: 'position:absolute;left:256px;top:68px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Обмен через COM',
 					items:
 					[
 		{
@@ -475,14 +478,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:47px;width:472px;height:19px;',
 			height: 19,width: 472,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подключение файловая ИБ',
 					items:
 					[
 		{
@@ -497,7 +499,6 @@
 					]
 				},
 				{
-					title:'Подключение серверная ИБ',
 					items:
 					[
 		{
@@ -669,6 +670,8 @@
 			value: 0,
 			name: 'КоличествоОбъектовДляФоновогоОбмена',
 			style: 'position:absolute;left:419px;top:93px;width:65px;height:19px;',
+			width: 65,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -694,14 +697,14 @@
 			style: 'position:absolute;left:338px;top:69px;width:139px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Передача данных между информационными базами',
-			style: 'position:absolute;left:6px;top:140px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Передача данных между информационными базами',
+			style: 'position:absolute;left:6px;top:140px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Обмен данными по правилам обмена',
-			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Обмен данными по правилам обмена',
+			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -710,9 +713,9 @@
 			style: 'position:absolute;left:309px;top:69px;width:25px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительные настройки обмена',
-			style: 'position:absolute;left:6px;top:297px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительные настройки обмена',
+			style: 'position:absolute;left:6px;top:297px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -758,7 +761,6 @@
 					]
 				},
 				{
-					title:'Обмен по правилам',
 					items:
 					[
 		{
@@ -800,6 +802,8 @@
 			value: 0,
 			name: 'КоличествоОшибокОтложенногоПроведенияДляПрекращенияОперации',
 			style: 'position:absolute;left:220px;top:98px;width:98px;height:19px;',
+			width: 98,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -819,13 +823,12 @@
 			style: 'position:absolute;left:6px;top:52px;width:319px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:146px;width:478px;height:266px;',
 			height: 266,width: 478,
 			items:
 			[
 				{
-					title:'Настройки выгрузки',
 					items:
 					[
 		{
@@ -950,6 +953,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:464px;height:24px;',
+			width: 464,
+			height: 24,
 			items:
 			[
 				{
@@ -971,7 +976,6 @@
 					]
 				},
 				{
-					title:'Сопоставление объектов',
 					items:
 					[
 		{
@@ -1096,6 +1100,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:5px;top:6px;width:465px;height:24px;',
+			width: 465,
+			height: 24,
 			items:
 			[
 				{
@@ -1117,7 +1123,6 @@
 					]
 				},
 				{
-					title:'Интерактивный обмен',
 					items:
 					[
 		{
@@ -1136,9 +1141,9 @@
 			style: 'position:absolute;left:16px;top:93px;width:279px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Действия при интерактивном обмене',
-			style: 'position:absolute;left:6px;top:6px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Действия при интерактивном обмене',
+			style: 'position:absolute;left:6px;top:6px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1154,6 +1159,8 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЗапись1',
 			style: 'position:absolute;left:260px;top:118px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1169,11 +1176,13 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЧтение1',
 			style: 'position:absolute;left:260px;top:142px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отправлять сообщения при ошибке обмена',
-			style: 'position:absolute;left:6px;top:166px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Отправлять сообщения при ошибке обмена',
+			style: 'position:absolute;left:6px;top:166px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1295,6 +1304,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:16px;top:234px;width:468px;height:24px;',
+			width: 468,
+			height: 24,
 			items:
 			[
 				{
@@ -1322,7 +1333,6 @@
 					]
 				},
 				{
-					title:'Автоматический обмен',
 					items:
 					[
 		{
@@ -1411,6 +1421,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:50px;width:478px;height:24px;',
+			width: 478,
+			height: 24,
 			items:
 			[
 				{
@@ -1462,6 +1474,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:526px;width:507px;height:25px;',
+			width: 507,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

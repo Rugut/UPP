@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:660px;height:25px;',
+			width: 660,
+			height: 25,
 			items:
 			[
 				{
@@ -127,14 +129,13 @@
 			style: 'position:absolute;left:333px;top:58px;width:130px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:83px;width:644px;height:44px;',
 			height: 44,width: 644,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -158,14 +159,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:644px;height:19px;',
 			height: 19,width: 644,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -210,6 +210,8 @@
 			value: 0,
 			name: 'КоличествоПериодовАнализа',
 			style: 'position:absolute;left:467px;top:33px;width:47px;height:19px;',
+			width: 47,
+			height: 19,
 		},
 		{
 			xtype: 'label',

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:64px;width:362px;height:25px;',
+			width: 362,
+			height: 25,
 			items:
 			[
 				{
@@ -44,14 +46,13 @@
 			style: 'position:absolute;left:8px;top:6px;width:81px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:29px;width:346px;height:28px;',
 			height: 28,width: 346,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Периодичность',
 					items:
 					[
 		{
@@ -101,7 +102,6 @@
 					]
 				},
 				{
-					title:'Контролировать лимит',
 					items:
 					[
 		{

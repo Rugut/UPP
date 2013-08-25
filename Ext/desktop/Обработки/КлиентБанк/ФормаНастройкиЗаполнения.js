@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:654px;height:222px;',
 			height: 222,width: 654,
 			items:
 			[
 				{
-					title:'Обмен данными с программой "Клиент банка"',
 					items:
 					[
 		{
@@ -207,7 +206,6 @@
 					]
 				},
 				{
-					title:'Загрузка',
 					items:
 					[
 		{
@@ -341,6 +339,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:261px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

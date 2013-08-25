@@ -324,19 +324,19 @@
 			style: 'position:absolute;left:88px;top:126px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Специальный воинский учет',
-			style: 'position:absolute;left:8px;top:268px;width:414px;height:16px;',
+			xtype: 'label',
+			text: 'Специальный воинский учет',
+			style: 'position:absolute;left:8px;top:268px;width:414px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общий воинский учет',
-			style: 'position:absolute;left:8px;top:177px;width:414px;height:16px;',
+			xtype: 'label',
+			text: 'Общий воинский учет',
+			style: 'position:absolute;left:8px;top:177px;width:414px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Данные военного билета',
-			style: 'position:absolute;left:8px;top:33px;width:414px;height:16px;',
+			xtype: 'label',
+			text: 'Данные военного билета',
+			style: 'position:absolute;left:8px;top:33px;width:414px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -444,9 +444,9 @@
 			style: 'position:absolute;left:202px;top:242px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:313px;width:414px;height:6px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:313px;width:414px;height:6px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -455,6 +455,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:351px;width:430px;height:25px;',
+			width: 430,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

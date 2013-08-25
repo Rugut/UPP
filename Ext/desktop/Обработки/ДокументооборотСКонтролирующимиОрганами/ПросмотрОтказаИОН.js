@@ -77,9 +77,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Причины отказа',
-			style: 'position:absolute;left:8px;top:8px;width:559px;height:16px;',
+			xtype: 'label',
+			text: 'Причины отказа',
+			style: 'position:absolute;left:8px;top:8px;width:559px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -88,6 +88,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:578px;width:575px;height:25px;',
+			width: 575,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

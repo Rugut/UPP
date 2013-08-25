@@ -17,36 +17,35 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:483px;height:435px;',
 			height: 435,width: 483,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:468px;height:403px;',
 			height: 403,width: 468,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},
 					]
 				},
 				{
-					title:'Свойства разделов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:469px;height:24px;',
+			width: 469,
+			height: 24,
 			items:
 			[
 				{
@@ -146,6 +145,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:451px;width:497px;height:25px;',
+			width: 497,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

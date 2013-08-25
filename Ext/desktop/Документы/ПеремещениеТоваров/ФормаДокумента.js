@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 			]
@@ -81,13 +83,12 @@
 			style: 'position:absolute;left:485px;top:33px;width:71px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:636px;height:233px;',
 			height: 233,width: 636,
 			items:
 			[
 				{
-					title:'Товары',
 					items:
 					[
 		{
@@ -360,6 +361,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -384,12 +387,13 @@
 					]
 				},
 				{
-					title:'Возвратная тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -544,7 +548,6 @@
 					]
 				},
 				{
-					title:'НДС',
 					items:
 					[
 		{
@@ -598,14 +601,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:107px;width:304px;height:100px;',
 			height: 100,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -799,24 +801,22 @@
 					]
 				},
 				{
-					title:'Надпись',
 				},
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Счет и аналитика списания НДС',
-			style: 'position:absolute;left:6px;top:36px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Счет и аналитика списания НДС',
+			style: 'position:absolute;left:6px;top:36px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:324px;top:107px;width:304px;height:100px;',
 			height: 100,width: 304,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Счет',
 					items:
 					[
 		{
@@ -1010,7 +1010,6 @@
 					]
 				},
 				{
-					title:'Надпись',
 				},
 			]
 		},
@@ -1153,7 +1152,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1243,9 +1241,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:30px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:30px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1400,6 +1398,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:391px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{

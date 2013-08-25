@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:2px;top:0px;width:601px;height:25px;',
+			width: 601,
+			height: 25,
 			items:
 			[
 				'-',
@@ -302,6 +304,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:190px;width:588px;height:24px;',
+			width: 588,
+			height: 24,
 			items:
 			[
 				{
@@ -464,6 +468,8 @@
 			value: 0,
 			name: 'СуммаПоФакту',
 			style: 'position:absolute;left:474px;top:349px;width:122px;height:19px;',
+			width: 122,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -479,47 +485,22 @@
 			value: 0,
 			name: 'СуммаПоУчету',
 			style: 'position:absolute;left:474px;top:373px;width:122px;height:19px;',
+			width: 122,
+			height: 19,
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:447px;width:603px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
+			xtype: 'label',
+			text: 'Товары',
+			style: 'position:absolute;left:8px;top:174px;width:588px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Товары',
-			style: 'position:absolute;left:8px;top:174px;width:588px;height:16px;',
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:102px;width:588px;height:48px;',
 			height: 48,width: 588,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Поля',
 					items:
 					[
 		{
@@ -567,9 +548,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Условия проведения инвентаризации',
-			style: 'position:absolute;left:8px;top:80px;width:588px;height:16px;',
+			xtype: 'label',
+			text: 'Условия проведения инвентаризации',
+			style: 'position:absolute;left:8px;top:80px;width:588px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -580,6 +561,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:447px;width:603px;height:25px;',
+			width: 603,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

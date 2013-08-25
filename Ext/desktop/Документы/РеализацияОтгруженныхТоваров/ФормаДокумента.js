@@ -90,6 +90,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
 			items:
 			[
 				{
@@ -110,32 +112,6 @@
 				},
 				{
 					text:'Дт/кт',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:280px;width:672px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -367,6 +343,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:98px;top:155px;width:220px;height:17px;',
+			width: 220,
+			height: 17,
 		},
 		{
 			xtype: 'numberfield',
@@ -376,6 +354,8 @@
 			value: 0,
 			name: 'ВсегоНДС',
 			style: 'position:absolute;left:98px;top:177px;width:220px;height:17px;',
+			width: 220,
+			height: 17,
 		},
 		{
 			xtype: 'label',
@@ -393,6 +373,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:280px;width:672px;height:25px;',
+			width: 672,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

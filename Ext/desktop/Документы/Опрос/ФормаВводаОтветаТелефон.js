@@ -17,19 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:128px;width:341px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'OK',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'Надпись6',
 			text: 'Код страны:',
@@ -105,14 +92,30 @@
 			style: 'position:absolute;left:8px;top:101px;width:79px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Телефон',
-			style: 'position:absolute;left:8px;top:8px;width:325px;height:16px;',
+			xtype: 'label',
+			text: 'Телефон',
+			style: 'position:absolute;left:8px;top:8px;width:325px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:128px;width:341px;height:25px;',
+			width: 341,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'OK',
+				},
+			]
+		},
 	]
 	});
 });

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:437px;width:645px;height:25px;',
+			width: 645,
+			height: 25,
 			items:
 			[
 				{
@@ -478,29 +480,27 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Доступные поля',
-			style: 'position:absolute;left:8px;top:6px;width:222px;height:16px;',
+			xtype: 'label',
+			text: 'Доступные поля',
+			style: 'position:absolute;left:8px;top:6px;width:222px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:258px;top:9px;width:379px;height:420px;',
 			height: 420,width: 379,
 			items:
 			[
 				{
-					title:'Структура отчета',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:365px;height:384px;',
 			height: 384,width: 365,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница не таблица',
 					items:
 					[
 		{
@@ -582,13 +582,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Строки',
-			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;',
+			xtype: 'label',
+			text: 'Строки',
+			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:18px;width:365px;height:24px;',
+			width: 365,
+			height: 24,
 			items:
 			[
 				{
@@ -714,6 +716,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:169px;width:365px;height:24px;',
+			width: 365,
+			height: 24,
 			items:
 			[
 				{
@@ -737,13 +741,15 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Показатели и дополнительные поля',
-			style: 'position:absolute;left:0px;top:147px;width:365px;height:17px;',
+			xtype: 'label',
+			text: 'Показатели и дополнительные поля',
+			style: 'position:absolute;left:0px;top:147px;width:365px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:9px;top:275px;width:348px;height:24px;',
+			width: 348,
+			height: 24,
 			items:
 			[
 				{
@@ -790,24 +796,22 @@
 					]
 				},
 				{
-					title:'Отбор и упорядочивание',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:365px;height:384px;',
 			height: 384,width: 365,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница без параметров',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Отбор',
-			style: 'position:absolute;left:0px;top:0px;width:365px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор',
+			style: 'position:absolute;left:0px;top:0px;width:365px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеОтборСтраницаБезПараметров',
@@ -962,6 +966,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:18px;width:365px;height:24px;',
+			width: 365,
+			height: 24,
 			items:
 			[
 				{
@@ -988,9 +994,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Упорядочивание',
-			style: 'position:absolute;left:0px;top:194px;width:365px;height:17px;',
+			xtype: 'label',
+			text: 'Упорядочивание',
+			style: 'position:absolute;left:0px;top:194px;width:365px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ТабличноеПолеСортировкаСтраницаБезПараметров',
@@ -1064,6 +1070,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:214px;width:365px;height:24px;',
+			width: 365,
+			height: 24,
 			items:
 			[
 				{
@@ -1089,18 +1097,16 @@
 					]
 				},
 				{
-					title:'Оформление',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:365px;height:385px;',
 			height: 385,width: 365,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Оформление',
 					items:
 					[
 		{
@@ -1237,18 +1243,20 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Условное оформление',
-			style: 'position:absolute;left:0px;top:68px;width:365px;height:17px;',
+			xtype: 'label',
+			text: 'Условное оформление',
+			style: 'position:absolute;left:0px;top:68px;width:365px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Общее',
-			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;',
+			xtype: 'label',
+			text: 'Общее',
+			style: 'position:absolute;left:0px;top:0px;width:365px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:86px;width:365px;height:24px;',
+			width: 365,
+			height: 24,
 			items:
 			[
 				{
@@ -1279,14 +1287,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:235px;top:8px;width:16px;height:420px;',
 			height: 420,width: 16,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница3',
 					items:
 					[
 		{
@@ -1316,7 +1323,6 @@
 					]
 				},
 				{
-					title:'Страница2',
 					items:
 					[
 		{
@@ -1346,13 +1352,14 @@
 					]
 				},
 				{
-					title:'Страница0',
 				},
 			]
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:21px;top:110px;width:203px;height:24px;',
+			width: 203,
+			height: 24,
 			items:
 			[
 				{

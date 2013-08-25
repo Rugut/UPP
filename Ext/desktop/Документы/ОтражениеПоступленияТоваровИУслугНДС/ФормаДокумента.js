@@ -216,6 +216,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:661px;height:25px;',
+			width: 661,
+			height: 25,
 			items:
 			[
 				{
@@ -246,32 +248,6 @@
 				},
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:448px;width:661px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -330,18 +306,19 @@
 			style: 'position:absolute;left:319px;top:81px;width:288px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:153px;width:645px;height:219px;',
 			height: 219,width: 645,
 			items:
 			[
 				{
-					title:'Товары и услуги',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
+			width: 631,
+			height: 24,
 			items:
 			[
 				{
@@ -559,7 +536,6 @@
 					]
 				},
 				{
-					title:'Документы оплаты',
 					items:
 					[
 		{
@@ -634,6 +610,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:631px;height:24px;',
+			width: 631,
+			height: 24,
 			items:
 			[
 				'-',
@@ -704,6 +682,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:448px;width:661px;height:25px;',
+			width: 661,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

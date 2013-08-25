@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:92px;width:463px;height:51px;',
+			width: 463,
+			height: 51,
 			items:
 			[
 			]
@@ -93,21 +95,23 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Параметры выпуска продукции',
-			style: 'position:absolute;left:8px;top:145px;width:463px;height:16px;',
+			xtype: 'label',
+			text: 'Параметры выпуска продукции',
+			style: 'position:absolute;left:8px;top:145px;width:463px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:161px;width:463px;height:24px;',
+			width: 463,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Свойства характеристики номенклатуры',
-			style: 'position:absolute;left:8px;top:276px;width:463px;height:16px;',
+			xtype: 'label',
+			text: 'Свойства характеристики номенклатуры',
+			style: 'position:absolute;left:8px;top:276px;width:463px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'СвойстваОбъектов',
@@ -181,6 +185,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:292px;width:463px;height:24px;',
+			width: 463,
+			height: 24,
 			items:
 			[
 			]
@@ -192,6 +198,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:425px;width:479px;height:25px;',
+			width: 479,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

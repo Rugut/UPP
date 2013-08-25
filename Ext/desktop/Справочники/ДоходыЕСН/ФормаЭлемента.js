@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			items:
 			[
 				{
@@ -45,14 +47,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:60px;width:390px;height:55px;',
 			height: 55,width: 390,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Не предопределенный',
 					items:
 					[
 		{
@@ -73,7 +74,6 @@
 					]
 				},
 				{
-					title:'Предопределенный',
 					items:
 					[
 		{
@@ -93,6 +93,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:123px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

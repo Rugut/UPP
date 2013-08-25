@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:394px;height:25px;',
+			width: 394,
+			height: 25,
 			items:
 			[
 				'-',
@@ -41,28 +43,6 @@
 			name: 'НадписьФомулаСумма',
 			text: 'Надпись',
 			style: 'position:absolute;left:78px;top:179px;width:82px;height:19px;text-align:right;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:230px;width:394px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Получить вес',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
 		},
 		{
 			xtype: 'label',
@@ -208,6 +188,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:230px;width:394px;height:25px;',
+			width: 394,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Получить вес',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

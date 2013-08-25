@@ -19,19 +19,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:288px;height:25px;',
+			width: 288,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:58px;width:272px;height:233px;',
 			height: 233,width: 272,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Один отпуск',
 					items:
 					[
 		{
@@ -71,6 +72,8 @@
 			value: 0,
 			name: 'КоличествоДней',
 			style: 'position:absolute;left:96px;top:96px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -87,7 +90,6 @@
 					]
 				},
 				{
-					title:'Отпуска с рабочими годами',
 					items:
 					[
 		{
@@ -176,6 +178,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:208px;height:24px;',
+			width: 208,
+			height: 24,
 			items:
 			[
 				{
@@ -220,6 +224,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:299px;width:288px;height:25px;',
+			width: 288,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

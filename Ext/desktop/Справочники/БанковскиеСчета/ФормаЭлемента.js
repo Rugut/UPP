@@ -19,30 +19,10 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
+			width: 568,
+			height: 25,
 			items:
 			[
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:496px;width:568px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
 			]
 		},
 		{
@@ -135,9 +115,9 @@
 			style: 'position:absolute;left:102px;top:469px;width:374px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Банк, в котором открыт счет',
-			style: 'position:absolute;left:8px;top:60px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Банк, в котором открыт счет',
+			style: 'position:absolute;left:8px;top:60px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -181,14 +161,13 @@
 			style: 'position:absolute;left:8px;top:138px;width:129px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:157px;width:552px;height:65px;',
 			height: 65,width: 552,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Непрямые расчеты',
 					items:
 					[
 		{
@@ -204,9 +183,9 @@
 			style: 'position:absolute;left:265px;top:21px;width:57px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Банк для непрямых расчетов',
-			style: 'position:absolute;left:0px;top:0px;width:551px;height:16px;',
+			xtype: 'label',
+			text: 'Банк для непрямых расчетов',
+			style: 'position:absolute;left:0px;top:0px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -241,19 +220,17 @@
 					]
 				},
 				{
-					title:'Прямые расчеты',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:246px;width:552px;height:213px;',
 			height: 213,width: 552,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Реквизиты счета организации',
 					items:
 					[
 		{
@@ -284,9 +261,9 @@
 			style: 'position:absolute;left:0px;top:118px;width:311px;height:16px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительная информация о счете',
-			style: 'position:absolute;left:0px;top:149px;width:551px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительная информация о счете',
+			style: 'position:absolute;left:0px;top:149px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -370,7 +347,6 @@
 					]
 				},
 				{
-					title:'Реквизиты счета контрагента',
 					items:
 					[
 		{
@@ -397,9 +373,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройки печати платежных поручений',
-			style: 'position:absolute;left:8px;top:229px;width:552px;height:16px;',
+			xtype: 'label',
+			text: 'Настройки печати платежных поручений',
+			style: 'position:absolute;left:8px;top:229px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -420,6 +396,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:496px;width:568px;height:25px;',
+			width: 568,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

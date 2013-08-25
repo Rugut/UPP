@@ -115,6 +115,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:759px;top:7px;width:24px;height:225px;',
+			width: 24,
+			height: 225,
 			items:
 			[
 			]
@@ -128,6 +130,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:78px;top:237px;width:704px;height:24px;',
+			width: 704,
+			height: 24,
 			items:
 			[
 				{
@@ -139,13 +143,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:262px;width:774px;height:219px;',
 			height: 219,width: 774,
 			items:
 			[
 				{
-					title:'Параметры данных',
 					items:
 					[
 		{
@@ -265,6 +268,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -272,7 +277,6 @@
 					]
 				},
 				{
-					title:'Поля группировки',
 					items:
 					[
 		{
@@ -434,6 +438,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -441,7 +447,6 @@
 					]
 				},
 				{
-					title:'Выбранные поля',
 					items:
 					[
 		{
@@ -576,6 +581,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -583,7 +590,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -1222,6 +1228,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -1229,7 +1237,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -1355,6 +1362,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -1362,7 +1371,6 @@
 					]
 				},
 				{
-					title:'Условное оформление',
 					items:
 					[
 		{
@@ -1491,6 +1499,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -1498,7 +1508,6 @@
 					]
 				},
 				{
-					title:'Пользовательские поля',
 					items:
 					[
 		{
@@ -1555,6 +1564,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -1562,7 +1573,6 @@
 					]
 				},
 				{
-					title:'Другие настройки',
 					items:
 					[
 		{
@@ -1682,6 +1692,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:743px;top:6px;width:24px;height:187px;',
+			width: 24,
+			height: 187,
 			items:
 			[
 			]
@@ -1693,6 +1705,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:485px;width:790px;height:25px;',
+			width: 790,
+			height: 25,
 			items:
 			[
 				{

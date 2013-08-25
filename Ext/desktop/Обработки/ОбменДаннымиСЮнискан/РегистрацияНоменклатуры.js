@@ -57,20 +57,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:240px;top:32px;width:392px;height:415px;',
 			height: 415,width: 392,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Параметры рег',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Описание товара',
-			style: 'position:absolute;left:0px;top:0px;width:392px;height:16px;',
+			xtype: 'label',
+			text: 'Описание товара',
+			style: 'position:absolute;left:0px;top:0px;width:392px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -103,9 +102,9 @@
 			style: 'position:absolute;left:140px;top:44px;width:252px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Потребительская упаковка',
-			style: 'position:absolute;left:0px;top:68px;width:392px;height:16px;',
+			xtype: 'label',
+			text: 'Потребительская упаковка',
+			style: 'position:absolute;left:0px;top:68px;width:392px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -121,6 +120,8 @@
 			value: 0,
 			name: 'ПолеВводаУникальныйНомерТовара',
 			style: 'position:absolute;left:140px;top:87px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -151,6 +152,8 @@
 			value: 0,
 			name: 'ПолеВводаКоличествоВес',
 			style: 'position:absolute;left:300px;top:159px;width:92px;height:19px;',
+			width: 92,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -346,9 +349,9 @@
 			style: 'position:absolute;left:140px;top:183px;width:68px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Транспортные упаковки',
-			style: 'position:absolute;left:0px;top:257px;width:392px;height:16px;',
+			xtype: 'label',
+			text: 'Транспортные упаковки',
+			style: 'position:absolute;left:0px;top:257px;width:392px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -561,6 +564,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:32px;width:224px;height:24px;',
+			width: 224,
+			height: 24,
 			items:
 			[
 				{
@@ -587,6 +592,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:455px;width:640px;height:25px;',
+			width: 640,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

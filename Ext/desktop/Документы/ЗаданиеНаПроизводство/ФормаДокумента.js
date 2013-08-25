@@ -68,23 +68,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:83px;width:628px;height:239px;',
 			height: 239,width: 628,
 			items:
 			[
 				{
-					title:'Выпуск/Тех. процесс',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:614px;height:24px;',
+			width: 614,
+			height: 24,
 			items:
 			[
 				{
@@ -290,7 +293,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -340,9 +342,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -462,6 +464,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:356px;width:644px;height:25px;',
+			width: 644,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
+			width: 353,
+			height: 25,
 			items:
 			[
 				{
@@ -51,30 +53,28 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:32px;width:337px;height:388px;',
 			height: 388,width: 337,
 			items:
 			[
 				{
-					title:'Основная',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:60px;width:323px;height:302px;',
 			height: 302,width: 323,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПоЗаявкам',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Порядок погашения',
-			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок погашения',
+			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -89,6 +89,8 @@
 			value: 0,
 			name: 'СуммаДляПодбора1',
 			style: 'position:absolute;left:129px;top:76px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -114,18 +116,17 @@
 					]
 				},
 				{
-					title:'ПоДоговорам',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Способ расчета задолженности',
-			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;',
+			xtype: 'label',
+			text: 'Способ расчета задолженности',
+			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок погашения',
-			style: 'position:absolute;left:6px;top:64px;width:311px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок погашения',
+			style: 'position:absolute;left:6px;top:64px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -140,6 +141,8 @@
 			value: 0,
 			name: 'СуммаДляПодбора',
 			style: 'position:absolute;left:130px;top:144px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -147,9 +150,9 @@
 			style: 'position:absolute;left:12px;top:188px;width:297px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учет планируемых движений денежных средств',
-			style: 'position:absolute;left:6px;top:167px;width:311px;height:16px;',
+			xtype: 'label',
+			text: 'Учет планируемых движений денежных средств',
+			style: 'position:absolute;left:6px;top:167px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -157,9 +160,9 @@
 			style: 'position:absolute;left:12px;top:212px;width:297px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ подбора',
-			style: 'position:absolute;left:6px;top:233px;width:311px;height:16px;',
+			xtype: 'label',
+			text: 'Способ подбора',
+			style: 'position:absolute;left:6px;top:233px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -218,9 +221,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ заполнения',
-			style: 'position:absolute;left:6px;top:6px;width:323px;height:16px;',
+			xtype: 'label',
+			text: 'Способ заполнения',
+			style: 'position:absolute;left:6px;top:6px;width:323px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -241,7 +244,6 @@
 					]
 				},
 				{
-					title:'Отбор договоров',
 					items:
 					[
 		{
@@ -343,6 +345,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:323px;height:24px;',
+			width: 323,
+			height: 24,
 			items:
 			[
 			]
@@ -358,6 +362,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:428px;width:353px;height:25px;',
+			width: 353,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

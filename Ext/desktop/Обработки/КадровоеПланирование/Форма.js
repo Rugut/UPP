@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:944px;height:25px;',
+			width: 944,
+			height: 25,
 			items:
 			[
 				{
@@ -34,25 +36,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:539px;',
 			height: 539,width: 764,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:255px;width:200px;height:284px;',
 			height: 284,width: 200,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Подразделения организаций',
 					items:
 					[
 		{
@@ -98,14 +98,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:200px;height:31px;',
 			height: 31,width: 200,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -259,6 +258,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:224px;width:764px;height:24px;',
+			width: 764,
+			height: 24,
 			items:
 			[
 				{
@@ -278,14 +279,13 @@
 			style: 'position:absolute;left:0px;top:199px;width:764px;height:20px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:24px;width:764px;height:169px;',
 			height: 169,width: 764,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -396,6 +396,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:764px;height:24px;',
+			width: 764,
+			height: 24,
 			items:
 			[
 				{
@@ -476,6 +478,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:558px;top:224px;width:206px;height:24px;',
+			width: 206,
+			height: 24,
 			items:
 			[
 				{
@@ -573,6 +577,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:571px;top:408px;width:193px;height:24px;',
+			width: 193,
+			height: 24,
 			items:
 			[
 				{
@@ -590,6 +596,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:854px;top:0px;width:146px;height:25px;',
+			width: 146,
+			height: 25,
 			items:
 			[
 				{
@@ -601,14 +609,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:778px;top:33px;width:214px;height:539px;',
 			height: 539,width: 214,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 				},
 			]
 		},

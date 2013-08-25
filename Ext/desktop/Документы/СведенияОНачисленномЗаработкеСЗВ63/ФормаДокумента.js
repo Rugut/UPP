@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
+			width: 846,
+			height: 25,
 			items:
 			[
 			]
@@ -44,25 +46,23 @@
 			style: 'position:absolute;left:732px;top:428px;width:106px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:830px;height:41px;',
 			height: 41,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:830px;height:35px;',
 			height: 35,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 					]
@@ -74,14 +74,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:74px;width:830px;height:96px;',
 			height: 96,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -348,6 +347,8 @@
 			value: 0,
 			name: 'ОтчетныйПериод',
 			style: 'position:absolute;left:94px;top:24px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -485,19 +486,20 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:170px;width:830px;height:251px;',
 			height: 251,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:830px;height:24px;',
+			width: 830,
+			height: 24,
 			items:
 			[
 				{
@@ -566,9 +568,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Застрахованные лица',
-			style: 'position:absolute;left:0px;top:0px;width:830px;height:16px;',
+			xtype: 'label',
+			text: 'Застрахованные лица',
+			style: 'position:absolute;left:0px;top:0px;width:830px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -728,6 +730,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:455px;width:846px;height:25px;',
+			width: 846,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

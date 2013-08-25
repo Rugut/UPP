@@ -222,6 +222,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:656px;height:25px;',
+			width: 656,
+			height: 25,
 			items:
 			[
 				{
@@ -247,32 +249,6 @@
 				'-',
 				{
 					text:'',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:358px;width:656px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -447,6 +423,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:152px;width:640px;height:24px;',
+			width: 640,
+			height: 24,
 			items:
 			[
 				'-',
@@ -460,9 +438,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Список номенклатуры для данных условий поставки',
-			style: 'position:absolute;left:8px;top:132px;width:640px;height:16px;',
+			xtype: 'label',
+			text: 'Список номенклатуры для данных условий поставки',
+			style: 'position:absolute;left:8px;top:132px;width:640px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -478,6 +456,8 @@
 			value: 0,
 			name: 'СуммаУсловийДоговора',
 			style: 'position:absolute;left:98px;top:105px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -564,6 +544,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:358px;width:656px;height:25px;',
+			width: 656,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

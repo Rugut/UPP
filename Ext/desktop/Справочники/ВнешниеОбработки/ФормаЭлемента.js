@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:618px;height:25px;',
+			width: 618,
+			height: 25,
 			items:
 			[
 				'-',
@@ -102,19 +104,20 @@
 			style: 'position:absolute;left:39px;top:33px;width:185px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:602px;height:247px;',
 			height: 247,width: 602,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Принадлежность печатной формы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:22px;width:602px;height:24px;',
+			width: 602,
+			height: 24,
 			items:
 			[
 				{
@@ -305,9 +308,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Принадлежность',
-			style: 'position:absolute;left:0px;top:6px;width:602px;height:16px;',
+			xtype: 'label',
+			text: 'Принадлежность',
+			style: 'position:absolute;left:0px;top:6px;width:602px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -331,6 +334,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:361px;width:618px;height:25px;',
+			width: 618,
+			height: 25,
 			items:
 			[
 				{
@@ -359,6 +364,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:527px;top:81px;width:83px;height:27px;',
+			width: 83,
+			height: 27,
 			items:
 			[
 				{

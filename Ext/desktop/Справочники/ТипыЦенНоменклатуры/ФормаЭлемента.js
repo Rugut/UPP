@@ -138,6 +138,8 @@
 			value: 0,
 			name: 'ПроцентСкидкиНаценки',
 			style: 'position:absolute;left:424px;top:201px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -218,6 +220,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
+			width: 492,
+			height: 25,
 			items:
 			[
 			]
@@ -238,36 +242,14 @@
 			style: 'position:absolute;left:113px;top:249px;width:220px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок назначения цен',
-			style: 'position:absolute;left:8px;top:89px;width:476px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок назначения цен',
+			style: 'position:absolute;left:8px;top:89px;width:476px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок округления цен',
-			style: 'position:absolute;left:8px;top:229px;width:476px;height:16px;',
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:310px;width:492px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
+			xtype: 'label',
+			text: 'Порядок округления цен',
+			style: 'position:absolute;left:8px;top:229px;width:476px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -338,6 +320,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:310px;width:492px;height:25px;',
+			width: 492,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

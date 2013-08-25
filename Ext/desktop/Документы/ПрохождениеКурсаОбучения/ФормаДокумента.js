@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:99px;width:494px;height:24px;',
+			width: 494,
+			height: 24,
 			items:
 			[
 				{
@@ -258,6 +260,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:510px;height:25px;',
+			width: 510,
+			height: 25,
 			items:
 			[
 				{
@@ -295,6 +299,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:308px;width:510px;height:25px;',
+			width: 510,
+			height: 25,
 			items:
 			[
 				{
@@ -331,9 +337,9 @@
 			style: 'position:absolute;left:328px;top:58px;width:91px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Обучающиеся',
-			style: 'position:absolute;left:8px;top:83px;width:494px;height:16px;',
+			xtype: 'label',
+			text: 'Обучающиеся',
+			style: 'position:absolute;left:8px;top:83px;width:494px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

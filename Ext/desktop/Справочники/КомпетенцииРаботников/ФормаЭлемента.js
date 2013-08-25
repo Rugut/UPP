@@ -34,6 +34,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			items:
 			[
 				'-',
@@ -85,13 +87,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:82px;width:390px;height:313px;',
 			height: 313,width: 390,
 			items:
 			[
 				{
-					title:'Описание компетенции',
 					items:
 					[
 		{
@@ -104,7 +105,6 @@
 					]
 				},
 				{
-					title:'Оценка компетенции',
 					items:
 					[
 		{
@@ -341,6 +341,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:403px;width:406px;height:25px;',
+			width: 406,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

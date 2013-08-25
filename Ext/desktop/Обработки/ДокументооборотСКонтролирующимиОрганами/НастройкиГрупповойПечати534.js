@@ -44,9 +44,9 @@
 			style: 'position:absolute;left:199px;top:9px;width:68px;height:15px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:27px;width:259px;height:5px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:27px;width:259px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -70,6 +70,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:177px;width:275px;height:25px;',
+			width: 275,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

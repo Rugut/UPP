@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			items:
 			[
 				{
@@ -47,22 +49,18 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:61px;width:654px;height:310px;',
 			height: 310,width: 654,
 			items:
 			[
 				{
-					title:'Титульный',
 				},
 				{
-					title:'Раздел I',
 				},
 				{
-					title:'Раздел II-III',
 				},
 				{
-					title:'Раздел IV-VI',
 					items:
 					[
 		{
@@ -104,10 +102,8 @@
 					]
 				},
 				{
-					title:'Раздел VII',
 				},
 				{
-					title:'Раздел VIII',
 					items:
 					[
 		{
@@ -131,7 +127,6 @@
 					]
 				},
 				{
-					title:'Раздел IX',
 					items:
 					[
 		{
@@ -149,7 +144,6 @@
 					]
 				},
 				{
-					title:'Терр.-обособ. подразделения',
 					items:
 					[
 		{
@@ -197,7 +191,6 @@
 					]
 				},
 				{
-					title:'Подписи',
 				},
 			]
 		},
@@ -208,14 +201,13 @@
 			style: 'position:absolute;left:584px;top:5px;width:78px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:28px;',
 			height: 28,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -243,20 +235,21 @@
 			value: 0,
 			name: 'НомерКорректировки',
 			style: 'position:absolute;left:299px;top:0px;width:49px;height:19px;',
+			width: 49,
+			height: 19,
 		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:371px;width:654px;height:24px;',
 			height: 24,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -323,6 +316,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:404px;width:670px;height:25px;',
+			width: 670,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

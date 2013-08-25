@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -59,32 +61,6 @@
 				'-',
 				{
 					text:'Показать/скрыть счета учета',
-				},
-			]
-		},
-		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Печать',
-				},
-				'-',
-				{
-					text:'OK',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
 				},
 			]
 		},
@@ -327,13 +303,12 @@
 			style: 'position:absolute;left:96px;top:369px;width:548px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:131px;width:636px;height:208px;',
 			height: 208,width: 636,
 			items:
 			[
 				{
-					title:'Продукция и услуги',
 					items:
 					[
 		{
@@ -642,6 +617,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -662,12 +639,13 @@
 					]
 				},
 				{
-					title:'Получатели',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
+			width: 622,
+			height: 25,
 			items:
 			[
 				{
@@ -1035,7 +1013,6 @@
 					]
 				},
 				{
-					title:'Материалы',
 					items:
 					[
 		{
@@ -1086,6 +1063,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:25px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -1345,7 +1324,6 @@
 					]
 				},
 				{
-					title:'Распределение материалов',
 					items:
 					[
 		{
@@ -1600,6 +1578,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1612,7 +1592,6 @@
 					]
 				},
 				{
-					title:'Выполненные работы',
 					items:
 					[
 		{
@@ -1894,6 +1873,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -1904,7 +1885,6 @@
 					]
 				},
 				{
-					title:'Исполнители',
 					items:
 					[
 		{
@@ -2006,6 +1986,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				'-',
@@ -2015,9 +1997,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Порядок расчета',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;',
+			xtype: 'label',
+			text: 'Порядок расчета',
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -2032,7 +2014,6 @@
 					]
 				},
 				{
-					title:'Распределение тех. операций',
 					items:
 					[
 		{
@@ -2224,6 +2205,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -2234,7 +2217,6 @@
 					]
 				},
 				{
-					title:'Прочие затраты',
 					items:
 					[
 		{
@@ -2372,6 +2354,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -2382,7 +2366,6 @@
 					]
 				},
 				{
-					title:'Распределение прочих затрат',
 					items:
 					[
 		{
@@ -2592,6 +2575,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				'-',
@@ -2600,7 +2585,6 @@
 					]
 				},
 				{
-					title:'Возвратные отходы',
 					items:
 					[
 		{
@@ -2918,6 +2902,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:337px;height:24px;',
+			width: 337,
+			height: 24,
 			items:
 			[
 				{
@@ -2973,7 +2959,6 @@
 					]
 				},
 				{
-					title:'Распределение возвратных отходов',
 					items:
 					[
 		{
@@ -3210,6 +3195,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
+			width: 622,
+			height: 24,
 			items:
 			[
 				{
@@ -3333,6 +3320,35 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Печать',
+				},
+				'-',
+				{
+					text:'OK',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

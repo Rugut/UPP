@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:769px;height:25px;',
+			width: 769,
+			height: 25,
 			items:
 			[
 				{
@@ -103,19 +105,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:761px;top:0px;width:239px;height:25px;',
+			width: 239,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:27px;width:1000px;height:124px;',
 			height: 124,width: 1000,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -217,6 +220,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:953px;height:24px;',
+			width: 953,
+			height: 24,
 			items:
 			[
 			]

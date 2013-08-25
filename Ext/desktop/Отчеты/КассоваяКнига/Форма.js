@@ -64,6 +64,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
+			width: 639,
+			height: 25,
 			items:
 			[
 				{
@@ -147,14 +149,13 @@
 			style: 'position:absolute;left:8px;top:81px;width:284px;height:16px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:319px;top:60px;width:312px;height:58px;',
 			height: 58,width: 312,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

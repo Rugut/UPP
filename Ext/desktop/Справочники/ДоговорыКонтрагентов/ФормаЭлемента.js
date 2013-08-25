@@ -28,6 +28,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:511px;height:25px;',
+			width: 511,
+			height: 25,
 			items:
 			[
 				{
@@ -128,35 +130,12 @@
 			},
 		},
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:554px;width:511px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Записать',
-				},
-				'-',
-				{
-					text:'Закрыть',
-					handler: function () {this.up('window').close();},
-				},
-			]
-		},
-		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:175px;width:495px;height:346px;',
 			height: 346,width: 495,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -218,6 +197,8 @@
 			value: 0,
 			name: 'ПроцентПредоплаты',
 			style: 'position:absolute;left:405px;top:185px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -227,6 +208,8 @@
 			value: 0,
 			name: 'ДопустимоеЧислоДнейЗадолженности',
 			style: 'position:absolute;left:405px;top:210px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -234,9 +217,9 @@
 			style: 'position:absolute;left:14px;top:210px;width:370px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'numberfield',
@@ -246,11 +229,13 @@
 			value: 0,
 			name: 'ДопустимаяСуммаЗадолженности',
 			style: 'position:absolute;left:405px;top:161px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:141px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:141px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -342,11 +327,12 @@
 			value: 0,
 			name: 'СрокОплатыДляРезервовПоСомнительнымДолгам',
 			style: 'position:absolute;left:405px;top:112px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Учет товаров',
 					items:
 					[
 		{
@@ -362,6 +348,8 @@
 			value: 0,
 			name: 'ЧислоДнейРезерваБезОплаты',
 			style: 'position:absolute;left:407px;top:27px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -369,19 +357,18 @@
 			style: 'position:absolute;left:14px;top:76px;width:370px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:55px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:55px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:8px;top:6px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:8px;top:6px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -413,6 +400,8 @@
 			value: 0,
 			name: 'ПроцентКомиссионногоВознаграждения',
 			style: 'position:absolute;left:425px;top:98px;width:60px;height:19px;',
+			width: 60,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -459,14 +448,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:78px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:78px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -474,9 +463,9 @@
 			style: 'position:absolute;left:12px;top:128px;width:441px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:280px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:280px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -539,14 +528,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:149px;width:485px;height:127px;',
 			height: 127,width: 485,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'НДС с авансов',
 					items:
 					[
 		{
@@ -556,9 +544,9 @@
 			style: 'position:absolute;left:7px;top:41px;width:136px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:0px;width:479px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:0px;width:479px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -606,14 +594,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:41px;width:478px;height:43px;',
 			height: 43,width: 478,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Не регистрировать',
 					items:
 					[
 		{
@@ -664,7 +651,6 @@
 					]
 				},
 				{
-					title:'Информация',
 					items:
 					[
 		{
@@ -685,7 +671,6 @@
 					]
 				},
 				{
-					title:'НДС налоговый агент',
 					items:
 					[
 		{
@@ -732,9 +717,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:7px;top:0px;width:478px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:7px;top:0px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -803,7 +788,6 @@
 					]
 				},
 				{
-					title:'Условия договора',
 					items:
 					[
 		{
@@ -910,6 +894,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:30px;width:481px;height:24px;',
+			width: 481,
+			height: 24,
 			items:
 			[
 				'-',
@@ -966,7 +952,6 @@
 					]
 				},
 				{
-					title:'Скидки',
 					items:
 					[
 		{
@@ -1194,7 +1179,6 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
@@ -1274,6 +1258,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:481px;height:24px;',
+			width: 481,
+			height: 24,
 			items:
 			[
 			]
@@ -1281,7 +1267,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -1361,6 +1346,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:481px;height:24px;',
+			width: 481,
+			height: 24,
 			items:
 			[
 				{
@@ -1536,6 +1523,31 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:554px;width:511px;height:25px;',
+			width: 511,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Записать',
+				},
+				'-',
+				{
+					text:'Закрыть',
+					handler: function () {this.up('window').close();},
+				},
+			]
+		},
 	]
 	});
 });

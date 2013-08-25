@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -110,22 +112,18 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:636px;height:312px;',
 			height: 312,width: 636,
 			items:
 			[
 				{
-					title:'Титульный лист',
 				},
 				{
-					title:'Доходы и расходы',
 				},
 				{
-					title:'Расходы на приобретение основных средств',
 				},
 				{
-					title:'Расчет налоговой базы',
 				},
 			]
 		},

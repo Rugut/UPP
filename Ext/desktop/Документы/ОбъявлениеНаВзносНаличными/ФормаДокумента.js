@@ -165,6 +165,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:102px;top:153px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -213,6 +215,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:379px;height:25px;',
+			width: 379,
+			height: 25,
 			items:
 			[
 				{
@@ -358,6 +362,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:259px;width:379px;height:25px;',
+			width: 379,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

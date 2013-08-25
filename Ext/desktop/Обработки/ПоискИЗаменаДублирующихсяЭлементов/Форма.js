@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:693px;height:25px;',
+			width: 693,
+			height: 25,
 			items:
 			[
 				'-',
@@ -28,13 +30,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:677px;height:318px;',
 			height: 318,width: 677,
 			items:
 			[
 				{
-					title:'Настройка',
 					items:
 					[
 		{
@@ -109,6 +110,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:663px;height:24px;',
+			width: 663,
+			height: 24,
 			items:
 			[
 				{
@@ -127,7 +130,6 @@
 					]
 				},
 				{
-					title:'Результаты поиска',
 					items:
 					[
 		{
@@ -193,6 +195,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:5px;width:663px;height:24px;',
+			width: 663,
+			height: 24,
 			items:
 			[
 				{
@@ -227,12 +231,13 @@
 					]
 				},
 				{
-					title:'Зависимые элементы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:663px;height:24px;',
+			width: 663,
+			height: 24,
 			items:
 			[
 				{
@@ -362,7 +367,6 @@
 					]
 				},
 				{
-					title:'Замена',
 					items:
 					[
 		{
@@ -410,6 +414,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:237px;height:24px;',
+			width: 237,
+			height: 24,
 			items:
 			[
 				{

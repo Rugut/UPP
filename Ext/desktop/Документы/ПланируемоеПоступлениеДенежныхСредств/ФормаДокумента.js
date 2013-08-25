@@ -25,19 +25,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:641px;height:127px;',
 			height: 127,width: 641,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Расчеты с контрагентами',
 					items:
 					[
 		{
@@ -81,14 +82,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:24px;width:641px;height:103px;',
 			height: 103,width: 641,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -132,6 +132,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:88px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -141,6 +143,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:88px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -241,6 +245,8 @@
 			value: 0,
 			name: 'СуммаПлатежа',
 			style: 'position:absolute;left:416px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -293,7 +299,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -422,6 +427,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:294px;height:24px;',
+			width: 294,
+			height: 24,
 			items:
 			[
 				{
@@ -438,7 +445,6 @@
 					]
 				},
 				{
-					title:'ПлатежПрочие',
 					items:
 					[
 		{
@@ -494,6 +500,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетовПрочие',
 			style: 'position:absolute;left:88px;top:0px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'textfield',
@@ -539,7 +547,6 @@
 					]
 				},
 				{
-					title:'Получение из кассы ККМ',
 					items:
 					[
 		{
@@ -654,6 +661,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетовККМ',
 			style: 'position:absolute;left:88px;top:6px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -728,6 +737,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:336px;width:657px;height:25px;',
+			width: 657,
+			height: 25,
 			items:
 			[
 				{
@@ -916,6 +927,8 @@
 			value: 0,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:233px;top:57px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
 			xtype: 'label',

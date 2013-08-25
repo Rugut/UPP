@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:399px;height:150px;',
 			height: 150,width: 399,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -89,7 +88,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -191,6 +189,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:385px;height:24px;',
+			width: 385,
+			height: 24,
 			items:
 			[
 			]
@@ -206,6 +206,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:168px;width:413px;height:25px;',
+			width: 413,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

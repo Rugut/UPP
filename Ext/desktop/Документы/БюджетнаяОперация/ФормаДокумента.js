@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
+			width: 659,
+			height: 25,
 			items:
 			[
 				{
@@ -254,6 +256,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:102px;top:105px;width:72px;height:19px;',
+			width: 72,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -313,6 +317,8 @@
 			value: 0,
 			name: 'КурсДокумента',
 			style: 'position:absolute;left:242px;top:129px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -328,6 +334,8 @@
 			value: 0,
 			name: 'Сумма',
 			style: 'position:absolute;left:432px;top:129px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -337,6 +345,8 @@
 			value: 0,
 			name: 'Цена',
 			style: 'position:absolute;left:432px;top:105px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -351,13 +361,12 @@
 			style: 'position:absolute;left:342px;top:57px;width:310px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:156px;width:644px;height:210px;',
 			height: 210,width: 644,
 			items:
 			[
 				{
-					title:'Реквизиты операции',
 					items:
 					[
 		{
@@ -581,7 +590,6 @@
 					]
 				},
 				{
-					title:'Зависимые обороты',
 					items:
 					[
 		{
@@ -743,6 +751,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:630px;height:24px;',
+			width: 630,
+			height: 24,
 			items:
 			[
 				{
@@ -800,6 +810,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:401px;width:659px;height:25px;',
+			width: 659,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

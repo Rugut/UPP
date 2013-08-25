@@ -47,9 +47,9 @@
 			style: 'position:absolute;left:157px;top:34px;width:419px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:60px;width:568px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:60px;width:568px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -73,6 +73,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:95px;width:584px;height:25px;',
+			width: 584,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:767px;height:25px;',
+			width: 767,
+			height: 25,
 			items:
 			[
 				'-',
@@ -77,14 +79,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:623px;top:0px;width:144px;height:24px;',
 			height: 24,width: 144,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'На дату',
 					items:
 					[
 		{

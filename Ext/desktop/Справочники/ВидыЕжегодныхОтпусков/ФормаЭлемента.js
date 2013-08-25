@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:470px;height:25px;',
+			width: 470,
+			height: 25,
 			items:
 			[
 				{
@@ -99,9 +101,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ расчета остатка отпуска:',
-			style: 'position:absolute;left:8px;top:59px;width:454px;height:16px;',
+			xtype: 'label',
+			text: 'Способ расчета остатка отпуска:',
+			style: 'position:absolute;left:8px;top:59px;width:454px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -117,6 +119,8 @@
 			value: 0,
 			name: 'КоличествоДнейОтпускаВГод',
 			style: 'position:absolute;left:419px;top:131px;width:43px;height:19px;',
+			width: 43,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -147,6 +151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:158px;width:470px;height:25px;',
+			width: 470,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

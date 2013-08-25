@@ -66,6 +66,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 			]
@@ -208,6 +210,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:124px;width:636px;height:24px;',
+			width: 636,
+			height: 24,
 			items:
 			[
 				{
@@ -405,6 +409,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:364px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -429,9 +435,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Возвратная тара',
-			style: 'position:absolute;left:8px;top:108px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Возвратная тара',
+			style: 'position:absolute;left:8px;top:108px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

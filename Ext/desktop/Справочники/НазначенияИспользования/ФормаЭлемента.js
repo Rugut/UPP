@@ -150,6 +150,8 @@
 			value: 0,
 			name: 'СрокПолезногоИспользования',
 			style: 'position:absolute;left:186px;top:129px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -165,6 +167,8 @@
 			value: 0,
 			name: 'Количество',
 			style: 'position:absolute;left:186px;top:81px;width:90px;height:19px;',
+			width: 90,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -258,6 +262,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:421px;height:25px;',
+			width: 421,
+			height: 25,
 			items:
 			[
 			]
@@ -269,6 +275,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:180px;width:421px;height:25px;',
+			width: 421,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

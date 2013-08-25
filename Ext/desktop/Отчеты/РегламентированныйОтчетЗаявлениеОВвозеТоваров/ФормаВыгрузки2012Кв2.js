@@ -17,9 +17,9 @@
 		items:
 		[
 		{
-			xtype: 'fieldset',
-			title: 'Сведения об отправителе документа',
-			style: 'position:absolute;left:6px;top:30px;width:540px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения об отправителе документа',
+			style: 'position:absolute;left:6px;top:30px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -31,14 +31,13 @@
 			style: 'position:absolute;left:420px;top:48px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:72px;width:540px;height:72px;',
 			height: 72,width: 540,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ЮЛ',
 					items:
 					[
 		{
@@ -89,7 +88,6 @@
 					]
 				},
 				{
-					title:'ФЛ',
 					items:
 					[
 		{
@@ -145,14 +143,14 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения о лицах, подписавших документ',
-			style: 'position:absolute;left:6px;top:150px;width:540px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения о лицах, подписавших документ',
+			style: 'position:absolute;left:6px;top:150px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сведения о лице, представившем документ в налоговый орган',
-			style: 'position:absolute;left:6px;top:480px;width:540px;height:16px;',
+			xtype: 'label',
+			text: 'Сведения о лице, представившем документ в налоговый орган',
+			style: 'position:absolute;left:6px;top:480px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'fieldset',
@@ -528,6 +526,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:644px;width:554px;height:25px;',
+			width: 554,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

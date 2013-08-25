@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:601px;height:25px;',
+			width: 601,
+			height: 25,
 			items:
 			[
 				{
@@ -61,13 +63,12 @@
 			style: 'position:absolute;left:8px;top:57px;width:84px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:84px;width:585px;height:323px;',
 			height: 323,width: 585,
 			items:
 			[
 				{
-					title:'Данные',
 					items:
 					[
 		{
@@ -172,9 +173,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:133px;width:264px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:133px;width:264px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Показатели',
@@ -253,6 +254,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:149px;width:264px;height:24px;',
+			width: 264,
+			height: 24,
 			items:
 			[
 				{
@@ -329,13 +332,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:571px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:571px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:276px;top:149px;width:300px;height:24px;',
+			width: 300,
+			height: 24,
 			items:
 			[
 				{
@@ -350,19 +355,20 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:276px;top:133px;width:300px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:276px;top:133px;width:300px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:380px;height:24px;',
+			width: 380,
+			height: 24,
 			items:
 			[
 			]
@@ -475,22 +481,22 @@
 					]
 				},
 				{
-					title:'Настройка',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:6px;width:571px;height:291px;',
 			height: 291,width: 571,
 			items:
 			[
 				{
-					title:'Запрос',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:259px;width:144px;height:24px;',
+			width: 144,
+			height: 24,
 			items:
 			[
 				{
@@ -504,12 +510,13 @@
 					]
 				},
 				{
-					title:'Параметры',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:539px;height:24px;',
+			width: 539,
+			height: 24,
 			items:
 			[
 				{
@@ -636,6 +643,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:415px;width:601px;height:25px;',
+			width: 601,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

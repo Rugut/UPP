@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:700px;height:25px;',
+			width: 700,
+			height: 25,
 			items:
 			[
 				{
@@ -198,6 +200,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:100px;width:684px;height:24px;',
+			width: 684,
+			height: 24,
 			items:
 			[
 				'-',
@@ -250,9 +254,9 @@
 			style: 'position:absolute;left:325px;top:33px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Закупки',
-			style: 'position:absolute;left:8px;top:84px;width:684px;height:16px;',
+			xtype: 'label',
+			text: 'Закупки',
+			style: 'position:absolute;left:8px;top:84px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'trigger',
@@ -305,6 +309,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:412px;width:700px;height:25px;',
+			width: 700,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

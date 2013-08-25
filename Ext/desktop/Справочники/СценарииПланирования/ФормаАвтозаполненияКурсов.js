@@ -24,6 +24,8 @@
 			value: 0,
 			name: 'КоличествоПериодовРаспределения',
 			style: 'position:absolute;left:240px;top:32px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -56,6 +58,8 @@
 			value: 0,
 			name: 'ИсходныйКурс',
 			style: 'position:absolute;left:240px;top:104px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -71,6 +75,8 @@
 			value: 0,
 			name: 'ПриращениеЗаПериод',
 			style: 'position:absolute;left:240px;top:128px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -86,6 +92,8 @@
 			value: 0,
 			name: 'КратностьНаИнтервал',
 			style: 'position:absolute;left:240px;top:56px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -144,6 +152,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:155px;width:348px;height:25px;',
+			width: 348,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

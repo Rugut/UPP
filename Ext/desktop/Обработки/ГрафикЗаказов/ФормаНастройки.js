@@ -115,6 +115,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:16px;top:132px;width:515px;height:24px;',
+			width: 515,
+			height: 24,
 			items:
 			[
 			]
@@ -315,6 +317,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:275px;width:151px;height:24px;',
+			width: 151,
+			height: 24,
 			items:
 			[
 			]
@@ -322,6 +326,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:221px;top:275px;width:151px;height:24px;',
+			width: 151,
+			height: 24,
 			items:
 			[
 			]
@@ -329,6 +335,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:429px;top:275px;width:151px;height:24px;',
+			width: 151,
+			height: 24,
 			items:
 			[
 			]
@@ -399,6 +407,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:387px;width:840px;height:25px;',
+			width: 840,
+			height: 25,
 			items:
 			[
 				{
@@ -467,6 +477,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:643px;top:275px;width:151px;height:24px;',
+			width: 151,
+			height: 24,
 			items:
 			[
 			]

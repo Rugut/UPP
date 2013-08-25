@@ -157,23 +157,26 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
+			width: 900,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:884px;height:437px;',
 			height: 437,width: 884,
 			items:
 			[
 				{
-					title:'Пособия',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
+			width: 870,
+			height: 24,
 			items:
 			[
 				{
@@ -296,13 +299,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:225px;top:35px;width:651px;height:376px;',
 			height: 376,width: 651,
 			items:
 			[
 				{
-					title:'Застрахованное лицо',
 					items:
 					[
 		{
@@ -809,6 +811,8 @@
 			value: 0,
 			name: 'РайонныйКоэффициент',
 			style: 'position:absolute;left:472px;top:78px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -878,7 +882,6 @@
 					]
 				},
 				{
-					title:'Сведения о документах',
 					items:
 					[
 		{
@@ -1052,6 +1055,8 @@
 			value: 0,
 			name: 'КоличествоСтраниц',
 			style: 'position:absolute;left:120px;top:231px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1262,7 +1267,6 @@
 					]
 				},
 				{
-					title:'Данные страхователя',
 					items:
 					[
 		{
@@ -1418,14 +1422,14 @@
 			style: 'position:absolute;left:258px;top:70px;width:617px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Регистрация в ФСС',
-			style: 'position:absolute;left:6px;top:49px;width:869px;height:16px;',
+			xtype: 'label',
+			text: 'Регистрация в ФСС',
+			style: 'position:absolute;left:6px;top:49px;width:869px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Подписи',
-			style: 'position:absolute;left:8px;top:119px;width:867px;height:16px;',
+			xtype: 'label',
+			text: 'Подписи',
+			style: 'position:absolute;left:8px;top:119px;width:867px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -1464,9 +1468,9 @@
 			style: 'position:absolute;left:215px;top:26px;width:120px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Основные',
-			style: 'position:absolute;left:6px;top:6px;width:869px;height:16px;',
+			xtype: 'label',
+			text: 'Основные',
+			style: 'position:absolute;left:6px;top:6px;width:869px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -1620,6 +1624,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:551px;width:900px;height:25px;',
+			width: 900,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

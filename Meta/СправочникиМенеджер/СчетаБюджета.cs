@@ -492,5 +492,109 @@ namespace V82.Справочники//Менеджер
 			Объект.ЭтоГруппа = true;
 			return Объект;
 		}
+		
+		public static СправочникиВыборка.СчетаБюджета ИерархияВыбратьПоСсылке(Guid Родитель,int Режим,int Первые,Guid Мин,Guid Макс)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = string.Format(@"Select top {0} 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_ParentIDRRef [Родитель]
+					,_Folder [ЭтоГруппа]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2024 [Знак]
+					,_Fld2025RRef [СтатьяБаланса]
+					From _Reference170(NOLOCK)
+					Where _IDRRef between @Мин and @Макс  -- and _Folder = 0x01 
+					AND _ParentIDRRef = @Родитель
+					Order by _IDRRef", Первые);
+					Команда.Parameters.AddWithValue("Родитель", Родитель);
+					Команда.Parameters.AddWithValue("Мин", Мин);
+					Команда.Parameters.AddWithValue("Макс", Макс);
+					var Выборка = new V82.СправочникиВыборка.СчетаБюджета();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.СчетаБюджета();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Родитель = V82.СправочникиСсылка.СчетаБюджета.ВзятьИзКэша((byte[])Читалка.GetValue(4));
+							Ссылка.ЭтоГруппа = ((byte[])Читалка.GetValue(5))[0]==0;
+							Ссылка.Код = Читалка.GetString(6);
+							Ссылка.Наименование = Читалка.GetString(7);
+							if(!Ссылка.ЭтоГруппа)
+							{
+								Ссылка.Знак = Читалка.GetDecimal(8);
+							}
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
+		
+		public static СправочникиВыборка.СчетаБюджета ИерархияСтраницаПоСсылке(Guid Родитель,int Режим,int Размер,int Номер)
+		{
+			using (var Подключение = new SqlConnection(СтрокаСоединения))
+			{
+				Подключение.Open();
+				using (var Команда = Подключение.CreateCommand())
+				{
+					Команда.CommandText = @"Select top 1000 
+					_IDRRef [Ссылка]
+					,_Version [Версия]
+					,_Marked [ПометкаУдаления]
+					,_IsMetadata [Предопределенный]
+					,_ParentIDRRef [Родитель]
+					,_Folder [ЭтоГруппа]
+					,_Code [Код]
+					,_Description [Наименование]
+					,_Fld2024 [Знак]
+					,_Fld2025RRef [СтатьяБаланса]
+					From _Reference170(NOLOCK)";
+					var Выборка = new V82.СправочникиВыборка.СчетаБюджета();
+					using (var Читалка = Команда.ExecuteReader())
+					{
+						while (Читалка.Read())
+						{
+							var Ссылка = new СправочникиСсылка.СчетаБюджета();
+							//ToDo: Читать нужно через GetValues()
+							Ссылка.Ссылка = new Guid((byte[])Читалка.GetValue(0));
+							var ПотокВерсии = ((byte[])Читалка.GetValue(1));
+							Array.Reverse(ПотокВерсии);
+							Ссылка.Версия =  BitConverter.ToInt64(ПотокВерсии, 0);
+							Ссылка.ВерсияДанных =  Convert.ToBase64String(ПотокВерсии);
+							Ссылка.ПометкаУдаления = ((byte[])Читалка.GetValue(2))[0]==1;
+							Ссылка.Предопределенный = ((byte[])Читалка.GetValue(3))[0]==1;
+							Ссылка.Родитель = V82.СправочникиСсылка.СчетаБюджета.ВзятьИзКэша((byte[])Читалка.GetValue(4));
+							Ссылка.ЭтоГруппа = ((byte[])Читалка.GetValue(5))[0]==0;
+							Ссылка.Код = Читалка.GetString(6);
+							Ссылка.Наименование = Читалка.GetString(7);
+							if(!Ссылка.ЭтоГруппа)
+							{
+								Ссылка.Знак = Читалка.GetDecimal(8);
+							}
+							Выборка.Add(Ссылка);
+						}
+							return Выборка;
+					}
+				}
+			}
+		}
 	}
 }

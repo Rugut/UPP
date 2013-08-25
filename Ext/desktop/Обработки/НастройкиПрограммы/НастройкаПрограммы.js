@@ -77,14 +77,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:180px;top:8px;width:542px;height:410px;',
 			height: 410,width: 542,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Основные',
 					items:
 					[
 		{
@@ -225,7 +224,6 @@
 					]
 				},
 				{
-					title:'CRM',
 					items:
 					[
 		{
@@ -282,6 +280,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:12px;top:100px;width:148px;height:24px;',
+			width: 148,
+			height: 24,
 			items:
 			[
 				{
@@ -309,6 +309,8 @@
 			value: 0,
 			name: 'ИнтервалПроверкиНапоминанийВСекундах',
 			style: 'position:absolute;left:256px;top:48px;width:46px;height:19px;',
+			width: 46,
+			height: 19,
 		},
 		{
 			xtype: 'button',
@@ -319,7 +321,6 @@
 					]
 				},
 				{
-					title:'Электронная почта',
 					items:
 					[
 		{
@@ -341,7 +342,6 @@
 					]
 				},
 				{
-					title:'Вывод сообщений',
 					items:
 					[
 		{
@@ -357,7 +357,6 @@
 					]
 				},
 				{
-					title:'Контроль остатков',
 					items:
 					[
 		{
@@ -368,7 +367,6 @@
 					]
 				},
 				{
-					title:'Регламентные задания',
 					items:
 					[
 		{
@@ -418,6 +416,8 @@
 			value: 0,
 			name: 'ИнтервалДляОпросаРегламентныхЗаданийВФайловомВарианте',
 			style: 'position:absolute;left:256px;top:92px;width:44px;height:19px;',
+			width: 44,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -442,14 +442,13 @@
 			style: 'position:absolute;left:28px;top:225px;width:404px;height:43px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:12px;top:272px;width:420px;height:47px;',
 			height: 47,width: 420,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -470,7 +469,6 @@
 					]
 				},
 				{
-					title:'Отложенное проведение',
 					items:
 					[
 		{
@@ -551,6 +549,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:12px;top:48px;width:148px;height:24px;',
+			width: 148,
+			height: 24,
 			items:
 			[
 				{
@@ -579,7 +579,6 @@
 					]
 				},
 				{
-					title:'Расчет себестоимости',
 					items:
 					[
 		{
@@ -602,6 +601,8 @@
 			value: 0,
 			name: 'ГраницаПогрешностиСЛУ',
 			style: 'position:absolute;left:270px;top:48px;width:46px;height:19px;',
+			width: 46,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -617,6 +618,8 @@
 			value: 0,
 			name: 'МаксимальноеКоличествоИтерацийСЛУ',
 			style: 'position:absolute;left:270px;top:72px;width:46px;height:19px;',
+			width: 46,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -638,6 +641,8 @@
 			value: 0,
 			name: 'СтепеньСреднегоОтклоненияСЛУ',
 			style: 'position:absolute;left:270px;top:96px;width:46px;height:19px;',
+			width: 46,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -647,6 +652,8 @@
 			value: 0,
 			name: 'РазмерНабораПриЗаписиРегистровУчетаЗатрат',
 			style: 'position:absolute;left:109px;top:183px;width:75px;height:19px;',
+			width: 75,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -679,7 +686,6 @@
 					]
 				},
 				{
-					title:'Версионирование',
 					items:
 					[
 		{
@@ -708,7 +714,6 @@
 					]
 				},
 				{
-					title:'Электронные документы',
 					items:
 					[
 		{
@@ -747,7 +752,6 @@
 					]
 				},
 				{
-					title:'Работа с задачами',
 					items:
 					[
 		{
@@ -793,6 +797,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:316px;top:118px;width:116px;height:24px;',
+			width: 116,
+			height: 24,
 			items:
 			[
 				{
@@ -806,7 +812,6 @@
 					]
 				},
 				{
-					title:'Страница защита персональных данных',
 					items:
 					[
 		{
@@ -816,25 +821,23 @@
 			style: 'position:absolute;left:12px;top:6px;width:426px;height:25px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:12px;top:43px;width:522px;height:359px;',
 			height: 359,width: 522,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Режим доступен',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:6px;width:521px;height:29px;',
 			height: 29,width: 521,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Защита соответствует классу',
 					items:
 					[
 		{
@@ -852,7 +855,6 @@
 					]
 				},
 				{
-					title:'Защита не соответствует классу',
 				},
 			]
 		},
@@ -862,9 +864,9 @@
 			style: 'position:absolute;left:0px;top:61px;width:202px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Информационные системы персональных данных класса 3',
-			style: 'position:absolute;left:0px;top:40px;width:521px;height:16px;',
+			xtype: 'label',
+			text: 'Информационные системы персональных данных класса 3',
+			style: 'position:absolute;left:0px;top:40px;width:521px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -873,9 +875,9 @@
 			style: 'position:absolute;left:14px;top:79px;width:506px;height:29px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Информационные системы персональных данных класса 2',
-			style: 'position:absolute;left:0px;top:113px;width:521px;height:16px;',
+			xtype: 'label',
+			text: 'Информационные системы персональных данных класса 2',
+			style: 'position:absolute;left:0px;top:113px;width:521px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -938,14 +940,13 @@
 			style: 'position:absolute;left:0px;top:338px;width:426px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:331px;width:513px;height:5px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:331px;width:513px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Режим не доступен',
 					items:
 					[
 		{
@@ -965,6 +966,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:426px;width:730px;height:25px;',
+			width: 730,
+			height: 25,
 			items:
 			[
 				{

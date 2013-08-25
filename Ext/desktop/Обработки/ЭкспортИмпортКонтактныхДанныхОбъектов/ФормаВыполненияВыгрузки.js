@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:480px;height:400px;',
 			height: 400,width: 480,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ЗаполнениеТаблицыПолей',
 					items:
 					[
 		{
@@ -108,6 +107,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:480px;height:24px;',
+			width: 480,
+			height: 24,
 			items:
 			[
 				{
@@ -132,14 +133,13 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка списка полей выгрузки',
-			style: 'position:absolute;left:0px;top:0px;width:480px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка списка полей выгрузки',
+			style: 'position:absolute;left:0px;top:0px;width:480px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'НастройкаВыгрузкиЗначений',
 					items:
 					[
 		{
@@ -214,6 +214,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:480px;height:24px;',
+			width: 480,
+			height: 24,
 			items:
 			[
 				{
@@ -258,9 +260,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Настройка списка объектов выгрузки',
-			style: 'position:absolute;left:0px;top:0px;width:480px;height:16px;',
+			xtype: 'label',
+			text: 'Настройка списка объектов выгрузки',
+			style: 'position:absolute;left:0px;top:0px;width:480px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -278,6 +280,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:436px;width:496px;height:25px;',
+			width: 496,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

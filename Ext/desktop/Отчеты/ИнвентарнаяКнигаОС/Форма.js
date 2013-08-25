@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:674px;height:25px;',
+			width: 674,
+			height: 25,
 			items:
 			[
 				{
@@ -89,16 +91,14 @@
 			style: 'position:absolute;left:253px;top:34px;width:19px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:134px;width:658px;height:309px;',
 			height: 309,width: 658,
 			items:
 			[
 				{
-					title:'Страницы',
 				},
 				{
-					title:'Обложка',
 				},
 			]
 		},
@@ -238,14 +238,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор:',
-			style: 'position:absolute;left:8px;top:61px;width:322px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор:',
+			style: 'position:absolute;left:8px;top:61px;width:322px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительно:',
-			style: 'position:absolute;left:344px;top:61px;width:322px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительно:',
+			style: 'position:absolute;left:344px;top:61px;width:322px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:7px;width:474px;height:270px;',
 			height: 270,width: 474,
 			items:
 			[
 				{
-					title:'Основные параметры',
 					items:
 					[
 		{
@@ -54,9 +53,9 @@
 			style: 'position:absolute;left:6px;top:50px;width:212px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:73px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:73px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'СписокПоказателей',
@@ -121,6 +120,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:89px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 				{
@@ -178,7 +179,6 @@
 					]
 				},
 				{
-					title:'Группировки',
 					items:
 					[
 		{
@@ -244,14 +244,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:240px;height:24px;',
+			width: 240,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:240px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:6px;width:240px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'ИзмеренияКолонки',
@@ -316,19 +318,20 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:252px;top:22px;width:214px;height:24px;',
+			width: 214,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:252px;top:6px;width:214px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:252px;top:6px;width:214px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Поля',
 					items:
 					[
 		{
@@ -385,6 +388,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -392,7 +397,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -494,6 +498,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -511,6 +517,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:285px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
 			items:
 			[
 				{

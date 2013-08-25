@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:800px;height:25px;',
+			width: 800,
+			height: 25,
 			items:
 			[
 				{
@@ -76,13 +78,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:784px;height:123px;',
 			height: 123,width: 784,
 			items:
 			[
 				{
-					title:'Параметры',
 					items:
 					[
 		{
@@ -250,7 +251,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -352,6 +352,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:770px;height:24px;',
+			width: 770,
+			height: 24,
 			items:
 			[
 			]
@@ -359,7 +361,6 @@
 					]
 				},
 				{
-					title:'Дополнительные поля',
 					items:
 					[
 		{
@@ -416,6 +417,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:770px;height:24px;',
+			width: 770,
+			height: 24,
 			items:
 			[
 			]
@@ -423,7 +426,6 @@
 					]
 				},
 				{
-					title:'Показатели',
 					items:
 					[
 		{

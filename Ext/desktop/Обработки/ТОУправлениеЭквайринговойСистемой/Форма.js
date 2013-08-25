@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:274px;height:25px;',
+			width: 274,
+			height: 25,
 			items:
 			[
 			]
@@ -30,9 +32,9 @@
 			style: 'position:absolute;left:8px;top:152px;width:258px;height:24px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Операции',
-			style: 'position:absolute;left:8px;top:33px;width:258px;height:16px;',
+			xtype: 'label',
+			text: 'Операции',
+			style: 'position:absolute;left:8px;top:33px;width:258px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -59,6 +61,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:184px;width:274px;height:25px;',
+			width: 274,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

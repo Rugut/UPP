@@ -53,6 +53,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:73px;width:476px;height:24px;',
+			width: 476,
+			height: 24,
 			items:
 			[
 				{
@@ -201,6 +203,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:492px;height:25px;',
+			width: 492,
+			height: 25,
 			items:
 			[
 				{
@@ -209,9 +213,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Валюты',
-			style: 'position:absolute;left:8px;top:57px;width:476px;height:16px;',
+			xtype: 'label',
+			text: 'Валюты',
+			style: 'position:absolute;left:8px;top:57px;width:476px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],

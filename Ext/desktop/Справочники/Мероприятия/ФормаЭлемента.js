@@ -49,6 +49,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:448px;height:25px;',
+			width: 448,
+			height: 25,
 			items:
 			[
 				{
@@ -191,14 +193,14 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Продолжительность',
-			style: 'position:absolute;left:8px;top:60px;width:432px;height:16px;',
+			xtype: 'label',
+			text: 'Продолжительность',
+			style: 'position:absolute;left:8px;top:60px;width:432px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Состав мероприятия',
-			style: 'position:absolute;left:8px;top:132px;width:432px;height:16px;',
+			xtype: 'label',
+			text: 'Состав мероприятия',
+			style: 'position:absolute;left:8px;top:132px;width:432px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -237,6 +239,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:148px;width:432px;height:24px;',
+			width: 432,
+			height: 24,
 			items:
 			[
 				{
@@ -287,6 +291,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:400px;width:448px;height:25px;',
+			width: 448,
+			height: 25,
 			items:
 			[
 				{

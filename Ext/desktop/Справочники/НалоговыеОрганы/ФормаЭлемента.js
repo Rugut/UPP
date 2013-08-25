@@ -270,34 +270,36 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:694px;height:25px;',
+			width: 694,
+			height: 25,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Реквизиты',
-			style: 'position:absolute;left:8px;top:159px;width:678px;height:16px;',
+			xtype: 'label',
+			text: 'Реквизиты',
+			style: 'position:absolute;left:8px;top:159px;width:678px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Контакты',
-			style: 'position:absolute;left:8px;top:206px;width:678px;height:16px;',
+			xtype: 'label',
+			text: 'Контакты',
+			style: 'position:absolute;left:8px;top:206px;width:678px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:8px;top:424px;width:678px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:8px;top:424px;width:678px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Функции',
-			style: 'position:absolute;left:8px;top:305px;width:678px;height:16px;',
+			xtype: 'label',
+			text: 'Функции',
+			style: 'position:absolute;left:8px;top:305px;width:678px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Информационное взаимодействие с налогоплательщиками по каналам связи (защищенный документооборот)',
-			style: 'position:absolute;left:8px;top:352px;width:678px;height:16px;',
+			xtype: 'label',
+			text: 'Информационное взаимодействие с налогоплательщиками по каналам связи (защищенный документооборот)',
+			style: 'position:absolute;left:8px;top:352px;width:678px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -336,6 +338,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:458px;width:694px;height:25px;',
+			width: 694,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

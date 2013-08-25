@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:342px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			items:
 			[
 				{
@@ -35,14 +37,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:97px;width:384px;height:237px;',
 			height: 237,width: 384,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Отпуск',
 					items:
 					[
 		{
@@ -107,9 +108,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Ежегодный оплачиваемый отпуск',
-			style: 'position:absolute;left:0px;top:55px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Ежегодный оплачиваемый отпуск',
+			style: 'position:absolute;left:0px;top:55px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -169,11 +170,13 @@
 			value: 0,
 			name: 'ПроцентОплаты',
 			style: 'position:absolute;left:114px;top:196px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Дополнительный (другой) отпуск',
-			style: 'position:absolute;left:0px;top:126px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Дополнительный (другой) отпуск',
+			style: 'position:absolute;left:0px;top:126px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -235,7 +238,6 @@
 					]
 				},
 				{
-					title:'Больничный',
 					items:
 					[
 		{
@@ -353,9 +355,9 @@
 			style: 'position:absolute;left:202px;top:44px;width:44px;height:19px;text-align:center;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Временная нетрудоспособность',
-			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Временная нетрудоспособность',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -437,6 +439,8 @@
 			value: 0,
 			name: 'ДнейОплаты',
 			style: 'position:absolute;left:296px;top:142px;width:40px;height:19px;',
+			width: 40,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -462,14 +466,13 @@
 			style: 'position:absolute;left:183px;top:118px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:165px;width:384px;height:51px;',
 			height: 51,width: 384,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница обычный расчет',
 					items:
 					[
 		{
@@ -486,6 +489,8 @@
 			value: 0,
 			name: 'ПроцентОплатыБольничного',
 			style: 'position:absolute;left:105px;top:30px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -545,6 +550,8 @@
 			value: 0,
 			name: 'СтажЛет',
 			style: 'position:absolute;left:64px;top:6px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -560,11 +567,12 @@
 			value: 0,
 			name: 'СтажМесяцев',
 			style: 'position:absolute;left:153px;top:6px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'Страница особый расчет',
 					items:
 					[
 		{
@@ -581,6 +589,8 @@
 			value: 0,
 			name: 'ПроцентОплатыБольничного1',
 			style: 'position:absolute;left:105px;top:30px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -640,6 +650,8 @@
 			value: 0,
 			name: 'СтажЛет1',
 			style: 'position:absolute;left:61px;top:6px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -655,6 +667,8 @@
 			value: 0,
 			name: 'СтажМесяцев1',
 			style: 'position:absolute;left:153px;top:6px;width:32px;height:19px;',
+			width: 32,
+			height: 19,
 		},
 					]
 				},
@@ -663,13 +677,12 @@
 					]
 				},
 				{
-					title:'Средний',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Оплата по среднему заработку',
-			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Оплата по среднему заработку',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -685,6 +698,8 @@
 			value: 0,
 			name: 'ПроцентОплатыПоСреднему',
 			style: 'position:absolute;left:94px;top:45px;width:74px;height:19px;',
+			width: 74,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -733,7 +748,6 @@
 					]
 				},
 				{
-					title:'Простой',
 					items:
 					[
 		{
@@ -781,14 +795,13 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Простой',
-			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Простой',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Невыход',
 					items:
 					[
 		{
@@ -837,20 +850,19 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Неоплачиваемый невыход',
-			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Неоплачиваемый невыход',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Учебный отпуск',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Оплата учебного отпуска',
-			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Оплата учебного отпуска',
+			style: 'position:absolute;left:0px;top:0px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -866,6 +878,8 @@
 			value: 0,
 			name: 'ПроцентОплатыУчебногоОтпуска',
 			style: 'position:absolute;left:94px;top:45px;width:74px;height:19px;',
+			width: 74,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -917,9 +931,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документы',
-			style: 'position:absolute;left:8px;top:31px;width:384px;height:16px;',
+			xtype: 'label',
+			text: 'Документы',
+			style: 'position:absolute;left:8px;top:31px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',

@@ -195,6 +195,8 @@
 			value: 0,
 			name: 'Расценка',
 			style: 'position:absolute;left:233px;top:235px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -300,10 +302,14 @@
 			value: 0,
 			name: 'НормаВремени',
 			style: 'position:absolute;left:233px;top:260px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:418px;height:25px;',
+			width: 418,
+			height: 25,
 			items:
 			[
 			]
@@ -412,6 +418,8 @@
 			value: 0,
 			name: 'Коэффициент',
 			style: 'position:absolute;left:233px;top:284px;width:83px;height:19px;',
+			width: 83,
+			height: 19,
 		},
 		],
 	}],
@@ -420,6 +428,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:311px;width:418px;height:25px;',
+			width: 418,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

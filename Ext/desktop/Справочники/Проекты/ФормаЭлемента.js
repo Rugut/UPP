@@ -129,6 +129,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:410px;height:25px;',
+			width: 410,
+			height: 25,
 			items:
 			[
 				{
@@ -152,13 +154,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:130px;width:394px;height:239px;',
 			height: 239,width: 394,
 			items:
 			[
 				{
-					title:'Описание',
 					items:
 					[
 		{
@@ -171,7 +172,6 @@
 					]
 				},
 				{
-					title:'Свойства',
 					items:
 					[
 		{
@@ -251,6 +251,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:380px;height:24px;',
+			width: 380,
+			height: 24,
 			items:
 			[
 			]
@@ -258,7 +260,6 @@
 					]
 				},
 				{
-					title:'Категории',
 					items:
 					[
 		{
@@ -338,6 +339,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:380px;height:24px;',
+			width: 380,
+			height: 24,
 			items:
 			[
 				{
@@ -365,6 +368,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:377px;width:410px;height:25px;',
+			width: 410,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

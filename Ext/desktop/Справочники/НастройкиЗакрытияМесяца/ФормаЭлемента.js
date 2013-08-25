@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:850px;height:25px;',
+			width: 850,
+			height: 25,
 			items:
 			[
 				{
@@ -53,14 +55,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:33px;width:834px;height:521px;',
 			height: 521,width: 834,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -117,13 +118,12 @@
 			style: 'position:absolute;left:223px;top:28px;width:66px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:55px;width:834px;height:464px;',
 			height: 464,width: 834,
 			items:
 			[
 				{
-					title:'Сводные настройки',
 					items:
 					[
 		{
@@ -230,12 +230,13 @@
 					]
 				},
 				{
-					title:'Схема',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:20px;top:20px;width:229px;height:27px;',
+			width: 229,
+			height: 27,
 			items:
 			[
 				{
@@ -246,12 +247,13 @@
 					]
 				},
 				{
-					title:'Схема расчета НДС',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:26px;top:29px;width:229px;height:27px;',
+			width: 229,
+			height: 27,
 			items:
 			[
 				{
@@ -262,22 +264,22 @@
 					]
 				},
 				{
-					title:'Ответственные',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:526px;top:6px;width:300px;height:430px;',
 			height: 430,width: 300,
 			items:
 			[
 				{
-					title:'Пользователи',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:286px;height:24px;',
+			width: 286,
+			height: 24,
 			items:
 			[
 				{
@@ -367,7 +369,6 @@
 					]
 				},
 				{
-					title:'Группы пользователей',
 					items:
 					[
 		{
@@ -429,6 +430,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:286px;height:24px;',
+			width: 286,
+			height: 24,
 			items:
 			[
 				{
@@ -534,7 +537,6 @@
 					]
 				},
 				{
-					title:'Распределение затрат',
 					items:
 					[
 		{
@@ -650,6 +652,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:820px;height:24px;',
+			width: 820,
+			height: 24,
 			items:
 			[
 				'-',
@@ -685,6 +689,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:562px;width:850px;height:25px;',
+			width: 850,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

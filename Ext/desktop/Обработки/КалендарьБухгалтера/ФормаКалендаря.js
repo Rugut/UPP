@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:669px;height:25px;',
+			width: 669,
+			height: 25,
 			items:
 			[
 				{
@@ -103,16 +105,17 @@
 			value: 0,
 			name: 'Год',
 			style: 'position:absolute;left:573px;top:63px;width:89px;height:19px;',
+			width: 89,
+			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:63px;width:514px;height:480px;',
 			height: 480,width: 514,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'День',
 					items:
 					[
 		{
@@ -205,13 +208,14 @@
 					]
 				},
 				{
-					title:'Неделя',
 				},
 			]
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:295px;top:28px;width:218px;height:24px;',
+			width: 218,
+			height: 24,
 			items:
 			[
 				{
@@ -250,9 +254,9 @@
 			style: 'position:absolute;left:522px;top:522px;width:140px;height:21px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Легенда',
-			style: 'position:absolute;left:522px;top:429px;width:140px;height:16px;',
+			xtype: 'label',
+			text: 'Легенда',
+			style: 'position:absolute;left:522px;top:429px;width:140px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		],
 	}],
@@ -261,6 +265,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:546px;width:669px;height:25px;',
+			width: 669,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

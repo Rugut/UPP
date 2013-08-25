@@ -203,6 +203,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			items:
 			[
 			]
@@ -210,6 +212,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:196px;width:984px;height:24px;',
+			width: 984,
+			height: 24,
 			items:
 			[
 				'-',
@@ -1271,19 +1275,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Сотрудники',
-			style: 'position:absolute;left:8px;top:180px;width:984px;height:16px;',
+			xtype: 'label',
+			text: 'Сотрудники',
+			style: 'position:absolute;left:8px;top:180px;width:984px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:92px;width:984px;height:82px;',
 			height: 82,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1302,9 +1305,9 @@
 			style: 'position:absolute;left:52px;top:9px;width:162px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Способ ввода данных',
-			style: 'position:absolute;left:254px;top:12px;width:275px;height:16px;',
+			xtype: 'label',
+			text: 'Способ ввода данных',
+			style: 'position:absolute;left:254px;top:12px;width:275px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',
@@ -1333,6 +1336,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:461px;width:1000px;height:25px;',
+			width: 1000,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

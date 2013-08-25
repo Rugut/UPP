@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:594px;height:174px;',
 			height: 174,width: 594,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -129,14 +128,13 @@
 			style: 'position:absolute;left:6px;top:78px;width:74px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:294px;top:78px;width:281px;height:19px;',
 			height: 19,width: 281,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -189,9 +187,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'При расчете использовать начисления:',
-			style: 'position:absolute;left:6px;top:56px;width:580px;height:16px;',
+			xtype: 'label',
+			text: 'При расчете использовать начисления:',
+			style: 'position:absolute;left:6px;top:56px;width:580px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -199,14 +197,13 @@
 			style: 'position:absolute;left:6px;top:30px;width:255px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расчет среднего заработка:',
-			style: 'position:absolute;left:6px;top:105px;width:580px;height:16px;',
+			xtype: 'label',
+			text: 'Расчет среднего заработка:',
+			style: 'position:absolute;left:6px;top:105px;width:580px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Данные о льготах',
 					items:
 					[
 		{
@@ -235,6 +232,8 @@
 			value: 0,
 			name: 'ПроцентОплатыБезЛьгот1',
 			style: 'position:absolute;left:236px;top:59px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -289,6 +288,8 @@
 			value: 0,
 			name: 'СтажЛет',
 			style: 'position:absolute;left:236px;top:34px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -304,6 +305,8 @@
 			value: 0,
 			name: 'СтажМесяцев',
 			style: 'position:absolute;left:324px;top:34px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -314,7 +317,6 @@
 					]
 				},
 				{
-					title:'Данные о льготах',
 					items:
 					[
 		{
@@ -336,6 +338,8 @@
 			value: 0,
 			name: 'ПроцентОплаты',
 			style: 'position:absolute;left:223px;top:29px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -402,6 +406,8 @@
 			value: 0,
 			name: 'ПроцентОплатыБезЛьгот2',
 			style: 'position:absolute;left:414px;top:29px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -453,6 +459,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:190px;width:610px;height:25px;',
+			width: 610,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

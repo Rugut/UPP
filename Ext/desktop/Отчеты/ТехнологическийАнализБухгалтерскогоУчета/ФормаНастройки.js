@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:10px;top:8px;width:663px;height:252px;',
 			height: 252,width: 663,
 			items:
 			[
 				{
-					title:'Настройки',
 					items:
 					[
 		{
@@ -101,12 +100,13 @@
 					]
 				},
 				{
-					title:'Недопустимые проводки',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:426px;height:25px;',
+			width: 426,
+			height: 25,
 			items:
 			[
 				{
@@ -204,7 +204,6 @@
 					]
 				},
 				{
-					title:'Эталонный ПС',
 					items:
 					[
 		{
@@ -332,6 +331,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:268px;width:679px;height:25px;',
+			width: 679,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

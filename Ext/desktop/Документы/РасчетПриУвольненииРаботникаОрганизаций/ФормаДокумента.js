@@ -142,6 +142,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			items:
 			[
 			]
@@ -149,6 +151,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:682px;height:25px;',
+			width: 682,
+			height: 25,
 			items:
 			[
 				{
@@ -244,13 +248,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:109px;width:666px;height:377px;',
 			height: 377,width: 666,
 			items:
 			[
 				{
-					title:'Условия',
 					items:
 					[
 		{
@@ -284,6 +287,8 @@
 			value: 0,
 			name: 'ДнейЧасовВыходногоПособия',
 			style: 'position:absolute;left:230px;top:207px;width:30px;height:19px;',
+			width: 30,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -293,6 +298,8 @@
 			value: 0,
 			name: 'ДнейЧасовКомпенсацииУдержанияОтпуска',
 			style: 'position:absolute;left:355px;top:106px;width:57px;height:19px;',
+			width: 57,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -308,6 +315,8 @@
 			value: 0,
 			name: 'ДнейЧасовСохраненияСреднегоЗаработка',
 			style: 'position:absolute;left:230px;top:232px;width:30px;height:19px;',
+			width: 30,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -554,7 +563,6 @@
 					]
 				},
 				{
-					title:'Оплата',
 					items:
 					[
 		{
@@ -683,6 +691,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -720,6 +730,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:66px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -783,23 +795,23 @@
 					]
 				},
 				{
-					title:'Расчет среднего заработка',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:50px;width:652px;height:263px;',
 			height: 263,width: 652,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Расчет среднего',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -984,7 +996,6 @@
 					]
 				},
 				{
-					title:'Расчет среднего для отпуска',
 					items:
 					[
 		{
@@ -1122,6 +1133,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -1165,22 +1178,23 @@
 					]
 				},
 				{
-					title:'Оба расчета среднего',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Для расчета отпуска',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Для расчета отпуска',
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Для расчета компенсаций при увольнении',
-			style: 'position:absolute;left:0px;top:137px;width:652px;height:16px;',
+			xtype: 'label',
+			text: 'Для расчета компенсаций при увольнении',
+			style: 'position:absolute;left:0px;top:137px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:153px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -1491,6 +1505,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:16px;width:652px;height:24px;',
+			width: 652,
+			height: 24,
 			items:
 			[
 				{
@@ -1594,6 +1610,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:282px;height:25px;',
+			width: 282,
+			height: 25,
 			items:
 			[
 				{
@@ -1611,14 +1629,13 @@
 			style: 'position:absolute;left:32px;top:490px;width:398px;height:33px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:430px;top:490px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1632,14 +1649,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:513px;top:490px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{

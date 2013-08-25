@@ -30,6 +30,8 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЗапись',
 			style: 'position:absolute;left:161px;top:65px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -80,6 +82,8 @@
 			value: 0,
 			name: 'КоличествоЭлементовВТранзакцииНаЧтение',
 			style: 'position:absolute;left:161px;top:146px;width:120px;height:19px;',
+			width: 120,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -115,6 +119,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:219px;width:494px;height:25px;',
+			width: 494,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

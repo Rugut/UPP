@@ -157,6 +157,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:103px;width:313px;height:25px;',
+			width: 313,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

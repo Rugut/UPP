@@ -30,6 +30,8 @@
 			value: 0,
 			name: 'ОбщаяВыручка',
 			style: 'position:absolute;left:216px;top:8px;width:129px;height:19px;',
+			width: 129,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -45,6 +47,8 @@
 			value: 0,
 			name: 'ВыручкаНеОблагаемаяНДС',
 			style: 'position:absolute;left:216px;top:33px;width:129px;height:19px;',
+			width: 129,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -60,6 +64,8 @@
 			value: 0,
 			name: 'ДоляВыручкиНеОблагаемаяНДС',
 			style: 'position:absolute;left:216px;top:58px;width:129px;height:19px;',
+			width: 129,
+			height: 19,
 		},
 		],
 	}],
@@ -68,6 +74,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:85px;width:353px;height:25px;',
+			width: 353,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

@@ -147,13 +147,12 @@
 			style: 'position:absolute;left:8px;top:56px;width:104px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:83px;width:340px;height:147px;',
 			height: 147,width: 340,
 			items:
 			[
 				{
-					title:'Разделы отчета',
 					items:
 					[
 		{
@@ -189,7 +188,6 @@
 					]
 				},
 				{
-					title:'Сравнение прибыли',
 					items:
 					[
 		{
@@ -288,6 +286,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:238px;width:356px;height:25px;',
+			width: 356,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

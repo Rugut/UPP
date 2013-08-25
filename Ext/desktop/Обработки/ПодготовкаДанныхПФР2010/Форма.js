@@ -74,14 +74,13 @@
 			style: 'position:absolute;left:385px;top:8px;width:92px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:45px;width:984px;height:563px;',
 			height: 563,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Квартальная отчетность',
 					items:
 					[
 		{
@@ -93,6 +92,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:248px;height:24px;',
+			width: 248,
+			height: 24,
 			items:
 			[
 				'-',
@@ -170,25 +171,23 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:168px;width:984px;height:137px;',
 			height: 137,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'СЗВ6',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:0px;width:343px;height:137px;',
 			height: 137,width: 343,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -308,6 +307,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:333px;height:25px;',
+			width: 333,
+			height: 25,
 			items:
 			[
 				{
@@ -327,14 +328,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:344px;top:0px;width:640px;height:137px;',
 			height: 137,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -583,14 +583,13 @@
 			style: 'position:absolute;left:510px;top:116px;width:130px;height:21px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:25px;width:121px;height:112px;',
 			height: 112,width: 121,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -668,23 +667,21 @@
 					]
 				},
 				{
-					title:'АДВ11',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Уплата страховых взносов на обязательное пенсионное страхование за прошлые годы',
-			style: 'position:absolute;left:0px;top:2px;width:984px;height:16px;',
+			xtype: 'label',
+			text: 'Уплата страховых взносов на обязательное пенсионное страхование за прошлые годы',
+			style: 'position:absolute;left:0px;top:2px;width:984px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:20px;width:984px;height:116px;',
 			height: 116,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -786,6 +783,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:984px;height:24px;',
+			width: 984,
+			height: 24,
 			items:
 			[
 				{
@@ -810,7 +809,6 @@
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -826,19 +824,17 @@
 					]
 				},
 				{
-					title:'',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:333px;width:984px;height:207px;',
 			height: 207,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'СЗВ6',
 					items:
 					[
 		{
@@ -1003,6 +999,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:333px;height:24px;',
+			width: 333,
+			height: 24,
 			items:
 			[
 				{
@@ -1017,13 +1015,15 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды работы за отчетный период',
-			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;',
+			xtype: 'label',
+			text: 'Периоды работы за отчетный период',
+			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:347px;top:93px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 				{
@@ -1290,14 +1290,13 @@
 			style: 'position:absolute;left:689px;top:0px;width:295px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:347px;top:27px;width:637px;height:50px;',
 			height: 50,width: 637,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -1308,6 +1307,8 @@
 			value: 0,
 			name: 'НачисленоСтраховая',
 			style: 'position:absolute;left:149px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1317,6 +1318,8 @@
 			value: 0,
 			name: 'НачисленоНакопительная',
 			style: 'position:absolute;left:149px;top:23px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1326,6 +1329,8 @@
 			value: 0,
 			name: 'УплаченоСтраховая',
 			style: 'position:absolute;left:286px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1335,6 +1340,8 @@
 			value: 0,
 			name: 'УплаченоНакопительная',
 			style: 'position:absolute;left:286px;top:23px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1361,14 +1368,13 @@
 			style: 'position:absolute;left:0px;top:0px;width:148px;height:19px;text-align:right;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:370px;top:0px;width:267px;height:42px;',
 			height: 42,width: 267,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1379,6 +1385,8 @@
 			value: 0,
 			name: 'ДоначисленоСтраховая',
 			style: 'position:absolute;left:79px;top:0px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1388,6 +1396,8 @@
 			value: 0,
 			name: 'ДоначисленоНакопительная',
 			style: 'position:absolute;left:79px;top:23px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1409,6 +1419,8 @@
 			value: 0,
 			name: 'ДоУплаченоСтраховая',
 			style: 'position:absolute;left:199px;top:0px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -1418,6 +1430,8 @@
 			value: 0,
 			name: 'ДоУплаченоНакопительная',
 			style: 'position:absolute;left:199px;top:23px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1463,7 +1477,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
@@ -1480,14 +1493,13 @@
 			style: 'position:absolute;left:961px;top:542px;width:23px;height:21px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:254px;top:22px;width:730px;height:120px;',
 			height: 120,width: 730,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница АДВ',
 					items:
 					[
 		{
@@ -1677,14 +1689,13 @@
 			style: 'position:absolute;left:81px;top:0px;width:85px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:77px;width:591px;height:43px;',
 			height: 43,width: 591,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1764,14 +1775,13 @@
 			style: 'position:absolute;left:615px;top:24px;width:115px;height:21px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:24px;width:173px;height:51px;',
 			height: 51,width: 173,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -1787,7 +1797,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 					items:
 					[
 		{
@@ -1809,7 +1818,6 @@
 					]
 				},
 				{
-					title:'Оформление пенсии',
 					items:
 					[
 		{
@@ -1845,6 +1853,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:155px;width:293px;height:24px;',
+			width: 293,
+			height: 24,
 			items:
 			[
 				{
@@ -2041,6 +2051,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:22px;width:333px;height:24px;',
+			width: 333,
+			height: 24,
 			items:
 			[
 				{
@@ -2068,19 +2080,18 @@
 			style: 'position:absolute;left:344px;top:94px;width:192px;height:34px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:300px;top:154px;width:684px;height:127px;',
 			height: 127,width: 684,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница данных',
 					items:
 					[
 		{
@@ -2326,14 +2337,13 @@
 			style: 'position:absolute;left:576px;top:81px;width:108px;height:21px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:31px;width:101px;height:77px;',
 			height: 77,width: 101,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2385,19 +2395,17 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:310px;width:984px;height:224px;',
 			height: 224,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Данные физлица',
 					items:
 					[
 		{
@@ -2544,6 +2552,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:333px;height:24px;',
+			width: 333,
+			height: 24,
 			items:
 			[
 				{
@@ -2568,13 +2578,15 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Периоды работы за отчетный период',
-			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;',
+			xtype: 'label',
+			text: 'Периоды работы за отчетный период',
+			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:347px;top:93px;width:637px;height:24px;',
+			width: 637,
+			height: 24,
 			items:
 			[
 				{
@@ -2832,14 +2844,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:347px;top:24px;width:637px;height:50px;',
 			height: 50,width: 637,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'',
 					items:
 					[
 		{
@@ -2850,6 +2861,8 @@
 			value: 0,
 			name: 'НачисленоСтраховая1',
 			style: 'position:absolute;left:223px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2859,6 +2872,8 @@
 			value: 0,
 			name: 'НачисленоНакопительная1',
 			style: 'position:absolute;left:223px;top:23px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2868,6 +2883,8 @@
 			value: 0,
 			name: 'УплаченоСтраховая1',
 			style: 'position:absolute;left:371px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'numberfield',
@@ -2877,6 +2894,8 @@
 			value: 0,
 			name: 'УплаченоНакопительная1',
 			style: 'position:absolute;left:371px;top:23px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2941,7 +2960,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
@@ -2954,12 +2972,13 @@
 					]
 				},
 				{
-					title:'Сведения о начисленном заработке',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:25px;width:293px;height:24px;',
+			width: 293,
+			height: 24,
 			items:
 			[
 				{
@@ -3046,19 +3065,18 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: '',
-			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;',
+			xtype: 'label',
+			text: '',
+			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:305px;top:25px;width:679px;height:206px;',
 			height: 206,width: 679,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница данных',
 					items:
 					[
 		{
@@ -3425,19 +3443,17 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:264px;width:984px;height:270px;',
 			height: 270,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Данные физлица',
 					items:
 					[
 		{
@@ -3503,6 +3519,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:342px;height:24px;',
+			width: 342,
+			height: 24,
 			items:
 			[
 				{
@@ -3676,7 +3694,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},
@@ -3703,14 +3720,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:197px;height:34px;',
 			height: 34,width: 197,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -3724,14 +3740,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:479px;top:8px;width:112px;height:34px;',
 			height: 34,width: 112,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница период персучета',
 					items:
 					[
 		{
@@ -3746,7 +3761,6 @@
 					]
 				},
 				{
-					title:'Страница отчетный год',
 					items:
 					[
 		{
@@ -3757,6 +3771,8 @@
 			value: 0,
 			name: 'ОтчетныйГод',
 			style: 'position:absolute;left:0px;top:0px;width:112px;height:19px;',
+			width: 112,
+			height: 19,
 		},
 					]
 				},

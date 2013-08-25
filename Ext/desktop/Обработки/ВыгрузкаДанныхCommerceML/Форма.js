@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:611px;height:25px;',
+			width: 611,
+			height: 25,
 			items:
 			[
 			]
@@ -38,6 +40,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:488px;width:611px;height:25px;',
+			width: 611,
+			height: 25,
 			items:
 			[
 				{
@@ -54,25 +58,23 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:80px;width:603px;height:405px;',
 			height: 405,width: 603,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница данные',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:71px;width:591px;height:334px;',
 			height: 334,width: 591,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Выгрузка информации о товарах',
 					items:
 					[
 		{
@@ -172,13 +174,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор для выгрузки информации о товарах',
-			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор для выгрузки информации о товарах',
+			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
+			width: 591,
+			height: 24,
 			items:
 			[
 			]
@@ -201,7 +205,6 @@
 					]
 				},
 				{
-					title:'Выгрузка прайса',
 					items:
 					[
 		{
@@ -316,13 +319,15 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор для выгрузки прайс-листа',
-			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор для выгрузки прайс-листа',
+			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
+			width: 591,
+			height: 24,
 			items:
 			[
 			]
@@ -330,12 +335,13 @@
 					]
 				},
 				{
-					title:'Выгрузки документов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:66px;width:591px;height:24px;',
+			width: 591,
+			height: 24,
 			items:
 			[
 				{
@@ -506,14 +512,13 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документы для выгрузки',
-			style: 'position:absolute;left:0px;top:46px;width:591px;height:16px;',
+			xtype: 'label',
+			text: 'Документы для выгрузки',
+			style: 'position:absolute;left:0px;top:46px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'',
 					items:
 					[
 		{
@@ -675,6 +680,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:248px;top:108px;width:343px;height:24px;',
+			width: 343,
+			height: 24,
 			items:
 			[
 			]
@@ -690,9 +697,9 @@
 			style: 'position:absolute;left:171px;top:23px;width:208px;height:15px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор для прайс-листа',
-			style: 'position:absolute;left:248px;top:89px;width:343px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор для прайс-листа',
+			style: 'position:absolute;left:248px;top:89px;width:343px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textfield',
@@ -754,9 +761,9 @@
 			style: 'position:absolute;left:0px;top:42px;width:127px;height:19px;text-align:left;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Выгружать свойства',
-			style: 'position:absolute;left:0px;top:89px;width:242px;height:16px;',
+			xtype: 'label',
+			text: 'Выгружать свойства',
+			style: 'position:absolute;left:0px;top:89px;width:242px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -848,14 +855,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:24px;width:591px;height:21px;',
 			height: 21,width: 591,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Файл',
 					items:
 					[
 		{
@@ -870,7 +876,6 @@
 					]
 				},
 				{
-					title:'Каталог',
 					items:
 					[
 		{
@@ -917,7 +922,6 @@
 					]
 				},
 				{
-					title:'Пустая страница',
 				},
 			]
 		},

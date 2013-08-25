@@ -79,6 +79,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:502px;height:25px;',
+			width: 502,
+			height: 25,
 			items:
 			[
 				{
@@ -198,18 +200,19 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:108px;width:486px;height:209px;',
 			height: 209,width: 486,
 			items:
 			[
 				{
-					title:'Неполученная зарплата',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:467px;height:24px;',
+			width: 467,
+			height: 24,
 			items:
 			[
 				{
@@ -289,7 +292,6 @@
 					]
 				},
 				{
-					title:'Сотрудники',
 					items:
 					[
 		{
@@ -364,7 +366,6 @@
 					]
 				},
 				{
-					title:'Счета затрат на компенсацию за задержку зарплаты',
 					items:
 					[
 		{
@@ -569,6 +570,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:349px;width:502px;height:25px;',
+			width: 502,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

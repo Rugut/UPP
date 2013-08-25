@@ -79,6 +79,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:784px;height:25px;',
+			width: 784,
+			height: 25,
 			items:
 			[
 				{
@@ -135,13 +137,12 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:105px;width:768px;height:386px;',
 			height: 386,width: 768,
 			items:
 			[
 				{
-					title:'Пособия',
 					items:
 					[
 		{
@@ -169,6 +170,8 @@
 			value: 0,
 			name: 'СреднедневнойЗаработок',
 			style: 'position:absolute;left:152px;top:50px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -184,6 +187,8 @@
 			value: 0,
 			name: 'КоличествоДетей',
 			style: 'position:absolute;left:152px;top:91px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -191,9 +196,9 @@
 			style: 'position:absolute;left:252px;top:91px;width:221px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособие до 1,5 лет (за счет ФСС)',
-			style: 'position:absolute;left:6px;top:6px;width:754px;height:16px;',
+			xtype: 'label',
+			text: 'Пособие до 1,5 лет (за счет ФСС)',
+			style: 'position:absolute;left:6px;top:6px;width:754px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -201,9 +206,9 @@
 			style: 'position:absolute;left:12px;top:26px;width:138px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Пособие до 3 лет (за счет работодателя)',
-			style: 'position:absolute;left:6px;top:212px;width:754px;height:16px;',
+			xtype: 'label',
+			text: 'Пособие до 3 лет (за счет работодателя)',
+			style: 'position:absolute;left:6px;top:212px;width:754px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'datefield',
@@ -227,14 +232,13 @@
 			style: 'position:absolute;left:12px;top:115px;width:501px;height:15px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:252px;top:43px;width:420px;height:44px;',
 			height: 44,width: 420,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница обычный расчет',
 					items:
 					[
 		{
@@ -256,7 +260,6 @@
 					]
 				},
 				{
-					title:'Страница переходный период',
 					items:
 					[
 		{
@@ -279,6 +282,8 @@
 			value: 0,
 			name: 'СреднедневнойЗаработокПереходногоПериода2010',
 			style: 'position:absolute;left:176px;top:7px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 					]
 				},
@@ -287,18 +292,16 @@
 					]
 				},
 				{
-					title:'Расчет среднего заработка',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:0px;width:754px;height:360px;',
 			height: 360,width: 754,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница до 2011 года',
 					items:
 					[
 		{
@@ -436,6 +439,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:50px;width:754px;height:24px;',
+			width: 754,
+			height: 24,
 			items:
 			[
 				{
@@ -503,9 +508,9 @@
 			style: 'position:absolute;left:206px;top:8px;width:16px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Заработок за расчетный период',
-			style: 'position:absolute;left:0px;top:33px;width:754px;height:16px;',
+			xtype: 'label',
+			text: 'Заработок за расчетный период',
+			style: 'position:absolute;left:0px;top:33px;width:754px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'button',
@@ -516,13 +521,12 @@
 					]
 				},
 				{
-					title:'Страница с 2011 года',
 					items:
 					[
 		{
-			xtype: 'fieldset',
-			title: 'Заработок за расчетные годы',
-			style: 'position:absolute;left:0px;top:33px;width:754px;height:16px;',
+			xtype: 'label',
+			text: 'Заработок за расчетные годы',
+			style: 'position:absolute;left:0px;top:33px;width:754px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -538,6 +542,8 @@
 			value: 0,
 			name: 'ПервыйГодРасчета',
 			style: 'position:absolute;left:88px;top:8px;width:64px;height:19px;',
+			width: 64,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -553,6 +559,8 @@
 			value: 0,
 			name: 'ВторойГодРасчета',
 			style: 'position:absolute;left:178px;top:8px;width:64px;height:19px;',
+			width: 64,
+			height: 19,
 		},
 		{
 			id: 'РасчетСреднего2011',
@@ -644,6 +652,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:50px;width:754px;height:24px;',
+			width: 754,
+			height: 24,
 			items:
 			[
 				{
@@ -681,7 +691,6 @@
 					]
 				},
 				{
-					title:'Плановые начисления',
 					items:
 					[
 		{
@@ -1071,6 +1080,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:754px;height:24px;',
+			width: 754,
+			height: 24,
 			items:
 			[
 				{
@@ -1106,6 +1117,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:57px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -1170,7 +1183,6 @@
 					]
 				},
 				{
-					title:'Плановые удержания',
 					items:
 					[
 		{
@@ -1434,6 +1446,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:754px;height:24px;',
+			width: 754,
+			height: 24,
 			items:
 			[
 				{
@@ -1469,6 +1483,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:85px;top:167px;width:389px;height:24px;',
+			width: 389,
+			height: 24,
 			items:
 			[
 				{
@@ -1533,7 +1549,6 @@
 					]
 				},
 				{
-					title:'Заявление',
 					items:
 					[
 		{
@@ -1912,14 +1927,13 @@
 			style: 'position:absolute;left:627px;top:339px;width:133px;height:21px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:227px;width:618px;height:48px;',
 			height: 48,width: 618,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2063,6 +2077,8 @@
 			value: 0,
 			name: 'ТарифнаяСтавкаОклад',
 			style: 'position:absolute;left:221px;top:297px;width:88px;height:19px;',
+			width: 88,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2119,7 +2135,6 @@
 					]
 				},
 				{
-					title:'Документы',
 					items:
 					[
 		{
@@ -2392,6 +2407,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:30px;width:754px;height:24px;',
+			width: 754,
+			height: 24,
 			items:
 			[
 				{
@@ -2552,14 +2569,13 @@
 			},
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:564px;top:494px;width:83px;height:33px;',
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2573,14 +2589,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:647px;top:494px;width:129px;height:33px;',
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -2596,6 +2611,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:555px;width:371px;height:25px;',
+			width: 371,
+			height: 25,
 			items:
 			[
 				{
@@ -2613,6 +2630,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:251px;top:555px;width:533px;height:25px;',
+			width: 533,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

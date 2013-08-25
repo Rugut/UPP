@@ -141,6 +141,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
 			items:
 			[
 				{
@@ -164,18 +166,19 @@
 			style: 'position:absolute;left:90px;top:33px;width:80px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:81px;width:693px;height:288px;',
 			height: 288,width: 693,
 			items:
 			[
 				{
-					title:'По договорам налогового агента',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				{
@@ -264,12 +267,13 @@
 					]
 				},
 				{
-					title:'Для собственного потребления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
+			width: 679,
+			height: 24,
 			items:
 			[
 				{
@@ -366,6 +370,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:403px;width:709px;height:25px;',
+			width: 709,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[

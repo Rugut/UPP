@@ -17,14 +17,13 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:7px;top:6px;width:696px;height:566px;',
 			height: 566,width: 696,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Режим доступен',
 					items:
 					[
 		{
@@ -61,14 +60,14 @@
 			style: 'position:absolute;left:6px;top:542px;width:102px;height:18px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Уничтожение персональных данных',
-			style: 'position:absolute;left:6px;top:485px;width:684px;height:16px;',
+			xtype: 'label',
+			text: 'Уничтожение персональных данных',
+			style: 'position:absolute;left:6px;top:485px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Просмотр зарегистрированных событий',
-			style: 'position:absolute;left:6px;top:6px;width:684px;height:16px;',
+			xtype: 'label',
+			text: 'Просмотр зарегистрированных событий',
+			style: 'position:absolute;left:6px;top:6px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'События',
@@ -385,6 +384,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:85px;height:24px;',
+			width: 85,
+			height: 24,
 			items:
 			[
 				{
@@ -471,18 +472,20 @@
 			height: 19,
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Области данных',
-			style: 'position:absolute;left:469px;top:53px;width:221px;height:16px;',
+			xtype: 'label',
+			text: 'Области данных',
+			style: 'position:absolute;left:469px;top:53px;width:221px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Субъекты события',
-			style: 'position:absolute;left:469px;top:141px;width:221px;height:16px;',
+			xtype: 'label',
+			text: 'Субъекты события',
+			style: 'position:absolute;left:469px;top:141px;width:221px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:469px;top:22px;width:221px;height:24px;',
+			width: 221,
+			height: 24,
 			items:
 			[
 				{
@@ -496,7 +499,6 @@
 					]
 				},
 				{
-					title:'Режим недоступен',
 				},
 			]
 		},

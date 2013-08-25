@@ -30,6 +30,8 @@
 			value: 0,
 			name: 'СуммаУпр',
 			style: 'position:absolute;left:88px;top:8px;width:88px;height:21px;',
+			width: 88,
+			height: 21,
 		},
 		{
 			xtype: 'label',
@@ -51,6 +53,8 @@
 			value: 0,
 			name: 'СуммаРегл',
 			style: 'position:absolute;left:88px;top:33px;width:88px;height:21px;',
+			width: 88,
+			height: 21,
 		},
 		{
 			xtype: 'label',
@@ -61,6 +65,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:62px;width:241px;height:25px;',
+			width: 241,
+			height: 25,
 			items:
 			[
 				{

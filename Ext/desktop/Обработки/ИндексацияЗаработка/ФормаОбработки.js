@@ -35,14 +35,13 @@
 			style: 'position:absolute;left:397px;top:390px;width:80px;height:22px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:39px;width:659px;height:342px;',
 			height: 342,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Первая страница',
 					items:
 					[
 		{
@@ -52,14 +51,13 @@
 			style: 'position:absolute;left:22px;top:0px;width:589px;height:29px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:143px;',
 			height: 143,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -92,7 +90,6 @@
 					]
 				},
 				{
-					title:'Страница2',
 					items:
 					[
 		{
@@ -129,7 +126,6 @@
 					]
 				},
 				{
-					title:'Страница3',
 					items:
 					[
 		{
@@ -163,14 +159,13 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:177px;width:653px;height:164px;',
 			height: 164,width: 653,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -276,9 +271,9 @@
 			style: 'position:absolute;left:211px;top:32px;width:442px;height:81px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'История повышения окладов',
-			style: 'position:absolute;left:6px;top:6px;width:647px;height:16px;',
+			xtype: 'label',
+			text: 'История повышения окладов',
+			style: 'position:absolute;left:6px;top:6px;width:647px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
@@ -287,18 +282,16 @@
 					]
 				},
 				{
-					title:'История повышения',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:115px;',
 			height: 115,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -464,25 +457,23 @@
 			style: 'position:absolute;left:228px;top:182px;width:431px;height:112px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'История повышения окладов',
-			style: 'position:absolute;left:0px;top:160px;width:659px;height:16px;',
+			xtype: 'label',
+			text: 'История повышения окладов',
+			style: 'position:absolute;left:0px;top:160px;width:659px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 					]
 				},
 				{
-					title:'Оклады',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:155px;',
 			height: 155,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Должностные оклады',
 					items:
 					[
 		{
@@ -570,6 +561,8 @@
 			value: 0,
 			name: 'КоэффициентПовышения',
 			style: 'position:absolute;left:385px;top:30px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -586,7 +579,6 @@
 					]
 				},
 				{
-					title:'Оклады по разрядам',
 					items:
 					[
 		{
@@ -620,6 +612,8 @@
 			value: 0,
 			name: 'КоэффициентПовышения1',
 			style: 'position:absolute;left:387px;top:14px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -678,17 +672,15 @@
 					]
 				},
 				{
-					title:'Результат индексации',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:0px;top:26px;width:653px;height:286px;',
 			height: 286,width: 653,
 			items:
 			[
 				{
-					title:'Оклады сотрудников',
 					items:
 					[
 		{
@@ -808,6 +800,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:46px;top:109px;width:402px;height:24px;',
+			width: 402,
+			height: 24,
 			items:
 			[
 				{
@@ -824,6 +818,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
+			width: 639,
+			height: 24,
 			items:
 			[
 				{
@@ -845,7 +841,6 @@
 					]
 				},
 				{
-					title:'Штатное расписание',
 					items:
 					[
 		{
@@ -956,6 +951,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
+			width: 639,
+			height: 24,
 			items:
 			[
 				{
@@ -973,6 +970,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:121px;top:101px;width:385px;height:26px;',
+			width: 385,
+			height: 26,
 			items:
 			[
 				{
@@ -989,7 +988,6 @@
 					]
 				},
 				{
-					title:'Тарифные разряды',
 					items:
 					[
 		{
@@ -1082,6 +1080,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
+			width: 565,
+			height: 24,
 			items:
 			[
 				{
@@ -1099,6 +1099,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:113px;top:122px;width:267px;height:24px;',
+			width: 267,
+			height: 24,
 			items:
 			[
 				{
@@ -1115,7 +1117,6 @@
 					]
 				},
 				{
-					title:'Доп тарифные разряды',
 					items:
 					[
 		{
@@ -1163,6 +1164,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
+			width: 639,
+			height: 24,
 			items:
 			[
 				{
@@ -1180,6 +1183,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:114px;top:94px;width:222px;height:26px;',
+			width: 222,
+			height: 26,
 			items:
 			[
 				{
@@ -1212,7 +1217,6 @@
 					]
 				},
 				{
-					title:'Последняя страница',
 					items:
 					[
 		{

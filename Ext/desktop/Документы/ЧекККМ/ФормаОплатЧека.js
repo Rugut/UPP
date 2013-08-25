@@ -17,27 +17,6 @@
 		items:
 		[
 		{
-			xtype: 'toolbar',
-			style: 'position:absolute;left:0px;top:203px;width:480px;height:25px;',
-			items:
-			[
-				{
-					xtype: 'tbfill'
-				},
-				{
-					text:'Оплатить картой',
-				},
-				'-',
-				{
-					text:'ОК',
-				},
-				'-',
-				{
-					text:'Отмена',
-				},
-			]
-		},
-		{
 			xtype: 'label',
 			name: 'НадписьИтого',
 			text: 'Итого (руб.):',
@@ -96,6 +75,8 @@
 			value: 0,
 			name: 'Всего',
 			style: 'position:absolute;left:362px;top:7px;width:110px;height:22px;',
+			width: 110,
+			height: 22,
 		},
 		{
 			xtype: 'label',
@@ -111,6 +92,8 @@
 			value: 0,
 			name: 'СуммаОплаты',
 			style: 'position:absolute;left:143px;top:175px;width:110px;height:22px;',
+			width: 110,
+			height: 22,
 		},
 		{
 			xtype: 'button',
@@ -132,16 +115,17 @@
 			value: 0,
 			name: 'Сдача',
 			style: 'position:absolute;left:362px;top:175px;width:110px;height:22px;',
+			width: 110,
+			height: 22,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:59px;width:464px;height:116px;',
 			height: 116,width: 464,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -216,6 +200,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:464px;height:24px;',
+			width: 464,
+			height: 24,
 			items:
 			[
 			]
@@ -244,6 +230,30 @@
 	}],
 	dockedItems:
 	[
+		{
+			xtype: 'toolbar',
+			style: 'position:absolute;left:0px;top:203px;width:480px;height:25px;',
+			width: 480,
+			height: 25,
+			dock: 'bottom',
+			items:
+			[
+				{
+					xtype: 'tbfill'
+				},
+				{
+					text:'Оплатить картой',
+				},
+				'-',
+				{
+					text:'ОК',
+				},
+				'-',
+				{
+					text:'Отмена',
+				},
+			]
+		},
 	]
 	});
 });

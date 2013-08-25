@@ -19,6 +19,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:8px;top:192px;width:593px;height:25px;',
+			width: 593,
+			height: 25,
 			items:
 			[
 				{
@@ -386,9 +388,9 @@
 			style: 'position:absolute;left:194px;top:149px;width:54px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Документы расчетов с контрагентами',
-			style: 'position:absolute;left:8px;top:176px;width:593px;height:16px;',
+			xtype: 'label',
+			text: 'Документы расчетов с контрагентами',
+			style: 'position:absolute;left:8px;top:176px;width:593px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -401,9 +403,9 @@
 			style: 'position:absolute;left:342px;top:8px;width:204px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Отбор',
-			style: 'position:absolute;left:8px;top:32px;width:593px;height:16px;',
+			xtype: 'label',
+			text: 'Отбор',
+			style: 'position:absolute;left:8px;top:32px;width:593px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'radiogroup',

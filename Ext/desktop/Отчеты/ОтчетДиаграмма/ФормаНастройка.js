@@ -17,13 +17,12 @@
 		items:
 		[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:270px;',
 			height: 270,width: 474,
 			items:
 			[
 				{
-					title:'Общие',
 					items:
 					[
 		{
@@ -67,9 +66,9 @@
 			style: 'position:absolute;left:246px;top:6px;width:20px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Рамка',
-			style: 'position:absolute;left:6px;top:106px;width:460px;height:16px;',
+			xtype: 'label',
+			text: 'Рамка',
+			style: 'position:absolute;left:6px;top:106px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -83,14 +82,13 @@
 			height: 19,
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:19px;',
 			height: 19,width: 460,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Страница1',
 					items:
 					[
 		{
@@ -178,18 +176,16 @@
 					]
 				},
 				{
-					title:'Параметры диаграммы',
 					items:
 					[
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:6px;top:46px;width:460px;height:127px;',
 			height: 127,width: 460,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'Круговая',
 					items:
 					[
 		{
@@ -224,7 +220,6 @@
 					]
 				},
 				{
-					title:'КруговаяОбъемная',
 					items:
 					[
 		{
@@ -264,7 +259,6 @@
 					]
 				},
 				{
-					title:'Гистограмма',
 					items:
 					[
 		{
@@ -303,6 +297,8 @@
 			value: 0,
 			name: 'БазовоеЗначение',
 			style: 'position:absolute;left:130px;top:24px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -312,7 +308,6 @@
 					]
 				},
 				{
-					title:'ГистограммаОбъемная',
 					items:
 					[
 		{
@@ -345,6 +340,8 @@
 			value: 0,
 			name: 'БазовоеЗначение1',
 			style: 'position:absolute;left:130px;top:24px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -360,7 +357,6 @@
 					]
 				},
 				{
-					title:'График',
 					items:
 					[
 		{
@@ -382,11 +378,12 @@
 			value: 0,
 			name: 'БазовоеЗначение5',
 			style: 'position:absolute;left:130px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 					]
 				},
 				{
-					title:'ГрафикСОбластями',
 					items:
 					[
 		{
@@ -403,6 +400,8 @@
 			value: 0,
 			name: 'БазовоеЗначение3',
 			style: 'position:absolute;left:130px;top:0px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -412,7 +411,6 @@
 					]
 				},
 				{
-					title:'Изометрическая',
 					items:
 					[
 		{
@@ -458,6 +456,8 @@
 			value: 0,
 			name: 'БазовоеЗначение4',
 			style: 'position:absolute;left:130px;top:48px;width:82px;height:19px;',
+			width: 82,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -486,7 +486,6 @@
 					]
 				},
 				{
-					title:'Серии и точки',
 					items:
 					[
 		{
@@ -552,6 +551,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
+			width: 212,
+			height: 24,
 			items:
 			[
 				{
@@ -625,6 +626,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
+			width: 212,
+			height: 24,
 			items:
 			[
 				{
@@ -643,10 +646,14 @@
 			value: 0,
 			name: 'МаксимумСерийКоличество',
 			style: 'position:absolute;left:398px;top:225px;width:68px;height:19px;',
+			width: 68,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:224px;top:24px;width:24px;height:195px;',
+			width: 24,
+			height: 195,
 			items:
 			[
 				{
@@ -669,7 +676,6 @@
 					]
 				},
 				{
-					title:'Отбор',
 					items:
 					[
 		{
@@ -771,6 +777,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -778,7 +786,6 @@
 					]
 				},
 				{
-					title:'Сортировка',
 					items:
 					[
 		{
@@ -844,6 +851,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
+			width: 460,
+			height: 24,
 			items:
 			[
 			]
@@ -855,6 +864,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:289px;width:490px;height:25px;',
+			width: 490,
+			height: 25,
 			items:
 			[
 				{

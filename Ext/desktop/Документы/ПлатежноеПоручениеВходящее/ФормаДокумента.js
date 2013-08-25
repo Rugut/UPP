@@ -231,6 +231,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 			]
@@ -238,6 +240,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:431px;width:652px;height:25px;',
+			width: 652,
+			height: 25,
 			items:
 			[
 				{
@@ -300,14 +304,13 @@
 			style: 'position:absolute;left:336px;top:32px;width:88px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:152px;width:636px;height:202px;',
 			height: 202,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -399,6 +402,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетов',
 			style: 'position:absolute;left:88px;top:24px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -447,6 +452,8 @@
 			value: 0,
 			name: 'СуммаНДС',
 			style: 'position:absolute;left:88px;top:72px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'trigger',
@@ -504,6 +511,8 @@
 			value: 0,
 			name: 'СуммаВзаиморасчетов',
 			style: 'position:absolute;left:418px;top:48px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -598,6 +607,8 @@
 			value: 0,
 			name: 'КурсВзаиморасчетовПлан',
 			style: 'position:absolute;left:418px;top:144px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -613,6 +624,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан',
 			style: 'position:absolute;left:418px;top:168px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -782,7 +795,6 @@
 					]
 				},
 				{
-					title:'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -974,6 +986,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:21px;width:319px;height:24px;',
+			width: 319,
+			height: 24,
 			items:
 			[
 				{
@@ -1011,9 +1025,9 @@
 			style: 'position:absolute;left:334px;top:21px;width:302px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;',
+			xtype: 'label',
+			text: 'Расшифровка платежа',
+			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -1024,7 +1038,6 @@
 					]
 				},
 				{
-					title:'ПлатежПрочие',
 					items:
 					[
 		{
@@ -1447,7 +1460,6 @@
 					]
 				},
 				{
-					title:'Оплата по платежным картам',
 					items:
 					[
 		{
@@ -1597,6 +1609,8 @@
 			value: 0,
 			name: 'СуммаПлатежаПлан2',
 			style: 'position:absolute;left:420px;top:54px;width:101px;height:19px;',
+			width: 101,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -1646,7 +1660,6 @@
 					]
 				},
 				{
-					title:'Учет затрат',
 					items:
 					[
 		{
@@ -1798,6 +1811,8 @@
 			value: 0,
 			name: 'СуммаУслуг',
 			style: 'position:absolute;left:97px;top:54px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2220,6 +2235,8 @@
 			value: 0,
 			name: 'СуммаДокумента',
 			style: 'position:absolute;left:96px;top:128px;width:100px;height:19px;',
+			width: 100,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -2228,14 +2245,13 @@
 			style: 'position:absolute;left:202px;top:128px;width:42px;height:19px;',
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:336px;top:56px;width:308px;height:19px;',
 			height: 19,width: 308,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					title:'СтраницаОплата',
 					items:
 					[
 		{
@@ -2257,7 +2273,6 @@
 					]
 				},
 				{
-					title:'СтраницаЧастичнаяОплата',
 					items:
 					[
 		{

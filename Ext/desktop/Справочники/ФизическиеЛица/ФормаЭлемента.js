@@ -25,6 +25,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:608px;height:25px;',
+			width: 608,
+			height: 25,
 			items:
 			[
 				{
@@ -44,6 +46,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:473px;width:608px;height:25px;',
+			width: 608,
+			height: 25,
 			items:
 			[
 				{
@@ -68,13 +72,12 @@
 			]
 		},
 		{
-			xtype: 'tabpanel',
+			xtype: 'panel',
 			style: 'position:absolute;left:8px;top:104px;width:592px;height:361px;',
 			height: 361,width: 592,
 			items:
 			[
 				{
-					title:'Общее',
 					items:
 					[
 		{
@@ -248,6 +251,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:142px;width:578px;height:24px;',
+			width: 578,
+			height: 24,
 			items:
 			[
 				{
@@ -346,14 +351,14 @@
 			style: 'position:absolute;left:100px;top:54px;width:388px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Адреса и телефоны:',
-			style: 'position:absolute;left:6px;top:126px;width:578px;height:16px;',
+			xtype: 'label',
+			text: 'Адреса и телефоны:',
+			style: 'position:absolute;left:6px;top:126px;width:578px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Индивидуальные номера',
-			style: 'position:absolute;left:6px;top:78px;width:482px;height:16px;',
+			xtype: 'label',
+			text: 'Индивидуальные номера',
+			style: 'position:absolute;left:6px;top:78px;width:482px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -373,7 +378,6 @@
 					]
 				},
 				{
-					title:'Персональные данные',
 					items:
 					[
 		{
@@ -653,14 +657,14 @@
 			style: 'position:absolute;left:89px;top:30px;width:495px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Семья',
-			style: 'position:absolute;left:6px;top:103px;width:300px;height:16px;',
+			xtype: 'label',
+			text: 'Семья',
+			style: 'position:absolute;left:6px;top:103px;width:300px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Учеба',
-			style: 'position:absolute;left:6px;top:226px;width:360px;height:16px;',
+			xtype: 'label',
+			text: 'Учеба',
+			style: 'position:absolute;left:6px;top:226px;width:360px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'label',
@@ -678,14 +682,14 @@
 			style: 'position:absolute;left:89px;top:6px;width:495px;height:19px;',
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Языки',
-			style: 'position:absolute;left:312px;top:103px;width:272px;height:16px;',
+			xtype: 'label',
+			text: 'Языки',
+			style: 'position:absolute;left:312px;top:103px;width:272px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Профессии',
-			style: 'position:absolute;left:372px;top:226px;width:212px;height:16px;',
+			xtype: 'label',
+			text: 'Профессии',
+			style: 'position:absolute;left:372px;top:226px;width:212px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Профессии',
@@ -809,7 +813,6 @@
 					]
 				},
 				{
-					title:'Ученые степени, звания',
 					items:
 					[
 		{
@@ -914,9 +917,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Ученые степени',
-			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;',
+			xtype: 'label',
+			text: 'Ученые степени',
+			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'УченыеЗвания',
@@ -1020,9 +1023,9 @@
 			},
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Ученые звания',
-			style: 'position:absolute;left:6px;top:118px;width:578px;height:16px;',
+			xtype: 'label',
+			text: 'Ученые звания',
+			style: 'position:absolute;left:6px;top:118px;width:578px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'checkbox',
@@ -1037,7 +1040,6 @@
 					]
 				},
 				{
-					title:'Награды',
 					items:
 					[
 		{
@@ -1049,6 +1051,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:22px;width:578px;height:24px;',
+			width: 578,
+			height: 24,
 			items:
 			[
 				{
@@ -1081,9 +1085,9 @@
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Награды',
-			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;',
+			xtype: 'label',
+			text: 'Награды',
+			style: 'position:absolute;left:6px;top:6px;width:578px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			id: 'Награды',
@@ -1171,7 +1175,6 @@
 					]
 				},
 				{
-					title:'Дополнительно',
 					items:
 					[
 		{
@@ -1248,6 +1251,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:10px;top:101px;width:270px;height:24px;',
+			width: 270,
+			height: 24,
 			items:
 			[
 			]
@@ -1326,6 +1331,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:307px;top:101px;width:269px;height:24px;',
+			width: 269,
+			height: 24,
 			items:
 			[
 				{
@@ -1339,7 +1346,6 @@
 					]
 				},
 				{
-					title:'Прочее',
 					items:
 					[
 		{
@@ -1437,14 +1443,16 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:6px;top:46px;width:578px;height:24px;',
+			width: 578,
+			height: 24,
 			items:
 			[
 			]
 		},
 		{
-			xtype: 'fieldset',
-			title: 'Заметки',
-			style: 'position:absolute;left:6px;top:30px;width:578px;height:16px;',
+			xtype: 'label',
+			text: 'Заметки',
+			style: 'position:absolute;left:6px;top:30px;width:578px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
 		},
 		{
 			xtype: 'textarea',

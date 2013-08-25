@@ -60,6 +60,8 @@
 			value: 0,
 			name: 'РазмерСчетчика',
 			style: 'position:absolute;left:117px;top:56px;width:50px;height:19px;',
+			width: 50,
+			height: 19,
 		},
 		{
 			xtype: 'checkbox',
@@ -95,6 +97,8 @@
 			value: 0,
 			name: 'НачальноеЗначение',
 			style: 'position:absolute;left:117px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'label',
@@ -110,10 +114,14 @@
 			value: 0,
 			name: 'КонечноеЗначение',
 			style: 'position:absolute;left:312px;top:79px;width:80px;height:19px;',
+			width: 80,
+			height: 19,
 		},
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:0px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			items:
 			[
 			]
@@ -125,6 +133,8 @@
 		{
 			xtype: 'toolbar',
 			style: 'position:absolute;left:0px;top:190px;width:400px;height:25px;',
+			width: 400,
+			height: 25,
 			dock: 'bottom',
 			items:
 			[
