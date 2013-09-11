@@ -330,10 +330,12 @@
 				},
 				{
 					text:'Печать',
+					tooltip:'Печать товаротранспортной накладной',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]
@@ -355,10 +357,12 @@
 				},
 				{
 					text:'Печать',
+					tooltip:'Печать транспортной накладной, Приложение № 4',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]
@@ -380,10 +384,12 @@
 				},
 				{
 					text:'Печать',
+					tooltip:'Печать сопроводительной ведомости, Приложение № 8',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

@@ -127,22 +127,28 @@
 			[
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Конструктор настроек...',
+					tooltip:'Открыть конструктор настроек',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -463,18 +469,22 @@
 				},
 				{
 					text:'<< Назад',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Далее >>',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Готово',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Отмена',
+					tooltip:'',
 				},
 			]
 		},

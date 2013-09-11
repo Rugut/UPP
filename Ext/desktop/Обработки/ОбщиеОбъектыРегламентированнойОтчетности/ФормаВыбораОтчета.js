@@ -174,14 +174,17 @@
 				},
 				{
 					text:'Новый',
+					tooltip:'6e00530-6086-46d1-8319-ac3dec0653a',
 				},
 				'-',
 				{
 					text:'ОК',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

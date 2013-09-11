@@ -121,13 +121,17 @@
 			[
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 			]
 		},
@@ -205,27 +209,35 @@
 			[
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'Провести отмеченные документы',
 				},
 				{
 					text:'Установить/Снять пометку на удаление',
+					tooltip:'Установить/Снять пометку на удаление',
 				},
 				{
 					text:'Удалить непосредственно',
+					tooltip:'Удалить непосредственно',
 				},
 				'-',
 				{
 					text:'Печать',
+					tooltip:'Печать отмеченных документов',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 			]
 		},
@@ -250,10 +262,12 @@
 				},
 				{
 					text:'Выполнить',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

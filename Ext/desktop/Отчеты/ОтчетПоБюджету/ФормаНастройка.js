@@ -94,15 +94,19 @@
 			[
 				{
 					text:'&Переместить вверх',
+					tooltip:'',
 				},
 				{
 					text:'&Переместить вниз',
+					tooltip:'',
 				},
 				{
 					text:'Установить все',
+					tooltip:'',
 				},
 				{
 					text:'Снять все',
+					tooltip:'',
 				},
 			]
 		},
@@ -504,15 +508,18 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

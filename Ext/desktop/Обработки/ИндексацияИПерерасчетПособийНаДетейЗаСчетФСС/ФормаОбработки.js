@@ -161,6 +161,8 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 			]
 		},
@@ -184,9 +186,12 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 			]
 		},
@@ -373,9 +378,11 @@
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -483,16 +490,21 @@
 			[
 				{
 					text:'',
+					tooltip:'8f03b34-cd46-47e9-aa63-1701c9fa614',
 				},
 				{
 					text:'',
+					tooltip:'0ebc47b-f4d9-439c-acd3-fdc624fbac2',
+					iconCls:'x-Post',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
+					tooltip:'Отбор и сортировка',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
+					tooltip:'Отбор по значению в текущей колонке',
 				},
 				{
 					xtype: 'splitbutton',
@@ -502,13 +514,19 @@
 				},
 				{
 					text:'Отключить отбор',
+					tooltip:'Отключить отбор',
+					iconCls:'x-ClearFilter',
 				},
 				'-',
 				{
 					text:'Вывести список...',
+					tooltip:'Вывести список',
+					iconCls:'x-OutputList',
 				},
 				{
 					text:'Настройка списка...',
+					tooltip:'Настройка списка',
+					iconCls:'x-ListSettings',
 				},
 			]
 		},
@@ -552,10 +570,12 @@
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

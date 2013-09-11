@@ -188,6 +188,31 @@
 			items:
 			[
 				{
+					text:'',
+					tooltip:'Добавить',
+					iconCls:'x-add',
+				},
+				{
+					text:'',
+					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
+				},
+				{
+					text:'',
+					tooltip:'Скопировать',
+					iconCls:'x-copy',
+				},
+				{
+					text:'',
+					tooltip:'Изменить',
+					iconCls:'x-Change',
+				},
+				{
+					text:'',
+					tooltip:'Установить пометку удаления',
+					iconCls:'x-MarkToDelete',
+				},
+				{
 					xtype: 'splitbutton',
 					text:'Действия',
 					menu: [
@@ -199,20 +224,40 @@
 					menu: [
 				{
 					text:'Зарегистрированные оплаты основных средств (УСН)',
+					tooltip:'',
 				},
 				'-',
 					]
 				},
 				{
 					text:'Свойства',
+					tooltip:'Открыть свойства',
 				},
 				{
 					text:'Категории',
+					tooltip:'Категории',
 				},
 				'-',
-				'-',
 				{
-					text:'Групповое добавление',
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+					]
+				},
+				{
+					xtype: 'splitbutton',
+					text:'Перейти',
+					menu: [
+				{
+					text:'Зарегистрированные оплаты основных средств (УСН)',
+					tooltip:'',
+				},
+				'-',
+					]
+				},
+				{
+					text:'Свойства',
+					tooltip:'Открыть свойства',
 				},
 			]
 		},

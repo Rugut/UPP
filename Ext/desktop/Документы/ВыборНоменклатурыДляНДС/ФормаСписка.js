@@ -116,9 +116,11 @@
 					menu: [
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 					]

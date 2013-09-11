@@ -266,23 +266,28 @@
 				},
 				{
 					text:'Печать',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать объект',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

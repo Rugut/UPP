@@ -184,12 +184,15 @@
 			[
 				{
 					text:'Установить все',
+					tooltip:'',
 				},
 				{
 					text:'Снять все',
+					tooltip:'',
 				},
 				{
 					text:'Заполнить',
+					tooltip:'',
 				},
 			]
 		},
@@ -210,6 +213,7 @@
 				},
 				{
 					text:'Закрыть',
+					tooltip:'',
 					handler: function () {this.up('window').close();},
 				},
 			]

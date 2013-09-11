@@ -25,9 +25,12 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 			]
 		},
@@ -113,10 +116,12 @@
 				},
 				{
 					text:'OK',
+					tooltip:'Записать объект и закрыть форму',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

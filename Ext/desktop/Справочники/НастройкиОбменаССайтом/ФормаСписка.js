@@ -179,28 +179,69 @@
 			items:
 			[
 				{
+					text:'',
+					tooltip:'Добавить',
+					iconCls:'x-add',
+				},
+				{
+					text:'',
+					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
+				},
+				{
+					text:'',
+					tooltip:'Скопировать',
+					iconCls:'x-copy',
+				},
+				{
+					text:'',
+					tooltip:'Изменить',
+					iconCls:'x-Change',
+				},
+				{
+					text:'',
+					tooltip:'Установить пометку удаления',
+					iconCls:'x-MarkToDelete',
+				},
+				{
 					xtype: 'splitbutton',
 					text:'Действия',
 					menu: [
 				'-',
 				{
 					text:'Монитор обменов',
+					tooltip:'Открыть монитор обменов',
 				},
 				{
 					text:'Выполнить обмен',
+					tooltip:'Выполнить обмен',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Помощник настройки',
+					tooltip:'Помощник настройки',
 				},
 				{
 					text:'Монитор обменов',
+					tooltip:'Открыть монитор обменов',
 				},
 				'-',
 				{
+					xtype: 'splitbutton',
+					text:'Действия',
+					menu: [
+				'-',
+				{
+					text:'Монитор обменов',
+					tooltip:'Открыть монитор обменов',
+				},
+				{
 					text:'Выполнить обмен',
+					tooltip:'Выполнить обмен',
+				},
+					]
 				},
 			]
 		},

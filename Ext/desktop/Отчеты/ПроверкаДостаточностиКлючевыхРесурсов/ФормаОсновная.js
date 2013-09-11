@@ -217,10 +217,12 @@
 				},
 				{
 					text:'Сформировать',
+					tooltip:'Сформировать отчет',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

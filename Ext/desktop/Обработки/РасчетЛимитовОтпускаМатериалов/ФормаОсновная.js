@@ -679,10 +679,12 @@
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Изменить...',
+					tooltip:'',
 				},
 			]
 		},
@@ -821,18 +823,22 @@
 				},
 				{
 					text:'<Назад',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Далее>',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

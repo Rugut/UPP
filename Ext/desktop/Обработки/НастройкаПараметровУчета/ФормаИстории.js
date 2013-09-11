@@ -25,10 +25,13 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 			]
 		},
@@ -83,12 +86,17 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'Вывести список...',
+					tooltip:'Вывести список',
+					iconCls:'x-OutputList',
 				},
 			]
 		},
@@ -104,10 +112,12 @@
 				},
 				{
 					text:'OK',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

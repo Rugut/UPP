@@ -525,12 +525,15 @@
 				},
 				{
 					text:'Назад',
+					tooltip:'c904ff7-1195-4a7c-9a38-7b1f6ca49cc',
 				},
 				{
 					text:'Далее',
+					tooltip:'874b0cc-db1d-4577-8c77-d4ba206eb05',
 				},
 				{
 					text:'ОК',
+					tooltip:'',
 				},
 			]
 		},

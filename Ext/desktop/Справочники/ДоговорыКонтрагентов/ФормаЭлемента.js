@@ -39,12 +39,14 @@
 				'-',
 				{
 					text:'Файлы',
+					tooltip:'Файлы',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Файлы',
+					tooltip:'Файлы',
 				},
 			]
 		},
@@ -901,6 +903,7 @@
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -1352,15 +1355,21 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -1536,14 +1545,17 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

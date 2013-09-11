@@ -25,10 +25,12 @@
 			[
 				{
 					text:'Сформировать',
+					tooltip:'2958592-afcf-4b18-a10c-f10059f5a67',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

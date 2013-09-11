@@ -34,15 +34,20 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'&Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'Включить все',
+					tooltip:'',
 				},
 				{
 					text:'Выключить все',
+					tooltip:'',
 				},
 			]
 		},
@@ -158,10 +163,12 @@
 				},
 				{
 					text:'Выполнить',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

@@ -25,9 +25,11 @@
 			[
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 			]

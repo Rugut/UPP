@@ -361,16 +361,22 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 			]
 		},
@@ -669,10 +675,12 @@
 				},
 				{
 					text:'Записать вычеты и закрыть',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

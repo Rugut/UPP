@@ -119,16 +119,20 @@
 			[
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Установить флажки',
+					tooltip:'Установить флажки',
 				},
 				{
 					text:'Снять флажки',
+					tooltip:'Снять флажки',
 				},
 			]
 		},
@@ -185,10 +189,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'Кнопка ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

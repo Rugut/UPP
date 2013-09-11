@@ -81,6 +81,8 @@
 			[
 				{
 					text:'(История отборов)',
+					tooltip:'',
+					iconCls:'x-FilterHistory',
 				},
 			]
 		},

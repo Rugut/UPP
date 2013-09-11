@@ -30,12 +30,16 @@
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 			]
 		},

@@ -393,64 +393,88 @@
 					menu: [
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Заполнить',
+					tooltip:'Заполнить таблицу итогов по стажу',
 				},
 					]
 				},
 				'-',
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Заполнить',
+					tooltip:'Заполнить таблицу итогов по стажу',
 				},
 			]
 		},
@@ -467,71 +491,97 @@
 					menu: [
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Расположить',
+					tooltip:'Расположить записи по возрастанию дат',
 				},
 				{
 					text:'Заполнить по трудовой деятельности',
+					tooltip:'Заполнить по трудовой деятельности',
 				},
 					]
 				},
 				'-',
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Расположить',
+					tooltip:'Расположить записи по возрастанию дат',
 				},
 				'-',
 				{
 					text:'Заполнить по трудовой деятельности',
+					tooltip:'Заполнить по трудовой деятельности',
 				},
 			]
 		},
@@ -712,15 +762,18 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'Записать объект и закрыть форму',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

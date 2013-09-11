@@ -136,15 +136,21 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'Добавить копированием',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 			]
 		},
@@ -157,15 +163,21 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'Добавить копированием',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 			]
 		},
@@ -412,15 +424,21 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 			]
 		},
@@ -677,14 +695,17 @@
 				},
 				{
 					text:'OK',
+					tooltip:'Записать объект и закрыть форму',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать объект',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

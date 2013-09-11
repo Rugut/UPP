@@ -25,6 +25,7 @@
 			[
 				{
 					text:'Включить возможность изменения',
+					tooltip:'Включить возможность изменения',
 				},
 			]
 		},
@@ -188,30 +189,41 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Конструктор настроек...',
+					tooltip:'Открыть конструктор настроек',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -236,6 +248,7 @@
 				},
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

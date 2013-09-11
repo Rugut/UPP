@@ -120,23 +120,29 @@
 			[
 				{
 					text:'',
+					tooltip:'Установить все флажки',
 				},
 				{
 					text:'',
+					tooltip:'Снять все флажки',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Конструктор настроек...',
+					tooltip:'Открыть конструктор настроек',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -449,10 +455,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

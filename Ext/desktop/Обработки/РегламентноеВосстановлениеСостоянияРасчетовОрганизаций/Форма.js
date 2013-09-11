@@ -161,13 +161,17 @@
 			[
 				{
 					text:'Обновить границы',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Отметить все',
+					tooltip:'',
 				},
 				{
 					text:'Снять отметку',
+					tooltip:'',
 				},
 			]
 		},
@@ -188,10 +192,12 @@
 				},
 				{
 					text:'Выполнить',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

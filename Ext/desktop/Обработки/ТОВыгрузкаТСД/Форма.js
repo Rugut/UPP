@@ -28,9 +28,11 @@
 				},
 				{
 					text:'Выгрузить',
+					tooltip:'',
 				},
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]
@@ -212,9 +214,11 @@
 			[
 				{
 					text:'Выделить все',
+					tooltip:'',
 				},
 				{
 					text:'Очистить выделение',
+					tooltip:'',
 				},
 			]
 		},
@@ -228,10 +232,12 @@
 				'-',
 				{
 					text:'Заполнить',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Отбор',
+					tooltip:'',
 				},
 				'-',
 			]

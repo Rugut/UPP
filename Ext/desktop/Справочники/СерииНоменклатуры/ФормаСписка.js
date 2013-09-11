@@ -161,12 +161,38 @@
 			items:
 			[
 				{
+					text:'',
+					tooltip:'Добавить',
+					iconCls:'x-add',
+				},
+				{
+					text:'',
+					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
+				},
+				{
+					text:'',
+					tooltip:'Скопировать',
+					iconCls:'x-copy',
+				},
+				{
+					text:'',
+					tooltip:'Изменить',
+					iconCls:'x-Change',
+				},
+				{
+					text:'',
+					tooltip:'Установить пометку удаления',
+					iconCls:'x-MarkToDelete',
+				},
+				{
 					xtype: 'splitbutton',
 					text:'',
 					menu: [
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 					]
 				},
@@ -179,6 +205,7 @@
 				'-',
 				{
 					text:'',
+					tooltip:'20cc664-4c6f-4539-b2e2-a25b6657662',
 				},
 			]
 		},

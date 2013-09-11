@@ -25,98 +25,128 @@
 			[
 				{
 					text:'+',
+					tooltip:'Плюс',
 				},
 				{
 					text:'-',
+					tooltip:'Минус',
 				},
 				{
 					text:'*',
+					tooltip:'Умножить',
 				},
 				{
 					text:'/',
+					tooltip:'Разделить',
 				},
 				{
 					text:'(',
+					tooltip:'Открывающая скобка',
 				},
 				{
 					text:')',
+					tooltip:'Закрывающая скобка',
 				},
 				'-',
 				{
 					text:'?',
+					tooltip:'',
 				},
 				{
 					text:'<',
+					tooltip:'',
 				},
 				{
 					text:'=',
+					tooltip:'',
 				},
 				{
 					text:'>',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Мин',
+					tooltip:'',
 				},
 				{
 					text:'Макс',
+					tooltip:'Макс()',
 				},
 				'-',
 				{
 					text:'<-',
+					tooltip:'Шаг влево',
 				},
 				{
 					text:'->',
+					tooltip:'Шаг вправо',
 				},
 				{
 					text:'<->',
+					tooltip:'Раздвинуть',
 				},
 				'-',
 				{
 					text:'<Х',
+					tooltip:'Стереть символ слева',
 				},
 				{
 					text:'Х',
+					tooltip:'Удалить',
 				},
 				{
 					text:'Коды / имена',
+					tooltip:'Вставка кодов или представлений аргументов',
 				},
 				'-',
 				{
 					text:'1',
+					tooltip:'',
 				},
 				{
 					text:'2',
+					tooltip:'',
 				},
 				{
 					text:'3',
+					tooltip:'',
 				},
 				{
 					text:'4',
+					tooltip:'',
 				},
 				{
 					text:'5',
+					tooltip:'',
 				},
 				{
 					text:'6',
+					tooltip:'',
 				},
 				{
 					text:'7',
+					tooltip:'',
 				},
 				{
 					text:'8',
+					tooltip:'',
 				},
 				{
 					text:'9',
+					tooltip:'',
 				},
 				{
 					text:'0',
+					tooltip:'',
 				},
 				{
 					text:',',
+					tooltip:'',
 				},
 				{
 					text:'.',
+					tooltip:'',
 				},
 			]
 		},
@@ -215,10 +245,12 @@
 				},
 				{
 					text:'Ок',
+					tooltip:'Записать формулу',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

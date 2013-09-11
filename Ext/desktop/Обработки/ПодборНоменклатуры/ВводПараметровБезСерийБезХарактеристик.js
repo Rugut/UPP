@@ -150,14 +150,17 @@
 				},
 				{
 					text:'Получить вес',
+					tooltip:'считать вес товара с электронных весов',
 				},
 				'-',
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

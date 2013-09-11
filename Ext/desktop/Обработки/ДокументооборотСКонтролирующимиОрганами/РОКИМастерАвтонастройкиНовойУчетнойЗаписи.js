@@ -574,13 +574,16 @@
 				},
 				{
 					text:'<  Назад',
+					tooltip:'Предыдущий шаг',
 				},
 				{
 					text:'Далее  >',
+					tooltip:'Следующий шаг',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

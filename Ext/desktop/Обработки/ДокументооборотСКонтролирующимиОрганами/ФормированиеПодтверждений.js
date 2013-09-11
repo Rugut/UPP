@@ -306,13 +306,17 @@
 			[
 				{
 					text:'Пометить все',
+					tooltip:'',
 				},
 				{
 					text:'Снять флажки у всех',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 			]
 		},
@@ -359,10 +363,12 @@
 				},
 				{
 					text:'Выполнить',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

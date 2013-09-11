@@ -103,28 +103,37 @@
 			[
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Конструктор настроек...',
+					tooltip:'Открыть конструктор настроек',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Заполнить все',
+					tooltip:'Заполнить все',
 				},
 				{
 					text:'Не заполнять ничего',
+					tooltip:'',
 				},
 			]
 		},
@@ -145,10 +154,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

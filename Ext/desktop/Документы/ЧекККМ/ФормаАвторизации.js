@@ -65,9 +65,11 @@
 				},
 				{
 					text:'Выполнить авторизацию',
+					tooltip:'',
 				},
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

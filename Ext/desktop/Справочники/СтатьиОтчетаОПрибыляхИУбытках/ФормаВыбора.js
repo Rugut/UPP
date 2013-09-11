@@ -99,13 +99,17 @@
 			[
 				{
 					text:'Выбрать',
+					tooltip:'Выбрать значение',
+					iconCls:'x-Select',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					xtype: 'splitbutton',
@@ -113,12 +117,14 @@
 					menu: [
 				{
 					text:'',
+					tooltip:'',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

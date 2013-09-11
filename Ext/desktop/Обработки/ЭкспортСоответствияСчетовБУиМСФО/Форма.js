@@ -65,14 +65,17 @@
 				},
 				{
 					text:'Действие1',
+					tooltip:'Открыть справку',
 				},
 				'-',
 				{
 					text:'Выполнить',
+					tooltip:'Экспорт правил соответсвия в xml-файл',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

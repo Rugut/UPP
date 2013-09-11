@@ -107,21 +107,49 @@
 			items:
 			[
 				{
+					text:'',
+					tooltip:'Добавить',
+					iconCls:'x-add',
+				},
+				{
+					text:'',
+					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
+				},
+				{
+					text:'',
+					tooltip:'Скопировать',
+					iconCls:'x-copy',
+				},
+				{
+					text:'',
+					tooltip:'Изменить',
+					iconCls:'x-Change',
+				},
+				{
+					text:'',
+					tooltip:'Установить пометку удаления',
+					iconCls:'x-MarkToDelete',
+				},
+				{
 					xtype: 'splitbutton',
 					text:'',
 					menu: [
 				'-',
 				{
 					text:'Выполнить обмен',
+					tooltip:'Выполнить обмен данными',
 				},
 				{
 					text:'Настройка обновления конфигурации',
+					tooltip:'Настройка параметров обновления конфигурации',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Выполнить обмен',
+					tooltip:'Выполнить обмен данными',
 				},
 			]
 		},

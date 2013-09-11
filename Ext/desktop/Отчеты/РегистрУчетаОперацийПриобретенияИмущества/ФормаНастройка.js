@@ -132,9 +132,11 @@
 			[
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Действие2',
+					tooltip:'',
 				},
 			]
 		},
@@ -152,9 +154,11 @@
 			[
 				{
 					text:'',
+					tooltip:'Установить все виды',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -179,6 +183,7 @@
 				},
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

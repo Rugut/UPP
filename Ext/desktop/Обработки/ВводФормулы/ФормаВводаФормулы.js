@@ -208,10 +208,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'Записать формулу',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

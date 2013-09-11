@@ -85,6 +85,7 @@
 			[
 				{
 					text:'Заполнить по умолчанию',
+					tooltip:'',
 				},
 				'-',
 			]
@@ -106,14 +107,17 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

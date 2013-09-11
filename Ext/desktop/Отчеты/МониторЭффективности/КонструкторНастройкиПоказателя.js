@@ -344,18 +344,22 @@
 				},
 				{
 					text:'Назад',
+					tooltip:'9d8eaa0-9736-4e6a-9915-67b2bc9dd4c',
 				},
 				{
 					text:'Далее',
+					tooltip:'c372f01-bb92-497a-ab6e-9e5a59b130e',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

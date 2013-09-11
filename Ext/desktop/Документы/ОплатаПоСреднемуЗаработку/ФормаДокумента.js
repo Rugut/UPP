@@ -826,33 +826,44 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Конструктор настроек...',
+					tooltip:'Открыть конструктор настроек',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -865,37 +876,50 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Конструктор настроек...',
+					tooltip:'Открыть конструктор настроек',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
+					tooltip:'Отбор и сортировка',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
+					tooltip:'Отбор по значению в текущей колонке',
 				},
 				{
 					xtype: 'splitbutton',
@@ -905,13 +929,19 @@
 				},
 				{
 					text:'Отключить отбор',
+					tooltip:'Отключить отбор',
+					iconCls:'x-ClearFilter',
 				},
 				'-',
 				{
 					text:'Вывести список...',
+					tooltip:'Вывести список',
+					iconCls:'x-OutputList',
 				},
 				{
 					text:'Настройка списка...',
+					tooltip:'Настройка списка',
+					iconCls:'x-ListSettings',
 				},
 			]
 		},
@@ -929,35 +959,47 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Конструктор настроек...',
+					tooltip:'Открыть конструктор настроек',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -1179,9 +1221,11 @@
 			[
 				{
 					text:'Исправить',
+					tooltip:'Исправить документ',
 				},
 				{
 					text:'Отменить исправление',
+					tooltip:'Исправить документ',
 				},
 			]
 		},
@@ -1248,14 +1292,17 @@
 				},
 				{
 					text:'OK',
+					tooltip:'Записать объект и закрыть форму',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать объект',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

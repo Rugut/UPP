@@ -103,9 +103,11 @@
 			[
 				{
 					text:'',
+					tooltip:'Установить все флажки',
 				},
 				{
 					text:'',
+					tooltip:'Снять все флажки',
 				},
 				'-',
 				'-',
@@ -395,10 +397,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

@@ -25,18 +25,23 @@
 			[
 				{
 					text:'Обновить',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'День',
+					tooltip:'01ffc7e-5837-4a81-a4f2-18b296332e0',
 				},
 				'-',
 				{
 					text:'Неделя',
+					tooltip:'81d621d-1d7b-43dc-836b-3b25a891aa5',
 				},
 				'-',
 				{
 					text:'Действие1',
+					tooltip:'Открыть справку',
 				},
 			]
 		},
@@ -220,12 +225,15 @@
 			[
 				{
 					text:'Открыть',
+					tooltip:'',
 				},
 				{
 					text:'Оповещение',
+					tooltip:'',
 				},
 				{
 					text:'Перейти к дате',
+					tooltip:'',
 				},
 			]
 		},

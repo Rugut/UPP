@@ -67,9 +67,11 @@
 			[
 				{
 					text:'Показать документы',
+					tooltip:'',
 				},
 				{
 					text:'Показать отчет о состоянии',
+					tooltip:'',
 				},
 			]
 		},
@@ -1190,6 +1192,7 @@
 				},
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

@@ -76,9 +76,11 @@
 			[
 				{
 					text:'Снять пометки',
+					tooltip:'Снять пометки',
 				},
 				{
 					text:'Установить пометки',
+					tooltip:'Установить пометки',
 				},
 			]
 		},
@@ -99,9 +101,11 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'',
 				},
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

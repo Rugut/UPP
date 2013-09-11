@@ -25,10 +25,12 @@
 			[
 				{
 					text:'Выбрать',
+					tooltip:'168f070-087c-448e-ae3a-6740f424076',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'377931c-5744-4948-bade-cb35117b5f6',
 					handler: function () {this.up('window').close();},
 				},
 			]

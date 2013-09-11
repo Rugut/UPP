@@ -164,9 +164,36 @@
 			[
 				{
 					text:'',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
+				},
+				{
+					text:'',
+					tooltip:'Скопировать',
+					iconCls:'x-copy',
+				},
+				{
+					text:'',
+					tooltip:'Изменить',
+					iconCls:'x-Change',
+				},
+				{
+					text:'',
+					tooltip:'Установить пометку удаления',
+					iconCls:'x-MarkToDelete',
+				},
+				{
+					text:'',
+					tooltip:'7d469b0-6bba-49c8-8c49-31aa53422f0',
+				},
+				{
+					text:'',
+					tooltip:'8b44e84-cd1c-4237-bc9c-a05c36b7878',
 				},
 			]
 		},

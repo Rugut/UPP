@@ -165,14 +165,17 @@
 				},
 				{
 					text:'OK',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

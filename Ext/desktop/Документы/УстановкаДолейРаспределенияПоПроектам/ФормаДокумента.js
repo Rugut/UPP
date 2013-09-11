@@ -76,9 +76,11 @@
 					menu: [
 				{
 					text:'Движения документа по регистрам',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 					]
@@ -86,9 +88,11 @@
 				'-',
 				{
 					text:'',
+					tooltip:'Открыть категории',
 				},
 				{
 					text:'',
+					tooltip:'Открыть свойства',
 				},
 			]
 		},
@@ -328,18 +332,22 @@
 				},
 				{
 					text:'Печать',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

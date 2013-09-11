@@ -205,15 +205,18 @@
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},
@@ -227,9 +230,12 @@
 				'-',
 				{
 					text:'',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 				{
 					text:'Автозамена',
+					tooltip:'',
 				},
 			]
 		},

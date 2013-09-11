@@ -135,10 +135,12 @@
 				},
 				{
 					text:'Распределить',
+					tooltip:'Распределить',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

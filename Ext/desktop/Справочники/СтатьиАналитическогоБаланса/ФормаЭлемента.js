@@ -152,21 +152,29 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'&Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'&Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'Закончить редактирование',
+					tooltip:'',
 				},
 				{
 					text:'&Переместить вверх',
+					tooltip:'',
 				},
 				{
 					text:'&Переместить вниз',
+					tooltip:'',
 				},
 			]
 		},
@@ -183,30 +191,41 @@
 					menu: [
 				{
 					text:'Найти в списке',
+					tooltip:'Найти в списке',
+					iconCls:'x-FindInList',
 				},
 				'-',
 				{
 					text:'Перечитать',
+					tooltip:'Перечитать данные объекта',
+					iconCls:'x-Reread',
 				},
 				{
 					text:'Записать',
+					tooltip:'Записать объект',
 				},
 				{
 					text:'Записать и закрыть',
+					tooltip:'Записать объект и закрыть форму',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Найти в списке',
+					tooltip:'Найти в списке',
+					iconCls:'x-FindInList',
 				},
 				'-',
 				{
 					text:'Перечитать',
+					tooltip:'Перечитать данные объекта',
+					iconCls:'x-Reread',
 				},
 				{
 					xtype: 'splitbutton',
@@ -214,12 +233,14 @@
 					menu: [
 				{
 					text:'',
+					tooltip:'',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},
@@ -253,14 +274,17 @@
 				},
 				{
 					text:'OK',
+					tooltip:'Записать объект и закрыть форму',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать объект',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

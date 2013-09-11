@@ -121,6 +121,8 @@
 			[
 				{
 					text:'Выбрать',
+					tooltip:'Выбрать значение',
+					iconCls:'x-Select',
 				},
 				'-',
 				{
@@ -129,9 +131,11 @@
 					menu: [
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 					]

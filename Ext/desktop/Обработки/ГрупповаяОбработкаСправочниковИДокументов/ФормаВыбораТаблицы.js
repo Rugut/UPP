@@ -25,9 +25,11 @@
 			[
 				{
 					text:'Установить флажки',
+					tooltip:'',
 				},
 				{
 					text:'Снять флажки',
+					tooltip:'',
 				},
 			]
 		},
@@ -108,10 +110,12 @@
 				},
 				{
 					text:'Выбрать',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

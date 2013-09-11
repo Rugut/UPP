@@ -28,18 +28,22 @@
 				},
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'ce78048-0196-4f80-a781-9829cdb7f43',
 				},
 				'-',
 				{
 					text:'OK',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]
@@ -595,16 +599,20 @@
 			[
 				{
 					text:'Добавить поле',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -722,20 +730,25 @@
 			[
 				{
 					text:'Добавить поле',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Добавить группу',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 			]
@@ -754,38 +767,48 @@
 			[
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				'-',
-				{
-					text:'',
-				},
-				{
-					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
+				},
+				'-',
+				{
+					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
+				},
+				'-',
+				{
+					text:'',
+					tooltip:'',
+				},
+				{
+					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -972,24 +995,30 @@
 			[
 				{
 					text:'Добавить поле',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Добавить группу',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -1076,16 +1105,20 @@
 			[
 				{
 					text:'Добавить поле',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 			]
@@ -1261,20 +1294,26 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -1364,6 +1403,8 @@
 			[
 				{
 					text:'Вывести список...',
+					tooltip:'Вывести список',
+					iconCls:'x-OutputList',
 				},
 				'-',
 			]

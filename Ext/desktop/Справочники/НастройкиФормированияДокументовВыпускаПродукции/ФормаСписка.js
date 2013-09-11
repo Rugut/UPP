@@ -229,38 +229,53 @@
 					menu: [
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Установить пометку удаления',
+					tooltip:'Установить пометку удаления',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Вывести список...',
+					tooltip:'Вывести список',
+					iconCls:'x-OutputList',
 				},
 				{
 					text:'Настройка списка...',
+					tooltip:'Настройка списка',
+					iconCls:'x-ListSettings',
 				},
 				'-',
 				{
@@ -269,45 +284,60 @@
 					menu: [
 				{
 					text:'(Ввести на основании)',
+					tooltip:'Ввести на основании',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 					]
 				},
 				'-',
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Установить пометку удаления',
+					tooltip:'Установить пометку удаления',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

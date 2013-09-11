@@ -348,6 +348,7 @@
 				'-',
 				{
 					text:'Серийные номера',
+					tooltip:'Серийные номера',
 				},
 			]
 		},
@@ -368,10 +369,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

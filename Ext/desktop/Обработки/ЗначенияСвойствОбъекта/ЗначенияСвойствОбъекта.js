@@ -25,28 +25,38 @@
 			[
 				{
 					text:'Записать',
+					tooltip:'Записать',
 				},
 				{
 					text:'Перечитать',
+					tooltip:'Перечитать свойства и значения',
 				},
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 				'-',
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -131,10 +141,12 @@
 				},
 				{
 					text:'OK',
+					tooltip:'OK',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

@@ -130,6 +130,8 @@
 			[
 				{
 					text:'Выбрать',
+					tooltip:'Выбрать значение',
+					iconCls:'x-Select',
 				},
 				{
 					xtype: 'splitbutton',
@@ -137,9 +139,11 @@
 					menu: [
 				{
 					text:'Движения документа по регистрам',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 					]

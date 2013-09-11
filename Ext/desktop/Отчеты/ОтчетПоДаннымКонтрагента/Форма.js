@@ -112,16 +112,20 @@
 			[
 				{
 					text:'Снять флажки',
+					tooltip:'',
 				},
 				{
 					text:'Установить флажки',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Вверх',
+					tooltip:'',
 				},
 				{
 					text:'Вниз',
+					tooltip:'',
 				},
 			]
 		},
@@ -146,15 +150,18 @@
 				},
 				{
 					text:'Сформировать',
+					tooltip:'Сформировать',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

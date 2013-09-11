@@ -170,15 +170,18 @@
 					menu: [
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 					]
 				},
 				{
 					text:'Печать',
+					tooltip:'',
 				},
 			]
 		},

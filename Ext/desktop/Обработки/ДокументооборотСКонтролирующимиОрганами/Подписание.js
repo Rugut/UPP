@@ -289,24 +289,32 @@
 			[
 				{
 					text:'Установить флажки',
+					tooltip:'',
 				},
 				{
 					text:'Снять флажки',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'&Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
+					tooltip:'Отбор и сортировка',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
+					tooltip:'Отбор по значению в текущей колонке',
 				},
 				{
 					xtype: 'splitbutton',
@@ -314,15 +322,20 @@
 					menu: [
 				{
 					text:'(Список отборов)',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'(История отборов)',
+					tooltip:'',
+					iconCls:'x-FilterHistory',
 				},
 					]
 				},
 				{
 					text:'Отключить отбор',
+					tooltip:'Отключить отбор',
+					iconCls:'x-ClearFilter',
 				},
 			]
 		},
@@ -348,15 +361,18 @@
 				},
 				{
 					text:'Подписать',
+					tooltip:'Подписать',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

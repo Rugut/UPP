@@ -101,9 +101,11 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},

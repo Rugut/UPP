@@ -359,19 +359,26 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Установить пометку удаления',
+					tooltip:'Установить пометку удаления',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
+					tooltip:'Отбор и сортировка',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
+					tooltip:'Отбор по значению в текущей колонке',
 				},
 				{
 					xtype: 'splitbutton',
@@ -379,26 +386,36 @@
 					menu: [
 				{
 					text:'(Список отборов)',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'(История отборов)',
+					tooltip:'',
+					iconCls:'x-FilterHistory',
 				},
 				{
 					text:'(Список отборов)',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'(История отборов)',
+					tooltip:'',
+					iconCls:'x-FilterHistory',
 				},
 					]
 				},
 				{
 					text:'Отключить отбор',
+					tooltip:'Отключить отбор',
+					iconCls:'x-ClearFilter',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 				{
 					xtype: 'splitbutton',
@@ -406,12 +423,15 @@
 					menu: [
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 					]
 				},
@@ -593,15 +613,21 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -626,14 +652,17 @@
 				},
 				{
 					text:'OK',
+					tooltip:'Записать объект и закрыть форму',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать объект',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

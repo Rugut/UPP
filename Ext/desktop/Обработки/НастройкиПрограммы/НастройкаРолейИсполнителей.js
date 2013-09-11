@@ -113,6 +113,8 @@
 			[
 				{
 					text:'Вывести список...',
+					tooltip:'Вывести список',
+					iconCls:'x-OutputList',
 				},
 			]
 		},
@@ -133,10 +135,12 @@
 				},
 				{
 					text:'OK',
+					tooltip:'Применить изменения',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

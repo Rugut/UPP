@@ -90,10 +90,13 @@
 			[
 				{
 					text:'Выбрать',
+					tooltip:'Выбрать значение',
+					iconCls:'x-Select',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'30b2166-f764-4fb4-b008-e3c6237fb6f',
 				},
 			]
 		},

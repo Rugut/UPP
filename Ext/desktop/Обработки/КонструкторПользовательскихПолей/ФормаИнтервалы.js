@@ -111,14 +111,18 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				'-',
 				{
 					text:'Удалить',
+					tooltip:'Удалить текущий',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 			]
 		},
@@ -148,10 +152,12 @@
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

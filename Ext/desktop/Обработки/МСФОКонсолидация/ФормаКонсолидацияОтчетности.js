@@ -1661,14 +1661,17 @@
 				},
 				{
 					text:'<< Назад',
+					tooltip:'Назад',
 				},
 				'-',
 				{
 					text:'Далее >>',
+					tooltip:'Далее',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

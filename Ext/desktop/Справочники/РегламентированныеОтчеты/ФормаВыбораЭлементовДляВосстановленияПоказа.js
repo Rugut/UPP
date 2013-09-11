@@ -99,9 +99,11 @@
 			[
 				{
 					text:'Установить флажки',
+					tooltip:'',
 				},
 				{
 					text:'Снять флажки',
+					tooltip:'',
 				},
 			]
 		},
@@ -122,15 +124,18 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

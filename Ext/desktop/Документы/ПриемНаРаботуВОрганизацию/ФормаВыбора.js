@@ -121,6 +121,8 @@
 			[
 				{
 					text:'Выбрать',
+					tooltip:'Выбрать значение',
+					iconCls:'x-Select',
 				},
 				'-',
 				{
@@ -129,36 +131,50 @@
 					menu: [
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Установить пометку удаления',
+					tooltip:'Установить пометку удаления',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Провести',
+					tooltip:'Провести',
+					iconCls:'x-Post',
 				},
 				{
 					text:'Отмена проведения',
+					tooltip:'Отмена проведения',
+					iconCls:'x-UndoPosting',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
+					tooltip:'Отбор и сортировка',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
+					tooltip:'Отбор по значению в текущей колонке',
 				},
 				{
 					xtype: 'splitbutton',
@@ -166,15 +182,20 @@
 					menu: [
 				{
 					text:'(Список отборов)',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'(История отборов)',
+					tooltip:'',
+					iconCls:'x-FilterHistory',
 				},
 					]
 				},
 				{
 					text:'Отключить отбор',
+					tooltip:'Отключить отбор',
+					iconCls:'x-ClearFilter',
 				},
 				{
 					xtype: 'splitbutton',
@@ -182,6 +203,7 @@
 					menu: [
 				{
 					text:'(Поля сортировки)',
+					tooltip:'',
 				},
 					]
 				},
@@ -192,6 +214,7 @@
 					menu: [
 				{
 					text:'(Ввести на основании)',
+					tooltip:'Ввести на основании',
 				},
 					]
 				},
@@ -202,58 +225,78 @@
 					menu: [
 				{
 					text:'Движения документа по регистрам',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Вывести список...',
+					tooltip:'Вывести список',
+					iconCls:'x-OutputList',
 				},
 				{
 					text:'Настройка списка...',
+					tooltip:'Настройка списка',
+					iconCls:'x-ListSettings',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 					]
 				},
 				'-',
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'Установить пометку удаления',
+					tooltip:'Установить пометку удаления',
 				},
 				'-',
 				{
 					text:'',
+					tooltip:'',
 				},
 				{
 					text:'',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
+					tooltip:'Отбор и сортировка',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
+					tooltip:'Отбор по значению в текущей колонке',
 				},
 				{
 					xtype: 'splitbutton',
@@ -263,6 +306,8 @@
 				},
 				{
 					text:'Отключить отбор',
+					tooltip:'Отключить отбор',
+					iconCls:'x-ClearFilter',
 				},
 				'-',
 				{
@@ -281,10 +326,13 @@
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

@@ -663,13 +663,16 @@
 				},
 				{
 					text:'Зарегистрировать',
+					tooltip:'Зарегистрировать',
 				},
 				{
 					text:'Зарегистрировать и открыть',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]
@@ -773,18 +776,22 @@
 				},
 				{
 					text:'Зарегистрировать',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'',
 					handler: function () {this.up('window').close();},
 				},
 			]

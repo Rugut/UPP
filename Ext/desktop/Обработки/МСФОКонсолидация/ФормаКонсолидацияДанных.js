@@ -281,6 +281,7 @@
 				'-',
 				{
 					text:'Заполнить',
+					tooltip:'',
 				},
 			]
 		},
@@ -572,14 +573,17 @@
 				},
 				{
 					text:'<< Назад',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Далее >>',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

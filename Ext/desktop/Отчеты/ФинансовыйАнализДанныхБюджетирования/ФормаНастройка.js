@@ -296,10 +296,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'Вернуться к форме отчета',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

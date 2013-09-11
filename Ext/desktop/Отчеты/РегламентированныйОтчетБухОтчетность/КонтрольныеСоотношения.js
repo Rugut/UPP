@@ -29,16 +29,20 @@
 					menu: [
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 				},
 					]
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'c4f29e0-d168-4fe0-8e64-e982fabf259',
+					iconCls:'x-Refresh',
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},
@@ -55,6 +59,7 @@
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

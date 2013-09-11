@@ -55,14 +55,19 @@
 			[
 				{
 					text:'Найти в списке',
+					tooltip:'Найти в списке',
+					iconCls:'x-FindInList',
 				},
 				'-',
 				{
 					text:'Перечитать',
+					tooltip:'Перечитать данные объекта',
+					iconCls:'x-Reread',
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},
@@ -168,16 +173,20 @@
 			[
 				{
 					text:'Открыть',
+					tooltip:'Открыть',
 				},
 				{
 					text:'Выгрузить',
+					tooltip:'Выгрузить',
 				},
 				'-',
 				{
 					text:'Установить отбор и сортировку списка...',
+					tooltip:'Отбор и сортировка',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
+					tooltip:'Отбор по значению в текущей колонке',
 				},
 				{
 					xtype: 'splitbutton',
@@ -185,19 +194,26 @@
 					menu: [
 				{
 					text:'(Список отборов)',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'(История отборов)',
+					tooltip:'',
+					iconCls:'x-FilterHistory',
 				},
 					]
 				},
 				{
 					text:'Отключить отбор',
+					tooltip:'Отключить отбор',
+					iconCls:'x-ClearFilter',
 				},
 				'-',
 				{
 					text:'Обновить',
+					tooltip:'Обновить текущий список',
+					iconCls:'x-Refresh',
 				},
 			]
 		},
@@ -258,6 +274,7 @@
 				},
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

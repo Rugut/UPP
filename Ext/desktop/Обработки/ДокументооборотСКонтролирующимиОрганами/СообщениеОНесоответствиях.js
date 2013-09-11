@@ -311,6 +311,7 @@
 				},
 				{
 					text:'Закрыть',
+					tooltip:'',
 					handler: function () {this.up('window').close();},
 				},
 			]

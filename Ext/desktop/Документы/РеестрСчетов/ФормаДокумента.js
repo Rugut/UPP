@@ -400,9 +400,11 @@
 				'-',
 				{
 					text:'',
+					tooltip:'Открыть свойства',
 				},
 				{
 					text:'',
+					tooltip:'Открыть категории',
 				},
 			]
 		},
@@ -479,18 +481,22 @@
 				},
 				{
 					text:'Печать',
+					tooltip:'Печать',
 				},
 				'-',
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

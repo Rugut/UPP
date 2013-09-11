@@ -124,9 +124,35 @@
 			height: 25,
 			items:
 			[
+				{
+					text:'',
+					tooltip:'Добавить',
+					iconCls:'x-add',
+				},
+				{
+					text:'',
+					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
+				},
+				{
+					text:'',
+					tooltip:'Скопировать',
+					iconCls:'x-copy',
+				},
+				{
+					text:'',
+					tooltip:'Изменить',
+					iconCls:'x-Change',
+				},
+				{
+					text:'',
+					tooltip:'Установить пометку удаления',
+					iconCls:'x-MarkToDelete',
+				},
 				'-',
 				{
 					text:'Загрузить классификатор',
+					tooltip:'',
 				},
 			]
 		},

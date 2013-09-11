@@ -249,18 +249,22 @@
 				},
 				{
 					text:'Печать',
+					tooltip:'Печать',
 				},
 				'-',
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Записать',
+					tooltip:'Записать',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]
@@ -992,28 +996,38 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'&Скопировать',
+					tooltip:'',
 				},
 				{
 					text:'&Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'&Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'Закончить редактирование',
+					tooltip:'',
 				},
 				{
 					text:'&Переместить вверх',
+					tooltip:'',
 				},
 				{
 					text:'&Переместить вниз',
+					tooltip:'',
 				},
 				'-',
 				{
 					text:'Подбор',
+					tooltip:'Подбор',
 				},
 				'-',
 			]

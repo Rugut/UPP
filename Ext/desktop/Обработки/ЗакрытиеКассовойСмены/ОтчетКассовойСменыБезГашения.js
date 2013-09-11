@@ -49,10 +49,12 @@
 				'-',
 				{
 					text:'Снять X-отчет ',
+					tooltip:'Снять отчет кассовой смены без гашения',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

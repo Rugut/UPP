@@ -220,10 +220,12 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'Кнопка применить изменения, закрыть форму',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 			]

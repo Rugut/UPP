@@ -122,15 +122,19 @@
 			[
 				{
 					text:'&Переместить вверх',
+					tooltip:'',
 				},
 				{
 					text:'&Переместить вниз',
+					tooltip:'',
 				},
 				{
 					text:'Установить все',
+					tooltip:'',
 				},
 				{
 					text:'Снять все',
+					tooltip:'',
 				},
 			]
 		},
@@ -374,9 +378,11 @@
 			[
 				{
 					text:' >',
+					tooltip:'',
 				},
 				{
 					text:' <',
+					tooltip:'',
 				},
 			]
 		},
@@ -406,18 +412,25 @@
 			[
 				{
 					text:'&Добавить',
+					tooltip:'Добавить',
+					iconCls:'x-add',
 				},
 				{
 					text:'&Скопировать',
+					tooltip:'',
 				},
 				{
 					text:'&Изменить',
+					tooltip:'Изменить текущий элемент',
+					iconCls:'x-Change',
 				},
 				{
 					text:'&Удалить',
+					tooltip:'Удалить текущий',
 				},
 				{
 					text:'Закончить редактирование',
+					tooltip:'',
 				},
 			]
 		},
@@ -768,15 +781,18 @@
 				},
 				{
 					text:'ОК',
+					tooltip:'ОК',
 				},
 				'-',
 				{
 					text:'Закрыть',
+					tooltip:'Закрыть',
 					handler: function () {this.up('window').close();},
 				},
 				'-',
 				{
 					text:'Справка',
+					tooltip:'Открыть справку',
 				},
 			]
 		},

@@ -154,10 +154,37 @@
 			items:
 			[
 				{
+					text:'',
+					tooltip:'Добавить',
+					iconCls:'x-add',
+				},
+				{
+					text:'',
+					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
+				},
+				{
+					text:'',
+					tooltip:'Скопировать',
+					iconCls:'x-copy',
+				},
+				{
+					text:'',
+					tooltip:'Изменить',
+					iconCls:'x-Change',
+				},
+				{
+					text:'',
+					tooltip:'Установить пометку удаления',
+					iconCls:'x-MarkToDelete',
+				},
+				{
 					text:'Доступ к текущему элементу',
+					tooltip:'Открыть форму настройки прав доступа к текущему элементу',
 				},
 				{
 					text:'Доступ к справочнику в целом',
+					tooltip:'Открыть форму настройки прав доступа ко всему справочнику',
 				},
 			]
 		},
