@@ -498,7 +498,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -524,6 +524,7 @@
 				{
 					text:'Следующая строка',
 					tooltip:'cf611dc-2370-4357-910d-a2b49c7a1ec',
+					iconCls:'x-Next',
 				},
 			]
 		},
@@ -1050,7 +1051,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -1146,7 +1147,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Изменить',
@@ -1208,16 +1209,19 @@
 				{
 					text:'OK',
 					tooltip:'Записать объект и закрыть форму',
+					iconCls:'x-WriteAndClose',
 				},
 				'-',
 				{
 					text:'Записать',
 					tooltip:'Записать объект',
+					iconCls:'x-SaveFile',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

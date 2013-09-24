@@ -957,10 +957,12 @@
 				{
 					text:'Действие1',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отключить отбор',
@@ -1146,16 +1148,19 @@
 				{
 					text:'OK',
 					tooltip:'Записать объект и закрыть форму',
+					iconCls:'x-WriteAndClose',
 				},
 				'-',
 				{
 					text:'Записать',
 					tooltip:'Записать объект',
+					iconCls:'x-SaveFile',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

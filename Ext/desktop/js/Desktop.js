@@ -22,6 +22,7 @@ Ext.define('Ext.ux.desktop.Desktop', {
         'Ext.window.Window',
 
         'Ext.ux.desktop.TaskBar',
+        'Ext.ux.desktop.TBar',
         'Ext.ux.desktop.Wallpaper'
     ],
 
@@ -84,6 +85,8 @@ Ext.define('Ext.ux.desktop.Desktop', {
 
         me.windowMenu = new Ext.menu.Menu(me.createWindowMenu());
 
+        me.tbar = new Ext.ux.desktop.TBar(me.taskbarConfig);
+        
         me.bbar = me.taskbar = new Ext.ux.desktop.TaskBar(me.taskbarConfig);
         me.taskbar.windowMenu = me.windowMenu;
 

@@ -123,6 +123,7 @@
 				{
 					text:'Отмена',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 				'-',
 				{

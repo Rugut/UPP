@@ -36,6 +36,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 				'-',
 				{
@@ -487,7 +488,7 @@
 				{
 					text:'&Добавить вид расчета',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',

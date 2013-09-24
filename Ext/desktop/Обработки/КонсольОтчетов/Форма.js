@@ -314,7 +314,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 			]
 		},
@@ -497,7 +497,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'По умолчанию',
@@ -669,7 +669,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'По умолчанию',

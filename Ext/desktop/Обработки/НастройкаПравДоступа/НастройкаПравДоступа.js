@@ -206,7 +206,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -357,7 +357,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -508,7 +508,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -659,7 +659,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -810,7 +810,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -979,7 +979,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -1130,7 +1130,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -1281,7 +1281,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -1432,7 +1432,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -1583,7 +1583,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -1725,7 +1725,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -1771,7 +1771,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -2063,7 +2063,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -2179,6 +2179,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

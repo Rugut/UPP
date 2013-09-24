@@ -119,7 +119,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				'-',
 				{
@@ -139,6 +139,7 @@
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Отключить отбор',

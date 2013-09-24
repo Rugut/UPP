@@ -99,15 +99,18 @@
 				{
 					text:'Сохранить значения',
 					tooltip:'Сохранить значения',
+					iconCls:'x-SaveValues',
 				},
 				{
 					text:'Восстановить значения',
 					tooltip:'Восстановить значения',
+					iconCls:'x-RestoreValues',
 				},
 				'-',
 				{
 					text:'Справка',
 					tooltip:'7c81c62-d6ad-4eae-9cea-0e203182db6',
+					iconCls:'x-Help',
 				},
 			]
 		},

@@ -1,6 +1,6 @@
-/*Версия 20130909*/
+п»ї/*Р’РµСЂСЃРёСЏ 20130909*/
 
-/*Форма:*/
+/*Р¤РѕСЂРјР°:*/
 
 .x-window-body-default {
   border-color: #99bbe8;
@@ -8,7 +8,7 @@
   background: #F5F2DD;/*#dfe8f6;*/
   color: black; }
 
-/*Меню:*/
+/*РњРµРЅСЋ:*/
 .x-menu-body {
   user-select: none;
   -o-user-select: none;
@@ -19,13 +19,13 @@
   background: #FFFBF0 !important;
   padding: 2px; }
 
-/*Шрифт формы*/
+/*РЁСЂРёС„С‚ С„РѕСЂРјС‹*/
 .x-body {
   color: black;
   font-size:  8px; /*12px;*/
-  /*font-family: tahoma, arial, verdana, sans-serif; }*/ /*так было*/
+  /*font-family: tahoma, arial, verdana, sans-serif; }*/ /*С‚Р°Рє Р±С‹Р»Рѕ*/
   font-family: MS Shell Dlg, arial, verdana, sans-serif; }
-/*Панель*/
+/*РџР°РЅРµР»СЊ*/
 
 .x-panel-body-default {
   background: #FFFBF0;/*white;*/
@@ -34,17 +34,17 @@
   border-width: 1px;
   border-style: solid; }
 
-/*Переключатели*/
-.x-form-checkbox,
+/*РџРµСЂРµРєР»СЋС‡Р°С‚РµР»Рё*/
+/*.x-form-checkbox,
 .x-form-radio {
   vertical-align: -1px;
   width: 13px;
   height: 13px;
   background: #F5F2DD;/*no-repeat;*/
-  background-image: url('../../resources/themes/images/default/form/checkbox.gif');
+  /*background-image: url('../../resources/themes/images/default/form/checkbox.gif');
   overflow: hidden;
   padding: 0;
-  border: 0; }
+  border: 0; }*/
 
 textarea.x-form-field {
   padding: 1px 3px;
@@ -54,7 +54,7 @@ textarea.x-form-field {
   background-image: url('../../resources/themes/images/default/form/text-bg.gif');
   border-color: #b5b8c8; }
 
-/* Тулбары */
+/* РўСѓР»Р±Р°СЂС‹ */
 .x-toolbar-default {
   border-color: #99bce8;
   background-image: none;
@@ -65,20 +65,20 @@ textarea.x-form-field {
   background-image: -o-linear-gradient(top, #F5F2DD, #F5F2DD);
   background-image: linear-gradient(top, #F5F2DD, #F5F2DD); }
 
-/* Надписи формы */
+/* РќР°РґРїРёСЃРё С„РѕСЂРјС‹ */
 .x-panel-body {
   overflow: hidden;
   position: relative;
   font-size: 11px; }
 
-/* текстовые поля формы*/
+/* С‚РµРєСЃС‚РѕРІС‹Рµ РїРѕР»СЏ С„РѕСЂРјС‹*/
 .x-form-field,
 .x-form-display-field {
   margin: 0 0 0 0;
   font: normal 11px MS Shell Dlg, arial, verdana, sans-serif;
   color: black; }
 
-/*Окно (переферические параметры)*/
+/*РћРєРЅРѕ (РїРµСЂРµС„РµСЂРёС‡РµСЃРєРёРµ РїР°СЂР°РјРµС‚СЂС‹)*/
 .x-window-default {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -97,7 +97,7 @@ textarea.x-form-field {
   border-style: solid;
   background-color: #C0C0C0; }
 
-/* Окно (Заголовок) */
+/* РћРєРЅРѕ (Р—Р°РіРѕР»РѕРІРѕРє) */
 .x-window-header-default-top {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
@@ -116,7 +116,7 @@ textarea.x-form-field {
   border-style: solid;
   background-color: #C0C0C0; }/*ced9e7*/
 
-/* рамка */
+/* СЂР°РјРєР° */
 .x-fieldset-header {
   font: 11px/14px bold tahoma, arial, verdana, sans-serif;
   /*text-decoration: underline;*/
@@ -124,16 +124,16 @@ textarea.x-form-field {
   padding: 0 0px 0px;
   overflow: hidden; }
 
- /*//////////////////////////////////////////////////////// begin КОМБОБОКС (combobox)/////////////////////////////////////////////////////////////*/  
- /*высота комбобокса (без кнопки)*/  
+ /*//////////////////////////////////////////////////////// begin РљРћРњР‘РћР‘РћРљРЎ (combobox)/////////////////////////////////////////////////////////////*/  
+ /*РІС‹СЃРѕС‚Р° РєРѕРјР±РѕР±РѕРєСЃР° (Р±РµР· РєРЅРѕРїРєРё)*/  
 .x-border-box .x-form-text {
   height: 19px; }
-/* Высота кнопки комбобокса*/
+/* Р’С‹СЃРѕС‚Р° РєРЅРѕРїРєРё РєРѕРјР±РѕР±РѕРєСЃР°*/
 .x-border-box .x-form-trigger {
   height: 19px; }
- /*////////////////////////////////////////////////////////end КОМБОБОКС (combobox)/////////////////////////////////////////////////////////////*/  
+ /*////////////////////////////////////////////////////////end РљРћРњР‘РћР‘РћРљРЎ (combobox)/////////////////////////////////////////////////////////////*/  
 
- /*////////////////////////////////////////////////////////begin Столбцы грида//////////////////////////////////////////////////////////////////*/  
+ /*////////////////////////////////////////////////////////begin РЎС‚РѕР»Р±С†С‹ РіСЂРёРґР°//////////////////////////////////////////////////////////////////*/  
 .x-column-header {
   padding: 0;
   position: absolute;
@@ -152,300 +152,301 @@ textarea.x-form-field {
   background-image: -o-linear-gradient(top, #f9f9f9, #F5F2DD);
   background-image: linear-gradient(top, #f9f9f9, #F5F2DD); }
 
-/*////////////////////////////////////////////////////////end Столбцы грида///////////////////////////////////////////////////////////////////*/  
+/*////////////////////////////////////////////////////////end РЎС‚РѕР»Р±С†С‹ РіСЂРёРґР°///////////////////////////////////////////////////////////////////*/  
 
-/*Перечень кнопок для меню*/
+/*РџРµСЂРµС‡РµРЅСЊ РєРЅРѕРїРѕРє РґР»СЏ РјРµРЅСЋ*/
 
-/*Добавить*/
+/*Р”РѕР±Р°РІРёС‚СЊ*/
 .x-add {
   background-image: url('images/default/menu/ico/add.gif'); }
-/*ПометканаУдаление*/
+/*РџРѕРјРµС‚РєР°РЅР°РЈРґР°Р»РµРЅРёРµ*/
 .x-MarkToDelete {
   background-image: url('images/default/menu/ico/MarkToDelete.gif'); }
-/*ИзменитьЭлемент*/
+/*РР·РјРµРЅРёС‚СЊР­Р»РµРјРµРЅС‚*/
 .x-Change {
   background-image: url('images/default/menu/ico/Change.gif'); }
-/*Скопировать*/
+/*РЎРєРѕРїРёСЂРѕРІР°С‚СЊ*/
 .x-copy {
   background-image: url('images/default/menu/ico/copy.gif'); }
-/*Обновить*/
+/*РћР±РЅРѕРІРёС‚СЊ*/
 .x-Refresh {
   background-image: url('images/default/menu/ico/Refresh.gif'); }
-/*ОтборПоТекущемуЗначению*/
+/*РћС‚Р±РѕСЂРџРѕРўРµРєСѓС‰РµРјСѓР—РЅР°С‡РµРЅРёСЋ*/
 .x-FilterByCurrentValue {
   background-image: url('images/default/menu/ico/FilterByCurrentValue.gif'); }
-/*Просмотр ПоВладельцу*/
+/*РџСЂРѕСЃРјРѕС‚СЂ РџРѕР’Р»Р°РґРµР»СЊС†Сѓ*/
 .x-ViewByOwner {
   background-image: url('images/default/menu/ico/ViewByOwner.gif'); }
-/*Отбор_И_Компановка*/
+/*РћС‚Р±РѕСЂ_Р_РљРѕРјРїР°РЅРѕРІРєР°*/
 .x-DataCompositionFilter {
   background-image: url('images/default/menu/ico/DataCompositionFilter.gif'); }
-/*ОтборИ_Сортировка*/
+/*РћС‚Р±РѕСЂР_РЎРѕСЂС‚РёСЂРѕРІРєР°*/
 .x-FilterAndSort {
   background-image: url('images/default/menu/ico/FilterAndSort.gif'); }
-/*Справка*/
+/*РЎРїСЂР°РІРєР°*/
 .x-Help {
   background-image: url('images/default/menu/ico/Help.gif'); }
-/*Настройка Списка*/
+/*РќР°СЃС‚СЂРѕР№РєР° РЎРїРёСЃРєР°*/
 .x-ListSettings {
   background-image: url('images/default/menu/ico/ListSettings.gif'); }
-/*Закрыть*/
+/*Р—Р°РєСЂС‹С‚СЊ*/
 .x-Close {
   background-image: url('images/default/menu/ico/Close.gif'); }
-/*Вывести Список*/
+/*Р’С‹РІРµСЃС‚Рё РЎРїРёСЃРѕРє*/
 .x-OutputList {
   background-image: url('images/default/menu/ico/OutputList.gif'); }
-/*Удалить*/
+/*РЈРґР°Р»РёС‚СЊ*/
 .x-Delete {
   background-image: url('images/default/menu/ico/Delete.gif'); }
-/*УровеньВверх*/
+/*РЈСЂРѕРІРµРЅСЊР’РІРµСЂС…*/
 .x-PageUp {
   background-image: url('images/default/menu/ico/PageUp.gif'); }
-/*УровеньВниз*/
+/*РЈСЂРѕРІРµРЅСЊР’РЅРёР·*/
 .x-PageDown {
   background-image: url('images/default/menu/ico/PageDown.gif'); }
-/*ОткрытьФайл*/
+/*РћС‚РєСЂС‹С‚СЊР¤Р°Р№Р»*/
 .x-OpenFile {
   background-image: url('images/default/menu/ico/OpenFile.gif'); }
-/*ИерархическийПросмотр*/
+/*РРµСЂР°СЂС…РёС‡РµСЃРєРёР№РџСЂРѕСЃРјРѕС‚СЂ*/
 .x-HierarchicalView {
   background-image: url('images/default/menu/ico/HierarchicalView.gif'); }
-/*ПеренестиЭлемент*/
+/*РџРµСЂРµРЅРµСЃС‚РёР­Р»РµРјРµРЅС‚*/
 .x-MoveItem {
   background-image: url('images/default/menu/ico/MoveItem.gif'); }
-/*Записать*/
+/*Р—Р°РїРёСЃР°С‚СЊ*/
 .x-SaveFile {
   background-image: url('images/default/menu/ico/SaveFile.gif'); }
-/*Очистить*/
+/*РћС‡РёСЃС‚РёС‚СЊ*/
 .x-Clean {
   background-image: url('images/default/menu/ico/Clean.gif'); }
-/*СортироватьСписокПоВозрастанию*/
+/*РЎРѕСЂС‚РёСЂРѕРІР°С‚СЊРЎРїРёСЃРѕРєРџРѕР’РѕР·СЂР°СЃС‚Р°РЅРёСЋ*/
 .x-SortListAsc {
   background-image: url('images/default/menu/ico/SortListAsc.gif'); }
 
-/*СортироватьПоУбыванию*/
+/*РЎРѕСЂС‚РёСЂРѕРІР°С‚СЊРџРѕРЈР±С‹РІР°РЅРёСЋ*/
 .x-SortListDesc {
   background-image: url('images/default/menu/ico/SortListDesc.gif'); }
 
-/*ОтключитьОтбор*/
+/*РћС‚РєР»СЋС‡РёС‚СЊРћС‚Р±РѕСЂ*/
 .x-ClearFilter {
   background-image: url('images/default/menu/ico/ClearFilter.gif'); }
 
-/*Обновить*/
+/*РћР±РЅРѕРІРёС‚СЊ*/
 .x-Refresh {
   background-image: url('images/default/menu/ico/Refresh.gif'); }
 
-/*Сортировка*/
+/*РЎРѕСЂС‚РёСЂРѕРІРєР°*/
 .x-Sort {
   background-image: url('images/default/menu/ico/Sort.gif'); }
 
 
-/* Добавим кнопку выбора (Выбрать)*/
+/* Р”РѕР±Р°РІРёРј РєРЅРѕРїРєСѓ РІС‹Р±РѕСЂР° (Р’С‹Р±СЂР°С‚СЊ)*/
 .x-form-select-trigger {
   background-image: url('images/default/menu/ico/select-trigger.gif'); }
 
 
-/*ПереместитьВверх*/
+/*РџРµСЂРµРјРµСЃС‚РёС‚СЊР’РІРµСЂС…*/
 .x-MoveUp {
   background-image: url('images/default/menu/ico/MoveUp.gif'); }
 
-/*ПереместитьВниз*/
+/*РџРµСЂРµРјРµСЃС‚РёС‚СЊР’РЅРёР·*/
 .x-MoveDown {
   background-image: url('images/default/menu/ico/MoveDown.gif'); }
 
-/*ЗакончитьРедактирование*/
+/*Р—Р°РєРѕРЅС‡РёС‚СЊР РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ*/
 .x-EndEdit {
   background-image: url('images/default/menu/ico/EndEdit.gif'); }
 
-/*НайтиВСписке*/
+/*РќР°Р№С‚РёР’РЎРїРёСЃРєРµ*/
 .x-FindInList {
   background-image: url('images/default/menu/ico/FindInList.gif'); }
 
-/*Перечитать*/
+/*РџРµСЂРµС‡РёС‚Р°С‚СЊ*/
 .x-Reread {
   background-image: url('images/default/menu/ico/Reread.gif'); }
 
-/*ЗаписатьИЗакрыть*/
+/*Р—Р°РїРёСЃР°С‚СЊРР—Р°РєСЂС‹С‚СЊ*/
 .x-WriteAndClose {
   background-image: url('images/default/menu/ico/WriteAndClose.gif'); }
 
-/*НоваяГруппа*/
+/*РќРѕРІР°СЏР“СЂСѓРїРїР°*/
 .x-CreateFolder {
   background-image: url('images/default/menu/ico/CreateFolder.gif'); }
 
-/*РедактироватьВДиалоге*/
+/*Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊР’Р”РёР°Р»РѕРіРµ*/
 .x-EditInDialog {
   background-image: url('images/default/menu/ico/EditInDialog.gif'); }
 
-/*ИсторияОтборов*/
+/*РСЃС‚РѕСЂРёСЏРћС‚Р±РѕСЂРѕРІ*/
 .x-FilterHistory {
   background-image: url('images/default/menu/ico/FilterHistory.gif'); }
 
-/*ПросмотрПоВладельцу*/
+/*РџСЂРѕСЃРјРѕС‚СЂРџРѕР’Р»Р°РґРµР»СЊС†Сѓ*/
 .x-ViewByOwner {
   background-image: url('images/default/menu/ico/ViewByOwner.gif'); }
 
-/*Выбрать*/
+/*Р’С‹Р±СЂР°С‚СЊ*/
 .x-Select {
   background-image: url('images/default/menu/ico/Select.gif'); }
 
-/*Сортировка*/
+/*РЎРѕСЂС‚РёСЂРѕРІРєР°*/
 .x-Sort {
   background-image: url('images/default/menu/ico/Sort.gif'); }
-/*ОтключитьОтбор*/
+/*РћС‚РєР»СЋС‡РёС‚СЊРћС‚Р±РѕСЂ*/
 .x-OtkluchitOtbor {
   background-image: url('images/default/menu/ico/OtkluchitOtbor.gif'); }
 
-/*ПоискПоНомеру*/
+/*РџРѕРёСЃРєРџРѕРќРѕРјРµСЂСѓ*/
 .x-FindByNumber {
   background-image: url('images/default/menu/ico/FindByNumber.gif'); }
 
-/*УстановитьИнтервал*/
+/*РЈСЃС‚Р°РЅРѕРІРёС‚СЊРРЅС‚РµСЂРІР°Р»*/
 .x-SetDateInterval {
   background-image: url('images/default/menu/ico/SetDateInterval.gif'); } 
 
-/*Провести*/
+/*РџСЂРѕРІРµСЃС‚Рё*/
 .x-Post {
   background-image: url('images/default/menu/ico/Post.gif'); } 
 
-/*ОтменаПроведения*/
+/*РћС‚РјРµРЅР°РџСЂРѕРІРµРґРµРЅРёСЏ*/
 .x-UndoPosting {
   background-image: url('images/default/menu/ico/UndoPosting.gif'); } 
                                                                             
-/*УстановитьВремя*/
+/*РЈСЃС‚Р°РЅРѕРІРёС‚СЊР’СЂРµРјСЏ*/
 .x-SetTime {
   background-image: url('images/default/menu/ico/SetTime.gif'); } 
 
-/*ХранилищеНастроек*/.x-SettingsStorage { background-image: url('images/default/menu/ico/SettingsStorage.gif'); }
-/*УсловноеОформлениеКомпоновкиДанныхНедоступное*/.x-DataCompositionConditionalAppearanceDisabled { background-image: url('images/default/menu/ico/DataCompositionConditionalAppearanceDisabled.gif'); }
-/*УсловноеОформлениеКомпоновкиДанных*/.x-DataCompositionConditionalAppearance { background-image: url('images/default/menu/ico/DataCompositionConditionalAppearance.gif'); }
-/*ПереместитьВправо*/.x-MoveRight { background-image: url('images/default/menu/ico/MoveRight.gif'); }
-/*ПереместитьВлево*/.x-MoveLeft { background-image: url('images/default/menu/ico/MoveLeft.gif'); }
-/*ПечатьСразу*/.x-PrintImmediately { background-image: url('images/default/menu/ico/PrintImmediately.gif'); }
-/*Перечисление*/.x-Enum { background-image: url('images/default/menu/ico/Enum.gif'); }
-/*УстановитьФлажки*/.x-CheckAll { background-image: url('images/default/menu/ico/CheckAll.gif'); }
-/*УдалитьНепосредственно*/.x-DeleteDirectly { background-image: url('images/default/menu/ico/DeleteDirectly.gif'); }
-/*ТабличныйДокументУдалитьРазрывСтраницы*/.x-SpreadsheetDeletePageBreak { background-image: url('images/default/menu/ico/SpreadsheetDeletePageBreak.gif'); }
-/*ТабличныйДокументУдалитьПримечание*/.x-SpreadsheetDeleteComment { background-image: url('images/default/menu/ico/SpreadsheetDeleteComment.gif'); }
-/*ТабличныйДокументТолькоПросмотр*/.x-SpreadsheetReadOnly { background-image: url('images/default/menu/ico/SpreadsheetReadOnly.gif'); }
-/*ТабличныйДокументОтображатьСетку*/.x-SpreadsheetShowGrid { background-image: url('images/default/menu/ico/SpreadsheetShowGrid.gif'); }
-/*ТабличныйДокументОтображатьПримечания*/.x-SpreadsheetShowComments { background-image: url('images/default/menu/ico/SpreadsheetShowComments.gif'); }
-/*ТабличныйДокументОтображатьЗаголовки*/.x-SpreadsheetShowHeaders { background-image: url('images/default/menu/ico/SpreadsheetShowHeaders.gif'); }
-/*ТабличныйДокументОтображатьГруппировки*/.x-SpreadsheetShowGroups { background-image: url('images/default/menu/ico/SpreadsheetShowGroups.gif'); }
-/*ТабличныйДокументВставитьРазрывСтраницы*/.x-SpreadsheetInsertPageBreak { background-image: url('images/default/menu/ico/SpreadsheetInsertPageBreak.gif'); }
-/*ТабличныйДокументВставитьПримечание*/.x-SpreadsheetInsertComment { background-image: url('images/default/menu/ico/SpreadsheetInsertComment.gif'); }
-/*СформироватьОтчет*/.x-GenerateReport { background-image: url('images/default/menu/ico/GenerateReport.gif'); }
-/*Форма*/.x-Form { background-image: url('images/default/menu/ico/Form.gif'); }
-/*СтартБизнесПроцесса*/.x-BusinessProcessStart { background-image: url('images/default/menu/ico/BusinessProcessStart.gif'); }
-/*СтандартнаяНастройкаКомпоновкиДанных*/.x-DataCompositionStandardSettings { background-image: url('images/default/menu/ico/DataCompositionStandardSettings.gif'); }
-/*Справочник*/.x-Catalog { background-image: url('images/default/menu/ico/Catalog.gif'); }
-/*СохранитьНастройкиОтчета*/.x-SaveReportSettings { background-image: url('images/default/menu/ico/SaveReportSettings.gif'); }
-/*СохранитьЗначения*/.x-SaveValues { background-image: url('images/default/menu/ico/SaveValues.gif'); }
-/*СортироватьСписок*/.x-SortList { background-image: url('images/default/menu/ico/SortList.gif'); }
-/*СоздатьНачальныйОбраз*/.x-CreateInitialImage { background-image: url('images/default/menu/ico/CreateInitialImage.gif'); }
-/*СнятьФлажки*/.x-UncheckAll { background-image: url('images/default/menu/ico/UncheckAll.gif'); }
-/*Следующий*/.x-Next { background-image: url('images/default/menu/ico/Next.gif'); }
-/*СкопироватьОбъект*/.x-CloneObject { background-image: url('images/default/menu/ico/CloneObject.gif'); }
-/*СинтаксическийКонтроль*/.x-CheckSyntax { background-image: url('images/default/menu/ico/CheckSyntax.gif'); }
-/*Символ*/.x-Char { background-image: url('images/default/menu/ico/Char.gif'); }
-/*Свойства*/.x-Properties { background-image: url('images/default/menu/ico/Properties.gif'); }
-/*СводнаяДиаграмма*/.x-PivotChart { background-image: url('images/default/menu/ico/PivotChart.gif'); }
-/*СвернутьВсе*/.x-CollapseAll { background-image: url('images/default/menu/ico/CollapseAll.gif'); }
-/*РежимПросмотраСпискаСписок*/.x-ListViewModeList { background-image: url('images/default/menu/ico/ListViewModeList.gif'); }
-/*РежимПросмотраСпискаИерархическийСписок*/.x-ListViewModeHierarchicalList { background-image: url('images/default/menu/ico/ListViewModeHierarchicalList.gif'); }
-/*РежимПросмотраСпискаДерево*/.x-ListViewModeTree { background-image: url('images/default/menu/ico/ListViewModeTree.gif'); }
-/*РежимПросмотраСписка*/.x-ListViewMode { background-image: url('images/default/menu/ico/ListViewMode.gif'); }
-/*РегламентноеЗадание*/.x-ScheduledJob { background-image: url('images/default/menu/ico/ScheduledJob.gif'); }
-/*РегистрСведений*/.x-InformationRegister { background-image: url('images/default/menu/ico/InformationRegister.gif'); }
-/*РегистрРасчета*/.x-CalculationRegister { background-image: url('images/default/menu/ico/CalculationRegister.gif'); }
-/*РегистрНакопления*/.x-AccumulationRegister { background-image: url('images/default/menu/ico/AccumulationRegister.gif'); }
-/*РегистрБухгалтерии*/.x-AccountingRegister { background-image: url('images/default/menu/ico/AccountingRegister.gif'); }
-/*РазвернутьВсе*/.x-ExpandAll { background-image: url('images/default/menu/ico/ExpandAll.gif'); }
-/*ПрочитатьИзменения*/.x-ReadChanges { background-image: url('images/default/menu/ico/ReadChanges.gif'); }
-/*Предыдущий*/.x-Previous { background-image: url('images/default/menu/ico/Previous.gif'); }
-/*ПорядокКомпоновкиДанныхНедоступный*/.x-DataCompositionOrderDisabled { background-image: url('images/default/menu/ico/DataCompositionOrderDisabled.gif'); }
-/*ПорядокКомпоновкиДанных*/.x-DataCompositionOrder { background-image: url('images/default/menu/ico/DataCompositionOrder.gif'); }
-/*АктивироватьЗадачу*/.x-ActivateTask { background-image: url('images/default/menu/ico/ActivateTask.gif'); }
-/*АктивныеПользователи*/.x-ActiveUsers { background-image: url('images/default/menu/ico/ActiveUsers.gif'); }
-/*БизнесПроцесс*/.x-BusinessProcess { background-image: url('images/default/menu/ico/BusinessProcess.gif'); }
-/*ВводНаОсновании*/.x-InputOnBasis { background-image: url('images/default/menu/ico/InputOnBasis.gif'); }
-/*ВидРасчета*/.x-CalculationType { background-image: url('images/default/menu/ico/CalculationType.gif'); }
-/*ВнешнийИсточникДанных*/.x-ExternalDataSource { background-image: url('images/default/menu/ico/ExternalDataSource.gif'); }
-/*ВнешнийИсточникДанныхТаблица*/.x-ExternalDataSourceTable { background-image: url('images/default/menu/ico/ExternalDataSourceTable.gif'); }
-/*ВосстановитьЗначения*/.x-RestoreValues { background-image: url('images/default/menu/ico/RestoreValues.gif'); }
-/*Вперед*/.x-Forward { background-image: url('images/default/menu/ico/Forward.gif'); }
-/*ВыборКомпоновкиДанных*/.x-DataCompositionSelection { background-image: url('images/default/menu/ico/DataCompositionSelection.gif'); }
-/*ВыборКомпоновкиДанныхНедоступный*/.x-DataCompositionSelectionDisabled { background-image: url('images/default/menu/ico/DataCompositionSelectionDisabled.gif'); }
-/*ВыбратьВерхнийУровень*/.x-ChooseTopLevel { background-image: url('images/default/menu/ico/ChooseTopLevel.gif'); }
-/*ВыбратьТип*/.x-ChooseType { background-image: url('images/default/menu/ico/ChooseType.gif'); }
-/*ВывестиСписок*/.x-OutputList { background-image: url('images/default/menu/ico/OutputList.gif'); }
-/*ВыполнитьЗадачу*/.x-ExecuteTask { background-image: url('images/default/menu/ico/ExecuteTask.gif'); }
-/*ГеографическаяСхема*/.x-GeographicalSchema { background-image: url('images/default/menu/ico/GeographicalSchema.gif'); }
-/*ГрафическаяСхема*/.x-GraphicalSchema { background-image: url('images/default/menu/ico/GraphicalSchema.gif'); }
-/*Дебет*/.x-Debit { background-image: url('images/default/menu/ico/Debit.gif'); }
-/*ДебетКредит*/.x-DebitCredit { background-image: url('images/default/menu/ico/DebitCredit.gif'); }
-/*Дендрограмма*/.x-Dendrogram { background-image: url('images/default/menu/ico/Dendrogram.gif'); }
-/*Диаграмма*/.x-Chart { background-image: url('images/default/menu/ico/Chart.gif'); }
-/*ДиаграммаГанта*/.x-GanttChart { background-image: url('images/default/menu/ico/GanttChart.gif'); }
-/*ДобавитьВИзбранное*/.x-AddToFavorites { background-image: url('images/default/menu/ico/AddToFavorites.gif'); }
-/*Документ*/.x-Document { background-image: url('images/default/menu/ico/Document.gif'); }
-/*ЖурналДокументов*/.x-DocumentJournal { background-image: url('images/default/menu/ico/DocumentJournal.gif'); }
-/*ЖурналРегистрации*/.x-EventLog { background-image: url('images/default/menu/ico/EventLog.gif'); }
-/*ЖурналРегистрацииПоПользователю*/.x-EventLogByUser { background-image: url('images/default/menu/ico/EventLogByUser.gif'); }
-/*ЗагрузитьНастройкиОтчета*/.x-LoadReportSettings { background-image: url('images/default/menu/ico/LoadReportSettings.gif'); }
-/*Задача*/.x-Task { background-image: url('images/default/menu/ico/Task.gif'); }
-/*Заменить*/.x-Replace { background-image: url('images/default/menu/ico/Replace.gif'); }
-/*ЗаписатьИзменения*/.x-WriteChanges { background-image: url('images/default/menu/ico/WriteChanges.gif'); }
-/*ЗатенитьФлажки*/.x-GrayedAll { background-image: url('images/default/menu/ico/GrayedAll.gif'); }
-/*ЗафиксироватьТаблицу*/.x-FixTable { background-image: url('images/default/menu/ico/FixTable.gif'); }
-/*ИзменитьФорму*/.x-CustomizeForm { background-image: url('images/default/menu/ico/CustomizeForm.gif'); }
-/*Календарь*/.x-Calendar { background-image: url('images/default/menu/ico/Calendar.gif'); }
-/*Калькулятор*/.x-Calculator { background-image: url('images/default/menu/ico/Calculator.gif'); }
-/*Картинка*/.x-Picture { background-image: url('images/default/menu/ico/Picture.gif'); }
-/*Константа*/.x-Constant { background-image: url('images/default/menu/ico/Constant.gif'); }
-/*КонструкторЗапроса*/.x-QueryWizard { background-image: url('images/default/menu/ico/QueryWizard.gif'); }
-/*КонструкторНастроекКомпоновкиДанных*/.x-DataCompositionSettingsWizard { background-image: url('images/default/menu/ico/DataCompositionSettingsWizard.gif'); }
-/*Кредит*/.x-Credit { background-image: url('images/default/menu/ico/Credit.gif'); }
-/*КритерийОтбора*/.x-FilterCriterion { background-image: url('images/default/menu/ico/FilterCriterion.gif'); }
-/*Лупа*/.x-Magnifier { background-image: url('images/default/menu/ico/Magnifier.gif'); }
-/*Назад*/.x-Back { background-image: url('images/default/menu/ico/Back.gif'); }
-/*Найти*/.x-Find { background-image: url('images/default/menu/ico/Find.gif'); }
-/*НайтиВДереве*/.x-FindInTree { background-image: url('images/default/menu/ico/FindInTree.gif'); }
-/*НайтиВСодержании*/.x-SyncContents { background-image: url('images/default/menu/ico/SyncContents.gif'); }
-/*НайтиПредыдущий*/.x-FindPrevious { background-image: url('images/default/menu/ico/FindPrevious.gif'); }
-/*НайтиСледующий*/.x-FindNext { background-image: url('images/default/menu/ico/FindNext.gif'); }
-/*НастройкаСписка*/.x-ListSettings { background-image: url('images/default/menu/ico/ListSettings.gif'); }
-/*НастройкиОтчета*/.x-ReportSettings { background-image: url('images/default/menu/ico/ReportSettings.gif'); }
-/*НастроитьСписок*/.x-CustomizeList { background-image: url('images/default/menu/ico/CustomizeList.gif'); }
-/*НоваяВложеннаяСхемаКомпоновкиДанных*/.x-DataCompositionNewNestedScheme { background-image: url('images/default/menu/ico/DataCompositionNewNestedScheme.gif'); }
-/*НоваяГруппировкаКомпоновкиДанных*/.x-DataCompositionNewGroup { background-image: url('images/default/menu/ico/DataCompositionNewGroup.gif'); }
-/*НоваяДиаграммаКомпоновкиДанных*/.x-DataCompositionNewChart { background-image: url('images/default/menu/ico/DataCompositionNewChart.gif'); }
-/*НоваяТаблицаКомпоновкиДанных*/.x-DataCompositionNewTable { background-image: url('images/default/menu/ico/DataCompositionNewTable.gif'); }
-/*НовоеОкно*/.x-NewWindow { background-image: url('images/default/menu/ico/NewWindow.gif'); }
-/*Обработка*/.x-DataProcessor { background-image: url('images/default/menu/ico/DataProcessor.gif'); }
-/*Остановить*/.x-Stop { background-image: url('images/default/menu/ico/Stop.gif'); }
-/*ОтборКомпоновкиДанныхНедоступный*/.x-DataCompositionFilterDisabled { background-image: url('images/default/menu/ico/DataCompositionFilterDisabled.gif'); }
-/*ОтборПоВиду*/.x-FilterByType { background-image: url('images/default/menu/ico/FilterByType.gif'); }
-/*Отчет*/.x-Report { background-image: url('images/default/menu/ico/Report.gif'); }
-/*ПараметрыВыводаКомпоновкиДанных*/.x-DataCompositionOutputParameters { background-image: url('images/default/menu/ico/DataCompositionOutputParameters.gif'); }
-/*ПараметрыВыводаКомпоновкиДанныхНедоступные*/.x-DataCompositionOutputParametersDisabled { background-image: url('images/default/menu/ico/DataCompositionOutputParametersDisabled.gif'); }
-/*ПараметрыДанныхКомпоновкиДанных*/.x-DataCompositionDataParameters { background-image: url('images/default/menu/ico/DataCompositionDataParameters.gif'); }
-/*ПерейтиПоНавигационнойСсылке*/.x-GotoURL { background-image: url('images/default/menu/ico/GotoURL.gif'); }
-/*ПереключитьАктивность*/.x-SwitchActivity { background-image: url('images/default/menu/ico/SwitchActivity.gif'); }
-/*Печать*/.x-Print { background-image: url('images/default/menu/ico/Print.gif'); }
-/*ПланВидовРасчета*/.x-ChartOfCalculationTypes { background-image: url('images/default/menu/ico/ChartOfCalculationTypes.gif'); }
-/*ПланВидовХарактеристик*/.x-ChartOfCharacteristicTypes { background-image: url('images/default/menu/ico/ChartOfCharacteristicTypes.gif'); }
-/*ПланОбмена*/.x-ExchangePlan { background-image: url('images/default/menu/ico/ExchangePlan.gif'); }
-/*ПланСчетов*/.x-ChartOfAccounts { background-image: url('images/default/menu/ico/ChartOfAccounts.gif'); }
-/*ПоказатьДанные*/.x-ShowData { background-image: url('images/default/menu/ico/ShowData.gif'); }
-/*ПолучитьНавигационнуюСсылку*/.x-GetURL { background-image: url('images/default/menu/ico/GetURL.gif'); }
-/*Пользователь*/.x-User { background-image: url('images/default/menu/ico/User.gif'); }
-/*ПользовательБезНеобходимыхСвойств*/.x-UserWithoutNecessaryProperties { background-image: url('images/default/menu/ico/UserWithoutNecessaryProperties.gif'); }
-/*ПользовательСАутентификацией*/.x-UserWithAuthentication { background-image: url('images/default/menu/ico/UserWithAuthentication.gif'); }
-/*ПользовательскиеПоляКомпоновкиДанных*/.x-DataCompositionUserFields { background-image: url('images/default/menu/ico/DataCompositionUserFields.gif'); }
-/*ПоляГруппировкиКомпоновкиДанных*/.x-DataCompositionGroupFields { background-image: url('images/default/menu/ico/DataCompositionGroupFields.gif'); }
-/*ПоляГруппировкиКомпоновкиДанныхНедоступные*/.x-DataCompositionGroupFieldsDisabled { background-image: url('images/default/menu/ico/DataCompositionGroupFieldsDisabled.gif'); }
-
+/*РҐСЂР°РЅРёР»РёС‰РµРќР°СЃС‚СЂРѕРµРє*/.x-SettingsStorage { background-image: url('images/default/menu/ico/SettingsStorage.gif'); }
+/*РЈСЃР»РѕРІРЅРѕРµРћС„РѕСЂРјР»РµРЅРёРµРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…РќРµРґРѕСЃС‚СѓРїРЅРѕРµ*/.x-DataCompositionConditionalAppearanceDisabled { background-image: url('images/default/menu/ico/DataCompositionConditionalAppearanceDisabled.gif'); }
+/*РЈСЃР»РѕРІРЅРѕРµРћС„РѕСЂРјР»РµРЅРёРµРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionConditionalAppearance { background-image: url('images/default/menu/ico/DataCompositionConditionalAppearance.gif'); }
+/*РџРµСЂРµРјРµСЃС‚РёС‚СЊР’РїСЂР°РІРѕ*/.x-MoveRight { background-image: url('images/default/menu/ico/MoveRight.gif'); }
+/*РџРµСЂРµРјРµСЃС‚РёС‚СЊР’Р»РµРІРѕ*/.x-MoveLeft { background-image: url('images/default/menu/ico/MoveLeft.gif'); }
+/*РџРµС‡Р°С‚СЊРЎСЂР°Р·Сѓ*/.x-PrintImmediately { background-image: url('images/default/menu/ico/PrintImmediately.gif'); }
+/*РџРµСЂРµС‡РёСЃР»РµРЅРёРµ*/.x-Enum { background-image: url('images/default/menu/ico/Enum.gif'); }
+/*РЈСЃС‚Р°РЅРѕРІРёС‚СЊР¤Р»Р°Р¶РєРё*/.x-CheckAll { background-image: url('images/default/menu/ico/CheckAll.gif'); }
+/*РЈРґР°Р»РёС‚СЊРќРµРїРѕСЃСЂРµРґСЃС‚РІРµРЅРЅРѕ*/.x-DeleteDirectly { background-image: url('images/default/menu/ico/DeleteDirectly.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚РЈРґР°Р»РёС‚СЊР Р°Р·СЂС‹РІРЎС‚СЂР°РЅРёС†С‹*/.x-SpreadsheetDeletePageBreak { background-image: url('images/default/menu/ico/SpreadsheetDeletePageBreak.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚РЈРґР°Р»РёС‚СЊРџСЂРёРјРµС‡Р°РЅРёРµ*/.x-SpreadsheetDeleteComment { background-image: url('images/default/menu/ico/SpreadsheetDeleteComment.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚РўРѕР»СЊРєРѕРџСЂРѕСЃРјРѕС‚СЂ*/.x-SpreadsheetReadOnly { background-image: url('images/default/menu/ico/SpreadsheetReadOnly.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚РћС‚РѕР±СЂР°Р¶Р°С‚СЊРЎРµС‚РєСѓ*/.x-SpreadsheetShowGrid { background-image: url('images/default/menu/ico/SpreadsheetShowGrid.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚РћС‚РѕР±СЂР°Р¶Р°С‚СЊРџСЂРёРјРµС‡Р°РЅРёСЏ*/.x-SpreadsheetShowComments { background-image: url('images/default/menu/ico/SpreadsheetShowComments.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚РћС‚РѕР±СЂР°Р¶Р°С‚СЊР—Р°РіРѕР»РѕРІРєРё*/.x-SpreadsheetShowHeaders { background-image: url('images/default/menu/ico/SpreadsheetShowHeaders.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚РћС‚РѕР±СЂР°Р¶Р°С‚СЊР“СЂСѓРїРїРёСЂРѕРІРєРё*/.x-SpreadsheetShowGroups { background-image: url('images/default/menu/ico/SpreadsheetShowGroups.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚Р’СЃС‚Р°РІРёС‚СЊР Р°Р·СЂС‹РІРЎС‚СЂР°РЅРёС†С‹*/.x-SpreadsheetInsertPageBreak { background-image: url('images/default/menu/ico/SpreadsheetInsertPageBreak.gif'); }
+/*РўР°Р±Р»РёС‡РЅС‹Р№Р”РѕРєСѓРјРµРЅС‚Р’СЃС‚Р°РІРёС‚СЊРџСЂРёРјРµС‡Р°РЅРёРµ*/.x-SpreadsheetInsertComment { background-image: url('images/default/menu/ico/SpreadsheetInsertComment.gif'); }
+/*РЎС„РѕСЂРјРёСЂРѕРІР°С‚СЊРћС‚С‡РµС‚*/.x-GenerateReport { background-image: url('images/default/menu/ico/GenerateReport.gif'); }
+/*Р¤РѕСЂРјР°*/.x-Form { background-image: url('images/default/menu/ico/Form.gif'); }
+/*РЎС‚Р°СЂС‚Р‘РёР·РЅРµСЃРџСЂРѕС†РµСЃСЃР°*/.x-BusinessProcessStart { background-image: url('images/default/menu/ico/BusinessProcessStart.gif'); }
+/*РЎС‚Р°РЅРґР°СЂС‚РЅР°СЏРќР°СЃС‚СЂРѕР№РєР°РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionStandardSettings { background-image: url('images/default/menu/ico/DataCompositionStandardSettings.gif'); }
+/*РЎРїСЂР°РІРѕС‡РЅРёРє*/.x-Catalog { background-image: url('images/default/menu/ico/Catalog.gif'); }
+/*РЎРѕС…СЂР°РЅРёС‚СЊРќР°СЃС‚СЂРѕР№РєРёРћС‚С‡РµС‚Р°*/.x-SaveReportSettings { background-image: url('images/default/menu/ico/SaveReportSettings.gif'); }
+/*РЎРѕС…СЂР°РЅРёС‚СЊР—РЅР°С‡РµРЅРёСЏ*/.x-SaveValues { background-image: url('images/default/menu/ico/SaveValues.gif'); }
+/*РЎРѕСЂС‚РёСЂРѕРІР°С‚СЊРЎРїРёСЃРѕРє*/.x-SortList { background-image: url('images/default/menu/ico/SortList.gif'); }
+/*РЎРѕР·РґР°С‚СЊРќР°С‡Р°Р»СЊРЅС‹Р№РћР±СЂР°Р·*/.x-CreateInitialImage { background-image: url('images/default/menu/ico/CreateInitialImage.gif'); }
+/*РЎРЅСЏС‚СЊР¤Р»Р°Р¶РєРё*/.x-UncheckAll { background-image: url('images/default/menu/ico/UncheckAll.gif'); }
+/*РЎР»РµРґСѓСЋС‰РёР№*/.x-Next { background-image: url('images/default/menu/ico/Next.gif'); }
+/*РЎРєРѕРїРёСЂРѕРІР°С‚СЊРћР±СЉРµРєС‚*/.x-CloneObject { background-image: url('images/default/menu/ico/CloneObject.gif'); }
+/*РЎРёРЅС‚Р°РєСЃРёС‡РµСЃРєРёР№РљРѕРЅС‚СЂРѕР»СЊ*/.x-CheckSyntax { background-image: url('images/default/menu/ico/CheckSyntax.gif'); }
+/*РЎРёРјРІРѕР»*/.x-Char { background-image: url('images/default/menu/ico/Char.gif'); }
+/*РЎРІРѕР№СЃС‚РІР°*/.x-Properties { background-image: url('images/default/menu/ico/Properties.gif'); }
+/*РЎРІРѕРґРЅР°СЏР”РёР°РіСЂР°РјРјР°*/.x-PivotChart { background-image: url('images/default/menu/ico/PivotChart.gif'); }
+/*РЎРІРµСЂРЅСѓС‚СЊР’СЃРµ*/.x-CollapseAll { background-image: url('images/default/menu/ico/CollapseAll.gif'); }
+/*Р РµР¶РёРјРџСЂРѕСЃРјРѕС‚СЂР°РЎРїРёСЃРєР°РЎРїРёСЃРѕРє*/.x-ListViewModeList { background-image: url('images/default/menu/ico/ListViewModeList.gif'); }
+/*Р РµР¶РёРјРџСЂРѕСЃРјРѕС‚СЂР°РЎРїРёСЃРєР°РРµСЂР°СЂС…РёС‡РµСЃРєРёР№РЎРїРёСЃРѕРє*/.x-ListViewModeHierarchicalList { background-image: url('images/default/menu/ico/ListViewModeHierarchicalList.gif'); }
+/*Р РµР¶РёРјРџСЂРѕСЃРјРѕС‚СЂР°РЎРїРёСЃРєР°Р”РµСЂРµРІРѕ*/.x-ListViewModeTree { background-image: url('images/default/menu/ico/ListViewModeTree.gif'); }
+/*Р РµР¶РёРјРџСЂРѕСЃРјРѕС‚СЂР°РЎРїРёСЃРєР°*/.x-ListViewMode { background-image: url('images/default/menu/ico/ListViewMode.gif'); }
+/*Р РµРіР»Р°РјРµРЅС‚РЅРѕРµР—Р°РґР°РЅРёРµ*/.x-ScheduledJob { background-image: url('images/default/menu/ico/ScheduledJob.gif'); }
+/*Р РµРіРёСЃС‚СЂРЎРІРµРґРµРЅРёР№*/.x-InformationRegister { background-image: url('images/default/menu/ico/InformationRegister.gif'); }
+/*Р РµРіРёСЃС‚СЂР Р°СЃС‡РµС‚Р°*/.x-CalculationRegister { background-image: url('images/default/menu/ico/CalculationRegister.gif'); }
+/*Р РµРіРёСЃС‚СЂРќР°РєРѕРїР»РµРЅРёСЏ*/.x-AccumulationRegister { background-image: url('images/default/menu/ico/AccumulationRegister.gif'); }
+/*Р РµРіРёСЃС‚СЂР‘СѓС…РіР°Р»С‚РµСЂРёРё*/.x-AccountingRegister { background-image: url('images/default/menu/ico/AccountingRegister.gif'); }
+/*Р Р°Р·РІРµСЂРЅСѓС‚СЊР’СЃРµ*/.x-ExpandAll { background-image: url('images/default/menu/ico/ExpandAll.gif'); }
+/*РџСЂРѕС‡РёС‚Р°С‚СЊРР·РјРµРЅРµРЅРёСЏ*/.x-ReadChanges { background-image: url('images/default/menu/ico/ReadChanges.gif'); }
+/*РџСЂРµРґС‹РґСѓС‰РёР№*/.x-Previous { background-image: url('images/default/menu/ico/Previous.gif'); }
+/*РџРѕСЂСЏРґРѕРєРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…РќРµРґРѕСЃС‚СѓРїРЅС‹Р№*/.x-DataCompositionOrderDisabled { background-image: url('images/default/menu/ico/DataCompositionOrderDisabled.gif'); }
+/*РџРѕСЂСЏРґРѕРєРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionOrder { background-image: url('images/default/menu/ico/DataCompositionOrder.gif'); }
+/*РђРєС‚РёРІРёСЂРѕРІР°С‚СЊР—Р°РґР°С‡Сѓ*/.x-ActivateTask { background-image: url('images/default/menu/ico/ActivateTask.gif'); }
+/*РђРєС‚РёРІРЅС‹РµРџРѕР»СЊР·РѕРІР°С‚РµР»Рё*/.x-ActiveUsers { background-image: url('images/default/menu/ico/ActiveUsers.gif'); }
+/*Р‘РёР·РЅРµСЃРџСЂРѕС†РµСЃСЃ*/.x-BusinessProcess { background-image: url('images/default/menu/ico/BusinessProcess.gif'); }
+/*Р’РІРѕРґРќР°РћСЃРЅРѕРІР°РЅРёРё*/.x-InputOnBasis { background-image: url('images/default/menu/ico/InputOnBasis.gif'); }
+/*Р’РёРґР Р°СЃС‡РµС‚Р°*/.x-CalculationType { background-image: url('images/default/menu/ico/CalculationType.gif'); }
+/*Р’РЅРµС€РЅРёР№РСЃС‚РѕС‡РЅРёРєР”Р°РЅРЅС‹С…*/.x-ExternalDataSource { background-image: url('images/default/menu/ico/ExternalDataSource.gif'); }
+/*Р’РЅРµС€РЅРёР№РСЃС‚РѕС‡РЅРёРєР”Р°РЅРЅС‹С…РўР°Р±Р»РёС†Р°*/.x-ExternalDataSourceTable { background-image: url('images/default/menu/ico/ExternalDataSourceTable.gif'); }
+/*Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊР—РЅР°С‡РµРЅРёСЏ*/.x-RestoreValues { background-image: url('images/default/menu/ico/RestoreValues.gif'); }
+/*Р’РїРµСЂРµРґ*/.x-Forward { background-image: url('images/default/menu/ico/Forward.gif'); }
+/*Р’С‹Р±РѕСЂРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionSelection { background-image: url('images/default/menu/ico/DataCompositionSelection.gif'); }
+/*Р’С‹Р±РѕСЂРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…РќРµРґРѕСЃС‚СѓРїРЅС‹Р№*/.x-DataCompositionSelectionDisabled { background-image: url('images/default/menu/ico/DataCompositionSelectionDisabled.gif'); }
+/*Р’С‹Р±СЂР°С‚СЊР’РµСЂС…РЅРёР№РЈСЂРѕРІРµРЅСЊ*/.x-ChooseTopLevel { background-image: url('images/default/menu/ico/ChooseTopLevel.gif'); }
+/*Р’С‹Р±СЂР°С‚СЊРўРёРї*/.x-ChooseType { background-image: url('images/default/menu/ico/ChooseType.gif'); }
+/*Р’С‹РІРµСЃС‚РёРЎРїРёСЃРѕРє*/.x-OutputList { background-image: url('images/default/menu/ico/OutputList.gif'); }
+/*Р’С‹РїРѕР»РЅРёС‚СЊР—Р°РґР°С‡Сѓ*/.x-ExecuteTask { background-image: url('images/default/menu/ico/ExecuteTask.gif'); }
+/*Р“РµРѕРіСЂР°С„РёС‡РµСЃРєР°СЏРЎС…РµРјР°*/.x-GeographicalSchema { background-image: url('images/default/menu/ico/GeographicalSchema.gif'); }
+/*Р“СЂР°С„РёС‡РµСЃРєР°СЏРЎС…РµРјР°*/.x-GraphicalSchema { background-image: url('images/default/menu/ico/GraphicalSchema.gif'); }
+/*Р”РµР±РµС‚*/.x-Debit { background-image: url('images/default/menu/ico/Debit.gif'); }
+/*Р”РµР±РµС‚РљСЂРµРґРёС‚*/.x-DebitCredit { background-image: url('images/default/menu/ico/DebitCredit.gif'); }
+/*Р”РµРЅРґСЂРѕРіСЂР°РјРјР°*/.x-Dendrogram { background-image: url('images/default/menu/ico/Dendrogram.gif'); }
+/*Р”РёР°РіСЂР°РјРјР°*/.x-Chart { background-image: url('images/default/menu/ico/Chart.gif'); }
+/*Р”РёР°РіСЂР°РјРјР°Р“Р°РЅС‚Р°*/.x-GanttChart { background-image: url('images/default/menu/ico/GanttChart.gif'); }
+/*Р”РѕР±Р°РІРёС‚СЊР’РР·Р±СЂР°РЅРЅРѕРµ*/.x-AddToFavorites { background-image: url('images/default/menu/ico/AddToFavorites.gif'); }
+/*Р”РѕРєСѓРјРµРЅС‚*/.x-Document { background-image: url('images/default/menu/ico/Document.gif'); }
+/*Р–СѓСЂРЅР°Р»Р”РѕРєСѓРјРµРЅС‚РѕРІ*/.x-DocumentJournal { background-image: url('images/default/menu/ico/DocumentJournal.gif'); }
+/*Р–СѓСЂРЅР°Р»Р РµРіРёСЃС‚СЂР°С†РёРё*/.x-EventLog { background-image: url('images/default/menu/ico/EventLog.gif'); }
+/*Р–СѓСЂРЅР°Р»Р РµРіРёСЃС‚СЂР°С†РёРёРџРѕРџРѕР»СЊР·РѕРІР°С‚РµР»СЋ*/.x-EventLogByUser { background-image: url('images/default/menu/ico/EventLogByUser.gif'); }
+/*Р—Р°РіСЂСѓР·РёС‚СЊРќР°СЃС‚СЂРѕР№РєРёРћС‚С‡РµС‚Р°*/.x-LoadReportSettings { background-image: url('images/default/menu/ico/LoadReportSettings.gif'); }
+/*Р—Р°РґР°С‡Р°*/.x-Task { background-image: url('images/default/menu/ico/Task.gif'); }
+/*Р—Р°РјРµРЅРёС‚СЊ*/.x-Replace { background-image: url('images/default/menu/ico/Replace.gif'); }
+/*Р—Р°РїРёСЃР°С‚СЊРР·РјРµРЅРµРЅРёСЏ*/.x-WriteChanges { background-image: url('images/default/menu/ico/WriteChanges.gif'); }
+/*Р—Р°С‚РµРЅРёС‚СЊР¤Р»Р°Р¶РєРё*/.x-GrayedAll { background-image: url('images/default/menu/ico/GrayedAll.gif'); }
+/*Р—Р°С„РёРєСЃРёСЂРѕРІР°С‚СЊРўР°Р±Р»РёС†Сѓ*/.x-FixTable { background-image: url('images/default/menu/ico/FixTable.gif'); }
+/*РР·РјРµРЅРёС‚СЊР¤РѕСЂРјСѓ*/.x-CustomizeForm { background-image: url('images/default/menu/ico/CustomizeForm.gif'); }
+/*РљР°Р»РµРЅРґР°СЂСЊ*/.x-Calendar { background-image: url('images/default/menu/ico/Calendar.gif'); }
+/*РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ*/.x-Calculator { background-image: url('images/default/menu/ico/Calculator.gif'); }
+/*РљР°СЂС‚РёРЅРєР°*/.x-Picture { background-image: url('images/default/menu/ico/Picture.gif'); }
+/*РљРѕРЅСЃС‚Р°РЅС‚Р°*/.x-Constant { background-image: url('images/default/menu/ico/Constant.gif'); }
+/*РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР—Р°РїСЂРѕСЃР°*/.x-QueryWizard { background-image: url('images/default/menu/ico/QueryWizard.gif'); }
+/*РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРќР°СЃС‚СЂРѕРµРєРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionSettingsWizard { background-image: url('images/default/menu/ico/DataCompositionSettingsWizard.gif'); }
+/*РљСЂРµРґРёС‚*/.x-Credit { background-image: url('images/default/menu/ico/Credit.gif'); }
+/*РљСЂРёС‚РµСЂРёР№РћС‚Р±РѕСЂР°*/.x-FilterCriterion { background-image: url('images/default/menu/ico/FilterCriterion.gif'); }
+/*Р›СѓРїР°*/.x-Magnifier { background-image: url('images/default/menu/ico/Magnifier.gif'); }
+/*РќР°Р·Р°Рґ*/.x-Back { background-image: url('images/default/menu/ico/Back.gif'); }
+/*РќР°Р№С‚Рё*/.x-Find { background-image: url('images/default/menu/ico/Find.gif'); }
+/*РќР°Р№С‚РёР’Р”РµСЂРµРІРµ*/.x-FindInTree { background-image: url('images/default/menu/ico/FindInTree.gif'); }
+/*РќР°Р№С‚РёР’РЎРѕРґРµСЂР¶Р°РЅРёРё*/.x-SyncContents { background-image: url('images/default/menu/ico/SyncContents.gif'); }
+/*РќР°Р№С‚РёРџСЂРµРґС‹РґСѓС‰РёР№*/.x-FindPrevious { background-image: url('images/default/menu/ico/FindPrevious.gif'); }
+/*РќР°Р№С‚РёРЎР»РµРґСѓСЋС‰РёР№*/.x-FindNext { background-image: url('images/default/menu/ico/FindNext.gif'); }
+/*РќР°СЃС‚СЂРѕР№РєР°РЎРїРёСЃРєР°*/.x-ListSettings { background-image: url('images/default/menu/ico/ListSettings.gif'); }
+/*РќР°СЃС‚СЂРѕР№РєРёРћС‚С‡РµС‚Р°*/.x-ReportSettings { background-image: url('images/default/menu/ico/ReportSettings.gif'); }
+/*РќР°СЃС‚СЂРѕРёС‚СЊРЎРїРёСЃРѕРє*/.x-CustomizeList { background-image: url('images/default/menu/ico/CustomizeList.gif'); }
+/*РќРѕРІР°СЏР’Р»РѕР¶РµРЅРЅР°СЏРЎС…РµРјР°РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionNewNestedScheme { background-image: url('images/default/menu/ico/DataCompositionNewNestedScheme.gif'); }
+/*РќРѕРІР°СЏР“СЂСѓРїРїРёСЂРѕРІРєР°РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionNewGroup { background-image: url('images/default/menu/ico/DataCompositionNewGroup.gif'); }
+/*РќРѕРІР°СЏР”РёР°РіСЂР°РјРјР°РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionNewChart { background-image: url('images/default/menu/ico/DataCompositionNewChart.gif'); }
+/*РќРѕРІР°СЏРўР°Р±Р»РёС†Р°РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionNewTable { background-image: url('images/default/menu/ico/DataCompositionNewTable.gif'); }
+/*РќРѕРІРѕРµРћРєРЅРѕ*/.x-NewWindow { background-image: url('images/default/menu/ico/NewWindow.gif'); }
+/*РћР±СЂР°Р±РѕС‚РєР°*/.x-DataProcessor { background-image: url('images/default/menu/ico/DataProcessor.gif'); }
+/*РћСЃС‚Р°РЅРѕРІРёС‚СЊ*/.x-Stop { background-image: url('images/default/menu/ico/Stop.gif'); }
+/*РћС‚Р±РѕСЂРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…РќРµРґРѕСЃС‚СѓРїРЅС‹Р№*/.x-DataCompositionFilterDisabled { background-image: url('images/default/menu/ico/DataCompositionFilterDisabled.gif'); }
+/*РћС‚Р±РѕСЂРџРѕР’РёРґСѓ*/.x-FilterByType { background-image: url('images/default/menu/ico/FilterByType.gif'); }
+/*РћС‚С‡РµС‚*/.x-Report { background-image: url('images/default/menu/ico/Report.gif'); }
+/*РџР°СЂР°РјРµС‚СЂС‹Р’С‹РІРѕРґР°РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionOutputParameters { background-image: url('images/default/menu/ico/DataCompositionOutputParameters.gif'); }
+/*РџР°СЂР°РјРµС‚СЂС‹Р’С‹РІРѕРґР°РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…РќРµРґРѕСЃС‚СѓРїРЅС‹Рµ*/.x-DataCompositionOutputParametersDisabled { background-image: url('images/default/menu/ico/DataCompositionOutputParametersDisabled.gif'); }
+/*РџР°СЂР°РјРµС‚СЂС‹Р”Р°РЅРЅС‹С…РљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionDataParameters { background-image: url('images/default/menu/ico/DataCompositionDataParameters.gif'); }
+/*РџРµСЂРµР№С‚РёРџРѕРќР°РІРёРіР°С†РёРѕРЅРЅРѕР№РЎСЃС‹Р»РєРµ*/.x-GotoURL { background-image: url('images/default/menu/ico/GotoURL.gif'); }
+/*РџРµСЂРµРєР»СЋС‡РёС‚СЊРђРєС‚РёРІРЅРѕСЃС‚СЊ*/.x-SwitchActivity { background-image: url('images/default/menu/ico/SwitchActivity.gif'); }
+/*РџРµС‡Р°С‚СЊ*/.x-Print { background-image: url('images/default/menu/ico/Print.gif'); }
+/*РџР»Р°РЅР’РёРґРѕРІР Р°СЃС‡РµС‚Р°*/.x-ChartOfCalculationTypes { background-image: url('images/default/menu/ico/ChartOfCalculationTypes.gif'); }
+/*РџР»Р°РЅР’РёРґРѕРІРҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРє*/.x-ChartOfCharacteristicTypes { background-image: url('images/default/menu/ico/ChartOfCharacteristicTypes.gif'); }
+/*РџР»Р°РЅРћР±РјРµРЅР°*/.x-ExchangePlan { background-image: url('images/default/menu/ico/ExchangePlan.gif'); }
+/*РџР»Р°РЅРЎС‡РµС‚РѕРІ*/.x-ChartOfAccounts { background-image: url('images/default/menu/ico/ChartOfAccounts.gif'); }
+/*РџРѕРєР°Р·Р°С‚СЊР”Р°РЅРЅС‹Рµ*/.x-ShowData { background-image: url('images/default/menu/ico/ShowData.gif'); }
+/*РџРѕР»СѓС‡РёС‚СЊРќР°РІРёРіР°С†РёРѕРЅРЅСѓСЋРЎСЃС‹Р»РєСѓ*/.x-GetURL { background-image: url('images/default/menu/ico/GetURL.gif'); }
+/*РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ*/.x-User { background-image: url('images/default/menu/ico/User.gif'); }
+/*РџРѕР»СЊР·РѕРІР°С‚РµР»СЊР‘РµР·РќРµРѕР±С…РѕРґРёРјС‹С…РЎРІРѕР№СЃС‚РІ*/.x-UserWithoutNecessaryProperties { background-image: url('images/default/menu/ico/UserWithoutNecessaryProperties.gif'); }
+/*РџРѕР»СЊР·РѕРІР°С‚РµР»СЊРЎРђСѓС‚РµРЅС‚РёС„РёРєР°С†РёРµР№*/.x-UserWithAuthentication { background-image: url('images/default/menu/ico/UserWithAuthentication.gif'); }
+/*РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµРџРѕР»СЏРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionUserFields { background-image: url('images/default/menu/ico/DataCompositionUserFields.gif'); }
+/*РџРѕР»СЏР“СЂСѓРїРїРёСЂРѕРІРєРёРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…*/.x-DataCompositionGroupFields { background-image: url('images/default/menu/ico/DataCompositionGroupFields.gif'); }
+/*РџРѕР»СЏР“СЂСѓРїРїРёСЂРѕРІРєРёРљРѕРјРїРѕРЅРѕРІРєРёР”Р°РЅРЅС‹С…РќРµРґРѕСЃС‚СѓРїРЅС‹Рµ*/.x-DataCompositionGroupFieldsDisabled { background-image: url('images/default/menu/ico/DataCompositionGroupFieldsDisabled.gif'); }
+/*РћР±СЂР°Р±РѕС‚РєР°*/.x-Processing { background-image: url('images/default/menu/ico/Processing.gif'); }
+/*.disabled-row .x-grid-cell { background-color: gray !important;}вЂ‹*/
 
 		
 		

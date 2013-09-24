@@ -261,7 +261,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				'-',
 				{

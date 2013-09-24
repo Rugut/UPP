@@ -100,15 +100,17 @@
 				{
 					text:'',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
 					tooltip:'Новая группа',
+					iconCls:'x-CreateFolder',
 				},
 				{
 					text:'',
 					tooltip:'Скопировать',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -118,6 +120,7 @@
 				{
 					text:'',
 					tooltip:'Установить пометку удаления',
+					iconCls:'x-Delete',
 				},
 			]
 		},

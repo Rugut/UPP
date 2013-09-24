@@ -141,7 +141,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -184,10 +184,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -267,7 +269,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -295,10 +297,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',

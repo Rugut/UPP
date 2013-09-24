@@ -202,11 +202,13 @@
 				{
 					text:'Печать',
 					tooltip:'abdab67-5c90-4296-8168-239d22024d1',
+					iconCls:'x-PrintImmediately',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 				'-',

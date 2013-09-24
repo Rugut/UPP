@@ -327,6 +327,7 @@
 				{
 					text:'Действие1',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Действие2',
@@ -336,6 +337,7 @@
 				{
 					text:'Действие3',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 			]
 		},
@@ -567,6 +569,7 @@
 				{
 					text:'Действие1',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Действие2',
@@ -576,6 +579,7 @@
 				{
 					text:'Действие3',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 			]
 		},
@@ -672,6 +676,7 @@
 				{
 					text:'Действие1',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Действие2',
@@ -681,6 +686,7 @@
 				{
 					text:'Действие3',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 			]
 		},
@@ -1037,6 +1043,7 @@
 				{
 					text:'Действие1',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Действие2',
@@ -1046,6 +1053,7 @@
 				{
 					text:'Действие3',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 			]
 		},
@@ -1147,6 +1155,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

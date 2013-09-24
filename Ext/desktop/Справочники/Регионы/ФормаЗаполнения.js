@@ -198,11 +198,13 @@
 				{
 					text:'Дополнить справочник',
 					tooltip:'94cf65b-4109-4533-a1d7-c87b1fcc80a',
+					iconCls:'x-SaveFile',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 				'-',

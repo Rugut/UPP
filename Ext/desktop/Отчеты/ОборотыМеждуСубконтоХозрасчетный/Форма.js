@@ -118,15 +118,18 @@
 				{
 					text:'Възстанови стойностите...',
 					tooltip:'Восстановить значения',
+					iconCls:'x-RestoreValues',
 				},
 				{
 					text:'Съхрани стойностите...',
 					tooltip:'Сохранить значения',
+					iconCls:'x-SaveValues',
 				},
 				'-',
 				{
 					text:'Затвори',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 			]
 		},

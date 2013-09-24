@@ -65,6 +65,7 @@
 				{
 					text:'Выгрузить',
 					tooltip:'94cf65b-4109-4533-a1d7-c87b1fcc80a',
+					iconCls:'x-SaveFile',
 				},
 			]
 		},
@@ -191,6 +192,7 @@
 				{
 					text:'Отмена',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 			]
 		},

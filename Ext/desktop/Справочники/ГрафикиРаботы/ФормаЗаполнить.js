@@ -799,6 +799,7 @@
 				{
 					text:'Отмена',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 			]
 		},
@@ -849,6 +850,7 @@
 				{
 					text:'Отмена',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 				'-',
 				{

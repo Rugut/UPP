@@ -53,6 +53,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 				{
 					text:'Справка',
@@ -176,6 +177,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

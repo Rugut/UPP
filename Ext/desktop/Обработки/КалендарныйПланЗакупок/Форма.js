@@ -216,7 +216,7 @@
 				{
 					text:'Новый заказ',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				'-',
 				{
@@ -236,6 +236,7 @@
 				{
 					text:'',
 					tooltip:'1406535-6cc2-4410-95ea-753556e8460',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'',
@@ -344,6 +345,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

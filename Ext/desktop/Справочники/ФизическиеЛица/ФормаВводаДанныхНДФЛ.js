@@ -137,7 +137,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -164,7 +164,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -425,7 +425,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -696,16 +696,19 @@
 				{
 					text:'OK',
 					tooltip:'Записать объект и закрыть форму',
+					iconCls:'x-WriteAndClose',
 				},
 				'-',
 				{
 					text:'Записать',
 					tooltip:'Записать объект',
+					iconCls:'x-SaveFile',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

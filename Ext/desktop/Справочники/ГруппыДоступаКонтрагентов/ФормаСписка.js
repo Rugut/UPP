@@ -156,7 +156,7 @@
 				{
 					text:'',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -176,7 +176,7 @@
 				{
 					text:'',
 					tooltip:'Установить пометку удаления',
-					iconCls:'x-MarkToDelete',
+					iconCls:'x-Delete',
 				},
 				{
 					text:'Доступ к текущему элементу',

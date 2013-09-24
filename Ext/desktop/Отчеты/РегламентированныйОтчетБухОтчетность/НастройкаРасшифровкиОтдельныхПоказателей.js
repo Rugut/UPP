@@ -26,7 +26,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'Удалить',
@@ -50,6 +50,7 @@
 				{
 					text:'',
 					tooltip:'7c81c62-d6ad-4eae-9cea-0e203182db6',
+					iconCls:'x-Help',
 				},
 			]
 		},

@@ -230,7 +230,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -285,6 +285,7 @@
 				{
 					text:'(Ввести на основании)',
 					tooltip:'Ввести на основании',
+					iconCls:'x-InputOnBasis',
 				},
 					]
 				},
@@ -300,7 +301,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',

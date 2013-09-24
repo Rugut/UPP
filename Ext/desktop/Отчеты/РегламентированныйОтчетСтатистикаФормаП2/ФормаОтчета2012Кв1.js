@@ -26,6 +26,7 @@
 				{
 					text:'Проверить в Интернете',
 					tooltip:'cd23a32-5c7c-43f2-9021-80d98128556',
+					iconCls:'x-CheckSyntax',
 				},
 				{
 					text:'Отправить',
@@ -212,6 +213,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

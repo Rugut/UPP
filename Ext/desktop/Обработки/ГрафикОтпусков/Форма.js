@@ -264,6 +264,7 @@
 				{
 					text:'',
 					tooltip:'a67cb81-8d56-4534-90bd-b62fb0dbf5f',
+					iconCls:'x-GanttChart',
 				},
 				'-',
 				{

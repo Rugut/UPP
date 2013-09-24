@@ -168,6 +168,7 @@
 				{
 					text:'Выгрузить',
 					tooltip:'18ab7d0-4654-4542-bd5e-fd9d1352b5a',
+					iconCls:'x-SaveFile',
 				},
 			]
 		},

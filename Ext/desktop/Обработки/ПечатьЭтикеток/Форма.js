@@ -61,10 +61,12 @@
 				{
 					text:'Восстановить значения...',
 					tooltip:'Восстановить значения',
+					iconCls:'x-RestoreValues',
 				},
 				{
 					text:'Сохранить значения...',
 					tooltip:'Сохранить значения',
+					iconCls:'x-SaveValues',
 				},
 				'-',
 				{

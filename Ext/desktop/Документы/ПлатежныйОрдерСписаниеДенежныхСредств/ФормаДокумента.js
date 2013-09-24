@@ -1528,7 +1528,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -2158,16 +2158,19 @@
 				{
 					text:'ОК',
 					tooltip:'ОК',
+					iconCls:'x-WriteAndClose',
 				},
 				'-',
 				{
 					text:'Записать',
 					tooltip:'Записать',
+					iconCls:'x-SaveFile',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

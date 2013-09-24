@@ -53,6 +53,7 @@
 				{
 					text:'Регламентированные отчеты',
 					tooltip:'b817ee1-fd28-4e7f-bb4a-53686b2b153',
+					iconCls:'x-Report',
 				},
 				{
 					text:'Виды отправляемых документов',
@@ -1227,10 +1228,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -1501,7 +1504,7 @@
 				{
 					text:'&Новый',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -1520,10 +1523,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -1830,10 +1835,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -2163,7 +2170,7 @@
 				{
 					text:'&Новый',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -2182,10 +2189,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -2806,7 +2815,7 @@
 				{
 					text:'&Новый',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -2825,10 +2834,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -3099,10 +3110,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -3719,7 +3732,7 @@
 				{
 					text:'&Новый',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'',
@@ -3738,10 +3751,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',
@@ -4030,10 +4045,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					xtype: 'splitbutton',

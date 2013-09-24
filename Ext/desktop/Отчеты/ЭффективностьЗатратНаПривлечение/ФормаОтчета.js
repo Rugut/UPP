@@ -67,6 +67,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 					]
 				},
@@ -74,6 +75,7 @@
 				{
 					text:'',
 					tooltip:'ce78048-0196-4f80-a781-9829cdb7f43',
+					iconCls:'x-GenerateReport',
 				},
 				'-',
 				{
@@ -84,11 +86,13 @@
 				{
 					text:'',
 					tooltip:'abdab67-5c90-4296-8168-239d22024d1',
+					iconCls:'x-PrintImmediately',
 				},
 				'-',
 				{
 					text:'',
 					tooltip:'b817ee1-fd28-4e7f-bb4a-53686b2b153',
+					iconCls:'x-Report',
 				},
 				'-',
 				{

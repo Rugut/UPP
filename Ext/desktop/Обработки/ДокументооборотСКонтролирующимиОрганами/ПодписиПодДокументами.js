@@ -175,6 +175,7 @@
 				{
 					text:'Проверить',
 					tooltip:'cd23a32-5c7c-43f2-9021-80d98128556',
+					iconCls:'x-CheckSyntax',
 				},
 				'-',
 				{

@@ -46,15 +46,18 @@
 				{
 					text:'Восстановить значения...',
 					tooltip:'Восстановить значения',
+					iconCls:'x-RestoreValues',
 				},
 				{
 					text:'Сохранить значения...',
 					tooltip:'Сохранить значения',
+					iconCls:'x-SaveValues',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 				{
 					text:'Справка',
@@ -86,10 +89,12 @@
 				{
 					text:'Восстановить значения',
 					tooltip:'Восстановить значения',
+					iconCls:'x-RestoreValues',
 				},
 				{
 					text:'Сохранить значения...',
 					tooltip:'Сохранить значения',
+					iconCls:'x-SaveValues',
 				},
 				{
 					text:'Справка',

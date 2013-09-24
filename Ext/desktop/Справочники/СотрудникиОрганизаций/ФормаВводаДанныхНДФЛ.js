@@ -45,7 +45,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				'-',
 				{
@@ -275,7 +275,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				'-',
 				{
@@ -525,6 +525,7 @@
 				{
 					text:'Отмена',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 			]
 		},

@@ -71,6 +71,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 				},
 				{
 					text:'Справка',

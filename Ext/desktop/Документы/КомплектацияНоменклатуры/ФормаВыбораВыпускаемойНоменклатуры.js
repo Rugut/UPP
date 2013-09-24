@@ -31,6 +31,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'377931c-5744-4948-bade-cb35117b5f6',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

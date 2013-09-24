@@ -26,6 +26,7 @@
 				{
 					text:'Назад',
 					tooltip:'c904ff7-1195-4a7c-9a38-7b1f6ca49cc',
+					iconCls:'x-Back',
 				},
 				{
 					text:'Вперед',

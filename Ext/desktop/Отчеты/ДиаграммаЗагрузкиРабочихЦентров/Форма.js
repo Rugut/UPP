@@ -34,10 +34,12 @@
 				{
 					text:'Восстановить значения...',
 					tooltip:'Восстановить значения',
+					iconCls:'x-RestoreValues',
 				},
 				{
 					text:'Сохранить значения...',
 					tooltip:'Сохранить значения',
+					iconCls:'x-SaveValues',
 				},
 				'-',
 				{
@@ -55,10 +57,12 @@
 				{
 					text:'Сохранить значения...',
 					tooltip:'Сохранить значения',
+					iconCls:'x-SaveValues',
 				},
 				{
 					text:'Восстановить значения...',
 					tooltip:'Восстановить значения',
+					iconCls:'x-RestoreValues',
 				},
 				{
 					text:'Справка',
@@ -201,7 +205,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'Удалить',

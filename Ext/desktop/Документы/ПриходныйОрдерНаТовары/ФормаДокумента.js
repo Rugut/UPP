@@ -302,7 +302,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				{
 					text:'&Скопировать',
@@ -664,16 +664,19 @@
 				{
 					text:'Записать',
 					tooltip:'Записать',
+					iconCls:'x-SaveFile',
 				},
 				'-',
 				{
 					text:'ОК',
 					tooltip:'ОК',
+					iconCls:'x-WriteAndClose',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

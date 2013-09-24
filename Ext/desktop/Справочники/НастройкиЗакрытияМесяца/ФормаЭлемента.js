@@ -48,14 +48,17 @@
 				{
 					text:'Скопировать',
 					tooltip:'Создать новый копированием',
+					iconCls:'x-CloneObject',
 				},
 				{
 					text:'Документы регламентных операций',
 					tooltip:'b87ad1b-d8cc-43c1-b5c4-dc43613c518',
+					iconCls:'x-InformationRegister',
 				},
 				{
 					text:'Отчеты регламентных операций',
 					tooltip:'b87ad1b-d8cc-43c1-b5c4-dc43613c518',
+					iconCls:'x-InformationRegister',
 				},
 				{
 					text:'Переключить видимость справки формы',
@@ -301,10 +304,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Отключить отбор',
@@ -460,10 +465,12 @@
 				{
 					text:'Установить отбор и сортировку списка...',
 					tooltip:'Отбор и сортировка',
+					iconCls:'x-FilterAndSort',
 				},
 				{
 					text:'Отбор по значению в текущей колонке',
 					tooltip:'Отбор по значению в текущей колонке',
+					iconCls:'x-FilterByCurrentValue',
 				},
 				{
 					text:'Отключить отбор',
@@ -726,16 +733,19 @@
 				{
 					text:'OK',
 					tooltip:'Записать объект и закрыть форму',
+					iconCls:'x-WriteAndClose',
 				},
 				'-',
 				{
 					text:'Записать',
 					tooltip:'Записать объект',
+					iconCls:'x-SaveFile',
 				},
 				'-',
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]

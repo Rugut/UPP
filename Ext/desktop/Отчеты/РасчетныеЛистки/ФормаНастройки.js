@@ -34,6 +34,7 @@
 				{
 					text:'',
 					tooltip:'ce78048-0196-4f80-a781-9829cdb7f43',
+					iconCls:'x-GenerateReport',
 				},
 				'-',
 				{
@@ -44,6 +45,7 @@
 				{
 					text:'Закрыть',
 					tooltip:'Закрыть',
+					iconCls:'x-Close',
 					handler: function () {this.up('window').close();},
 				},
 			]
@@ -1176,7 +1178,7 @@
 				{
 					text:'&Добавить',
 					tooltip:'Добавить',
-					iconCls:'x-add',
+					iconCls:'x-copy',
 				},
 				'-',
 				{
