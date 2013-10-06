@@ -205,7 +205,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:661px;height:25px;',
 			Привязка:
 			{
@@ -296,7 +296,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:136px;width:645px;height:204px;',
 			Привязка:
 			{
@@ -321,11 +321,12 @@
 			Ширина:645,
 			Верх:136,
 			Лево:8,
+			Групповой: true,
 			height: 204,width: 645,
 			items:
 			[
 				{
-					id: Товары,
+					id: 'Товары',
 					items:
 					[
 		{
@@ -800,7 +801,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТовары,
+			id: 'КоманднаяПанельТовары',
 			style: 'position:absolute;left:6px;top:0px;width:631px;height:24px;',
 			Привязка:
 			{
@@ -864,12 +865,12 @@
 					]
 				},
 				{
-					id: Тара,
+					id: 'Тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВозвратнаяТара,
+			id: 'КоманднаяПанельВозвратнаяТара',
 			style: 'position:absolute;left:6px;top:0px;width:631px;height:24px;',
 			Привязка:
 			{
@@ -1130,7 +1131,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -1294,7 +1295,7 @@
 			xtype: 'label',
 			id: 'РамкаВзаиморасчетыИДополнительнаяИнформация',
 			text: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:631px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:631px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1323,7 +1324,7 @@
 			xtype: 'label',
 			id: 'РамкаДополнительнаяАналитика',
 			text: 'Рамка',
-			style: 'position:absolute;left:6px;top:55px;width:631px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:55px;width:631px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1539,7 +1540,7 @@
 					]
 				},
 				{
-					id: СчетаУчета,
+					id: 'СчетаУчета',
 					items:
 					[
 		{
@@ -1760,7 +1761,7 @@
 					]
 				},
 				{
-					id: ДокументыРасчетовСКонтрагентом,
+					id: 'ДокументыРасчетовСКонтрагентом',
 					items:
 					[
 		{
@@ -1884,7 +1885,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументыРасчетовСКонтрагентом,
+			id: 'КоманднаяПанельДокументыРасчетовСКонтрагентом',
 			style: 'position:absolute;left:8px;top:1px;width:628px;height:26px;',
 			Привязка:
 			{
@@ -1952,7 +1953,7 @@
 					]
 				},
 				{
-					id: НДС,
+					id: 'НДС',
 					items:
 					[
 		{
@@ -2878,7 +2879,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:415px;width:661px;height:25px;',
 			Привязка:
 			{
@@ -2940,8 +2941,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2953,19 +2953,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

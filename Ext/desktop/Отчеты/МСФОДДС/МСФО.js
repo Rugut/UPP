@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
 			Привязка:
 			{
@@ -94,7 +94,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДействий,
+			id: 'КоманднаяПанельДействий',
 			style: 'position:absolute;left:0px;top:391px;width:732px;height:25px;',
 			Привязка:
 			{
@@ -130,7 +130,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:109px;width:716px;height:253px;',
 			Привязка:
 			{
@@ -155,11 +155,12 @@
 			Ширина:716,
 			Верх:109,
 			Лево:8,
+			Групповой: true,
 			height: 253,width: 716,
 			items:
 			[
 				{
-					id: ДДС,
+					id: 'ДДС',
 					items:
 					[
 		{
@@ -293,7 +294,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУНижняя,
+			id: 'ПанельЭУНижняя',
 			style: 'position:absolute;left:5px;top:362px;width:719px;height:23px;',
 			Привязка:
 			{
@@ -318,12 +319,13 @@
 			Ширина:719,
 			Верх:362,
 			Лево:5,
+			Групповой: true,
 			height: 23,width: 719,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -393,7 +395,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУВерхняя,
+			id: 'ПанельЭУВерхняя',
 			style: 'position:absolute;left:5px;top:33px;width:719px;height:75px;',
 			Привязка:
 			{
@@ -418,12 +420,13 @@
 			Ширина:719,
 			Верх:33,
 			Лево:5,
+			Групповой: true,
 			height: 75,width: 719,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -807,8 +810,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -820,19 +822,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

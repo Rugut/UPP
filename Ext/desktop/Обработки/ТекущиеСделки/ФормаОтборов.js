@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:8px;width:462px;height:219px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:462,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 219,width: 462,
 			items:
 			[
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -1147,7 +1148,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:235px;width:478px;height:25px;',
 			Привязка:
 			{
@@ -1200,8 +1201,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1213,19 +1213,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:67px;width:648px;height:326px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:648,
 			Верх:67,
 			Лево:8,
+			Групповой: true,
 			height: 326,width: 648,
 			items:
 			[
 				{
-					id: Валюты,
+					id: 'Валюты',
 					items:
 					[
 		{
@@ -146,7 +147,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВалюты,
+			id: 'КоманднаяПанельВалюты',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -202,7 +203,7 @@
 					]
 				},
 				{
-					id: Организации,
+					id: 'Организации',
 					items:
 					[
 		{
@@ -308,7 +309,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОрганизации,
+			id: 'КоманднаяПанельОрганизации',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -364,7 +365,7 @@
 					]
 				},
 				{
-					id: Контрагенты,
+					id: 'Контрагенты',
 					items:
 					[
 		{
@@ -470,7 +471,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтрагенты,
+			id: 'КоманднаяПанельКонтрагенты',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -531,7 +532,7 @@
 					]
 				},
 				{
-					id: Банки,
+					id: 'Банки',
 					items:
 					[
 		{
@@ -655,7 +656,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельБанки,
+			id: 'КоманднаяПанельБанки',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -711,7 +712,7 @@
 					]
 				},
 				{
-					id: БанковскиеСчета,
+					id: 'БанковскиеСчета',
 					items:
 					[
 		{
@@ -835,7 +836,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельБанковскиеСчета,
+			id: 'КоманднаяПанельБанковскиеСчета',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -891,7 +892,7 @@
 					]
 				},
 				{
-					id: ЕдиницыИзмерения,
+					id: 'ЕдиницыИзмерения',
 					items:
 					[
 		{
@@ -988,7 +989,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЕдиницыИзмерения,
+			id: 'КоманднаяПанельЕдиницыИзмерения',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -1049,7 +1050,7 @@
 					]
 				},
 				{
-					id: ВидыНоменклатуры,
+					id: 'ВидыНоменклатуры',
 					items:
 					[
 		{
@@ -1155,7 +1156,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВидыНоменулатуры,
+			id: 'КоманднаяПанельВидыНоменулатуры',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -1216,12 +1217,12 @@
 					]
 				},
 				{
-					id: Номенклатура,
+					id: 'Номенклатура',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНоменклатура,
+			id: 'КоманднаяПанельНоменклатура',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -1437,7 +1438,7 @@
 					]
 				},
 				{
-					id: Качество,
+					id: 'Качество',
 					items:
 					[
 		{
@@ -1534,7 +1535,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКачество,
+			id: 'КоманднаяПанельКачество',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -1595,7 +1596,7 @@
 					]
 				},
 				{
-					id: ТипыЦенКонтрагентов,
+					id: 'ТипыЦенКонтрагентов',
 					items:
 					[
 		{
@@ -1728,7 +1729,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТипЦен,
+			id: 'КоманднаяПанельТипЦен',
 			style: 'position:absolute;left:6px;top:6px;width:634px;height:24px;',
 			Привязка:
 			{
@@ -1792,7 +1793,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИнформации,
+			id: 'ПанельИнформации',
 			style: 'position:absolute;left:8px;top:6px;width:648px;height:60px;',
 			Привязка:
 			{
@@ -1817,12 +1818,13 @@
 			Ширина:648,
 			Верх:6,
 			Лево:8,
+			Групповой: true,
 			height: 60,width: 648,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаОсновная,
+					id: 'СтраницаОсновная',
 					items:
 					[
 					]
@@ -1835,7 +1837,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:400px;width:664px;height:25px;',
 			Привязка:
 			{
@@ -1895,8 +1897,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1908,19 +1909,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

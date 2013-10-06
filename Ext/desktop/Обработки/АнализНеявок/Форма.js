@@ -470,7 +470,7 @@
 			xtype: 'label',
 			id: 'РамкаНеявки',
 			text: 'Неявки',
-			style: 'position:absolute;left:8px;top:78px;width:603px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:78px;width:603px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -497,7 +497,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНеявки,
+			id: 'КоманднаяПанельНеявки',
 			style: 'position:absolute;left:8px;top:94px;width:603px;height:24px;',
 			Привязка:
 			{
@@ -535,7 +535,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:388px;width:619px;height:25px;',
 			Привязка:
 			{
@@ -711,7 +711,7 @@
 			xtype: 'label',
 			id: 'РамкаРКО',
 			text: 'Формирование расчетных документов',
-			style: 'position:absolute;left:8px;top:339px;width:603px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:339px;width:603px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -824,12 +824,7 @@
 			Лево:466,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаПериод',
 			boxLabel: 'За период с:',
 			style: 'position:absolute;left:8px;top:30px;width:90px;height:19px;',
@@ -858,7 +853,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПоДокументу',
 			boxLabel: 'По документу:',
 			style: 'position:absolute;left:8px;top:54px;width:90px;height:19px;',
@@ -886,14 +881,11 @@
 			Верх:54,
 			Лево:8,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -905,19 +897,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

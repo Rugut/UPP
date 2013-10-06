@@ -51,7 +51,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:21px;top:114px;width:622px;height:6px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:21px;top:114px;width:622px;height:6px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -77,12 +77,7 @@
 			Лево:21,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСогласен',
 			boxLabel: '',
 			style: 'position:absolute;left:92px;top:132px;width:551px;height:16px;',
@@ -111,7 +106,7 @@
 			Лево:92,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСогласен2',
 			boxLabel: '',
 			style: 'position:absolute;left:92px;top:158px;width:551px;height:16px;',
@@ -139,15 +134,13 @@
 			Верх:158,
 			Лево:92,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:193px;width:663px;height:25px;',
 			Привязка:
 			{
@@ -193,8 +186,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -206,19 +198,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

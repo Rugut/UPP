@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			Привязка:
 			{
@@ -120,7 +120,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУВерхняя,
+			id: 'ПанельЭУВерхняя',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:48px;',
 			Привязка:
 			{
@@ -145,12 +145,13 @@
 			Ширина:654,
 			Верх:74,
 			Лево:8,
+			Групповой: true,
 			height: 48,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -350,7 +351,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУНижняя,
+			id: 'ПанельЭУНижняя',
 			style: 'position:absolute;left:8px;top:433px;width:654px;height:24px;',
 			Привязка:
 			{
@@ -375,12 +376,13 @@
 			Ширина:654,
 			Верх:433,
 			Лево:8,
+			Групповой: true,
 			height: 24,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -512,7 +514,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:122px;width:654px;height:310px;',
 			Привязка:
 			{
@@ -537,17 +539,18 @@
 			Ширина:654,
 			Верх:122,
 			Лево:8,
+			Групповой: true,
 			height: 310,width: 654,
 			items:
 			[
 				{
-					id: Титульный,
+					id: 'Титульный',
 				},
 				{
-					id: Раздел1,
+					id: 'Раздел1',
 				},
 				{
-					id: Раздел2,
+					id: 'Раздел2',
 					items:
 					[
 		{
@@ -814,7 +817,7 @@
 					]
 				},
 				{
-					id: Раздел3,
+					id: 'Раздел3',
 					items:
 					[
 		{
@@ -916,7 +919,7 @@
 					]
 				},
 				{
-					id: Раздел3_Прил1,
+					id: 'Раздел3_Прил1',
 					items:
 					[
 		{
@@ -1096,7 +1099,7 @@
 					]
 				},
 				{
-					id: Раздел3_Прил2,
+					id: 'Раздел3_Прил2',
 					items:
 					[
 		{
@@ -1160,10 +1163,10 @@
 					]
 				},
 				{
-					id: Раздел4,
+					id: 'Раздел4',
 				},
 				{
-					id: Раздел5,
+					id: 'Раздел5',
 					items:
 					[
 		{
@@ -1372,10 +1375,10 @@
 					]
 				},
 				{
-					id: Раздел6,
+					id: 'Раздел6',
 				},
 				{
-					id: Раздел7,
+					id: 'Раздел7',
 					items:
 					[
 		{
@@ -1471,7 +1474,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтправки,
+			id: 'ПанельОтправки',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:37px;',
 			Привязка:
 			{
@@ -1496,17 +1499,18 @@
 			Ширина:654,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 37,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельОтправкиВнутренняя,
+			id: 'ПанельОтправкиВнутренняя',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:35px;',
 			Привязка:
 			{
@@ -1531,12 +1535,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 35,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -1553,7 +1558,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДействий,
+			id: 'КоманднаяПанельДействий',
 			style: 'position:absolute;left:0px;top:463px;width:670px;height:25px;',
 			Привязка:
 			{
@@ -1609,8 +1614,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1622,19 +1626,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

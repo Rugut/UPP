@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:8px;width:684px;height:459px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:684,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 459,width: 684,
 			items:
 			[
 				{
-					id: СтраницаОбщие,
+					id: 'СтраницаОбщие',
 					items:
 					[
 		{
@@ -128,7 +129,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоказатели,
+			id: 'КоманднаяПанельПоказатели',
 			style: 'position:absolute;left:6px;top:95px;width:670px;height:24px;',
 			Привязка:
 			{
@@ -254,7 +255,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПоказатели',
 			text: 'Показатели',
-			style: 'position:absolute;left:6px;top:79px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:79px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -312,7 +313,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПараметры',
 			text: 'Параметры',
-			style: 'position:absolute;left:6px;top:32px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:32px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -426,7 +427,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыборПериода,
+			id: 'ПанельВыборПериода',
 			style: 'position:absolute;left:6px;top:6px;width:259px;height:19px;',
 			Привязка:
 			{
@@ -451,12 +452,13 @@
 			Ширина:259,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 19,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаПроизвольныйПериод,
+					id: 'СтраницаПроизвольныйПериод',
 					items:
 					[
 		{
@@ -617,7 +619,7 @@
 					]
 				},
 				{
-					id: СтраницаНаДату,
+					id: 'СтраницаНаДату',
 					items:
 					[
 		{
@@ -686,7 +688,7 @@
 					]
 				},
 				{
-					id: СтраницаПериод,
+					id: 'СтраницаПериод',
 					items:
 					[
 		{
@@ -812,7 +814,7 @@
 					]
 				},
 				{
-					id: СтраницаГруппировки,
+					id: 'СтраницаГруппировки',
 					items:
 					[
 		{
@@ -983,7 +985,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмеренияСтроки,
+			id: 'КоманднаяПанельИзмеренияСтроки',
 			style: 'position:absolute;left:6px;top:6px;width:320px;height:24px;',
 			Привязка:
 			{
@@ -1016,7 +1018,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмеренияКолонки,
+			id: 'КоманднаяПанельИзмеренияКолонки',
 			style: 'position:absolute;left:356px;top:6px;width:320px;height:24px;',
 			Привязка:
 			{
@@ -1049,7 +1051,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельГруппировки,
+			id: 'КоманднаяПанельГруппировки',
 			style: 'position:absolute;left:329px;top:30px;width:24px;height:399px;',
 			Привязка:
 			{
@@ -1093,7 +1095,7 @@
 					]
 				},
 				{
-					id: СтраницаИнтервалыГруппировок,
+					id: 'СтраницаИнтервалыГруппировок',
 					items:
 					[
 		{
@@ -1127,7 +1129,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтобранныеИнтервалы,
+			id: 'КоманднаяПанельОтобранныеИнтервалы',
 			style: 'position:absolute;left:6px;top:48px;width:670px;height:24px;',
 			Привязка:
 			{
@@ -1302,7 +1304,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОтобранныеИнтервалы',
 			text: 'Отобранные интервалы',
-			style: 'position:absolute;left:6px;top:32px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:32px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1330,7 +1332,7 @@
 					]
 				},
 				{
-					id: СтраницаОтборы,
+					id: 'СтраницаОтборы',
 					items:
 					[
 		{
@@ -1454,7 +1456,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
 			Привязка:
 			{
@@ -1488,12 +1490,12 @@
 					]
 				},
 				{
-					id: СтраницаДополнительныеПоля,
+					id: 'СтраницаДополнительныеПоля',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВыбранныеПоля,
+			id: 'КоманднаяПанельВыбранныеПоля',
 			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
 			Привязка:
 			{
@@ -1619,12 +1621,12 @@
 					]
 				},
 				{
-					id: СтраницаСортировка,
+					id: 'СтраницаСортировка',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПорядок,
+			id: 'КоманднаяПанельПорядок',
 			style: 'position:absolute;left:6px;top:6px;width:670px;height:24px;',
 			Привязка:
 			{
@@ -1741,7 +1743,7 @@
 					]
 				},
 				{
-					id: СтраницаОформление,
+					id: 'СтраницаОформление',
 					items:
 					[
 		{
@@ -1847,7 +1849,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельУсловноеОформление,
+			id: 'КоманднаяПанельУсловноеОформление',
 			style: 'position:absolute;left:6px;top:69px;width:670px;height:24px;',
 			Привязка:
 			{
@@ -1882,7 +1884,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУсловноеОформление',
 			text: 'Условное оформление',
-			style: 'position:absolute;left:6px;top:53px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:53px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1911,7 +1913,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОформлениеОтчета',
 			text: 'Оформление отчета',
-			style: 'position:absolute;left:6px;top:6px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:670px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2075,7 +2077,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоказатели1,
+			id: 'КоманднаяПанельПоказатели1',
 			style: 'position:absolute;left:8px;top:97px;width:214px;height:24px;',
 			Привязка:
 			{
@@ -2142,7 +2144,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПоказатели1',
 			text: 'Показатели',
-			style: 'position:absolute;left:8px;top:81px;width:214px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:81px;width:214px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2288,7 +2290,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор1,
+			id: 'КоманднаяПанельОтбор1',
 			style: 'position:absolute;left:8px;top:293px;width:684px;height:24px;',
 			Привязка:
 			{
@@ -2321,7 +2323,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы1,
+			id: 'ОсновныеДействияФормы1',
 			style: 'position:absolute;left:0px;top:475px;width:700px;height:25px;',
 			Привязка:
 			{
@@ -2375,7 +2377,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы2,
+			id: 'ОсновныеДействияФормы2',
 			style: 'position:absolute;left:0px;top:475px;width:700px;height:25px;',
 			Привязка:
 			{
@@ -2595,7 +2597,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмеренияСтроки1,
+			id: 'КоманднаяПанельИзмеренияСтроки1',
 			style: 'position:absolute;left:242px;top:97px;width:210px;height:24px;',
 			Привязка:
 			{
@@ -2628,7 +2630,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмеренияКолонки1,
+			id: 'КоманднаяПанельИзмеренияКолонки1',
 			style: 'position:absolute;left:482px;top:97px;width:210px;height:24px;',
 			Привязка:
 			{
@@ -2663,7 +2665,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыГруппировкиСтрок1',
 			text: 'Группировки строк',
-			style: 'position:absolute;left:242px;top:81px;width:210px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:242px;top:81px;width:210px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2692,7 +2694,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыГруппировкиКолонок1',
 			text: 'Группировки колонок',
-			style: 'position:absolute;left:482px;top:81px;width:210px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:482px;top:81px;width:210px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2721,7 +2723,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОтборы1',
 			text: 'Отборы',
-			style: 'position:absolute;left:8px;top:277px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:277px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2822,7 +2824,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоказатели2,
+			id: 'КоманднаяПанельПоказатели2',
 			style: 'position:absolute;left:8px;top:97px;width:332px;height:24px;',
 			Привязка:
 			{
@@ -2889,7 +2891,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПоказатели2',
 			text: 'Показатели',
-			style: 'position:absolute;left:8px;top:81px;width:332px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:81px;width:332px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3035,7 +3037,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор2,
+			id: 'КоманднаяПанельОтбор2',
 			style: 'position:absolute;left:8px;top:293px;width:684px;height:24px;',
 			Привязка:
 			{
@@ -3151,7 +3153,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмеренияСтроки2,
+			id: 'КоманднаяПанельИзмеренияСтроки2',
 			style: 'position:absolute;left:360px;top:97px;width:332px;height:24px;',
 			Привязка:
 			{
@@ -3186,7 +3188,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыГруппировкиСтрок2',
 			text: 'Группировки строк',
-			style: 'position:absolute;left:360px;top:81px;width:332px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:360px;top:81px;width:332px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3215,7 +3217,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОтборы2',
 			text: 'Отборы',
-			style: 'position:absolute;left:8px;top:277px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:277px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3449,7 +3451,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПараметры1',
 			text: 'Параметры',
-			style: 'position:absolute;left:8px;top:34px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:34px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3478,7 +3480,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПараметры2',
 			text: 'Параметры',
-			style: 'position:absolute;left:8px;top:34px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:34px;width:684px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3737,7 +3739,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыборПериода1,
+			id: 'ПанельВыборПериода1',
 			style: 'position:absolute;left:8px;top:8px;width:259px;height:19px;',
 			Привязка:
 			{
@@ -3762,12 +3764,13 @@
 			Ширина:259,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 19,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаПроизвольныйПериод,
+					id: 'СтраницаПроизвольныйПериод',
 					items:
 					[
 		{
@@ -4015,7 +4018,7 @@
 					]
 				},
 				{
-					id: СтраницаНаДату,
+					id: 'СтраницаНаДату',
 					items:
 					[
 		{
@@ -4055,7 +4058,7 @@
 					]
 				},
 				{
-					id: СтраницаПериод,
+					id: 'СтраницаПериод',
 					items:
 					[
 		{
@@ -4122,7 +4125,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыборПериода2,
+			id: 'ПанельВыборПериода2',
 			style: 'position:absolute;left:8px;top:8px;width:259px;height:19px;',
 			Привязка:
 			{
@@ -4147,12 +4150,13 @@
 			Ширина:259,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 19,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаПроизвольныйПериод,
+					id: 'СтраницаПроизвольныйПериод',
 					items:
 					[
 		{
@@ -4400,7 +4404,7 @@
 					]
 				},
 				{
-					id: СтраницаНаДату,
+					id: 'СтраницаНаДату',
 					items:
 					[
 		{
@@ -4440,7 +4444,7 @@
 					]
 				},
 				{
-					id: СтраницаПериод,
+					id: 'СтраницаПериод',
 					items:
 					[
 		{
@@ -4507,7 +4511,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельГруппировки1,
+			id: 'КоманднаяПанельГруппировки1',
 			style: 'position:absolute;left:455px;top:121px;width:24px;height:149px;',
 			Привязка:
 			{
@@ -4554,7 +4558,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:475px;width:700px;height:25px;',
 			Привязка:
 			{
@@ -4607,8 +4611,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4620,19 +4623,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

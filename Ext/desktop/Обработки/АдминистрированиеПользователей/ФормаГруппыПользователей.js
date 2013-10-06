@@ -94,7 +94,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:739px;height:25px;',
 			Привязка:
 			{
@@ -293,7 +293,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:361px;width:739px;height:25px;',
 			Привязка:
 			{
@@ -348,7 +348,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПодборПользователей,
+			id: 'ПанельПодборПользователей',
 			style: 'position:absolute;left:462px;top:32px;width:269px;height:322px;',
 			Привязка:
 			{
@@ -373,12 +373,13 @@
 			Ширина:269,
 			Верх:32,
 			Лево:462,
+			Групповой: true,
 			height: 322,width: 269,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Пользователи,
+					id: 'Пользователи',
 					items:
 					[
 		{
@@ -546,7 +547,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанныеГруппы,
+			id: 'ПанельДанныеГруппы',
 			style: 'position:absolute;left:231px;top:32px;width:225px;height:322px;',
 			Привязка:
 			{
@@ -571,12 +572,13 @@
 			Ширина:225,
 			Верх:32,
 			Лево:231,
+			Групповой: true,
 			height: 322,width: 225,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СоставГруппы,
+					id: 'СоставГруппы',
 					items:
 					[
 		{
@@ -661,8 +663,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -674,19 +675,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

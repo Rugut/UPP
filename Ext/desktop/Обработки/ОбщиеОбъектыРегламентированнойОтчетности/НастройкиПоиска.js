@@ -80,12 +80,7 @@
 			Лево:57,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательИскатьВТексте1',
 			boxLabel: 'поиск значения',
 			style: 'position:absolute;left:57px;top:33px;width:107px;height:15px;',
@@ -114,7 +109,7 @@
 			Лево:57,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательИскатьВТексте2',
 			boxLabel: 'поиск текста',
 			style: 'position:absolute;left:57px;top:50px;width:100px;height:15px;',
@@ -142,15 +137,13 @@
 			Верх:50,
 			Лево:57,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:73px;width:403px;height:25px;',
 			Привязка:
 			{
@@ -204,8 +197,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -217,19 +209,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

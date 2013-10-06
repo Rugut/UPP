@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:659px;height:25px;',
 			Привязка:
 			{
@@ -932,7 +932,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:156px;width:644px;height:210px;',
 			Привязка:
 			{
@@ -957,11 +957,12 @@
 			Ширина:644,
 			Верх:156,
 			Лево:8,
+			Групповой: true,
 			height: 210,width: 644,
 			items:
 			[
 				{
-					id: Основная,
+					id: 'Основная',
 					items:
 					[
 		{
@@ -1374,7 +1375,7 @@
 					]
 				},
 				{
-					id: Зависимые,
+					id: 'Зависимые',
 					items:
 					[
 		{
@@ -1581,7 +1582,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЗависимости,
+			id: 'КоманднаяПанельЗависимости',
 			style: 'position:absolute;left:6px;top:0px;width:630px;height:24px;',
 			Привязка:
 			{
@@ -1804,7 +1805,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:401px;width:659px;height:25px;',
 			Привязка:
 			{
@@ -1866,8 +1867,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1879,19 +1879,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

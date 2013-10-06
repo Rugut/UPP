@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:715px;height:25px;',
 			Привязка:
 			{
@@ -457,7 +457,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Закладки,
+			id: 'Закладки',
 			style: 'position:absolute;left:8px;top:85px;width:699px;height:328px;',
 			Привязка:
 			{
@@ -482,11 +482,12 @@
 			Ширина:699,
 			Верх:85,
 			Лево:8,
+			Групповой: true,
 			height: 328,width: 699,
 			items:
 			[
 				{
-					id: Реализация,
+					id: 'Реализация',
 					items:
 					[
 		{
@@ -686,12 +687,12 @@
 					]
 				},
 				{
-					id: КосвенныеРасходы,
+					id: 'КосвенныеРасходы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель,
+			id: 'КоманднаяПанель',
 			style: 'position:absolute;left:6px;top:1px;width:685px;height:24px;',
 			Привязка:
 			{
@@ -1312,7 +1313,7 @@
 					]
 				},
 				{
-					id: СчетаСписанияНДС,
+					id: 'СчетаСписанияНДС',
 					items:
 					[
 		{
@@ -1559,7 +1560,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСчетСписанияБУ,
+			id: 'ПанельСчетСписанияБУ',
 			style: 'position:absolute;left:6px;top:128px;width:333px;height:91px;',
 			Привязка:
 			{
@@ -1584,12 +1585,13 @@
 			Ширина:333,
 			Верх:128,
 			Лево:6,
+			Групповой: true,
 			height: 91,width: 333,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Счет,
+					id: 'Счет',
 					items:
 					[
 		{
@@ -1992,7 +1994,7 @@
 					]
 				},
 				{
-					id: Надпись,
+					id: 'Надпись',
 				},
 			]
 		},
@@ -2000,7 +2002,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСчетСписанияНДС',
 			text: 'Счет и аналитика списания НДС',
-			style: 'position:absolute;left:6px;top:33px;width:685px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:33px;width:685px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2027,7 +2029,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСчетСписанияНУ,
+			id: 'ПанельСчетСписанияНУ',
 			style: 'position:absolute;left:359px;top:128px;width:332px;height:91px;',
 			Привязка:
 			{
@@ -2052,12 +2054,13 @@
 			Ширина:332,
 			Верх:128,
 			Лево:359,
+			Групповой: true,
 			height: 91,width: 332,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Счет,
+					id: 'Счет',
 					items:
 					[
 		{
@@ -2460,7 +2463,7 @@
 					]
 				},
 				{
-					id: Надпись,
+					id: 'Надпись',
 				},
 			]
 		},
@@ -2566,7 +2569,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:445px;width:715px;height:25px;',
 			Привязка:
 			{
@@ -2628,8 +2631,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2641,19 +2643,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

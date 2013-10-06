@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ОсновнаяКоманднаяПанель,
+			id: 'ОсновнаяКоманднаяПанель',
 			style: 'position:absolute;left:0px;top:0px;width:794px;height:25px;',
 			Привязка:
 			{
@@ -108,7 +108,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяОтборПоПериоду,
+			id: 'КоманднаяОтборПоПериоду',
 			style: 'position:absolute;left:561px;top:0px;width:233px;height:24px;',
 			Привязка:
 			{
@@ -206,7 +206,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУчетнаяЗапись,
+			id: 'ПанельУчетнаяЗапись',
 			style: 'position:absolute;left:8px;top:33px;width:778px;height:23px;',
 			Привязка:
 			{
@@ -231,12 +231,13 @@
 			Ширина:778,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 23,width: 778,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -338,7 +339,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:60px;width:778px;height:456px;',
 			Привязка:
 			{
@@ -363,17 +364,18 @@
 			Ширина:778,
 			Верх:60,
 			Лево:8,
+			Групповой: true,
 			height: 456,width: 778,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельФормы,
+			id: 'ПанельФормы',
 			style: 'position:absolute;left:201px;top:0px;width:577px;height:456px;',
 			Привязка:
 			{
@@ -398,16 +400,17 @@
 			Ширина:577,
 			Верх:0,
 			Лево:201,
+			Групповой: true,
 			height: 456,width: 577,
 			items:
 			[
 				{
-					id: ФНС,
+					id: 'ФНС',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельФНС,
+			id: 'ПанельФНС',
 			style: 'position:absolute;left:6px;top:6px;width:543px;height:442px;',
 			Привязка:
 			{
@@ -432,11 +435,12 @@
 			Ширина:543,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 442,width: 543,
 			items:
 			[
 				{
-					id: Отчетность,
+					id: 'Отчетность',
 					items:
 					[
 		{
@@ -668,7 +672,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаОтчетностьОтбор,
+			id: 'ПанельЦиклыОбменаОтчетностьОтбор',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			Привязка:
 			{
@@ -693,12 +697,13 @@
 			Ширина:529,
 			Верх:30,
 			Лево:6,
+			Групповой: true,
 			height: 22,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -735,7 +740,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаЗначениеОтбора,
+			id: 'ПанельЦиклыОбменаЗначениеОтбора',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			Привязка:
 			{
@@ -760,12 +765,13 @@
 			Ширина:376,
 			Верх:0,
 			Лево:153,
+			Групповой: true,
 			height: 21,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоОтчету,
+					id: 'ПоОтчету',
 					items:
 					[
 		{
@@ -835,7 +841,7 @@
 					]
 				},
 				{
-					id: ПоВидуОтчета,
+					id: 'ПоВидуОтчета',
 					items:
 					[
 		{
@@ -904,10 +910,10 @@
 					]
 				},
 				{
-					id: ПоПериодуОтчета,
+					id: 'ПоПериодуОтчета',
 				},
 				{
-					id: ПоВидуДокумента,
+					id: 'ПоВидуДокумента',
 					items:
 					[
 		{
@@ -974,12 +980,7 @@
 			Лево:195,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидДокумента',
 			boxLabel: 'первичный',
 			style: 'position:absolute;left:2px;top:2px;width:74px;height:15px;',
@@ -1008,7 +1009,7 @@
 			Лево:2,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидДокумента1',
 			boxLabel: 'корректирующий',
 			style: 'position:absolute;left:81px;top:2px;width:106px;height:15px;',
@@ -1036,12 +1037,10 @@
 			Верх:2,
 			Лево:81,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ПоЭлектронномуПредставлению,
+					id: 'ПоЭлектронномуПредставлению',
 					items:
 					[
 		{
@@ -1117,7 +1116,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаОтборПоПериодуОтчета,
+			id: 'ПанельЦиклыОбменаОтборПоПериодуОтчета',
 			style: 'position:absolute;left:6px;top:52px;width:529px;height:33px;',
 			Привязка:
 			{
@@ -1142,12 +1141,13 @@
 			Ширина:529,
 			Верх:52,
 			Лево:6,
+			Групповой: true,
 			height: 33,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1190,7 +1190,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтчетность,
+			id: 'КоманднаяПанельОтчетность',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -1246,7 +1246,7 @@
 					]
 				},
 				{
-					id: Заявление,
+					id: 'Заявление',
 					items:
 					[
 		{
@@ -1487,7 +1487,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаЗаявлениеОтбор,
+			id: 'ПанельЦиклыОбменаЗаявлениеОтбор',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			Привязка:
 			{
@@ -1512,12 +1512,13 @@
 			Ширина:529,
 			Верх:30,
 			Лево:6,
+			Групповой: true,
 			height: 22,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1554,7 +1555,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаЗаявлениеЗначениеОтбора,
+			id: 'ПанельЦиклыОбменаЗаявлениеЗначениеОтбора',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			Привязка:
 			{
@@ -1579,12 +1580,13 @@
 			Ширина:376,
 			Верх:0,
 			Лево:153,
+			Групповой: true,
 			height: 21,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоОтчету,
+					id: 'ПоОтчету',
 					items:
 					[
 		{
@@ -2002,10 +2004,10 @@
 					]
 				},
 				{
-					id: ПоПериодуОтчета,
+					id: 'ПоПериодуОтчета',
 				},
 				{
-					id: ПоЭлектронномуПредставлению,
+					id: 'ПоЭлектронномуПредставлению',
 					items:
 					[
 		{
@@ -2081,7 +2083,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаЗаявлениеОтборПоПериодуОтчета,
+			id: 'ПанельЦиклыОбменаЗаявлениеОтборПоПериодуОтчета',
 			style: 'position:absolute;left:6px;top:52px;width:529px;height:33px;',
 			Привязка:
 			{
@@ -2106,12 +2108,13 @@
 			Ширина:529,
 			Верх:52,
 			Лево:6,
+			Групповой: true,
 			height: 33,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2183,7 +2186,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЗаявление,
+			id: 'КоманднаяПанельЗаявление',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -2233,12 +2236,12 @@
 					]
 				},
 				{
-					id: Требования,
+					id: 'Требования',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельТребования,
+			id: 'ПанельТребования',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -2263,12 +2266,13 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2392,7 +2396,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТребования,
+			id: 'КоманднаяПанельТребования',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -2483,7 +2487,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаТребования,
+			id: 'ПанельЦиклыОбменаТребования',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -2508,12 +2512,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2651,12 +2656,12 @@
 					]
 				},
 				{
-					id: ИсходящиеДокументы,
+					id: 'ИсходящиеДокументы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельИсходящиеДокументыФНС,
+			id: 'ПанельИсходящиеДокументыФНС',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -2681,12 +2686,13 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2801,7 +2807,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИсходящиеДокументыФНС,
+			id: 'КоманднаяПанельИсходящиеДокументыФНС',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -2909,7 +2915,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаИсходящиеДокументыФНС,
+			id: 'ПанельЦиклыОбменаИсходящиеДокументыФНС',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -2934,12 +2940,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3104,12 +3111,12 @@
 					]
 				},
 				{
-					id: ВходящиеДокументы,
+					id: 'ВходящиеДокументы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВходящиеДокументыФНС,
+			id: 'ПанельВходящиеДокументыФНС',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -3134,12 +3141,13 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3254,7 +3262,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВходящиеДокументыФНС,
+			id: 'КоманднаяПанельВходящиеДокументыФНС',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -3350,7 +3358,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаВходящиеДокументыФНС,
+			id: 'ПанельЦиклыОбменаВходящиеДокументыФНС',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -3375,12 +3383,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3500,12 +3509,12 @@
 					]
 				},
 				{
-					id: Запросы,
+					id: 'Запросы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаЗапросы,
+			id: 'ПанельЦиклыОбменаЗапросы',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -3530,12 +3539,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3717,7 +3727,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЗапросы,
+			id: 'ПанельЗапросы',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -3742,17 +3752,18 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЗапросы,
+			id: 'КоманднаяПанельЗапросы',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -4011,12 +4022,12 @@
 					]
 				},
 				{
-					id: ПФР,
+					id: 'ПФР',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельПФР,
+			id: 'ПанельПФР',
 			style: 'position:absolute;left:6px;top:6px;width:543px;height:442px;',
 			Привязка:
 			{
@@ -4041,11 +4052,12 @@
 			Ширина:543,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 442,width: 543,
 			items:
 			[
 				{
-					id: Отчетность,
+					id: 'Отчетность',
 					items:
 					[
 		{
@@ -4241,7 +4253,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаОтчетностьПФРОтбор,
+			id: 'ПанельЦиклыОбменаОтчетностьПФРОтбор',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			Привязка:
 			{
@@ -4266,12 +4278,13 @@
 			Ширина:529,
 			Верх:30,
 			Лево:6,
+			Групповой: true,
 			height: 22,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4308,7 +4321,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаПФРЗначениеОтбора,
+			id: 'ПанельЦиклыОбменаПФРЗначениеОтбора',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			Привязка:
 			{
@@ -4333,12 +4346,13 @@
 			Ширина:376,
 			Верх:0,
 			Лево:153,
+			Групповой: true,
 			height: 21,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоОтчету,
+					id: 'ПоОтчету',
 					items:
 					[
 		{
@@ -4408,7 +4422,7 @@
 					]
 				},
 				{
-					id: ПоВидуОтчета,
+					id: 'ПоВидуОтчета',
 					items:
 					[
 		{
@@ -4477,7 +4491,7 @@
 					]
 				},
 				{
-					id: ПоЭлектронномуПредставлению,
+					id: 'ПоЭлектронномуПредставлению',
 					items:
 					[
 		{
@@ -4553,7 +4567,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтчетностьПФР,
+			id: 'КоманднаяПанельОтчетностьПФР',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -4597,12 +4611,12 @@
 					]
 				},
 				{
-					id: ИсходящиеДокументы,
+					id: 'ИсходящиеДокументы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельИсходящиеДокументыПФР,
+			id: 'ПанельИсходящиеДокументыПФР',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -4627,12 +4641,13 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4747,7 +4762,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИсходящиеДокументыПФР,
+			id: 'КоманднаяПанельИсходящиеДокументыПФР',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -4855,7 +4870,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаИсходящиеДокументыПФР,
+			id: 'ПанельЦиклыОбменаИсходящиеДокументыПФР',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -4880,12 +4895,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5014,12 +5030,12 @@
 					]
 				},
 				{
-					id: ВходящиеДокументы,
+					id: 'ВходящиеДокументы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВходящиеДокументыПФР,
+			id: 'ПанельВходящиеДокументыПФР',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -5044,12 +5060,13 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5164,7 +5181,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВходящиеДокументыПФР,
+			id: 'КоманднаяПанельВходящиеДокументыПФР',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -5260,7 +5277,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаВходящиеДокументыПФР,
+			id: 'ПанельЦиклыОбменаВходящиеДокументыПФР',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -5285,12 +5302,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5414,12 +5432,12 @@
 					]
 				},
 				{
-					id: ФСГС,
+					id: 'ФСГС',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельФСГС,
+			id: 'ПанельФСГС',
 			style: 'position:absolute;left:6px;top:6px;width:543px;height:442px;',
 			Привязка:
 			{
@@ -5444,11 +5462,12 @@
 			Ширина:543,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 442,width: 543,
 			items:
 			[
 				{
-					id: Отчетность,
+					id: 'Отчетность',
 					items:
 					[
 		{
@@ -5662,7 +5681,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаОтчетностьФСГСОтбор,
+			id: 'ПанельЦиклыОбменаОтчетностьФСГСОтбор',
 			style: 'position:absolute;left:6px;top:30px;width:529px;height:22px;',
 			Привязка:
 			{
@@ -5687,12 +5706,13 @@
 			Ширина:529,
 			Верх:30,
 			Лево:6,
+			Групповой: true,
 			height: 22,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5729,7 +5749,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаФСГСЗначениеОтбора,
+			id: 'ПанельЦиклыОбменаФСГСЗначениеОтбора',
 			style: 'position:absolute;left:153px;top:0px;width:376px;height:21px;',
 			Привязка:
 			{
@@ -5754,12 +5774,13 @@
 			Ширина:376,
 			Верх:0,
 			Лево:153,
+			Групповой: true,
 			height: 21,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоОтчету,
+					id: 'ПоОтчету',
 					items:
 					[
 		{
@@ -5829,7 +5850,7 @@
 					]
 				},
 				{
-					id: ПоВидуОтчета,
+					id: 'ПоВидуОтчета',
 					items:
 					[
 		{
@@ -5898,7 +5919,7 @@
 					]
 				},
 				{
-					id: ПоЭлектронномуПредставлению,
+					id: 'ПоЭлектронномуПредставлению',
 					items:
 					[
 		{
@@ -5974,7 +5995,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтчетностьФСГС,
+			id: 'КоманднаяПанельОтчетностьФСГС',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -6018,12 +6039,12 @@
 					]
 				},
 				{
-					id: ИсходящиеДокументы,
+					id: 'ИсходящиеДокументы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельИсходящиеДокументыФСГС,
+			id: 'ПанельИсходящиеДокументыФСГС',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -6048,12 +6069,13 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -6168,7 +6190,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИсходящиеДокументыФСГС,
+			id: 'КоманднаяПанельИсходящиеДокументыФСГС',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -6276,7 +6298,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаИсходящиеДокументыФСГС,
+			id: 'ПанельЦиклыОбменаИсходящиеДокументыФСГС',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -6301,12 +6323,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -6453,12 +6476,12 @@
 					]
 				},
 				{
-					id: ВходящиеДокументы,
+					id: 'ВходящиеДокументы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВходящиеДокументыФСГС,
+			id: 'ПанельВходящиеДокументыФСГС',
 			style: 'position:absolute;left:6px;top:6px;width:529px;height:276px;',
 			Привязка:
 			{
@@ -6483,12 +6506,13 @@
 			Ширина:529,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 276,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -6603,7 +6627,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВходящиеДокументыФСГС,
+			id: 'КоманднаяПанельВходящиеДокументыФСГС',
 			style: 'position:absolute;left:0px;top:0px;width:529px;height:24px;',
 			Привязка:
 			{
@@ -6699,7 +6723,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаВходящиеДокументыФСГС,
+			id: 'ПанельЦиклыОбменаВходящиеДокументыФСГС',
 			style: 'position:absolute;left:6px;top:288px;width:529px;height:128px;',
 			Привязка:
 			{
@@ -6724,12 +6748,13 @@
 			Ширина:529,
 			Верх:288,
 			Лево:6,
+			Групповой: true,
 			height: 128,width: 529,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -6853,12 +6878,12 @@
 					]
 				},
 				{
-					id: Прочее,
+					id: 'Прочее',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанельПрочие,
+			id: 'ОсновнаяПанельПрочие',
 			style: 'position:absolute;left:6px;top:6px;width:543px;height:442px;',
 			Привязка:
 			{
@@ -6883,12 +6908,13 @@
 			Ширина:543,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 442,width: 543,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Прочие,
+					id: 'Прочие',
 					items:
 					[
 		{
@@ -7030,7 +7056,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПрочие,
+			id: 'КоманднаяПанельПрочие',
 			style: 'position:absolute;left:0px;top:16px;width:543px;height:24px;',
 			Привязка:
 			{
@@ -7070,7 +7096,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: '',
-			style: 'position:absolute;left:0px;top:14px;width:543px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:14px;width:543px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7099,7 +7125,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: '',
-			style: 'position:absolute;left:0px;top:9px;width:543px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:9px;width:543px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7134,7 +7160,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУчетныеЗаписи,
+			id: 'ПанельУчетныеЗаписи',
 			style: 'position:absolute;left:0px;top:0px;width:195px;height:456px;',
 			Привязка:
 			{
@@ -7159,12 +7185,13 @@
 			Ширина:195,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 456,width: 195,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -7254,7 +7281,7 @@
 			xtype: 'label',
 			id: 'РамкаУчетныеЗаписи',
 			text: 'Учетные записи',
-			style: 'position:absolute;left:0px;top:2px;width:195px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:2px;width:195px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7281,7 +7308,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельУчетныеЗаписи,
+			id: 'КоманднаяПанельУчетныеЗаписи',
 			style: 'position:absolute;left:0px;top:23px;width:195px;height:24px;',
 			Привязка:
 			{
@@ -7316,7 +7343,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:0px;top:21px;width:195px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:21px;width:195px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7353,8 +7380,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -7366,19 +7392,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:375px;',
 			Привязка:
 			{
@@ -45,17 +45,18 @@
 			Ширина:600,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 375,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: Панель11,
+			id: 'Панель11',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			Привязка:
 			{
@@ -80,12 +81,13 @@
 			Ширина:600,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 64,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -125,7 +127,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы13',
 			text: '',
-			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -152,7 +154,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель12,
+			id: 'Панель12',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			Привязка:
 			{
@@ -177,12 +179,13 @@
 			Ширина:600,
 			Верх:276,
 			Лево:0,
+			Групповой: true,
 			height: 99,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -222,7 +225,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы12',
 			text: '',
-			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -279,12 +282,12 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: Панель13,
+			id: 'Панель13',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			Привязка:
 			{
@@ -309,12 +312,13 @@
 			Ширина:600,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 64,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -354,7 +358,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы14',
 			text: '',
-			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -381,7 +385,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель14,
+			id: 'Панель14',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			Привязка:
 			{
@@ -406,12 +410,13 @@
 			Ширина:600,
 			Верх:276,
 			Лево:0,
+			Групповой: true,
 			height: 99,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -512,7 +517,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПараметры,
+			id: 'ПанельПараметры',
 			style: 'position:absolute;left:29px;top:192px;width:372px;height:20px;',
 			Привязка:
 			{
@@ -537,12 +542,13 @@
 			Ширина:372,
 			Верх:192,
 			Лево:29,
+			Групповой: true,
 			height: 20,width: 372,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -675,7 +681,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы15',
 			text: '',
-			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -701,12 +707,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПараметрыВручную',
 			boxLabel: 'Организация:',
 			style: 'position:absolute;left:13px;top:119px;width:93px;height:15px;',
@@ -735,7 +736,7 @@
 			Лево:13,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПараметрыВручную1',
 			boxLabel: 'Параметры:',
 			style: 'position:absolute;left:13px;top:169px;width:93px;height:15px;',
@@ -763,17 +764,15 @@
 			Верх:169,
 			Лево:13,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Страница3,
+					id: 'Страница3',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: Панель15,
+			id: 'Панель15',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			Привязка:
 			{
@@ -798,12 +797,13 @@
 			Ширина:600,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 64,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -843,7 +843,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы16',
 			text: '',
-			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -870,7 +870,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель16,
+			id: 'Панель16',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			Привязка:
 			{
@@ -895,12 +895,13 @@
 			Ширина:600,
 			Верх:276,
 			Лево:0,
+			Групповой: true,
 			height: 99,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1062,7 +1063,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы17',
 			text: '',
-			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1090,7 +1091,7 @@
 					]
 				},
 				{
-					id: Страница4,
+					id: 'Страница4',
 					items:
 					[
 		{
@@ -1217,7 +1218,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель17,
+			id: 'Панель17',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			Привязка:
 			{
@@ -1242,12 +1243,13 @@
 			Ширина:600,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 64,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1287,7 +1289,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы18',
 			text: '',
-			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1314,7 +1316,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель18,
+			id: 'Панель18',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			Привязка:
 			{
@@ -1339,12 +1341,13 @@
 			Ширина:600,
 			Верх:276,
 			Лево:0,
+			Групповой: true,
 			height: 99,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1384,7 +1387,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы19',
 			text: '',
-			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1412,7 +1415,7 @@
 					]
 				},
 				{
-					id: Страница5,
+					id: 'Страница5',
 					items:
 					[
 		{
@@ -1539,7 +1542,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель19,
+			id: 'Панель19',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			Привязка:
 			{
@@ -1564,12 +1567,13 @@
 			Ширина:600,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 64,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 				},
 			]
 		},
@@ -1577,7 +1581,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы20',
 			text: '',
-			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1604,7 +1608,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель20,
+			id: 'Панель20',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			Привязка:
 			{
@@ -1629,12 +1633,13 @@
 			Ширина:600,
 			Верх:276,
 			Лево:0,
+			Групповой: true,
 			height: 99,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1674,7 +1679,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы21',
 			text: '',
-			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1702,12 +1707,12 @@
 					]
 				},
 				{
-					id: Страница6,
+					id: 'Страница6',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: Панель21,
+			id: 'Панель21',
 			style: 'position:absolute;left:0px;top:0px;width:600px;height:64px;',
 			Привязка:
 			{
@@ -1732,12 +1737,13 @@
 			Ширина:600,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 64,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1777,7 +1783,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы22',
 			text: '',
-			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:61px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1804,7 +1810,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель22,
+			id: 'Панель22',
 			style: 'position:absolute;left:0px;top:276px;width:600px;height:99px;',
 			Привязка:
 			{
@@ -1829,12 +1835,13 @@
 			Ширина:600,
 			Верх:276,
 			Лево:0,
+			Групповой: true,
 			height: 99,width: 600,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1874,7 +1881,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы23',
 			text: '',
-			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:273px;width:600px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1996,7 +2003,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:375px;width:600px;height:25px;',
 			Привязка:
 			{
@@ -2049,8 +2056,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2062,19 +2068,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

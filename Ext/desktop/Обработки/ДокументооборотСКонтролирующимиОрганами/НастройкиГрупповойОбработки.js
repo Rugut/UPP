@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Действие при некритичных уведомлениях',
-			style: 'position:absolute;left:8px;top:100px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:100px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Действие при возникновении ошибок',
-			style: 'position:absolute;left:8px;top:243px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:243px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -80,7 +80,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: '',
-			style: 'position:absolute;left:8px;top:29px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:29px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -370,7 +370,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: '',
-			style: 'position:absolute;left:8px;top:93px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:93px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -399,7 +399,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: '',
-			style: 'position:absolute;left:8px;top:359px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:359px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -428,7 +428,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: '',
-			style: 'position:absolute;left:8px;top:8px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:8px;width:518px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -454,12 +454,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательДействиеПоПредупреждениям2',
 			boxLabel: 'Игнорировать и продолжать групповую обработку',
 			style: 'position:absolute;left:14px;top:171px;width:278px;height:15px;',
@@ -488,7 +483,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательДействиеПоПредупреждениям3',
 			boxLabel: 'Прерывать текущее действие, но продолжать групповую обработку',
 			style: 'position:absolute;left:14px;top:195px;width:367px;height:15px;',
@@ -517,7 +512,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательДействиеПоПредупреждениям4',
 			boxLabel: 'Прерывать групповую обработку',
 			style: 'position:absolute;left:14px;top:219px;width:191px;height:15px;',
@@ -545,15 +540,8 @@
 			Верх:219,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательДействиеПоОшибкам2',
 			boxLabel: 'Продолжать групповую обработку',
 			style: 'position:absolute;left:14px;top:314px;width:197px;height:15px;',
@@ -582,7 +570,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательДействиеПоОшибкам1',
 			boxLabel: 'Прерывать групповую обработку',
 			style: 'position:absolute;left:14px;top:337px;width:197px;height:15px;',
@@ -610,15 +598,13 @@
 			Верх:337,
 			Лево:14,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:370px;width:534px;height:25px;',
 			Привязка:
 			{
@@ -664,8 +650,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -677,19 +662,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

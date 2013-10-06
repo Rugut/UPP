@@ -172,7 +172,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:764px;height:25px;',
 			Привязка:
 			{
@@ -222,7 +222,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:105px;width:748px;height:334px;',
 			Привязка:
 			{
@@ -247,11 +247,12 @@
 			Ширина:748,
 			Верх:105,
 			Лево:8,
+			Групповой: true,
 			height: 334,width: 748,
 			items:
 			[
 				{
-					id: ОсновныеСведения,
+					id: 'ОсновныеСведения',
 					items:
 					[
 		{
@@ -759,7 +760,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Данные изготовителя',
-			style: 'position:absolute;left:6px;top:54px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:54px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -788,7 +789,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Постоянные сведения',
-			style: 'position:absolute;left:6px;top:171px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:171px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -996,7 +997,7 @@
 					]
 				},
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1841,7 +1842,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Местонахождение и состав: ',
-			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1870,7 +1871,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'До принятия к учету являлось:',
-			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1899,7 +1900,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Стоимость и срок использования:',
-			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1928,7 +1929,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Состояния учета:',
-			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1957,7 +1958,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: 'Данные амортизации:',
-			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1985,7 +1986,7 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
@@ -2830,7 +2831,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы9',
 			text: 'Счета учета и способ поступления: ',
-			style: 'position:absolute;left:6px;top:195px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:195px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2859,7 +2860,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы10',
 			text: 'Стоимость и срок использования:',
-			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2888,7 +2889,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы11',
 			text: 'Состояния учета:',
-			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2917,7 +2918,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы12',
 			text: 'Данные амортизации:',
-			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:344px;top:123px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2946,7 +2947,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы14',
 			text: 'Местонахождение и состав: ',
-			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:123px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3003,7 +3004,7 @@
 					]
 				},
 				{
-					id: Страница3,
+					id: 'Страница3',
 					items:
 					[
 		{
@@ -3558,7 +3559,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы15',
 			text: 'Стоимость и срок использования:',
-			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3587,7 +3588,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы16',
 			text: 'Данные амортизации:',
-			style: 'position:absolute;left:344px;top:100px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:344px;top:100px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3616,7 +3617,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы18',
 			text: 'Счета учета и способ поступления: ',
-			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:219px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3645,7 +3646,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы19',
 			text: 'Состояния учета:',
-			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:344px;top:6px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3674,7 +3675,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы20',
 			text: 'Налогообложение',
-			style: 'position:absolute;left:344px;top:219px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:344px;top:219px;width:396px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3764,7 +3765,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы21',
 			text: 'Порядок включения стоимости в состав расходов:',
-			style: 'position:absolute;left:6px;top:100px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:100px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3879,7 +3880,7 @@
 					]
 				},
 				{
-					id: Страница4,
+					id: 'Страница4',
 					items:
 					[
 		{
@@ -4469,7 +4470,7 @@
 					]
 				},
 				{
-					id: СвойстваИЗначения,
+					id: 'СвойстваИЗначения',
 					items:
 					[
 		{
@@ -4658,7 +4659,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСвойстваИЗначения,
+			id: 'КоманднаяПанельСвойстваИЗначения',
 			style: 'position:absolute;left:6px;top:0px;width:733px;height:24px;',
 			Привязка:
 			{
@@ -4692,7 +4693,7 @@
 					]
 				},
 				{
-					id: Категории,
+					id: 'Категории',
 					items:
 					[
 		{
@@ -4939,7 +4940,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКатегории,
+			id: 'КоманднаяПанельКатегории',
 			style: 'position:absolute;left:6px;top:0px;width:733px;height:24px;',
 			Привязка:
 			{
@@ -4995,7 +4996,7 @@
 					]
 				},
 				{
-					id: СведенияОНедвижимости,
+					id: 'СведенияОНедвижимости',
 					items:
 					[
 		{
@@ -5120,7 +5121,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПереключатели,
+			id: 'ПанельПереключатели',
 			style: 'position:absolute;left:6px;top:30px;width:134px;height:59px;',
 			Привязка:
 			{
@@ -5145,21 +5146,17 @@
 			Ширина:134,
 			Верх:30,
 			Лево:6,
+			Групповой: true,
 			height: 59,width: 134,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИмеетсяКадастровыйНомер',
 			boxLabel: 'Кадастровый номер',
 			style: 'position:absolute;left:8px;top:6px;width:120px;height:20px;',
@@ -5188,7 +5185,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИмеетсяКадастровыйНомер1',
 			boxLabel: 'Условный номер',
 			style: 'position:absolute;left:8px;top:33px;width:120px;height:20px;',
@@ -5216,15 +5213,13 @@
 			Верх:33,
 			Лево:8,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПоля,
+			id: 'ПанельПоля',
 			style: 'position:absolute;left:141px;top:30px;width:599px;height:59px;',
 			Привязка:
 			{
@@ -5249,12 +5244,13 @@
 			Ширина:599,
 			Верх:30,
 			Лево:141,
+			Групповой: true,
 			height: 59,width: 599,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5579,7 +5575,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:470px;width:764px;height:25px;',
 			Привязка:
 			{
@@ -5635,8 +5631,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -5648,19 +5643,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

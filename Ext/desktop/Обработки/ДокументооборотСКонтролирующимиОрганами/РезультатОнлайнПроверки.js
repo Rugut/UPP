@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыЭлектронноеПредставлениеОтчета',
 			text: 'Электронное представление отчета',
-			style: 'position:absolute;left:8px;top:8px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:8px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -49,7 +49,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПредставление,
+			id: 'ПанельПредставление',
 			style: 'position:absolute;left:8px;top:28px;width:847px;height:200px;',
 			Привязка:
 			{
@@ -74,12 +74,13 @@
 			Ширина:847,
 			Верх:28,
 			Лево:8,
+			Групповой: true,
 			height: 200,width: 847,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаТекст,
+					id: 'СтраницаТекст',
 					items:
 					[
 		{
@@ -115,13 +116,13 @@
 					]
 				},
 				{
-					id: СтраницаXML,
+					id: 'СтраницаXML',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПротокол,
+			id: 'ПанельПротокол',
 			style: 'position:absolute;left:8px;top:234px;width:847px;height:389px;',
 			Привязка:
 			{
@@ -146,19 +147,20 @@
 			Ширина:847,
 			Верх:234,
 			Лево:8,
+			Групповой: true,
 			height: 389,width: 847,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаTXT,
+					id: 'СтраницаTXT',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыПротоколTXT',
 			text: 'Протокол проверки',
-			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -216,14 +218,14 @@
 					]
 				},
 				{
-					id: СтраницаHTML,
+					id: 'СтраницаHTML',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыПротоколHTML',
 			text: 'Протокол проверки',
-			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:847px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -287,7 +289,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:631px;width:863px;height:25px;',
 			Привязка:
 			{
@@ -329,8 +331,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -342,19 +343,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

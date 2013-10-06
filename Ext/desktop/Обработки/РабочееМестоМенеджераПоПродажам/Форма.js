@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -282,7 +282,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДействий,
+			id: 'ПанельДействий',
 			style: 'position:absolute;left:341px;top:56px;width:431px;height:341px;',
 			Привязка:
 			{
@@ -307,11 +307,12 @@
 			Ширина:431,
 			Верх:56,
 			Лево:341,
+			Групповой: true,
 			height: 341,width: 431,
 			items:
 			[
 				{
-					id: Дерево,
+					id: 'Дерево',
 					items:
 					[
 		{
@@ -391,7 +392,7 @@
 					]
 				},
 				{
-					id: ОсновныеПараметры,
+					id: 'ОсновныеПараметры',
 					items:
 					[
 		{
@@ -1074,7 +1075,7 @@
 					]
 				},
 				{
-					id: ОстаткиЦены,
+					id: 'ОстаткиЦены',
 					items:
 					[
 		{
@@ -1198,7 +1199,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДереваОстатков,
+			id: 'КоманднаяПанельДереваОстатков',
 			style: 'position:absolute;left:6px;top:6px;width:417px;height:27px;',
 			Привязка:
 			{
@@ -1515,7 +1516,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТипыЦен,
+			id: 'КоманднаяПанельТипыЦен',
 			style: 'position:absolute;left:66px;top:54px;width:157px;height:24px;',
 			Привязка:
 			{
@@ -1576,14 +1577,14 @@
 					]
 				},
 				{
-					id: Заказы,
+					id: 'Заказы',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Остатки неотгруженного товара по заказам покупателя',
-			style: 'position:absolute;left:6px;top:6px;width:417px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:417px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1740,7 +1741,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Товар текущего покупателя размещенный в заказах поставщикам',
-			style: 'position:absolute;left:6px;top:161px;width:417px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:161px;width:417px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1944,7 +1945,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Номенклатура',
-			style: 'position:absolute;left:8px;top:33px;width:328px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:33px;width:328px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1971,7 +1972,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновногоИзображения,
+			id: 'ПанельОсновногоИзображения',
 			style: 'position:absolute;left:8px;top:266px;width:328px;height:131px;',
 			Привязка:
 			{
@@ -1996,12 +1997,13 @@
 			Ширина:328,
 			Верх:266,
 			Лево:8,
+			Групповой: true,
 			height: 131,width: 328,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -2071,8 +2073,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2084,19 +2085,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

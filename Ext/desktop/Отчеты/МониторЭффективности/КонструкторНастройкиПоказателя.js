@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельЭтапов,
+			id: 'ПанельЭтапов',
 			style: 'position:absolute;left:8px;top:54px;width:430px;height:279px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:430,
 			Верх:54,
 			Лево:8,
+			Групповой: true,
 			height: 279,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: НастройкаВыборВидаПоказателя,
+					id: 'НастройкаВыборВидаПоказателя',
 					items:
 					[
 		{
@@ -170,12 +171,7 @@
 			Лево:49,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидПроизвольногоОтчета',
 			boxLabel: 'Стандартный показатель',
 			style: 'position:absolute;left:34px;top:51px;width:149px;height:19px;',
@@ -204,7 +200,7 @@
 			Лево:34,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидПроизвольногоОтчета1',
 			boxLabel: 'План-факт',
 			style: 'position:absolute;left:34px;top:111px;width:74px;height:19px;',
@@ -233,7 +229,7 @@
 			Лево:34,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидПроизвольногоОтчета2',
 			boxLabel: 'План (прогноз)',
 			style: 'position:absolute;left:34px;top:174px;width:282px;height:19px;',
@@ -261,12 +257,10 @@
 			Верх:174,
 			Лево:34,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НастройкаФакт,
+					id: 'НастройкаФакт',
 					items:
 					[
 		{
@@ -699,7 +693,7 @@
 					]
 				},
 				{
-					id: НастройкаФактПрогноз,
+					id: 'НастройкаФактПрогноз',
 					items:
 					[
 		{
@@ -949,7 +943,7 @@
 					]
 				},
 				{
-					id: НастройкаПлан,
+					id: 'НастройкаПлан',
 					items:
 					[
 		{
@@ -1264,7 +1258,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:341px;width:446px;height:25px;',
 			Привязка:
 			{
@@ -1323,8 +1317,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1336,19 +1329,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

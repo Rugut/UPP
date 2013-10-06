@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:814px;height:25px;',
 			Привязка:
 			{
@@ -107,7 +107,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:33px;width:798px;height:475px;',
 			Привязка:
 			{
@@ -132,11 +132,12 @@
 			Ширина:798,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 475,width: 798,
 			items:
 			[
 				{
-					id: КонечныеПланы,
+					id: 'КонечныеПланы',
 					items:
 					[
 		{
@@ -278,7 +279,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонечныеПланы,
+			id: 'КоманднаяПанельКонечныеПланы',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
 			Привязка:
 			{
@@ -313,7 +314,7 @@
 			xtype: 'label',
 			id: 'РамкаКонечныеПланы',
 			text: 'Конечные планы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -341,14 +342,14 @@
 					]
 				},
 				{
-					id: СтраницаСтратегияРасчетаКоличества,
+					id: 'СтраницаСтратегияРасчетаКоличества',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаСтратегииРасчетаКоличества',
 			text: 'Стратегии расчета количества',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -377,7 +378,7 @@
 			xtype: 'label',
 			id: 'РамкаДополнительноСтратегияРасчетаКоличества',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -558,7 +559,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтратегииРасчетаКоличества,
+			id: 'КоманднаяПанельСтратегииРасчетаКоличества',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
 			Привязка:
 			{
@@ -776,14 +777,14 @@
 					]
 				},
 				{
-					id: СтраницаСтратегияРасчетаСуммы,
+					id: 'СтраницаСтратегияРасчетаСуммы',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаДополнительноСтратегияРасчетаСуммы',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:409px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -932,7 +933,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтратегииРасчетаСуммы,
+			id: 'КоманднаяПанельСтратегииРасчетаСуммы',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
 			Привязка:
 			{
@@ -967,7 +968,7 @@
 			xtype: 'label',
 			id: 'РамкаСтратегииРасчетаСуммы',
 			text: 'Стратегии расчета суммы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1114,7 +1115,7 @@
 					]
 				},
 				{
-					id: Отборы,
+					id: 'Отборы',
 					items:
 					[
 		{
@@ -1238,7 +1239,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
 			Привязка:
 			{
@@ -1302,7 +1303,7 @@
 			xtype: 'label',
 			id: 'РамкаОтборы',
 			text: 'Отборы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1330,7 +1331,7 @@
 					]
 				},
 				{
-					id: СформированныеДокументы,
+					id: 'СформированныеДокументы',
 					items:
 					[
 		{
@@ -1427,7 +1428,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСформированныеДокументы,
+			id: 'КоманднаяПанельСформированныеДокументы',
 			style: 'position:absolute;left:6px;top:22px;width:784px;height:24px;',
 			Привязка:
 			{
@@ -1501,7 +1502,7 @@
 			xtype: 'label',
 			id: 'РамкаСформированныеДокументы',
 			text: 'Сформированные документы',
-			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:784px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1536,7 +1537,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:516px;width:814px;height:25px;',
 			Привязка:
 			{
@@ -1590,8 +1591,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1603,19 +1603,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

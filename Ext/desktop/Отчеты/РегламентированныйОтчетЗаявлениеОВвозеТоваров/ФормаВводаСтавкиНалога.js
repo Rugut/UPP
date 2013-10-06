@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСтавкаНДС',
 			text: 'НДС',
-			style: 'position:absolute;left:8px;top:10px;width:286px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:10px;width:286px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -85,7 +85,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСтавкаАкциз',
 			text: 'Акциз',
-			style: 'position:absolute;left:8px;top:105px;width:286px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:105px;width:286px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -232,12 +232,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СтавкаНалогаНДС',
 			boxLabel: 'Ставка налога (НДС):',
 			style: 'position:absolute;left:20px;top:49px;width:136px;height:15px;',
@@ -266,7 +261,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОсвобождениеНДС',
 			boxLabel: 'Освобождение от уплаты налога',
 			style: 'position:absolute;left:20px;top:71px;width:191px;height:15px;',
@@ -294,15 +289,8 @@
 			Верх:71,
 			Лево:20,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Твердые',
 			boxLabel: 'Твердые (специфические)',
 			style: 'position:absolute;left:20px;top:143px;width:155px;height:15px;',
@@ -331,7 +319,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Адвалорные',
 			boxLabel: 'Адвалорные',
 			style: 'position:absolute;left:20px;top:163px;width:155px;height:15px;',
@@ -359,15 +347,8 @@
 			Верх:163,
 			Лево:20,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СтавкаНалогаАкциза',
 			boxLabel: 'Ставка налога (акциз):',
 			style: 'position:absolute;left:20px;top:215px;width:136px;height:15px;',
@@ -396,7 +377,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОсвобождениеАкциз',
 			boxLabel: 'Освобождение от уплаты налога',
 			style: 'position:absolute;left:20px;top:235px;width:191px;height:15px;',
@@ -425,7 +406,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'АкцизУплаченИномуОргану',
 			boxLabel: 'Акциз уплачен иному органу',
 			style: 'position:absolute;left:20px;top:255px;width:191px;height:15px;',
@@ -454,7 +435,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТоварНеЯвляетсяПодакцизным',
 			boxLabel: 'Товар не является подакцизным',
 			style: 'position:absolute;left:20px;top:275px;width:191px;height:15px;',
@@ -482,15 +463,13 @@
 			Верх:275,
 			Лево:20,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:305px;width:304px;height:25px;',
 			Привязка:
 			{
@@ -538,8 +517,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -551,19 +529,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

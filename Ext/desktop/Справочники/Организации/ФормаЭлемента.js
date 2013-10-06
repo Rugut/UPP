@@ -203,7 +203,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:579px;height:25px;',
 			Привязка:
 			{
@@ -356,7 +356,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:644px;width:579px;height:25px;',
 			Привязка:
 			{
@@ -656,7 +656,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:331px;width:563px;height:305px;',
 			Привязка:
 			{
@@ -681,11 +681,12 @@
 			Ширина:563,
 			Верх:331,
 			Лево:8,
+			Групповой: true,
 			height: 305,width: 563,
 			items:
 			[
 				{
-					id: Основные,
+					id: 'Основные',
 					items:
 					[
 		{
@@ -814,7 +815,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыКодовИНомеров',
 			text: 'Реквизиты',
-			style: 'position:absolute;left:7px;top:6px;width:548px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:7px;top:6px;width:548px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1150,7 +1151,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОрганВыдавшийСвидетельство',
 			text: 'Налоговый орган, выдавший свидетельство',
-			style: 'position:absolute;left:13px;top:160px;width:542px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:13px;top:160px;width:542px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1179,7 +1180,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСвидетельствоОПостановке',
 			text: 'Свидетельство о постановке на учет в налоговом органе',
-			style: 'position:absolute;left:6px;top:120px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:120px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1393,7 +1394,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыКодовИНомеров1',
 			text: 'ИФНС',
-			style: 'position:absolute;left:6px;top:74px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:74px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1422,7 +1423,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСчетаФактуры',
 			text: 'Нумерация счетов-фактур',
-			style: 'position:absolute;left:6px;top:204px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:204px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1513,7 +1514,7 @@
 					]
 				},
 				{
-					id: КонтактнаяИнформация,
+					id: 'КонтактнаяИнформация',
 					items:
 					[
 		{
@@ -1633,7 +1634,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтактнаяИнформация,
+			id: 'КоманднаяПанельКонтактнаяИнформация',
 			style: 'position:absolute;left:6px;top:7px;width:549px;height:24px;',
 			Привязка:
 			{
@@ -1728,7 +1729,7 @@
 					]
 				},
 				{
-					id: Коды,
+					id: 'Коды',
 					items:
 					[
 		{
@@ -1947,7 +1948,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Организационно-правовая форма по ОКОПФ',
-			style: 'position:absolute;left:6px;top:53px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:53px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2098,7 +2099,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Форма собственности по ОКФС',
-			style: 'position:absolute;left:6px;top:99px;width:549px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:99px;width:549px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2127,7 +2128,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Вид деятельности по ОКВЭД',
-			style: 'position:absolute;left:6px;top:145px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:145px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2278,7 +2279,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Коды',
-			style: 'position:absolute;left:6px;top:6px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2399,7 +2400,7 @@
 					]
 				},
 				{
-					id: РасчетЗарплаты,
+					id: 'РасчетЗарплаты',
 					items:
 					[
 		{
@@ -2746,7 +2747,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыКодовИНомеров2',
 			text: 'Внебюджетные фонды',
-			style: 'position:absolute;left:6px;top:108px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:108px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3232,7 +3233,7 @@
 					]
 				},
 				{
-					id: ИндивидуальныйПредприниматель,
+					id: 'ИндивидуальныйПредприниматель',
 					items:
 					[
 		{
@@ -3266,7 +3267,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКодыИП,
+			id: 'ПанельКодыИП',
 			style: 'position:absolute;left:6px;top:40px;width:555px;height:130px;',
 			Привязка:
 			{
@@ -3291,12 +3292,13 @@
 			Ширина:555,
 			Верх:40,
 			Лево:6,
+			Групповой: true,
 			height: 130,width: 555,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3579,7 +3581,7 @@
 					]
 				},
 				{
-					id: БухучетЗарплаты,
+					id: 'БухучетЗарплаты',
 					items:
 					[
 		{
@@ -3672,7 +3674,7 @@
 					]
 				},
 				{
-					id: ИностраннаяОрганизация,
+					id: 'ИностраннаяОрганизация',
 					items:
 					[
 		{
@@ -3984,12 +3986,12 @@
 					]
 				},
 				{
-					id: Документооборот,
+					id: 'Документооборот',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельОбменПоБесспецоператорнойСхеме,
+			id: 'ПанельОбменПоБесспецоператорнойСхеме',
 			style: 'position:absolute;left:6px;top:85px;width:549px;height:19px;',
 			Привязка:
 			{
@@ -4014,12 +4016,13 @@
 			Ширина:549,
 			Верх:85,
 			Лево:6,
+			Групповой: true,
 			height: 19,width: 549,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4121,7 +4124,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбменЧерезСпринтер,
+			id: 'ПанельОбменЧерезСпринтер',
 			style: 'position:absolute;left:7px;top:178px;width:548px;height:18px;',
 			Привязка:
 			{
@@ -4146,12 +4149,13 @@
 			Ширина:548,
 			Верх:178,
 			Лево:7,
+			Групповой: true,
 			height: 18,width: 548,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4220,7 +4224,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: 'Документооборот с ФСС',
-			style: 'position:absolute;left:6px;top:234px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:234px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4278,7 +4282,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы9',
 			text: 'Документооборот с ФНС, ПФР и Росстатом',
-			style: 'position:absolute;left:6px;top:35px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:35px;width:549px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4362,12 +4366,7 @@
 			Лево:430,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидОбмена',
 			boxLabel: 'Возможность взаимодействия с ФНС, ПФР и Росстатом по электронным каналам связи отключена',
 			style: 'position:absolute;left:6px;top:203px;width:549px;height:16px;',
@@ -4396,7 +4395,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидОбмена1',
 			boxLabel: 'Использовать возможность представления отчетности в ФНС посредством ПК "Спринтер"',
 			style: 'position:absolute;left:6px;top:112px;width:549px;height:15px;',
@@ -4425,7 +4424,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидОбмена2',
 			boxLabel: 'Использовать встроенный механизм информационного взаимодействия по каналам связи',
 			style: 'position:absolute;left:6px;top:58px;width:549px;height:15px;',
@@ -4453,12 +4452,10 @@
 			Верх:58,
 			Лево:6,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Прочее,
+					id: 'Прочее',
 					items:
 					[
 		{
@@ -4494,7 +4491,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: '',
-			style: 'position:absolute;left:6px;top:33px;width:549px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:33px;width:549px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4702,7 +4699,7 @@
 					]
 				},
 				{
-					id: Свойства,
+					id: 'Свойства',
 					items:
 					[
 		{
@@ -4804,7 +4801,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСвойстваИЗначения,
+			id: 'КоманднаяПанельСвойстваИЗначения',
 			style: 'position:absolute;left:6px;top:6px;width:549px;height:24px;',
 			Привязка:
 			{
@@ -4838,7 +4835,7 @@
 					]
 				},
 				{
-					id: Категории,
+					id: 'Категории',
 					items:
 					[
 		{
@@ -4940,7 +4937,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКатегории,
+			id: 'КоманднаяПанельКатегории',
 			style: 'position:absolute;left:6px;top:6px;width:549px;height:24px;',
 			Привязка:
 			{
@@ -5333,8 +5330,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -5346,19 +5342,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

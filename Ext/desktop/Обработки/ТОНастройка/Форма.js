@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: КлассыТорговогоОборудования,
+			id: 'КлассыТорговогоОборудования',
 			style: 'position:absolute;left:8px;top:88px;width:850px;height:398px;',
 			Привязка:
 			{
@@ -45,16 +45,17 @@
 			Ширина:850,
 			Верх:88,
 			Лево:8,
+			Групповой: true,
 			height: 398,width: 850,
 			items:
 			[
 				{
-					id: СканерыШтрихкода,
+					id: 'СканерыШтрихкода',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСШК,
+			id: 'КоманднаяПанельСШК',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -199,12 +200,12 @@
 					]
 				},
 				{
-					id: ФискальныеРегистраторы,
+					id: 'ФискальныеРегистраторы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФР,
+			id: 'КоманднаяПанельФР',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -358,12 +359,12 @@
 					]
 				},
 				{
-					id: ТерминалыСбораДанных,
+					id: 'ТерминалыСбораДанных',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТСД,
+			id: 'КоманднаяПанельТСД',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -508,12 +509,12 @@
 					]
 				},
 				{
-					id: ДисплеиПокупателя,
+					id: 'ДисплеиПокупателя',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДП,
+			id: 'КоманднаяПанельДП',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -667,12 +668,12 @@
 					]
 				},
 				{
-					id: СчитывателиМагнитныхКарт,
+					id: 'СчитывателиМагнитныхКарт',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРМК,
+			id: 'КоманднаяПанельРМК',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -817,12 +818,12 @@
 					]
 				},
 				{
-					id: ЭлектронныеВесы,
+					id: 'ЭлектронныеВесы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЭВ,
+			id: 'КоманднаяПанельЭВ',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -967,12 +968,12 @@
 					]
 				},
 				{
-					id: ВесыСПечатьюЭтикеток,
+					id: 'ВесыСПечатьюЭтикеток',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВесыСПЭ,
+			id: 'КоманднаяПанельВесыСПЭ',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -1117,12 +1118,12 @@
 					]
 				},
 				{
-					id: ККМВРежимеOffline,
+					id: 'ККМВРежимеOffline',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельККМOffline,
+			id: 'КоманднаяПанельККМOffline',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -1276,12 +1277,12 @@
 					]
 				},
 				{
-					id: ККМВРежимеOnline,
+					id: 'ККМВРежимеOnline',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельККМOnline,
+			id: 'КоманднаяПанельККМOnline',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -1435,12 +1436,12 @@
 					]
 				},
 				{
-					id: ЭквайринговыеСистемы,
+					id: 'ЭквайринговыеСистемы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПлатежныхТерминалов,
+			id: 'КоманднаяПанельПлатежныхТерминалов',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -1585,12 +1586,12 @@
 					]
 				},
 				{
-					id: СчитывателиRFIDМеток,
+					id: 'СчитывателиRFIDМеток',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСчитывателейRFIDМеток,
+			id: 'КоманднаяПанельСчитывателейRFIDМеток',
 			style: 'position:absolute;left:6px;top:6px;width:612px;height:25px;',
 			Привязка:
 			{
@@ -1887,7 +1888,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:494px;width:866px;height:25px;',
 			Привязка:
 			{
@@ -1935,8 +1936,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1948,19 +1948,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

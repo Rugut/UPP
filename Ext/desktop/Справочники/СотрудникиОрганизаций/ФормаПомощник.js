@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельДанные,
+			id: 'ПанельДанные',
 			style: 'position:absolute;left:182px;top:0px;width:418px;height:425px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:418,
 			Верх:0,
 			Лево:182,
+			Групповой: true,
 			height: 425,width: 418,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПерсональныеДанные,
+					id: 'ПерсональныеДанные',
 					items:
 					[
 		{
@@ -482,7 +483,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОрганизация,
+			id: 'ПанельОрганизация',
 			style: 'position:absolute;left:10px;top:254px;width:402px;height:26px;',
 			Привязка:
 			{
@@ -507,12 +508,13 @@
 			Ширина:402,
 			Верх:254,
 			Лево:10,
+			Групповой: true,
 			height: 26,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -611,12 +613,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТрудовойДоговор',
 			boxLabel: 'Штатный сотрудник',
 			style: 'position:absolute;left:20px;top:174px;width:118px;height:19px;',
@@ -645,7 +642,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДоговорПодряда',
 			boxLabel: 'Работник по договору гражданско-правового характера',
 			style: 'position:absolute;left:20px;top:198px;width:314px;height:19px;',
@@ -674,7 +671,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'БезДоговора',
 			boxLabel: 'Без договора',
 			style: 'position:absolute;left:20px;top:222px;width:96px;height:19px;',
@@ -702,12 +699,10 @@
 			Верх:222,
 			Лево:20,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: УсловияПриема,
+					id: 'УсловияПриема',
 					items:
 					[
 		{
@@ -741,7 +736,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУсловияПриема,
+			id: 'ПанельУсловияПриема',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:384px;',
 			Привязка:
 			{
@@ -766,12 +761,13 @@
 			Ширина:402,
 			Верх:35,
 			Лево:10,
+			Групповой: true,
 			height: 384,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ТрудовойДоговор,
+					id: 'ТрудовойДоговор',
 					items:
 					[
 		{
@@ -1456,7 +1452,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбособленноеПодразделение,
+			id: 'ПанельОбособленноеПодразделение',
 			style: 'position:absolute;left:1px;top:125px;width:401px;height:24px;',
 			Привязка:
 			{
@@ -1481,12 +1477,13 @@
 			Ширина:401,
 			Верх:125,
 			Лево:1,
+			Групповой: true,
 			height: 24,width: 401,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1615,7 +1612,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСоздатьПриказ,
+			id: 'ПанельСоздатьПриказ',
 			style: 'position:absolute;left:0px;top:0px;width:348px;height:25px;',
 			Привязка:
 			{
@@ -1640,12 +1637,13 @@
 			Ширина:348,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 25,width: 348,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1711,12 +1709,7 @@
 			Лево:10,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОсновноеМестоРаботы',
 			boxLabel: 'Основное место работы',
 			style: 'position:absolute;left:21px;top:59px;width:146px;height:19px;',
@@ -1745,7 +1738,7 @@
 			Лево:21,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Совместительство',
 			boxLabel: 'Совместительство',
 			style: 'position:absolute;left:21px;top:83px;width:117px;height:19px;',
@@ -1774,7 +1767,7 @@
 			Лево:21,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВнутреннееСовместительство',
 			boxLabel: 'Внутреннее совместительство',
 			style: 'position:absolute;left:21px;top:106px;width:180px;height:19px;',
@@ -1802,12 +1795,10 @@
 			Верх:106,
 			Лево:21,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ДоговорПодряда,
+					id: 'ДоговорПодряда',
 					items:
 					[
 		{
@@ -1840,7 +1831,7 @@
 			Лево:10,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Авторский',
 			boxLabel: 'Авторский',
 			style: 'position:absolute;left:20px;top:48px;width:78px;height:19px;',
@@ -1899,7 +1890,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУсловияДоговораГПХ,
+			id: 'ПанельУсловияДоговораГПХ',
 			style: 'position:absolute;left:0px;top:92px;width:402px;height:292px;',
 			Привязка:
 			{
@@ -1924,12 +1915,13 @@
 			Ширина:402,
 			Верх:92,
 			Лево:0,
+			Групповой: true,
 			height: 292,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2703,7 +2695,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбособленноеПодразделение1,
+			id: 'ПанельОбособленноеПодразделение1',
 			style: 'position:absolute;left:0px;top:0px;width:402px;height:24px;',
 			Привязка:
 			{
@@ -2728,12 +2720,13 @@
 			Ширина:402,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 24,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2991,12 +2984,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидДоговораГПХ',
 			boxLabel: 'Договор подряда (выполнение работ, оказание услуг)',
 			style: 'position:absolute;left:20px;top:24px;width:305px;height:19px;',
@@ -3024,17 +3012,15 @@
 			Верх:24,
 			Лево:20,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ДоговорУправленческий,
+					id: 'ДоговорУправленческий',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельСоздатьПриказУправленческий,
+			id: 'ПанельСоздатьПриказУправленческий',
 			style: 'position:absolute;left:0px;top:0px;width:348px;height:25px;',
 			Привязка:
 			{
@@ -3059,12 +3045,13 @@
 			Ширина:348,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 25,width: 348,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3102,7 +3089,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУсловияПриемаУпр,
+			id: 'ПанельУсловияПриемаУпр',
 			style: 'position:absolute;left:0px;top:35px;width:402px;height:173px;',
 			Привязка:
 			{
@@ -3127,12 +3114,13 @@
 			Ширина:402,
 			Верх:35,
 			Лево:0,
+			Групповой: true,
 			height: 173,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3403,7 +3391,7 @@
 					]
 				},
 				{
-					id: ОплатаТруда,
+					id: 'ОплатаТруда',
 					items:
 					[
 		{
@@ -3437,7 +3425,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОплатаТруда,
+			id: 'ПанельОплатаТруда',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:384px;',
 			Привязка:
 			{
@@ -3462,12 +3450,13 @@
 			Ширина:402,
 			Верх:35,
 			Лево:10,
+			Групповой: true,
 			height: 384,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ТрудовойДоговор,
+					id: 'ТрудовойДоговор',
 					items:
 					[
 		{
@@ -3931,7 +3920,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРазмерОклада,
+			id: 'ПанельРазмерОклада',
 			style: 'position:absolute;left:0px;top:29px;width:402px;height:24px;',
 			Привязка:
 			{
@@ -3956,12 +3945,13 @@
 			Ширина:402,
 			Верх:29,
 			Лево:0,
+			Групповой: true,
 			height: 24,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ВРублях,
+					id: 'ВРублях',
 					items:
 					[
 		{
@@ -4121,7 +4111,7 @@
 					]
 				},
 				{
-					id: ТарифныйРазряд,
+					id: 'ТарифныйРазряд',
 					items:
 					[
 		{
@@ -4251,7 +4241,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНадбавки,
+			id: 'КоманднаяПанельНадбавки',
 			style: 'position:absolute;left:0px;top:82px;width:402px;height:24px;',
 			Привязка:
 			{
@@ -4295,7 +4285,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНадбавкиКонтекстноеМеню,
+			id: 'КоманднаяПанельНадбавкиКонтекстноеМеню',
 			style: 'position:absolute;left:119px;top:218px;width:217px;height:24px;',
 			Привязка:
 			{
@@ -4347,7 +4337,7 @@
 					]
 				},
 				{
-					id: ДоговорУправленческий,
+					id: 'ДоговорУправленческий',
 					items:
 					[
 		{
@@ -5018,7 +5008,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНачисленияУпр,
+			id: 'КоманднаяПанельНачисленияУпр',
 			style: 'position:absolute;left:0px;top:18px;width:402px;height:24px;',
 			Привязка:
 			{
@@ -5062,7 +5052,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНачисленияУпрКонтекстноеМеню,
+			id: 'КоманднаяПанельНачисленияУпрКонтекстноеМеню',
 			style: 'position:absolute;left:74px;top:136px;width:217px;height:24px;',
 			Привязка:
 			{
@@ -5113,7 +5103,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельУдержанияУпр,
+			id: 'КоманднаяПанельУдержанияУпр',
 			style: 'position:absolute;left:0px;top:222px;width:402px;height:24px;',
 			Привязка:
 			{
@@ -5157,7 +5147,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельУдержанияУпрКонтекстноеМеню,
+			id: 'КоманднаяПанельУдержанияУпрКонтекстноеМеню',
 			style: 'position:absolute;left:86px;top:296px;width:217px;height:24px;',
 			Привязка:
 			{
@@ -5213,7 +5203,7 @@
 					]
 				},
 				{
-					id: ДополнительнаяИнформация,
+					id: 'ДополнительнаяИнформация',
 					items:
 					[
 		{
@@ -5247,7 +5237,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельГруппаДоступа,
+			id: 'ПанельГруппаДоступа',
 			style: 'position:absolute;left:10px;top:197px;width:402px;height:165px;',
 			Привязка:
 			{
@@ -5272,12 +5262,13 @@
 			Ширина:402,
 			Верх:197,
 			Лево:10,
+			Групповой: true,
 			height: 165,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5406,7 +5397,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДопИнформация,
+			id: 'ПанельДопИнформация',
 			style: 'position:absolute;left:10px;top:91px;width:402px;height:106px;',
 			Привязка:
 			{
@@ -5431,12 +5422,13 @@
 			Ширина:402,
 			Верх:91,
 			Лево:10,
+			Групповой: true,
 			height: 106,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ТрудовойДоговор,
+					id: 'ТрудовойДоговор',
 					items:
 					[
 		{
@@ -5558,7 +5550,7 @@
 					]
 				},
 				{
-					id: ДоговорПодряда,
+					id: 'ДоговорПодряда',
 					items:
 					[
 		{
@@ -5683,7 +5675,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИННПФР,
+			id: 'ПанельИННПФР',
 			style: 'position:absolute;left:10px;top:35px;width:402px;height:56px;',
 			Привязка:
 			{
@@ -5708,12 +5700,13 @@
 			Ширина:402,
 			Верх:35,
 			Лево:10,
+			Групповой: true,
 			height: 56,width: 402,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5845,7 +5838,7 @@
 					]
 				},
 				{
-					id: Готово,
+					id: 'Готово',
 					items:
 					[
 		{
@@ -6208,7 +6201,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельХодаВыполнения,
+			id: 'ПанельХодаВыполнения',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:425px;',
 			Привязка:
 			{
@@ -6233,12 +6226,13 @@
 			Ширина:181,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 425,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаНастройки,
+					id: 'СтраницаНастройки',
 					items:
 					[
 		{
@@ -6389,7 +6383,7 @@
 					]
 				},
 				{
-					id: СтраницаГотово,
+					id: 'СтраницаГотово',
 				},
 			]
 		},
@@ -6428,7 +6422,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:425px;width:600px;height:25px;',
 			Привязка:
 			{
@@ -6478,7 +6472,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДополнительныеДействия,
+			id: 'КоманднаяПанельДополнительныеДействия',
 			style: 'position:absolute;left:324px;top:425px;width:151px;height:25px;',
 			Привязка:
 			{
@@ -6518,8 +6512,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -6531,19 +6524,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

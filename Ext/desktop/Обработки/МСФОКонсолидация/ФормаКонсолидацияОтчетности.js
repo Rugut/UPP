@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельОсновная,
+			id: 'ПанельОсновная',
 			style: 'position:absolute;left:8px;top:8px;width:762px;height:414px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:762,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 414,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -349,7 +350,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Выбор отчетов для консолидации',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -634,7 +635,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Прибыль от внутригрупповых операций в разрезе указанных активов',
-			style: 'position:absolute;left:0px;top:193px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:193px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -662,14 +663,14 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон5',
 			text: 'Стыковка записей по долгосрочным займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -855,7 +856,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред5',
 			text: 'Стыковка записей по долгосрочным займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1011,14 +1012,14 @@
 					]
 				},
 				{
-					id: Страница3,
+					id: 'Страница3',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон6',
 			text: 'Стыковка записей по текущим займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1204,7 +1205,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред6',
 			text: 'Стыковка записей по текущим займам (полученным и выданным) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1418,14 +1419,14 @@
 					]
 				},
 				{
-					id: Страница4,
+					id: 'Страница4',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон7',
 			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (долгосрочные) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1582,7 +1583,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред7',
 			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (долгосрочные) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1738,14 +1739,14 @@
 					]
 				},
 				{
-					id: Страница5,
+					id: 'Страница5',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон8',
 			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (текущие) за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1902,7 +1903,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред8',
 			text: 'Стыковка записей по авансам выданным и доходами буд.периодов (текущие) за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2058,14 +2059,14 @@
 					]
 				},
 				{
-					id: Страница6,
+					id: 'Страница6',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон11',
 			text: 'Стыковка записей по выручке от реализации за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2251,7 +2252,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред11',
 			text: 'Стыковка записей по выручке от реализации за ',
-			style: 'position:absolute;left:0px;top:222px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:222px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2407,14 +2408,14 @@
 					]
 				},
 				{
-					id: Страница7,
+					id: 'Страница7',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон12',
 			text: 'Стыковка записей по себестоимости реализации за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2600,7 +2601,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред12',
 			text: 'Стыковка записей по себестоимости реализации за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2756,14 +2757,14 @@
 					]
 				},
 				{
-					id: Страница8,
+					id: 'Страница8',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон21',
 			text: 'Стыковка записей по дивидендам к выплате за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2949,7 +2950,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред21',
 			text: 'Стыковка записей по дивидендам к выплате за ',
-			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:211px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3105,14 +3106,14 @@
 					]
 				},
 				{
-					id: Страница9,
+					id: 'Страница9',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыКон40',
 			text: 'Текущая и долгосрочная дебиторская и кредиторская задолженность за ',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3141,7 +3142,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПред40',
 			text: 'Текущая и долгосрочная дебиторская и кредиторская задолженность за ',
-			style: 'position:absolute;left:0px;top:151px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:151px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3673,14 +3674,14 @@
 					]
 				},
 				{
-					id: Страница10,
+					id: 'Страница10',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Сформированная консолидированная отчетность',
-			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:762px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3798,7 +3799,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:430px;width:778px;height:25px;',
 			Привязка:
 			{
@@ -3852,8 +3853,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3865,19 +3865,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

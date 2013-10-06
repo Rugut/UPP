@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельОсновная,
+			id: 'ПанельОсновная',
 			style: 'position:absolute;left:183px;top:0px;width:557px;height:399px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:557,
 			Верх:0,
 			Лево:183,
+			Групповой: true,
 			height: 399,width: 557,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Главная,
+					id: 'Главная',
 					items:
 					[
 		{
@@ -228,12 +229,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДействиеДляПользователя',
 			boxLabel: 'Создать новую настройку обмена с WEB-сайтом',
 			style: 'position:absolute;left:6px;top:53px;width:272px;height:19px;',
@@ -261,12 +257,10 @@
 			Верх:53,
 			Лево:6,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НастройкаОбменаСWEBСайтом,
+					id: 'НастройкаОбменаСWEBСайтом',
 					items:
 					[
 		{
@@ -299,7 +293,7 @@
 			Лево:112,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательНазначениеКаталог',
 			boxLabel: 'Выгрузка в каталог',
 			style: 'position:absolute;left:160px;top:145px;width:124px;height:19px;',
@@ -329,7 +323,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНазначение,
+			id: 'ПанельНазначение',
 			style: 'position:absolute;left:6px;top:170px;width:545px;height:116px;',
 			Привязка:
 			{
@@ -354,12 +348,13 @@
 			Ширина:545,
 			Верх:170,
 			Лево:6,
+			Групповой: true,
 			height: 116,width: 545,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаКаталог,
+					id: 'СтраницаКаталог',
 					items:
 					[
 		{
@@ -629,7 +624,7 @@
 					]
 				},
 				{
-					id: СтраницаСайт,
+					id: 'СтраницаСайт',
 					items:
 					[
 		{
@@ -1037,12 +1032,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательНазначениеСайт',
 			boxLabel: 'Выгрузка на сайт',
 			style: 'position:absolute;left:16px;top:145px;width:112px;height:19px;',
@@ -1071,7 +1061,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РедактироватьСуществующуюнастройкуОбмена',
 			boxLabel: 'Изменить существующую настройку обмена с WEB-сайтом',
 			style: 'position:absolute;left:6px;top:77px;width:326px;height:19px;',
@@ -1099,12 +1089,10 @@
 			Верх:77,
 			Лево:6,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НастройкиТовары,
+					id: 'НастройкиТовары',
 					items:
 					[
 		{
@@ -1315,7 +1303,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:97px;width:545px;height:24px;',
 			Привязка:
 			{
@@ -1349,7 +1337,7 @@
 					]
 				},
 				{
-					id: НастройкиЗаказы,
+					id: 'НастройкиЗаказы',
 					items:
 					[
 		{
@@ -1996,7 +1984,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Параметры для подстановки в заказы с WEB-сайта',
-			style: 'position:absolute;left:6px;top:74px;width:545px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:74px;width:545px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2025,7 +2013,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Параметры для создания новых элементов',
-			style: 'position:absolute;left:6px;top:167px;width:545px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:167px;width:545px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2053,11 +2041,11 @@
 					]
 				},
 				{
-					id: ДействияСЗаказами,
+					id: 'ДействияСЗаказами',
 					items:
 					[
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписыватьСДатойXML',
 			boxLabel: 'По информации документа с сайта',
 			style: 'position:absolute;left:16px;top:73px;width:199px;height:19px;',
@@ -2086,7 +2074,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписыватьСТекущейДатой',
 			boxLabel: 'Устанавливать у документов текущую дату',
 			style: 'position:absolute;left:16px;top:97px;width:246px;height:19px;',
@@ -2173,12 +2161,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписывать',
 			boxLabel: 'Только записывать документы',
 			style: 'position:absolute;left:16px;top:143px;width:181px;height:19px;',
@@ -2207,7 +2190,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПроводить',
 			boxLabel: 'Записывать и проводить документы',
 			style: 'position:absolute;left:16px;top:166px;width:207px;height:19px;',
@@ -2235,15 +2218,8 @@
 			Верх:166,
 			Лево:16,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПроводитьОперативно',
 			boxLabel: 'Проводить оперативно',
 			style: 'position:absolute;left:38px;top:190px;width:159px;height:19px;',
@@ -2272,7 +2248,7 @@
 			Лево:38,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПРоводитьНеОперативно',
 			boxLabel: 'Проводить НЕ оперативно',
 			style: 'position:absolute;left:40px;top:215px;width:157px;height:19px;',
@@ -2300,16 +2276,14 @@
 			Верх:215,
 			Лево:40,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НастройкиТипаВыполненияОбменаДанными,
+					id: 'НастройкиТипаВыполненияОбменаДанными',
 					items:
 					[
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПолнаяВыгрузка',
 			boxLabel: 'Полная выгрузка данных',
 			style: 'position:absolute;left:16px;top:74px;width:150px;height:19px;',
@@ -2338,7 +2312,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВыгрузкаИзменений',
 			boxLabel: 'Выгружать только измененные объекты с момента последнего обмена',
 			style: 'position:absolute;left:16px;top:98px;width:393px;height:19px;',
@@ -2518,7 +2492,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУзелОбменаТоварами,
+			id: 'ПанельУзелОбменаТоварами',
 			style: 'position:absolute;left:6px;top:139px;width:545px;height:43px;',
 			Привязка:
 			{
@@ -2543,12 +2517,13 @@
 			Ширина:545,
 			Верх:139,
 			Лево:6,
+			Групповой: true,
 			height: 43,width: 545,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Главная,
+					id: 'Главная',
 					items:
 					[
 		{
@@ -2650,7 +2625,7 @@
 					]
 				},
 				{
-					id: НастройкиАвтоматическогоОбменаДанными,
+					id: 'НастройкиАвтоматическогоОбменаДанными',
 					items:
 					[
 		{
@@ -2683,12 +2658,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВариантНастройкиПериодическогоОбмена',
 			boxLabel: 'Каждые 30 минут',
 			style: 'position:absolute;left:95px;top:81px;width:110px;height:19px;',
@@ -2717,7 +2687,7 @@
 			Лево:95,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'КаждыйЧас',
 			boxLabel: 'Каждый час',
 			style: 'position:absolute;left:95px;top:104px;width:90px;height:19px;',
@@ -2746,7 +2716,7 @@
 			Лево:95,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'КаждыйЧас2',
 			boxLabel: 'Каждый два часа',
 			style: 'position:absolute;left:95px;top:128px;width:110px;height:19px;',
@@ -2775,7 +2745,7 @@
 			Лево:95,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'КаждыйЧас8',
 			boxLabel: 'Каждые восемь часов',
 			style: 'position:absolute;left:95px;top:151px;width:140px;height:19px;',
@@ -2804,7 +2774,7 @@
 			Лево:95,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'КаждыйЧас9',
 			boxLabel: 'Произвольная настройка периода:',
 			style: 'position:absolute;left:95px;top:199px;width:197px;height:19px;',
@@ -2833,7 +2803,7 @@
 			Лево:95,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОдинРазВДень',
 			boxLabel: 'Каждый день',
 			style: 'position:absolute;left:95px;top:175px;width:90px;height:19px;',
@@ -2861,12 +2831,10 @@
 			Верх:175,
 			Лево:95,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ИтоговаяСтраницаЗавершенияОбмена,
+					id: 'ИтоговаяСтраницаЗавершенияОбмена',
 					items:
 					[
 		{
@@ -2996,7 +2964,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКартинки,
+			id: 'ПанельКартинки',
 			style: 'position:absolute;left:0px;top:0px;width:181px;height:399px;',
 			Привязка:
 			{
@@ -3021,12 +2989,13 @@
 			Ширина:181,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 399,width: 181,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаНастройки,
+					id: 'СтраницаНастройки',
 				},
 			]
 		},
@@ -3036,7 +3005,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:399px;width:740px;height:25px;',
 			Привязка:
 			{
@@ -3082,8 +3051,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3095,19 +3063,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

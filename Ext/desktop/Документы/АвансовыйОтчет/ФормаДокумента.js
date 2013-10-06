@@ -144,7 +144,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
 			Привязка:
 			{
@@ -451,7 +451,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:109px;width:676px;height:224px;',
 			Привязка:
 			{
@@ -476,11 +476,12 @@
 			Ширина:676,
 			Верх:109,
 			Лево:8,
+			Групповой: true,
 			height: 224,width: 676,
 			items:
 			[
 				{
-					id: Авансы,
+					id: 'Авансы',
 					items:
 					[
 		{
@@ -604,7 +605,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВыданныеАвансы,
+			id: 'КоманднаяПанельВыданныеАвансы',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
 			Привязка:
 			{
@@ -639,7 +640,7 @@
 					]
 				},
 				{
-					id: Товары,
+					id: 'Товары',
 					items:
 					[
 		{
@@ -1006,7 +1007,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТовары,
+			id: 'КоманднаяПанельТовары',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
 			Привязка:
 			{
@@ -1142,7 +1143,7 @@
 					]
 				},
 				{
-					id: Тара,
+					id: 'Тара',
 					items:
 					[
 		{
@@ -1392,7 +1393,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВозвратнаяТара,
+			id: 'КоманднаяПанельВозвратнаяТара',
 			style: 'position:absolute;left:6px;top:0px;width:656px;height:24px;',
 			Привязка:
 			{
@@ -1432,7 +1433,7 @@
 					]
 				},
 				{
-					id: ОплатаПоставщикам,
+					id: 'ОплатаПоставщикам',
 					items:
 					[
 		{
@@ -1646,7 +1647,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОплатаПоставщикам,
+			id: 'КоманднаяПанельОплатаПоставщикам',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
 			Привязка:
 			{
@@ -1709,7 +1710,7 @@
 					]
 				},
 				{
-					id: Прочее,
+					id: 'Прочее',
 					items:
 					[
 		{
@@ -2229,7 +2230,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПрочее,
+			id: 'КоманднаяПанельПрочее',
 			style: 'position:absolute;left:6px;top:0px;width:662px;height:24px;',
 			Привязка:
 			{
@@ -2268,7 +2269,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -3138,7 +3139,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:407px;width:692px;height:27px;',
 			Привязка:
 			{
@@ -3194,8 +3195,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3207,19 +3207,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -390,7 +390,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботникиОрганизации,
+			id: 'КоманднаяПанельРаботникиОрганизации',
 			style: 'position:absolute;left:8px;top:239px;width:614px;height:24px;',
 			Привязка:
 			{
@@ -682,7 +682,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДляПередачиВИМНС',
 			text: 'Сведения формируются для ...',
-			style: 'position:absolute;left:8px;top:131px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:131px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -864,7 +864,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРаботникиОрганизации',
 			text: 'Справки о доходах',
-			style: 'position:absolute;left:8px;top:223px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:223px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -891,7 +891,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:630px;height:25px;',
 			Привязка:
 			{
@@ -923,12 +923,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательДляПередачиВИФНС',
 			boxLabel: 'передачи в ИФНС с идентификатором файла:',
 			style: 'position:absolute;left:14px;top:152px;width:252px;height:19px;',
@@ -957,7 +952,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательФизлицуСводно',
 			boxLabel: 'выдачи на руки сотрудникам - сводные',
 			style: 'position:absolute;left:14px;top:174px;width:251px;height:19px;',
@@ -986,7 +981,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательФизлицуВРазрезеКодовОКАТО',
 			boxLabel: 'выдачи на руки сотрудникам - в разрезе ставок и кодов по ОКАТО',
 			style: 'position:absolute;left:14px;top:196px;width:478px;height:19px;',
@@ -1014,15 +1009,13 @@
 			Верх:196,
 			Лево:14,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:555px;width:630px;height:25px;',
 			Привязка:
 			{
@@ -1090,8 +1083,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1103,19 +1095,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

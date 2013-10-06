@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:363px;height:25px;',
 			Привязка:
 			{
@@ -391,7 +391,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:173px;width:347px;height:233px;',
 			Привязка:
 			{
@@ -416,11 +416,12 @@
 			Ширина:347,
 			Верх:173,
 			Лево:8,
+			Групповой: true,
 			height: 233,width: 347,
 			items:
 			[
 				{
-					id: ВыполняемыеДействия,
+					id: 'ВыполняемыеДействия',
 					items:
 					[
 		{
@@ -508,7 +509,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВыполняемыеДействия,
+			id: 'КоманднаяПанельВыполняемыеДействия',
 			style: 'position:absolute;left:6px;top:6px;width:333px;height:24px;',
 			Привязка:
 			{
@@ -547,7 +548,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -647,7 +648,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРаспределение',
 			text: 'Распределение продукции и затрат по переделам',
-			style: 'position:absolute;left:6px;top:31px;width:333px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:31px;width:333px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -707,7 +708,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтразитьВУчете,
+			id: 'ПанельОтразитьВУчете',
 			style: 'position:absolute;left:8px;top:83px;width:347px;height:19px;',
 			Привязка:
 			{
@@ -732,12 +733,13 @@
 			Ширина:347,
 			Верх:83,
 			Лево:8,
+			Групповой: true,
 			height: 19,width: 347,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: РасширеннаяАналитика,
+					id: 'РасширеннаяАналитика',
 					items:
 					[
 		{
@@ -770,7 +772,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОтраженияВУчетеРасширеннаяАналитика',
 			boxLabel: 'упр. учете',
 			style: 'position:absolute;left:99px;top:0px;width:69px;height:19px;',
@@ -799,7 +801,7 @@
 			Лево:99,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтражатьВРегламентированномУчете',
 			boxLabel: 'бух. и нал. учете',
 			style: 'position:absolute;left:168px;top:0px;width:157px;height:19px;',
@@ -830,7 +832,7 @@
 					]
 				},
 				{
-					id: Основная,
+					id: 'Основная',
 					items:
 					[
 		{
@@ -863,12 +865,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОтраженияВУчете',
 			boxLabel: 'упр. учете',
 			style: 'position:absolute;left:82px;top:0px;width:69px;height:19px;',
@@ -897,7 +894,7 @@
 			Лево:82,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтражатьВБухгалтерскомУчете',
 			boxLabel: 'бух. учете',
 			style: 'position:absolute;left:151px;top:0px;width:69px;height:19px;',
@@ -926,7 +923,7 @@
 			Лево:151,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтражатьВНалоговомУчете',
 			boxLabel: 'нал. учете',
 			style: 'position:absolute;left:220px;top:0px;width:69px;height:19px;',
@@ -955,7 +952,7 @@
 			Лево:220,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтражатьВМеждународномУчете',
 			boxLabel: 'МСФО',
 			style: 'position:absolute;left:289px;top:0px;width:57px;height:19px;',
@@ -982,8 +979,6 @@
 			Ширина:57,
 			Верх:0,
 			Лево:289,
-		},
-			]
 		},
 					]
 				},
@@ -1087,7 +1082,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:439px;width:363px;height:25px;',
 			Привязка:
 			{
@@ -1149,8 +1144,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1162,19 +1156,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

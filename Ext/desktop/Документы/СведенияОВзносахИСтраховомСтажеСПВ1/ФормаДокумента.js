@@ -81,7 +81,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:846px;height:25px;',
 			Привязка:
 			{
@@ -143,7 +143,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтправки,
+			id: 'ПанельОтправки',
 			style: 'position:absolute;left:8px;top:33px;width:830px;height:41px;',
 			Привязка:
 			{
@@ -168,17 +168,18 @@
 			Ширина:830,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 41,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельОтправкиВнутренняя,
+			id: 'ПанельОтправкиВнутренняя',
 			style: 'position:absolute;left:0px;top:0px;width:830px;height:35px;',
 			Привязка:
 			{
@@ -203,12 +204,13 @@
 			Ширина:830,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 35,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -221,7 +223,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельШапка,
+			id: 'ПанельШапка',
 			style: 'position:absolute;left:8px;top:74px;width:830px;height:130px;',
 			Привязка:
 			{
@@ -246,12 +248,13 @@
 			Ширина:830,
 			Верх:74,
 			Лево:8,
+			Групповой: true,
 			height: 130,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -960,12 +963,7 @@
 			Лево:525,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипСведений',
 			boxLabel: 'Исходные',
 			style: 'position:absolute;left:97px;top:79px;width:80px;height:19px;',
@@ -994,7 +992,7 @@
 			Лево:97,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Корректирующие',
 			boxLabel: 'Корректирующие',
 			style: 'position:absolute;left:182px;top:79px;width:109px;height:19px;',
@@ -1023,7 +1021,7 @@
 			Лево:182,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Отменяющие',
 			boxLabel: 'Отменяющие',
 			style: 'position:absolute;left:299px;top:79px;width:89px;height:19px;',
@@ -1051,15 +1049,13 @@
 			Верх:79,
 			Лево:299,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельТЧ,
+			id: 'ПанельТЧ',
 			style: 'position:absolute;left:8px;top:204px;width:830px;height:217px;',
 			Привязка:
 			{
@@ -1084,17 +1080,18 @@
 			Ширина:830,
 			Верх:204,
 			Лево:8,
+			Групповой: true,
 			height: 217,width: 830,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботникиОрганизации,
+			id: 'КоманднаяПанельРаботникиОрганизации',
 			style: 'position:absolute;left:0px;top:16px;width:830px;height:24px;',
 			Привязка:
 			{
@@ -1316,7 +1313,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРаботникиОрганизации',
 			text: 'Застрахованные лица',
-			style: 'position:absolute;left:0px;top:0px;width:830px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:830px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1351,7 +1348,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:455px;width:846px;height:25px;',
 			Привязка:
 			{
@@ -1396,8 +1393,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1409,19 +1405,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

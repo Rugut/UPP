@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельОтчета,
+			id: 'ПанельОтчета',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:270px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:474,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 270,width: 474,
 			items:
 			[
 				{
-					id: Настройка,
+					id: 'Настройка',
 					items:
 					[
 		{
@@ -211,7 +212,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПоказатели',
 			text: 'Рамка',
-			style: 'position:absolute;left:6px;top:106px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:106px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -297,7 +298,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРазделУчета,
+			id: 'ПанельРазделУчета',
 			style: 'position:absolute;left:6px;top:30px;width:460px;height:19px;',
 			Привязка:
 			{
@@ -322,12 +323,13 @@
 			Ширина:460,
 			Верх:30,
 			Лево:6,
+			Групповой: true,
 			height: 19,width: 460,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -394,12 +396,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель1',
 			boxLabel: 'Показатель 1',
 			style: 'position:absolute;left:12px;top:127px;width:220px;height:16px;',
@@ -428,7 +425,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель7',
 			boxLabel: 'Показатель 7',
 			style: 'position:absolute;left:237px;top:127px;width:220px;height:16px;',
@@ -457,7 +454,7 @@
 			Лево:237,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель2',
 			boxLabel: 'Показатель 2',
 			style: 'position:absolute;left:12px;top:147px;width:220px;height:15px;',
@@ -486,7 +483,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель8',
 			boxLabel: 'Показатель 8',
 			style: 'position:absolute;left:237px;top:147px;width:220px;height:15px;',
@@ -515,7 +512,7 @@
 			Лево:237,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель3',
 			boxLabel: 'Показатель 3',
 			style: 'position:absolute;left:12px;top:167px;width:220px;height:15px;',
@@ -544,7 +541,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель9',
 			boxLabel: 'Показатель 9',
 			style: 'position:absolute;left:237px;top:167px;width:220px;height:15px;',
@@ -573,7 +570,7 @@
 			Лево:237,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель4',
 			boxLabel: 'Показатель 4',
 			style: 'position:absolute;left:12px;top:187px;width:220px;height:15px;',
@@ -602,7 +599,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель10',
 			boxLabel: 'Показатель 10',
 			style: 'position:absolute;left:237px;top:187px;width:220px;height:15px;',
@@ -631,7 +628,7 @@
 			Лево:237,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель5',
 			boxLabel: 'Показатель 5',
 			style: 'position:absolute;left:12px;top:207px;width:220px;height:15px;',
@@ -660,7 +657,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель11',
 			boxLabel: 'Показатель 11',
 			style: 'position:absolute;left:237px;top:207px;width:220px;height:15px;',
@@ -689,7 +686,7 @@
 			Лево:237,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель6',
 			boxLabel: 'Показатель 6',
 			style: 'position:absolute;left:12px;top:227px;width:220px;height:15px;',
@@ -718,7 +715,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Показатель12',
 			boxLabel: 'Показатель 12',
 			style: 'position:absolute;left:237px;top:229px;width:220px;height:15px;',
@@ -746,17 +743,15 @@
 			Верх:229,
 			Лево:237,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НастройкаДиаграммы,
+					id: 'НастройкаДиаграммы',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: НастройкаДиаграммы,
+			id: 'НастройкаДиаграммы',
 			style: 'position:absolute;left:6px;top:46px;width:460px;height:127px;',
 			Привязка:
 			{
@@ -781,12 +776,13 @@
 			Ширина:460,
 			Верх:46,
 			Лево:6,
+			Групповой: true,
 			height: 127,width: 460,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Круговая,
+					id: 'Круговая',
 					items:
 					[
 		{
@@ -939,7 +935,7 @@
 					]
 				},
 				{
-					id: КруговаяОбъемная,
+					id: 'КруговаяОбъемная',
 					items:
 					[
 		{
@@ -1121,7 +1117,7 @@
 					]
 				},
 				{
-					id: Гистограмма,
+					id: 'Гистограмма',
 					items:
 					[
 		{
@@ -1336,7 +1332,7 @@
 					]
 				},
 				{
-					id: ГистограммаОбъемная,
+					id: 'ГистограммаОбъемная',
 					items:
 					[
 		{
@@ -1551,7 +1547,7 @@
 					]
 				},
 				{
-					id: График,
+					id: 'График',
 					items:
 					[
 		{
@@ -1649,7 +1645,7 @@
 					]
 				},
 				{
-					id: ГрафикСОбластями,
+					id: 'ГрафикСОбластями',
 					items:
 					[
 		{
@@ -1747,7 +1743,7 @@
 					]
 				},
 				{
-					id: Изометрическая,
+					id: 'Изометрическая',
 					items:
 					[
 		{
@@ -2083,7 +2079,7 @@
 					]
 				},
 				{
-					id: Страница3,
+					id: 'Страница3',
 					items:
 					[
 		{
@@ -2171,7 +2167,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмеренияСтроки,
+			id: 'КоманднаяПанельИзмеренияСтроки',
 			style: 'position:absolute;left:6px;top:0px;width:212px;height:24px;',
 			Привязка:
 			{
@@ -2298,7 +2294,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмеренияКолонки,
+			id: 'КоманднаяПанельИзмеренияКолонки',
 			style: 'position:absolute;left:254px;top:0px;width:212px;height:24px;',
 			Привязка:
 			{
@@ -2376,7 +2372,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТранспонирование,
+			id: 'КоманднаяПанельТранспонирование',
 			style: 'position:absolute;left:224px;top:24px;width:24px;height:195px;',
 			Привязка:
 			{
@@ -2474,7 +2470,7 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
@@ -2598,7 +2594,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокУсловий,
+			id: 'КоманднаяПанельСписокУсловий',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
 			Привязка:
 			{
@@ -2632,7 +2628,7 @@
 					]
 				},
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2720,7 +2716,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
 			Привязка:
 			{
@@ -2757,7 +2753,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:289px;width:490px;height:25px;',
 			Привязка:
 			{
@@ -2814,8 +2810,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2827,19 +2822,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

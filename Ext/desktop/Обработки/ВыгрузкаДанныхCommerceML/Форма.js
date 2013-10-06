@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:611px;height:25px;',
 			Привязка:
 			{
@@ -112,7 +112,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНижняя,
+			id: 'КоманднаяПанельНижняя',
 			style: 'position:absolute;left:0px;top:488px;width:611px;height:25px;',
 			Привязка:
 			{
@@ -161,7 +161,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновная,
+			id: 'ПанельОсновная',
 			style: 'position:absolute;left:8px;top:80px;width:603px;height:405px;',
 			Привязка:
 			{
@@ -186,17 +186,18 @@
 			Ширина:603,
 			Верх:80,
 			Лево:8,
+			Групповой: true,
 			height: 405,width: 603,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаДанные,
+					id: 'СтраницаДанные',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:6px;top:71px;width:591px;height:334px;',
 			Привязка:
 			{
@@ -221,12 +222,13 @@
 			Ширина:591,
 			Верх:71,
 			Лево:6,
+			Групповой: true,
 			height: 334,width: 591,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаВыгрузкиТоваров,
+					id: 'СтраницаВыгрузкиТоваров',
 					items:
 					[
 		{
@@ -352,7 +354,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Отбор для выгрузки информации о товарах',
-			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -379,7 +381,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтборКаталог,
+			id: 'КоманднаяПанельОтборКаталог',
 			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
 			Привязка:
 			{
@@ -474,7 +476,7 @@
 					]
 				},
 				{
-					id: СтраницаВыгрузкиПрайса,
+					id: 'СтраницаВыгрузкиПрайса',
 					items:
 					[
 		{
@@ -661,7 +663,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Отбор для выгрузки прайс-листа',
-			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:23px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -688,7 +690,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбораПрайс,
+			id: 'КоманднаяПанельОтбораПрайс',
 			style: 'position:absolute;left:0px;top:42px;width:591px;height:24px;',
 			Привязка:
 			{
@@ -722,12 +724,12 @@
 					]
 				},
 				{
-					id: СтраницаВыгрузкиДокументов,
+					id: 'СтраницаВыгрузкиДокументов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументы,
+			id: 'КоманднаяПанельДокументы',
 			style: 'position:absolute;left:0px;top:66px;width:591px;height:24px;',
 			Привязка:
 			{
@@ -1125,7 +1127,7 @@
 			xtype: 'label',
 			id: 'РамкаДокументыДляВыгрузки',
 			text: 'Документы для выгрузки',
-			style: 'position:absolute;left:0px;top:46px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:46px;width:591px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1153,7 +1155,7 @@
 					]
 				},
 				{
-					id: ВыгрузкаПрайсаCML_1,
+					id: 'ВыгрузкаПрайсаCML_1',
 					items:
 					[
 		{
@@ -1360,7 +1362,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:248px;top:108px;width:343px;height:24px;',
 			Привязка:
 			{
@@ -1453,7 +1455,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Отбор для прайс-листа',
-			style: 'position:absolute;left:248px;top:89px;width:343px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:248px;top:89px;width:343px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1634,7 +1636,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Выгружать свойства',
-			style: 'position:absolute;left:0px;top:89px;width:242px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:89px;width:242px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1912,7 +1914,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельФайлКаталог,
+			id: 'ПанельФайлКаталог',
 			style: 'position:absolute;left:6px;top:24px;width:591px;height:21px;',
 			Привязка:
 			{
@@ -1937,12 +1939,13 @@
 			Ширина:591,
 			Верх:24,
 			Лево:6,
+			Групповой: true,
 			height: 21,width: 591,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Файл,
+					id: 'Файл',
 					items:
 					[
 		{
@@ -1980,7 +1983,7 @@
 					]
 				},
 				{
-					id: Каталог,
+					id: 'Каталог',
 					items:
 					[
 		{
@@ -2078,12 +2081,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТипВыгрузкиДанных',
 			boxLabel: 'Выгрузить данные в файл',
 			style: 'position:absolute;left:6px;top:0px;width:164px;height:19px;',
@@ -2112,7 +2110,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВыгрузкаПоЭлектроннойПочте',
 			boxLabel: 'Выгрузить данные по электронной почте',
 			style: 'position:absolute;left:175px;top:0px;width:234px;height:19px;',
@@ -2140,12 +2138,10 @@
 			Верх:0,
 			Лево:175,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
@@ -2153,8 +2149,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2166,19 +2161,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

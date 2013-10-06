@@ -174,7 +174,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:416px;height:25px;',
 			Привязка:
 			{
@@ -270,7 +270,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:106px;width:400px;height:172px;',
 			Привязка:
 			{
@@ -295,11 +295,12 @@
 			Ширина:400,
 			Верх:106,
 			Лево:8,
+			Групповой: true,
 			height: 172,width: 400,
 			items:
 			[
 				{
-					id: ПараметрыФормируемыхДокументов,
+					id: 'ПараметрыФормируемыхДокументов',
 					items:
 					[
 		{
@@ -398,7 +399,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСпособВводаВремени',
 			text: 'Способ ввода времени',
-			style: 'position:absolute;left:6px;top:79px;width:386px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:79px;width:386px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -577,12 +578,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСпособОтраженияПоДням',
 			boxLabel: 'По дням периода',
 			style: 'position:absolute;left:6px;top:103px;width:168px;height:19px;',
@@ -611,7 +607,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСпособОтраженияСводно',
 			boxLabel: 'Сводно, в целом за период',
 			style: 'position:absolute;left:6px;top:127px;width:168px;height:19px;',
@@ -639,12 +635,10 @@
 			Верх:127,
 			Лево:6,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: АвтоматическоеФормированиеДокументов,
+					id: 'АвтоматическоеФормированиеДокументов',
 					items:
 					[
 		{
@@ -897,7 +891,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:310px;width:416px;height:25px;',
 			Привязка:
 			{
@@ -953,8 +947,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -966,19 +959,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

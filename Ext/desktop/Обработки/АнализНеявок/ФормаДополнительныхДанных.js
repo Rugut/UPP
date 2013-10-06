@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:8px;top:8px;width:594px;height:174px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:594,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 174,width: 594,
 			items:
 			[
 				{
-					id: ОбщиеДанные,
+					id: 'ОбщиеДанные',
 					items:
 					[
 		{
@@ -364,7 +365,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДоплаты,
+			id: 'ПанельДоплаты',
 			style: 'position:absolute;left:294px;top:78px;width:281px;height:19px;',
 			Привязка:
 			{
@@ -389,12 +390,13 @@
 			Ширина:281,
 			Верх:78,
 			Лево:294,
+			Групповой: true,
 			height: 19,width: 281,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -497,7 +499,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВидыРасчета',
 			text: 'При расчете использовать начисления:',
-			style: 'position:absolute;left:6px;top:56px;width:580px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:56px;width:580px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -555,7 +557,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРасчетСреднего',
 			text: 'Расчет среднего заработка:',
-			style: 'position:absolute;left:6px;top:105px;width:580px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:105px;width:580px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -583,7 +585,7 @@
 					]
 				},
 				{
-					id: СтраницаОтставников,
+					id: 'СтраницаОтставников',
 					items:
 					[
 		{
@@ -928,7 +930,7 @@
 					]
 				},
 				{
-					id: СтраницаОблученных,
+					id: 'СтраницаОблученных',
 					items:
 					[
 		{
@@ -1280,7 +1282,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:190px;width:610px;height:25px;',
 			Привязка:
 			{
@@ -1326,8 +1328,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1339,19 +1340,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

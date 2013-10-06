@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:0px;width:732px;height:25px;',
 			Привязка:
 			{
@@ -648,7 +648,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновная,
+			id: 'ПанельОсновная',
 			style: 'position:absolute;left:8px;top:157px;width:716px;height:251px;',
 			Привязка:
 			{
@@ -673,11 +673,12 @@
 			Ширина:716,
 			Верх:157,
 			Лево:8,
+			Групповой: true,
 			height: 251,width: 716,
 			items:
 			[
 				{
-					id: БюджетныеОперации,
+					id: 'БюджетныеОперации',
 					items:
 					[
 		{
@@ -1001,7 +1002,7 @@
 			xtype: 'label',
 			id: 'ПараметрыКопирования',
 			text: 'Параметры копирования',
-			style: 'position:absolute;left:6px;top:156px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:156px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1028,7 +1029,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПараметрыРасчета,
+			id: 'ПанельПараметрыРасчета',
 			style: 'position:absolute;left:7px;top:177px;width:701px;height:48px;',
 			Привязка:
 			{
@@ -1053,12 +1054,13 @@
 			Ширина:701,
 			Верх:177,
 			Лево:7,
+			Групповой: true,
 			height: 48,width: 701,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоПериодам,
+					id: 'ПоПериодам',
 					items:
 					[
 		{
@@ -1340,7 +1342,7 @@
 					]
 				},
 				{
-					id: Нормировать,
+					id: 'Нормировать',
 					items:
 					[
 		{
@@ -1892,7 +1894,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:6px;top:26px;width:339px;height:24px;',
 			Привязка:
 			{
@@ -1947,12 +1949,12 @@
 					]
 				},
 				{
-					id: Документы,
+					id: 'Документы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокОперации,
+			id: 'КоманднаяПанельСписокОперации',
 			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
 			Привязка:
 			{
@@ -2123,12 +2125,12 @@
 					]
 				},
 				{
-					id: ДокументыРасчеты,
+					id: 'ДокументыРасчеты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокРасчеты,
+			id: 'КоманднаяПанельСписокРасчеты',
 			style: 'position:absolute;left:6px;top:0px;width:702px;height:25px;',
 			Привязка:
 			{
@@ -2658,7 +2660,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:440px;width:732px;height:25px;',
 			Привязка:
 			{
@@ -2706,8 +2708,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2719,19 +2720,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

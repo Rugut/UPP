@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:25px;',
 			Привязка:
 			{
@@ -121,7 +121,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСтатуса,
+			id: 'ПанельСтатуса',
 			style: 'position:absolute;left:8px;top:33px;width:638px;height:44px;',
 			Привязка:
 			{
@@ -146,17 +146,18 @@
 			Ширина:638,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 44,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельСтатусаВнутренняя,
+			id: 'ПанельСтатусаВнутренняя',
 			style: 'position:absolute;left:0px;top:0px;width:638px;height:36px;',
 			Привязка:
 			{
@@ -181,12 +182,13 @@
 			Ширина:638,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 36,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -199,7 +201,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтветНаЗапрос,
+			id: 'ПанельОтветНаЗапрос',
 			style: 'position:absolute;left:8px;top:77px;width:638px;height:39px;',
 			Привязка:
 			{
@@ -224,12 +226,13 @@
 			Ширина:638,
 			Верх:77,
 			Лево:8,
+			Групповой: true,
 			height: 39,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -325,7 +328,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЗапрос,
+			id: 'ПанельЗапрос',
 			style: 'position:absolute;left:8px;top:119px;width:638px;height:454px;',
 			Привязка:
 			{
@@ -350,12 +353,13 @@
 			Ширина:638,
 			Верх:119,
 			Лево:8,
+			Групповой: true,
 			height: 454,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -670,7 +674,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:0px;top:83px;width:638px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:83px;width:638px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -697,7 +701,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:0px;top:140px;width:638px;height:314px;',
 			Привязка:
 			{
@@ -722,12 +726,13 @@
 			Ширина:638,
 			Верх:140,
 			Лево:0,
+			Групповой: true,
 			height: 314,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -980,7 +985,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Налоги',
-			style: 'position:absolute;left:0px;top:50px;width:638px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:50px;width:638px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1007,7 +1012,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНалогиНадпись,
+			id: 'ПанельНалогиНадпись',
 			style: 'position:absolute;left:0px;top:67px;width:638px;height:20px;',
 			Привязка:
 			{
@@ -1032,12 +1037,13 @@
 			Ширина:638,
 			Верх:67,
 			Лево:0,
+			Групповой: true,
 			height: 20,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1073,7 +1079,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: '',
-			style: 'position:absolute;left:0px;top:17px;width:638px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:17px;width:638px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1104,7 +1110,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНалоги,
+			id: 'ПанельНалоги',
 			style: 'position:absolute;left:0px;top:86px;width:638px;height:228px;',
 			Привязка:
 			{
@@ -1129,17 +1135,18 @@
 			Ширина:638,
 			Верх:86,
 			Лево:0,
+			Групповой: true,
 			height: 228,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:0px;width:638px;height:24px;',
 			Привязка:
 			{
@@ -1272,7 +1279,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДополнительныеПараметры,
+			id: 'ПанельДополнительныеПараметры',
 			style: 'position:absolute;left:0px;top:115px;width:638px;height:23px;',
 			Привязка:
 			{
@@ -1297,12 +1304,13 @@
 			Ширина:638,
 			Верх:115,
 			Лево:0,
+			Групповой: true,
 			height: 23,width: 638,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПредставлениеВыпискиОперацийИзКарточки,
+					id: 'ПредставлениеВыпискиОперацийИзКарточки',
 					items:
 					[
 		{
@@ -1366,16 +1374,11 @@
 					]
 				},
 				{
-					id: ФильтрПоВиду,
+					id: 'ФильтрПоВиду',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВыбиратьТолько',
 			boxLabel: 'первичные',
 			style: 'position:absolute;left:99px;top:1px;width:80px;height:19px;',
@@ -1404,7 +1407,7 @@
 			Лево:99,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВыбиратьТолько1',
 			boxLabel: 'корректирующие',
 			style: 'position:absolute;left:190px;top:1px;width:111px;height:19px;',
@@ -1433,7 +1436,7 @@
 			Лево:190,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВыбиратьТолько2',
 			boxLabel: 'все',
 			style: 'position:absolute;left:314px;top:1px;width:40px;height:19px;',
@@ -1460,8 +1463,6 @@
 			Ширина:40,
 			Верх:1,
 			Лево:314,
-		},
-			]
 		},
 					]
 				},
@@ -1570,7 +1571,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:581px;width:654px;height:25px;',
 			Привязка:
 			{
@@ -1632,8 +1633,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1645,19 +1645,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

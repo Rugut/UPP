@@ -144,7 +144,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:25px;',
 			Привязка:
 			{
@@ -542,7 +542,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПорядокЗакрытия,
+			id: 'КоманднаяПанельПорядокЗакрытия',
 			style: 'position:absolute;left:8px;top:98px;width:619px;height:24px;',
 			Привязка:
 			{
@@ -577,7 +577,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Порядок закрытия',
-			style: 'position:absolute;left:8px;top:82px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:82px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -632,12 +632,7 @@
 			Лево:328,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОтраженияВУчете',
 			boxLabel: 'упр. учете',
 			style: 'position:absolute;left:390px;top:33px;width:69px;height:19px;',
@@ -666,7 +661,7 @@
 			Лево:390,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтражатьВБухгалтерскомУчете',
 			boxLabel: 'регл. учете',
 			style: 'position:absolute;left:459px;top:33px;width:79px;height:19px;',
@@ -694,15 +689,13 @@
 			Верх:33,
 			Лево:459,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:321px;width:636px;height:25px;',
 			Привязка:
 			{
@@ -764,8 +757,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -777,19 +769,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

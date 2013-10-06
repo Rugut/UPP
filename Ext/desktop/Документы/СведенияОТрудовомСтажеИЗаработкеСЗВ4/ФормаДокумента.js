@@ -389,7 +389,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботникиОрганизации,
+			id: 'КоманднаяПанельРаботникиОрганизации',
 			style: 'position:absolute;left:8px;top:262px;width:984px;height:24px;',
 			Привязка:
 			{
@@ -656,7 +656,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
 			Привязка:
 			{
@@ -691,7 +691,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Застрахованные лица',
-			style: 'position:absolute;left:8px;top:246px;width:984px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:246px;width:984px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -990,7 +990,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОписанияФорм,
+			id: 'ПанельОписанияФорм',
 			style: 'position:absolute;left:8px;top:107px;width:984px;height:69px;',
 			Привязка:
 			{
@@ -1015,12 +1015,13 @@
 			Ширина:984,
 			Верх:107,
 			Лево:8,
+			Групповой: true,
 			height: 69,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница2010,
+					id: 'Страница2010',
 					items:
 					[
 		{
@@ -1205,7 +1206,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипФормДокументов2010',
 			boxLabel: 'СЗВ-6-1',
 			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
@@ -1234,7 +1235,7 @@
 			Лево:94,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СЗВ_6_2',
 			boxLabel: 'СЗВ-6-2',
 			style: 'position:absolute;left:182px;top:0px;width:109px;height:19px;',
@@ -1292,7 +1293,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Отменяющие',
 			boxLabel: 'Отменяющие',
 			style: 'position:absolute;left:299px;top:25px;width:89px;height:19px;',
@@ -1350,12 +1351,7 @@
 			Лево:754,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипСведений2010',
 			boxLabel: 'Исходные',
 			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
@@ -1384,7 +1380,7 @@
 			Лево:94,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Корректирующие',
 			boxLabel: 'Корректирующие',
 			style: 'position:absolute;left:182px;top:25px;width:109px;height:19px;',
@@ -1412,12 +1408,10 @@
 			Верх:25,
 			Лево:182,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: СтраницаОписания,
+					id: 'СтраницаОписания',
 					items:
 					[
 		{
@@ -1452,7 +1446,7 @@
 					]
 				},
 				{
-					id: Страница2009,
+					id: 'Страница2009',
 					items:
 					[
 		{
@@ -1635,12 +1629,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипФормДокументов',
 			boxLabel: 'СЗВ-4-1',
 			style: 'position:absolute;left:94px;top:0px;width:80px;height:19px;',
@@ -1669,7 +1658,7 @@
 			Лево:94,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СЗВ_4_2',
 			boxLabel: 'СЗВ-4-2',
 			style: 'position:absolute;left:182px;top:0px;width:59px;height:19px;',
@@ -1697,15 +1686,8 @@
 			Верх:0,
 			Лево:182,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипСведений',
 			boxLabel: 'Исходные',
 			style: 'position:absolute;left:94px;top:25px;width:80px;height:19px;',
@@ -1734,7 +1716,7 @@
 			Лево:94,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПЕНС',
 			boxLabel: 'Назначение пенсии',
 			style: 'position:absolute;left:182px;top:25px;width:119px;height:19px;',
@@ -1762,15 +1744,8 @@
 			Верх:25,
 			Лево:182,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидКорректировки',
 			boxLabel: 'Отсутствует',
 			style: 'position:absolute;left:94px;top:50px;width:80px;height:19px;',
@@ -1799,7 +1774,7 @@
 			Лево:94,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель4',
 			boxLabel: 'Корректирующая',
 			style: 'position:absolute;left:182px;top:50px;width:119px;height:19px;',
@@ -1828,7 +1803,7 @@
 			Лево:182,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель5',
 			boxLabel: 'Отменяющая',
 			style: 'position:absolute;left:308px;top:50px;width:87px;height:19px;',
@@ -1855,8 +1830,6 @@
 			Ширина:87,
 			Верх:50,
 			Лево:308,
-		},
-			]
 		},
 					]
 				},
@@ -1925,7 +1898,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСостояниеПачекДокументов,
+			id: 'ПанельСостояниеПачекДокументов',
 			style: 'position:absolute;left:8px;top:176px;width:984px;height:65px;',
 			Привязка:
 			{
@@ -1950,12 +1923,13 @@
 			Ширина:984,
 			Верх:176,
 			Лево:8,
+			Групповой: true,
 			height: 65,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2026,7 +2000,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:495px;width:1000px;height:25px;',
 			Привязка:
 			{
@@ -2100,8 +2074,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2113,19 +2086,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

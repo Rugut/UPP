@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:330px;height:25px;',
 			Привязка:
 			{
@@ -66,7 +66,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:412px;width:330px;height:25px;',
 			Привязка:
 			{
@@ -123,7 +123,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыАдрес',
 			text: 'Адрес',
-			style: 'position:absolute;left:8px;top:131px;width:314px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:131px;width:314px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -150,7 +150,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельАдреса,
+			id: 'ПанельАдреса',
 			style: 'position:absolute;left:8px;top:152px;width:314px;height:228px;',
 			Привязка:
 			{
@@ -175,12 +175,13 @@
 			Ширина:314,
 			Верх:152,
 			Лево:8,
+			Групповой: true,
 			height: 228,width: 314,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: РегламентированныйАдрес,
+					id: 'РегламентированныйАдрес',
 					items:
 					[
 		{
@@ -893,7 +894,7 @@
 					]
 				},
 				{
-					id: ПроизвольныйАдрес,
+					id: 'ПроизвольныйАдрес',
 					items:
 					[
 		{
@@ -1022,7 +1023,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастроекАдреса,
+			id: 'ПанельНастроекАдреса',
 			style: 'position:absolute;left:8px;top:33px;width:314px;height:92px;',
 			Привязка:
 			{
@@ -1047,12 +1048,13 @@
 			Ширина:314,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 92,width: 314,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ДляКонтактнойИнформации,
+					id: 'ДляКонтактнойИнформации',
 					items:
 					[
 		{
@@ -1178,12 +1180,7 @@
 			Лево:88,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РоссийскийАдрес',
 			boxLabel: 'Российский адрес',
 			style: 'position:absolute;left:0px;top:54px;width:116px;height:15px;',
@@ -1212,7 +1209,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'АдресЗаПределамиРФ',
 			boxLabel: 'Адрес за пределами РФ',
 			style: 'position:absolute;left:0px;top:77px;width:147px;height:15px;',
@@ -1240,12 +1237,10 @@
 			Верх:77,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ДляРегламентированнойОтчетности,
+					id: 'ДляРегламентированнойОтчетности',
 					items:
 					[
 		{
@@ -1374,7 +1369,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыАдрес1',
 			text: 'Коды',
-			style: 'position:absolute;left:0px;top:6px;width:314px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:6px;width:314px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1405,7 +1400,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКомментарий,
+			id: 'ПанельКомментарий',
 			style: 'position:absolute;left:8px;top:384px;width:314px;height:20px;',
 			Привязка:
 			{
@@ -1430,12 +1425,13 @@
 			Ширина:314,
 			Верх:384,
 			Лево:8,
+			Групповой: true,
 			height: 20,width: 314,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1507,8 +1503,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1520,19 +1515,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:644px;height:25px;',
 			Привязка:
 			{
@@ -91,7 +91,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:387px;width:644px;height:25px;',
 			Привязка:
 			{
@@ -489,7 +489,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:83px;width:628px;height:271px;',
 			Привязка:
 			{
@@ -514,11 +514,12 @@
 			Ширина:628,
 			Верх:83,
 			Лево:8,
+			Групповой: true,
 			height: 271,width: 628,
 			items:
 			[
 				{
-					id: ОбщиеСведения,
+					id: 'ОбщиеСведения',
 					items:
 					[
 		{
@@ -808,7 +809,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: 'Вложения во внеоборотные активы',
-			style: 'position:absolute;left:6px;top:6px;width:614px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:614px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -837,7 +838,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Способ отражения расходов по амортизации',
-			style: 'position:absolute;left:6px;top:103px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:103px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -894,14 +895,14 @@
 					]
 				},
 				{
-					id: БухУчет,
+					id: 'БухУчет',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Общие сведения ',
-			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1056,7 +1057,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Параметры амортизации ',
-			style: 'position:absolute;left:6px;top:102px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:102px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1393,7 +1394,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПараметрыАмортизацииБУ,
+			id: 'ПанельПараметрыАмортизацииБУ',
 			style: 'position:absolute;left:6px;top:171px;width:426px;height:24px;',
 			Привязка:
 			{
@@ -1418,12 +1419,13 @@
 			Ширина:426,
 			Верх:171,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 426,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПропорциональноОбъемуПродукции,
+					id: 'ПропорциональноОбъемуПродукции',
 					items:
 					[
 		{
@@ -1521,10 +1523,10 @@
 					]
 				},
 				{
-					id: Линейный,
+					id: 'Линейный',
 				},
 				{
-					id: УменьшаемогоОстатка,
+					id: 'УменьшаемогоОстатка',
 					items:
 					[
 		{
@@ -1568,7 +1570,7 @@
 					]
 				},
 				{
-					id: НалУчет,
+					id: 'НалУчет',
 					items:
 					[
 		{
@@ -1725,7 +1727,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Общие сведения',
-			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:614px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1970,7 +1972,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПараметровАмортизации,
+			id: 'ПанельПараметровАмортизации',
 			style: 'position:absolute;left:6px;top:145px;width:614px;height:99px;',
 			Привязка:
 			{
@@ -1995,12 +1997,13 @@
 			Ширина:614,
 			Верх:145,
 			Лево:6,
+			Групповой: true,
 			height: 99,width: 614,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: НМА,
+					id: 'НМА',
 					items:
 					[
 		{
@@ -2162,7 +2165,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: 'Параметры амортизации ',
-			style: 'position:absolute;left:6px;top:6px;width:602px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:602px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2189,7 +2192,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельМетодНачисленияАмортизацииНУ,
+			id: 'ПанельМетодНачисленияАмортизацииНУ',
 			style: 'position:absolute;left:6px;top:47px;width:458px;height:24px;',
 			Привязка:
 			{
@@ -2214,12 +2217,13 @@
 			Ширина:458,
 			Верх:47,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 458,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2384,7 +2388,7 @@
 					]
 				},
 				{
-					id: НИОКР,
+					id: 'НИОКР',
 					items:
 					[
 		{
@@ -2483,7 +2487,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНИОКР',
 			text: 'Параметры списания расходов',
-			style: 'position:absolute;left:6px;top:6px;width:602px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:602px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2511,7 +2515,7 @@
 					]
 				},
 				{
-					id: Пустая,
+					id: 'Пустая',
 				},
 			]
 		},
@@ -2580,7 +2584,7 @@
 					]
 				},
 				{
-					id: УСНУчет,
+					id: 'УСНУчет',
 					items:
 					[
 		{
@@ -2960,7 +2964,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы9',
 			text: 'Общие сведения',
-			style: 'position:absolute;left:6px;top:6px;width:612px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:612px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3081,7 +3085,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы10',
 			text: 'Оплаты нематериального актива',
-			style: 'position:absolute;left:6px;top:109px;width:612px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:109px;width:612px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3108,7 +3112,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:127px;width:612px;height:24px;',
 			Привязка:
 			{
@@ -3269,8 +3273,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3282,19 +3285,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

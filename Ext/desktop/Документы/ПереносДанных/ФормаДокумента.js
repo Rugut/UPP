@@ -144,7 +144,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:650px;height:25px;',
 			Привязка:
 			{
@@ -278,7 +278,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРегистров,
+			id: 'ПанельРегистров',
 			style: 'position:absolute;left:8px;top:82px;width:634px;height:225px;',
 			Привязка:
 			{
@@ -303,16 +303,17 @@
 			Ширина:634,
 			Верх:82,
 			Лево:8,
+			Групповой: true,
 			height: 225,width: 634,
 			items:
 			[
 				{
-					id: РегистрыСведений,
+					id: 'РегистрыСведений',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельРегистровСведений,
+			id: 'ПанельРегистровСведений',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			Привязка:
 			{
@@ -337,11 +338,12 @@
 			Ширина:620,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 189,width: 620,
 			items:
 			[
 				{
-					id: Подсказка,
+					id: 'Подсказка',
 					items:
 					[
 		{
@@ -380,12 +382,12 @@
 					]
 				},
 				{
-					id: РегистрыНакопления,
+					id: 'РегистрыНакопления',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельРегистровНакопления,
+			id: 'ПанельРегистровНакопления',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			Привязка:
 			{
@@ -410,11 +412,12 @@
 			Ширина:620,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 189,width: 620,
 			items:
 			[
 				{
-					id: Подсказка,
+					id: 'Подсказка',
 					items:
 					[
 		{
@@ -453,12 +456,12 @@
 					]
 				},
 				{
-					id: РегистрыРасчета,
+					id: 'РегистрыРасчета',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельРегистровРасчета,
+			id: 'ПанельРегистровРасчета',
 			style: 'position:absolute;left:6px;top:6px;width:620px;height:189px;',
 			Привязка:
 			{
@@ -483,11 +486,12 @@
 			Ширина:620,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 189,width: 620,
 			items:
 			[
 				{
-					id: Подсказка,
+					id: 'Подсказка',
 					items:
 					[
 		{
@@ -743,7 +747,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсправление,
+			id: 'ПанельОткрытьИсправление',
 			style: 'position:absolute;left:559px;top:312px;width:83px;height:33px;',
 			Привязка:
 			{
@@ -768,12 +772,13 @@
 			Ширина:83,
 			Верх:312,
 			Лево:559,
+			Групповой: true,
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -905,7 +910,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:239px;top:377px;width:411px;height:25px;',
 			Привязка:
 			{
@@ -963,7 +968,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДополнительныеДействия,
+			id: 'ДополнительныеДействия',
 			style: 'position:absolute;left:0px;top:377px;width:239px;height:25px;',
 			Привязка:
 			{
@@ -1001,8 +1006,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1014,19 +1018,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

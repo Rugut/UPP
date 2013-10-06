@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель,
+			id: 'КоманднаяПанель',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -53,7 +53,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:408px;',
 			Привязка:
 			{
@@ -78,11 +78,12 @@
 			Ширина:764,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 408,width: 764,
 			items:
 			[
 				{
-					id: Спецификации,
+					id: 'Спецификации',
 					items:
 					[
 		{
@@ -305,7 +306,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДеревоСпецификаций,
+			id: 'КоманднаяПанельДеревоСпецификаций',
 			style: 'position:absolute;left:6px;top:22px;width:374px;height:24px;',
 			Привязка:
 			{
@@ -363,7 +364,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДеревоСпецификаций',
 			text: 'Дерево спецификаций',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -392,7 +393,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНоменклатура',
 			text: 'Номенклатура',
-			style: 'position:absolute;left:386px;top:6px;width:370px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:386px;top:6px;width:370px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -419,7 +420,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСпецификации,
+			id: 'ПанельСпецификации',
 			style: 'position:absolute;left:386px;top:207px;width:370px;height:175px;',
 			Привязка:
 			{
@@ -444,12 +445,13 @@
 			Ширина:370,
 			Верх:207,
 			Лево:386,
+			Групповой: true,
 			height: 175,width: 370,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СпецификацииХарактеристики,
+					id: 'СпецификацииХарактеристики',
 					items:
 					[
 		{
@@ -683,7 +685,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокСпецификацииНоменклатуры,
+			id: 'КоманднаяПанельСписокСпецификацииНоменклатуры',
 			style: 'position:absolute;left:0px;top:72px;width:369px;height:26px;',
 			Привязка:
 			{
@@ -727,12 +729,12 @@
 					]
 				},
 				{
-					id: Спецификации,
+					id: 'Спецификации',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСпецификации,
+			id: 'КоманднаяПанельСпецификации',
 			style: 'position:absolute;left:0px;top:0px;width:369px;height:24px;',
 			Привязка:
 			{
@@ -1053,7 +1055,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНоменклатура,
+			id: 'ПанельНоменклатура',
 			style: 'position:absolute;left:386px;top:22px;width:370px;height:179px;',
 			Привязка:
 			{
@@ -1078,12 +1080,13 @@
 			Ширина:370,
 			Верх:22,
 			Лево:386,
+			Групповой: true,
 			height: 179,width: 370,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ДеревоНоменклатуры,
+					id: 'ДеревоНоменклатуры',
 					items:
 					[
 		{
@@ -1198,7 +1201,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНоменклатура,
+			id: 'КоманднаяПанельНоменклатура',
 			style: 'position:absolute;left:0px;top:0px;width:370px;height:24px;',
 			Привязка:
 			{
@@ -1306,12 +1309,12 @@
 					]
 				},
 				{
-					id: Номенклатура,
+					id: 'Номенклатура',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНоменклатураОтдельный,
+			id: 'КоманднаяПанельНоменклатураОтдельный',
 			style: 'position:absolute;left:0px;top:0px;width:370px;height:25px;',
 			Привязка:
 			{
@@ -1459,7 +1462,7 @@
 					]
 				},
 				{
-					id: Настройка,
+					id: 'Настройка',
 					items:
 					[
 		{
@@ -1674,7 +1677,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастройкаФормы',
 			text: 'Настройка дерева спецификаций',
-			style: 'position:absolute;left:6px;top:30px;width:750px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:30px;width:750px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1703,7 +1706,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастройкаПодтверждения',
 			text: 'При изменении спецификации',
-			style: 'position:absolute;left:6px;top:238px;width:750px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:238px;width:750px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1761,7 +1764,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастройкаПриВводеНовойСтроки',
 			text: 'При вводе новой строки',
-			style: 'position:absolute;left:6px;top:168px;width:378px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:168px;width:378px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2187,7 +2190,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастройкаПриВводеНовойСтроки1',
 			text: 'Формировать отчеты по дереву спецификаций',
-			style: 'position:absolute;left:384px;top:168px;width:372px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:384px;top:168px;width:372px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2213,12 +2216,7 @@
 			Лево:384,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДобавлятьНовуюСтрокуПриВводе',
 			boxLabel: 'Добавлять новую строку спецификации',
 			style: 'position:absolute;left:6px;top:192px;width:378px;height:15px;',
@@ -2247,7 +2245,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВыводитьМенюПриВводе',
 			boxLabel: 'Выводить меню',
 			style: 'position:absolute;left:6px;top:212px;width:378px;height:15px;',
@@ -2275,15 +2273,8 @@
 			Верх:212,
 			Лево:6,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НаКоличествоВыходныхИзделийПоСпецификации',
 			boxLabel: 'На количество выходных изделий по спецификации',
 			style: 'position:absolute;left:384px;top:192px;width:372px;height:15px;',
@@ -2312,7 +2303,7 @@
 			Лево:384,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НаЕдиницуВыходногоИзделия',
 			boxLabel: 'На единицу выходного изделия',
 			style: 'position:absolute;left:384px;top:212px;width:372px;height:15px;',
@@ -2340,8 +2331,6 @@
 			Верх:212,
 			Лево:384,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -2350,8 +2339,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2363,19 +2351,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

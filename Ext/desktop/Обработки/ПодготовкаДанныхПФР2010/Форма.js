@@ -170,7 +170,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:45px;width:984px;height:563px;',
 			Привязка:
 			{
@@ -195,12 +195,13 @@
 			Ширина:984,
 			Верх:45,
 			Лево:8,
+			Групповой: true,
 			height: 563,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: КвартальнаяОтчетность,
+					id: 'КвартальнаяОтчетность',
 					items:
 					[
 		{
@@ -234,7 +235,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПачки,
+			id: 'КоманднаяПанельПачки',
 			style: 'position:absolute;left:0px;top:21px;width:248px;height:24px;',
 			Привязка:
 			{
@@ -368,7 +369,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДокумент,
+			id: 'ПанельДокумент',
 			style: 'position:absolute;left:0px;top:168px;width:984px;height:137px;',
 			Привязка:
 			{
@@ -393,17 +394,18 @@
 			Ширина:984,
 			Верх:168,
 			Лево:0,
+			Групповой: true,
 			height: 137,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СЗВ6,
+					id: 'СЗВ6',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельСоставАДВ62,
+			id: 'ПанельСоставАДВ62',
 			style: 'position:absolute;left:0px;top:0px;width:343px;height:137px;',
 			Привязка:
 			{
@@ -428,12 +430,13 @@
 			Ширина:343,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 137,width: 343,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -575,7 +578,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПачкиСЗВ6,
+			id: 'КоманднаяПанельПачкиСЗВ6',
 			style: 'position:absolute;left:0px;top:0px;width:333px;height:25px;',
 			Привязка:
 			{
@@ -628,7 +631,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанныеСЗВ6,
+			id: 'ПанельДанныеСЗВ6',
 			style: 'position:absolute;left:344px;top:0px;width:640px;height:137px;',
 			Привязка:
 			{
@@ -653,12 +656,13 @@
 			Ширина:640,
 			Верх:0,
 			Лево:344,
+			Групповой: true,
 			height: 137,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1303,7 +1307,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКнопкиРаспределить,
+			id: 'ПанельКнопкиРаспределить',
 			style: 'position:absolute;left:0px;top:25px;width:121px;height:112px;',
 			Привязка:
 			{
@@ -1328,12 +1332,13 @@
 			Ширина:121,
 			Верх:25,
 			Лево:0,
+			Групповой: true,
 			height: 112,width: 121,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1460,12 +1465,7 @@
 			Лево:216,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидКорректировки',
 			boxLabel: 'Исходные',
 			style: 'position:absolute;left:56px;top:2px;width:74px;height:19px;',
@@ -1494,7 +1494,7 @@
 			Лево:56,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательКорректирующие',
 			boxLabel: 'Корректирующие',
 			style: 'position:absolute;left:132px;top:2px;width:110px;height:19px;',
@@ -1523,7 +1523,7 @@
 			Лево:132,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтменяющие',
 			boxLabel: 'Отменяющие',
 			style: 'position:absolute;left:246px;top:2px;width:89px;height:19px;',
@@ -1551,15 +1551,8 @@
 			Верх:2,
 			Лево:246,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипФормДокументов',
 			boxLabel: 'СЗВ-6-1',
 			style: 'position:absolute;left:177px;top:24px;width:63px;height:19px;',
@@ -1588,7 +1581,7 @@
 			Лево:177,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СЗВ_6_2',
 			boxLabel: 'СЗВ-6-2',
 			style: 'position:absolute;left:246px;top:24px;width:74px;height:19px;',
@@ -1616,8 +1609,6 @@
 			Верх:24,
 			Лево:246,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -1625,14 +1616,14 @@
 					]
 				},
 				{
-					id: АДВ11,
+					id: 'АДВ11',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаУплатаСтраховыхВзносов',
 			text: 'Уплата страховых взносов на обязательное пенсионное страхование за прошлые годы',
-			style: 'position:absolute;left:0px;top:2px;width:984px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:2px;width:984px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1659,7 +1650,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУплатаСтраховыхВзносов,
+			id: 'ПанельУплатаСтраховыхВзносов',
 			style: 'position:absolute;left:0px;top:20px;width:984px;height:116px;',
 			Привязка:
 			{
@@ -1684,12 +1675,13 @@
 			Ширина:984,
 			Верх:20,
 			Лево:0,
+			Групповой: true,
 			height: 116,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ТаблицаВзносов,
+					id: 'ТаблицаВзносов',
 					items:
 					[
 		{
@@ -1813,7 +1805,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчеты,
+			id: 'КоманднаяПанельРасчеты',
 			style: 'position:absolute;left:0px;top:0px;width:984px;height:24px;',
 			Привязка:
 			{
@@ -1876,7 +1868,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 					items:
 					[
 		{
@@ -1915,13 +1907,13 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ДанныеСЗВ6,
+			id: 'ДанныеСЗВ6',
 			style: 'position:absolute;left:0px;top:333px;width:984px;height:207px;',
 			Привязка:
 			{
@@ -1946,12 +1938,13 @@
 			Ширина:984,
 			Верх:333,
 			Лево:0,
+			Групповой: true,
 			height: 207,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СЗВ6,
+					id: 'СЗВ6',
 					items:
 					[
 		{
@@ -2138,7 +2131,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизлицаПачек,
+			id: 'КоманднаяПанельФизлицаПачек',
 			style: 'position:absolute;left:0px;top:0px;width:333px;height:24px;',
 			Привязка:
 			{
@@ -2188,7 +2181,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСтажа',
 			text: 'Периоды работы за отчетный период',
-			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2215,7 +2208,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтажа,
+			id: 'КоманднаяПанельСтажа',
 			style: 'position:absolute;left:347px;top:93px;width:637px;height:24px;',
 			Привязка:
 			{
@@ -2576,7 +2569,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВзносыПоСотруднику,
+			id: 'ПанельВзносыПоСотруднику',
 			style: 'position:absolute;left:347px;top:27px;width:637px;height:50px;',
 			Привязка:
 			{
@@ -2601,12 +2594,13 @@
 			Ширина:637,
 			Верх:27,
 			Лево:347,
+			Групповой: true,
 			height: 50,width: 637,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ВзносыПоСотруднику,
+					id: 'ВзносыПоСотруднику',
 					items:
 					[
 		{
@@ -2863,7 +2857,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДоначисленоВзносов,
+			id: 'ПанельДоначисленоВзносов',
 			style: 'position:absolute;left:370px;top:0px;width:267px;height:42px;',
 			Привязка:
 			{
@@ -2888,12 +2882,13 @@
 			Ширина:267,
 			Верх:0,
 			Лево:370,
+			Групповой: true,
 			height: 42,width: 267,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3249,7 +3244,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
@@ -3313,7 +3308,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКомплектов,
+			id: 'ПанельКомплектов',
 			style: 'position:absolute;left:254px;top:22px;width:730px;height:120px;',
 			Привязка:
 			{
@@ -3338,12 +3333,13 @@
 			Ширина:730,
 			Верх:22,
 			Лево:254,
+			Групповой: true,
 			height: 120,width: 730,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаАДВ,
+					id: 'СтраницаАДВ',
 					items:
 					[
 		{
@@ -3836,7 +3832,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПерераспределениеВсехВзносов,
+			id: 'ПанельПерераспределениеВсехВзносов',
 			style: 'position:absolute;left:6px;top:77px;width:591px;height:43px;',
 			Привязка:
 			{
@@ -3861,12 +3857,13 @@
 			Ширина:591,
 			Верх:77,
 			Лево:6,
+			Групповой: true,
 			height: 43,width: 591,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4086,7 +4083,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКнопкиПринятоВПФР,
+			id: 'ПанельКнопкиПринятоВПФР',
 			style: 'position:absolute;left:6px;top:24px;width:173px;height:51px;',
 			Привязка:
 			{
@@ -4111,12 +4108,13 @@
 			Ширина:173,
 			Верх:24,
 			Лево:6,
+			Групповой: true,
 			height: 51,width: 173,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4155,7 +4153,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 					items:
 					[
 		{
@@ -4223,7 +4221,7 @@
 					]
 				},
 				{
-					id: ОформлениеПенсии,
+					id: 'ОформлениеПенсии',
 					items:
 					[
 		{
@@ -4373,7 +4371,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПачкиСПВ,
+			id: 'КоманднаяПанельПачкиСПВ',
 			style: 'position:absolute;left:0px;top:155px;width:293px;height:24px;',
 			Привязка:
 			{
@@ -4649,7 +4647,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПенсионеры,
+			id: 'КоманднаяПанельПенсионеры',
 			style: 'position:absolute;left:0px;top:22px;width:333px;height:24px;',
 			Привязка:
 			{
@@ -4740,7 +4738,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: '',
-			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4767,7 +4765,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанныеСПВ,
+			id: 'ПанельДанныеСПВ',
 			style: 'position:absolute;left:300px;top:154px;width:684px;height:127px;',
 			Привязка:
 			{
@@ -4792,12 +4790,13 @@
 			Ширина:684,
 			Верх:154,
 			Лево:300,
+			Групповой: true,
 			height: 127,width: 684,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаДанных,
+					id: 'СтраницаДанных',
 					items:
 					[
 		{
@@ -5439,7 +5438,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКнопкиРаспределить1,
+			id: 'ПанельКнопкиРаспределить1',
 			style: 'position:absolute;left:6px;top:31px;width:101px;height:77px;',
 			Привязка:
 			{
@@ -5464,12 +5463,13 @@
 			Ширина:101,
 			Верх:31,
 			Лево:6,
+			Групповой: true,
 			height: 77,width: 101,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5567,12 +5567,7 @@
 			Лево:206,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидКорректировки1',
 			boxLabel: 'Исходные',
 			style: 'position:absolute;left:62px;top:6px;width:74px;height:19px;',
@@ -5601,7 +5596,7 @@
 			Лево:62,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательКорректирующие1',
 			boxLabel: 'Корректирующие',
 			style: 'position:absolute;left:138px;top:6px;width:110px;height:19px;',
@@ -5630,7 +5625,7 @@
 			Лево:138,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтменяющие1',
 			boxLabel: 'Отменяющие',
 			style: 'position:absolute;left:252px;top:6px;width:89px;height:19px;',
@@ -5658,18 +5653,16 @@
 			Верх:6,
 			Лево:252,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСоставСПВ,
+			id: 'ПанельСоставСПВ',
 			style: 'position:absolute;left:0px;top:310px;width:984px;height:224px;',
 			Привязка:
 			{
@@ -5694,12 +5687,13 @@
 			Ширина:984,
 			Верх:310,
 			Лево:0,
+			Групповой: true,
 			height: 224,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ДанныеФизлица,
+					id: 'ДанныеФизлица',
 					items:
 					[
 		{
@@ -5868,7 +5862,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизлицаСПВ,
+			id: 'КоманднаяПанельФизлицаСПВ',
 			style: 'position:absolute;left:0px;top:0px;width:333px;height:24px;',
 			Привязка:
 			{
@@ -5935,7 +5929,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСтажа1',
 			text: 'Периоды работы за отчетный период',
-			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:347px;top:77px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5962,7 +5956,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтажаСПВ,
+			id: 'КоманднаяПанельСтажаСПВ',
 			style: 'position:absolute;left:347px;top:93px;width:637px;height:24px;',
 			Привязка:
 			{
@@ -6291,7 +6285,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВзносыПоСотруднику1,
+			id: 'ПанельВзносыПоСотруднику1',
 			style: 'position:absolute;left:347px;top:24px;width:637px;height:50px;',
 			Привязка:
 			{
@@ -6316,12 +6310,13 @@
 			Ширина:637,
 			Верх:24,
 			Лево:347,
+			Групповой: true,
 			height: 50,width: 637,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ВзносыПоСотруднику,
+					id: 'ВзносыПоСотруднику',
 					items:
 					[
 		{
@@ -6707,7 +6702,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
@@ -6743,12 +6738,12 @@
 					]
 				},
 				{
-					id: СведенияОНачисленномЗаработке,
+					id: 'СведенияОНачисленномЗаработке',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПачкиСЗВ63,
+			id: 'КоманднаяПанельПачкиСЗВ63',
 			style: 'position:absolute;left:0px;top:25px;width:293px;height:24px;',
 			Привязка:
 			{
@@ -6893,7 +6888,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: '',
-			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:537px;width:984px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6920,7 +6915,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанныеСЗВ63,
+			id: 'ПанельДанныеСЗВ63',
 			style: 'position:absolute;left:305px;top:25px;width:679px;height:206px;',
 			Привязка:
 			{
@@ -6945,12 +6940,13 @@
 			Ширина:679,
 			Верх:25,
 			Лево:305,
+			Групповой: true,
 			height: 206,width: 679,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаДанных,
+					id: 'СтраницаДанных',
 					items:
 					[
 		{
@@ -7806,12 +7802,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидКорректировки2',
 			boxLabel: 'Исходные',
 			style: 'position:absolute;left:99px;top:47px;width:74px;height:19px;',
@@ -7840,7 +7831,7 @@
 			Лево:99,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательКорректирующие2',
 			boxLabel: 'Корректирующие',
 			style: 'position:absolute;left:177px;top:47px;width:110px;height:19px;',
@@ -7869,7 +7860,7 @@
 			Лево:177,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтменяющие2',
 			boxLabel: 'Отменяющие',
 			style: 'position:absolute;left:292px;top:47px;width:89px;height:19px;',
@@ -7897,18 +7888,16 @@
 			Верх:47,
 			Лево:292,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСоставСЗВ63,
+			id: 'ПанельСоставСЗВ63',
 			style: 'position:absolute;left:0px;top:264px;width:984px;height:270px;',
 			Привязка:
 			{
@@ -7933,12 +7922,13 @@
 			Ширина:984,
 			Верх:264,
 			Лево:0,
+			Групповой: true,
 			height: 270,width: 984,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ДанныеФизлица,
+					id: 'ДанныеФизлица',
 					items:
 					[
 		{
@@ -8026,7 +8016,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизлицаСЗВ63,
+			id: 'КоманднаяПанельФизлицаСЗВ63',
 			style: 'position:absolute;left:0px;top:0px;width:342px;height:24px;',
 			Привязка:
 			{
@@ -8515,7 +8505,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
@@ -8612,7 +8602,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКнопкаСформировать,
+			id: 'ПанельКнопкаСформировать',
 			style: 'position:absolute;left:8px;top:8px;width:197px;height:34px;',
 			Привязка:
 			{
@@ -8637,12 +8627,13 @@
 			Ширина:197,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 34,width: 197,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -8680,7 +8671,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтчетныйПериод,
+			id: 'ПанельОтчетныйПериод',
 			style: 'position:absolute;left:479px;top:8px;width:112px;height:34px;',
 			Привязка:
 			{
@@ -8705,12 +8696,13 @@
 			Ширина:112,
 			Верх:8,
 			Лево:479,
+			Групповой: true,
 			height: 34,width: 112,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаПериодПерсучета,
+					id: 'СтраницаПериодПерсучета',
 					items:
 					[
 		{
@@ -8748,7 +8740,7 @@
 					]
 				},
 				{
-					id: СтраницаОтчетныйГод,
+					id: 'СтраницаОтчетныйГод',
 					items:
 					[
 		{
@@ -8790,12 +8782,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипСведений',
 			boxLabel: 'Квартальная отчетность (СЗВ)',
 			style: 'position:absolute;left:665px;top:8px;width:172px;height:19px;',
@@ -8824,7 +8811,7 @@
 			Лево:665,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТипСведенийПЕНС',
 			boxLabel: 'Оформление пенсии (СПВ)',
 			style: 'position:absolute;left:839px;top:8px;width:153px;height:19px;',
@@ -8853,7 +8840,7 @@
 			Лево:839,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТипСведенийСЗВ6',
 			boxLabel: 'Сведения о заработке (СЗВ-6-3)',
 			style: 'position:absolute;left:665px;top:27px;width:181px;height:18px;',
@@ -8881,14 +8868,11 @@
 			Верх:27,
 			Лево:665,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -8900,19 +8884,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

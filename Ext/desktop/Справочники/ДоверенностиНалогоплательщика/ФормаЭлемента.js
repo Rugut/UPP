@@ -241,7 +241,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:499px;height:25px;',
 			Привязка:
 			{
@@ -332,7 +332,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанные,
+			id: 'ПанельДанные',
 			style: 'position:absolute;left:8px;top:110px;width:483px;height:348px;',
 			Привязка:
 			{
@@ -357,11 +357,12 @@
 			Ширина:483,
 			Верх:110,
 			Лево:8,
+			Групповой: true,
 			height: 348,width: 483,
 			items:
 			[
 				{
-					id: Представитель,
+					id: 'Представитель',
 					items:
 					[
 		{
@@ -398,7 +399,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПредставительЮФ,
+			id: 'ПанельПредставительЮФ',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			Привязка:
 			{
@@ -423,12 +424,13 @@
 			Ширина:234,
 			Верх:33,
 			Лево:6,
+			Групповой: true,
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЮЛ,
+					id: 'ЮЛ',
 					items:
 					[
 		{
@@ -740,7 +742,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Юридическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -768,7 +770,7 @@
 					]
 				},
 				{
-					id: ФЛ,
+					id: 'ФЛ',
 					items:
 					[
 		{
@@ -1206,7 +1208,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Физическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1266,7 +1268,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПредставительУЛ,
+			id: 'ПанельПредставительУЛ',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			Привязка:
 			{
@@ -1291,12 +1293,13 @@
 			Ширина:234,
 			Верх:33,
 			Лево:247,
+			Групповой: true,
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1425,7 +1428,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Уполномоченное лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1763,7 +1766,7 @@
 					]
 				},
 				{
-					id: Доверитель,
+					id: 'Доверитель',
 					items:
 					[
 		{
@@ -1800,7 +1803,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДоверительЮФ,
+			id: 'ПанельДоверительЮФ',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			Привязка:
 			{
@@ -1825,12 +1828,13 @@
 			Ширина:234,
 			Верх:33,
 			Лево:6,
+			Групповой: true,
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЮЛ,
+					id: 'ЮЛ',
 					items:
 					[
 		{
@@ -2142,7 +2146,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Юридическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2495,7 +2499,7 @@
 					]
 				},
 				{
-					id: ФЛ,
+					id: 'ФЛ',
 					items:
 					[
 		{
@@ -2759,7 +2763,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Физическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2819,7 +2823,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДоверительУЛ,
+			id: 'ПанельДоверительУЛ',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			Привязка:
 			{
@@ -2844,12 +2848,13 @@
 			Ширина:234,
 			Верх:33,
 			Лево:247,
+			Групповой: true,
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2978,7 +2983,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Уполномоченное лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3287,7 +3292,7 @@
 					]
 				},
 				{
-					id: Нотариус,
+					id: 'Нотариус',
 					items:
 					[
 		{
@@ -3324,7 +3329,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНотариусЮФ,
+			id: 'ПанельНотариусЮФ',
 			style: 'position:absolute;left:6px;top:33px;width:234px;height:288px;',
 			Привязка:
 			{
@@ -3349,12 +3354,13 @@
 			Ширина:234,
 			Верх:33,
 			Лево:6,
+			Групповой: true,
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЮЛ,
+					id: 'ЮЛ',
 					items:
 					[
 		{
@@ -3605,7 +3611,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: 'Юридическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3720,7 +3726,7 @@
 					]
 				},
 				{
-					id: ФЛ,
+					id: 'ФЛ',
 					items:
 					[
 		{
@@ -3823,7 +3829,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: 'Физическое лицо',
-			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:234px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3854,7 +3860,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНотариусУЛ,
+			id: 'ПанельНотариусУЛ',
 			style: 'position:absolute;left:247px;top:33px;width:234px;height:288px;',
 			Привязка:
 			{
@@ -3879,12 +3885,13 @@
 			Ширина:234,
 			Верх:33,
 			Лево:247,
+			Групповой: true,
 			height: 288,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4013,7 +4020,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы9',
 			text: 'Уполномоченное лицо',
-			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:228px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4298,7 +4305,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТовары,
+			id: 'КоманднаяПанельТовары',
 			style: 'position:absolute;left:8px;top:480px;width:483px;height:24px;',
 			Привязка:
 			{
@@ -4333,7 +4340,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы10',
 			text: 'Сведения о полномочиях представителя',
-			style: 'position:absolute;left:8px;top:464px;width:483px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:464px;width:483px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4364,7 +4371,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:583px;width:499px;height:25px;',
 			Привязка:
 			{
@@ -4420,8 +4427,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4433,19 +4439,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

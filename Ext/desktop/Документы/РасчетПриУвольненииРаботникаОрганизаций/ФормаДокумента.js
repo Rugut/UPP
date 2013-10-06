@@ -329,7 +329,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
 			Привязка:
 			{
@@ -362,7 +362,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:555px;width:682px;height:25px;',
 			Привязка:
 			{
@@ -633,7 +633,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:109px;width:666px;height:377px;',
 			Привязка:
 			{
@@ -658,11 +658,12 @@
 			Ширина:666,
 			Верх:109,
 			Лево:8,
+			Групповой: true,
 			height: 377,width: 666,
 			items:
 			[
 				{
-					id: Условия,
+					id: 'Условия',
 					items:
 					[
 		{
@@ -1692,12 +1693,7 @@
 			Лево:105,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтпуска',
 			boxLabel: 'Компенсировать за неиспользованный',
 			style: 'position:absolute;left:32px;top:130px;width:226px;height:19px;',
@@ -1726,7 +1722,7 @@
 			Лево:32,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'Удержать за использованный авансом',
 			style: 'position:absolute;left:32px;top:152px;width:226px;height:19px;',
@@ -1754,12 +1750,10 @@
 			Верх:152,
 			Лево:32,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Оплата,
+					id: 'Оплата',
 					items:
 					[
 		{
@@ -1910,7 +1904,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНачисления,
+			id: 'КоманднаяПанельНачисления',
 			style: 'position:absolute;left:6px;top:0px;width:652px;height:24px;',
 			Привязка:
 			{
@@ -1993,7 +1987,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюНачисления,
+			id: 'КонтекстноеМенюНачисления',
 			style: 'position:absolute;left:6px;top:66px;width:652px;height:24px;',
 			Привязка:
 			{
@@ -2142,12 +2136,12 @@
 					]
 				},
 				{
-					id: РасчетСреднего,
+					id: 'РасчетСреднего',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельРасчетСреднего,
+			id: 'ПанельРасчетСреднего',
 			style: 'position:absolute;left:6px;top:50px;width:652px;height:263px;',
 			Привязка:
 			{
@@ -2172,17 +2166,18 @@
 			Ширина:652,
 			Верх:50,
 			Лево:6,
+			Групповой: true,
 			height: 263,width: 652,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: РасчетСреднего,
+					id: 'РасчетСреднего',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднего,
+			id: 'КоманднаяПанельРасчетСреднего',
 			style: 'position:absolute;left:0px;top:21px;width:652px;height:24px;',
 			Привязка:
 			{
@@ -2459,7 +2454,7 @@
 					]
 				},
 				{
-					id: РасчетСреднегоДляОтпуска,
+					id: 'РасчетСреднегоДляОтпуска',
 					items:
 					[
 		{
@@ -2619,7 +2614,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднегоДляОтпуска,
+			id: 'КоманднаяПанельРасчетСреднегоДляОтпуска',
 			style: 'position:absolute;left:0px;top:21px;width:652px;height:24px;',
 			Привязка:
 			{
@@ -2732,14 +2727,14 @@
 					]
 				},
 				{
-					id: ОбаРасчетаСреднего,
+					id: 'ОбаРасчетаСреднего',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыОтпуска',
 			text: 'Для расчета отпуска',
-			style: 'position:absolute;left:0px;top:0px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2768,7 +2763,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыКомпенсаций',
 			text: 'Для расчета компенсаций при увольнении',
-			style: 'position:absolute;left:0px;top:137px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:137px;width:652px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2795,7 +2790,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднего1,
+			id: 'КоманднаяПанельРасчетСреднего1',
 			style: 'position:absolute;left:0px;top:153px;width:652px;height:24px;',
 			Привязка:
 			{
@@ -3197,7 +3192,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднегоДляОтпуска1,
+			id: 'КоманднаяПанельРасчетСреднегоДляОтпуска1',
 			style: 'position:absolute;left:0px;top:16px;width:652px;height:24px;',
 			Привязка:
 			{
@@ -3530,7 +3525,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДополнительныеДействия,
+			id: 'ДополнительныеДействия',
 			style: 'position:absolute;left:0px;top:555px;width:282px;height:25px;',
 			Привязка:
 			{
@@ -3602,7 +3597,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсправление,
+			id: 'ПанельОткрытьИсправление',
 			style: 'position:absolute;left:430px;top:490px;width:83px;height:33px;',
 			Привязка:
 			{
@@ -3627,12 +3622,13 @@
 			Ширина:83,
 			Верх:490,
 			Лево:430,
+			Групповой: true,
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3670,7 +3666,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсходный,
+			id: 'ПанельОткрытьИсходный',
 			style: 'position:absolute;left:513px;top:490px;width:129px;height:33px;',
 			Привязка:
 			{
@@ -3695,12 +3691,13 @@
 			Ширина:129,
 			Верх:490,
 			Лево:513,
+			Групповой: true,
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3740,8 +3737,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3753,19 +3749,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

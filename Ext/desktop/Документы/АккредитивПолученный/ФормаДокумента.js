@@ -512,7 +512,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -545,7 +545,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:431px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -761,7 +761,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПлатежи,
+			id: 'ПанельПлатежи',
 			style: 'position:absolute;left:8px;top:152px;width:636px;height:202px;',
 			Привязка:
 			{
@@ -786,12 +786,13 @@
 			Ширина:636,
 			Верх:152,
 			Лево:8,
+			Групповой: true,
 			height: 202,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПлатежПоОднойСделке,
+					id: 'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -1993,7 +1994,7 @@
 					]
 				},
 				{
-					id: ПлатежПоНесколькимСделкам,
+					id: 'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -2207,7 +2208,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПлатежи,
+			id: 'КоманднаяПанельПлатежи',
 			style: 'position:absolute;left:0px;top:21px;width:312px;height:24px;',
 			Привязка:
 			{
@@ -2315,7 +2316,7 @@
 			xtype: 'label',
 			id: 'РамкаРасшифровкаПлатежа',
 			text: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2343,7 +2344,7 @@
 					]
 				},
 				{
-					id: ПлатежПрочие,
+					id: 'ПлатежПрочие',
 					items:
 					[
 		{
@@ -3003,7 +3004,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОплата,
+			id: 'ПанельОплата',
 			style: 'position:absolute;left:336px;top:56px;width:308px;height:19px;',
 			Привязка:
 			{
@@ -3028,12 +3029,13 @@
 			Ширина:308,
 			Верх:56,
 			Лево:336,
+			Групповой: true,
 			height: 19,width: 308,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаОплата,
+					id: 'СтраницаОплата',
 					items:
 					[
 		{
@@ -3102,7 +3104,7 @@
 					]
 				},
 				{
-					id: СтраницаЧастичнаяОплата,
+					id: 'СтраницаЧастичнаяОплата',
 					items:
 					[
 		{
@@ -3563,12 +3565,7 @@
 			Лево:96,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Список',
 			boxLabel: 'Без разбиения',
 			style: 'position:absolute;left:426px;top:128px;width:100px;height:19px;',
@@ -3597,7 +3594,7 @@
 			Лево:426,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Список1',
 			boxLabel: 'Списком',
 			style: 'position:absolute;left:536px;top:128px;width:108px;height:19px;',
@@ -3625,14 +3622,11 @@
 			Верх:128,
 			Лево:536,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3644,19 +3638,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

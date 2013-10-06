@@ -390,7 +390,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:991px;height:25px;',
 			Привязка:
 			{
@@ -423,7 +423,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:8px;top:81px;width:975px;height:441px;',
 			Привязка:
 			{
@@ -448,16 +448,17 @@
 			Ширина:975,
 			Верх:81,
 			Лево:8,
+			Групповой: true,
 			height: 441,width: 975,
 			items:
 			[
 				{
-					id: Пособия,
+					id: 'Пособия',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботникиОрганизации,
+			id: 'КоманднаяПанельРаботникиОрганизации',
 			style: 'position:absolute;left:6px;top:6px;width:961px;height:24px;',
 			Привязка:
 			{
@@ -605,7 +606,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:388px;top:33px;width:579px;height:380px;',
 			Привязка:
 			{
@@ -630,11 +631,12 @@
 			Ширина:579,
 			Верх:33,
 			Лево:388,
+			Групповой: true,
 			height: 380,width: 579,
 			items:
 			[
 				{
-					id: ДанныеЗастрахованногоЛица,
+					id: 'ДанныеЗастрахованногоЛица',
 					items:
 					[
 		{
@@ -1645,7 +1647,7 @@
 			Лево:200,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Совместительство',
 			boxLabel: 'Совместительство',
 			style: 'position:absolute;left:247px;top:102px;width:115px;height:19px;',
@@ -1825,12 +1827,7 @@
 			Лево:146,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОсновноеМестоРаботы',
 			boxLabel: 'Основное место работы',
 			style: 'position:absolute;left:96px;top:102px;width:144px;height:19px;',
@@ -1858,12 +1855,10 @@
 			Верх:102,
 			Лево:96,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ВыплатаПособия,
+					id: 'ВыплатаПособия',
 					items:
 					[
 		{
@@ -2665,12 +2660,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеНаСчетВБанке',
 			boxLabel: 'Перечислением на счет в банке:',
 			style: 'position:absolute;left:14px;top:64px;width:183px;height:19px;',
@@ -2698,15 +2688,8 @@
 			Верх:64,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеПочтовымПереводом',
 			boxLabel: 'Почтовым переводом по адресу:',
 			style: 'position:absolute;left:14px;top:112px;width:183px;height:19px;',
@@ -2734,15 +2717,8 @@
 			Верх:112,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПроживаниеВЗоне',
 			boxLabel: 'Постоянное проживание',
 			style: 'position:absolute;left:14px;top:196px;width:144px;height:19px;',
@@ -2771,7 +2747,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РаботаВЗоне',
 			boxLabel: 'Работа',
 			style: 'position:absolute;left:197px;top:196px;width:119px;height:19px;',
@@ -2799,15 +2775,8 @@
 			Верх:196,
 			Лево:197,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВЗонеСПравомНаОтселение',
 			boxLabel: 'В зоне с правом на отселение',
 			style: 'position:absolute;left:14px;top:220px;width:174px;height:19px;',
@@ -2836,7 +2805,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВЗонеОтселения',
 			boxLabel: 'В зоне отселения',
 			style: 'position:absolute;left:197px;top:220px;width:108px;height:19px;',
@@ -2865,7 +2834,7 @@
 			Лево:197,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВЗонеСЛьготнымСтатусом',
 			boxLabel: 'В зоне с льготным социально-экон. статусом',
 			style: 'position:absolute;left:310px;top:220px;width:261px;height:19px;',
@@ -2893,12 +2862,10 @@
 			Верх:220,
 			Лево:310,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Документы,
+					id: 'Документы',
 					items:
 					[
 		{
@@ -3515,7 +3482,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:98px;width:565px;height:24px;',
 			Привязка:
 			{
@@ -3874,7 +3841,7 @@
 					]
 				},
 				{
-					id: РасчетПособия,
+					id: 'РасчетПособия',
 					items:
 					[
 		{
@@ -4921,12 +4888,7 @@
 			Лево:151,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокРасчетаСреднегоЗаработка',
 			boxLabel: 'Заработок рассчитан по правилам 2011 года за расчетные годы:',
 			style: 'position:absolute;left:14px;top:30px;width:351px;height:19px;',
@@ -4954,15 +4916,8 @@
 			Верх:30,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'Заработок по правилам 2010 года за расчетный период с:',
 			style: 'position:absolute;left:14px;top:125px;width:321px;height:19px;',
@@ -4990,15 +4945,8 @@
 			Верх:125,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель3',
 			boxLabel: 'Пособие рассчитывается из оклада (тарифной ставки):',
 			style: 'position:absolute;left:14px;top:173px;width:321px;height:19px;',
@@ -5026,15 +4974,8 @@
 			Верх:173,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель4',
 			boxLabel: 'Пособие определяется исходя из МРОТ:',
 			style: 'position:absolute;left:14px;top:197px;width:321px;height:19px;',
@@ -5062,12 +5003,10 @@
 			Верх:197,
 			Лево:14,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Прочее,
+					id: 'Прочее',
 					items:
 					[
 		{
@@ -5287,7 +5226,7 @@
 					]
 				},
 				{
-					id: ДанныеСтрахователя,
+					id: 'ДанныеСтрахователя',
 					items:
 					[
 		{
@@ -6365,7 +6304,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:555px;width:991px;height:25px;',
 			Привязка:
 			{
@@ -6433,8 +6372,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -6446,19 +6384,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

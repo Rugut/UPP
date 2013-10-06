@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:288px;height:25px;',
 			Привязка:
 			{
@@ -53,7 +53,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОстатки,
+			id: 'ПанельОстатки',
 			style: 'position:absolute;left:8px;top:58px;width:272px;height:233px;',
 			Привязка:
 			{
@@ -78,12 +78,13 @@
 			Ширина:272,
 			Верх:58,
 			Лево:8,
+			Групповой: true,
 			height: 233,width: 272,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ОдинОтпуск,
+					id: 'ОдинОтпуск',
 					items:
 					[
 		{
@@ -302,7 +303,7 @@
 					]
 				},
 				{
-					id: ОтпускаСРабочимиГодами,
+					id: 'ОтпускаСРабочимиГодами',
 					items:
 					[
 		{
@@ -413,7 +414,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОстатки,
+			id: 'КоманднаяПанельОстатки',
 			style: 'position:absolute;left:0px;top:0px;width:208px;height:24px;',
 			Привязка:
 			{
@@ -559,7 +560,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:299px;width:288px;height:25px;',
 			Привязка:
 			{
@@ -613,8 +614,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -626,19 +626,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

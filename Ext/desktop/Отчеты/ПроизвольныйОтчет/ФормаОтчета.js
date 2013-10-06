@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельПользователя,
+			id: 'ПанельПользователя',
 			style: 'position:absolute;left:525px;top:134px;width:306px;height:398px;',
 			Привязка:
 			{
@@ -45,17 +45,18 @@
 			Ширина:306,
 			Верх:134,
 			Лево:525,
+			Групповой: true,
 			height: 398,width: 306,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельЗакладок,
+			id: 'ПанельЗакладок',
 			style: 'position:absolute;left:0px;top:0px;width:306px;height:372px;',
 			Привязка:
 			{
@@ -80,11 +81,12 @@
 			Ширина:306,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 372,width: 306,
 			items:
 			[
 				{
-					id: ПроизвольныйОтчет,
+					id: 'ПроизвольныйОтчет',
 					items:
 					[
 		{
@@ -152,7 +154,7 @@
 					]
 				},
 				{
-					id: Параметры,
+					id: 'Параметры',
 					items:
 					[
 		{
@@ -295,7 +297,7 @@
 					]
 				},
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -906,10 +908,10 @@
 					]
 				},
 				{
-					id: АналитическиеОтборы,
+					id: 'АналитическиеОтборы',
 				},
 				{
-					id: Показатели,
+					id: 'Показатели',
 					items:
 					[
 		{
@@ -1007,7 +1009,7 @@
 					]
 				},
 				{
-					id: Порядок,
+					id: 'Порядок',
 					items:
 					[
 		{
@@ -1104,7 +1106,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:269px;top:22px;width:24px;height:52px;',
 			Привязка:
 			{
@@ -1180,7 +1182,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДействияСОтчетом,
+			id: 'КоманднаяПанельДействияСОтчетом',
 			style: 'position:absolute;left:0px;top:372px;width:306px;height:26px;',
 			Привязка:
 			{
@@ -1236,7 +1238,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыбораВариантов,
+			id: 'ПанельВыбораВариантов',
 			style: 'position:absolute;left:0px;top:0px;width:838px;height:57px;',
 			Привязка:
 			{
@@ -1261,17 +1263,18 @@
 			Ширина:838,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 57,width: 838,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюКартинкиВыбораСохраненнойНастройки,
+			id: 'КонтекстноеМенюКартинкиВыбораСохраненнойНастройки',
 			style: 'position:absolute;left:101px;top:0px;width:220px;height:25px;',
 			Привязка:
 			{
@@ -1381,7 +1384,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПользователяГоризонтальная,
+			id: 'ПанельПользователяГоризонтальная',
 			style: 'position:absolute;left:9px;top:63px;width:821px;height:31px;',
 			Привязка:
 			{
@@ -1406,18 +1409,19 @@
 			Ширина:821,
 			Верх:63,
 			Лево:9,
+			Групповой: true,
 			height: 31,width: 821,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ГоризонтальныеОтборы,
+					id: 'ГоризонтальныеОтборы',
 				},
 			]
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:136px;top:101px;width:120px;height:24px;',
 			Привязка:
 			{
@@ -1455,7 +1459,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: СервиснаяПанель,
+			id: 'СервиснаяПанель',
 			style: 'position:absolute;left:658px;top:101px;width:173px;height:24px;',
 			Привязка:
 			{
@@ -1508,8 +1512,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1521,19 +1524,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

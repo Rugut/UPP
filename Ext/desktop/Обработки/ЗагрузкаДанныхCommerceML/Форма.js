@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель,
+			id: 'КоманднаяПанель',
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:25px;',
 			Привязка:
 			{
@@ -70,7 +70,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельТаблиц,
+			id: 'ПанельТаблиц',
 			style: 'position:absolute;left:8px;top:210px;width:648px;height:250px;',
 			Привязка:
 			{
@@ -95,12 +95,13 @@
 			Ширина:648,
 			Верх:210,
 			Лево:8,
+			Групповой: true,
 			height: 250,width: 648,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Каталог,
+					id: 'Каталог',
 					items:
 					[
 		{
@@ -224,7 +225,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКаталог,
+			id: 'КоманднаяПанельКаталог',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
 			Привязка:
 			{
@@ -268,7 +269,7 @@
 					]
 				},
 				{
-					id: Прайс,
+					id: 'Прайс',
 					items:
 					[
 		{
@@ -437,7 +438,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПрайс,
+			id: 'КоманднаяПанельПрайс',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
 			Привязка:
 			{
@@ -500,7 +501,7 @@
 					]
 				},
 				{
-					id: Документ,
+					id: 'Документ',
 					items:
 					[
 		{
@@ -732,7 +733,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокумент,
+			id: 'КоманднаяПанельДокумент',
 			style: 'position:absolute;left:0px;top:0px;width:648px;height:24px;',
 			Привязка:
 			{
@@ -795,7 +796,7 @@
 					]
 				},
 				{
-					id: СчетФактура,
+					id: 'СчетФактура',
 					items:
 					[
 		{
@@ -892,7 +893,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументыОснования,
+			id: 'КоманднаяПанельДокументыОснования',
 			style: 'position:absolute;left:6px;top:0px;width:636px;height:24px;',
 			Привязка:
 			{
@@ -1302,7 +1303,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументы,
+			id: 'КоманднаяПанельДокументы',
 			style: 'position:absolute;left:8px;top:81px;width:648px;height:24px;',
 			Привязка:
 			{
@@ -1375,7 +1376,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:57px;width:648px;height:19px;',
 			Привязка:
 			{
@@ -1400,12 +1401,13 @@
 			Ширина:648,
 			Верх:57,
 			Лево:8,
+			Групповой: true,
 			height: 19,width: 648,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаФайла,
+					id: 'СтраницаФайла',
 					items:
 					[
 		{
@@ -1472,7 +1474,7 @@
 					]
 				},
 				{
-					id: СтраницаПериода,
+					id: 'СтраницаПериода',
 					items:
 					[
 		{
@@ -1665,7 +1667,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНижняя,
+			id: 'КоманднаяПанельНижняя',
 			style: 'position:absolute;left:0px;top:466px;width:664px;height:25px;',
 			Привязка:
 			{
@@ -1713,12 +1715,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВариантЗагрузкиДанных',
 			boxLabel: 'Загрузить данные из файла',
 			style: 'position:absolute;left:8px;top:33px;width:170px;height:19px;',
@@ -1747,7 +1744,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВариантЗагрузки',
 			boxLabel: 'Загрузить данные из электронной почты',
 			style: 'position:absolute;left:183px;top:33px;width:232px;height:19px;',
@@ -1775,14 +1772,11 @@
 			Верх:33,
 			Лево:183,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1794,19 +1788,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -223,7 +223,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:718px;height:25px;',
 			Привязка:
 			{
@@ -268,7 +268,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Субъекты переписки',
-			style: 'position:absolute;left:8px;top:112px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:112px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -297,7 +297,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Предмет переписки',
-			style: 'position:absolute;left:8px;top:172px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:172px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -382,7 +382,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОснованяПанель,
+			id: 'ОснованяПанель',
 			style: 'position:absolute;left:8px;top:236px;width:702px;height:357px;',
 			Привязка:
 			{
@@ -407,19 +407,20 @@
 			Ширина:702,
 			Верх:236,
 			Лево:8,
+			Групповой: true,
 			height: 357,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: 'Сообщения',
-			style: 'position:absolute;left:0px;top:57px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:57px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -506,7 +507,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: 'Активность',
-			style: 'position:absolute;left:0px;top:0px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:702px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -649,7 +650,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСообщения,
+			id: 'ПанельСообщения',
 			style: 'position:absolute;left:0px;top:75px;width:702px;height:249px;',
 			Привязка:
 			{
@@ -674,17 +675,18 @@
 			Ширина:702,
 			Верх:75,
 			Лево:0,
+			Групповой: true,
 			height: 249,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаОтчетность,
+					id: 'СтраницаОтчетность',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельУведомлениеОбУточнении,
+			id: 'ПанельУведомлениеОбУточнении',
 			style: 'position:absolute;left:0px;top:128px;width:702px;height:16px;',
 			Привязка:
 			{
@@ -709,12 +711,13 @@
 			Ширина:702,
 			Верх:128,
 			Лево:0,
+			Групповой: true,
 			height: 16,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -753,13 +756,13 @@
 					]
 				},
 				{
-					id: СтраницаНеформализованноеСообщениеНалоговогоОргана,
+					id: 'СтраницаНеформализованноеСообщениеНалоговогоОргана',
 				},
 				{
-					id: СтраницаНеформализованноеСообщениеНалогоплательщика,
+					id: 'СтраницаНеформализованноеСообщениеНалогоплательщика',
 				},
 				{
-					id: СтраницаЗапросНаИнформационноеОбслуживание,
+					id: 'СтраницаЗапросНаИнформационноеОбслуживание',
 					items:
 					[
 		{
@@ -881,7 +884,7 @@
 					]
 				},
 				{
-					id: СтраницаОтчетностьПФР,
+					id: 'СтраницаОтчетностьПФР',
 					items:
 					[
 		{
@@ -944,7 +947,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПротоколПФР,
+			id: 'ПанельПротоколПФР',
 			style: 'position:absolute;left:0px;top:37px;width:702px;height:44px;',
 			Привязка:
 			{
@@ -969,12 +972,13 @@
 			Ширина:702,
 			Верх:37,
 			Лево:0,
+			Групповой: true,
 			height: 44,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1071,7 +1075,7 @@
 					]
 				},
 				{
-					id: СтраницаНеформализованноеВходящиеПФР,
+					id: 'СтраницаНеформализованноеВходящиеПФР',
 					items:
 					[
 		{
@@ -1164,7 +1168,7 @@
 					]
 				},
 				{
-					id: СтраницаНеформализованноеИсходящиеПФР,
+					id: 'СтраницаНеформализованноеИсходящиеПФР',
 					items:
 					[
 		{
@@ -1344,7 +1348,7 @@
 					]
 				},
 				{
-					id: СтраницаОтчетностьФНС534,
+					id: 'СтраницаОтчетностьФНС534',
 					items:
 					[
 		{
@@ -1610,7 +1614,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРезультатОбработки,
+			id: 'ПанельРезультатОбработки',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			Привязка:
 			{
@@ -1635,12 +1639,13 @@
 			Ширина:702,
 			Верх:123,
 			Лево:0,
+			Групповой: true,
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1737,7 +1742,7 @@
 					]
 				},
 				{
-					id: СтраницаФорма2НДФЛ,
+					id: 'СтраницаФорма2НДФЛ',
 					items:
 					[
 		{
@@ -1975,7 +1980,7 @@
 					]
 				},
 				{
-					id: ОбращениеНП,
+					id: 'ОбращениеНП',
 					items:
 					[
 		{
@@ -2212,7 +2217,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРезультатПриемаОбращениеНП,
+			id: 'ПанельРезультатПриемаОбращениеНП',
 			style: 'position:absolute;left:0px;top:80px;width:702px;height:44px;',
 			Привязка:
 			{
@@ -2237,12 +2242,13 @@
 			Ширина:702,
 			Верх:80,
 			Лево:0,
+			Групповой: true,
 			height: 44,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2339,7 +2345,7 @@
 					]
 				},
 				{
-					id: ПисьмоНО,
+					id: 'ПисьмоНО',
 					items:
 					[
 		{
@@ -2519,7 +2525,7 @@
 					]
 				},
 				{
-					id: Рассылка,
+					id: 'Рассылка',
 					items:
 					[
 		{
@@ -2554,7 +2560,7 @@
 					]
 				},
 				{
-					id: РассылкаГрупповая,
+					id: 'РассылкаГрупповая',
 					items:
 					[
 		{
@@ -2647,7 +2653,7 @@
 					]
 				},
 				{
-					id: ИОН,
+					id: 'ИОН',
 					items:
 					[
 		{
@@ -2971,7 +2977,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРезультатОбработкиЗапрос,
+			id: 'ПанельРезультатОбработкиЗапрос',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			Привязка:
 			{
@@ -2996,12 +3002,13 @@
 			Ширина:702,
 			Верх:123,
 			Лево:0,
+			Групповой: true,
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3098,7 +3105,7 @@
 					]
 				},
 				{
-					id: СтраницаЗаявление,
+					id: 'СтраницаЗаявление',
 					items:
 					[
 		{
@@ -3335,7 +3342,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРезультатОбработкиЗаявлениеРФ,
+			id: 'ПанельРезультатОбработкиЗаявлениеРФ',
 			style: 'position:absolute;left:0px;top:123px;width:702px;height:42px;',
 			Привязка:
 			{
@@ -3360,12 +3367,13 @@
 			Ширина:702,
 			Верх:123,
 			Лево:0,
+			Групповой: true,
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3461,7 +3469,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСообщениеОбОтзыеЗаявлениеРФ,
+			id: 'ПанельСообщениеОбОтзыеЗаявлениеРФ',
 			style: 'position:absolute;left:0px;top:165px;width:702px;height:42px;',
 			Привязка:
 			{
@@ -3486,12 +3494,13 @@
 			Ширина:702,
 			Верх:165,
 			Лево:0,
+			Групповой: true,
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3587,7 +3596,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРезультатОбработкиЗаявлениеТС,
+			id: 'ПанельРезультатОбработкиЗаявлениеТС',
 			style: 'position:absolute;left:0px;top:207px;width:702px;height:42px;',
 			Привязка:
 			{
@@ -3612,12 +3621,13 @@
 			Ширина:702,
 			Верх:207,
 			Лево:0,
+			Групповой: true,
 			height: 42,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3714,7 +3724,7 @@
 					]
 				},
 				{
-					id: Документ,
+					id: 'Документ',
 					items:
 					[
 		{
@@ -3894,7 +3904,7 @@
 					]
 				},
 				{
-					id: СтраницаОтчетностьФСГС,
+					id: 'СтраницаОтчетностьФСГС',
 					items:
 					[
 		{
@@ -4190,7 +4200,7 @@
 					]
 				},
 				{
-					id: ПисьменноеОбращениеВФСГС,
+					id: 'ПисьменноеОбращениеВФСГС',
 					items:
 					[
 		{
@@ -4341,7 +4351,7 @@
 					]
 				},
 				{
-					id: ИндивидуальноеИнформированиеФСГС,
+					id: 'ИндивидуальноеИнформированиеФСГС',
 					items:
 					[
 		{
@@ -4439,7 +4449,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы11',
 			text: '',
-			style: 'position:absolute;left:0px;top:336px;width:702px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:336px;width:702px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4528,7 +4538,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВторойСубъектПереписки,
+			id: 'ПанельВторойСубъектПереписки',
 			style: 'position:absolute;left:8px;top:152px;width:702px;height:19px;',
 			Привязка:
 			{
@@ -4553,12 +4563,13 @@
 			Ширина:702,
 			Верх:152,
 			Лево:8,
+			Групповой: true,
 			height: 19,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: НалоговыйОрган,
+					id: 'НалоговыйОрган',
 					items:
 					[
 		{
@@ -4622,7 +4633,7 @@
 					]
 				},
 				{
-					id: ОрганПФР,
+					id: 'ОрганПФР',
 					items:
 					[
 		{
@@ -4686,7 +4697,7 @@
 					]
 				},
 				{
-					id: ОрганФСГС,
+					id: 'ОрганФСГС',
 					items:
 					[
 		{
@@ -4843,7 +4854,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДополнительныйПредмет,
+			id: 'ПанельДополнительныйПредмет',
 			style: 'position:absolute;left:8px;top:213px;width:702px;height:23px;',
 			Привязка:
 			{
@@ -4868,12 +4879,13 @@
 			Ширина:702,
 			Верх:213,
 			Лево:8,
+			Групповой: true,
 			height: 23,width: 702,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4915,7 +4927,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:599px;width:718px;height:25px;',
 			Привязка:
 			{
@@ -4957,8 +4969,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4970,19 +4981,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

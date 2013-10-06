@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Сведения об отправителе документа',
-			style: 'position:absolute;left:6px;top:30px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:30px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -81,7 +81,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтпрЮФ,
+			id: 'ПанельОтпрЮФ',
 			style: 'position:absolute;left:6px;top:72px;width:540px;height:72px;',
 			Привязка:
 			{
@@ -106,12 +106,13 @@
 			Ширина:540,
 			Верх:72,
 			Лево:6,
+			Групповой: true,
 			height: 72,width: 540,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЮЛ,
+					id: 'ЮЛ',
 					items:
 					[
 		{
@@ -300,7 +301,7 @@
 					]
 				},
 				{
-					id: ФЛ,
+					id: 'ФЛ',
 					items:
 					[
 		{
@@ -497,7 +498,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Сведения о лицах, подписавших документ',
-			style: 'position:absolute;left:6px;top:150px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:150px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -526,7 +527,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Сведения о лице, представившем документ в налоговый орган',
-			style: 'position:absolute;left:6px;top:480px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:480px;width:540px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1761,12 +1762,7 @@
 			Лево:420,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрОтпр1',
 			boxLabel: 'НП-заявитель',
 			style: 'position:absolute;left:12px;top:48px;width:90px;height:19px;',
@@ -1795,7 +1791,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрОтпр2',
 			boxLabel: 'Уполномоченный представитель НП',
 			style: 'position:absolute;left:108px;top:48px;width:204px;height:19px;',
@@ -1823,15 +1819,8 @@
 			Верх:48,
 			Лево:108,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрПодп1',
 			boxLabel: 'лично - ИП-покупатель',
 			style: 'position:absolute;left:12px;top:186px;width:108px;height:30px;',
@@ -1860,7 +1849,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрПодп2',
 			boxLabel: 'Законный представитель организации',
 			style: 'position:absolute;left:126px;top:186px;width:150px;height:30px;',
@@ -1889,7 +1878,7 @@
 			Лево:126,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрПодп3',
 			boxLabel: 'Уполномоченный представитель',
 			style: 'position:absolute;left:282px;top:186px;width:126px;height:30px;',
@@ -1917,15 +1906,8 @@
 			Верх:186,
 			Лево:282,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрКурьер1',
 			boxLabel: 'лично - ИП-покупатель',
 			style: 'position:absolute;left:12px;top:522px;width:108px;height:30px;',
@@ -1954,7 +1936,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрКурьер2',
 			boxLabel: 'Законный представитель организации',
 			style: 'position:absolute;left:126px;top:522px;width:150px;height:30px;',
@@ -1983,7 +1965,7 @@
 			Лево:126,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрКурьер3',
 			boxLabel: 'Уполномоченный представитель',
 			style: 'position:absolute;left:282px;top:522px;width:126px;height:30px;',
@@ -2011,15 +1993,13 @@
 			Верх:522,
 			Лево:282,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:644px;width:554px;height:25px;',
 			Привязка:
 			{
@@ -2066,8 +2046,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2079,19 +2058,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

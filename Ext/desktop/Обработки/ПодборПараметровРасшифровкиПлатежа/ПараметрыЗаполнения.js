@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: Основная,
+			id: 'Основная',
 			style: 'position:absolute;left:0px;top:0px;width:353px;height:25px;',
 			Привязка:
 			{
@@ -95,7 +95,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:32px;width:337px;height:388px;',
 			Привязка:
 			{
@@ -120,16 +120,17 @@
 			Ширина:337,
 			Верх:32,
 			Лево:8,
+			Групповой: true,
 			height: 388,width: 337,
 			items:
 			[
 				{
-					id: Основная,
+					id: 'Основная',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельЗаполнение,
+			id: 'ПанельЗаполнение',
 			style: 'position:absolute;left:6px;top:60px;width:323px;height:302px;',
 			Привязка:
 			{
@@ -154,19 +155,20 @@
 			Ширина:323,
 			Верх:60,
 			Лево:6,
+			Групповой: true,
 			height: 302,width: 323,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоЗаявкам,
+					id: 'ПоЗаявкам',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Порядок погашения',
-			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -284,12 +286,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения3',
 			boxLabel: 'По возрастанию даты планируемого поступления',
 			style: 'position:absolute;left:12px;top:27px;width:276px;height:15px;',
@@ -318,7 +315,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения4',
 			boxLabel: 'По убыванию даты планируемого поступления',
 			style: 'position:absolute;left:12px;top:47px;width:273px;height:15px;',
@@ -346,19 +343,17 @@
 			Верх:47,
 			Лево:12,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ПоДоговорам,
+					id: 'ПоДоговорам',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Способ расчета задолженности',
-			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -387,7 +382,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Порядок погашения',
-			style: 'position:absolute;left:6px;top:64px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:64px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -508,7 +503,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Учет планируемых движений денежных средств',
-			style: 'position:absolute;left:6px;top:167px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:167px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -566,7 +561,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Способ подбора',
-			style: 'position:absolute;left:6px;top:233px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:233px;width:311px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -679,12 +674,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения',
 			boxLabel: 'Сначала ранние задолженности',
 			style: 'position:absolute;left:12px;top:85px;width:184px;height:15px;',
@@ -713,7 +703,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения1',
 			boxLabel: 'Сначала поздние задолженности',
 			style: 'position:absolute;left:12px;top:105px;width:192px;height:15px;',
@@ -742,7 +732,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения2',
 			boxLabel: 'По табличной части документа',
 			style: 'position:absolute;left:12px;top:125px;width:180px;height:15px;',
@@ -770,15 +760,8 @@
 			Верх:125,
 			Лево:12,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПодборПоСумме',
 			boxLabel: 'По сумме платежа',
 			style: 'position:absolute;left:12px;top:253px;width:118px;height:19px;',
@@ -807,7 +790,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПодборПоСумме1',
 			boxLabel: 'По сумме взаиморасчетов',
 			style: 'position:absolute;left:146px;top:253px;width:158px;height:19px;',
@@ -835,8 +818,6 @@
 			Верх:253,
 			Лево:146,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -845,7 +826,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: 'Способ заполнения',
-			style: 'position:absolute;left:6px;top:6px;width:323px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:323px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -871,12 +852,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоЗаявкам',
 			boxLabel: 'По текущей задолженности',
 			style: 'position:absolute;left:18px;top:23px;width:163px;height:15px;',
@@ -905,7 +881,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоЗаявкам1',
 			boxLabel: 'По планируемым поступлениям денежных средств',
 			style: 'position:absolute;left:18px;top:42px;width:286px;height:15px;',
@@ -933,12 +909,10 @@
 			Верх:42,
 			Лево:18,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -1062,7 +1036,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПостроительОтбораДоговоровОтбор,
+			id: 'КоманднаяПанельПостроительОтбораДоговоровОтбор',
 			style: 'position:absolute;left:6px;top:6px;width:323px;height:24px;',
 			Привязка:
 			{
@@ -1103,7 +1077,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:428px;width:353px;height:25px;',
 			Привязка:
 			{
@@ -1151,8 +1125,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1164,19 +1137,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

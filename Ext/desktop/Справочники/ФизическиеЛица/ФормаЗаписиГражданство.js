@@ -148,7 +148,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:8px;top:354px;width:402px;height:6px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:354px;width:402px;height:6px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -367,12 +367,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательГражданство',
 			boxLabel: 'Гражданин страны:',
 			style: 'position:absolute;left:8px;top:8px;width:135px;height:19px;',
@@ -401,7 +396,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ЛицоБезГражданства',
 			boxLabel: 'Лицо без гражданства',
 			style: 'position:absolute;left:8px;top:31px;width:135px;height:15px;',
@@ -429,15 +424,8 @@
 			Верх:31,
 			Лево:8,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидЗастрахованногоЛица',
 			boxLabel: 'Постоянно проживает на территории РФ',
 			style: 'position:absolute;left:14px;top:78px;width:260px;height:15px;',
@@ -466,7 +454,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидЗастрахованногоЛица1',
 			boxLabel: 'Временно проживает на территории РФ',
 			style: 'position:absolute;left:14px;top:98px;width:260px;height:15px;',
@@ -495,7 +483,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидЗастрахованногоЛица2',
 			boxLabel: 'Временно пребывает на территории РФ',
 			style: 'position:absolute;left:14px;top:118px;width:260px;height:15px;',
@@ -523,15 +511,13 @@
 			Верх:118,
 			Лево:14,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:392px;width:418px;height:25px;',
 			Привязка:
 			{
@@ -585,8 +571,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -598,19 +583,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

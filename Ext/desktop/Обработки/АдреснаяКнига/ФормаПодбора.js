@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОбщаяПанель,
+			id: 'ОбщаяПанель',
 			style: 'position:absolute;left:8px;top:9px;width:483px;height:408px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:483,
 			Верх:9,
 			Лево:8,
+			Групповой: true,
 			height: 408,width: 483,
 			items:
 			[
 				{
-					id: КонтрагентыКонтактныеЛица,
+					id: 'КонтрагентыКонтактныеЛица',
 					items:
 					[
 		{
@@ -256,7 +257,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтрагенты,
+			id: 'КоманднаяПанельКонтрагенты',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -290,7 +291,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтактныеЛицаКонтрагентов,
+			id: 'КоманднаяПанельКонтактныеЛицаКонтрагентов',
 			style: 'position:absolute;left:6px;top:206px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -500,7 +501,7 @@
 					]
 				},
 				{
-					id: ФизическиеЛица,
+					id: 'ФизическиеЛица',
 					items:
 					[
 		{
@@ -626,7 +627,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизЛица,
+			id: 'КоманднаяПанельФизЛица',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -768,7 +769,7 @@
 					]
 				},
 				{
-					id: ПрочиеКонтактныеЛица,
+					id: 'ПрочиеКонтактныеЛица',
 					items:
 					[
 		{
@@ -865,7 +866,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПрочиеКонтактныеЛица,
+			id: 'КоманднаяПанельПрочиеКонтактныеЛица',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -1007,7 +1008,7 @@
 					]
 				},
 				{
-					id: Организации,
+					id: 'Организации',
 					items:
 					[
 		{
@@ -1104,7 +1105,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОрганизации,
+			id: 'КоманднаяПанельОрганизации',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -1246,7 +1247,7 @@
 					]
 				},
 				{
-					id: Личные,
+					id: 'Личные',
 					items:
 					[
 		{
@@ -1343,7 +1344,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЛичныеКонтакты,
+			id: 'КоманднаяПанельЛичныеКонтакты',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -1465,7 +1466,7 @@
 					]
 				},
 				{
-					id: Пользователи,
+					id: 'Пользователи',
 					items:
 					[
 		{
@@ -1562,7 +1563,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПользователи,
+			id: 'КоманднаяПанельПользователи',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -1684,7 +1685,7 @@
 					]
 				},
 				{
-					id: ГруппыОбъектов,
+					id: 'ГруппыОбъектов',
 					items:
 					[
 		{
@@ -1830,7 +1831,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельГруппыОбъектов,
+			id: 'КоманднаяПанельГруппыОбъектов',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -2041,7 +2042,7 @@
 					]
 				},
 				{
-					id: Поиск,
+					id: 'Поиск',
 					items:
 					[
 		{
@@ -2276,7 +2277,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРезультатыПоиска,
+			id: 'КоманднаяПанельРезультатыПоиска',
 			style: 'position:absolute;left:6px;top:54px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -2371,7 +2372,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКому,
+			id: 'ПанельКому',
 			style: 'position:absolute;left:495px;top:9px;width:276px;height:408px;',
 			Привязка:
 			{
@@ -2396,11 +2397,12 @@
 			Ширина:276,
 			Верх:9,
 			Лево:495,
+			Групповой: true,
 			height: 408,width: 276,
 			items:
 			[
 				{
-					id: Кому,
+					id: 'Кому',
 					items:
 					[
 		{
@@ -2497,7 +2499,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКому,
+			id: 'КоманднаяПанельКому',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
 			Привязка:
 			{
@@ -2651,12 +2653,12 @@
 					]
 				},
 				{
-					id: Копии,
+					id: 'Копии',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКопии,
+			id: 'КоманднаяПанельКопии',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
 			Привязка:
 			{
@@ -2902,12 +2904,12 @@
 					]
 				},
 				{
-					id: СкрытыеКопии,
+					id: 'СкрытыеКопии',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСкрытыеКопии,
+			id: 'КоманднаяПанельСкрытыеКопии',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
 			Привязка:
 			{
@@ -3153,12 +3155,12 @@
 					]
 				},
 				{
-					id: Объекты,
+					id: 'Объекты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОбъекты,
+			id: 'КоманднаяПанельОбъекты',
 			style: 'position:absolute;left:40px;top:6px;width:228px;height:24px;',
 			Привязка:
 			{
@@ -3362,7 +3364,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:425px;width:779px;height:25px;',
 			Привязка:
 			{
@@ -3416,8 +3418,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3429,19 +3430,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

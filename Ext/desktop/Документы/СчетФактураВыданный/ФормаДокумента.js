@@ -110,7 +110,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:804px;height:25px;',
 			Привязка:
 			{
@@ -187,7 +187,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНомераДаты,
+			id: 'ПанельНомераДаты',
 			style: 'position:absolute;left:461px;top:55px;width:337px;height:85px;',
 			Привязка:
 			{
@@ -212,12 +212,13 @@
 			Ширина:337,
 			Верх:55,
 			Лево:461,
+			Групповой: true,
 			height: 85,width: 337,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаКорректировочныйИсправленный,
+					id: 'СтраницаКорректировочныйИсправленный',
 					items:
 					[
 		{
@@ -655,7 +656,7 @@
 					]
 				},
 				{
-					id: СтраницаКорректировочный,
+					id: 'СтраницаКорректировочный',
 					items:
 					[
 		{
@@ -756,7 +757,7 @@
 					]
 				},
 				{
-					id: СтраницаОбычный,
+					id: 'СтраницаОбычный',
 					items:
 					[
 		{
@@ -854,7 +855,7 @@
 					]
 				},
 				{
-					id: СтраницаИсправленный,
+					id: 'СтраницаИсправленный',
 					items:
 					[
 		{
@@ -1050,7 +1051,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИсправление,
+			id: 'ПанельИсправление',
 			style: 'position:absolute;left:461px;top:32px;width:337px;height:19px;',
 			Привязка:
 			{
@@ -1075,12 +1076,13 @@
 			Ширина:337,
 			Верх:32,
 			Лево:461,
+			Групповой: true,
 			height: 19,width: 337,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1152,7 +1154,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОрганизация,
+			id: 'ПанельОрганизация',
 			style: 'position:absolute;left:8px;top:55px;width:433px;height:85px;',
 			Привязка:
 			{
@@ -1177,12 +1179,13 @@
 			Ширина:433,
 			Верх:55,
 			Лево:8,
+			Групповой: true,
 			height: 85,width: 433,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1558,7 +1561,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:149px;width:790px;height:401px;',
 			Привязка:
 			{
@@ -1583,16 +1586,17 @@
 			Ширина:790,
 			Верх:149,
 			Лево:8,
+			Групповой: true,
 			height: 401,width: 790,
 			items:
 			[
 				{
-					id: Основное,
+					id: 'Основное',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ДанныеСчетаФактуры,
+			id: 'ДанныеСчетаФактуры',
 			style: 'position:absolute;left:6px;top:6px;width:776px;height:241px;',
 			Привязка:
 			{
@@ -1617,19 +1621,20 @@
 			Ширина:776,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 241,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: НаРеализацию,
+					id: 'НаРеализацию',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаДокументОснованиеНаРеализацию',
 			text: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1824,7 +1829,7 @@
 			xtype: 'label',
 			id: 'РамкаПареметрыПлатежноРасчетногоДокументаНаРеализацию',
 			text: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:129px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:129px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1851,7 +1856,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументыОснованияНаРеализацию,
+			id: 'КоманднаяПанельДокументыОснованияНаРеализацию',
 			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
 			Привязка:
 			{
@@ -1884,7 +1889,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДатаНомерДокументовОплаты,
+			id: 'КоманднаяПанельДатаНомерДокументовОплаты',
 			style: 'position:absolute;left:0px;top:149px;width:776px;height:24px;',
 			Привязка:
 			{
@@ -1947,14 +1952,14 @@
 					]
 				},
 				{
-					id: НаАванс,
+					id: 'НаАванс',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаДокументОснованиеНаАванс',
 			text: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2015,7 +2020,7 @@
 			xtype: 'label',
 			id: 'РеквизитыНаАванс',
 			text: 'Реквизиты счета-фактуры на аванс',
-			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2163,7 +2168,7 @@
 			xtype: 'label',
 			id: 'РамкаПареметрыПлатежноРасчетногоДокументаНаАванс',
 			text: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:192px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:192px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2314,7 +2319,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельАвансы,
+			id: 'КоманднаяПанельАвансы',
 			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
 			Привязка:
 			{
@@ -2348,14 +2353,14 @@
 					]
 				},
 				{
-					id: НаСуммовуюРазницу,
+					id: 'НаСуммовуюРазницу',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаДокументОснованиеНаСуммовуюРазницу',
 			text: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2416,7 +2421,7 @@
 			xtype: 'label',
 			id: 'РамкаПареметрыПлатежноРасчетногоДокументаНаСуммовуюРазницу',
 			text: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:98px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:98px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2785,14 +2790,14 @@
 					]
 				},
 				{
-					id: НалоговыйАгент,
+					id: 'НалоговыйАгент',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаДокументОснованиеНалоговыйАгент',
 			text: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2853,7 +2858,7 @@
 			xtype: 'label',
 			id: 'РеквизитыНалоговыйАгент',
 			text: 'Реквизиты счета-фактуры налогового агента',
-			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:44px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3001,7 +3006,7 @@
 			xtype: 'label',
 			id: 'РамкаПареметрыПлатежноРасчетногоДокументаНалоговыйАгент',
 			text: 'Платежно-расчетный документ',
-			style: 'position:absolute;left:0px;top:194px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:194px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3152,7 +3157,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНалоговыйАгент,
+			id: 'КоманднаяПанельНалоговыйАгент',
 			style: 'position:absolute;left:0px;top:65px;width:776px;height:24px;',
 			Привязка:
 			{
@@ -3191,14 +3196,14 @@
 					]
 				},
 				{
-					id: Корректировочный,
+					id: 'Корректировочный',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаДокументОснованиеНаРеализацию1',
 			text: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3308,7 +3313,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументыОснованияНаРеализацию1,
+			id: 'КоманднаяПанельДокументыОснованияНаРеализацию1',
 			style: 'position:absolute;left:0px;top:20px;width:776px;height:24px;',
 			Привязка:
 			{
@@ -3374,7 +3379,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИтоги,
+			id: 'ПанельИтоги',
 			style: 'position:absolute;left:6px;top:351px;width:776px;height:24px;',
 			Привязка:
 			{
@@ -3399,12 +3404,13 @@
 			Ширина:776,
 			Верх:351,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаВсего,
+					id: 'СтраницаВсего',
 					items:
 					[
 		{
@@ -3565,7 +3571,7 @@
 					]
 				},
 				{
-					id: СтраницаУвеличениеУменьшение,
+					id: 'СтраницаУвеличениеУменьшение',
 					items:
 					[
 		{
@@ -3884,7 +3890,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСведенияОСчетеФактуре,
+			id: 'ПанельСведенияОСчетеФактуре',
 			style: 'position:absolute;left:6px;top:252px;width:776px;height:92px;',
 			Привязка:
 			{
@@ -3909,12 +3915,13 @@
 			Ширина:776,
 			Верх:252,
 			Лево:6,
+			Групповой: true,
 			height: 92,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4074,7 +4081,7 @@
 			xtype: 'label',
 			id: 'РамкаВыставлениеСчетаАктуры',
 			text: 'Выставление счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:775px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:775px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4129,12 +4136,7 @@
 			Лево:2,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НаБумажномНосителе',
 			boxLabel: 'На бумажном носителе',
 			style: 'position:absolute;left:416px;top:47px;width:139px;height:19px;',
@@ -4163,7 +4165,7 @@
 			Лево:416,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВЭлектронномВиде',
 			boxLabel: 'В электронном виде',
 			style: 'position:absolute;left:565px;top:47px;width:124px;height:19px;',
@@ -4191,8 +4193,6 @@
 			Верх:47,
 			Лево:565,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -4200,7 +4200,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -4524,7 +4524,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:557px;width:804px;height:25px;',
 			Привязка:
 			{
@@ -4586,8 +4586,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4599,19 +4598,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДействияФормы,
+			id: 'КоманднаяПанельДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
 			Привязка:
 			{
@@ -237,7 +237,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСодержимое,
+			id: 'ПанельСодержимое',
 			style: 'position:absolute;left:8px;top:142px;width:566px;height:191px;',
 			Привязка:
 			{
@@ -262,12 +262,13 @@
 			Ширина:566,
 			Верх:142,
 			Лево:8,
+			Групповой: true,
 			height: 191,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПервичноеСообщениеСодержащееОтчетность,
+					id: 'ПервичноеСообщениеСодержащееОтчетность',
 					items:
 					[
 		{
@@ -302,7 +303,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеОтправки,
+					id: 'ПодтверждениеОтправки',
 					items:
 					[
 		{
@@ -338,7 +339,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -424,7 +425,7 @@
 					]
 				},
 				{
-					id: ПротоколВходногоКонтроля,
+					id: 'ПротоколВходногоКонтроля',
 					items:
 					[
 		{
@@ -576,7 +577,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -633,7 +634,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеДоставки,
+					id: 'ПодтверждениеДоставки',
 					items:
 					[
 		{
@@ -842,7 +843,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеНалогоплательщикаНаПодтверждениеОтправки,
+					id: 'ПодтверждениеНалогоплательщикаНаПодтверждениеОтправки',
 					items:
 					[
 		{
@@ -936,7 +937,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1109,7 +1110,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеНалогоплательщикаНаПротоколПроверки,
+					id: 'ПодтверждениеНалогоплательщикаНаПротоколПроверки',
 					items:
 					[
 		{
@@ -1406,7 +1407,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1434,7 +1435,7 @@
 					]
 				},
 				{
-					id: УведомлениеОбУточнении,
+					id: 'УведомлениеОбУточнении',
 					items:
 					[
 		{
@@ -1585,7 +1586,7 @@
 					]
 				},
 				{
-					id: Протокол2НДФЛ,
+					id: 'Протокол2НДФЛ',
 					items:
 					[
 		{
@@ -1794,7 +1795,7 @@
 					]
 				},
 				{
-					id: Прочее,
+					id: 'Прочее',
 					items:
 					[
 		{
@@ -1829,7 +1830,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВложения,
+			id: 'ПанельВложения',
 			style: 'position:absolute;left:0px;top:171px;width:566px;height:20px;',
 			Привязка:
 			{
@@ -1854,12 +1855,13 @@
 			Ширина:566,
 			Верх:171,
 			Лево:0,
+			Групповой: true,
 			height: 20,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1927,7 +1929,7 @@
 					]
 				},
 				{
-					id: НеформализованноеСообщениеНО,
+					id: 'НеформализованноеСообщениеНО',
 					items:
 					[
 		{
@@ -2019,7 +2021,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНеформализованныйДокументСтр7,
+			id: 'ПанельНеформализованныйДокументСтр7',
 			style: 'position:absolute;left:0px;top:58px;width:566px;height:93px;',
 			Привязка:
 			{
@@ -2044,12 +2046,13 @@
 			Ширина:566,
 			Верх:58,
 			Лево:0,
+			Групповой: true,
 			height: 93,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2205,7 +2208,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2262,7 +2265,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеНалогоплательщикаНаНеформализованноеСообщениеНО,
+					id: 'ПодтверждениеНалогоплательщикаНаНеформализованноеСообщениеНО',
 					items:
 					[
 		{
@@ -2325,7 +2328,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНеформализованныйДокументСтр8,
+			id: 'ПанельНеформализованныйДокументСтр8',
 			style: 'position:absolute;left:0px;top:58px;width:566px;height:93px;',
 			Привязка:
 			{
@@ -2350,12 +2353,13 @@
 			Ширина:566,
 			Верх:58,
 			Лево:0,
+			Групповой: true,
 			height: 93,width: 566,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2452,7 +2456,7 @@
 					]
 				},
 				{
-					id: НеформализованныйДокументНалогоплательщика,
+					id: 'НеформализованныйДокументНалогоплательщика',
 					items:
 					[
 		{
@@ -2603,7 +2607,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика,
+					id: 'ПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
 					items:
 					[
 		{
@@ -2697,7 +2701,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2783,7 +2787,7 @@
 					]
 				},
 				{
-					id: ПереподписанноеПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика,
+					id: 'ПереподписанноеПодтверждениеОтправкиНеформализованногоДокументаНалогоплательщика',
 					items:
 					[
 		{
@@ -2877,7 +2881,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: '',
-			style: 'position:absolute;left:0px;top:58px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:58px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3050,7 +3054,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеДоставкиНеформализованногоДокументаНалогоплательщика,
+					id: 'ПодтверждениеДоставкиНеформализованногоДокументаНалогоплательщика',
 					items:
 					[
 		{
@@ -3201,7 +3205,7 @@
 					]
 				},
 				{
-					id: ЗапросИОН,
+					id: 'ЗапросИОН',
 					items:
 					[
 		{
@@ -3323,7 +3327,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеОтправкиЗапроса,
+					id: 'ПодтверждениеОтправкиЗапроса',
 					items:
 					[
 		{
@@ -3359,7 +3363,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы9',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3503,7 +3507,7 @@
 					]
 				},
 				{
-					id: ПротоколПроверкиЗапроса,
+					id: 'ПротоколПроверкиЗапроса',
 					items:
 					[
 		{
@@ -3626,7 +3630,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы10',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3683,7 +3687,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеДоставкиЗапроса,
+					id: 'ПодтверждениеДоставкиЗапроса',
 					items:
 					[
 		{
@@ -3834,7 +3838,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеНалогоплательщикаНаПодтверждениеОтправкиЗапроса,
+					id: 'ПодтверждениеНалогоплательщикаНаПодтверждениеОтправкиЗапроса',
 					items:
 					[
 		{
@@ -3957,7 +3961,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы11',
 			text: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4130,7 +4134,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеНалогоплательщикаНаПротоколПроверкиЗапроса,
+					id: 'ПодтверждениеНалогоплательщикаНаПротоколПроверкиЗапроса',
 					items:
 					[
 		{
@@ -4398,7 +4402,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы12',
 			text: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4426,7 +4430,7 @@
 					]
 				},
 				{
-					id: ОтветНаЗапросИОН,
+					id: 'ОтветНаЗапросИОН',
 					items:
 					[
 		{
@@ -4549,7 +4553,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы13',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4635,7 +4639,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеНаОтветНаЗапросИОН,
+					id: 'ПодтверждениеНаОтветНаЗапросИОН',
 					items:
 					[
 		{
@@ -4845,7 +4849,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы14',
 			text: '',
-			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:84px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4873,7 +4877,7 @@
 					]
 				},
 				{
-					id: ЗашифрованноеСообщениеВходящее,
+					id: 'ЗашифрованноеСообщениеВходящее',
 					items:
 					[
 		{
@@ -4908,7 +4912,7 @@
 					]
 				},
 				{
-					id: ЗашифрованноеСообщениеИсходящее,
+					id: 'ЗашифрованноеСообщениеИсходящее',
 					items:
 					[
 		{
@@ -4972,7 +4976,7 @@
 					]
 				},
 				{
-					id: ПервичноеСообщениеСодержащееОтчетностьПФР,
+					id: 'ПервичноеСообщениеСодержащееОтчетностьПФР',
 					items:
 					[
 		{
@@ -5106,7 +5110,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеПолученияПФР,
+					id: 'ПодтверждениеПолученияПФР',
 					items:
 					[
 		{
@@ -5240,7 +5244,7 @@
 					]
 				},
 				{
-					id: ПротоколПФР,
+					id: 'ПротоколПФР',
 					items:
 					[
 		{
@@ -5404,7 +5408,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы15',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5461,7 +5465,7 @@
 					]
 				},
 				{
-					id: ПротоколКвитанцияПФР,
+					id: 'ПротоколКвитанцияПФР',
 					items:
 					[
 		{
@@ -5595,7 +5599,7 @@
 					]
 				},
 				{
-					id: УведомлениеОбОшибке,
+					id: 'УведомлениеОбОшибке',
 					items:
 					[
 		{
@@ -5631,7 +5635,7 @@
 					]
 				},
 				{
-					id: НеформализованноеВходящееПФР,
+					id: 'НеформализованноеВходящееПФР',
 					items:
 					[
 		{
@@ -5795,7 +5799,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы16',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5852,7 +5856,7 @@
 					]
 				},
 				{
-					id: НеформализованноеИсходящееПФР,
+					id: 'НеформализованноеИсходящееПФР',
 					items:
 					[
 		{
@@ -5986,7 +5990,7 @@
 					]
 				},
 				{
-					id: НеформализованноеИсходящееКвитанцияПФР,
+					id: 'НеформализованноеИсходящееКвитанцияПФР',
 					items:
 					[
 		{
@@ -6120,7 +6124,7 @@
 					]
 				},
 				{
-					id: НеформализованноеВходящееКвитанцияПФР,
+					id: 'НеформализованноеВходящееКвитанцияПФР',
 					items:
 					[
 		{
@@ -6254,7 +6258,7 @@
 					]
 				},
 				{
-					id: ДекларацияНП,
+					id: 'ДекларацияНП',
 					items:
 					[
 		{
@@ -6388,7 +6392,7 @@
 					]
 				},
 				{
-					id: ИзвещениеДекларацияНО,
+					id: 'ИзвещениеДекларацияНО',
 					items:
 					[
 		{
@@ -6522,7 +6526,7 @@
 					]
 				},
 				{
-					id: РезультатПриемаДекларацияНО,
+					id: 'РезультатПриемаДекларацияНО',
 					items:
 					[
 		{
@@ -6686,7 +6690,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы17',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6743,7 +6747,7 @@
 					]
 				},
 				{
-					id: ИзвещениеРезультатПриемаНП,
+					id: 'ИзвещениеРезультатПриемаНП',
 					items:
 					[
 		{
@@ -6877,7 +6881,7 @@
 					]
 				},
 				{
-					id: РезультатОбработкиДекларацияНО,
+					id: 'РезультатОбработкиДекларацияНО',
 					items:
 					[
 		{
@@ -7041,7 +7045,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы18',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7098,7 +7102,7 @@
 					]
 				},
 				{
-					id: ИзвещениеРезультатОбработкиНП,
+					id: 'ИзвещениеРезультатОбработкиНП',
 					items:
 					[
 		{
@@ -7232,7 +7236,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеДекларацияНО,
+					id: 'ПодтверждениеДекларацияНО',
 					items:
 					[
 		{
@@ -7396,7 +7400,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы19',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7453,7 +7457,7 @@
 					]
 				},
 				{
-					id: ИзвещениеПодтверждениеНП,
+					id: 'ИзвещениеПодтверждениеНП',
 					items:
 					[
 		{
@@ -7587,7 +7591,7 @@
 					]
 				},
 				{
-					id: Форма2НДФЛНП,
+					id: 'Форма2НДФЛНП',
 					items:
 					[
 		{
@@ -7721,7 +7725,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеФорма2НДФЛНО,
+					id: 'ПодтверждениеФорма2НДФЛНО',
 					items:
 					[
 		{
@@ -7885,7 +7889,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы20',
 			text: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7942,7 +7946,7 @@
 					]
 				},
 				{
-					id: ИзвещениеФорма2НДФЛНО,
+					id: 'ИзвещениеФорма2НДФЛНО',
 					items:
 					[
 		{
@@ -8076,7 +8080,7 @@
 					]
 				},
 				{
-					id: РезультатПриемаФорма2НДФЛНО,
+					id: 'РезультатПриемаФорма2НДФЛНО',
 					items:
 					[
 		{
@@ -8240,7 +8244,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы21',
 			text: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -8297,7 +8301,7 @@
 					]
 				},
 				{
-					id: ОбращениеНП,
+					id: 'ОбращениеНП',
 					items:
 					[
 		{
@@ -8431,7 +8435,7 @@
 					]
 				},
 				{
-					id: ИзвещениеОбращениеНО,
+					id: 'ИзвещениеОбращениеНО',
 					items:
 					[
 		{
@@ -8565,7 +8569,7 @@
 					]
 				},
 				{
-					id: РезультатПриемаОбращениеНО,
+					id: 'РезультатПриемаОбращениеНО',
 					items:
 					[
 		{
@@ -8729,7 +8733,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы22',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -8786,7 +8790,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеОбращениеНО,
+					id: 'ПодтверждениеОбращениеНО',
 					items:
 					[
 		{
@@ -8950,7 +8954,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы23',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -9007,7 +9011,7 @@
 					]
 				},
 				{
-					id: ПисьмоНО,
+					id: 'ПисьмоНО',
 					items:
 					[
 		{
@@ -9171,7 +9175,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы24',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -9228,7 +9232,7 @@
 					]
 				},
 				{
-					id: ИзвещениеПисьмоНП,
+					id: 'ИзвещениеПисьмоНП',
 					items:
 					[
 		{
@@ -9362,7 +9366,7 @@
 					]
 				},
 				{
-					id: РассылкаНО,
+					id: 'РассылкаНО',
 					items:
 					[
 		{
@@ -9526,7 +9530,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы25',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -9583,7 +9587,7 @@
 					]
 				},
 				{
-					id: ИзвещениеРассылкаНП,
+					id: 'ИзвещениеРассылкаНП',
 					items:
 					[
 		{
@@ -9717,7 +9721,7 @@
 					]
 				},
 				{
-					id: РассылкаНОИндивидуальная,
+					id: 'РассылкаНОИндивидуальная',
 					items:
 					[
 		{
@@ -9851,7 +9855,7 @@
 					]
 				},
 				{
-					id: ЗапросНП,
+					id: 'ЗапросНП',
 					items:
 					[
 		{
@@ -9985,7 +9989,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеЗапросНО,
+					id: 'ПодтверждениеЗапросНО',
 					items:
 					[
 		{
@@ -10149,7 +10153,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы26',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -10206,7 +10210,7 @@
 					]
 				},
 				{
-					id: ИзвещениеЗапросНО,
+					id: 'ИзвещениеЗапросНО',
 					items:
 					[
 		{
@@ -10340,7 +10344,7 @@
 					]
 				},
 				{
-					id: РезультатПриемаЗапросНО,
+					id: 'РезультатПриемаЗапросНО',
 					items:
 					[
 		{
@@ -10504,7 +10508,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы27',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -10561,7 +10565,7 @@
 					]
 				},
 				{
-					id: РезультатОбработкиЗапросНО,
+					id: 'РезультатОбработкиЗапросНО',
 					items:
 					[
 		{
@@ -10725,7 +10729,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы28',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -10782,7 +10786,7 @@
 					]
 				},
 				{
-					id: ЗаявлениеНП,
+					id: 'ЗаявлениеНП',
 					items:
 					[
 		{
@@ -10916,7 +10920,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеЗаявлениеНО,
+					id: 'ПодтверждениеЗаявлениеНО',
 					items:
 					[
 		{
@@ -11080,7 +11084,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы29',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -11137,7 +11141,7 @@
 					]
 				},
 				{
-					id: ИзвещениеЗаявлениеНО,
+					id: 'ИзвещениеЗаявлениеНО',
 					items:
 					[
 		{
@@ -11271,7 +11275,7 @@
 					]
 				},
 				{
-					id: РезультатПриемаЗаявлениеНО,
+					id: 'РезультатПриемаЗаявлениеНО',
 					items:
 					[
 		{
@@ -11435,7 +11439,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы30',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -11492,7 +11496,7 @@
 					]
 				},
 				{
-					id: РезультатОбработкиЗаявлениеРФНО,
+					id: 'РезультатОбработкиЗаявлениеРФНО',
 					items:
 					[
 		{
@@ -11656,7 +11660,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы31',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -11713,7 +11717,7 @@
 					]
 				},
 				{
-					id: ИзвещениеРезультатОбработкиРФНП,
+					id: 'ИзвещениеРезультатОбработкиРФНП',
 					items:
 					[
 		{
@@ -11847,7 +11851,7 @@
 					]
 				},
 				{
-					id: ИзвещениеОбОтзывеЗаявлениеРФНП,
+					id: 'ИзвещениеОбОтзывеЗаявлениеРФНП',
 					items:
 					[
 		{
@@ -11981,7 +11985,7 @@
 					]
 				},
 				{
-					id: ИзвещениеРезультатОбработкиТСНП,
+					id: 'ИзвещениеРезультатОбработкиТСНП',
 					items:
 					[
 		{
@@ -12115,7 +12119,7 @@
 					]
 				},
 				{
-					id: СообщениеОбОтзывеЗаявлениеРФНО,
+					id: 'СообщениеОбОтзывеЗаявлениеРФНО',
 					items:
 					[
 		{
@@ -12279,7 +12283,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы32',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -12336,7 +12340,7 @@
 					]
 				},
 				{
-					id: РезультатОбработкиЗаявлениеТСНО,
+					id: 'РезультатОбработкиЗаявлениеТСНО',
 					items:
 					[
 		{
@@ -12500,7 +12504,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы33',
 			text: '',
-			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:158px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -12557,7 +12561,7 @@
 					]
 				},
 				{
-					id: ДокументНО,
+					id: 'ДокументНО',
 					items:
 					[
 		{
@@ -12721,7 +12725,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы34',
 			text: '',
-			style: 'position:absolute;left:0px;top:127px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:127px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -12836,7 +12840,7 @@
 					]
 				},
 				{
-					id: ИзвещениеДокументНП,
+					id: 'ИзвещениеДокументНП',
 					items:
 					[
 		{
@@ -12970,7 +12974,7 @@
 					]
 				},
 				{
-					id: РезультатПриемаДокументНП,
+					id: 'РезультатПриемаДокументНП',
 					items:
 					[
 		{
@@ -13104,7 +13108,7 @@
 					]
 				},
 				{
-					id: ИзвещениеРезультатПриемаНО,
+					id: 'ИзвещениеРезультатПриемаНО',
 					items:
 					[
 		{
@@ -13238,7 +13242,7 @@
 					]
 				},
 				{
-					id: ПервичноеСообщениеСодержащееОтчетностьФСГС,
+					id: 'ПервичноеСообщениеСодержащееОтчетностьФСГС',
 					items:
 					[
 		{
@@ -13372,7 +13376,7 @@
 					]
 				},
 				{
-					id: ПодтверждениеДатыОтправкиФСГС,
+					id: 'ПодтверждениеДатыОтправкиФСГС',
 					items:
 					[
 		{
@@ -13536,7 +13540,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПодтверждениеДатыОтправкиФСГС',
 			text: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -13593,7 +13597,7 @@
 					]
 				},
 				{
-					id: ИзвещениеПодтверждениеДатыОтправкиФСГС,
+					id: 'ИзвещениеПодтверждениеДатыОтправкиФСГС',
 					items:
 					[
 		{
@@ -13727,7 +13731,7 @@
 					]
 				},
 				{
-					id: ИзвещениеОПолученииОтчетностиФСГС,
+					id: 'ИзвещениеОПолученииОтчетностиФСГС',
 					items:
 					[
 		{
@@ -13861,7 +13865,7 @@
 					]
 				},
 				{
-					id: ПротоколВходногоКонтроляОтчетностиФСГС,
+					id: 'ПротоколВходногоКонтроляОтчетностиФСГС',
 					items:
 					[
 		{
@@ -14025,7 +14029,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПротоколВходногоКонтроляОтчетностиФСГС',
 			text: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -14082,7 +14086,7 @@
 					]
 				},
 				{
-					id: ИзвещениеПротоколВходногоКонтроляОтчетностиФСГС,
+					id: 'ИзвещениеПротоколВходногоКонтроляОтчетностиФСГС',
 					items:
 					[
 		{
@@ -14216,7 +14220,7 @@
 					]
 				},
 				{
-					id: ПисьмоВходящееФСГС,
+					id: 'ПисьмоВходящееФСГС',
 					items:
 					[
 		{
@@ -14380,7 +14384,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПисьмоВходящееФСГС',
 			text: '',
-			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:161px;width:566px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -14437,7 +14441,7 @@
 					]
 				},
 				{
-					id: ИзвещениеПисьмоВходящееФСГС,
+					id: 'ИзвещениеПисьмоВходящееФСГС',
 					items:
 					[
 		{
@@ -14571,7 +14575,7 @@
 					]
 				},
 				{
-					id: ПисьмоИсходящееФСГС,
+					id: 'ПисьмоИсходящееФСГС',
 					items:
 					[
 		{
@@ -14705,7 +14709,7 @@
 					]
 				},
 				{
-					id: ИзвещениеПисьмоИсходящееФСГС,
+					id: 'ИзвещениеПисьмоИсходящееФСГС',
 					items:
 					[
 		{
@@ -14844,7 +14848,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Содержимое',
-			style: 'position:absolute;left:8px;top:126px;width:566px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:126px;width:566px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -14900,7 +14904,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтекстноеМенюСодержимоеДерево,
+			id: 'КоманднаяПанельКонтекстноеМенюСодержимоеДерево',
 			style: 'position:absolute;left:372px;top:64px;width:190px;height:24px;',
 			Привязка:
 			{
@@ -14942,7 +14946,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:341px;width:582px;height:25px;',
 			Привязка:
 			{
@@ -14984,8 +14988,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -14997,19 +15000,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

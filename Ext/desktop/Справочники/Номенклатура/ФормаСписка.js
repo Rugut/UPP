@@ -295,7 +295,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:793px;height:25px;',
 			Привязка:
 			{
@@ -369,7 +369,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновногоИзображения,
+			id: 'ПанельОсновногоИзображения',
 			style: 'position:absolute;left:8px;top:194px;width:160px;height:144px;',
 			Привязка:
 			{
@@ -394,12 +394,13 @@
 			Ширина:160,
 			Верх:194,
 			Лево:8,
+			Групповой: true,
 			height: 144,width: 160,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -408,7 +409,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОстаткиТоваровНаСкладах,
+			id: 'ПанельОстаткиТоваровНаСкладах',
 			style: 'position:absolute;left:175px;top:194px;width:611px;height:144px;',
 			Привязка:
 			{
@@ -433,12 +434,13 @@
 			Ширина:611,
 			Верх:194,
 			Лево:175,
+			Групповой: true,
 			height: 144,width: 611,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -569,7 +571,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОстаткиТоваровНаСкладах',
 			text: 'Остатки товаров на складах',
-			style: 'position:absolute;left:0px;top:0px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -945,7 +947,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТипыЦен,
+			id: 'КоманднаяПанельТипыЦен',
 			style: 'position:absolute;left:357px;top:95px;width:157px;height:24px;',
 			Привязка:
 			{
@@ -1037,8 +1039,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1050,19 +1051,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

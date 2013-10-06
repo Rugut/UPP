@@ -354,7 +354,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:616px;height:25px;',
 			Привязка:
 			{
@@ -687,7 +687,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:218px;width:600px;height:201px;',
 			Привязка:
 			{
@@ -712,11 +712,12 @@
 			Ширина:600,
 			Верх:218,
 			Лево:8,
+			Групповой: true,
 			height: 201,width: 600,
 			items:
 			[
 				{
-					id: ПоУмолчанию,
+					id: 'ПоУмолчанию',
 					items:
 					[
 		{
@@ -1185,7 +1186,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыАналитикаЗатрат',
 			text: 'Аналитика затрат',
-			style: 'position:absolute;left:6px;top:51px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:51px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1492,7 +1493,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНазначениеИспользования',
 			text: 'Спецодежда, спецоснастка и инвентарь',
-			style: 'position:absolute;left:6px;top:129px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:129px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1612,7 +1613,7 @@
 					]
 				},
 				{
-					id: Дополнительные,
+					id: 'Дополнительные',
 					items:
 					[
 		{
@@ -2054,7 +2055,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНоменклатурнаяГруппа',
 			text: 'Номенклатурная группа',
-			style: 'position:absolute;left:6px;top:133px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:133px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2268,7 +2269,7 @@
 					]
 				},
 				{
-					id: НастройкаУчета,
+					id: 'НастройкаУчета',
 					items:
 					[
 		{
@@ -2304,7 +2305,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСертификация',
 			text: 'Сертификация',
-			style: 'position:absolute;left:6px;top:137px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:137px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2542,7 +2543,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСерийныеНомера',
 			text: 'Серийные номера',
-			style: 'position:absolute;left:6px;top:71px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:71px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2571,7 +2572,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУчетВНЗ',
 			text: 'Учет в незавершенном производстве',
-			style: 'position:absolute;left:6px;top:6px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2599,7 +2600,7 @@
 					]
 				},
 				{
-					id: Единицы,
+					id: 'Единицы',
 					items:
 					[
 		{
@@ -2755,7 +2756,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЕдиницыИзмерения,
+			id: 'КоманднаяПанельЕдиницыИзмерения',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -2950,7 +2951,7 @@
 					]
 				},
 				{
-					id: Характеристики,
+					id: 'Характеристики',
 					items:
 					[
 		{
@@ -3043,7 +3044,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельХарактеристики,
+			id: 'КоманднаяПанельХарактеристики',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -3077,7 +3078,7 @@
 					]
 				},
 				{
-					id: Серии,
+					id: 'Серии',
 					items:
 					[
 		{
@@ -3179,7 +3180,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСерии,
+			id: 'КоманднаяПанельСерии',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -3213,7 +3214,7 @@
 					]
 				},
 				{
-					id: Проекты,
+					id: 'Проекты',
 					items:
 					[
 		{
@@ -3324,7 +3325,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПроекты,
+			id: 'КоманднаяПанельПроекты',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -3358,12 +3359,12 @@
 					]
 				},
 				{
-					id: Свойства,
+					id: 'Свойства',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСвойстваИЗначения,
+			id: 'КоманднаяПанельСвойстваИЗначения',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -3494,7 +3495,7 @@
 					]
 				},
 				{
-					id: Категории,
+					id: 'Категории',
 					items:
 					[
 		{
@@ -3596,7 +3597,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКатегории,
+			id: 'КоманднаяПанельКатегории',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -3652,7 +3653,7 @@
 					]
 				},
 				{
-					id: Комплектующие,
+					id: 'Комплектующие',
 					items:
 					[
 		{
@@ -3763,7 +3764,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКомплектующие,
+			id: 'КоманднаяПанельКомплектующие',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -3953,7 +3954,7 @@
 					]
 				},
 				{
-					id: Штрихкоды,
+					id: 'Штрихкоды',
 					items:
 					[
 		{
@@ -4100,7 +4101,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельШтрихкоды,
+			id: 'КоманднаяПанельШтрихкоды',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -4294,12 +4295,12 @@
 					]
 				},
 				{
-					id: КодыВесовогоТовара,
+					id: 'КодыВесовогоТовара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКодыВесовогоТовара,
+			id: 'КоманднаяПанельКодыВесовогоТовара',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -4457,7 +4458,7 @@
 					]
 				},
 				{
-					id: МестаХранения,
+					id: 'МестаХранения',
 					items:
 					[
 		{
@@ -4568,7 +4569,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяМестаХранения,
+			id: 'КоманднаяМестаХранения',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -4602,12 +4603,12 @@
 					]
 				},
 				{
-					id: Спецификации,
+					id: 'Спецификации',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСпецификации,
+			id: 'КоманднаяПанельСпецификации',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -4809,12 +4810,12 @@
 					]
 				},
 				{
-					id: ПлановаяСебестоимость,
+					id: 'ПлановаяСебестоимость',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПлановаяСебестоимость,
+			id: 'КоманднаяПанельПлановаяСебестоимость',
 			style: 'position:absolute;left:6px;top:102px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -5139,7 +5140,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыЦеныНоменклатурыСебестоимость',
 			text: 'Плановая себестоимость номенклатуры',
-			style: 'position:absolute;left:6px;top:86px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:86px;width:586px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5166,7 +5167,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЦеныНоменклатурыСебестоимость,
+			id: 'КоманднаяПанельЦеныНоменклатурыСебестоимость',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -5200,7 +5201,7 @@
 					]
 				},
 				{
-					id: НоменклатураПоставщика,
+					id: 'НоменклатураПоставщика',
 					items:
 					[
 		{
@@ -5413,7 +5414,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЦеныПоставщика,
+			id: 'КоманднаяПанельЦеныПоставщика',
 			style: 'position:absolute;left:6px;top:101px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -5591,7 +5592,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНоменклатураКонтрагентов,
+			id: 'КоманднаяПанельНоменклатураКонтрагентов',
 			style: 'position:absolute;left:6px;top:6px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -5625,7 +5626,7 @@
 					]
 				},
 				{
-					id: ЦеныНоменклатуры,
+					id: 'ЦеныНоменклатуры',
 					items:
 					[
 		{
@@ -5763,7 +5764,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЦеныНоменклатуры,
+			id: 'КоманднаяПанельЦеныНоменклатуры',
 			style: 'position:absolute;left:6px;top:29px;width:586px;height:24px;',
 			Привязка:
 			{
@@ -5942,7 +5943,7 @@
 					]
 				},
 				{
-					id: ДополнительноеОписаниеНоменклатуры,
+					id: 'ДополнительноеОписаниеНоменклатуры',
 					items:
 					[
 		{
@@ -6193,7 +6194,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновногоИзображения,
+			id: 'ПанельОсновногоИзображения',
 			style: 'position:absolute;left:8px;top:33px;width:131px;height:131px;',
 			Привязка:
 			{
@@ -6218,12 +6219,13 @@
 			Ширина:131,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 131,width: 131,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -6567,7 +6569,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:450px;width:616px;height:25px;',
 			Привязка:
 			{
@@ -6634,8 +6636,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -6647,19 +6648,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

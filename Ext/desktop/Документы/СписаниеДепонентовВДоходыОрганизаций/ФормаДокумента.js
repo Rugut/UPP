@@ -81,7 +81,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
 			Привязка:
 			{
@@ -472,7 +472,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновная,
+			id: 'ПанельОсновная',
 			style: 'position:absolute;left:8px;top:106px;width:660px;height:237px;',
 			Привязка:
 			{
@@ -497,16 +497,17 @@
 			Ширина:660,
 			Верх:106,
 			Лево:8,
+			Групповой: true,
 			height: 237,width: 660,
 			items:
 			[
 				{
-					id: Депоненты,
+					id: 'Депоненты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВыплатаДепонентов,
+			id: 'КоманднаяПанельВыплатаДепонентов',
 			style: 'position:absolute;left:6px;top:0px;width:646px;height:24px;',
 			Привязка:
 			{
@@ -696,12 +697,12 @@
 					]
 				},
 				{
-					id: СчетаУчетаДоходов,
+					id: 'СчетаУчетаДоходов',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельСчетовНУ,
+			id: 'ПанельСчетовНУ',
 			style: 'position:absolute;left:334px;top:6px;width:318px;height:205px;',
 			Привязка:
 			{
@@ -726,12 +727,13 @@
 			Ширина:318,
 			Верх:6,
 			Лево:334,
+			Групповой: true,
 			height: 205,width: 318,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1106,7 +1108,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНУ',
 			text: 'Налоговый учет',
-			style: 'position:absolute;left:0px;top:0px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:318px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1137,7 +1139,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСчетовБУ,
+			id: 'ПанельСчетовБУ',
 			style: 'position:absolute;left:6px;top:6px;width:322px;height:205px;',
 			Привязка:
 			{
@@ -1162,12 +1164,13 @@
 			Ширина:322,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 205,width: 322,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1542,7 +1545,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыБУ',
 			text: 'Бухгалтерский учет',
-			style: 'position:absolute;left:0px;top:0px;width:317px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:317px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1639,7 +1642,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:376px;width:676px;height:25px;',
 			Привязка:
 			{
@@ -1695,8 +1698,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1708,19 +1710,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

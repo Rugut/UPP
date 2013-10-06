@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:6px;top:8px;width:484px;height:238px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:484,
 			Верх:8,
 			Лево:6,
+			Групповой: true,
 			height: 238,width: 484,
 			items:
 			[
 				{
-					id: Общие,
+					id: 'Общие',
 					items:
 					[
 		{
@@ -328,12 +329,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОтчета',
 			boxLabel: 'Прочие расходы, связанные с производством и (или) реализацией (ст. 264 НК РФ)',
 			style: 'position:absolute;left:14px;top:73px;width:462px;height:32px;',
@@ -362,7 +358,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОтчета2',
 			boxLabel: 'Косвенные расходы',
 			style: 'position:absolute;left:14px;top:106px;width:336px;height:16px;',
@@ -390,17 +386,15 @@
 			Верх:106,
 			Лево:14,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ВидыРасходов,
+					id: 'ВидыРасходов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВиды,
+			id: 'КоманднаяПанельВиды',
 			style: 'position:absolute;left:452px;top:6px;width:24px;height:206px;',
 			Привязка:
 			{
@@ -451,7 +445,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:253px;width:498px;height:25px;',
 			Привязка:
 			{
@@ -493,8 +487,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -506,19 +499,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -430,7 +430,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Льгота по налоговой базе',
-			style: 'position:absolute;left:8px;top:8px;width:492px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:8px;width:492px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -459,7 +459,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Льгота по сумме налога',
-			style: 'position:absolute;left:8px;top:214px;width:492px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:214px;width:492px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -486,7 +486,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:417px;width:508px;height:25px;',
 			Привязка:
 			{
@@ -653,12 +653,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НалоговаяЛьготаПоНалоговойБазе',
 			boxLabel: 'Не применяется',
 			style: 'position:absolute;left:14px;top:30px;width:398px;height:19px;',
@@ -687,7 +682,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель3',
 			boxLabel: 'Освобождение от налогообложения в соответствии с местным нормативным актом',
 			style: 'position:absolute;left:14px;top:54px;width:466px;height:19px;',
@@ -716,7 +711,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'Освобождение от налогообложения по ст. 395 НК РФ, код льготы:',
 			style: 'position:absolute;left:14px;top:79px;width:363px;height:19px;',
@@ -745,7 +740,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель4',
 			boxLabel: 'Доля не облагаемой налогом площади:',
 			style: 'position:absolute;left:14px;top:104px;width:222px;height:19px;',
@@ -774,7 +769,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель1',
 			boxLabel: 'Уменьшение налоговой базы:',
 			style: 'position:absolute;left:14px;top:129px;width:398px;height:19px;',
@@ -802,15 +797,8 @@
 			Верх:129,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВариантУменьшенияСуммыНалога1',
 			boxLabel: 'не применяется',
 			style: 'position:absolute;left:22px;top:260px;width:101px;height:19px;',
@@ -839,7 +827,7 @@
 			Лево:22,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВариантУменьшенияСуммыНалога2',
 			boxLabel: 'в процентах, на:',
 			style: 'position:absolute;left:22px;top:285px;width:101px;height:19px;',
@@ -868,7 +856,7 @@
 			Лево:22,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВариантУменьшенияСуммыНалога3',
 			boxLabel: 'в размере:',
 			style: 'position:absolute;left:22px;top:310px;width:74px;height:19px;',
@@ -896,15 +884,8 @@
 			Верх:310,
 			Лево:22,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СнижениеНалоговойСтавки1',
 			boxLabel: 'не применяется',
 			style: 'position:absolute;left:22px;top:360px;width:101px;height:19px;',
@@ -933,7 +914,7 @@
 			Лево:22,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СнижениеНалоговойСтавки2',
 			boxLabel: 'до:',
 			style: 'position:absolute;left:22px;top:385px;width:36px;height:19px;',
@@ -961,14 +942,11 @@
 			Верх:385,
 			Лево:22,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -980,19 +958,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

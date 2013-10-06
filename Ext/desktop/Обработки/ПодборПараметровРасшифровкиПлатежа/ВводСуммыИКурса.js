@@ -49,7 +49,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСуммы,
+			id: 'ПанельСуммы',
 			style: 'position:absolute;left:8px;top:32px;width:244px;height:73px;',
 			Привязка:
 			{
@@ -74,12 +74,13 @@
 			Ширина:244,
 			Верх:32,
 			Лево:8,
+			Групповой: true,
 			height: 73,width: 244,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоСуммеВзаиморасчетов,
+					id: 'ПоСуммеВзаиморасчетов',
 					items:
 					[
 		{
@@ -274,7 +275,7 @@
 					]
 				},
 				{
-					id: ПоСуммеПлатежа,
+					id: 'ПоСуммеПлатежа',
 					items:
 					[
 		{
@@ -476,7 +477,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:113px;width:260px;height:25px;',
 			Привязка:
 			{
@@ -524,8 +525,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -537,19 +537,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

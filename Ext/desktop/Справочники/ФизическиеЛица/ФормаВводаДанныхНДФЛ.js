@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:8px;width:676px;height:332px;',
 			Привязка:
 			{
@@ -45,18 +45,19 @@
 			Ширина:676,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 332,width: 676,
 			items:
 			[
 				{
-					id: Вычеты,
+					id: 'Вычеты',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаСтандартныеВычетыЛичные',
 			text: 'Право на личный стандартный вычет',
-			style: 'position:absolute;left:6px;top:6px;width:285px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:285px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -85,7 +86,7 @@
 			xtype: 'label',
 			id: 'РамкаПрименениеВычетов',
 			text: 'Применение вычетов',
-			style: 'position:absolute;left:6px;top:182px;width:662px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:182px;width:662px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -227,7 +228,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтандартныеВычеты,
+			id: 'КоманднаяПанельСтандартныеВычеты',
 			style: 'position:absolute;left:6px;top:22px;width:285px;height:24px;',
 			Привязка:
 			{
@@ -282,7 +283,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:198px;width:662px;height:24px;',
 			Привязка:
 			{
@@ -463,7 +464,7 @@
 			xtype: 'label',
 			id: 'РамкаСтандартныеВычеты1',
 			text: 'Право на стандартные вычеты на детей',
-			style: 'position:absolute;left:297px;top:6px;width:371px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:297px;top:6px;width:371px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -641,7 +642,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтандартныеВычетыНаДетей,
+			id: 'КоманднаяПанельСтандартныеВычетыНаДетей',
 			style: 'position:absolute;left:297px;top:22px;width:371px;height:24px;',
 			Привязка:
 			{
@@ -697,7 +698,7 @@
 					]
 				},
 				{
-					id: СтатусНалогоплательщика,
+					id: 'СтатусНалогоплательщика',
 					items:
 					[
 		{
@@ -881,7 +882,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:6px;top:37px;width:662px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:37px;width:662px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -908,7 +909,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДополнительногоЗначенияСтатуса,
+			id: 'ПанельДополнительногоЗначенияСтатуса',
 			style: 'position:absolute;left:29px;top:172px;width:553px;height:28px;',
 			Привязка:
 			{
@@ -933,21 +934,17 @@
 			Ширина:553,
 			Верх:172,
 			Лево:29,
+			Групповой: true,
 			height: 28,width: 553,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ЧленЭкипажаСуднаПодФлагомРФ',
 			boxLabel: 'Член экипажа судна, плавающего под Государственным флагом РФ',
 			style: 'position:absolute;left:0px;top:0px;width:374px;height:19px;',
@@ -975,19 +972,12 @@
 			Верх:0,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Резидент',
 			boxLabel: 'Резидент',
 			style: 'position:absolute;left:29px;top:76px;width:86px;height:19px;',
@@ -1016,7 +1006,7 @@
 			Лево:29,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Нерезидент',
 			boxLabel: 'Нерезидент',
 			style: 'position:absolute;left:29px;top:100px;width:86px;height:19px;',
@@ -1045,7 +1035,7 @@
 			Лево:29,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВысококвалифицированныйИностранныйСпециалист',
 			boxLabel: 'Высококвалифицированный иностранный специалист',
 			style: 'position:absolute;left:29px;top:124px;width:302px;height:19px;',
@@ -1074,7 +1064,7 @@
 			Лево:29,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчастникПрограммыПоПереселениюСоотечественников',
 			boxLabel: 'Участник программы по переселению соотечественников',
 			style: 'position:absolute;left:29px;top:148px;width:319px;height:19px;',
@@ -1102,12 +1092,10 @@
 			Верх:148,
 			Лево:29,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Доходы,
+					id: 'Доходы',
 					items:
 					[
 		{
@@ -1363,7 +1351,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:348px;width:692px;height:25px;',
 			Привязка:
 			{
@@ -1419,8 +1407,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1432,19 +1419,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

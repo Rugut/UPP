@@ -205,7 +205,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:658px;height:25px;',
 			Привязка:
 			{
@@ -610,7 +610,7 @@
 			xtype: 'label',
 			id: 'РамкаДополнительнаяАналитика',
 			text: 'Рамка',
-			style: 'position:absolute;left:8px;top:363px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:363px;width:642px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -637,7 +637,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:435px;width:658px;height:25px;',
 			Привязка:
 			{
@@ -822,7 +822,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОболочки,
+			id: 'ПанельОболочки',
 			style: 'position:absolute;left:8px;top:81px;width:642px;height:277px;',
 			Привязка:
 			{
@@ -847,16 +847,17 @@
 			Ширина:642,
 			Верх:81,
 			Лево:8,
+			Групповой: true,
 			height: 277,width: 642,
 			items:
 			[
 				{
-					id: Основная,
+					id: 'Основная',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:6px;top:26px;width:628px;height:221px;',
 			Привязка:
 			{
@@ -881,12 +882,13 @@
 			Ширина:628,
 			Верх:26,
 			Лево:6,
+			Групповой: true,
 			height: 221,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПКО,
+					id: 'ПКО',
 					items:
 					[
 		{
@@ -1039,7 +1041,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПлатежи,
+			id: 'ПанельПлатежи',
 			style: 'position:absolute;left:0px;top:24px;width:628px;height:197px;',
 			Привязка:
 			{
@@ -1064,12 +1066,13 @@
 			Ширина:628,
 			Верх:24,
 			Лево:0,
+			Групповой: true,
 			height: 197,width: 628,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПлатежПоНесколькимСделкам,
+					id: 'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -1370,7 +1373,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПлатежи,
+			id: 'КоманднаяПанельПлатежи',
 			style: 'position:absolute;left:0px;top:21px;width:300px;height:24px;',
 			Привязка:
 			{
@@ -1439,7 +1442,7 @@
 			xtype: 'label',
 			id: 'РамкаРасшифровкаПлатежа',
 			text: 'Расшифровка платежа',
-			style: 'position:absolute;left:0px;top:0px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1641,7 +1644,7 @@
 					]
 				},
 				{
-					id: ПлатежПоОднойСделке,
+					id: 'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -2585,12 +2588,7 @@
 			Лево:170,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Список',
 			boxLabel: 'Без разбиения',
 			style: 'position:absolute;left:408px;top:0px;width:100px;height:19px;',
@@ -2619,7 +2617,7 @@
 			Лево:408,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Список1',
 			boxLabel: 'Списком',
 			style: 'position:absolute;left:518px;top:0px;width:64px;height:19px;',
@@ -2647,12 +2645,10 @@
 			Верх:0,
 			Лево:518,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ВозвратПодотчетника,
+					id: 'ВозвратПодотчетника',
 					items:
 					[
 		{
@@ -2751,7 +2747,7 @@
 			xtype: 'label',
 			id: 'РамкаПолучатель',
 			text: 'Рамка',
-			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3093,7 +3089,7 @@
 					]
 				},
 				{
-					id: ПриходДенежныхСредствРозничнаяВыручка,
+					id: 'ПриходДенежныхСредствРозничнаяВыручка',
 					items:
 					[
 		{
@@ -3596,14 +3592,14 @@
 					]
 				},
 				{
-					id: Прочее,
+					id: 'Прочее',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыПрочиеПоступления',
 			text: 'Прочие поступления',
-			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:628px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4157,7 +4153,7 @@
 					]
 				},
 				{
-					id: ПолучениеНаличностиВБанке,
+					id: 'ПолучениеНаличностиВБанке',
 					items:
 					[
 		{
@@ -4567,7 +4563,7 @@
 					]
 				},
 				{
-					id: Печать,
+					id: 'Печать',
 					items:
 					[
 		{
@@ -4790,8 +4786,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4803,19 +4798,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

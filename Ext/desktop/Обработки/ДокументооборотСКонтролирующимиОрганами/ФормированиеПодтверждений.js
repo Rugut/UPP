@@ -442,7 +442,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЦиклыОбмена,
+			id: 'КоманднаяПанельЦиклыОбмена',
 			style: 'position:absolute;left:8px;top:82px;width:726px;height:24px;',
 			Привязка:
 			{
@@ -494,7 +494,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:8px;top:80px;width:726px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:80px;width:726px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -549,12 +549,7 @@
 			Лево:142,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВсеЦиклыОбмена',
 			boxLabel: 'Все',
 			style: 'position:absolute;left:142px;top:35px;width:41px;height:19px;',
@@ -583,7 +578,7 @@
 			Лево:142,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВсеЦиклыОбмена2',
 			boxLabel: 'Заданный:',
 			style: 'position:absolute;left:214px;top:35px;width:75px;height:19px;',
@@ -611,15 +606,13 @@
 			Верх:35,
 			Лево:214,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:493px;width:742px;height:25px;',
 			Привязка:
 			{
@@ -667,8 +660,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -680,19 +672,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

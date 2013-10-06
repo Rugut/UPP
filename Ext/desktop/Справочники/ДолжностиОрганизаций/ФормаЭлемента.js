@@ -171,7 +171,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:565px;height:25px;',
 			Привязка:
 			{
@@ -277,7 +277,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:100px;width:549px;height:340px;',
 			Привязка:
 			{
@@ -302,11 +302,12 @@
 			Ширина:549,
 			Верх:100,
 			Лево:8,
+			Групповой: true,
 			height: 340,width: 549,
 			items:
 			[
 				{
-					id: Общее,
+					id: 'Общее',
 					items:
 					[
 		{
@@ -589,7 +590,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПерсУчета',
 			text: 'Персонифицированный учет ПФР',
-			style: 'position:absolute;left:6px;top:102px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:102px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -618,7 +619,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВоинскУчета',
 			text: 'Категории регламентированного учета',
-			style: 'position:absolute;left:6px;top:6px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -647,7 +648,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДолжность',
 			text: 'Описание должности, используемое при наборе персонала',
-			style: 'position:absolute;left:6px;top:274px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:274px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -951,7 +952,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСтраховыеВзносы,
+			id: 'ПанельСтраховыеВзносы',
 			style: 'position:absolute;left:6px;top:171px;width:535px;height:98px;',
 			Привязка:
 			{
@@ -976,17 +977,18 @@
 			Ширина:535,
 			Верх:171,
 			Лево:6,
+			Групповой: true,
 			height: 98,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельДолжностиЛетногоЭкипажа,
+			id: 'ПанельДолжностиЛетногоЭкипажа',
 			style: 'position:absolute;left:0px;top:25px;width:535px;height:21px;',
 			Привязка:
 			{
@@ -1011,12 +1013,13 @@
 			Ширина:535,
 			Верх:25,
 			Лево:0,
+			Групповой: true,
 			height: 21,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1054,7 +1057,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельШахтерскойДолжности,
+			id: 'ПанельШахтерскойДолжности',
 			style: 'position:absolute;left:0px;top:48px;width:535px;height:21px;',
 			Привязка:
 			{
@@ -1079,12 +1082,13 @@
 			Ширина:535,
 			Верх:48,
 			Лево:0,
+			Групповой: true,
 			height: 21,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1124,7 +1128,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСтраховыеВзносы',
 			text: 'Страховые взносы во внебюджетные фонды',
-			style: 'position:absolute;left:0px;top:6px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:6px;width:535px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1151,7 +1155,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельФармацевтов,
+			id: 'ПанельФармацевтов',
 			style: 'position:absolute;left:0px;top:71px;width:535px;height:21px;',
 			Привязка:
 			{
@@ -1176,12 +1180,13 @@
 			Ширина:535,
 			Верх:71,
 			Лево:0,
+			Групповой: true,
 			height: 21,width: 535,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1224,7 +1229,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -1405,7 +1410,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияКатегории,
+			id: 'ДействияКатегории',
 			style: 'position:absolute;left:275px;top:89px;width:266px;height:24px;',
 			Привязка:
 			{
@@ -1450,7 +1455,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияСвойства,
+			id: 'ДействияСвойства',
 			style: 'position:absolute;left:6px;top:89px;width:263px;height:24px;',
 			Привязка:
 			{
@@ -1484,7 +1489,7 @@
 					]
 				},
 				{
-					id: ЕжегодныеОтпуска,
+					id: 'ЕжегодныеОтпуска',
 					items:
 					[
 		{
@@ -1577,7 +1582,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЕжегодныеОтпуска,
+			id: 'КоманднаяПанельЕжегодныеОтпуска',
 			style: 'position:absolute;left:6px;top:6px;width:535px;height:24px;',
 			Привязка:
 			{
@@ -1625,7 +1630,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельАктуальность,
+			id: 'ПанельАктуальность',
 			style: 'position:absolute;left:8px;top:81px;width:549px;height:16px;',
 			Привязка:
 			{
@@ -1650,12 +1655,13 @@
 			Ширина:549,
 			Верх:81,
 			Лево:8,
+			Групповой: true,
 			height: 16,width: 549,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 				},
 			]
 		},
@@ -1665,7 +1671,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:448px;width:565px;height:25px;',
 			Привязка:
 			{
@@ -1721,8 +1727,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1734,19 +1739,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

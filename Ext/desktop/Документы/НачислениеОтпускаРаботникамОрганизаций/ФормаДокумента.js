@@ -329,7 +329,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:679px;height:25px;',
 			Привязка:
 			{
@@ -576,7 +576,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:106px;width:664px;height:380px;',
 			Привязка:
 			{
@@ -601,11 +601,12 @@
 			Ширина:664,
 			Верх:106,
 			Лево:8,
+			Групповой: true,
 			height: 380,width: 664,
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1955,7 +1956,7 @@
 					]
 				},
 				{
-					id: Начисления,
+					id: 'Начисления',
 					items:
 					[
 		{
@@ -2340,7 +2341,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНачисления,
+			id: 'КоманднаяПанельНачисления',
 			style: 'position:absolute;left:6px;top:0px;width:649px;height:24px;',
 			Привязка:
 			{
@@ -2423,7 +2424,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюНачисления,
+			id: 'КонтекстноеМенюНачисления',
 			style: 'position:absolute;left:6px;top:68px;width:649px;height:24px;',
 			Привязка:
 			{
@@ -2572,7 +2573,7 @@
 					]
 				},
 				{
-					id: РасчетСреднего,
+					id: 'РасчетСреднего',
 					items:
 					[
 		{
@@ -2819,7 +2820,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРасчетСреднего,
+			id: 'ПанельРасчетСреднего',
 			style: 'position:absolute;left:6px;top:50px;width:656px;height:267px;',
 			Привязка:
 			{
@@ -2844,17 +2845,18 @@
 			Ширина:656,
 			Верх:50,
 			Лево:6,
+			Групповой: true,
 			height: 267,width: 656,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: РасчетСреднегоПоКалендарным,
+					id: 'РасчетСреднегоПоКалендарным',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднегоПоКалендарным,
+			id: 'КоманднаяПанельРасчетСреднегоПоКалендарным',
 			style: 'position:absolute;left:0px;top:21px;width:656px;height:24px;',
 			Привязка:
 			{
@@ -3126,7 +3128,7 @@
 					]
 				},
 				{
-					id: РасчетСреднегоПоШестидневке,
+					id: 'РасчетСреднегоПоШестидневке',
 					items:
 					[
 		{
@@ -3286,7 +3288,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднегоПоШестидневке,
+			id: 'КоманднаяПанельРасчетСреднегоПоШестидневке',
 			style: 'position:absolute;left:0px;top:21px;width:656px;height:24px;',
 			Привязка:
 			{
@@ -3403,12 +3405,12 @@
 					]
 				},
 				{
-					id: ОбаРасчетаСреднего,
+					id: 'ОбаРасчетаСреднего',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднегоПоКалендарным1,
+			id: 'КоманднаяПанельРасчетСреднегоПоКалендарным1',
 			style: 'position:absolute;left:0px;top:16px;width:656px;height:24px;',
 			Привязка:
 			{
@@ -3652,7 +3654,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПоКалендарным',
 			text: 'По календарным дням',
-			style: 'position:absolute;left:0px;top:0px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3681,7 +3683,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПоШестидневке',
 			text: 'По рабочим дням (по шестидневке)',
-			style: 'position:absolute;left:0px;top:143px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:143px;width:656px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3863,7 +3865,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднегоПоШестидневке1,
+			id: 'КоманднаяПанельРасчетСреднегоПоШестидневке1',
 			style: 'position:absolute;left:0px;top:159px;width:656px;height:24px;',
 			Привязка:
 			{
@@ -3955,7 +3957,7 @@
 					]
 				},
 				{
-					id: ЗаявлениеНаВыплатуПособия,
+					id: 'ЗаявлениеНаВыплатуПособия',
 					items:
 					[
 		{
@@ -5425,12 +5427,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеНаСчетВБанке',
 			boxLabel: 'Перечислением на счет в банке:',
 			style: 'position:absolute;left:14px;top:156px;width:185px;height:19px;',
@@ -5459,7 +5456,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеПочтовымПереводом',
 			boxLabel: 'Почтовым переводом по адресу:',
 			style: 'position:absolute;left:14px;top:206px;width:185px;height:19px;',
@@ -5486,8 +5483,6 @@
 			Ширина:185,
 			Верх:206,
 			Лево:14,
-		},
-			]
 		},
 					]
 				},
@@ -5524,7 +5519,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсправление,
+			id: 'ПанельОткрытьИсправление',
 			style: 'position:absolute;left:452px;top:490px;width:83px;height:33px;',
 			Привязка:
 			{
@@ -5549,12 +5544,13 @@
 			Ширина:83,
 			Верх:490,
 			Лево:452,
+			Групповой: true,
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5592,7 +5588,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсходный,
+			id: 'ПанельОткрытьИсходный',
 			style: 'position:absolute;left:543px;top:490px;width:129px;height:33px;',
 			Привязка:
 			{
@@ -5617,12 +5613,13 @@
 			Ширина:129,
 			Верх:490,
 			Лево:543,
+			Групповой: true,
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5664,7 +5661,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:555px;width:679px;height:25px;',
 			Привязка:
 			{
@@ -5722,7 +5719,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДополнительныеДействия,
+			id: 'ДополнительныеДействия',
 			style: 'position:absolute;left:0px;top:555px;width:262px;height:25px;',
 			Привязка:
 			{
@@ -5764,8 +5761,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -5777,19 +5773,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельНастроек,
+			id: 'ПанельНастроек',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:212px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:384,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 212,width: 384,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Общее,
+					id: 'Общее',
 					items:
 					[
 		{
@@ -422,12 +423,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоДебетовым',
 			boxLabel: 'По дебетовым счетам',
 			style: 'position:absolute;left:0px;top:125px;width:180px;height:15px;',
@@ -456,7 +452,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоДебетовым1',
 			boxLabel: 'По кредитовым счетам',
 			style: 'position:absolute;left:0px;top:144px;width:180px;height:15px;',
@@ -484,8 +480,6 @@
 			Верх:144,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -496,7 +490,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:228px;width:400px;height:25px;',
 			Привязка:
 			{
@@ -550,8 +544,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -563,19 +556,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

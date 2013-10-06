@@ -297,7 +297,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:813px;height:25px;',
 			Привязка:
 			{
@@ -369,7 +369,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:84px;width:797px;height:351px;',
 			Привязка:
 			{
@@ -394,11 +394,12 @@
 			Ширина:797,
 			Верх:84,
 			Лево:8,
+			Групповой: true,
 			height: 351,width: 797,
 			items:
 			[
 				{
-					id: НДФЛДоходы,
+					id: 'НДФЛДоходы',
 					items:
 					[
 		{
@@ -594,7 +595,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНДФЛСведенияОДоходах,
+			id: 'КоманднаяПанельНДФЛСведенияОДоходах',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -683,7 +684,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУчетДляВзносов1',
 			text: 'Учет доходов по всем ставкам и налогов по ставкам 9% и 35%',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -711,12 +712,12 @@
 					]
 				},
 				{
-					id: НДФЛ13Исчисленный,
+					id: 'НДФЛ13Исчисленный',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНДФЛИсчисленный13,
+			id: 'КоманднаяПанельНДФЛИсчисленный13',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -942,7 +943,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНДФЛ',
 			text: 'Исчислено налога',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -971,7 +972,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВычеты',
 			text: 'Предоставлено вычетов',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1144,7 +1145,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВычеты,
+			id: 'КоманднаяПанельВычеты',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1232,12 +1233,12 @@
 					]
 				},
 				{
-					id: НДФЛУдержанный,
+					id: 'НДФЛУдержанный',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНДФЛУдержанный,
+			id: 'КоманднаяПанельНДФЛУдержанный',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1432,7 +1433,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУчетДляВзносов2',
 			text: 'Учет удержанных сумм НДФЛ по всем ставкам ',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1460,7 +1461,7 @@
 					]
 				},
 				{
-					id: СтраховыеВзносы,
+					id: 'СтраховыеВзносы',
 					items:
 					[
 		{
@@ -1867,7 +1868,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУчетДляВзносов',
 			text: 'Учет доходов ',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1896,7 +1897,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыИсчисленоВзносов',
 			text: 'Исчислено взносов в ПФР, ФСС и ФОМС',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1923,7 +1924,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтраховыеВзносыСведенияОДоходах,
+			id: 'КоманднаяПанельСтраховыеВзносыСведенияОДоходах',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1961,7 +1962,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтраховыеВзносы,
+			id: 'КоманднаяПанельСтраховыеВзносы',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1995,7 +1996,7 @@
 					]
 				},
 				{
-					id: СтраницаЕСН,
+					id: 'СтраницаЕСН',
 					items:
 					[
 		{
@@ -2128,7 +2129,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЕСНСведенияОДоходах,
+			id: 'КоманднаяПанельЕСНСведенияОДоходах',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2406,7 +2407,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЕСННалоги,
+			id: 'КоманднаяПанельЕСННалоги',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2495,7 +2496,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыЕСН',
 			text: 'Исчислено налога',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2524,7 +2525,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУчетДляЕСН',
 			text: 'Учет доходов ',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2552,7 +2553,7 @@
 					]
 				},
 				{
-					id: СтраховоеОбеспечение,
+					id: 'СтраховоеОбеспечение',
 					items:
 					[
 		{
@@ -2721,7 +2722,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФССРасходы,
+			id: 'КоманднаяПанельФССРасходы',
 			style: 'position:absolute;left:6px;top:18px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2808,7 +2809,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФССПоУходу,
+			id: 'КоманднаяПанельФССПоУходу',
 			style: 'position:absolute;left:6px;top:182px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -3070,7 +3071,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПособияПоУходу',
 			text: 'Пособия по уходу за ребенком до 1.5 лет',
-			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:166px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3099,7 +3100,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПособия',
 			text: 'Пособия по временной нетрудоспособности и другие пособия',
-			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:2px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3319,7 +3320,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:470px;width:813px;height:25px;',
 			Привязка:
 			{
@@ -3375,8 +3376,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3388,19 +3388,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

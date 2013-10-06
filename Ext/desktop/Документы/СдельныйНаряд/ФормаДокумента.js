@@ -513,7 +513,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
 			Привязка:
 			{
@@ -623,7 +623,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:189px;width:676px;height:331px;',
 			Привязка:
 			{
@@ -648,16 +648,17 @@
 			Ширина:676,
 			Верх:189,
 			Лево:8,
+			Групповой: true,
 			height: 331,width: 676,
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботы,
+			id: 'КоманднаяПанельРаботы',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1002,12 +1003,12 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботники,
+			id: 'КоманднаяПанельРаботники',
 			style: 'position:absolute;left:6px;top:140px;width:668px;height:24px;',
 			Привязка:
 			{
@@ -1610,7 +1611,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРасчетаСуммКНачислению,
+			id: 'ПанельРасчетаСуммКНачислению',
 			style: 'position:absolute;left:6px;top:35px;width:668px;height:105px;',
 			Привязка:
 			{
@@ -1635,19 +1636,20 @@
 			Ширина:668,
 			Верх:35,
 			Лево:6,
+			Групповой: true,
 			height: 105,width: 668,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Порядок расчета',
-			style: 'position:absolute;left:0px;top:0px;width:668px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:668px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1763,7 +1765,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРаботники1',
 			text: 'Сотрудники',
-			style: 'position:absolute;left:0px;top:83px;width:668px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:83px;width:668px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1847,12 +1849,7 @@
 			Лево:450,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчитыватьВремяНеТолькоПриРасчете',
 			boxLabel: 'При расчете и в табеле',
 			style: 'position:absolute;left:231px;top:39px;width:153px;height:19px;',
@@ -1881,7 +1878,7 @@
 			Лево:231,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчитыватьВремяТолькоПриРасчете',
 			boxLabel: 'Только при расчете',
 			style: 'position:absolute;left:231px;top:59px;width:153px;height:19px;',
@@ -1909,15 +1906,8 @@
 			Верх:59,
 			Лево:231,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоДням',
 			boxLabel: 'По дням периода',
 			style: 'position:absolute;left:458px;top:39px;width:166px;height:19px;',
@@ -1946,7 +1936,7 @@
 			Лево:458,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВЦеломЗаПериод',
 			boxLabel: 'Сводно, в целом за период',
 			style: 'position:absolute;left:458px;top:59px;width:166px;height:19px;',
@@ -1973,8 +1963,6 @@
 			Ширина:166,
 			Верх:59,
 			Лево:458,
-		},
-			]
 		},
 					]
 				},
@@ -2194,7 +2182,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель2,
+			id: 'Панель2',
 			style: 'position:absolute;left:8px;top:106px;width:676px;height:78px;',
 			Привязка:
 			{
@@ -2219,12 +2207,13 @@
 			Ширина:676,
 			Верх:106,
 			Лево:8,
+			Групповой: true,
 			height: 78,width: 676,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2297,7 +2286,7 @@
 			xtype: 'label',
 			id: 'РамкаУчет1',
 			text: 'Период наряда',
-			style: 'position:absolute;left:6px;top:6px;width:332px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:332px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2323,12 +2312,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ЗаДень',
 			boxLabel: 'По результатам работы за один день',
 			style: 'position:absolute;left:6px;top:27px;width:216px;height:19px;',
@@ -2357,7 +2341,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'По результатам работы за месяц',
 			style: 'position:absolute;left:6px;top:51px;width:216px;height:19px;',
@@ -2385,8 +2369,6 @@
 			Верх:51,
 			Лево:6,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -2397,7 +2379,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:552px;width:692px;height:25px;',
 			Привязка:
 			{
@@ -2459,8 +2441,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2472,19 +2453,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

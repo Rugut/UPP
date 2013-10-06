@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельНастроек,
+			id: 'ПанельНастроек',
 			style: 'position:absolute;left:6px;top:8px;width:434px;height:379px;',
 			Привязка:
 			{
@@ -45,16 +45,17 @@
 			Ширина:434,
 			Верх:8,
 			Лево:6,
+			Групповой: true,
 			height: 379,width: 434,
 			items:
 			[
 				{
-					id: Показатели,
+					id: 'Показатели',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСпискаПоказателей,
+			id: 'КоманднаяПанельСпискаПоказателей',
 			style: 'position:absolute;left:6px;top:0px;width:420px;height:24px;',
 			Привязка:
 			{
@@ -203,7 +204,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -546,7 +547,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Дата формирования',
-			style: 'position:absolute;left:6px;top:6px;width:420px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:420px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -692,7 +693,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Параметры публикации',
-			style: 'position:absolute;left:6px;top:146px;width:420px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:146px;width:420px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -721,7 +722,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:77px;width:420px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:77px;width:420px;height:17px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -880,7 +881,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВремяПубликации,
+			id: 'КоманднаяПанельВремяПубликации',
 			style: 'position:absolute;left:150px;top:248px;width:276px;height:24px;',
 			Привязка:
 			{
@@ -1038,7 +1039,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель,
+			id: 'КоманднаяПанель',
 			style: 'position:absolute;left:0px;top:395px;width:448px;height:25px;',
 			Привязка:
 			{
@@ -1090,8 +1091,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1103,19 +1103,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

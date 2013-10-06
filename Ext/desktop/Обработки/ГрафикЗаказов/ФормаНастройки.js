@@ -139,7 +139,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:16px;top:132px;width:515px;height:24px;',
 			Привязка:
 			{
@@ -597,7 +597,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоляЗаказаНаПроизводство,
+			id: 'КоманднаяПанельПоляЗаказаНаПроизводство',
 			style: 'position:absolute;left:8px;top:275px;width:151px;height:24px;',
 			Привязка:
 			{
@@ -630,7 +630,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоляЗаказПоставщику,
+			id: 'КоманднаяПанельПоляЗаказПоставщику',
 			style: 'position:absolute;left:221px;top:275px;width:151px;height:24px;',
 			Привязка:
 			{
@@ -663,7 +663,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоляЗаказаПокупателя,
+			id: 'КоманднаяПанельПоляЗаказаПокупателя',
 			style: 'position:absolute;left:429px;top:275px;width:151px;height:24px;',
 			Привязка:
 			{
@@ -875,7 +875,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОсновныеДействияФормы,
+			id: 'КоманднаяПанельОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:387px;width:840px;height:25px;',
 			Привязка:
 			{
@@ -996,7 +996,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоляВнутреннегоЗаказа,
+			id: 'КоманднаяПанельПоляВнутреннегоЗаказа',
 			style: 'position:absolute;left:643px;top:275px;width:151px;height:24px;',
 			Привязка:
 			{
@@ -1057,12 +1057,7 @@
 			Лево:643,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтображатьРабочиеДни',
 			boxLabel: 'По регламентированному производственному календарю',
 			style: 'position:absolute;left:8px;top:68px;width:317px;height:21px;',
@@ -1091,7 +1086,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтображатьРабочиеДни2',
 			boxLabel: 'По графику',
 			style: 'position:absolute;left:8px;top:90px;width:317px;height:21px;',
@@ -1119,14 +1114,11 @@
 			Верх:90,
 			Лево:8,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1138,19 +1130,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройка,
+			id: 'КоманднаяПанельНастройка',
 			style: 'position:absolute;left:0px;top:0px;width:810px;height:25px;',
 			Привязка:
 			{
@@ -58,7 +58,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройка,
+			id: 'ПанельНастройка',
 			style: 'position:absolute;left:8px;top:31px;width:794px;height:351px;',
 			Привязка:
 			{
@@ -83,17 +83,18 @@
 			Ширина:794,
 			Верх:31,
 			Лево:8,
+			Групповой: true,
 			height: 351,width: 794,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Поступления,
+					id: 'Поступления',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельПоступления,
+			id: 'ПанельПоступления',
 			style: 'position:absolute;left:6px;top:28px;width:782px;height:262px;',
 			Привязка:
 			{
@@ -118,11 +119,12 @@
 			Ширина:782,
 			Верх:28,
 			Лево:6,
+			Групповой: true,
 			height: 262,width: 782,
 			items:
 			[
 				{
-					id: ПоступленияДенежныхСредств,
+					id: 'ПоступленияДенежныхСредств',
 					items:
 					[
 		{
@@ -318,7 +320,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества2',
 			text: 'Поступления денежных средств',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -565,7 +567,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества3',
 			text: 'Планы поступлений денежных средств',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -623,7 +625,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -739,7 +741,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Детализация',
-			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1222,7 +1224,7 @@
 					]
 				},
 				{
-					id: Продажи,
+					id: 'Продажи',
 					items:
 					[
 		{
@@ -1573,7 +1575,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества',
 			text: 'Продажи',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1786,7 +1788,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества1',
 			text: 'Планы продаж',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2033,7 +2035,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2206,14 +2208,14 @@
 					]
 				},
 				{
-					id: ДебиторскаяЗадолженность,
+					id: 'ДебиторскаяЗадолженность',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Дебиторская задолженность контрагентов',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2645,7 +2647,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Неоплаченные заказы покупателей',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3014,7 +3016,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Детализация',
-			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3130,7 +3132,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Детализация',
-			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3400,7 +3402,7 @@
 					]
 				},
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -3524,7 +3526,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтборПоступления,
+			id: 'КоманднаяПанельОтборПоступления',
 			style: 'position:absolute;left:6px;top:6px;width:768px;height:24px;',
 			Привязка:
 			{
@@ -3613,7 +3615,7 @@
 			xtype: 'label',
 			id: 'РамкаДополнительноСтратегияРасчетаСуммы',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3764,7 +3766,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы16',
 			text: 'Планирование поступлений денежных средств',
-			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3792,12 +3794,12 @@
 					]
 				},
 				{
-					id: Платежи,
+					id: 'Платежи',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельПлатежи,
+			id: 'ПанельПлатежи',
 			style: 'position:absolute;left:6px;top:28px;width:782px;height:262px;',
 			Привязка:
 			{
@@ -3822,11 +3824,12 @@
 			Ширина:782,
 			Верх:28,
 			Лево:6,
+			Групповой: true,
 			height: 262,width: 782,
 			items:
 			[
 				{
-					id: ПлатежиПериод,
+					id: 'ПлатежиПериод',
 					items:
 					[
 		{
@@ -4370,7 +4373,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества5',
 			text: 'Платежи',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4617,7 +4620,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества6',
 			text: 'Планы платежей',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4675,7 +4678,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы12',
 			text: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4791,7 +4794,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы13',
 			text: 'Детализация',
-			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:407px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5274,7 +5277,7 @@
 					]
 				},
 				{
-					id: Закупки,
+					id: 'Закупки',
 					items:
 					[
 		{
@@ -5567,7 +5570,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества3',
 			text: 'Закупки',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5722,7 +5725,7 @@
 			xtype: 'label',
 			id: 'РамкаПродажиСтратегияРасчетаКоличества4',
 			text: 'Планы закупок',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5911,7 +5914,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы14',
 			text: 'Детализация',
-			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:13px;top:127px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6084,14 +6087,14 @@
 					]
 				},
 				{
-					id: КредиторскаяЗадолженность,
+					id: 'КредиторскаяЗадолженность',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: 'Кредиторская задолженность контрагентов',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6436,7 +6439,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы9',
 			text: 'Неоплаченные заказы поставщикам',
-			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:400px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6718,7 +6721,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы10',
 			text: 'Детализация',
-			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:13px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6834,7 +6837,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы11',
 			text: 'Детализация',
-			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:407px;top:151px;width:367px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7104,14 +7107,14 @@
 					]
 				},
 				{
-					id: ЗаработнаяПлата,
+					id: 'ЗаработнаяПлата',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы15',
 			text: 'Задолженность по заработной плате',
-			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:374px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7449,7 +7452,7 @@
 					]
 				},
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -7573,7 +7576,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтборПлатежи,
+			id: 'КоманднаяПанельОтборПлатежи',
 			style: 'position:absolute;left:6px;top:6px;width:768px;height:24px;',
 			Привязка:
 			{
@@ -7662,7 +7665,7 @@
 			xtype: 'label',
 			id: 'РамкаДополнительноСтратегияРасчетаСуммы1',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:295px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7813,7 +7816,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы17',
 			text: 'Планирование платежей',
-			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:782px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -7848,7 +7851,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:388px;width:810px;height:25px;',
 			Привязка:
 			{
@@ -7902,8 +7905,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -7915,19 +7917,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

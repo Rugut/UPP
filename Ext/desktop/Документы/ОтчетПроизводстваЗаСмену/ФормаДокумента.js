@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -721,7 +721,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:131px;width:636px;height:208px;',
 			Привязка:
 			{
@@ -746,11 +746,12 @@
 			Ширина:636,
 			Верх:131,
 			Лево:8,
+			Групповой: true,
 			height: 208,width: 636,
 			items:
 			[
 				{
-					id: Продукция,
+					id: 'Продукция',
 					items:
 					[
 		{
@@ -1081,7 +1082,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПродукция,
+			id: 'КоманднаяПанельПродукция',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1136,12 +1137,12 @@
 					]
 				},
 				{
-					id: Получатели,
+					id: 'Получатели',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПолучатели,
+			id: 'КоманднаяПанельПолучатели',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
 			Привязка:
 			{
@@ -1560,7 +1561,7 @@
 					]
 				},
 				{
-					id: Материалы,
+					id: 'Материалы',
 					items:
 					[
 		{
@@ -1657,7 +1658,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельМатериалы,
+			id: 'КоманднаяПанельМатериалы',
 			style: 'position:absolute;left:6px;top:25px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2000,7 +2001,7 @@
 					]
 				},
 				{
-					id: Распределение,
+					id: 'Распределение',
 					items:
 					[
 		{
@@ -2277,7 +2278,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаспределениеМатериалов,
+			id: 'КоманднаяПанельРаспределениеМатериалов',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2318,7 +2319,7 @@
 					]
 				},
 				{
-					id: ТехнологическиеОперации,
+					id: 'ТехнологическиеОперации',
 					items:
 					[
 		{
@@ -2622,7 +2623,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТехнологическиеОперации,
+			id: 'КоманднаяПанельТехнологическиеОперации',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2661,7 +2662,7 @@
 					]
 				},
 				{
-					id: Исполнители,
+					id: 'Исполнители',
 					items:
 					[
 		{
@@ -2785,7 +2786,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИсполнители,
+			id: 'КоманднаяПанельИсполнители',
 			style: 'position:absolute;left:6px;top:42px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2826,7 +2827,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Порядок расчета',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2912,7 +2913,7 @@
 					]
 				},
 				{
-					id: РаспределениеТехнологическихОпераций,
+					id: 'РаспределениеТехнологическихОпераций',
 					items:
 					[
 		{
@@ -3126,7 +3127,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаспределениеТехнологическихОпераций,
+			id: 'КоманднаяПанельРаспределениеТехнологическихОпераций',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -3165,7 +3166,7 @@
 					]
 				},
 				{
-					id: ПрочиеЗатраты,
+					id: 'ПрочиеЗатраты',
 					items:
 					[
 		{
@@ -3325,7 +3326,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПрочиеЗатраты,
+			id: 'КоманднаяПанельПрочиеЗатраты',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -3364,7 +3365,7 @@
 					]
 				},
 				{
-					id: РаспределениеПрочихЗатрат,
+					id: 'РаспределениеПрочихЗатрат',
 					items:
 					[
 		{
@@ -3596,7 +3597,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаспределениеПрочихЗатрат,
+			id: 'КоманднаяПанельРаспределениеПрочихЗатрат',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -3631,7 +3632,7 @@
 					]
 				},
 				{
-					id: ВозвратныеОтходы,
+					id: 'ВозвратныеОтходы',
 					items:
 					[
 		{
@@ -3971,7 +3972,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВозвратныеОтходы,
+			id: 'КоманднаяПанельВозвратныеОтходы',
 			style: 'position:absolute;left:6px;top:6px;width:337px;height:24px;',
 			Привязка:
 			{
@@ -4102,7 +4103,7 @@
 					]
 				},
 				{
-					id: РаспределениеВозвратныхОтходов,
+					id: 'РаспределениеВозвратныхОтходов',
 					items:
 					[
 		{
@@ -4361,7 +4362,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаспределениеВозвратныхОтходов,
+			id: 'КоманднаяПанельРаспределениеВозвратныхОтходов',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -4680,7 +4681,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:396px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -4742,8 +4743,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4755,19 +4755,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

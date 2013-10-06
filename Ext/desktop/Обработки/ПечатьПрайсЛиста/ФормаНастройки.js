@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельНастройки,
+			id: 'ПанельНастройки',
 			style: 'position:absolute;left:8px;top:8px;width:606px;height:284px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:606,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 284,width: 606,
 			items:
 			[
 				{
-					id: Общие,
+					id: 'Общие',
 					items:
 					[
 		{
@@ -361,7 +362,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Не включать в прайс-лист товары',
-			style: 'position:absolute;left:6px;top:73px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:73px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -390,7 +391,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Показать',
-			style: 'position:absolute;left:6px;top:31px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:31px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -419,7 +420,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Параметры',
-			style: 'position:absolute;left:6px;top:161px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:161px;width:598px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -537,12 +538,7 @@
 			Лево:193,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВВалютахЦен',
 			boxLabel: 'В валютах цен',
 			style: 'position:absolute;left:6px;top:50px;width:92px;height:19px;',
@@ -571,7 +567,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель1',
 			boxLabel: 'В выбранной валюте',
 			style: 'position:absolute;left:119px;top:50px;width:124px;height:19px;',
@@ -599,12 +595,10 @@
 			Верх:50,
 			Лево:119,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Группировки,
+					id: 'Группировки',
 					items:
 					[
 		{
@@ -692,7 +686,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
 			Привязка:
 			{
@@ -726,7 +720,7 @@
 					]
 				},
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -850,7 +844,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:0px;width:598px;height:24px;',
 			Привязка:
 			{
@@ -884,7 +878,7 @@
 					]
 				},
 				{
-					id: Поля,
+					id: 'Поля',
 					items:
 					[
 		{
@@ -963,7 +957,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПоля,
+			id: 'КоманднаяПанельПоля',
 			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
 			Привязка:
 			{
@@ -997,7 +991,7 @@
 					]
 				},
 				{
-					id: Сортировка,
+					id: 'Сортировка',
 					items:
 					[
 		{
@@ -1085,7 +1079,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПорядок,
+			id: 'КоманднаяПанельПорядок',
 			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
 			Привязка:
 			{
@@ -1119,7 +1113,7 @@
 					]
 				},
 				{
-					id: Печать,
+					id: 'Печать',
 					items:
 					[
 		{
@@ -1225,7 +1219,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПечать,
+			id: 'КоманднаяПанельПечать',
 			style: 'position:absolute;left:6px;top:0px;width:592px;height:24px;',
 			Привязка:
 			{
@@ -1320,7 +1314,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:300px;width:624px;height:25px;',
 			Привязка:
 			{
@@ -1377,8 +1371,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1390,19 +1383,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

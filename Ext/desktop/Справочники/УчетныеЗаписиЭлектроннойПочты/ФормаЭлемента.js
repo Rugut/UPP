@@ -203,7 +203,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:582px;height:25px;',
 			Привязка:
 			{
@@ -236,7 +236,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройки,
+			id: 'ПанельНастройки',
 			style: 'position:absolute;left:8px;top:105px;width:566px;height:312px;',
 			Привязка:
 			{
@@ -261,11 +261,12 @@
 			Ширина:566,
 			Верх:105,
 			Лево:8,
+			Групповой: true,
 			height: 312,width: 566,
 			items:
 			[
 				{
-					id: Подключение,
+					id: 'Подключение',
 					items:
 					[
 		{
@@ -642,7 +643,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Отправка почты',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -671,7 +672,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Получение почты',
-			style: 'position:absolute;left:6px;top:99px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:99px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -971,7 +972,7 @@
 					]
 				},
 				{
-					id: Письма,
+					id: 'Письма',
 					items:
 					[
 		{
@@ -1615,7 +1616,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Помечать письмо как "Рассмотрено":',
-			style: 'position:absolute;left:6px;top:124px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:124px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1701,14 +1702,14 @@
 					]
 				},
 				{
-					id: ПредметыПисем,
+					id: 'ПредметыПисем',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Классификация писем по предметам',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1882,7 +1883,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Классификация писем по объектам',
-			style: 'position:absolute;left:6px;top:130px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:130px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1939,7 +1940,7 @@
 					]
 				},
 				{
-					id: Доступ,
+					id: 'Доступ',
 					items:
 					[
 		{
@@ -2059,7 +2060,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДоступКУчетнойЗаписи,
+			id: 'КоманднаяПанельДоступКУчетнойЗаписи',
 			style: 'position:absolute;left:6px;top:6px;width:552px;height:24px;',
 			Привязка:
 			{
@@ -2093,7 +2094,7 @@
 					]
 				},
 				{
-					id: Подпись,
+					id: 'Подпись',
 					items:
 					[
 		{
@@ -2157,7 +2158,7 @@
 					]
 				},
 				{
-					id: ГруппыПисем,
+					id: 'ГруппыПисем',
 					items:
 					[
 		{
@@ -2241,7 +2242,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельГруппыПисем,
+			id: 'КоманднаяПанельГруппыПисем',
 			style: 'position:absolute;left:6px;top:26px;width:552px;height:24px;',
 			Привязка:
 			{
@@ -2331,7 +2332,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -2673,7 +2674,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Значения по умолчанию',
-			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2939,7 +2940,7 @@
 					]
 				},
 				{
-					id: Фильтры,
+					id: 'Фильтры',
 					items:
 					[
 		{
@@ -3050,7 +3051,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФильтрыПисем,
+			id: 'КоманднаяПанельФильтрыПисем',
 			style: 'position:absolute;left:6px;top:6px;width:552px;height:24px;',
 			Привязка:
 			{
@@ -3111,7 +3112,7 @@
 					]
 				},
 				{
-					id: ЭлектронныеДокументы,
+					id: 'ЭлектронныеДокументы',
 					items:
 					[
 		{
@@ -3274,7 +3275,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:425px;width:582px;height:25px;',
 			Привязка:
 			{
@@ -3330,8 +3331,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3343,19 +3343,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

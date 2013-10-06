@@ -327,7 +327,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:638px;height:25px;',
 			Привязка:
 			{
@@ -360,7 +360,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:445px;width:638px;height:25px;',
 			Привязка:
 			{
@@ -857,7 +857,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:209px;width:622px;height:180px;',
 			Привязка:
 			{
@@ -882,16 +882,17 @@
 			Ширина:622,
 			Верх:209,
 			Лево:8,
+			Групповой: true,
 			height: 180,width: 622,
 			items:
 			[
 				{
-					id: Товары,
+					id: 'Товары',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТовары,
+			id: 'КоманднаяПанельТовары',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
 			Привязка:
 			{
@@ -1080,7 +1081,7 @@
 					]
 				},
 				{
-					id: ЦеновыеГруппы,
+					id: 'ЦеновыеГруппы',
 					items:
 					[
 		{
@@ -1195,7 +1196,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЦеновыеГруппы,
+			id: 'КоманднаяПанельЦеновыеГруппы',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
 			Привязка:
 			{
@@ -1235,7 +1236,7 @@
 					]
 				},
 				{
-					id: Бонусы,
+					id: 'Бонусы',
 					items:
 					[
 		{
@@ -1395,7 +1396,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельБонусы,
+			id: 'КоманднаяПанельБонусы',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
 			Привязка:
 			{
@@ -1439,7 +1440,7 @@
 					]
 				},
 				{
-					id: ПолучателиСкидки,
+					id: 'ПолучателиСкидки',
 					items:
 					[
 		{
@@ -1565,7 +1566,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПолучателиСкидки,
+			id: 'КоманднаяПанельПолучателиСкидки',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
 			Привязка:
 			{
@@ -1606,7 +1607,7 @@
 					]
 				},
 				{
-					id: ВремяДействияСкидки,
+					id: 'ВремяДействияСкидки',
 					items:
 					[
 		{
@@ -1780,7 +1781,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВремяПоДнямНедели,
+			id: 'КоманднаяПанельВремяПоДнямНедели',
 			style: 'position:absolute;left:6px;top:0px;width:608px;height:24px;',
 			Привязка:
 			{
@@ -2104,7 +2105,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыЗначенияПоУмолчанию',
 			text: 'Значения по умолчанию для таблицы товаров и ценовых групп',
-			style: 'position:absolute;left:8px;top:161px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:161px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2253,8 +2254,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2266,19 +2266,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

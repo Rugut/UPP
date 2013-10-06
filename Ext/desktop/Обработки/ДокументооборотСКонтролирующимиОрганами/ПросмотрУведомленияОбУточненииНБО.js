@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:9px;width:646px;height:654px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:646,
 			Верх:9,
 			Лево:8,
+			Групповой: true,
 			height: 654,width: 646,
 			items:
 			[
 				{
-					id: РезультатыПроверки,
+					id: 'РезультатыПроверки',
 					items:
 					[
 		{
@@ -83,7 +84,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПодробно,
+			id: 'ПанельПодробно',
 			style: 'position:absolute;left:6px;top:54px;width:632px;height:573px;',
 			Привязка:
 			{
@@ -108,12 +109,13 @@
 			Ширина:632,
 			Верх:54,
 			Лево:6,
+			Групповой: true,
 			height: 573,width: 632,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -297,7 +299,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Подробно',
-			style: 'position:absolute;left:0px;top:0px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -358,7 +360,7 @@
 					]
 				},
 				{
-					id: Общие,
+					id: 'Общие',
 					items:
 					[
 		{
@@ -858,7 +860,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Общие сведения',
-			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -887,7 +889,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Сведения о налогоплательщике',
-			style: 'position:absolute;left:6px;top:328px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:328px;width:632px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -914,7 +916,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСведенияОНалогоплательщике,
+			id: 'ПанельСведенияОНалогоплательщике',
 			style: 'position:absolute;left:6px;top:348px;width:632px;height:95px;',
 			Привязка:
 			{
@@ -939,12 +941,13 @@
 			Ширина:632,
 			Верх:348,
 			Лево:6,
+			Групповой: true,
 			height: 95,width: 632,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЮрЛицо,
+					id: 'ЮрЛицо',
 					items:
 					[
 		{
@@ -1095,7 +1098,7 @@
 					]
 				},
 				{
-					id: ФизЛицо,
+					id: 'ФизЛицо',
 					items:
 					[
 		{
@@ -1286,7 +1289,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:671px;width:662px;height:25px;',
 			Привязка:
 			{
@@ -1328,8 +1331,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1341,19 +1343,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

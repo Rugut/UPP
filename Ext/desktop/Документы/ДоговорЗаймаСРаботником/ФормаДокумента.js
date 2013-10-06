@@ -637,7 +637,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:534px;height:25px;',
 			Привязка:
 			{
@@ -889,7 +889,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУсловий',
 			text: 'Условия займа',
-			style: 'position:absolute;left:8px;top:108px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:108px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -947,7 +947,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыУсловий1',
 			text: 'Регламентированный учет',
-			style: 'position:absolute;left:8px;top:209px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:209px;width:518px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1465,7 +1465,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ВидУчета,
+			id: 'ВидУчета',
 			style: 'position:absolute;left:334px;top:33px;width:192px;height:67px;',
 			Привязка:
 			{
@@ -1490,19 +1490,20 @@
 			Ширина:192,
 			Верх:33,
 			Лево:334,
+			Групповой: true,
 			height: 67,width: 192,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаУчет',
 			text: 'Учет',
-			style: 'position:absolute;left:0px;top:0px;width:192px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:192px;height:19px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1528,12 +1529,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтражатьВБухгалтерскомУчете',
 			boxLabel: 'Бухгалтерский',
 			style: 'position:absolute;left:8px;top:24px;width:112px;height:19px;',
@@ -1562,7 +1558,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтражатьВУправленческомУчете',
 			boxLabel: 'Управленческий',
 			style: 'position:absolute;left:8px;top:48px;width:112px;height:19px;',
@@ -1590,19 +1586,12 @@
 			Верх:48,
 			Лево:8,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Ежемесячно',
 			boxLabel: 'Ежемесячно',
 			style: 'position:absolute;left:221px;top:182px;width:86px;height:19px;',
@@ -1631,7 +1620,7 @@
 			Лево:221,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоОкончанииСрока',
 			boxLabel: 'По истечении',
 			style: 'position:absolute;left:308px;top:182px;width:95px;height:19px;',
@@ -1659,15 +1648,13 @@
 			Верх:182,
 			Лево:308,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:407px;width:534px;height:25px;',
 			Привязка:
 			{
@@ -1723,8 +1710,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1736,19 +1722,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

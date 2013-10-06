@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:507px;height:25px;',
 			Привязка:
 			{
@@ -353,7 +353,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройкиОбмена,
+			id: 'ПанельНастройкиОбмена',
 			style: 'position:absolute;left:8px;top:57px;width:492px;height:438px;',
 			Привязка:
 			{
@@ -378,11 +378,12 @@
 			Ширина:492,
 			Верх:57,
 			Лево:8,
+			Групповой: true,
 			height: 438,width: 492,
 			items:
 			[
 				{
-					id: ОтправкаИПриемСообщений,
+					id: 'ОтправкаИПриемСообщений',
 					items:
 					[
 		{
@@ -571,7 +572,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройкиТипов,
+			id: 'ПанельНастройкиТипов',
 			style: 'position:absolute;left:6px;top:184px;width:478px;height:113px;',
 			Привязка:
 			{
@@ -596,12 +597,13 @@
 			Ширина:478,
 			Верх:184,
 			Лево:6,
+			Групповой: true,
 			height: 113,width: 478,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Файловый,
+					id: 'Файловый',
 					items:
 					[
 		{
@@ -726,7 +728,7 @@
 					]
 				},
 				{
-					id: FTPОбмен,
+					id: 'FTPОбмен',
 					items:
 					[
 		{
@@ -1070,7 +1072,7 @@
 					]
 				},
 				{
-					id: Почта,
+					id: 'Почта',
 					items:
 					[
 		{
@@ -1321,7 +1323,7 @@
 					]
 				},
 				{
-					id: ОбменЧерезCOM,
+					id: 'ОбменЧерезCOM',
 					items:
 					[
 		{
@@ -1385,7 +1387,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельподключениеИБПриемник,
+			id: 'ПанельподключениеИБПриемник',
 			style: 'position:absolute;left:6px;top:47px;width:472px;height:19px;',
 			Привязка:
 			{
@@ -1410,12 +1412,13 @@
 			Ширина:472,
 			Верх:47,
 			Лево:6,
+			Групповой: true,
 			height: 19,width: 472,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПодключениеФайловаяИБ,
+					id: 'ПодключениеФайловаяИБ',
 					items:
 					[
 		{
@@ -1453,7 +1456,7 @@
 					]
 				},
 				{
-					id: ПодключениеСервернаяИБ,
+					id: 'ПодключениеСервернаяИБ',
 					items:
 					[
 		{
@@ -2189,7 +2192,7 @@
 			xtype: 'label',
 			id: 'РамкаНастройкиОбмена',
 			text: 'Передача данных между информационными базами',
-			style: 'position:absolute;left:6px;top:140px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:140px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2218,7 +2221,7 @@
 			xtype: 'label',
 			id: 'РамкаНастройкиПоПравиламОбмена',
 			text: 'Обмен данными по правилам обмена',
-			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2276,7 +2279,7 @@
 			xtype: 'label',
 			id: 'РамкаДополнительныеНастройкиОбмена',
 			text: 'Дополнительные настройки обмена',
-			style: 'position:absolute;left:6px;top:297px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:297px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2484,7 +2487,7 @@
 					]
 				},
 				{
-					id: ОбменПоПравилам,
+					id: 'ОбменПоПравилам',
 					items:
 					[
 		{
@@ -2758,7 +2761,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройкиПользователя,
+			id: 'ПанельНастройкиПользователя',
 			style: 'position:absolute;left:6px;top:146px;width:478px;height:266px;',
 			Привязка:
 			{
@@ -2783,11 +2786,12 @@
 			Ширина:478,
 			Верх:146,
 			Лево:6,
+			Групповой: true,
 			height: 266,width: 478,
 			items:
 			[
 				{
-					id: НастройкиВыгрузки,
+					id: 'НастройкиВыгрузки',
 					items:
 					[
 		{
@@ -2934,7 +2938,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкаВыгрузкиДанных,
+			id: 'КоманднаяПанельНастройкаВыгрузкиДанных',
 			style: 'position:absolute;left:6px;top:6px;width:464px;height:24px;',
 			Привязка:
 			{
@@ -2991,7 +2995,7 @@
 					]
 				},
 				{
-					id: СопоставлениеОбъектов,
+					id: 'СопоставлениеОбъектов',
 					items:
 					[
 		{
@@ -3138,7 +3142,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкаВариантовПоискаОбъектов,
+			id: 'КоманднаяПанельНастройкаВариантовПоискаОбъектов',
 			style: 'position:absolute;left:5px;top:6px;width:465px;height:24px;',
 			Привязка:
 			{
@@ -3193,7 +3197,7 @@
 					]
 				},
 				{
-					id: ИнтерактивныйОбмен,
+					id: 'ИнтерактивныйОбмен',
 					items:
 					[
 		{
@@ -3287,7 +3291,7 @@
 			xtype: 'label',
 			id: 'РамкаДействияПрограммыПриИнтерактивномОбмена',
 			text: 'Действия при интерактивном обмене',
-			style: 'position:absolute;left:6px;top:6px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3442,7 +3446,7 @@
 			xtype: 'label',
 			id: 'ОтправкаСообщенияПриОшибке',
 			text: 'Отправлять сообщения при ошибке обмена',
-			style: 'position:absolute;left:6px;top:166px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:166px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3702,7 +3706,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНеОшибочныеСообщения,
+			id: 'КоманднаяПанельНеОшибочныеСообщения',
 			style: 'position:absolute;left:16px;top:234px;width:468px;height:24px;',
 			Привязка:
 			{
@@ -3792,7 +3796,7 @@
 					]
 				},
 				{
-					id: НастройкиАвтоматическогоВыполненияОбменов,
+					id: 'НастройкиАвтоматическогоВыполненияОбменов',
 					items:
 					[
 		{
@@ -3903,7 +3907,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкиВыполненияОбменов,
+			id: 'КоманднаяПанельНастройкиВыполненияОбменов',
 			style: 'position:absolute;left:6px;top:50px;width:478px;height:24px;',
 			Привязка:
 			{
@@ -4004,7 +4008,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:526px;width:507px;height:25px;',
 			Привязка:
 			{
@@ -4060,8 +4064,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4073,19 +4076,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

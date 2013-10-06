@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:682px;height:25px;',
 			Привязка:
 			{
@@ -515,7 +515,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:8px;top:111px;width:666px;height:241px;',
 			Привязка:
 			{
@@ -540,11 +540,12 @@
 			Ширина:666,
 			Верх:111,
 			Лево:8,
+			Групповой: true,
 			height: 241,width: 666,
 			items:
 			[
 				{
-					id: Страхователи,
+					id: 'Страхователи',
 					items:
 					[
 		{
@@ -641,7 +642,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтрахователи,
+			id: 'КоманднаяПанельСтрахователи',
 			style: 'position:absolute;left:6px;top:6px;width:293px;height:24px;',
 			Привязка:
 			{
@@ -1240,7 +1241,7 @@
 					]
 				},
 				{
-					id: ДанныеОрганизации,
+					id: 'ДанныеОрганизации',
 					items:
 					[
 		{
@@ -1677,7 +1678,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРегистрация',
 			text: 'Регистрация в ФСС',
-			style: 'position:absolute;left:6px;top:6px;width:653px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:653px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1706,7 +1707,7 @@
 			xtype: 'label',
 			id: 'Подписи',
 			text: 'Подписи',
-			style: 'position:absolute;left:8px;top:108px;width:651px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:108px;width:651px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1824,7 +1825,7 @@
 					]
 				},
 				{
-					id: ДанныеОЗастрахованномЛице,
+					id: 'ДанныеОЗастрахованномЛице',
 					items:
 					[
 		{
@@ -2262,7 +2263,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:385px;width:682px;height:25px;',
 			Привязка:
 			{
@@ -2318,8 +2319,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2331,19 +2331,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

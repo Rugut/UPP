@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:0px;width:767px;height:25px;',
 			Привязка:
 			{
@@ -157,7 +157,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыборПериода,
+			id: 'ПанельВыборПериода',
 			style: 'position:absolute;left:623px;top:0px;width:144px;height:24px;',
 			Привязка:
 			{
@@ -182,12 +182,13 @@
 			Ширина:144,
 			Верх:0,
 			Лево:623,
+			Групповой: true,
 			height: 24,width: 144,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаНаДату,
+					id: 'СтраницаНаДату',
 					items:
 					[
 		{
@@ -261,8 +262,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -274,19 +274,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

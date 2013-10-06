@@ -340,7 +340,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:744px;height:25px;',
 			Привязка:
 			{
@@ -1192,12 +1192,7 @@
 			height: 19,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьРеализациюНаПринтер',
 			boxLabel: 'принтер',
 			style: 'position:absolute;left:220px;top:174px;width:65px;height:19px;',
@@ -1226,7 +1221,7 @@
 			Лево:220,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьРеализациюНаЭкран',
 			boxLabel: 'экран',
 			style: 'position:absolute;left:303px;top:174px;width:48px;height:19px;',
@@ -1254,15 +1249,8 @@
 			Верх:174,
 			Лево:303,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидПередачиПоСкладу',
 			boxLabel: 'по складу',
 			style: 'position:absolute;left:282px;top:67px;width:69px;height:19px;',
@@ -1291,7 +1279,7 @@
 			Лево:282,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидПередачиПоОрдеру',
 			boxLabel: 'по ордеру',
 			style: 'position:absolute;left:282px;top:85px;width:68px;height:19px;',
@@ -1319,15 +1307,8 @@
 			Верх:85,
 			Лево:282,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьСФНаПринтер',
 			boxLabel: 'принтер',
 			style: 'position:absolute;left:220px;top:342px;width:65px;height:19px;',
@@ -1356,7 +1337,7 @@
 			Лево:220,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьСФНаЭкран',
 			boxLabel: 'экран',
 			style: 'position:absolute;left:303px;top:342px;width:48px;height:19px;',
@@ -1384,15 +1365,8 @@
 			Верх:342,
 			Лево:303,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьРасходныйОрдерНаТоварыНаПринтер',
 			boxLabel: 'принтер',
 			style: 'position:absolute;left:595px;top:174px;width:63px;height:19px;',
@@ -1421,7 +1395,7 @@
 			Лево:595,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьРасходныйОрдерНаТоварыНаЭкран',
 			boxLabel: 'экран',
 			style: 'position:absolute;left:678px;top:174px;width:48px;height:19px;',
@@ -1449,15 +1423,8 @@
 			Верх:174,
 			Лево:678,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьПКОНаПринтер',
 			boxLabel: 'принтер',
 			style: 'position:absolute;left:595px;top:342px;width:65px;height:19px;',
@@ -1486,7 +1453,7 @@
 			Лево:595,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПечататьПКОНаЭкран',
 			boxLabel: 'экран',
 			style: 'position:absolute;left:678px;top:342px;width:48px;height:19px;',
@@ -1514,15 +1481,13 @@
 			Верх:342,
 			Лево:678,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:376px;width:744px;height:25px;',
 			Привязка:
 			{
@@ -1562,8 +1527,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1575,19 +1539,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

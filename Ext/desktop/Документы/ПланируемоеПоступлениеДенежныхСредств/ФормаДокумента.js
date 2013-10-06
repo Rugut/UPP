@@ -49,7 +49,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:657px;height:25px;',
 			Привязка:
 			{
@@ -82,7 +82,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:81px;width:641px;height:127px;',
 			Привязка:
 			{
@@ -107,12 +107,13 @@
 			Ширина:641,
 			Верх:81,
 			Лево:8,
+			Групповой: true,
 			height: 127,width: 641,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Расчеты,
+					id: 'Расчеты',
 					items:
 					[
 		{
@@ -181,7 +182,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПлатежи,
+			id: 'ПанельПлатежи',
 			style: 'position:absolute;left:0px;top:24px;width:641px;height:103px;',
 			Привязка:
 			{
@@ -206,12 +207,13 @@
 			Ширина:641,
 			Верх:24,
 			Лево:0,
+			Групповой: true,
 			height: 103,width: 641,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПлатежПоОднойСделке,
+					id: 'ПлатежПоОднойСделке',
 					items:
 					[
 		{
@@ -861,7 +863,7 @@
 					]
 				},
 				{
-					id: ПлатежПоНесколькимСделкам,
+					id: 'ПлатежПоНесколькимСделкам',
 					items:
 					[
 		{
@@ -1012,7 +1014,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПлатежи,
+			id: 'КоманднаяПанельПлатежи',
 			style: 'position:absolute;left:0px;top:0px;width:294px;height:24px;',
 			Привязка:
 			{
@@ -1080,7 +1082,7 @@
 					]
 				},
 				{
-					id: ПлатежПрочие,
+					id: 'ПлатежПрочие',
 					items:
 					[
 		{
@@ -1304,12 +1306,7 @@
 			Лево:326,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Список',
 			boxLabel: 'Без разбиения',
 			style: 'position:absolute;left:417px;top:0px;width:100px;height:19px;',
@@ -1338,7 +1335,7 @@
 			Лево:417,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Список1',
 			boxLabel: 'Списком',
 			style: 'position:absolute;left:522px;top:0px;width:89px;height:19px;',
@@ -1366,12 +1363,10 @@
 			Верх:0,
 			Лево:522,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ПолучениеИзКассыККМ,
+					id: 'ПолучениеИзКассыККМ',
 					items:
 					[
 		{
@@ -1840,7 +1835,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:336px;width:657px;height:25px;',
 			Привязка:
 			{
@@ -2766,8 +2761,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2779,19 +2773,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
 			Привязка:
 			{
@@ -237,7 +237,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:33px;width:984px;height:539px;',
 			Привязка:
 			{
@@ -262,11 +262,12 @@
 			Ширина:984,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 539,width: 984,
 			items:
 			[
 				{
-					id: Планы,
+					id: 'Планы',
 					items:
 					[
 		{
@@ -536,7 +537,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСоставПлана,
+			id: 'КоманднаяПанельСоставПлана',
 			style: 'position:absolute;left:242px;top:22px;width:734px;height:24px;',
 			Привязка:
 			{
@@ -641,7 +642,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСоставПлана',
 			text: 'Состав плана',
-			style: 'position:absolute;left:242px;top:6px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:242px;top:6px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -841,7 +842,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПотребности,
+			id: 'КоманднаяПанельПотребности',
 			style: 'position:absolute;left:242px;top:257px;width:734px;height:24px;',
 			Привязка:
 			{
@@ -882,7 +883,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПотребности',
 			text: 'Потребности',
-			style: 'position:absolute;left:242px;top:241px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:242px;top:241px;width:734px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -909,7 +910,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПланы,
+			id: 'КоманднаяПанельПланы',
 			style: 'position:absolute;left:6px;top:22px;width:230px;height:24px;',
 			Привязка:
 			{
@@ -956,7 +957,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПланы',
 			text: 'Планы',
-			style: 'position:absolute;left:6px;top:6px;width:230px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:230px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -984,12 +985,12 @@
 					]
 				},
 				{
-					id: ПроизводственнаяПрограмма,
+					id: 'ПроизводственнаяПрограмма',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельПроизводственнаяПрограмма,
+			id: 'ПанельПроизводственнаяПрограмма',
 			style: 'position:absolute;left:6px;top:6px;width:970px;height:507px;',
 			Привязка:
 			{
@@ -1014,16 +1015,17 @@
 			Ширина:970,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 507,width: 970,
 			items:
 			[
 				{
-					id: ПлановыеЗадания,
+					id: 'ПлановыеЗадания',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПроизводственнаяПрограмма,
+			id: 'КоманднаяПанельПроизводственнаяПрограмма',
 			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
 			Привязка:
 			{
@@ -1245,12 +1247,12 @@
 					]
 				},
 				{
-					id: СтраницаДиаграммаГанта,
+					id: 'СтраницаДиаграммаГанта',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДиаграммаГанта,
+			id: 'КоманднаяПанельДиаграммаГанта',
 			style: 'position:absolute;left:6px;top:6px;width:956px;height:24px;',
 			Привязка:
 			{
@@ -1576,8 +1578,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1589,19 +1590,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:632px;height:25px;',
 			Привязка:
 			{
@@ -83,7 +83,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ГлавнаяПанельФормы,
+			id: 'ГлавнаяПанельФормы',
 			style: 'position:absolute;left:8px;top:31px;width:618px;height:497px;',
 			Привязка:
 			{
@@ -108,11 +108,12 @@
 			Ширина:618,
 			Верх:31,
 			Лево:8,
+			Групповой: true,
 			height: 497,width: 618,
 			items:
 			[
 				{
-					id: Выгрузка,
+					id: 'Выгрузка',
 					items:
 					[
 		{
@@ -178,7 +179,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыгрузки,
+			id: 'ПанельВыгрузки',
 			style: 'position:absolute;left:6px;top:150px;width:604px;height:295px;',
 			Привязка:
 			{
@@ -203,11 +204,12 @@
 			Ширина:604,
 			Верх:150,
 			Лево:6,
+			Групповой: true,
 			height: 295,width: 604,
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -295,7 +297,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТаблицаПравилВыгрузки,
+			id: 'КоманднаяПанельТаблицаПравилВыгрузки',
 			style: 'position:absolute;left:6px;top:30px;width:273px;height:25px;',
 			Привязка:
 			{
@@ -464,7 +466,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПостроительОтбор,
+			id: 'КоманднаяПанельПостроительОтбор',
 			style: 'position:absolute;left:285px;top:30px;width:311px;height:25px;',
 			Привязка:
 			{
@@ -688,7 +690,7 @@
 					]
 				},
 				{
-					id: Параметры,
+					id: 'Параметры',
 					items:
 					[
 		{
@@ -776,7 +778,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПараметрыВыгрузки,
+			id: 'КоманднаяПанельПараметрыВыгрузки',
 			style: 'position:absolute;left:6px;top:6px;width:590px;height:24px;',
 			Привязка:
 			{
@@ -820,7 +822,7 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
@@ -859,7 +861,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПараметрыВыгрузки,
+			id: 'ПанельПараметрыВыгрузки',
 			style: 'position:absolute;left:6px;top:54px;width:604px;height:92px;',
 			Привязка:
 			{
@@ -884,12 +886,13 @@
 			Ширина:604,
 			Верх:54,
 			Лево:6,
+			Групповой: true,
 			height: 92,width: 604,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ВыгрузкаВФайл,
+					id: 'ВыгрузкаВФайл',
 					items:
 					[
 		{
@@ -1046,7 +1049,7 @@
 					]
 				},
 				{
-					id: ВыгрузкаВИБПриемник,
+					id: 'ВыгрузкаВИБПриемник',
 					items:
 					[
 		{
@@ -1169,7 +1172,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельподключениеИБПриемник,
+			id: 'ПанельподключениеИБПриемник',
 			style: 'position:absolute;left:0px;top:25px;width:604px;height:19px;',
 			Привязка:
 			{
@@ -1194,12 +1197,13 @@
 			Ширина:604,
 			Верх:25,
 			Лево:0,
+			Групповой: true,
 			height: 19,width: 604,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПодключениеФайловаяИБ,
+					id: 'ПодключениеФайловаяИБ',
 					items:
 					[
 		{
@@ -1266,7 +1270,7 @@
 					]
 				},
 				{
-					id: ПодключениеСервернаяИБ,
+					id: 'ПодключениеСервернаяИБ',
 					items:
 					[
 		{
@@ -1696,12 +1700,7 @@
 			Лево:242,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВыгрузкаДанныхВФайлОбмена',
 			boxLabel: 'Выгрузка в файл обмена',
 			style: 'position:absolute;left:6px;top:30px;width:156px;height:19px;',
@@ -1730,7 +1729,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НепосредственнаяВыгрузкаВИБПриемнике',
 			boxLabel: 'Подключение и выгрузка данных в ИБ приемник',
 			style: 'position:absolute;left:167px;top:30px;width:272px;height:19px;',
@@ -1758,12 +1757,10 @@
 			Верх:30,
 			Лево:167,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Загрузка,
+					id: 'Загрузка',
 					items:
 					[
 		{
@@ -2097,7 +2094,7 @@
 			xtype: 'label',
 			id: 'РамкаИнформацияОФайлеОбмена',
 			text: 'Информация о файле обмена',
-			style: 'position:absolute;left:6px;top:318px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:318px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2301,12 +2298,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НеИспользоватьАвтоматическуюЗагрузкуДанных',
 			boxLabel: 'Не использовать автоматическую загрузку при открытии',
 			style: 'position:absolute;left:18px;top:258px;width:400px;height:16px;',
@@ -2335,7 +2327,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИспользоватьАвтоматическуюЗагрузкуСВопроомПользователю',
 			boxLabel: 'Перед автоматической загрузкой задать вопрос о выполнении операции',
 			style: 'position:absolute;left:18px;top:278px;width:400px;height:16px;',
@@ -2364,7 +2356,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИспользоватьАвтоматическуюЗагрузкуБезПодтверждения',
 			boxLabel: 'Использовать автоматическую загрузку данных',
 			style: 'position:absolute;left:18px;top:298px;width:400px;height:16px;',
@@ -2392,12 +2384,10 @@
 			Верх:298,
 			Лево:18,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НастройкиОбменаДанными,
+					id: 'НастройкиОбменаДанными',
 					items:
 					[
 		{
@@ -2552,7 +2542,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПротоколОбмена',
 			text: 'Протокол обмена',
-			style: 'position:absolute;left:6px;top:239px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:239px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2639,7 +2629,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастройкиВыгрузкиДанных',
 			text: 'Настройки выгрузки данных',
-			style: 'position:absolute;left:6px;top:77px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:77px;width:604px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3058,7 +3048,7 @@
 					]
 				},
 				{
-					id: НастройкаУдалениеДанных,
+					id: 'НастройкаУдалениеДанных',
 					items:
 					[
 		{
@@ -3166,7 +3156,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:76px;width:604px;height:24px;',
 			Привязка:
 			{
@@ -3250,8 +3240,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3263,19 +3252,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

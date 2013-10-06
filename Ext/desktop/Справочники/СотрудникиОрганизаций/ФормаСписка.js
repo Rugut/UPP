@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:1000px;height:25px;',
 			Привязка:
 			{
@@ -58,7 +58,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:276px;top:159px;width:716px;height:249px;',
 			Привязка:
 			{
@@ -83,12 +83,13 @@
 			Ширина:716,
 			Верх:159,
 			Лево:276,
+			Групповой: true,
 			height: 249,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -301,7 +302,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСпискаСотрудников,
+			id: 'КоманднаяПанельСпискаСотрудников',
 			style: 'position:absolute;left:0px;top:28px;width:175px;height:24px;',
 			Привязка:
 			{
@@ -388,7 +389,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДополнительныеСведения,
+			id: 'ПанельДополнительныеСведения',
 			style: 'position:absolute;left:0px;top:180px;width:716px;height:67px;',
 			Привязка:
 			{
@@ -413,12 +414,13 @@
 			Ширина:716,
 			Верх:180,
 			Лево:0,
+			Групповой: true,
 			height: 67,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 				},
 			]
 		},
@@ -462,7 +464,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИерархическийПросмотр,
+			id: 'ПанельИерархическийПросмотр',
 			style: 'position:absolute;left:8px;top:33px;width:262px;height:539px;',
 			Привязка:
 			{
@@ -487,17 +489,18 @@
 			Ширина:262,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 539,width: 262,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельРежимОтображенияСписка,
+			id: 'ПанельРежимОтображенияСписка',
 			style: 'position:absolute;left:0px;top:24px;width:262px;height:515px;',
 			Привязка:
 			{
@@ -522,12 +525,13 @@
 			Ширина:262,
 			Верх:24,
 			Лево:0,
+			Групповой: true,
 			height: 515,width: 262,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоГруппам,
+					id: 'ПоГруппам',
 					items:
 					[
 		{
@@ -611,7 +615,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСправочникДерево,
+			id: 'КоманднаяПанельСправочникДерево',
 			style: 'position:absolute;left:20px;top:113px;width:182px;height:24px;',
 			Привязка:
 			{
@@ -683,7 +687,7 @@
 					]
 				},
 				{
-					id: ПоПодразделениям,
+					id: 'ПоПодразделениям',
 					items:
 					[
 		{
@@ -785,7 +789,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПодразделенияОрганизаций,
+			id: 'КоманднаяПанельПодразделенияОрганизаций',
 			style: 'position:absolute;left:33px;top:166px;width:203px;height:24px;',
 			Привязка:
 			{
@@ -853,7 +857,7 @@
 					]
 				},
 				{
-					id: ПоВидуДоговора,
+					id: 'ПоВидуДоговора',
 					items:
 					[
 		{
@@ -984,7 +988,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРабочееМесто,
+			id: 'ПанельРабочееМесто',
 			style: 'position:absolute;left:276px;top:414px;width:716px;height:158px;',
 			Привязка:
 			{
@@ -1009,17 +1013,18 @@
 			Ширина:716,
 			Верх:414,
 			Лево:276,
+			Групповой: true,
 			height: 158,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ФормаМедицинскогоСтрахования,
+					id: 'ФормаМедицинскогоСтрахования',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельМедицинскоеСтрахование,
+			id: 'КоманднаяПанельМедицинскоеСтрахование',
 			style: 'position:absolute;left:1px;top:25px;width:715px;height:24px;',
 			Привязка:
 			{
@@ -1202,12 +1207,12 @@
 					]
 				},
 				{
-					id: ФормаОстатковОтпусков,
+					id: 'ФормаОстатковОтпусков',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОстаткиОтпусковОрганизаций,
+			id: 'КоманднаяПанельОстаткиОтпусковОрганизаций',
 			style: 'position:absolute;left:0px;top:55px;width:716px;height:24px;',
 			Привязка:
 			{
@@ -1376,7 +1381,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПодбор,
+			id: 'ПанельПодбор',
 			style: 'position:absolute;left:276px;top:33px;width:716px;height:126px;',
 			Привязка:
 			{
@@ -1401,12 +1406,13 @@
 			Ширина:716,
 			Верх:33,
 			Лево:276,
+			Групповой: true,
 			height: 126,width: 716,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 				},
 			]
 		},
@@ -1414,8 +1420,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1427,19 +1432,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

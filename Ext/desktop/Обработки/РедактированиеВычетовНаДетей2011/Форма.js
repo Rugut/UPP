@@ -518,7 +518,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНовыеВычетыСотрудниковСДетьми,
+			id: 'КоманднаяПанельНовыеВычетыСотрудниковСДетьми',
 			style: 'position:absolute;left:226px;top:411px;width:762px;height:24px;',
 			Привязка:
 			{
@@ -661,7 +661,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПереключателей,
+			id: 'ПанельПереключателей',
 			style: 'position:absolute;left:226px;top:246px;width:762px;height:140px;',
 			Привязка:
 			{
@@ -686,12 +686,13 @@
 			Ширина:762,
 			Верх:246,
 			Лево:226,
+			Групповой: true,
 			height: 140,width: 762,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаПереключателей,
+					id: 'СтраницаПереключателей',
 					items:
 					[
 		{
@@ -725,7 +726,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель108,
+			id: 'Панель108',
 			style: 'position:absolute;left:0px;top:0px;width:254px;height:110px;',
 			Привязка:
 			{
@@ -750,12 +751,13 @@
 			Ширина:254,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 110,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -789,7 +791,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВариантовЗамены108,
+			id: 'ПанельВариантовЗамены108',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			Привязка:
 			{
@@ -814,21 +816,17 @@
 			Ширина:254,
 			Верх:25,
 			Лево:0,
+			Групповой: true,
 			height: 85,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаМногихДетей,
+					id: 'СтраницаМногихДетей',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель4',
 			boxLabel: 'Не заменять вычеты',
 			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
@@ -857,7 +855,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'Оставить вычеты на первого и второго детей',
 			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
@@ -886,7 +884,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель1',
 			boxLabel: 'Оставить вычет только на второго ребенка',
 			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
@@ -915,7 +913,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель3',
 			boxLabel: 'Заменить вычетами на третьего ребенка',
 			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
@@ -943,16 +941,14 @@
 			Верх:66,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: СтраницаОдногоРебенка,
+					id: 'СтраницаОдногоРебенка',
 					items:
 					[
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель13',
 			boxLabel: 'Оставить вычет на первого ребенка',
 			style: 'position:absolute;left:0px;top:0px;width:233px;height:19px;',
@@ -981,7 +977,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель14',
 			boxLabel: 'Заменить вычетом на второго ребенка',
 			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
@@ -1010,7 +1006,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель15',
 			boxLabel: 'Заменить вычетом на третьего ребенка',
 			style: 'position:absolute;left:0px;top:44px;width:251px;height:19px;',
@@ -1048,7 +1044,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель110,
+			id: 'Панель110',
 			style: 'position:absolute;left:254px;top:0px;width:254px;height:110px;',
 			Привязка:
 			{
@@ -1073,12 +1069,13 @@
 			Ширина:254,
 			Верх:0,
 			Лево:254,
+			Групповой: true,
 			height: 110,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1112,7 +1109,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВариантовЗамены110,
+			id: 'ПанельВариантовЗамены110',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			Привязка:
 			{
@@ -1137,21 +1134,17 @@
 			Ширина:254,
 			Верх:25,
 			Лево:0,
+			Групповой: true,
 			height: 85,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаМногихДетей,
+					id: 'СтраницаМногихДетей',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель8',
 			boxLabel: 'Не заменять вычеты',
 			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
@@ -1180,7 +1173,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель6',
 			boxLabel: 'Оставить вычеты на первого и второго детей',
 			style: 'position:absolute;left:0px;top:22px;width:249px;height:19px;',
@@ -1209,7 +1202,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель5',
 			boxLabel: 'Оставить вычет только на второго ребенка',
 			style: 'position:absolute;left:0px;top:44px;width:249px;height:19px;',
@@ -1238,7 +1231,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель7',
 			boxLabel: 'Заменить вычетами на третьего ребенка',
 			style: 'position:absolute;left:0px;top:66px;width:249px;height:19px;',
@@ -1266,16 +1259,14 @@
 			Верх:66,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: СтраницаОдногоРебенка,
+					id: 'СтраницаОдногоРебенка',
 					items:
 					[
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель16',
 			boxLabel: 'Оставить вычет на первого ребенка',
 			style: 'position:absolute;left:0px;top:0px;width:215px;height:19px;',
@@ -1304,7 +1295,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель17',
 			boxLabel: 'Заменить вычетом на второго ребенка',
 			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
@@ -1333,7 +1324,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель18',
 			boxLabel: 'Заменить вычетом на третьего ребенка',
 			style: 'position:absolute;left:0px;top:44px;width:251px;height:19px;',
@@ -1371,7 +1362,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель111,
+			id: 'Панель111',
 			style: 'position:absolute;left:508px;top:0px;width:254px;height:110px;',
 			Привязка:
 			{
@@ -1396,12 +1387,13 @@
 			Ширина:254,
 			Верх:0,
 			Лево:508,
+			Групповой: true,
 			height: 110,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1435,7 +1427,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВариантовЗамены111,
+			id: 'ПанельВариантовЗамены111',
 			style: 'position:absolute;left:0px;top:25px;width:254px;height:85px;',
 			Привязка:
 			{
@@ -1460,21 +1452,17 @@
 			Ширина:254,
 			Верх:25,
 			Лево:0,
+			Групповой: true,
 			height: 85,width: 254,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаМногихДетей,
+					id: 'СтраницаМногихДетей',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель12',
 			boxLabel: 'Не заменять вычеты',
 			style: 'position:absolute;left:0px;top:0px;width:143px;height:19px;',
@@ -1503,7 +1491,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель10',
 			boxLabel: 'Оставить вычеты на первого и второго детей',
 			style: 'position:absolute;left:0px;top:22px;width:249px;height:19px;',
@@ -1532,7 +1520,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель9',
 			boxLabel: 'Оставить вычет только на второго ребенка',
 			style: 'position:absolute;left:0px;top:44px;width:240px;height:19px;',
@@ -1561,7 +1549,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель11',
 			boxLabel: 'Заменить вычетами на третьего ребенка',
 			style: 'position:absolute;left:0px;top:66px;width:240px;height:19px;',
@@ -1589,16 +1577,14 @@
 			Верх:66,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: СтраницаОдногоРебенка,
+					id: 'СтраницаОдногоРебенка',
 					items:
 					[
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель19',
 			boxLabel: 'Оставить вычет на первого ребенка',
 			style: 'position:absolute;left:0px;top:0px;width:213px;height:19px;',
@@ -1627,7 +1613,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель20',
 			boxLabel: 'Заменить вычетом на второго ребенка',
 			style: 'position:absolute;left:0px;top:22px;width:251px;height:19px;',
@@ -1656,7 +1642,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель21',
 			boxLabel: 'Заменить вычетом на третьего ребенка',
 			style: 'position:absolute;left:0px;top:44px;width:251px;height:19px;',
@@ -1702,7 +1688,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:564px;width:996px;height:25px;',
 			Привязка:
 			{
@@ -1750,8 +1736,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1763,19 +1748,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -580,7 +580,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:137px;width:636px;height:187px;',
 			Привязка:
 			{
@@ -605,16 +605,17 @@
 			Ширина:636,
 			Верх:137,
 			Лево:8,
+			Групповой: true,
 			height: 187,width: 636,
 			items:
 			[
 				{
-					id: Продукция,
+					id: 'Продукция',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПродукция,
+			id: 'КоманднаяПанельПродукция',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -882,12 +883,12 @@
 					]
 				},
 				{
-					id: Материалы,
+					id: 'Материалы',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельМатериалы,
+			id: 'КоманднаяПанельМатериалы',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1192,7 +1193,7 @@
 					]
 				},
 				{
-					id: Распределение,
+					id: 'Распределение',
 					items:
 					[
 		{
@@ -1469,7 +1470,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаспределениеМатериалов,
+			id: 'КоманднаяПанельРаспределениеМатериалов',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1510,7 +1511,7 @@
 					]
 				},
 				{
-					id: ВозвратныеОтходы,
+					id: 'ВозвратныеОтходы',
 					items:
 					[
 		{
@@ -1760,7 +1761,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВозвратныеОтходы,
+			id: 'КоманднаяПанельВозвратныеОтходы',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1804,12 +1805,12 @@
 					]
 				},
 				{
-					id: РаспределениеВозвратныхОтходов,
+					id: 'РаспределениеВозвратныхОтходов',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаспределениеВозвратныеОтходы,
+			id: 'КоманднаяПанельРаспределениеВозвратныеОтходы',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -2592,7 +2593,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:383px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -2654,8 +2655,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2667,19 +2667,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

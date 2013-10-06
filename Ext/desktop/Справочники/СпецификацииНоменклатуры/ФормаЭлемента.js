@@ -142,7 +142,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -424,7 +424,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВидСпецификации,
+			id: 'ПанельВидСпецификации',
 			style: 'position:absolute;left:8px;top:102px;width:636px;height:285px;',
 			Привязка:
 			{
@@ -449,12 +449,13 @@
 			Ширина:636,
 			Верх:102,
 			Лево:8,
+			Групповой: true,
 			height: 285,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Полная,
+					id: 'Полная',
 					items:
 					[
 		{
@@ -488,7 +489,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИсходныеКомплектующие,
+			id: 'ПанельИсходныеКомплектующие',
 			style: 'position:absolute;left:0px;top:95px;width:636px;height:169px;',
 			Привязка:
 			{
@@ -513,11 +514,12 @@
 			Ширина:636,
 			Верх:95,
 			Лево:0,
+			Групповой: true,
 			height: 169,width: 636,
 			items:
 			[
 				{
-					id: ИсходныеКомплектующие,
+					id: 'ИсходныеКомплектующие',
 					items:
 					[
 		{
@@ -551,7 +553,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИсходныеКомплектующие,
+			id: 'КоманднаяПанельИсходныеКомплектующие',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -840,7 +842,7 @@
 					]
 				},
 				{
-					id: ВозвратныеОтходы,
+					id: 'ВозвратныеОтходы',
 					items:
 					[
 		{
@@ -1068,7 +1070,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВозвратныеОтходы,
+			id: 'КоманднаяПанельВозвратныеОтходы',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1107,7 +1109,7 @@
 					]
 				},
 				{
-					id: ПараметрыВыпускаПродукции,
+					id: 'ПараметрыВыпускаПродукции',
 					items:
 					[
 		{
@@ -1238,7 +1240,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПараметрыВыпускаПродукции,
+			id: 'КоманднаяПанельПараметрыВыпускаПродукции',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1282,7 +1284,7 @@
 					]
 				},
 				{
-					id: Документация,
+					id: 'Документация',
 					items:
 					[
 		{
@@ -1384,7 +1386,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументация,
+			id: 'КоманднаяПанельДокументация',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -1423,7 +1425,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -1711,7 +1713,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыходноеИзделие,
+			id: 'ПанельВыходноеИзделие',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:89px;',
 			Привязка:
 			{
@@ -1736,19 +1738,20 @@
 			Ширина:636,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 89,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Сборочная,
+					id: 'Сборочная',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыВыходноеИзделие',
 			text: 'Выходное изделие',
-			style: 'position:absolute;left:0px;top:1px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:1px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2306,12 +2309,12 @@
 					]
 				},
 				{
-					id: Полная,
+					id: 'Полная',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВыходныеИзделия,
+			id: 'КоманднаяПанельВыходныеИзделия',
 			style: 'position:absolute;left:0px;top:16px;width:636px;height:24px;',
 			Привязка:
 			{
@@ -2530,7 +2533,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВыходныеИзделия',
 			text: 'Выходные изделия',
-			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2591,12 +2594,12 @@
 					]
 				},
 				{
-					id: Узел,
+					id: 'Узел',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельИсходныеКомплектующиеУзел,
+			id: 'ПанельИсходныеКомплектующиеУзел',
 			style: 'position:absolute;left:0px;top:0px;width:636px;height:285px;',
 			Привязка:
 			{
@@ -2621,16 +2624,17 @@
 			Ширина:636,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 285,width: 636,
 			items:
 			[
 				{
-					id: ИсходныеКомплектующие,
+					id: 'ИсходныеКомплектующие',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИсходныеКомплектующиеУзел,
+			id: 'КоманднаяПанельИсходныеКомплектующиеУзел',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:25px;',
 			Привязка:
 			{
@@ -2894,7 +2898,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -3277,7 +3281,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:419px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -3333,8 +3337,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3346,19 +3349,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

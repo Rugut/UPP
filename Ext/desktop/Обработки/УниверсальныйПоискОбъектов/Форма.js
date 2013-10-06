@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:6px;top:33px;width:627px;height:407px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:627,
 			Верх:33,
 			Лево:6,
+			Групповой: true,
 			height: 407,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ОсновнаяСтраница,
+					id: 'ОсновнаяСтраница',
 					items:
 					[
 		{
@@ -118,7 +119,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастроекПоиска',
 			text: 'Настройки поиска',
-			style: 'position:absolute;left:0px;top:49px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:49px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -264,7 +265,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкиПоиска,
+			id: 'КоманднаяПанельНастройкиПоиска',
 			style: 'position:absolute;left:0px;top:92px;width:627px;height:24px;',
 			Привязка:
 			{
@@ -382,7 +383,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтображенияРезультатов,
+			id: 'ПанельОтображенияРезультатов',
 			style: 'position:absolute;left:0px;top:210px;width:627px;height:197px;',
 			Привязка:
 			{
@@ -407,12 +408,13 @@
 			Ширина:627,
 			Верх:210,
 			Лево:0,
+			Групповой: true,
 			height: 197,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаОтображенияРезультатов,
+					id: 'СтраницаОтображенияРезультатов',
 					items:
 					[
 		{
@@ -484,7 +486,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРезультатовПоиска',
 			text: 'Результаты поиска',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -511,7 +513,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокНайденныхСсылок,
+			id: 'КоманднаяПанельСписокНайденныхСсылок',
 			style: 'position:absolute;left:0px;top:19px;width:627px;height:24px;',
 			Привязка:
 			{
@@ -707,7 +709,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновнаяКомманднаяПанель,
+			id: 'ОсновнаяКомманднаяПанель',
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
 			Привязка:
 			{
@@ -756,7 +758,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: КомманднаяПанельНижняя,
+			id: 'КомманднаяПанельНижняя',
 			style: 'position:absolute;left:0px;top:448px;width:639px;height:25px;',
 			Привязка:
 			{
@@ -781,17 +783,18 @@
 			Ширина:639,
 			Верх:448,
 			Лево:0,
+			Групповой: true,
 			height: 25,width: 639,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНижняя,
+			id: 'КоманднаяПанельНижняя',
 			style: 'position:absolute;left:0px;top:0px;width:639px;height:25px;',
 			Привязка:
 			{
@@ -844,8 +847,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -857,19 +859,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

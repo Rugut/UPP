@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельВыполненияЗагрузки,
+			id: 'ПанельВыполненияЗагрузки',
 			style: 'position:absolute;left:8px;top:7px;width:752px;height:360px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:752,
 			Верх:7,
 			Лево:8,
+			Групповой: true,
 			height: 360,width: 752,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЗаполнениеТаблицыПолей,
+					id: 'ЗаполнениеТаблицыПолей',
 					items:
 					[
 		{
@@ -147,7 +148,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкаПолей,
+			id: 'КоманднаяПанельНастройкаПолей',
 			style: 'position:absolute;left:0px;top:16px;width:752px;height:24px;',
 			Привязка:
 			{
@@ -208,7 +209,7 @@
 			xtype: 'label',
 			id: 'РамкаНастройкиПолей',
 			text: 'Настройка соответствия полей файла и контактных данных объектов',
-			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -236,7 +237,7 @@
 					]
 				},
 				{
-					id: НастройкаПоискаОбъектов,
+					id: 'НастройкаПоискаОбъектов',
 					items:
 					[
 		{
@@ -351,7 +352,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТаблицаНастройкиПоискаОбъектов,
+			id: 'КоманднаяПанельТаблицаНастройкиПоискаОбъектов',
 			style: 'position:absolute;left:0px;top:16px;width:752px;height:24px;',
 			Привязка:
 			{
@@ -417,7 +418,7 @@
 			xtype: 'label',
 			id: 'РамкаНастройкиПоиска',
 			text: 'Настройка критериев поиска объектов в текущей информационной базе',
-			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -445,7 +446,7 @@
 					]
 				},
 				{
-					id: НастройкаЗагрузкиЗначений,
+					id: 'НастройкаЗагрузкиЗначений',
 					items:
 					[
 		{
@@ -578,7 +579,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкаЗагрузкиЗначений,
+			id: 'КоманднаяПанельНастройкаЗагрузкиЗначений',
 			style: 'position:absolute;left:0px;top:45px;width:752px;height:24px;',
 			Привязка:
 			{
@@ -650,7 +651,7 @@
 			xtype: 'label',
 			id: 'РамкаНастройкиЗагрузкиЗначений',
 			text: 'Настройка загрузки данных в текущую информационную базу',
-			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -775,7 +776,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:395px;width:767px;height:25px;',
 			Привязка:
 			{
@@ -835,8 +836,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -848,19 +848,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

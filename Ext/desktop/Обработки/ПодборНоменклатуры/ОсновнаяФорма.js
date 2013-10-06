@@ -195,7 +195,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНоменклатураДляПодбора,
+			id: 'ПанельНоменклатураДляПодбора',
 			style: 'position:absolute;left:8px;top:215px;width:447px;height:161px;',
 			Привязка:
 			{
@@ -220,12 +220,13 @@
 			Ширина:447,
 			Верх:215,
 			Лево:8,
+			Групповой: true,
 			height: 161,width: 447,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоЗапросу,
+					id: 'ПоЗапросу',
 					items:
 					[
 		{
@@ -574,7 +575,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкаПодбора,
+			id: 'КоманднаяПанельНастройкаПодбора',
 			style: 'position:absolute;left:73px;top:75px;width:301px;height:25px;',
 			Привязка:
 			{
@@ -613,7 +614,7 @@
 					]
 				},
 				{
-					id: ПоСправочнику,
+					id: 'ПоСправочнику',
 					items:
 					[
 		{
@@ -746,7 +747,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОстаткиТоваровНаСкладах,
+			id: 'ПанельОстаткиТоваровНаСкладах',
 			style: 'position:absolute;left:1px;top:66px;width:445px;height:95px;',
 			Привязка:
 			{
@@ -771,12 +772,13 @@
 			Ширина:445,
 			Верх:66,
 			Лево:1,
+			Групповой: true,
 			height: 95,width: 445,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ОстаткиТОваров,
+					id: 'ОстаткиТОваров',
 					items:
 					[
 		{
@@ -1184,7 +1186,7 @@
 					]
 				},
 				{
-					id: ПоСпецификациям,
+					id: 'ПоСпецификациям',
 					items:
 					[
 		{
@@ -1589,7 +1591,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНоменклатураДляПодбора,
+			id: 'КоманднаяПанельНоменклатураДляПодбора',
 			style: 'position:absolute;left:91px;top:79px;width:364px;height:24px;',
 			Привязка:
 			{
@@ -1622,7 +1624,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДерева,
+			id: 'ПанельДерева',
 			style: 'position:absolute;left:8px;top:108px;width:448px;height:102px;',
 			Привязка:
 			{
@@ -1647,12 +1649,13 @@
 			Ширина:448,
 			Верх:108,
 			Лево:8,
+			Групповой: true,
 			height: 102,width: 448,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: БезИзображения,
+					id: 'БезИзображения',
 					items:
 					[
 		{
@@ -1731,7 +1734,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТипыЦен,
+			id: 'КоманднаяПанельТипыЦен',
 			style: 'position:absolute;left:291px;top:19px;width:157px;height:24px;',
 			Привязка:
 			{
@@ -1790,7 +1793,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновногоИзображения,
+			id: 'ПанельОсновногоИзображения',
 			style: 'position:absolute;left:0px;top:0px;width:100px;height:100px;',
 			Привязка:
 			{
@@ -1815,12 +1818,13 @@
 			Ширина:100,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 100,width: 100,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -1830,7 +1834,7 @@
 					]
 				},
 				{
-					id: ДеревоСпецификаций,
+					id: 'ДеревоСпецификаций',
 					items:
 					[
 		{
@@ -1913,7 +1917,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзображения,
+			id: 'КоманднаяПанельИзображения',
 			style: 'position:absolute;left:8px;top:79px;width:84px;height:24px;',
 			Привязка:
 			{
@@ -2107,8 +2111,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2120,19 +2123,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

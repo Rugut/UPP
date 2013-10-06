@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
 			Привязка:
 			{
@@ -53,7 +53,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:33px;width:627px;height:384px;',
 			Привязка:
 			{
@@ -78,11 +78,12 @@
 			Ширина:627,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 384,width: 627,
 			items:
 			[
 				{
-					id: Основная,
+					id: 'Основная',
 					items:
 					[
 		{
@@ -269,7 +270,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокУсловий,
+			id: 'КоманднаяПанельСписокУсловий',
 			style: 'position:absolute;left:6px;top:90px;width:613px;height:24px;',
 			Привязка:
 			{
@@ -333,7 +334,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПараметры',
 			text: 'Параметры',
-			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -362,7 +363,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОтбор1',
 			text: 'Отбор',
-			style: 'position:absolute;left:6px;top:74px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:74px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -390,7 +391,7 @@
 					]
 				},
 				{
-					id: Номенклатура,
+					id: 'Номенклатура',
 					items:
 					[
 		{
@@ -532,7 +533,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНоменклатура,
+			id: 'КоманднаяПанельНоменклатура',
 			style: 'position:absolute;left:6px;top:6px;width:609px;height:24px;',
 			Привязка:
 			{
@@ -572,7 +573,7 @@
 					]
 				},
 				{
-					id: НастройкаРасчета,
+					id: 'НастройкаРасчета',
 					items:
 					[
 		{
@@ -984,7 +985,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОбшиеНастройки',
 			text: 'Общие настройки расчета себестоимости',
-			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:613px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1157,7 +1158,7 @@
 					]
 				},
 				{
-					id: ПроизводственныеРасходы,
+					id: 'ПроизводственныеРасходы',
 					items:
 					[
 		{
@@ -3139,7 +3140,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыМатериальные',
 			text: 'Материальные',
-			style: 'position:absolute;left:6px;top:6px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3168,7 +3169,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОплатаТруда',
 			text: 'Оплата труда',
-			style: 'position:absolute;left:6px;top:112px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:112px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3197,7 +3198,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыАмортизация',
 			text: 'Амортизация',
-			style: 'position:absolute;left:6px;top:194px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:194px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3226,7 +3227,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПрочие',
 			text: 'Прочие',
-			style: 'position:absolute;left:6px;top:276px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:276px;width:610px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3254,7 +3255,7 @@
 					]
 				},
 				{
-					id: КосвенныеРасходы,
+					id: 'КосвенныеРасходы',
 					items:
 					[
 		{
@@ -4560,7 +4561,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОбщепроизводственные',
 			text: 'Общепроизводственные',
-			style: 'position:absolute;left:6px;top:6px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4589,7 +4590,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОбщехозяйственные',
 			text: 'Общехозяйственные',
-			style: 'position:absolute;left:6px;top:89px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:89px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4618,7 +4619,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыБракВПроизводстве',
 			text: 'Брак в производстве',
-			style: 'position:absolute;left:6px;top:172px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:172px;width:611px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4646,7 +4647,7 @@
 					]
 				},
 				{
-					id: Результат,
+					id: 'Результат',
 					items:
 					[
 		{
@@ -4797,7 +4798,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРезультат,
+			id: 'КоманднаяПанельРезультат',
 			style: 'position:absolute;left:6px;top:6px;width:611px;height:24px;',
 			Привязка:
 			{
@@ -4844,7 +4845,7 @@
 					]
 				},
 				{
-					id: Установить,
+					id: 'Установить',
 					items:
 					[
 		{
@@ -4973,7 +4974,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:425px;width:643px;height:25px;',
 			Привязка:
 			{
@@ -5027,8 +5028,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -5040,19 +5040,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

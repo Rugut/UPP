@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельСведений,
+			id: 'ПанельСведений',
 			style: 'position:absolute;left:8px;top:140px;width:844px;height:360px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:844,
 			Верх:140,
 			Лево:8,
+			Групповой: true,
 			height: 360,width: 844,
 			items:
 			[
 				{
-					id: Организация,
+					id: 'Организация',
 					items:
 					[
 		{
@@ -493,7 +494,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы11',
 			text: 'Основные сведения',
-			style: 'position:absolute;left:8px;top:8px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:8px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -522,7 +523,7 @@
 			xtype: 'label',
 			id: 'КонтактнаяИнформация',
 			text: 'Контактная информация',
-			style: 'position:absolute;left:8px;top:204px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:204px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -611,7 +612,7 @@
 					]
 				},
 				{
-					id: ВладельцыЭЦП,
+					id: 'ВладельцыЭЦП',
 					items:
 					[
 		{
@@ -810,7 +811,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДанныеСотрудника',
 			text: 'Кадровые данные',
-			style: 'position:absolute;left:8px;top:132px;width:824px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:132px;width:824px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -903,7 +904,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДокументУдовЛичность2',
 			text: 'Документ, удостоверяющий личность',
-			style: 'position:absolute;left:8px;top:188px;width:824px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:188px;width:824px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1089,7 +1090,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы19',
 			text: '',
-			style: 'position:absolute;left:8px;top:84px;width:824px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:84px;width:824px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1144,12 +1145,7 @@
 			Лево:756,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Директор',
 			boxLabel: 'Руководитель',
 			style: 'position:absolute;left:124px;top:8px;width:120px;height:15px;',
@@ -1178,7 +1174,7 @@
 			Лево:124,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ГлавныйБухгалтер',
 			boxLabel: 'Главный бухгалтер',
 			style: 'position:absolute;left:124px;top:30px;width:120px;height:15px;',
@@ -1207,7 +1203,7 @@
 			Лево:124,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Исполнитель',
 			boxLabel: 'Другой сотрудник:',
 			style: 'position:absolute;left:124px;top:52px;width:124px;height:15px;',
@@ -1235,12 +1231,10 @@
 			Верх:52,
 			Лево:124,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Направления,
+					id: 'Направления',
 					items:
 					[
 		{
@@ -1375,7 +1369,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНаправления,
+			id: 'КоманднаяПанельНаправления',
 			style: 'position:absolute;left:8px;top:8px;width:828px;height:24px;',
 			Привязка:
 			{
@@ -1435,7 +1429,7 @@
 					]
 				},
 				{
-					id: УЦ,
+					id: 'УЦ',
 					items:
 					[
 		{
@@ -1561,7 +1555,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Соглашение о предоставлении услуг удостоверяющего центра',
-			style: 'position:absolute;left:8px;top:64px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:64px;width:828px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1589,7 +1583,7 @@
 					]
 				},
 				{
-					id: Криптопровайдер,
+					id: 'Криптопровайдер',
 					items:
 					[
 		{
@@ -1709,7 +1703,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'VipNet',
 			boxLabel: 'VipNet CSP',
 			style: 'position:absolute;left:136px;top:8px;width:704px;height:16px;',
@@ -1738,7 +1732,7 @@
 			Лево:136,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'CryptoPro',
 			boxLabel: 'CryptoPro CSP',
 			style: 'position:absolute;left:136px;top:64px;width:704px;height:16px;',
@@ -1769,7 +1763,7 @@
 					]
 				},
 				{
-					id: Информация,
+					id: 'Информация',
 					items:
 					[
 		{
@@ -1991,7 +1985,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:508px;width:860px;height:25px;',
 			Привязка:
 			{
@@ -2048,7 +2042,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:860px;height:25px;',
 			Привязка:
 			{
@@ -2107,7 +2101,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ИнформационнаяПанельВнешняя,
+			id: 'ИнформационнаяПанельВнешняя',
 			style: 'position:absolute;left:8px;top:33px;width:844px;height:40px;',
 			Привязка:
 			{
@@ -2132,12 +2126,13 @@
 			Ширина:844,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 40,width: 844,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -2426,8 +2421,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2439,19 +2433,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

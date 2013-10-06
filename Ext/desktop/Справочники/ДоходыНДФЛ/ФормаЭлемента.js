@@ -381,7 +381,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:471px;height:25px;',
 			Привязка:
 			{
@@ -413,12 +413,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчитыватьПоПериодуДействия',
 			boxLabel: 'По месяцу, за который производится начисление',
 			style: 'position:absolute;left:16px;top:147px;width:276px;height:19px;',
@@ -447,7 +442,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчитыватьПоПериодуДействия1',
 			boxLabel: 'По месяцу начисления',
 			style: 'position:absolute;left:16px;top:169px;width:276px;height:19px;',
@@ -475,15 +470,13 @@
 			Верх:169,
 			Лево:16,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:222px;width:471px;height:25px;',
 			Привязка:
 			{
@@ -539,8 +532,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -552,19 +544,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

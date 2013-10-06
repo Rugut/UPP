@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -290,7 +290,7 @@
 			xtype: 'label',
 			id: 'РамкаПараметрыПечати',
 			text: 'Параметры печати',
-			style: 'position:absolute;left:8px;top:168px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:168px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -562,7 +562,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтбор,
+			id: 'ПанельОтбор',
 			style: 'position:absolute;left:8px;top:33px;width:764px;height:130px;',
 			Привязка:
 			{
@@ -587,12 +587,13 @@
 			Ширина:764,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 130,width: 764,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -1177,7 +1178,7 @@
 			xtype: 'label',
 			id: 'РамкаПараметрыЦены',
 			text: 'Параметры расчета цены',
-			style: 'position:absolute;left:6px;top:85px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:85px;width:752px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1232,12 +1233,7 @@
 			Лево:473,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ХарактеристикиЗаполненные',
 			boxLabel: 'заполненные',
 			style: 'position:absolute;left:584px;top:13px;width:85px;height:19px;',
@@ -1266,7 +1262,7 @@
 			Лево:584,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ХарактеристикиНеЗаполненные',
 			boxLabel: 'пустые',
 			style: 'position:absolute;left:675px;top:13px;width:55px;height:19px;',
@@ -1294,15 +1290,8 @@
 			Верх:13,
 			Лево:675,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СерииЗаполненные',
 			boxLabel: 'заполненные',
 			style: 'position:absolute;left:584px;top:37px;width:87px;height:19px;',
@@ -1331,7 +1320,7 @@
 			Лево:584,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СерииНеЗаполненные',
 			boxLabel: 'пустые',
 			style: 'position:absolute;left:675px;top:37px;width:57px;height:19px;',
@@ -1359,15 +1348,8 @@
 			Верх:37,
 			Лево:675,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВВалютахЦен',
 			boxLabel: 'В валютах цен',
 			style: 'position:absolute;left:469px;top:105px;width:96px;height:19px;',
@@ -1396,7 +1378,7 @@
 			Лево:469,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель1',
 			boxLabel: 'Валюта:',
 			style: 'position:absolute;left:570px;top:105px;width:60px;height:19px;',
@@ -1424,8 +1406,6 @@
 			Верх:105,
 			Лево:570,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -1434,7 +1414,7 @@
 			xtype: 'label',
 			id: 'РамкаТаблица',
 			text: 'Строки для этикеток',
-			style: 'position:absolute;left:8px;top:231px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:231px;width:764px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1526,8 +1506,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1539,19 +1518,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

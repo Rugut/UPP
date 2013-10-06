@@ -297,7 +297,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:723px;height:25px;',
 			Привязка:
 			{
@@ -330,7 +330,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:419px;width:723px;height:25px;',
 			Привязка:
 			{
@@ -393,7 +393,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:104px;width:707px;height:258px;',
 			Привязка:
 			{
@@ -418,11 +418,12 @@
 			Ширина:707,
 			Верх:104,
 			Лево:8,
+			Групповой: true,
 			height: 258,width: 707,
 			items:
 			[
 				{
-					id: ДанныеПоРасчетам,
+					id: 'ДанныеПоРасчетам',
 					items:
 					[
 		{
@@ -609,7 +610,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДанныеПоРасчетам,
+			id: 'КоманднаяПанельДанныеПоРасчетам',
 			style: 'position:absolute;left:5px;top:6px;width:695px;height:24px;',
 			Привязка:
 			{
@@ -645,12 +646,12 @@
 					]
 				},
 				{
-					id: ДанныеПоАвансам,
+					id: 'ДанныеПоАвансам',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДанныеПоАвансам,
+			id: 'КоманднаяПанельДанныеПоАвансам',
 			style: 'position:absolute;left:6px;top:6px;width:694px;height:24px;',
 			Привязка:
 			{
@@ -868,7 +869,7 @@
 					]
 				},
 				{
-					id: РезервыПоСомнительнымДолгам,
+					id: 'РезервыПоСомнительнымДолгам',
 					items:
 					[
 		{
@@ -1001,7 +1002,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДанныеПоРезервамПоСомнительнымДолгам,
+			id: 'КоманднаяПанельДанныеПоРезервамПоСомнительнымДолгам',
 			style: 'position:absolute;left:6px;top:41px;width:693px;height:24px;',
 			Привязка:
 			{
@@ -1039,7 +1040,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУчетнаяПолитикаРезервы,
+			id: 'ПанельУчетнаяПолитикаРезервы',
 			style: 'position:absolute;left:6px;top:6px;width:693px;height:36px;',
 			Привязка:
 			{
@@ -1064,12 +1065,13 @@
 			Ширина:693,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 36,width: 693,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаНадпись,
+					id: 'СтраницаНадпись',
 				},
 			]
 		},
@@ -1377,8 +1379,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1390,19 +1391,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

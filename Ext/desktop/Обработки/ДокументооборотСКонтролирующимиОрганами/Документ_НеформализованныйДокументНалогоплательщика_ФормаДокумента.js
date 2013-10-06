@@ -113,7 +113,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:591px;height:25px;',
 			Привязка:
 			{
@@ -229,7 +229,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Содержание',
-			style: 'position:absolute;left:8px;top:112px;width:575px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:112px;width:575px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -409,7 +409,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСодержимое,
+			id: 'ПанельСодержимое',
 			style: 'position:absolute;left:8px;top:152px;width:575px;height:291px;',
 			Привязка:
 			{
@@ -434,12 +434,13 @@
 			Ширина:575,
 			Верх:152,
 			Лево:8,
+			Групповой: true,
 			height: 291,width: 575,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Текст,
+					id: 'Текст',
 					items:
 					[
 		{
@@ -564,7 +565,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТекст,
+			id: 'КоманднаяПанельТекст',
 			style: 'position:absolute;left:526px;top:0px;width:49px;height:25px;',
 			Привязка:
 			{
@@ -611,12 +612,12 @@
 					]
 				},
 				{
-					id: Документ,
+					id: 'Документ',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСодержимое,
+			id: 'КоманднаяПанельСодержимое',
 			style: 'position:absolute;left:526px;top:0px;width:49px;height:25px;',
 			Привязка:
 			{
@@ -786,12 +787,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСодержимое',
 			boxLabel: 'обычный текст',
 			style: 'position:absolute;left:106px;top:134px;width:101px;height:15px;',
@@ -820,7 +816,7 @@
 			Лево:106,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВнешнийДокумент',
 			boxLabel: 'внешний документ (doc-, rtf- или xls-файл)',
 			style: 'position:absolute;left:220px;top:134px;width:233px;height:15px;',
@@ -848,15 +844,13 @@
 			Верх:134,
 			Лево:220,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:451px;width:591px;height:25px;',
 			Привязка:
 			{
@@ -912,8 +906,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -925,19 +918,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

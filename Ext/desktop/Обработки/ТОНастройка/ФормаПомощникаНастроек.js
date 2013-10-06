@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПомощникПиНТО,
+			id: 'ПомощникПиНТО',
 			style: 'position:absolute;left:8px;top:8px;width:637px;height:352px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:637,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 352,width: 637,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Приветствие,
+					id: 'Приветствие',
 					items:
 					[
 		{
@@ -172,7 +173,7 @@
 					]
 				},
 				{
-					id: ВыборВидаТО,
+					id: 'ВыборВидаТО',
 					items:
 					[
 		{
@@ -208,7 +209,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы21',
 			text: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:286px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:166px;top:286px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -292,12 +293,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО',
 			boxLabel: 'Сканер штрихкода',
 			style: 'position:absolute;left:203px;top:43px;width:177px;height:19px;',
@@ -326,7 +322,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО2',
 			boxLabel: 'Фискальный регистратор',
 			style: 'position:absolute;left:203px;top:80px;width:177px;height:19px;',
@@ -355,7 +351,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО3',
 			boxLabel: 'Терминал сбора данных',
 			style: 'position:absolute;left:203px;top:117px;width:177px;height:19px;',
@@ -384,7 +380,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО4',
 			boxLabel: 'Дисплей покупателя',
 			style: 'position:absolute;left:203px;top:154px;width:177px;height:19px;',
@@ -413,7 +409,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО5',
 			boxLabel: 'Считыватель магнитных карт',
 			style: 'position:absolute;left:203px;top:191px;width:177px;height:19px;',
@@ -442,7 +438,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО6',
 			boxLabel: 'Электронные весы',
 			style: 'position:absolute;left:203px;top:228px;width:177px;height:19px;',
@@ -471,7 +467,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО7',
 			boxLabel: 'Весы с печатью этикеток',
 			style: 'position:absolute;left:430px;top:43px;width:177px;height:19px;',
@@ -500,7 +496,7 @@
 			Лево:430,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО8',
 			boxLabel: 'ККМ в режиме Offline',
 			style: 'position:absolute;left:430px;top:80px;width:177px;height:19px;',
@@ -529,7 +525,7 @@
 			Лево:430,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО9',
 			boxLabel: 'ККМ в режиме Online',
 			style: 'position:absolute;left:430px;top:117px;width:177px;height:19px;',
@@ -558,7 +554,7 @@
 			Лево:430,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО10',
 			boxLabel: 'Эквайринговая система',
 			style: 'position:absolute;left:430px;top:149px;width:177px;height:19px;',
@@ -587,7 +583,7 @@
 			Лево:430,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидТО11',
 			boxLabel: 'Считыватель RFID меток',
 			style: 'position:absolute;left:430px;top:186px;width:177px;height:19px;',
@@ -615,12 +611,10 @@
 			Верх:186,
 			Лево:430,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ВыборДрайвера,
+					id: 'ВыборДрайвера',
 					items:
 					[
 		{
@@ -653,7 +647,7 @@
 			Лево:166,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДрайверТОИспользовать',
 			boxLabel: 'Использовать загруженную ранее обработку обслуживания',
 			style: 'position:absolute;left:166px;top:65px;width:332px;height:19px;',
@@ -682,7 +676,7 @@
 			Лево:166,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДрайверТОДобавить',
 			boxLabel: 'Добавить новую обработку обслуживания',
 			style: 'position:absolute;left:166px;top:41px;width:307px;height:19px;',
@@ -714,7 +708,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы41',
 			text: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:250px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:166px;top:250px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -901,12 +895,7 @@
 			Лево:183,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОбновитьИзКаталога',
 			boxLabel: 'Из каталога',
 			style: 'position:absolute;left:390px;top:89px;width:108px;height:19px;',
@@ -935,7 +924,7 @@
 			Лево:390,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОбновитьССайта',
 			boxLabel: 'С сайта',
 			style: 'position:absolute;left:503px;top:89px;width:108px;height:19px;',
@@ -963,12 +952,10 @@
 			Верх:89,
 			Лево:503,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ДобавлениеОбработкиОбслуживания,
+					id: 'ДобавлениеОбработкиОбслуживания',
 					items:
 					[
 		{
@@ -1090,7 +1077,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы43',
 			text: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:214px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:166px;top:214px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1232,7 +1219,7 @@
 			Лево:203,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИзКаталога',
 			boxLabel: 'Из каталога:',
 			style: 'position:absolute;left:166px;top:41px;width:85px;height:19px;',
@@ -1261,7 +1248,7 @@
 			Лево:166,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ССайта',
 			boxLabel: 'С сайта',
 			style: 'position:absolute;left:166px;top:65px;width:85px;height:19px;',
@@ -1321,7 +1308,7 @@
 					]
 				},
 				{
-					id: ВыборУстройства,
+					id: 'ВыборУстройства',
 					items:
 					[
 		{
@@ -1354,7 +1341,7 @@
 			Лево:166,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'МодельТОСозданная',
 			boxLabel: 'Использовать ранее созданное устройство',
 			style: 'position:absolute;left:166px;top:65px;width:245px;height:19px;',
@@ -1383,7 +1370,7 @@
 			Лево:166,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'МодельТОДобавить',
 			boxLabel: 'Добавить новое устройство',
 			style: 'position:absolute;left:166px;top:41px;width:228px;height:19px;',
@@ -1415,7 +1402,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы42',
 			text: 'Дополнительная информация',
-			style: 'position:absolute;left:166px;top:283px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:166px;top:283px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1646,7 +1633,7 @@
 					]
 				},
 				{
-					id: ДобавлениеНовогоУстройства,
+					id: 'ДобавлениеНовогоУстройства',
 					items:
 					[
 		{
@@ -1911,7 +1898,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ПанельПерехода,
+			id: 'ПанельПерехода',
 			style: 'position:absolute;left:0px;top:367px;width:653px;height:25px;',
 			Привязка:
 			{
@@ -1966,8 +1953,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1979,19 +1965,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

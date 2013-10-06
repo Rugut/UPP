@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:643px;height:25px;',
 			Привязка:
 			{
@@ -366,7 +366,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:208px;width:627px;height:309px;',
 			Привязка:
 			{
@@ -391,17 +391,18 @@
 			Ширина:627,
 			Верх:208,
 			Лево:8,
+			Групповой: true,
 			height: 309,width: 627,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Начисления,
+					id: 'Начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОсновныеНачисления,
+			id: 'КоманднаяПанельОсновныеНачисления',
 			style: 'position:absolute;left:0px;top:17px;width:627px;height:24px;',
 			Привязка:
 			{
@@ -861,7 +862,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Сотрудники и показатели для расчета',
-			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:627px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -953,7 +954,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель2,
+			id: 'Панель2',
 			style: 'position:absolute;left:10px;top:83px;width:624px;height:119px;',
 			Привязка:
 			{
@@ -978,12 +979,13 @@
 			Ширина:624,
 			Верх:83,
 			Лево:10,
+			Групповой: true,
 			height: 119,width: 624,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1232,12 +1234,7 @@
 			Лево:272,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВнестиИлиИзменитьНачисление',
 			boxLabel: 'Внести или изменить начисление ',
 			style: 'position:absolute;left:18px;top:25px;width:221px;height:19px;',
@@ -1266,7 +1263,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрекратитьНачисление',
 			boxLabel: 'Прекратить начисление',
 			style: 'position:absolute;left:18px;top:48px;width:221px;height:19px;',
@@ -1295,7 +1292,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВнестиИлиИзменитьУдержание',
 			boxLabel: 'Внести или изменить удержание ',
 			style: 'position:absolute;left:18px;top:71px;width:221px;height:19px;',
@@ -1324,7 +1321,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПрекратитьУдержание',
 			boxLabel: 'Прекратить удержание',
 			style: 'position:absolute;left:18px;top:94px;width:221px;height:19px;',
@@ -1352,8 +1349,6 @@
 			Верх:94,
 			Лево:18,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -1364,7 +1359,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:548px;width:643px;height:25px;',
 			Привязка:
 			{
@@ -1420,8 +1415,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1433,19 +1427,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

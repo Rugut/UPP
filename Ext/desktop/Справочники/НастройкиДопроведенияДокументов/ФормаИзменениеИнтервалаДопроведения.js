@@ -424,12 +424,7 @@
 			Лево:290,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РассчитыватьНачалоИнтервала1',
 			boxLabel: '',
 			style: 'position:absolute;left:16px;top:53px;width:15px;height:19px;',
@@ -458,7 +453,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РассчитыватьНачалоИнтервала2',
 			boxLabel: '',
 			style: 'position:absolute;left:16px;top:77px;width:15px;height:19px;',
@@ -486,15 +481,8 @@
 			Верх:77,
 			Лево:16,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РассчитыватьКонецИнтервала1',
 			boxLabel: '',
 			style: 'position:absolute;left:269px;top:53px;width:15px;height:19px;',
@@ -523,7 +511,7 @@
 			Лево:269,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РассчитыватьКонецИнтервала2',
 			boxLabel: '',
 			style: 'position:absolute;left:269px;top:77px;width:15px;height:19px;',
@@ -551,15 +539,13 @@
 			Верх:77,
 			Лево:269,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:115px;width:513px;height:25px;',
 			Привязка:
 			{
@@ -613,8 +599,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -626,19 +611,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

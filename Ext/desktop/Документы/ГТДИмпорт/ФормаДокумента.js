@@ -205,7 +205,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:667px;height:25px;',
 			Привязка:
 			{
@@ -346,7 +346,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:116px;width:651px;height:258px;',
 			Привязка:
 			{
@@ -371,11 +371,12 @@
 			Ширина:651,
 			Верх:116,
 			Лево:8,
+			Групповой: true,
 			height: 258,width: 651,
 			items:
 			[
 				{
-					id: Основные,
+					id: 'Основные',
 					items:
 					[
 		{
@@ -725,7 +726,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Таможенный сбор',
-			style: 'position:absolute;left:6px;top:38px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:38px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -753,7 +754,7 @@
 					]
 				},
 				{
-					id: РазделыГТД,
+					id: 'РазделыГТД',
 					items:
 					[
 		{
@@ -787,7 +788,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТовары,
+			id: 'КоманднаяПанельТовары',
 			style: 'position:absolute;left:6px;top:107px;width:636px;height:24px;',
 			Привязка:
 			{
@@ -1225,7 +1226,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРазделов,
+			id: 'ПанельРазделов',
 			style: 'position:absolute;left:6px;top:6px;width:636px;height:88px;',
 			Привязка:
 			{
@@ -1250,12 +1251,13 @@
 			Ширина:636,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 88,width: 636,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: НесколькоРазделов,
+					id: 'НесколькоРазделов',
 					items:
 					[
 		{
@@ -1416,7 +1418,7 @@
 					]
 				},
 				{
-					id: ОдинРаздел,
+					id: 'ОдинРаздел',
 					items:
 					[
 		{
@@ -1712,7 +1714,7 @@
 			xtype: 'label',
 			id: 'РамкаТоварыРаздела',
 			text: 'Рамка',
-			style: 'position:absolute;left:6px;top:91px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:91px;width:636px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1740,7 +1742,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -1992,7 +1994,7 @@
 					]
 				},
 				{
-					id: СчетаУчета,
+					id: 'СчетаУчета',
 					items:
 					[
 		{
@@ -2251,7 +2253,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: ' Расчеты в валюте регламентированного учета',
-			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2280,7 +2282,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: ' Расчеты в иностранной валюте ',
-			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:102px;width:637px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3109,7 +3111,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:408px;width:667px;height:25px;',
 			Привязка:
 			{
@@ -3171,8 +3173,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3184,19 +3185,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

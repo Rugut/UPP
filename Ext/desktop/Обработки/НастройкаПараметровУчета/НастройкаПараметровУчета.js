@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельНастроек,
+			id: 'ПанельНастроек',
 			style: 'position:absolute;left:7px;top:8px;width:689px;height:506px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:689,
 			Верх:8,
 			Лево:7,
+			Групповой: true,
 			height: 506,width: 689,
 			items:
 			[
 				{
-					id: АлгоритмыРасчетов,
+					id: 'АлгоритмыРасчетов',
 					items:
 					[
 		{
@@ -198,7 +199,7 @@
 			Лево:42,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокПересчетаМесячнойСтавкиВЧасовую2',
 			boxLabel: 'Месячную норму по производственному календарю',
 			style: 'position:absolute;left:26px;top:247px;width:281px;height:19px;',
@@ -227,12 +228,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УдержаниеЗаОтпускУменьшаетНалоги',
 			boxLabel: 'Не уменьшает налоги и взносы (НДФЛ, страховые взносы и пр.)',
 			style: 'position:absolute;left:26px;top:76px;width:357px;height:19px;',
@@ -261,7 +257,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УдержаниеЗаОтпускУменьшаетНалоги1',
 			boxLabel: 'Уменьшает налоги и взносы',
 			style: 'position:absolute;left:26px;top:100px;width:281px;height:19px;',
@@ -289,15 +285,8 @@
 			Верх:100,
 			Лево:26,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокПересчетаМесячнойСтавкиВЧасовую',
 			boxLabel: 'Месячную норму времени по графику сотрудника',
 			style: 'position:absolute;left:26px;top:199px;width:281px;height:19px;',
@@ -326,7 +315,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокПересчетаМесячнойСтавкиВЧасовую1',
 			boxLabel: 'Среднее за год количество часов в месяце',
 			style: 'position:absolute;left:26px;top:223px;width:281px;height:19px;',
@@ -355,7 +344,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'по центрам ответственности',
 			style: 'position:absolute;left:42px;top:348px;width:179px;height:19px;',
@@ -383,12 +372,10 @@
 			Верх:348,
 			Лево:42,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: КадровыйУчет,
+					id: 'КадровыйУчет',
 					items:
 					[
 		{
@@ -834,7 +821,7 @@
 			xtype: 'label',
 			id: 'РамкаРазделитель78',
 			text: '',
-			style: 'position:absolute;left:26px;top:408px;width:460px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:26px;top:408px;width:460px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -863,7 +850,7 @@
 			xtype: 'label',
 			id: 'РамкаРазделитель79',
 			text: '',
-			style: 'position:absolute;left:26px;top:203px;width:460px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:26px;top:203px;width:460px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -976,12 +963,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'КадровымиПриказами',
 			boxLabel: 'Кадровыми приказами',
 			style: 'position:absolute;left:42px;top:430px;width:158px;height:19px;',
@@ -1010,7 +992,7 @@
 			Лево:42,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РасчетнымиДокументами',
 			boxLabel: 'Расчетными документами',
 			style: 'position:absolute;left:42px;top:449px;width:158px;height:19px;',
@@ -1038,12 +1020,10 @@
 			Верх:449,
 			Лево:42,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: РасчетЗарплаты,
+					id: 'РасчетЗарплаты',
 					items:
 					[
 		{
@@ -1735,7 +1715,7 @@
 					]
 				},
 				{
-					id: ВыплатаЗарплаты,
+					id: 'ВыплатаЗарплаты',
 					items:
 					[
 		{
@@ -2098,7 +2078,7 @@
 					]
 				},
 				{
-					id: БухучетЗарплаты,
+					id: 'БухучетЗарплаты',
 					items:
 					[
 		{
@@ -2401,12 +2381,7 @@
 			Лево:58,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РасходыПоОтпускам',
 			boxLabel: 'в месяце начисления',
 			style: 'position:absolute;left:42px;top:119px;width:391px;height:19px;',
@@ -2435,7 +2410,7 @@
 			Лево:42,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РасходыПоОтпускам1',
 			boxLabel: 'БУ в месяце начисления, НУ в месяце, на который приходится отпуск',
 			style: 'position:absolute;left:42px;top:139px;width:391px;height:19px;',
@@ -2464,7 +2439,7 @@
 			Лево:42,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РасходыПоОтпускам2',
 			boxLabel: 'в месяце, на который приходится отпуск',
 			style: 'position:absolute;left:42px;top:159px;width:391px;height:19px;',
@@ -2492,12 +2467,10 @@
 			Верх:159,
 			Лево:42,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ОценочныеОбязательства,
+					id: 'ОценочныеОбязательства',
 					items:
 					[
 		{
@@ -2646,7 +2619,7 @@
 			Лево:46,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокРасчета',
 			boxLabel: ' Суммы начислений по оплате труда и исчисленные страховые взносы',
 			style: 'position:absolute;left:62px;top:252px;width:382px;height:19px;',
@@ -2675,7 +2648,7 @@
 			Лево:62,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокРасчетаНачисленияИВзносы',
 			boxLabel: ' Суммы начислений по оплате труда',
 			style: 'position:absolute;left:62px;top:272px;width:207px;height:19px;',
@@ -3222,7 +3195,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТаблицаРезервов,
+			id: 'КоманднаяПанельТаблицаРезервов',
 			style: 'position:absolute;left:10px;top:356px;width:496px;height:24px;',
 			Привязка:
 			{
@@ -3267,7 +3240,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКОнтекстТаблицаРезервов,
+			id: 'КоманднаяПанельКОнтекстТаблицаРезервов',
 			style: 'position:absolute;left:351px;top:430px;width:133px;height:24px;',
 			Привязка:
 			{
@@ -3318,7 +3291,7 @@
 					]
 				},
 				{
-					id: СтраховыеВзносы,
+					id: 'СтраховыеВзносы',
 					items:
 					[
 		{
@@ -3725,7 +3698,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТарифыСтраховыхВзносов,
+			id: 'КоманднаяПанельТарифыСтраховыхВзносов',
 			style: 'position:absolute;left:281px;top:193px;width:192px;height:27px;',
 			Привязка:
 			{
@@ -3902,7 +3875,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтавкиФССНС1,
+			id: 'КоманднаяПанельСтавкиФССНС1',
 			style: 'position:absolute;left:326px;top:405px;width:133px;height:24px;',
 			Привязка:
 			{
@@ -3952,7 +3925,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтавкиФССНС,
+			id: 'КоманднаяПанельСтавкиФССНС',
 			style: 'position:absolute;left:10px;top:371px;width:496px;height:24px;',
 			Привязка:
 			{
@@ -4119,7 +4092,7 @@
 					]
 				},
 				{
-					id: РасчетСтраховыхВзносов,
+					id: 'РасчетСтраховыхВзносов',
 					items:
 					[
 		{
@@ -4444,7 +4417,7 @@
 					]
 				},
 				{
-					id: РасчетНДФЛ,
+					id: 'РасчетНДФЛ',
 					items:
 					[
 		{
@@ -4776,12 +4749,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОсобенностиИсчисленияНДФЛ',
 			boxLabel: 'нарастающим итогом в течение налогового периода',
 			style: 'position:absolute;left:26px;top:108px;width:298px;height:15px;',
@@ -4810,7 +4778,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОсобенностиИсчисленияНДФЛ1',
 			boxLabel: 'в пределах месячного дохода налогоплательщика',
 			style: 'position:absolute;left:26px;top:128px;width:298px;height:15px;',
@@ -4838,12 +4806,10 @@
 			Верх:128,
 			Лево:26,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: РазмерыПособий,
+					id: 'РазмерыПособий',
 					items:
 					[
 		{
@@ -4969,7 +4935,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРазмерыПособий,
+			id: 'КоманднаяПанельРазмерыПособий',
 			style: 'position:absolute;left:323px;top:215px;width:122px;height:24px;',
 			Привязка:
 			{
@@ -5220,7 +5186,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПособий2010,
+			id: 'ПанельПособий2010',
 			style: 'position:absolute;left:10px;top:362px;width:496px;height:105px;',
 			Привязка:
 			{
@@ -5245,12 +5211,13 @@
 			Ширина:496,
 			Верх:362,
 			Лево:10,
+			Групповой: true,
 			height: 105,width: 496,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5536,7 +5503,7 @@
 					]
 				},
 				{
-					id: ПрочиеСтавки,
+					id: 'ПрочиеСтавки',
 					items:
 					[
 		{
@@ -5997,7 +5964,7 @@
 					]
 				},
 				{
-					id: РасчетЕСН,
+					id: 'РасчетЕСН',
 					items:
 					[
 		{
@@ -6329,7 +6296,7 @@
 					]
 				},
 				{
-					id: УправленческийУчет,
+					id: 'УправленческийУчет',
 					items:
 					[
 		{
@@ -6362,7 +6329,7 @@
 			Лево:10,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РежимНабораПерсонала',
 			boxLabel: 'по структуре юридических лиц',
 			style: 'position:absolute;left:42px;top:327px;width:179px;height:19px;',
@@ -6811,7 +6778,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДоп,
+			id: 'ПанельДоп',
 			style: 'position:absolute;left:0px;top:522px;width:421px;height:25px;',
 			Привязка:
 			{
@@ -6836,12 +6803,13 @@
 			Ширина:421,
 			Верх:522,
 			Лево:0,
+			Групповой: true,
 			height: 25,width: 421,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -6883,7 +6851,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:387px;top:522px;width:317px;height:25px;',
 			Привязка:
 			{
@@ -6937,8 +6905,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -6950,19 +6917,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

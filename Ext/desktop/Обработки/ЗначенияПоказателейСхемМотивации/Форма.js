@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель,
+			id: 'КоманднаяПанель',
 			style: 'position:absolute;left:0px;top:0px;width:692px;height:25px;',
 			Привязка:
 			{
@@ -108,7 +108,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРежимВвода,
+			id: 'ПанельРежимВвода',
 			style: 'position:absolute;left:8px;top:29px;width:676px;height:324px;',
 			Привязка:
 			{
@@ -133,11 +133,12 @@
 			Ширина:676,
 			Верх:29,
 			Лево:8,
+			Групповой: true,
 			height: 324,width: 676,
 			items:
 			[
 				{
-					id: ЕжемесячныеПоказатели,
+					id: 'ЕжемесячныеПоказатели',
 					items:
 					[
 		{
@@ -270,7 +271,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентраЕжемесячные,
+			id: 'ПанельЭпицентраЕжемесячные',
 			style: 'position:absolute;left:6px;top:6px;width:662px;height:73px;',
 			Привязка:
 			{
@@ -295,19 +296,20 @@
 			Ширина:662,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 73,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыЗарплата2',
 			text: 'Что вводим',
-			style: 'position:absolute;left:6px;top:6px;width:242px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:242px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -336,7 +338,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыЗарплата3',
 			text: 'Режим ввода',
-			style: 'position:absolute;left:320px;top:6px;width:126px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:320px;top:6px;width:126px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -365,7 +367,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыЗарплата4',
 			text: 'Период',
-			style: 'position:absolute;left:504px;top:6px;width:133px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:504px;top:6px;width:133px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -423,12 +425,7 @@
 			Лево:504,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСотрудники',
 			boxLabel: 'Данные по сотрудникам',
 			style: 'position:absolute;left:6px;top:27px;width:242px;height:19px;',
@@ -457,7 +454,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПодразделения',
 			boxLabel: 'Данные по организациям и подразделениям',
 			style: 'position:absolute;left:6px;top:51px;width:259px;height:16px;',
@@ -485,15 +482,8 @@
 			Верх:51,
 			Лево:6,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоПоказателям',
 			boxLabel: 'По показателям',
 			style: 'position:absolute;left:320px;top:27px;width:126px;height:19px;',
@@ -522,7 +512,7 @@
 			Лево:320,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоСотрудникамПодразделениям',
 			boxLabel: '',
 			style: 'position:absolute;left:320px;top:51px;width:126px;height:16px;',
@@ -550,15 +540,13 @@
 			Верх:51,
 			Лево:320,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтборовПоЕжемесячнымПоказателям,
+			id: 'ПанельОтборовПоЕжемесячнымПоказателям',
 			style: 'position:absolute;left:6px;top:87px;width:234px;height:209px;',
 			Привязка:
 			{
@@ -583,12 +571,13 @@
 			Ширина:234,
 			Верх:87,
 			Лево:6,
+			Групповой: true,
 			height: 209,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Сотрудники,
+					id: 'Сотрудники',
 					items:
 					[
 		{
@@ -694,7 +683,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОрганизацияСотрудников,
+			id: 'ПанельОрганизацияСотрудников',
 			style: 'position:absolute;left:0px;top:0px;width:234px;height:19px;',
 			Привязка:
 			{
@@ -719,12 +708,13 @@
 			Ширина:234,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 19,width: 234,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -825,7 +815,7 @@
 					]
 				},
 				{
-					id: Подразделения,
+					id: 'Подразделения',
 					items:
 					[
 		{
@@ -914,7 +904,7 @@
 					]
 				},
 				{
-					id: Показатели,
+					id: 'Показатели',
 					items:
 					[
 		{
@@ -1003,7 +993,7 @@
 					]
 				},
 				{
-					id: ЦФО,
+					id: 'ЦФО',
 					items:
 					[
 		{
@@ -1086,7 +1076,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюЕжемесячныхПоказателей,
+			id: 'КонтекстноеМенюЕжемесячныхПоказателей',
 			style: 'position:absolute;left:246px;top:87px;width:422px;height:24px;',
 			Привязка:
 			{
@@ -1149,7 +1139,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюЕжемесячныхПоказателей1,
+			id: 'КонтекстноеМенюЕжемесячныхПоказателей1',
 			style: 'position:absolute;left:401px;top:192px;width:267px;height:24px;',
 			Привязка:
 			{
@@ -1213,12 +1203,12 @@
 					]
 				},
 				{
-					id: Постоянные,
+					id: 'Постоянные',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентраПостоянные,
+			id: 'ПанельЭпицентраПостоянные',
 			style: 'position:absolute;left:6px;top:6px;width:662px;height:73px;',
 			Привязка:
 			{
@@ -1243,19 +1233,20 @@
 			Ширина:662,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 73,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыЗарплата5',
 			text: 'Что вводим',
-			style: 'position:absolute;left:6px;top:6px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:384px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1344,12 +1335,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоОрганизации',
 			boxLabel: 'Данные по организации:',
 			style: 'position:absolute;left:6px;top:27px;width:155px;height:19px;',
@@ -1378,7 +1364,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель5',
 			boxLabel: 'Общие данные',
 			style: 'position:absolute;left:6px;top:51px;width:148px;height:16px;',
@@ -1406,15 +1392,13 @@
 			Верх:51,
 			Лево:6,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПериодическиеПоказатели,
+			id: 'ПанельПериодическиеПоказатели',
 			style: 'position:absolute;left:6px;top:85px;width:662px;height:211px;',
 			Привязка:
 			{
@@ -1439,12 +1423,13 @@
 			Ширина:662,
 			Верх:85,
 			Лево:6,
+			Групповой: true,
 			height: 211,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоОрганизации,
+					id: 'ПоОрганизации',
 					items:
 					[
 		{
@@ -1550,7 +1535,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюПериодическихПоказателей,
+			id: 'КонтекстноеМенюПериодическихПоказателей',
 			style: 'position:absolute;left:240px;top:1px;width:422px;height:24px;',
 			Привязка:
 			{
@@ -1607,7 +1592,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПодразделенийПостоянныхПоказателей,
+			id: 'ПанельПодразделенийПостоянныхПоказателей',
 			style: 'position:absolute;left:0px;top:0px;width:233px;height:211px;',
 			Привязка:
 			{
@@ -1632,12 +1617,13 @@
 			Ширина:233,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 211,width: 233,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПодразделенияОрганизаций,
+					id: 'ПодразделенияОрганизаций',
 					items:
 					[
 		{
@@ -1717,7 +1703,7 @@
 					]
 				},
 				{
-					id: Подразделения,
+					id: 'Подразделения',
 					items:
 					[
 		{
@@ -1801,7 +1787,7 @@
 					]
 				},
 				{
-					id: ОбщиеДанные,
+					id: 'ОбщиеДанные',
 					items:
 					[
 		{
@@ -1907,7 +1893,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПлановыеЗначенияПоказателейСхемМотивацииОбщие,
+			id: 'КоманднаяПанельПлановыеЗначенияПоказателейСхемМотивацииОбщие',
 			style: 'position:absolute;left:0px;top:0px;width:662px;height:24px;',
 			Привязка:
 			{
@@ -1974,8 +1960,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1987,19 +1972,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

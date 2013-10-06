@@ -454,7 +454,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:8px;top:143px;width:514px;height:25px;',
 			Привязка:
 			{
@@ -647,7 +647,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:530px;height:25px;',
 			Привязка:
 			{
@@ -859,7 +859,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНовыеОстаткиПоСчетамБюджетирования',
 			text: 'Новые остатки по счетам бюджетирования',
-			style: 'position:absolute;left:8px;top:127px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:127px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -888,7 +888,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСпособКорректировки',
 			text: 'Способ корректировки остатков',
-			style: 'position:absolute;left:8px;top:81px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:81px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -914,12 +914,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВыборочнаяКорректировка',
 			boxLabel: 'Только по счетам, указанным в табличной части',
 			style: 'position:absolute;left:13px;top:102px;width:271px;height:16px;',
@@ -948,7 +943,7 @@
 			Лево:13,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВыборочнаяКорректировка1',
 			boxLabel: 'По всем счетам',
 			style: 'position:absolute;left:291px;top:102px;width:110px;height:15px;',
@@ -976,15 +971,13 @@
 			Верх:102,
 			Лево:291,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:468px;width:530px;height:25px;',
 			Привязка:
 			{
@@ -1040,8 +1033,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1053,19 +1045,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

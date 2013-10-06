@@ -262,7 +262,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПачки,
+			id: 'КоманднаяПанельПачки',
 			style: 'position:absolute;left:8px;top:81px;width:275px;height:24px;',
 			Привязка:
 			{
@@ -401,7 +401,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДокумент,
+			id: 'ПанельДокумент',
 			style: 'position:absolute;left:300px;top:81px;width:662px;height:154px;',
 			Привязка:
 			{
@@ -426,12 +426,13 @@
 			Ширина:662,
 			Верх:81,
 			Лево:300,
+			Групповой: true,
 			height: 154,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: АДВ11,
+					id: 'АДВ11',
 					items:
 					[
 		{
@@ -625,7 +626,7 @@
 			xtype: 'label',
 			id: 'РамкаУплатаСтраховыхВзносов',
 			text: 'Уплата страховых взносов на обязательное пенсионное страхование',
-			style: 'position:absolute;left:0px;top:53px;width:662px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:53px;width:662px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -801,7 +802,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУплатаСтраховыхВзносов,
+			id: 'ПанельУплатаСтраховыхВзносов',
 			style: 'position:absolute;left:0px;top:69px;width:662px;height:85px;',
 			Привязка:
 			{
@@ -826,12 +827,13 @@
 			Ширина:662,
 			Верх:69,
 			Лево:0,
+			Групповой: true,
 			height: 85,width: 662,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ТаблицаВзносов,
+					id: 'ТаблицаВзносов',
 					items:
 					[
 		{
@@ -955,7 +957,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчеты,
+			id: 'КоманднаяПанельРасчеты',
 			style: 'position:absolute;left:0px;top:0px;width:662px;height:24px;',
 			Привязка:
 			{
@@ -1018,7 +1020,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 					items:
 					[
 		{
@@ -1057,7 +1059,7 @@
 					]
 				},
 				{
-					id: СЗВ4,
+					id: 'СЗВ4',
 					items:
 					[
 		{
@@ -1340,12 +1342,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидКорректировки',
 			boxLabel: 'Отсутствует',
 			style: 'position:absolute;left:485px;top:20px;width:117px;height:15px;',
@@ -1374,7 +1371,7 @@
 			Лево:485,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель4',
 			boxLabel: 'Корректирующие',
 			style: 'position:absolute;left:485px;top:38px;width:117px;height:15px;',
@@ -1403,7 +1400,7 @@
 			Лево:485,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель5',
 			boxLabel: 'Отменяющие',
 			style: 'position:absolute;left:485px;top:56px;width:117px;height:15px;',
@@ -1431,15 +1428,8 @@
 			Верх:56,
 			Лево:485,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипФормДокументов',
 			boxLabel: 'СЗВ-4-1',
 			style: 'position:absolute;left:7px;top:74px;width:57px;height:19px;',
@@ -1468,7 +1458,7 @@
 			Лево:7,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СЗВ_4_2',
 			boxLabel: 'СЗВ-4-2',
 			style: 'position:absolute;left:7px;top:98px;width:57px;height:19px;',
@@ -1496,12 +1486,10 @@
 			Верх:98,
 			Лево:7,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
@@ -1714,7 +1702,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ДанныеСЗВ4,
+			id: 'ДанныеСЗВ4',
 			style: 'position:absolute;left:8px;top:266px;width:954px;height:243px;',
 			Привязка:
 			{
@@ -1739,12 +1727,13 @@
 			Ширина:954,
 			Верх:266,
 			Лево:8,
+			Групповой: true,
 			height: 243,width: 954,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СЗВ4,
+					id: 'СЗВ4',
 					items:
 					[
 		{
@@ -1841,7 +1830,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизлицаПачек,
+			id: 'КоманднаяПанельФизлицаПачек',
 			style: 'position:absolute;left:0px;top:0px;width:275px;height:24px;',
 			Привязка:
 			{
@@ -1907,7 +1896,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСтажа',
 			text: 'Стаж работы за отчетный период',
-			style: 'position:absolute;left:290px;top:115px;width:664px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:290px;top:115px;width:664px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1934,7 +1923,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСтажФизлица,
+			id: 'ПанельСтажФизлица',
 			style: 'position:absolute;left:290px;top:131px;width:664px;height:112px;',
 			Привязка:
 			{
@@ -1959,17 +1948,18 @@
 			Ширина:664,
 			Верх:131,
 			Лево:290,
+			Групповой: true,
 			height: 112,width: 664,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаСЗВ41,
+					id: 'СтраницаСЗВ41',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтажа,
+			id: 'КоманднаяПанельСтажа',
 			style: 'position:absolute;left:0px;top:0px;width:664px;height:24px;',
 			Привязка:
 			{
@@ -2317,7 +2307,7 @@
 					]
 				},
 				{
-					id: СтраницаСЗВ42,
+					id: 'СтраницаСЗВ42',
 					items:
 					[
 		{
@@ -2452,7 +2442,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВзносыИОтсутствия,
+			id: 'ПанельВзносыИОтсутствия',
 			style: 'position:absolute;left:290px;top:0px;width:664px;height:108px;',
 			Привязка:
 			{
@@ -2477,19 +2467,20 @@
 			Ширина:664,
 			Верх:0,
 			Лево:290,
+			Групповой: true,
 			height: 108,width: 664,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаСоВсемиВзносами,
+					id: 'СтраницаСоВсемиВзносами',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Сумма начисленных страховых взносов',
-			style: 'position:absolute;left:0px;top:0px;width:467px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:467px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2518,7 +2509,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Периоды отсутствия',
-			style: 'position:absolute;left:0px;top:45px;width:467px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:45px;width:467px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2857,7 +2848,7 @@
 			xtype: 'label',
 			id: 'РамкаАдресДляИнформирования',
 			text: 'Адрес для информирования',
-			style: 'position:absolute;left:476px;top:69px;width:188px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:476px;top:69px;width:188px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2916,7 +2907,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВзносыПоСотруднику,
+			id: 'ПанельВзносыПоСотруднику',
 			style: 'position:absolute;left:0px;top:21px;width:467px;height:19px;',
 			Привязка:
 			{
@@ -2941,12 +2932,13 @@
 			Ширина:467,
 			Верх:21,
 			Лево:0,
+			Групповой: true,
 			height: 19,width: 467,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ВзносыПоСотруднику,
+					id: 'ВзносыПоСотруднику',
 					items:
 					[
 		{
@@ -3106,7 +3098,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельАВИА,
+			id: 'ПанельАВИА',
 			style: 'position:absolute;left:304px;top:0px;width:163px;height:19px;',
 			Привязка:
 			{
@@ -3131,12 +3123,13 @@
 			Ширина:163,
 			Верх:0,
 			Лево:304,
+			Групповой: true,
 			height: 19,width: 163,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3209,13 +3202,13 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВсеСуммыСтраховыхВзносов,
+			id: 'ПанельВсеСуммыСтраховыхВзносов',
 			style: 'position:absolute;left:476px;top:0px;width:188px;height:64px;',
 			Привязка:
 			{
@@ -3240,19 +3233,20 @@
 			Ширина:188,
 			Верх:0,
 			Лево:476,
+			Групповой: true,
 			height: 64,width: 188,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Всего взносов',
-			style: 'position:absolute;left:0px;top:0px;width:186px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:186px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3410,14 +3404,14 @@
 					]
 				},
 				{
-					id: СтраницаБезВсехВзносов,
+					id: 'СтраницаБезВсехВзносов',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Сумма начисленных страховых взносов',
-			style: 'position:absolute;left:0px;top:0px;width:664px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:664px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3446,7 +3440,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: 'Периоды отсутствия',
-			style: 'position:absolute;left:0px;top:45px;width:428px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:45px;width:428px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3785,7 +3779,7 @@
 			xtype: 'label',
 			id: 'РамкаАдресДляИнформирования1',
 			text: 'Адрес для информирования',
-			style: 'position:absolute;left:439px;top:45px;width:225px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:439px;top:45px;width:225px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3844,7 +3838,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВзносыПоСотруднику1,
+			id: 'ПанельВзносыПоСотруднику1',
 			style: 'position:absolute;left:0px;top:21px;width:664px;height:19px;',
 			Привязка:
 			{
@@ -3869,12 +3863,13 @@
 			Ширина:664,
 			Верх:21,
 			Лево:0,
+			Групповой: true,
 			height: 19,width: 664,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ВзносыПоСотруднику,
+					id: 'ВзносыПоСотруднику',
 					items:
 					[
 		{
@@ -4005,7 +4000,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельАВИА1,
+			id: 'ПанельАВИА1',
 			style: 'position:absolute;left:425px;top:0px;width:239px;height:19px;',
 			Привязка:
 			{
@@ -4030,12 +4025,13 @@
 			Ширина:239,
 			Верх:0,
 			Лево:425,
+			Групповой: true,
 			height: 19,width: 239,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4108,7 +4104,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 					items:
 					[
 		{
@@ -4151,7 +4147,7 @@
 					]
 				},
 				{
-					id: ПустаяСтраница,
+					id: 'ПустаяСтраница',
 					items:
 					[
 		{
@@ -4294,7 +4290,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: '',
-			style: 'position:absolute;left:8px;top:513px;width:954px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:513px;width:954px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4468,12 +4464,7 @@
 			Лево:576,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипСведений',
 			boxLabel: 'Исходные',
 			style: 'position:absolute;left:807px;top:8px;width:155px;height:19px;',
@@ -4502,7 +4493,7 @@
 			Лево:807,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТипСведенийПЕНС',
 			boxLabel: 'Назначение пенсии',
 			style: 'position:absolute;left:807px;top:30px;width:155px;height:15px;',
@@ -4530,14 +4521,11 @@
 			Верх:30,
 			Лево:807,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4549,19 +4537,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

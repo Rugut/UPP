@@ -451,7 +451,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:712px;height:25px;',
 			Привязка:
 			{
@@ -494,7 +494,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНачислений,
+			id: 'ПанельНачислений',
 			style: 'position:absolute;left:8px;top:81px;width:696px;height:334px;',
 			Привязка:
 			{
@@ -519,16 +519,17 @@
 			Ширина:696,
 			Верх:81,
 			Лево:8,
+			Групповой: true,
 			height: 334,width: 696,
 			items:
 			[
 				{
-					id: Начисления,
+					id: 'Начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОсновныеНачисления,
+			id: 'КоманднаяПанельОсновныеНачисления',
 			style: 'position:absolute;left:6px;top:61px;width:682px;height:24px;',
 			Привязка:
 			{
@@ -1041,7 +1042,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНачисления',
 			text: 'Сотрудники',
-			style: 'position:absolute;left:6px;top:45px;width:682px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:45px;width:682px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1068,7 +1069,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюОсновныеНачисления,
+			id: 'КонтекстноеМенюОсновныеНачисления',
 			style: 'position:absolute;left:6px;top:229px;width:682px;height:24px;',
 			Привязка:
 			{
@@ -1186,12 +1187,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособРегистрацииВремениДляЦелойСмены',
 			boxLabel: 'Целодневный (целосменный)',
 			style: 'position:absolute;left:180px;top:7px;width:174px;height:19px;',
@@ -1220,7 +1216,7 @@
 			Лево:180,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособРегистрацииВремениДляЧастиСмены',
 			boxLabel: 'Внутрисменный',
 			style: 'position:absolute;left:180px;top:26px;width:174px;height:19px;',
@@ -1248,17 +1244,15 @@
 			Верх:26,
 			Лево:180,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ДополнительныеНачисления,
+					id: 'ДополнительныеНачисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДополнительныеНачисления,
+			id: 'КоманднаяПанельДополнительныеНачисления',
 			style: 'position:absolute;left:6px;top:0px;width:682px;height:24px;',
 			Привязка:
 			{
@@ -1357,7 +1351,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюДополнительныеНачисления,
+			id: 'КонтекстноеМенюДополнительныеНачисления',
 			style: 'position:absolute;left:6px;top:170px;width:682px;height:24px;',
 			Привязка:
 			{
@@ -1835,7 +1829,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсправление,
+			id: 'ПанельОткрытьИсправление',
 			style: 'position:absolute;left:491px;top:419px;width:83px;height:33px;',
 			Привязка:
 			{
@@ -1860,18 +1854,19 @@
 			Ширина:83,
 			Верх:419,
 			Лево:491,
+			Групповой: true,
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсходный,
+			id: 'ПанельОткрытьИсходный',
 			style: 'position:absolute;left:575px;top:419px;width:129px;height:33px;',
 			Привязка:
 			{
@@ -1896,18 +1891,19 @@
 			Ширина:129,
 			Верх:419,
 			Лево:575,
+			Групповой: true,
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 				},
 			]
 		},
 		{
 			xtype: 'toolbar',
-			id: ДополнительныеДействия,
+			id: 'ДополнительныеДействия',
 			style: 'position:absolute;left:0px;top:488px;width:316px;height:25px;',
 			Привязка:
 			{
@@ -1950,7 +1946,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:488px;width:712px;height:25px;',
 			Привязка:
 			{
@@ -2006,8 +2002,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2019,19 +2014,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

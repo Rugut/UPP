@@ -107,7 +107,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:39px;width:659px;height:342px;',
 			Привязка:
 			{
@@ -132,12 +132,13 @@
 			Ширина:659,
 			Верх:39,
 			Лево:8,
+			Групповой: true,
 			height: 342,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПерваяСтраница,
+					id: 'ПерваяСтраница',
 					items:
 					[
 		{
@@ -171,7 +172,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыбораИндексирования,
+			id: 'ПанельВыбораИндексирования',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:143px;',
 			Привязка:
 			{
@@ -196,12 +197,13 @@
 			Ширина:659,
 			Верх:34,
 			Лево:0,
+			Групповой: true,
 			height: 143,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -263,7 +265,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница1ВыбранноеДействие',
 			boxLabel: 'Повышение должностных окладов',
 			style: 'position:absolute;left:40px;top:28px;width:347px;height:19px;',
@@ -292,7 +294,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница1ВыбранноеДействие1',
 			boxLabel: 'Повышение тарифных разрядов (окладов по тарифным сеткам)',
 			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
@@ -321,7 +323,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница1ВыбранноеДействие2',
 			boxLabel: 'Просмотр истории, отмена последнего повышения',
 			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
@@ -352,16 +354,11 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница2ВыбранноеДействие',
 			boxLabel: 'Повышение должностных окладов сотрудников доп. категории',
 			style: 'position:absolute;left:40px;top:28px;width:347px;height:19px;',
@@ -390,7 +387,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница2ВыбранноеДействие1',
 			boxLabel: 'Повышение окладов сотрудников доп. категории',
 			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
@@ -419,7 +416,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница2ВыбранноеДействие2',
 			boxLabel: 'Повышение окладов сотрудникам по трудовым договорам',
 			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
@@ -448,7 +445,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница2ВыбранноеДействие3',
 			boxLabel: 'Повышение тарифных разрядов (окладов по тарифным сеткам)',
 			style: 'position:absolute;left:40px;top:94px;width:347px;height:19px;',
@@ -477,7 +474,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница2ВыбранноеДействие4',
 			boxLabel: 'Просмотр истории, отмена последнего повышения',
 			style: 'position:absolute;left:40px;top:116px;width:284px;height:19px;',
@@ -505,12 +502,10 @@
 			Верх:116,
 			Лево:40,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Страница3,
+					id: 'Страница3',
 					items:
 					[
 		{
@@ -543,7 +538,7 @@
 			Лево:20,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница3ВыбранноеДействие',
 			boxLabel: 'Повышение должностных окладов муниципальных служащих',
 			style: 'position:absolute;left:40px;top:28px;width:347px;height:19px;',
@@ -572,7 +567,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница3ВыбранноеДействие3',
 			boxLabel: 'Просмотр истории, отмена последнего повышения',
 			style: 'position:absolute;left:40px;top:94px;width:347px;height:19px;',
@@ -601,7 +596,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница3ВыбранноеДействие1',
 			boxLabel: 'Повышение окладов сотрудникам по трудовым договорам',
 			style: 'position:absolute;left:40px;top:50px;width:347px;height:19px;',
@@ -630,7 +625,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Страница3ВыбранноеДействие2',
 			boxLabel: 'Повышение тарифных разрядов (окладов по тарифным сеткам)',
 			style: 'position:absolute;left:40px;top:72px;width:347px;height:19px;',
@@ -664,7 +659,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИсторияОднаОрганизация,
+			id: 'ПанельИсторияОднаОрганизация',
 			style: 'position:absolute;left:0px;top:177px;width:653px;height:164px;',
 			Привязка:
 			{
@@ -689,12 +684,13 @@
 			Ширина:653,
 			Верх:177,
 			Лево:0,
+			Групповой: true,
 			height: 164,width: 653,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -849,7 +845,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыИстоияПовышенияДД',
 			text: 'История повышения окладов',
-			style: 'position:absolute;left:6px;top:6px;width:647px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:647px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -881,12 +877,12 @@
 					]
 				},
 				{
-					id: ИсторияПовышения,
+					id: 'ИсторияПовышения',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВыбораДолжностныеОклады1,
+			id: 'ПанельВыбораДолжностныеОклады1',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:115px;',
 			Привязка:
 			{
@@ -911,12 +907,13 @@
 			Ширина:659,
 			Верх:34,
 			Лево:0,
+			Групповой: true,
 			height: 115,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1224,7 +1221,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыИстоияПовышенияДД1',
 			text: 'История повышения окладов',
-			style: 'position:absolute;left:0px;top:160px;width:659px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:160px;width:659px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1252,12 +1249,12 @@
 					]
 				},
 				{
-					id: Оклады,
+					id: 'Оклады',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельОклады,
+			id: 'ПанельОклады',
 			style: 'position:absolute;left:0px;top:34px;width:659px;height:155px;',
 			Привязка:
 			{
@@ -1282,12 +1279,13 @@
 			Ширина:659,
 			Верх:34,
 			Лево:0,
+			Групповой: true,
 			height: 155,width: 659,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ДолжностныеОклады,
+					id: 'ДолжностныеОклады',
 					items:
 					[
 		{
@@ -1626,7 +1624,7 @@
 					]
 				},
 				{
-					id: ОкладыПоРазрядам,
+					id: 'ОкладыПоРазрядам',
 					items:
 					[
 		{
@@ -1847,12 +1845,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НеОкруглять',
 			boxLabel: 'до рубля',
 			style: 'position:absolute;left:216px;top:199px;width:71px;height:16px;',
@@ -1881,7 +1874,7 @@
 			Лево:216,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'БезОкругления',
 			boxLabel: 'не округлять новые оклады',
 			style: 'position:absolute;left:216px;top:262px;width:173px;height:17px;',
@@ -1909,15 +1902,8 @@
 			Верх:262,
 			Лево:216,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОкруглятьВСторонуУвеличения',
 			boxLabel: 'в сторону увеличения',
 			style: 'position:absolute;left:235px;top:218px;width:160px;height:15px;',
@@ -1946,7 +1932,7 @@
 			Лево:235,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОкруглятьПоПравиламМатематики',
 			boxLabel: 'по правилам математики',
 			style: 'position:absolute;left:235px;top:235px;width:160px;height:15px;',
@@ -1974,17 +1960,15 @@
 			Верх:235,
 			Лево:235,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: РезультатИндексации,
+					id: 'РезультатИндексации',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельРезультатовИндексации,
+			id: 'ПанельРезультатовИндексации',
 			style: 'position:absolute;left:0px;top:26px;width:653px;height:286px;',
 			Привязка:
 			{
@@ -2009,11 +1993,12 @@
 			Ширина:653,
 			Верх:26,
 			Лево:0,
+			Групповой: true,
 			height: 286,width: 653,
 			items:
 			[
 				{
-					id: ОкладыСотрудников,
+					id: 'ОкладыСотрудников',
 					items:
 					[
 		{
@@ -2155,7 +2140,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтекстДолжностныеОклады,
+			id: 'КоманднаяПанельКонтекстДолжностныеОклады',
 			style: 'position:absolute;left:46px;top:109px;width:402px;height:24px;',
 			Привязка:
 			{
@@ -2204,7 +2189,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДолжностныеОклады,
+			id: 'КоманднаяПанельДолжностныеОклады',
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
 			Привязка:
 			{
@@ -2260,7 +2245,7 @@
 					]
 				},
 				{
-					id: ШтатноеРасписание,
+					id: 'ШтатноеРасписание',
 					items:
 					[
 		{
@@ -2393,7 +2378,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельШтатноеРасписание,
+			id: 'КоманднаяПанельШтатноеРасписание',
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
 			Привязка:
 			{
@@ -2442,7 +2427,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтекстШтатноеРаспсиание,
+			id: 'КоманднаяПанельКонтекстШтатноеРаспсиание',
 			style: 'position:absolute;left:121px;top:101px;width:385px;height:26px;',
 			Привязка:
 			{
@@ -2492,7 +2477,7 @@
 					]
 				},
 				{
-					id: ТарифныеРазряды,
+					id: 'ТарифныеРазряды',
 					items:
 					[
 		{
@@ -2607,7 +2592,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТарифныеРазряды,
+			id: 'КоманднаяПанельТарифныеРазряды',
 			style: 'position:absolute;left:6px;top:6px;width:565px;height:24px;',
 			Привязка:
 			{
@@ -2656,7 +2641,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтекстТарифныеРазряды,
+			id: 'КоманднаяПанельКонтекстТарифныеРазряды',
 			style: 'position:absolute;left:113px;top:122px;width:267px;height:24px;',
 			Привязка:
 			{
@@ -2706,7 +2691,7 @@
 					]
 				},
 				{
-					id: ДопТарифныеРазряды,
+					id: 'ДопТарифныеРазряды',
 					items:
 					[
 		{
@@ -2776,7 +2761,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДопТарифныеРазряды,
+			id: 'КоманднаяПанельДопТарифныеРазряды',
 			style: 'position:absolute;left:6px;top:6px;width:639px;height:24px;',
 			Привязка:
 			{
@@ -2825,7 +2810,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтекстДопТарифныеРазряды,
+			id: 'КоманднаяПанельКонтекстДопТарифныеРазряды',
 			style: 'position:absolute;left:114px;top:94px;width:222px;height:26px;',
 			Привязка:
 			{
@@ -2937,7 +2922,7 @@
 					]
 				},
 				{
-					id: ПоследняяСтраница,
+					id: 'ПоследняяСтраница',
 					items:
 					[
 		{
@@ -3006,8 +2991,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3019,19 +3003,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -329,7 +329,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			Привязка:
 			{
@@ -423,7 +423,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:8px;top:110px;width:654px;height:340px;',
 			Привязка:
 			{
@@ -448,12 +448,13 @@
 			Ширина:654,
 			Верх:110,
 			Лево:8,
+			Групповой: true,
 			height: 340,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Уплата,
+					id: 'Уплата',
 					items:
 					[
 		{
@@ -586,7 +587,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыСтраховая',
 			text: 'Страховая часть пенсии',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -642,7 +643,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр1,
+			id: 'ПанельЭпицентр1',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -667,12 +668,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -833,7 +835,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПлатеж',
 			text: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -893,7 +895,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДопТарифов,
+			id: 'ПанельДопТарифов',
 			style: 'position:absolute;left:0px;top:223px;width:654px;height:75px;',
 			Привязка:
 			{
@@ -918,12 +920,13 @@
 			Ширина:654,
 			Верх:223,
 			Лево:0,
+			Групповой: true,
 			height: 75,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -993,7 +996,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДругиеТарифы',
 			text: 'Дополнительные тарифы',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1020,7 +1023,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельАвиа,
+			id: 'ПанельАвиа',
 			style: 'position:absolute;left:0px;top:15px;width:414px;height:25px;',
 			Привязка:
 			{
@@ -1045,12 +1048,13 @@
 			Ширина:414,
 			Верх:15,
 			Лево:0,
+			Групповой: true,
 			height: 25,width: 414,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1157,7 +1161,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНакопительная',
 			text: 'Накопительная часть пенсии',
-			style: 'position:absolute;left:0px;top:139px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:139px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1185,7 +1189,7 @@
 					]
 				},
 				{
-					id: УплатаФСС,
+					id: 'УплатаФСС',
 					items:
 					[
 		{
@@ -1379,7 +1383,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС',
 			text: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1593,7 +1597,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр5,
+			id: 'ПанельЭпицентр5',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -1618,12 +1622,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1784,7 +1789,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПлатеж1',
 			text: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1846,7 +1851,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС4',
 			text: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1903,7 +1908,7 @@
 					]
 				},
 				{
-					id: УплатаФОМС,
+					id: 'УплатаФОМС',
 					items:
 					[
 		{
@@ -2034,7 +2039,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр6,
+			id: 'ПанельЭпицентр6',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -2059,12 +2064,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2225,7 +2231,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПлатеж2',
 			text: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2315,7 +2321,7 @@
 					]
 				},
 				{
-					id: Начисление,
+					id: 'Начисление',
 					items:
 					[
 		{
@@ -2763,7 +2769,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПФР1',
 			text: 'Начислено в ПФР',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2792,7 +2798,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС2',
 			text: 'Начислено в ФСС',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2821,7 +2827,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС3',
 			text: 'Начислено в ФОМС',
-			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2911,7 +2917,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр2,
+			id: 'ПанельЭпицентр2',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -2936,12 +2942,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3165,7 +3172,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНачисление',
 			text: 'Начисление',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3226,14 +3233,14 @@
 					]
 				},
 				{
-					id: ПособияПоСтрахованию,
+					id: 'ПособияПоСтрахованию',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыРасходыФСС',
 			text: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3262,7 +3269,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРасходыФСС_НС',
 			text: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3478,7 +3485,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр3,
+			id: 'ПанельЭпицентр3',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -3503,12 +3510,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3669,7 +3677,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПособия',
 			text: 'Пособия по страхованию',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3793,14 +3801,14 @@
 					]
 				},
 				{
-					id: ПособияПоСтрахованию2011,
+					id: 'ПособияПоСтрахованию2011',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыРасходыФСС1',
 			text: 'Страхование на случай временной нетрудоспособности и в связи с материнством',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3829,7 +3837,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРасходыФСС_НС1',
 			text: 'Страхование от несчастных случаев на производстве и профессиональных заболеваний',
-			style: 'position:absolute;left:0px;top:108px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:108px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3982,7 +3990,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр4,
+			id: 'ПанельЭпицентр4',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -4007,12 +4015,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -4173,7 +4182,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПособия1',
 			text: 'Пособия по страхованию',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4297,7 +4306,7 @@
 					]
 				},
 				{
-					id: УстаревшиеДанные,
+					id: 'УстаревшиеДанные',
 					items:
 					[
 		{
@@ -4835,7 +4844,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПФР',
 			text: 'Уплачено в ПФР',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4864,7 +4873,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС5',
 			text: 'Уплачено в ФСС',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4954,7 +4963,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС1',
 			text: 'Уплачено в ФОМС',
-			style: 'position:absolute;left:0px;top:219px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:219px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5170,7 +5179,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр7,
+			id: 'ПанельЭпицентр7',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -5195,12 +5204,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5424,7 +5434,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПлатеж3',
 			text: 'Платеж',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5485,7 +5495,7 @@
 					]
 				},
 				{
-					id: ДоначислениеВзносов,
+					id: 'ДоначислениеВзносов',
 					items:
 					[
 		{
@@ -5933,7 +5943,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПФР2',
 			text: 'Начислено в ПФР',
-			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:56px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5962,7 +5972,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС6',
 			text: 'Начислено в ФСС',
-			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:136px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5991,7 +6001,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыФСС7',
 			text: 'Начислено в ФОМС',
-			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:215px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6081,7 +6091,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭпицентр8,
+			id: 'ПанельЭпицентр8',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:55px;',
 			Привязка:
 			{
@@ -6106,12 +6116,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 55,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -6272,7 +6283,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНачисление1',
 			text: 'Начисление',
-			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:654px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -6492,7 +6503,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:485px;width:670px;height:25px;',
 			Привязка:
 			{
@@ -6548,8 +6559,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -6561,19 +6571,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

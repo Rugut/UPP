@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:31px;width:557px;height:377px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:557,
 			Верх:31,
 			Лево:8,
+			Групповой: true,
 			height: 377,width: 557,
 			items:
 			[
 				{
-					id: ЗагрузкаИзПочты,
+					id: 'ЗагрузкаИзПочты',
 					items:
 					[
 		{
@@ -379,7 +380,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:74px;width:222px;height:25px;',
 			Привязка:
 			{
@@ -528,7 +529,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:234px;top:256px;width:315px;height:25px;',
 			Привязка:
 			{
@@ -659,7 +660,7 @@
 					]
 				},
 				{
-					id: ЗагрузкаИзКаталога,
+					id: 'ЗагрузкаИзКаталога',
 					items:
 					[
 		{
@@ -797,7 +798,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДереваАнкет,
+			id: 'КоманднаяПанельДереваАнкет',
 			style: 'position:absolute;left:6px;top:105px;width:273px;height:24px;',
 			Привязка:
 			{
@@ -956,7 +957,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяОтветов,
+			id: 'КоманднаяОтветов',
 			style: 'position:absolute;left:285px;top:105px;width:264px;height:24px;',
 			Привязка:
 			{
@@ -996,7 +997,7 @@
 			xtype: 'label',
 			id: 'РамкаКаталога1',
 			text: 'Результаты опросов ',
-			style: 'position:absolute;left:6px;top:66px;width:543px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:66px;width:543px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1236,7 +1237,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:573px;height:25px;',
 			Привязка:
 			{
@@ -1276,8 +1277,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1289,19 +1289,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

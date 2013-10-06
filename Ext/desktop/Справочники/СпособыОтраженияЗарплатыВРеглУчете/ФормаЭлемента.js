@@ -173,7 +173,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:585px;height:25px;',
 			Привязка:
 			{
@@ -206,7 +206,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:79px;width:569px;height:296px;',
 			Привязка:
 			{
@@ -231,12 +231,13 @@
 			Ширина:569,
 			Верх:79,
 			Лево:8,
+			Групповой: true,
 			height: 296,width: 569,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: НастройкаСпособаОтражения,
+					id: 'НастройкаСпособаОтражения',
 					items:
 					[
 		{
@@ -1662,7 +1663,7 @@
 			xtype: 'label',
 			id: 'РамкаБухгалтерскийУчет',
 			text: 'Бухгалтерский учет',
-			style: 'position:absolute;left:0px;top:7px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:7px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1691,7 +1692,7 @@
 			xtype: 'label',
 			id: 'РамкаНалоговыйУчет',
 			text: 'Налоговый учет',
-			style: 'position:absolute;left:0px;top:142px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:142px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1720,7 +1721,7 @@
 			xtype: 'label',
 			id: 'РамкаНалоговыйУчетУСН',
 			text: 'Налоговый учет УСН',
-			style: 'position:absolute;left:0px;top:257px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:257px;width:569px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2398,7 +2399,7 @@
 					]
 				},
 				{
-					id: НеОтражатьВБухучете,
+					id: 'НеОтражатьВБухучете',
 					items:
 					[
 		{
@@ -2433,7 +2434,7 @@
 					]
 				},
 				{
-					id: РаспределятьПоБазовымНачислениям,
+					id: 'РаспределятьПоБазовымНачислениям',
 				},
 			]
 		},
@@ -2443,7 +2444,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:383px;width:585px;height:25px;',
 			Привязка:
 			{
@@ -2499,8 +2500,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2512,19 +2512,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

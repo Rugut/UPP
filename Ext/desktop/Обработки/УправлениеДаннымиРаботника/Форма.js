@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:0px;top:51px;width:780px;height:399px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:780,
 			Верх:51,
 			Лево:0,
+			Групповой: true,
 			height: 399,width: 780,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Основное,
+					id: 'Основное',
 					items:
 					[
 		{
@@ -205,7 +206,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокФизлиц,
+			id: 'КоманднаяПанельСписокФизлиц',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
 			Привязка:
 			{
@@ -408,7 +409,7 @@
 					]
 				},
 				{
-					id: РасчетыЗарплата,
+					id: 'РасчетыЗарплата',
 					items:
 					[
 		{
@@ -541,7 +542,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель5,
+			id: 'КоманднаяПанель5',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
 			Привязка:
 			{
@@ -716,7 +717,7 @@
 					]
 				},
 				{
-					id: ПлановыеДанные,
+					id: 'ПлановыеДанные',
 					items:
 					[
 		{
@@ -813,7 +814,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель6,
+			id: 'КоманднаяПанель6',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
 			Привязка:
 			{
@@ -971,7 +972,7 @@
 					]
 				},
 				{
-					id: КадровыеДанные,
+					id: 'КадровыеДанные',
 					items:
 					[
 		{
@@ -1153,7 +1154,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
 			Привязка:
 			{
@@ -1363,7 +1364,7 @@
 					]
 				},
 				{
-					id: Налоги,
+					id: 'Налоги',
 					items:
 					[
 		{
@@ -1603,7 +1604,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель7,
+			id: 'КоманднаяПанель7',
 			style: 'position:absolute;left:294px;top:287px;width:475px;height:25px;',
 			Привязка:
 			{
@@ -1802,7 +1803,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОсновная,
+			id: 'КоманднаяПанельОсновная',
 			style: 'position:absolute;left:0px;top:26px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -1864,7 +1865,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель4,
+			id: 'КоманднаяПанель4',
 			style: 'position:absolute;left:727px;top:2px;width:53px;height:24px;',
 			Привязка:
 			{
@@ -1972,7 +1973,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизлица,
+			id: 'КоманднаяПанельФизлица',
 			style: 'position:absolute;left:380px;top:2px;width:201px;height:24px;',
 			Привязка:
 			{
@@ -2056,8 +2057,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2069,19 +2069,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

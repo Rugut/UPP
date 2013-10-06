@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:9px;width:465px;height:519px;',
 			Привязка:
 			{
@@ -45,16 +45,17 @@
 			Ширина:465,
 			Верх:9,
 			Лево:8,
+			Групповой: true,
 			height: 519,width: 465,
 			items:
 			[
 				{
-					id: РезультатыПроверки,
+					id: 'РезультатыПроверки',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельПодробно,
+			id: 'ПанельПодробно',
 			style: 'position:absolute;left:6px;top:6px;width:450px;height:422px;',
 			Привязка:
 			{
@@ -79,12 +80,13 @@
 			Ширина:450,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 422,width: 450,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -212,7 +214,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбобщенныйРезультат,
+			id: 'ПанельОбобщенныйРезультат',
 			style: 'position:absolute;left:6px;top:428px;width:450px;height:65px;',
 			Привязка:
 			{
@@ -237,12 +239,13 @@
 			Ширина:450,
 			Верх:428,
 			Лево:6,
+			Групповой: true,
 			height: 65,width: 450,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -279,7 +282,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Обобщенный результат',
-			style: 'position:absolute;left:0px;top:8px;width:450px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:8px;width:450px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -311,7 +314,7 @@
 					]
 				},
 				{
-					id: ОбщиеСведения,
+					id: 'ОбщиеСведения',
 					items:
 					[
 		{
@@ -1056,7 +1059,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:536px;width:481px;height:25px;',
 			Привязка:
 			{
@@ -1098,8 +1101,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1111,19 +1113,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

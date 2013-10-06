@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:690px;height:25px;',
 			Привязка:
 			{
@@ -81,7 +81,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновная,
+			id: 'ПанельОсновная',
 			style: 'position:absolute;left:190px;top:58px;width:492px;height:464px;',
 			Привязка:
 			{
@@ -106,16 +106,17 @@
 			Ширина:492,
 			Верх:58,
 			Лево:190,
+			Групповой: true,
 			height: 464,width: 492,
 			items:
 			[
 				{
-					id: СтраницаПараметры,
+					id: 'СтраницаПараметры',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельНазначение,
+			id: 'ПанельНазначение',
 			style: 'position:absolute;left:6px;top:79px;width:478px;height:116px;',
 			Привязка:
 			{
@@ -140,12 +141,13 @@
 			Ширина:478,
 			Верх:79,
 			Лево:6,
+			Групповой: true,
 			height: 116,width: 478,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаКаталог,
+					id: 'СтраницаКаталог',
 					items:
 					[
 		{
@@ -241,7 +243,7 @@
 					]
 				},
 				{
-					id: СтраницаСайт,
+					id: 'СтраницаСайт',
 					items:
 					[
 		{
@@ -911,7 +913,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУзелТовары,
+			id: 'ПанельУзелТовары',
 			style: 'position:absolute;left:14px;top:225px;width:468px;height:24px;',
 			Привязка:
 			{
@@ -936,12 +938,13 @@
 			Ширина:468,
 			Верх:225,
 			Лево:14,
+			Групповой: true,
 			height: 24,width: 468,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1013,7 +1016,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУзелЗаказы,
+			id: 'ПанельУзелЗаказы',
 			style: 'position:absolute;left:14px;top:249px;width:468px;height:25px;',
 			Привязка:
 			{
@@ -1038,12 +1041,13 @@
 			Ширина:468,
 			Верх:249,
 			Лево:14,
+			Групповой: true,
 			height: 25,width: 468,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1114,12 +1118,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательНазначениеСайт',
 			boxLabel: 'Выгрузка на сайт',
 			style: 'position:absolute;left:126px;top:54px;width:112px;height:19px;',
@@ -1148,7 +1147,7 @@
 			Лево:126,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательНазначениеКаталог',
 			boxLabel: 'Выгрузка в каталог',
 			style: 'position:absolute;left:270px;top:54px;width:124px;height:19px;',
@@ -1176,15 +1175,8 @@
 			Верх:54,
 			Лево:270,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПолнаяВыгрузка',
 			boxLabel: 'Полная выгрузка',
 			style: 'position:absolute;left:126px;top:201px;width:110px;height:19px;',
@@ -1213,7 +1205,7 @@
 			Лево:126,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВыгрузкаИзменений',
 			boxLabel: 'Только изменения',
 			style: 'position:absolute;left:270px;top:201px;width:116px;height:19px;',
@@ -1241,12 +1233,10 @@
 			Верх:201,
 			Лево:270,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ВыгрузкаТоваров,
+					id: 'ВыгрузкаТоваров',
 					items:
 					[
 		{
@@ -1280,7 +1270,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:52px;width:478px;height:24px;',
 			Привязка:
 			{
@@ -1467,7 +1457,7 @@
 					]
 				},
 				{
-					id: ОбменЗаказами,
+					id: 'ОбменЗаказами',
 					items:
 					[
 		{
@@ -2143,7 +2133,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Параметры для подстановки в заказы с WEB-сайта',
-			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:30px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2172,7 +2162,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Параметры для создания новых элементов',
-			style: 'position:absolute;left:6px;top:123px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:123px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2201,7 +2191,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Действия с документами, пришедшими с WEB-сайта',
-			style: 'position:absolute;left:6px;top:216px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:216px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2227,12 +2217,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписыватьСДатойXML',
 			boxLabel: 'По информации документа с сайта',
 			style: 'position:absolute;left:16px;top:260px;width:199px;height:19px;',
@@ -2261,7 +2246,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписыватьСТекущейДатой',
 			boxLabel: 'Устанавливать у документов текущую дату',
 			style: 'position:absolute;left:16px;top:284px;width:246px;height:19px;',
@@ -2289,15 +2274,8 @@
 			Верх:284,
 			Лево:16,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписывать',
 			boxLabel: 'Только записывать документы',
 			style: 'position:absolute;left:16px;top:330px;width:181px;height:19px;',
@@ -2326,7 +2304,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПроводить',
 			boxLabel: 'Записывать и проводить документы',
 			style: 'position:absolute;left:16px;top:353px;width:207px;height:19px;',
@@ -2354,15 +2332,8 @@
 			Верх:353,
 			Лево:16,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПроводитьОперативно',
 			boxLabel: 'Проводить оперативно',
 			style: 'position:absolute;left:38px;top:376px;width:159px;height:19px;',
@@ -2391,7 +2362,7 @@
 			Лево:38,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПРоводитьНеОперативно',
 			boxLabel: 'Проводить НЕ оперативно',
 			style: 'position:absolute;left:40px;top:399px;width:157px;height:19px;',
@@ -2418,8 +2389,6 @@
 			Ширина:157,
 			Верх:399,
 			Лево:40,
-		},
-			]
 		},
 					]
 				},
@@ -2788,7 +2757,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:554px;width:690px;height:25px;',
 			Привязка:
 			{
@@ -2844,8 +2813,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2857,19 +2825,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

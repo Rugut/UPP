@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: Панель2,
+			id: 'Панель2',
 			style: 'position:absolute;left:44px;top:210px;width:183px;height:19px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:183,
 			Верх:210,
 			Лево:44,
+			Групповой: true,
 			height: 19,width: 183,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -88,7 +89,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройки,
+			id: 'ПанельНастройки',
 			style: 'position:absolute;left:6px;top:57px;width:259px;height:153px;',
 			Привязка:
 			{
@@ -113,12 +114,13 @@
 			Ширина:259,
 			Верх:57,
 			Лево:6,
+			Групповой: true,
 			height: 153,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -368,7 +370,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:0px;top:0px;width:271px;height:53px;',
 			Привязка:
 			{
@@ -393,12 +395,13 @@
 			Ширина:271,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 53,width: 271,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -435,7 +438,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель,
+			id: 'КоманднаяПанель',
 			style: 'position:absolute;left:175px;top:26px;width:90px;height:24px;',
 			Привязка:
 			{
@@ -481,7 +484,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:26px;width:76px;height:24px;',
 			Привязка:
 			{
@@ -523,7 +526,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбновленияИндекса,
+			id: 'ПанельОбновленияИндекса',
 			style: 'position:absolute;left:6px;top:464px;width:259px;height:21px;',
 			Привязка:
 			{
@@ -548,12 +551,13 @@
 			Ширина:259,
 			Верх:464,
 			Лево:6,
+			Групповой: true,
 			height: 21,width: 259,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -622,8 +626,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -635,19 +638,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -390,7 +390,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:651px;height:25px;',
 			Привязка:
 			{
@@ -439,7 +439,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:444px;width:651px;height:25px;',
 			Привязка:
 			{
@@ -624,7 +624,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНачисления,
+			id: 'КоманднаяПанельНачисления',
 			style: 'position:absolute;left:8px;top:173px;width:635px;height:24px;',
 			Привязка:
 			{
@@ -822,7 +822,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДивиденды',
 			text: 'Дивиденды к распределению',
-			style: 'position:absolute;left:8px;top:86px;width:310px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:86px;width:310px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -885,7 +885,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВычетыНДФЛ',
 			text: 'Вычет по НДФЛ',
-			style: 'position:absolute;left:336px;top:86px;width:307px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:336px;top:86px;width:307px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -914,7 +914,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНачисления',
 			text: 'Начисления',
-			style: 'position:absolute;left:8px;top:157px;width:635px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:157px;width:635px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -970,7 +970,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсправление,
+			id: 'ПанельОткрытьИсправление',
 			style: 'position:absolute;left:431px;top:380px;width:83px;height:33px;',
 			Привязка:
 			{
@@ -995,12 +995,13 @@
 			Ширина:83,
 			Верх:380,
 			Лево:431,
+			Групповой: true,
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1038,7 +1039,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсходный,
+			id: 'ПанельОткрытьИсходный',
 			style: 'position:absolute;left:514px;top:380px;width:129px;height:33px;',
 			Привязка:
 			{
@@ -1063,12 +1064,13 @@
 			Ширина:129,
 			Верх:380,
 			Лево:514,
+			Групповой: true,
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1106,7 +1108,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДополнительныеДействия,
+			id: 'ДополнительныеДействия',
 			style: 'position:absolute;left:0px;top:444px;width:257px;height:25px;',
 			Привязка:
 			{
@@ -1145,7 +1147,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюНачисления,
+			id: 'КонтекстноеМенюНачисления',
 			style: 'position:absolute;left:8px;top:241px;width:635px;height:24px;',
 			Привязка:
 			{
@@ -1263,12 +1265,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ФлагОбщаяСуммаДивидендов',
 			boxLabel: 'Общая сумма:',
 			style: 'position:absolute;left:13px;top:107px;width:96px;height:19px;',
@@ -1297,7 +1294,7 @@
 			Лево:13,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ФлагСуммаНаОднуАкцию',
 			boxLabel: 'На одну акцию:',
 			style: 'position:absolute;left:13px;top:131px;width:96px;height:19px;',
@@ -1325,14 +1322,11 @@
 			Верх:131,
 			Лево:13,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1344,19 +1338,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

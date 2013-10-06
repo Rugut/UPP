@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:8px;width:536px;height:348px;',
 			Привязка:
 			{
@@ -45,18 +45,19 @@
 			Ширина:536,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 348,width: 536,
 			items:
 			[
 				{
-					id: Вычеты,
+					id: 'Вычеты',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаСтандартныеВычетыЛичные',
 			text: 'Личный стандартный вычет',
-			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -85,7 +86,7 @@
 			xtype: 'label',
 			id: 'РамкаСтандартныеВычеты1',
 			text: 'Стандартные вычеты на детей',
-			style: 'position:absolute;left:6px;top:142px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:142px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -112,7 +113,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСтандартныеВычетыНаДетей,
+			id: 'КоманднаяПанельСтандартныеВычетыНаДетей',
 			style: 'position:absolute;left:6px;top:158px;width:522px;height:24px;',
 			Привязка:
 			{
@@ -414,7 +415,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельЛичныеВычеты,
+			id: 'КоманднаяПанельЛичныеВычеты',
 			style: 'position:absolute;left:6px;top:22px;width:522px;height:24px;',
 			Привязка:
 			{
@@ -552,7 +553,7 @@
 					]
 				},
 				{
-					id: Статус,
+					id: 'Статус',
 					items:
 					[
 		{
@@ -736,7 +737,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:6px;top:43px;width:522px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:43px;width:522px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -763,7 +764,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДополнительногоЗначенияСтатуса,
+			id: 'ПанельДополнительногоЗначенияСтатуса',
 			style: 'position:absolute;left:40px;top:183px;width:488px;height:28px;',
 			Привязка:
 			{
@@ -788,21 +789,17 @@
 			Ширина:488,
 			Верх:183,
 			Лево:40,
+			Групповой: true,
 			height: 28,width: 488,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ЧленЭкипажаСуднаПодФлагомРФ',
 			boxLabel: 'Член экипажа судна, плавающего под Государственным флагом РФ',
 			style: 'position:absolute;left:0px;top:0px;width:376px;height:19px;',
@@ -830,19 +827,12 @@
 			Верх:0,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Резидент',
 			boxLabel: 'Резидент',
 			style: 'position:absolute;left:40px;top:87px;width:86px;height:19px;',
@@ -871,7 +861,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Нерезидент',
 			boxLabel: 'Нерезидент',
 			style: 'position:absolute;left:40px;top:111px;width:86px;height:19px;',
@@ -900,7 +890,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВысококвалифицированныйИностранныйСпециалист',
 			boxLabel: 'Высококвалифицированный иностранный специалист',
 			style: 'position:absolute;left:40px;top:135px;width:302px;height:19px;',
@@ -929,7 +919,7 @@
 			Лево:40,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчастникПрограммыПоПереселениюСоотечественников',
 			boxLabel: 'Участник программы по переселению соотечественников',
 			style: 'position:absolute;left:40px;top:159px;width:319px;height:19px;',
@@ -957,12 +947,10 @@
 			Верх:159,
 			Лево:40,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Доходы,
+					id: 'Доходы',
 					items:
 					[
 		{
@@ -1091,7 +1079,7 @@
 			xtype: 'label',
 			id: 'РамкаСтандартныеВычеты2',
 			text: 'Справка с предыдущего места работы',
-			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:522px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1155,7 +1143,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:364px;width:552px;height:25px;',
 			Привязка:
 			{
@@ -1202,8 +1190,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1215,19 +1202,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

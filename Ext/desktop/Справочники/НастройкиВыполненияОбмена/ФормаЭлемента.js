@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:508px;height:25px;',
 			Привязка:
 			{
@@ -181,7 +181,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОсновныеНастройкиВыполнения,
+			id: 'ПанельОсновныеНастройкиВыполнения',
 			style: 'position:absolute;left:8px;top:57px;width:492px;height:260px;',
 			Привязка:
 			{
@@ -206,11 +206,12 @@
 			Ширина:492,
 			Верх:57,
 			Лево:8,
+			Групповой: true,
 			height: 260,width: 492,
 			items:
 			[
 				{
-					id: ОбменПоРасписанию,
+					id: 'ОбменПоРасписанию',
 					items:
 					[
 		{
@@ -332,7 +333,7 @@
 					]
 				},
 				{
-					id: ОбменПоСобытиям,
+					id: 'ОбменПоСобытиям',
 					items:
 					[
 		{
@@ -489,7 +490,7 @@
 			xtype: 'label',
 			id: 'РамкаОбменДаннымиПоСобытиям',
 			text: 'Обмен данных по событиям (на клиентской части)',
-			style: 'position:absolute;left:7px;top:6px;width:477px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:7px;top:6px;width:477px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -639,7 +640,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -801,7 +802,7 @@
 			xtype: 'label',
 			id: 'ОтправкаСообщенияПриОшибке',
 			text: 'Отправлять сообщения при ошибке обмена',
-			style: 'position:absolute;left:6px;top:73px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:73px;width:478px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1060,7 +1061,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНеОшибочныеСообщения,
+			id: 'КоманднаяПанельНеОшибочныеСообщения',
 			style: 'position:absolute;left:16px;top:139px;width:468px;height:24px;',
 			Привязка:
 			{
@@ -1126,7 +1127,7 @@
 			xtype: 'label',
 			id: 'РамкаВыполняемыеДействия',
 			text: 'Выполняемые действия',
-			style: 'position:absolute;left:8px;top:322px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:322px;width:492px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1250,7 +1251,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкиОбмена,
+			id: 'КоманднаяПанельНастройкиОбмена',
 			style: 'position:absolute;left:8px;top:340px;width:492px;height:24px;',
 			Привязка:
 			{
@@ -1412,7 +1413,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:555px;width:508px;height:25px;',
 			Привязка:
 			{
@@ -1468,8 +1469,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1481,19 +1481,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

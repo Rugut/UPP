@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Персональные настройки',
-			style: 'position:absolute;left:8px;top:186px;width:382px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:186px;width:382px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -107,7 +107,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройкиИнтернета,
+			id: 'ПанельНастройкиИнтернета',
 			style: 'position:absolute;left:8px;top:252px;width:382px;height:124px;',
 			Привязка:
 			{
@@ -132,12 +132,13 @@
 			Ширина:382,
 			Верх:252,
 			Лево:8,
+			Групповой: true,
 			height: 124,width: 382,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -171,7 +172,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПараметрыАвторизации,
+			id: 'ПанельПараметрыАвторизации',
 			style: 'position:absolute;left:61px;top:71px;width:258px;height:45px;',
 			Привязка:
 			{
@@ -196,12 +197,13 @@
 			Ширина:258,
 			Верх:71,
 			Лево:61,
+			Групповой: true,
 			height: 45,width: 258,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -363,7 +365,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: '',
-			style: 'position:absolute;left:14px;top:92px;width:19px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:14px;top:92px;width:19px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -421,7 +423,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы10',
 			text: '',
-			style: 'position:absolute;left:35px;top:81px;width:20px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:35px;top:81px;width:20px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -450,7 +452,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы11',
 			text: '',
-			style: 'position:absolute;left:35px;top:106px;width:20px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:35px;top:106px;width:20px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -510,7 +512,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбщиеНастройки,
+			id: 'ПанельОбщиеНастройки',
 			style: 'position:absolute;left:8px;top:10px;width:382px;height:162px;',
 			Привязка:
 			{
@@ -535,19 +537,20 @@
 			Ширина:382,
 			Верх:10,
 			Лево:8,
+			Групповой: true,
 			height: 162,width: 382,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Общие настройки',
-			style: 'position:absolute;left:0px;top:0px;width:382px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:382px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -637,7 +640,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы12',
 			text: '',
-			style: 'position:absolute;left:8px;top:124px;width:374px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:124px;width:374px;height:3px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -722,12 +725,7 @@
 			height: 19,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательМодульДокументооборота1',
 			boxLabel: 'Использовать встроенный модуль документооборота',
 			style: 'position:absolute;left:8px;top:45px;width:296px;height:16px;',
@@ -756,7 +754,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательМодульДокументооборота2',
 			boxLabel: 'Использовать внешний модуль:',
 			style: 'position:absolute;left:8px;top:69px;width:182px;height:16px;',
@@ -784,8 +782,6 @@
 			Верх:69,
 			Лево:8,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -796,7 +792,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:384px;width:398px;height:25px;',
 			Привязка:
 			{
@@ -850,8 +846,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -863,19 +858,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

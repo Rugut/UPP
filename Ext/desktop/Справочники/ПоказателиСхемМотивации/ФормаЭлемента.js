@@ -263,7 +263,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:413px;height:25px;',
 			Привязка:
 			{
@@ -542,7 +542,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:8px;top:193px;width:397px;height:167px;',
 			Привязка:
 			{
@@ -567,11 +567,12 @@
 			Ширина:397,
 			Верх:193,
 			Лево:8,
+			Групповой: true,
 			height: 167,width: 397,
 			items:
 			[
 				{
-					id: АнализПоказателей,
+					id: 'АнализПоказателей',
 					items:
 					[
 		{
@@ -755,12 +756,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель1',
 			boxLabel: 'фактический показатель',
 			style: 'position:absolute;left:12px;top:77px;width:231px;height:19px;',
@@ -789,7 +785,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'плановый показатель, соответствует фактическому показателю:',
 			style: 'position:absolute;left:12px;top:99px;width:352px;height:19px;',
@@ -817,12 +813,10 @@
 			Верх:99,
 			Лево:12,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Использование,
+					id: 'Использование',
 					items:
 					[
 		{
@@ -886,7 +880,7 @@
 					]
 				},
 				{
-					id: ШкалаОценки,
+					id: 'ШкалаОценки',
 					items:
 					[
 		{
@@ -997,7 +991,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСоставШкалы,
+			id: 'КоманднаяПанельСоставШкалы',
 			style: 'position:absolute;left:6px;top:6px;width:383px;height:24px;',
 			Привязка:
 			{
@@ -1031,7 +1025,7 @@
 					]
 				},
 				{
-					id: СуммовойПоказатель,
+					id: 'СуммовойПоказатель',
 					items:
 					[
 		{
@@ -1066,7 +1060,7 @@
 					]
 				},
 				{
-					id: Валюта,
+					id: 'Валюта',
 					items:
 					[
 		{
@@ -1193,7 +1187,7 @@
 					]
 				},
 				{
-					id: Стаж,
+					id: 'Стаж',
 					items:
 					[
 		{
@@ -1539,7 +1533,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:368px;width:413px;height:25px;',
 			Привязка:
 			{
@@ -1595,8 +1589,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1608,19 +1601,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

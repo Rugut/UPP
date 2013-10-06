@@ -81,7 +81,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСопроводительнаяВедомость,
+			id: 'ПанельСопроводительнаяВедомость',
 			style: 'position:absolute;left:3px;top:30px;width:990px;height:544px;',
 			Привязка:
 			{
@@ -106,18 +106,19 @@
 			Ширина:990,
 			Верх:30,
 			Лево:3,
+			Групповой: true,
 			height: 544,width: 990,
 			items:
 			[
 				{
-					id: Страница1_Т,
+					id: 'Страница1_Т',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: ' Автотранспортное средство ',
-			style: 'position:absolute;left:0px;top:0px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -390,7 +391,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Контрагенты ',
-			style: 'position:absolute;left:0px;top:138px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:138px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -663,7 +664,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Места назначения ',
-			style: 'position:absolute;left:0px;top:207px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:207px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -692,7 +693,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Прочие сведения о доставке ',
-			style: 'position:absolute;left:0px;top:276px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:276px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -965,7 +966,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Водитель ',
-			style: 'position:absolute;left:0px;top:69px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:69px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1087,7 +1088,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Цены',
-			style: 'position:absolute;left:0px;top:346px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:346px;width:512px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1206,7 +1207,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:499px;width:988px;height:25px;',
 			Привязка:
 			{
@@ -1256,12 +1257,12 @@
 					]
 				},
 				{
-					id: СтраницаПриложение4,
+					id: 'СтраницаПриложение4',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:499px;width:988px;height:25px;',
 			Привязка:
 			{
@@ -1311,12 +1312,12 @@
 					]
 				},
 				{
-					id: СтраницаСопроводительнаяВедомость,
+					id: 'СтраницаСопроводительнаяВедомость',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:0px;top:499px;width:988px;height:25px;',
 			Привязка:
 			{
@@ -1371,8 +1372,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1384,19 +1384,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

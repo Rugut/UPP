@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:0px;top:38px;width:700px;height:535px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:700,
 			Верх:38,
 			Лево:0,
+			Групповой: true,
 			height: 535,width: 700,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Главная,
+					id: 'Главная',
 					items:
 					[
 		{
@@ -374,7 +375,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:516px;top:42px;width:163px;height:102px;',
 			Привязка:
 			{
@@ -399,12 +400,13 @@
 			Ширина:163,
 			Верх:42,
 			Лево:516,
+			Групповой: true,
 			height: 102,width: 163,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -732,7 +734,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ГлавнаяОтчеты,
+			id: 'ГлавнаяОтчеты',
 			style: 'position:absolute;left:56px;top:369px;width:373px;height:46px;',
 			Привязка:
 			{
@@ -757,12 +759,13 @@
 			Ширина:373,
 			Верх:369,
 			Лево:56,
+			Групповой: true,
 			height: 46,width: 373,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -884,7 +887,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -980,7 +983,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПодразделенияГлавная,
+			id: 'ПанельПодразделенияГлавная',
 			style: 'position:absolute;left:56px;top:90px;width:138px;height:42px;',
 			Привязка:
 			{
@@ -1005,12 +1008,13 @@
 			Ширина:138,
 			Верх:90,
 			Лево:56,
+			Групповой: true,
 			height: 42,width: 138,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -1045,7 +1049,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -1141,7 +1145,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНашиОрганизации,
+			id: 'ПанельНашиОрганизации',
 			style: 'position:absolute;left:218px;top:242px;width:323px;height:58px;',
 			Привязка:
 			{
@@ -1166,12 +1170,13 @@
 			Ширина:323,
 			Верх:242,
 			Лево:218,
+			Групповой: true,
 			height: 58,width: 323,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1297,7 +1302,7 @@
 					]
 				},
 				{
-					id: КадровыйУчет,
+					id: 'КадровыйУчет',
 					items:
 					[
 		{
@@ -1795,7 +1800,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКадровыеДокументы,
+			id: 'ПанельКадровыеДокументы',
 			style: 'position:absolute;left:56px;top:90px;width:247px;height:145px;',
 			Привязка:
 			{
@@ -1820,12 +1825,13 @@
 			Ширина:247,
 			Верх:90,
 			Лево:56,
+			Групповой: true,
 			height: 145,width: 247,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -2005,7 +2011,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -2188,7 +2194,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВстречиМероприятия,
+			id: 'ПанельВстречиМероприятия',
 			style: 'position:absolute;left:306px;top:178px;width:150px;height:41px;',
 			Привязка:
 			{
@@ -2213,12 +2219,13 @@
 			Ширина:150,
 			Верх:178,
 			Лево:306,
+			Групповой: true,
 			height: 41,width: 150,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -2253,13 +2260,13 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: КадровыйУчетОтчеты,
+			id: 'КадровыйУчетОтчеты',
 			style: 'position:absolute;left:8px;top:255px;width:424px;height:280px;',
 			Привязка:
 			{
@@ -2284,12 +2291,13 @@
 			Ширина:424,
 			Верх:255,
 			Лево:8,
+			Групповой: true,
 			height: 280,width: 424,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -2846,7 +2854,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -3290,7 +3298,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтклонения,
+			id: 'ПанельОтклонения',
 			style: 'position:absolute;left:467px;top:48px;width:215px;height:217px;',
 			Привязка:
 			{
@@ -3315,12 +3323,13 @@
 			Ширина:215,
 			Верх:48,
 			Лево:467,
+			Групповой: true,
 			height: 217,width: 215,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -3500,7 +3509,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -3742,7 +3751,7 @@
 					]
 				},
 				{
-					id: РасчетЗарплаты,
+					id: 'РасчетЗарплаты',
 					items:
 					[
 		{
@@ -4269,7 +4278,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: РасчетЗарплатыОтчеты,
+			id: 'РасчетЗарплатыОтчеты',
 			style: 'position:absolute;left:8px;top:330px;width:677px;height:121px;',
 			Привязка:
 			{
@@ -4294,12 +4303,13 @@
 			Ширина:677,
 			Верх:330,
 			Лево:8,
+			Групповой: true,
 			height: 121,width: 677,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -4653,7 +4663,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -4923,7 +4933,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: НачисленияУдержания,
+			id: 'НачисленияУдержания',
 			style: 'position:absolute;left:375px;top:468px;width:317px;height:61px;',
 			Привязка:
 			{
@@ -4948,12 +4958,13 @@
 			Ширина:317,
 			Верх:468,
 			Лево:375,
+			Групповой: true,
 			height: 61,width: 317,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -5075,7 +5086,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -5229,7 +5240,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНачисленияЗарплаты,
+			id: 'ПанельНачисленияЗарплаты',
 			style: 'position:absolute;left:56px;top:48px;width:209px;height:269px;',
 			Привязка:
 			{
@@ -5254,12 +5265,13 @@
 			Ширина:209,
 			Верх:48,
 			Лево:56,
+			Групповой: true,
 			height: 269,width: 209,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -5555,7 +5567,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -5912,7 +5924,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыплатыЗарплаты,
+			id: 'ПанельВыплатыЗарплаты',
 			style: 'position:absolute;left:486px;top:48px;width:206px;height:213px;',
 			Привязка:
 			{
@@ -5937,12 +5949,13 @@
 			Ширина:206,
 			Верх:48,
 			Лево:486,
+			Групповой: true,
 			height: 213,width: 206,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -6209,7 +6222,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 		{
@@ -6596,7 +6609,7 @@
 					]
 				},
 				{
-					id: ПерсонифицированныйУчет,
+					id: 'ПерсонифицированныйУчет',
 					items:
 					[
 		{
@@ -7385,7 +7398,7 @@
 					]
 				},
 				{
-					id: Налоги,
+					id: 'Налоги',
 					items:
 					[
 		{
@@ -8174,7 +8187,7 @@
 					]
 				},
 				{
-					id: БухУчет,
+					id: 'БухУчет',
 					items:
 					[
 		{
@@ -8615,7 +8628,7 @@
 					]
 				},
 				{
-					id: УчетЗарплаты,
+					id: 'УчетЗарплаты',
 					items:
 					[
 		{
@@ -9259,7 +9272,7 @@
 					]
 				},
 				{
-					id: Персонал,
+					id: 'Персонал',
 					items:
 					[
 		{
@@ -10192,7 +10205,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПодразделенияПерсонал,
+			id: 'ПанельПодразделенияПерсонал',
 			style: 'position:absolute;left:56px;top:457px;width:150px;height:17px;',
 			Привязка:
 			{
@@ -10217,12 +10230,13 @@
 			Ширина:150,
 			Верх:457,
 			Лево:56,
+			Групповой: true,
 			height: 17,width: 150,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Упр,
+					id: 'Упр',
 					items:
 					[
 		{
@@ -10286,7 +10300,7 @@
 					]
 				},
 				{
-					id: Регл,
+					id: 'Регл',
 				},
 			]
 		},
@@ -10296,7 +10310,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУчетБухучетЗарплаты,
+			id: 'ПанельУчетБухучетЗарплаты',
 			style: 'position:absolute;left:335px;top:0px;width:78px;height:39px;',
 			Привязка:
 			{
@@ -10321,24 +10335,25 @@
 			Ширина:78,
 			Верх:0,
 			Лево:335,
+			Групповой: true,
 			height: 39,width: 78,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Регл,
+					id: 'Регл',
 					items:
 					[
 					]
 				},
 				{
-					id: Упр,
+					id: 'Упр',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИТС,
+			id: 'ПанельИТС',
 			style: 'position:absolute;left:700px;top:38px;width:218px;height:535px;',
 			Привязка:
 			{
@@ -10363,17 +10378,18 @@
 			Ширина:218,
 			Верх:38,
 			Лево:700,
+			Групповой: true,
 			height: 535,width: 218,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельПоискаНаИТС,
+			id: 'ПанельПоискаНаИТС',
 			style: 'position:absolute;left:6px;top:6px;width:206px;height:55px;',
 			Привязка:
 			{
@@ -10398,12 +10414,13 @@
 			Ширина:206,
 			Верх:6,
 			Лево:6,
+			Групповой: true,
 			height: 55,width: 206,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -10502,7 +10519,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСсылкиНаИТС,
+			id: 'ПанельСсылкиНаИТС',
 			style: 'position:absolute;left:6px;top:66px;width:206px;height:463px;',
 			Привязка:
 			{
@@ -10527,12 +10544,13 @@
 			Ширина:206,
 			Верх:66,
 			Лево:6,
+			Групповой: true,
 			height: 463,width: 206,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -10668,8 +10686,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -10681,19 +10698,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

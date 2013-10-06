@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -94,7 +94,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДействий,
+			id: 'КоманднаяПанельДействий',
 			style: 'position:absolute;left:0px;top:409px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -130,7 +130,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:82px;width:765px;height:298px;',
 			Привязка:
 			{
@@ -155,11 +155,12 @@
 			Ширина:765,
 			Верх:82,
 			Лево:8,
+			Групповой: true,
 			height: 298,width: 765,
 			items:
 			[
 				{
-					id: Примечания,
+					id: 'Примечания',
 					items:
 					[
 		{
@@ -319,7 +320,7 @@
 					]
 				},
 				{
-					id: ПримечанияСД,
+					id: 'ПримечанияСД',
 					items:
 					[
 		{
@@ -479,7 +480,7 @@
 					]
 				},
 				{
-					id: ДСОтОперДеят,
+					id: 'ДСОтОперДеят',
 					items:
 					[
 		{
@@ -613,7 +614,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУВерхняя,
+			id: 'ПанельЭУВерхняя',
 			style: 'position:absolute;left:8px;top:33px;width:765px;height:49px;',
 			Привязка:
 			{
@@ -638,12 +639,13 @@
 			Ширина:765,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 49,width: 765,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -840,7 +842,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУНижняя,
+			id: 'ПанельЭУНижняя',
 			style: 'position:absolute;left:8px;top:380px;width:765px;height:21px;',
 			Привязка:
 			{
@@ -865,12 +867,13 @@
 			Ширина:765,
 			Верх:380,
 			Лево:8,
+			Групповой: true,
 			height: 21,width: 765,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -942,8 +945,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -955,19 +957,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

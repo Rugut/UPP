@@ -171,7 +171,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -669,7 +669,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:133px;width:765px;height:312px;',
 			Привязка:
 			{
@@ -694,11 +694,12 @@
 			Ширина:765,
 			Верх:133,
 			Лево:8,
+			Групповой: true,
 			height: 312,width: 765,
 			items:
 			[
 				{
-					id: ТоварыИУслугиРеализация,
+					id: 'ТоварыИУслугиРеализация',
 					items:
 					[
 		{
@@ -983,7 +984,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТоварыИУслуги,
+			id: 'КоманднаяПанельТоварыИУслуги',
 			style: 'position:absolute;left:6px;top:6px;width:751px;height:24px;',
 			Привязка:
 			{
@@ -1051,7 +1052,7 @@
 					]
 				},
 				{
-					id: РеквизитыСчетаФактуры,
+					id: 'РеквизитыСчетаФактуры',
 					items:
 					[
 		{
@@ -1854,7 +1855,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:526px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -1910,8 +1911,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1923,19 +1923,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

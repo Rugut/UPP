@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:709px;height:25px;',
 			Привязка:
 			{
@@ -452,7 +452,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: НДСПоВидамНачисления,
+			id: 'НДСПоВидамНачисления',
 			style: 'position:absolute;left:8px;top:102px;width:693px;height:286px;',
 			Привязка:
 			{
@@ -477,11 +477,12 @@
 			Ширина:693,
 			Верх:102,
 			Лево:8,
+			Групповой: true,
 			height: 286,width: 693,
 			items:
 			[
 				{
-					id: Реализация,
+					id: 'Реализация',
 					items:
 					[
 		{
@@ -686,7 +687,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРеализация,
+			id: 'КоманднаяПанельРеализация',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			Привязка:
 			{
@@ -721,7 +722,7 @@
 					]
 				},
 				{
-					id: Авансы,
+					id: 'Авансы',
 					items:
 					[
 		{
@@ -899,7 +900,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельАвансы,
+			id: 'КоманднаяПанельАвансы',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			Привязка:
 			{
@@ -934,7 +935,7 @@
 					]
 				},
 				{
-					id: НачисленКУплате,
+					id: 'НачисленКУплате',
 					items:
 					[
 		{
@@ -1103,7 +1104,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНачисленКУплате,
+			id: 'КоманднаяПанельНачисленКУплате',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			Привязка:
 			{
@@ -1138,7 +1139,7 @@
 					]
 				},
 				{
-					id: ВосстановленПоАвансам,
+					id: 'ВосстановленПоАвансам',
 					items:
 					[
 		{
@@ -1307,7 +1308,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВосстановленПоАвансам,
+			id: 'КоманднаяПанельВосстановленПоАвансам',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			Привязка:
 			{
@@ -1346,7 +1347,7 @@
 					]
 				},
 				{
-					id: Восстановлен,
+					id: 'Восстановлен',
 					items:
 					[
 		{
@@ -1497,7 +1498,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВосстановлен,
+			id: 'КоманднаяПанельВосстановлен',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			Привязка:
 			{
@@ -1532,7 +1533,7 @@
 					]
 				},
 				{
-					id: НеОтражаетсяВКниге,
+					id: 'НеОтражаетсяВКниге',
 					items:
 					[
 		{
@@ -1701,7 +1702,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНеОтражаетсяВКниге,
+			id: 'КоманднаяПанельНеОтражаетсяВКниге',
 			style: 'position:absolute;left:6px;top:6px;width:679px;height:24px;',
 			Привязка:
 			{
@@ -1772,7 +1773,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:421px;width:709px;height:25px;',
 			Привязка:
 			{
@@ -1834,8 +1835,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1847,19 +1847,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

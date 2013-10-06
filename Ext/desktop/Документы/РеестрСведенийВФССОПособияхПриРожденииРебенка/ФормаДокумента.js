@@ -390,7 +390,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:900px;height:25px;',
 			Привязка:
 			{
@@ -423,7 +423,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:8px;top:81px;width:884px;height:437px;',
 			Привязка:
 			{
@@ -448,16 +448,17 @@
 			Ширина:884,
 			Верх:81,
 			Лево:8,
+			Групповой: true,
 			height: 437,width: 884,
 			items:
 			[
 				{
-					id: Сотрудники,
+					id: 'Сотрудники',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботникиОрганизации,
+			id: 'КоманднаяПанельРаботникиОрганизации',
 			style: 'position:absolute;left:6px;top:6px;width:870px;height:24px;',
 			Привязка:
 			{
@@ -632,7 +633,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСтрокиСотрудникиОрганизации,
+			id: 'ПанельСтрокиСотрудникиОрганизации',
 			style: 'position:absolute;left:225px;top:35px;width:651px;height:376px;',
 			Привязка:
 			{
@@ -657,11 +658,12 @@
 			Ширина:651,
 			Верх:35,
 			Лево:225,
+			Групповой: true,
 			height: 376,width: 651,
 			items:
 			[
 				{
-					id: СведенияОСотруднике,
+					id: 'СведенияОСотруднике',
 					items:
 					[
 		{
@@ -2439,12 +2441,7 @@
 			Лево:515,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОсновноеМестоРаботы',
 			boxLabel: 'Основное место работы',
 			style: 'position:absolute;left:96px;top:78px;width:142px;height:19px;',
@@ -2472,15 +2469,8 @@
 			Верх:78,
 			Лево:96,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Совместительство',
 			boxLabel: 'Совместительство',
 			style: 'position:absolute;left:245px;top:78px;width:116px;height:19px;',
@@ -2508,15 +2498,8 @@
 			Верх:78,
 			Лево:245,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеНаСчетВБанке',
 			boxLabel: 'Перечислением на счет в банке:',
 			style: 'position:absolute;left:6px;top:256px;width:184px;height:19px;',
@@ -2544,15 +2527,8 @@
 			Верх:256,
 			Лево:6,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеПочтовымПереводом',
 			boxLabel: 'Почтовым переводом по адресу:',
 			style: 'position:absolute;left:6px;top:303px;width:184px;height:19px;',
@@ -2580,12 +2556,10 @@
 			Верх:303,
 			Лево:6,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: СведенияОДокументах,
+					id: 'СведенияОДокументах',
 					items:
 					[
 		{
@@ -4007,7 +3981,7 @@
 					]
 				},
 				{
-					id: ДанныеСтрахователя,
+					id: 'ДанныеСтрахователя',
 					items:
 					[
 		{
@@ -4444,7 +4418,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРегистрация',
 			text: 'Регистрация в ФСС',
-			style: 'position:absolute;left:6px;top:49px;width:869px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:49px;width:869px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4473,7 +4447,7 @@
 			xtype: 'label',
 			id: 'Подписи',
 			text: 'Подписи',
-			style: 'position:absolute;left:8px;top:119px;width:867px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:119px;width:867px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4653,7 +4627,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОсновные',
 			text: 'Основные',
-			style: 'position:absolute;left:6px;top:6px;width:869px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:869px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5085,7 +5059,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:551px;width:900px;height:25px;',
 			Привязка:
 			{
@@ -5153,8 +5127,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -5166,19 +5139,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

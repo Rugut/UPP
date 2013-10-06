@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельНастроек,
+			id: 'ПанельНастроек',
 			style: 'position:absolute;left:8px;top:8px;width:384px;height:251px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:384,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 251,width: 384,
 			items:
 			[
 				{
-					id: Общее,
+					id: 'Общее',
 					items:
 					[
 		{
@@ -450,12 +451,7 @@
 			height: 19,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОстатокНаНачало',
 			boxLabel: 'Остаток на начало',
 			style: 'position:absolute;left:6px;top:162px;width:114px;height:15px;',
@@ -484,7 +480,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОстатокНаКонец',
 			boxLabel: 'Остаток на конец',
 			style: 'position:absolute;left:6px;top:186px;width:114px;height:15px;',
@@ -513,7 +509,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Оборот',
 			boxLabel: 'Оборот',
 			style: 'position:absolute;left:6px;top:210px;width:114px;height:15px;',
@@ -541,15 +537,8 @@
 			Верх:210,
 			Лево:6,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Дебет',
 			boxLabel: 'Дебет',
 			style: 'position:absolute;left:134px;top:162px;width:114px;height:15px;',
@@ -578,7 +567,7 @@
 			Лево:134,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Кредит',
 			boxLabel: 'Кредит',
 			style: 'position:absolute;left:134px;top:186px;width:114px;height:15px;',
@@ -607,7 +596,7 @@
 			Лево:134,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДебетКредит',
 			boxLabel: 'Дебет - Кредит',
 			style: 'position:absolute;left:134px;top:210px;width:114px;height:15px;',
@@ -635,15 +624,8 @@
 			Верх:210,
 			Лево:134,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Сумма',
 			boxLabel: 'Сумма',
 			style: 'position:absolute;left:262px;top:162px;width:114px;height:15px;',
@@ -672,7 +654,7 @@
 			Лево:262,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Колво',
 			boxLabel: 'Количество',
 			style: 'position:absolute;left:262px;top:186px;width:114px;height:15px;',
@@ -701,7 +683,7 @@
 			Лево:262,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВалютнаяСумма',
 			boxLabel: 'Валютная сумма',
 			style: 'position:absolute;left:262px;top:210px;width:114px;height:15px;',
@@ -729,12 +711,10 @@
 			Верх:210,
 			Лево:262,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: СерииИТочки,
+					id: 'СерииИТочки',
 					items:
 					[
 		{
@@ -905,7 +885,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:28px;width:182px;height:24px;',
 			Привязка:
 			{
@@ -938,7 +918,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:194px;top:28px;width:182px;height:24px;',
 			Привязка:
 			{
@@ -1036,7 +1016,7 @@
 					]
 				},
 				{
-					id: Диаграмма,
+					id: 'Диаграмма',
 					items:
 					[
 		{
@@ -1304,7 +1284,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбъемДиаграммы,
+			id: 'ПанельОбъемДиаграммы',
 			style: 'position:absolute;left:6px;top:184px;width:150px;height:28px;',
 			Привязка:
 			{
@@ -1329,12 +1309,13 @@
 			Ширина:150,
 			Верх:184,
 			Лево:6,
+			Групповой: true,
 			height: 28,width: 150,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Плоская,
+					id: 'Плоская',
 					items:
 					[
 		{
@@ -1369,7 +1350,7 @@
 					]
 				},
 				{
-					id: Объемная,
+					id: 'Объемная',
 					items:
 					[
 		{
@@ -1438,7 +1419,7 @@
 					]
 				},
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -1562,7 +1543,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:6px;width:370px;height:24px;',
 			Привязка:
 			{
@@ -1632,7 +1613,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:267px;width:400px;height:25px;',
 			Привязка:
 			{
@@ -1686,8 +1667,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1699,19 +1679,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

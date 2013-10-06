@@ -457,7 +457,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:708px;height:25px;',
 			Привязка:
 			{
@@ -676,7 +676,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Удержание',
-			style: 'position:absolute;left:8px;top:129px;width:692px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:129px;width:692px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -768,7 +768,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы5',
 			text: 'Порядок выплаты получателю',
-			style: 'position:absolute;left:8px;top:319px;width:692px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:319px;width:692px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -795,7 +795,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПочтовыйБанковскийПеревод,
+			id: 'ПанельПочтовыйБанковскийПеревод',
 			style: 'position:absolute;left:338px;top:342px;width:362px;height:65px;',
 			Привязка:
 			{
@@ -820,12 +820,13 @@
 			Ширина:362,
 			Верх:342,
 			Лево:338,
+			Групповой: true,
 			height: 65,width: 362,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: БанковскийПеревод,
+					id: 'БанковскийПеревод',
 					items:
 					[
 		{
@@ -894,7 +895,7 @@
 					]
 				},
 				{
-					id: ПочтовыйПеревод,
+					id: 'ПочтовыйПеревод',
 					items:
 					[
 		{
@@ -1053,12 +1054,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПочтовыйСборРассчитыватьПоТарифу',
 			boxLabel: 'Рассчитывать по тарифу:',
 			style: 'position:absolute;left:12px;top:23px;width:160px;height:19px;',
@@ -1086,15 +1082,8 @@
 			Верх:23,
 			Лево:12,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПочтовыйСборРассчитыватьПроцентом',
 			boxLabel: 'Рассчитывать процентом:',
 			style: 'position:absolute;left:12px;top:46px;width:160px;height:19px;',
@@ -1121,8 +1110,6 @@
 			Ширина:160,
 			Верх:46,
 			Лево:12,
-		},
-			]
 		},
 					]
 				},
@@ -1319,12 +1306,7 @@
 			Лево:522,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПроцентомОтЗаработка',
 			boxLabel: 'Процентом от заработка',
 			style: 'position:absolute;left:24px;top:174px;width:151px;height:19px;',
@@ -1353,7 +1335,7 @@
 			Лево:24,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПроцентомОтЗаработкаСУчетомБольничныхЛистов',
 			boxLabel: 'Процентом от заработка с учетом больничных листов',
 			style: 'position:absolute;left:24px;top:197px;width:303px;height:19px;',
@@ -1382,7 +1364,7 @@
 			Лево:24,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ФиксированнойСуммой',
 			boxLabel: 'Фиксированной суммой',
 			style: 'position:absolute;left:24px;top:220px;width:151px;height:19px;',
@@ -1411,7 +1393,7 @@
 			Лево:24,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'КратноВеличинеПрожиточногоМинимума',
 			boxLabel: 'Кратно величине прожиточного минимума:',
 			style: 'position:absolute;left:24px;top:243px;width:235px;height:19px;',
@@ -1439,15 +1421,8 @@
 			Верх:243,
 			Лево:24,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособПеречисленияПоИсполнительномуЛисту',
 			boxLabel: 'Через кассу, перечислением на банковский счет',
 			style: 'position:absolute;left:16px;top:342px;width:295px;height:19px;',
@@ -1476,7 +1451,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособПеречисленияПоИсполнительномуЛистуПочтовыйПеревод',
 			boxLabel: 'Почтовым переводом',
 			style: 'position:absolute;left:16px;top:365px;width:295px;height:19px;',
@@ -1505,7 +1480,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособПеречисленияПоИсполнительномуЛистуБанковскийПеревод',
 			boxLabel: 'Банковским переводом',
 			style: 'position:absolute;left:16px;top:388px;width:295px;height:19px;',
@@ -1533,15 +1508,8 @@
 			Верх:388,
 			Лево:16,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДействиеИзменить',
 			boxLabel: 'Изменить условия с:',
 			style: 'position:absolute;left:370px;top:80px;width:130px;height:19px;',
@@ -1570,7 +1538,7 @@
 			Лево:370,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ДействиеПрекратить',
 			boxLabel: 'Прекратить удержания с:',
 			style: 'position:absolute;left:370px;top:102px;width:148px;height:19px;',
@@ -1598,15 +1566,13 @@
 			Верх:102,
 			Лево:370,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:447px;width:708px;height:25px;',
 			Привязка:
 			{
@@ -1662,8 +1628,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1675,19 +1640,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

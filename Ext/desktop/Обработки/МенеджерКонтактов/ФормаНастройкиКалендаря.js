@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельНастройкиКалендаря,
+			id: 'ПанельНастройкиКалендаря',
 			style: 'position:absolute;left:9px;top:7px;width:340px;height:431px;',
 			Привязка:
 			{
@@ -45,18 +45,19 @@
 			Ширина:340,
 			Верх:7,
 			Лево:9,
+			Групповой: true,
 			height: 431,width: 340,
 			items:
 			[
 				{
-					id: Общее,
+					id: 'Общее',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыДниНедели',
 			text: 'Настройка режимов "День", "Неделя", "Месяц"',
-			style: 'position:absolute;left:6px;top:52px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:52px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -418,7 +419,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДниНедели1',
 			text: 'Отображать календарь по ответственным:',
-			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -444,12 +445,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: '_1День',
 			boxLabel: '1 день',
 			style: 'position:absolute;left:18px;top:115px;width:200px;height:15px;',
@@ -478,7 +474,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: '_2Дня',
 			boxLabel: '2 дня',
 			style: 'position:absolute;left:18px;top:136px;width:200px;height:15px;',
@@ -506,15 +502,8 @@
 			Верх:136,
 			Лево:18,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: '_5Дней',
 			boxLabel: '5 дней (Понедельник, ..., Пятница)',
 			style: 'position:absolute;left:18px;top:200px;width:200px;height:15px;',
@@ -543,7 +532,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: '_6Дней',
 			boxLabel: '6 дней (Понедельник, ..., Суббота)',
 			style: 'position:absolute;left:18px;top:220px;width:200px;height:15px;',
@@ -572,7 +561,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: '_7Дней',
 			boxLabel: '7 дней (Полная неделя)',
 			style: 'position:absolute;left:18px;top:240px;width:144px;height:15px;',
@@ -600,15 +589,8 @@
 			Верх:240,
 			Лево:18,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВсеСобытия',
 			boxLabel: 'Все события',
 			style: 'position:absolute;left:18px;top:283px;width:94px;height:15px;',
@@ -637,7 +619,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТолькоЗапланированные',
 			boxLabel: 'Только запланированные',
 			style: 'position:absolute;left:18px;top:303px;width:160px;height:15px;',
@@ -665,15 +647,8 @@
 			Верх:303,
 			Лево:18,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВсеТипы',
 			boxLabel: 'Все типы',
 			style: 'position:absolute;left:18px;top:347px;width:76px;height:16px;',
@@ -702,7 +677,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТолькоВходящие',
 			boxLabel: 'Только входящие',
 			style: 'position:absolute;left:18px;top:368px;width:116px;height:16px;',
@@ -731,7 +706,7 @@
 			Лево:18,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТолькоИсходящие',
 			boxLabel: 'Только исходящие',
 			style: 'position:absolute;left:18px;top:389px;width:120px;height:16px;',
@@ -759,19 +734,17 @@
 			Верх:389,
 			Лево:18,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Заказы,
+					id: 'Заказы',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыОтображениеЗаказов',
 			text: 'Заказы',
-			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:326px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -855,12 +828,7 @@
 			Лево:16,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтображатьЗаказыПокупателей',
 			boxLabel: 'Отображать заказы покупателей',
 			style: 'position:absolute;left:26px;top:68px;width:192px;height:16px;',
@@ -889,7 +857,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтображатьЗаказыПоставщикам',
 			boxLabel: 'Отображать заказы поставщикам',
 			style: 'position:absolute;left:26px;top:89px;width:200px;height:16px;',
@@ -918,7 +886,7 @@
 			Лево:26,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтображатьВсеЗаказы',
 			boxLabel: 'Отображать все заказы',
 			style: 'position:absolute;left:26px;top:110px;width:148px;height:16px;',
@@ -946,8 +914,6 @@
 			Верх:110,
 			Лево:26,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -958,7 +924,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:446px;width:357px;height:25px;',
 			Привязка:
 			{
@@ -1006,8 +972,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1019,19 +984,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

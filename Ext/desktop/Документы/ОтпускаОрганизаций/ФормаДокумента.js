@@ -297,7 +297,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:642px;height:25px;',
 			Привязка:
 			{
@@ -591,7 +591,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаботникиОрганизации,
+			id: 'КоманднаяПанельРаботникиОрганизации',
 			style: 'position:absolute;left:8px;top:100px;width:626px;height:24px;',
 			Привязка:
 			{
@@ -729,7 +729,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРаботникиОрганизации',
 			text: 'Сотрудники',
-			style: 'position:absolute;left:8px;top:84px;width:626px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:84px;width:626px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -756,7 +756,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюРаботникиОрганизации,
+			id: 'КонтекстноеМенюРаботникиОрганизации',
 			style: 'position:absolute;left:99px;top:216px;width:389px;height:24px;',
 			Привязка:
 			{
@@ -914,7 +914,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсправление,
+			id: 'ПанельОткрытьИсправление',
 			style: 'position:absolute;left:421px;top:309px;width:83px;height:33px;',
 			Привязка:
 			{
@@ -939,12 +939,13 @@
 			Ширина:83,
 			Верх:309,
 			Лево:421,
+			Групповой: true,
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -982,7 +983,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсходный,
+			id: 'ПанельОткрытьИсходный',
 			style: 'position:absolute;left:505px;top:309px;width:129px;height:33px;',
 			Привязка:
 			{
@@ -1007,12 +1008,13 @@
 			Ширина:129,
 			Верх:309,
 			Лево:505,
+			Групповой: true,
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1054,7 +1056,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:268px;top:375px;width:374px;height:25px;',
 			Привязка:
 			{
@@ -1112,7 +1114,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДополнительныеДействия,
+			id: 'ДополнительныеДействия',
 			style: 'position:absolute;left:0px;top:375px;width:268px;height:25px;',
 			Привязка:
 			{
@@ -1150,8 +1152,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1163,19 +1164,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -112,7 +112,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:56px;width:516px;height:200px;',
 			Привязка:
 			{
@@ -137,12 +137,13 @@
 			Ширина:516,
 			Верх:56,
 			Лево:8,
+			Групповой: true,
 			height: 200,width: 516,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СформированныеДокументы,
+					id: 'СформированныеДокументы',
 					items:
 					[
 		{
@@ -266,7 +267,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСформированныеДокументы,
+			id: 'КоманднаяПанельСформированныеДокументы',
 			style: 'position:absolute;left:6px;top:26px;width:502px;height:24px;',
 			Привязка:
 			{
@@ -343,7 +344,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельКонтекстноеМенюСформированныеДокументы,
+			id: 'КоманднаяПанельКонтекстноеМенюСформированныеДокументы',
 			style: 'position:absolute;left:22px;top:121px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -562,7 +563,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:264px;width:532px;height:25px;',
 			Привязка:
 			{
@@ -616,8 +617,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -629,19 +629,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -103,7 +103,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРазделов,
+			id: 'ПанельРазделов',
 			style: 'position:absolute;left:209px;top:8px;width:548px;height:427px;',
 			Привязка:
 			{
@@ -128,12 +128,13 @@
 			Ширина:548,
 			Верх:8,
 			Лево:209,
+			Групповой: true,
 			height: 427,width: 548,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Производство,
+					id: 'Производство',
 					items:
 					[
 		{
@@ -1386,7 +1387,7 @@
 					]
 				},
 				{
-					id: Заказы,
+					id: 'Заказы',
 					items:
 					[
 		{
@@ -1535,12 +1536,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель2',
 			boxLabel: 'Не указана',
 			style: 'position:absolute;left:28px;top:68px;width:84px;height:19px;',
@@ -1569,7 +1565,7 @@
 			Лево:28,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель3',
 			boxLabel: 'Сначала в заказах поставщикам, потом на складах',
 			style: 'position:absolute;left:28px;top:108px;width:291px;height:19px;',
@@ -1598,7 +1594,7 @@
 			Лево:28,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель4',
 			boxLabel: 'Сначала на складах, потом в заказах поставщикам',
 			style: 'position:absolute;left:28px;top:88px;width:291px;height:19px;',
@@ -1626,12 +1622,10 @@
 			Верх:88,
 			Лево:28,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ЗаказыНаПроизводство,
+					id: 'ЗаказыНаПроизводство',
 					items:
 					[
 		{
@@ -1693,12 +1687,7 @@
 			Лево:28,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗакрытияПотребностейЗаказовНаПроизводствоЯвно',
 			boxLabel: 'Явно (с помощью документа "Корректировка заказа на производство")',
 			style: 'position:absolute;left:60px;top:116px;width:400px;height:19px;',
@@ -1727,7 +1716,7 @@
 			Лево:60,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗакрытияПотребностейЗаказовНаПроизводствоАвтоматически',
 			boxLabel: 'Автоматически при распределении материалов на выпуск продукции',
 			style: 'position:absolute;left:60px;top:140px;width:400px;height:19px;',
@@ -1755,12 +1744,10 @@
 			Верх:140,
 			Лево:60,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Планирование,
+					id: 'Планирование',
 					items:
 					[
 		{
@@ -1858,7 +1845,7 @@
 					]
 				},
 				{
-					id: Валюты,
+					id: 'Валюты',
 					items:
 					[
 		{
@@ -2053,7 +2040,7 @@
 					]
 				},
 				{
-					id: УчетТоваров,
+					id: 'УчетТоваров',
 					items:
 					[
 		{
@@ -2233,7 +2220,7 @@
 					]
 				},
 				{
-					id: Печать,
+					id: 'Печать',
 					items:
 					[
 		{
@@ -2428,7 +2415,7 @@
 					]
 				},
 				{
-					id: РежимУчетаЗатрат,
+					id: 'РежимУчетаЗатрат',
 					items:
 					[
 		{
@@ -2577,12 +2564,7 @@
 			Лево:32,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСтратегияСписанияПартийПоСтатусам',
 			boxLabel: 'Сначала принятые, потом собственные',
 			style: 'position:absolute;left:48px;top:204px;width:220px;height:19px;',
@@ -2611,7 +2593,7 @@
 			Лево:48,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСтратегияСписанияПартийПоСтатусам2',
 			boxLabel: 'Сначала собственные, потом принятые',
 			style: 'position:absolute;left:48px;top:224px;width:220px;height:19px;',
@@ -2639,15 +2621,8 @@
 			Верх:224,
 			Лево:48,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИспользоватьРасширеннуюАналитикуУчетаНоменклатурыИЗатрат',
 			boxLabel: 'Использовать расширенную аналитику учета затрат с:',
 			style: 'position:absolute;left:12px;top:48px;width:304px;height:19px;',
@@ -2676,7 +2651,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИспользоватьРасширеннуюАналитикуУчетаНоменклатурыИЗатрат1',
 			boxLabel: 'Использовать партионный учет',
 			style: 'position:absolute;left:12px;top:96px;width:248px;height:19px;',
@@ -2704,12 +2679,10 @@
 			Верх:96,
 			Лево:12,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Проекты,
+					id: 'Проекты',
 					items:
 					[
 		{
@@ -2831,7 +2804,7 @@
 					]
 				},
 				{
-					id: Взаиморасчеты,
+					id: 'Взаиморасчеты',
 					items:
 					[
 		{
@@ -2898,12 +2871,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель23',
 			boxLabel: 'По времени регистрации документа',
 			style: 'position:absolute;left:28px;top:96px;width:224px;height:19px;',
@@ -2932,7 +2900,7 @@
 			Лево:28,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель24',
 			boxLabel: 'В конце дня даты регистрации документа',
 			style: 'position:absolute;left:28px;top:116px;width:240px;height:19px;',
@@ -2960,16 +2928,14 @@
 			Верх:116,
 			Лево:28,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: РасчетыСПерсоналом,
+					id: 'РасчетыСПерсоналом',
 					items:
 					[
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВестиРеглУчетРасчетовСПерсоналомСводно1',
 			boxLabel: 'Сводно по всем работникам',
 			style: 'position:absolute;left:28px;top:88px;width:166px;height:19px;',
@@ -2998,12 +2964,7 @@
 			Лево:28,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВестиРеглУчетРасчетовСПерсоналомСводно',
 			boxLabel: 'По каждому работнику',
 			style: 'position:absolute;left:28px;top:68px;width:166px;height:19px;',
@@ -3031,12 +2992,10 @@
 			Верх:68,
 			Лево:28,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НДС,
+					id: 'НДС',
 					items:
 					[
 		{
@@ -3311,7 +3270,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ЕдинаяНумерацияВсехВыданныхСчетовФактур',
 			boxLabel: 'Единая нумерация всех выданных счетов-фактур',
 			style: 'position:absolute;left:23px;top:385px;width:347px;height:15px;',
@@ -3369,12 +3328,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УказыватьСокращенноеНаименование1',
 			boxLabel: 'Только полное наименование',
 			style: 'position:absolute;left:23px;top:72px;width:406px;height:19px;',
@@ -3403,7 +3357,7 @@
 			Лево:23,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УказыватьСокращенноеНаименование2',
 			boxLabel: 'Полное и сокращенное наименование',
 			style: 'position:absolute;left:23px;top:96px;width:406px;height:19px;',
@@ -3431,12 +3385,10 @@
 			Верх:96,
 			Лево:23,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: НДСВвалюте,
+					id: 'НДСВвалюте',
 					items:
 					[
 		{
@@ -3469,7 +3421,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПересчитыватьНДСпоСтавке',
 			boxLabel: 'По рублевой сумме документа (рекомендуется)',
 			style: 'position:absolute;left:29px;top:73px;width:390px;height:19px;',
@@ -3532,7 +3484,7 @@
 			Лево:131,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПересчитыватьНДСпоКурсу',
 			boxLabel: 'По валютной сумме НДС',
 			style: 'position:absolute;left:29px;top:180px;width:343px;height:19px;',
@@ -3679,7 +3631,7 @@
 					]
 				},
 				{
-					id: НалогНаПрибыль,
+					id: 'НалогНаПрибыль',
 					items:
 					[
 		{
@@ -3833,7 +3785,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоКурсуНаДатуАванса',
 			boxLabel: 'Получения или выдачи аванса',
 			style: 'position:absolute;left:22px;top:100px;width:387px;height:19px;',
@@ -3862,7 +3814,7 @@
 			Лево:22,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПоКурсуНаДатуАванса1',
 			boxLabel: 'Поступления или реализации имущества и услуг',
 			style: 'position:absolute;left:22px;top:77px;width:387px;height:19px;',
@@ -4012,12 +3964,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СуммовыеРазницыНаПостоянныеРазницы',
 			boxLabel: 'Признавать постоянные разницы',
 			style: 'position:absolute;left:22px;top:250px;width:387px;height:19px;',
@@ -4045,15 +3992,8 @@
 			Верх:250,
 			Лево:22,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СуммовыеРазницыНаВременныеРазницы',
 			boxLabel: 'Признавать временные разницы',
 			style: 'position:absolute;left:22px;top:227px;width:387px;height:19px;',
@@ -4082,7 +4022,7 @@
 			Лево:22,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ОтдельнаяНумерацияСчетовФактурНаАванс',
 			boxLabel: 'Отдельная нумерация счетов-фактур на аванс с префиксом "А"',
 			style: 'position:absolute;left:23px;top:404px;width:347px;height:15px;',
@@ -4110,12 +4050,10 @@
 			Верх:404,
 			Лево:23,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: РозничныеПродажи,
+					id: 'РозничныеПродажи',
 					items:
 					[
 		{
@@ -4208,7 +4146,7 @@
 					]
 				},
 				{
-					id: Себестоимость,
+					id: 'Себестоимость',
 					items:
 					[
 		{
@@ -4422,7 +4360,7 @@
 					]
 				},
 				{
-					id: СпособыРаспределенияЗатрат,
+					id: 'СпособыРаспределенияЗатрат',
 					items:
 					[
 		{
@@ -4456,7 +4394,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРаспределениеЗатрат,
+			id: 'ПанельРаспределениеЗатрат',
 			style: 'position:absolute;left:12px;top:48px;width:528px;height:371px;',
 			Привязка:
 			{
@@ -4481,12 +4419,13 @@
 			Ширина:528,
 			Верх:48,
 			Лево:12,
+			Групповой: true,
 			height: 371,width: 528,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: РасширеннаяАналитика,
+					id: 'РасширеннаяАналитика',
 					items:
 					[
 		{
@@ -4579,7 +4518,7 @@
 					]
 				},
 				{
-					id: ТрадиционныйРежим,
+					id: 'ТрадиционныйРежим',
 				},
 			]
 		},
@@ -4593,7 +4532,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:443px;width:765px;height:25px;',
 			Привязка:
 			{
@@ -4661,8 +4600,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -4674,19 +4612,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

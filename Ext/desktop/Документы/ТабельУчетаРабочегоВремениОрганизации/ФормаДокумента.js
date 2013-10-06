@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:676px;height:25px;',
 			Привязка:
 			{
@@ -53,7 +53,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанельДокумента,
+			id: 'ОсновнаяПанельДокумента',
 			style: 'position:absolute;left:8px;top:33px;width:502px;height:482px;',
 			Привязка:
 			{
@@ -78,12 +78,13 @@
 			Ширина:502,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 482,width: 502,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ОсновнаяПанельДокумента,
+					id: 'ОсновнаяПанельДокумента',
 					items:
 					[
 		{
@@ -458,7 +459,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтработанноеВремя,
+			id: 'ПанельОтработанноеВремя',
 			style: 'position:absolute;left:0px;top:210px;width:502px;height:245px;',
 			Привязка:
 			{
@@ -483,12 +484,13 @@
 			Ширина:502,
 			Верх:210,
 			Лево:0,
+			Групповой: true,
 			height: 245,width: 502,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоДням,
+					id: 'ПоДням',
 					items:
 					[
 		{
@@ -873,7 +875,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтработанноеВремя,
+			id: 'КоманднаяПанельОтработанноеВремя',
 			style: 'position:absolute;left:0px;top:0px;width:502px;height:24px;',
 			Привязка:
 			{
@@ -951,7 +953,7 @@
 					]
 				},
 				{
-					id: ВЦеломЗаПериод,
+					id: 'ВЦеломЗаПериод',
 					items:
 					[
 		{
@@ -1210,7 +1212,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтработанноеВремяВЦеломЗаПериод,
+			id: 'КоманднаяПанельОтработанноеВремяВЦеломЗаПериод',
 			style: 'position:absolute;left:0px;top:0px;width:300px;height:24px;',
 			Привязка:
 			{
@@ -1254,7 +1256,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИзмененияСоставаКолонок,
+			id: 'КоманднаяПанельИзмененияСоставаКолонок',
 			style: 'position:absolute;left:316px;top:0px;width:186px;height:24px;',
 			Привязка:
 			{
@@ -1335,7 +1337,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРаботникиОрганизации',
 			text: 'Сотрудники организации',
-			style: 'position:absolute;left:0px;top:194px;width:502px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:194px;width:502px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1362,7 +1364,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:0px;top:60px;width:502px;height:128px;',
 			Привязка:
 			{
@@ -1387,12 +1389,13 @@
 			Ширина:502,
 			Верх:60,
 			Лево:0,
+			Групповой: true,
 			height: 128,width: 502,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1431,7 +1434,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Способ ввода времени',
-			style: 'position:absolute;left:255px;top:11px;width:236px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:255px;top:11px;width:236px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1554,12 +1557,7 @@
 			Лево:130,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПериодЗаполнения',
 			boxLabel: 'Весь месяц (Май 2007 г)',
 			style: 'position:absolute;left:8px;top:35px;width:221px;height:19px;',
@@ -1588,7 +1586,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательПерваяПоловинаМесяца',
 			boxLabel: 'Первая половина месяца (1-15 мая)',
 			style: 'position:absolute;left:8px;top:56px;width:221px;height:19px;',
@@ -1617,7 +1615,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВтораяПоловинаМесяца',
 			boxLabel: 'Вторая половина месяца (16-31 мая)',
 			style: 'position:absolute;left:8px;top:77px;width:221px;height:19px;',
@@ -1646,7 +1644,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательУказанныйПериод',
 			boxLabel: 'с:',
 			style: 'position:absolute;left:8px;top:98px;width:29px;height:19px;',
@@ -1674,15 +1672,8 @@
 			Верх:98,
 			Лево:8,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособВводаДанных',
 			boxLabel: 'По дням периода',
 			style: 'position:absolute;left:255px;top:35px;width:236px;height:19px;',
@@ -1711,7 +1702,7 @@
 			Лево:255,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВводДанныхВЦеломЗаПериод',
 			boxLabel: 'Сводно, в целом за период',
 			style: 'position:absolute;left:255px;top:56px;width:236px;height:19px;',
@@ -1739,8 +1730,6 @@
 			Верх:56,
 			Лево:255,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -1751,7 +1740,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСправкиФормы,
+			id: 'ПанельСправкиФормы',
 			style: 'position:absolute;left:516px;top:33px;width:202px;height:482px;',
 			Привязка:
 			{
@@ -1776,12 +1765,13 @@
 			Ширина:202,
 			Верх:33,
 			Лево:516,
+			Групповой: true,
 			height: 482,width: 202,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1819,7 +1809,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСправкиФормы,
+			id: 'КоманднаяПанельСправкиФормы',
 			style: 'position:absolute;left:676px;top:0px;width:50px;height:25px;',
 			Привязка:
 			{
@@ -1864,7 +1854,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:525px;width:726px;height:25px;',
 			Привязка:
 			{
@@ -1899,8 +1889,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1912,19 +1901,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

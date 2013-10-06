@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:811px;height:25px;',
 			Привязка:
 			{
@@ -353,7 +353,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОрганизация,
+			id: 'ПанельОрганизация',
 			style: 'position:absolute;left:8px;top:57px;width:388px;height:24px;',
 			Привязка:
 			{
@@ -378,12 +378,13 @@
 			Ширина:388,
 			Верх:57,
 			Лево:8,
+			Групповой: true,
 			height: 24,width: 388,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоСтруктуреЮридическихЛиц,
+					id: 'ПоСтруктуреЮридическихЛиц',
 					items:
 					[
 		{
@@ -1002,7 +1003,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОписаниеВакансии',
 			text: 'Описание вакансии',
-			style: 'position:absolute;left:8px;top:130px;width:795px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:130px;width:795px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1125,12 +1126,7 @@
 			Лево:723,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИспользоватьОписаниеВакансииИзДолжности',
 			boxLabel: 'Соответствует описанию должности',
 			style: 'position:absolute;left:8px;top:150px;width:795px;height:20px;',
@@ -1159,7 +1155,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УточнитьОписаниеВакансии',
 			boxLabel: 'Произвольное',
 			style: 'position:absolute;left:8px;top:171px;width:795px;height:20px;',
@@ -1187,15 +1183,13 @@
 			Верх:171,
 			Лево:8,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:383px;width:811px;height:25px;',
 			Привязка:
 			{
@@ -1251,8 +1245,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1264,19 +1257,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФормы,
+			id: 'КоманднаяПанельФормы',
 			style: 'position:absolute;left:0px;top:0px;width:670px;height:25px;',
 			Привязка:
 			{
@@ -97,7 +97,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:122px;width:654px;height:310px;',
 			Привязка:
 			{
@@ -122,19 +122,20 @@
 			Ширина:654,
 			Верх:122,
 			Лево:8,
+			Групповой: true,
 			height: 310,width: 654,
 			items:
 			[
 				{
-					id: Титульный,
+					id: 'Титульный',
 				},
 				{
-					id: Раздел1,
+					id: 'Раздел1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел1,
+			id: 'ПанельВариантЗаполненияРаздел1',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -159,12 +160,13 @@
 			Ширина:640,
 			Верх:260,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -270,12 +272,12 @@
 					]
 				},
 				{
-					id: Раздел2,
+					id: 'Раздел2',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел2,
+			id: 'ПанельВариантЗаполненияРаздел2',
 			style: 'position:absolute;left:6px;top:237px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -300,12 +302,13 @@
 			Ширина:640,
 			Верх:237,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -556,7 +559,7 @@
 					]
 				},
 				{
-					id: Раздел31,
+					id: 'Раздел31',
 					items:
 					[
 		{
@@ -619,7 +622,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел31,
+			id: 'ПанельВариантЗаполненияРаздел31',
 			style: 'position:absolute;left:6px;top:238px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -644,12 +647,13 @@
 			Ширина:640,
 			Верх:238,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -871,7 +875,7 @@
 					]
 				},
 				{
-					id: Раздел32,
+					id: 'Раздел32',
 					items:
 					[
 		{
@@ -905,7 +909,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел32,
+			id: 'ПанельВариантЗаполненияРаздел32',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -930,12 +934,13 @@
 			Ширина:640,
 			Верх:260,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1041,12 +1046,12 @@
 					]
 				},
 				{
-					id: Раздел33,
+					id: 'Раздел33',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел33,
+			id: 'ПанельВариантЗаполненияРаздел33',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -1071,12 +1076,13 @@
 			Ширина:640,
 			Верх:260,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1211,12 +1217,12 @@
 					]
 				},
 				{
-					id: Раздел34,
+					id: 'Раздел34',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел34,
+			id: 'ПанельВариантЗаполненияРаздел34',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -1241,12 +1247,13 @@
 			Ширина:640,
 			Верх:260,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1352,12 +1359,12 @@
 					]
 				},
 				{
-					id: Раздел35,
+					id: 'Раздел35',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел35,
+			id: 'ПанельВариантЗаполненияРаздел35',
 			style: 'position:absolute;left:6px;top:234px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -1382,12 +1389,13 @@
 			Ширина:640,
 			Верх:234,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1551,12 +1559,12 @@
 					]
 				},
 				{
-					id: Раздел36,
+					id: 'Раздел36',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел36,
+			id: 'ПанельВариантЗаполненияРаздел36',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -1581,12 +1589,13 @@
 			Ширина:640,
 			Верх:260,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1692,12 +1701,12 @@
 					]
 				},
 				{
-					id: Раздел37,
+					id: 'Раздел37',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел37,
+			id: 'ПанельВариантЗаполненияРаздел37',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -1722,12 +1731,13 @@
 			Ширина:640,
 			Верх:260,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1833,12 +1843,12 @@
 					]
 				},
 				{
-					id: Раздел38,
+					id: 'Раздел38',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел38,
+			id: 'ПанельВариантЗаполненияРаздел38',
 			style: 'position:absolute;left:6px;top:260px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -1863,12 +1873,13 @@
 			Ширина:640,
 			Верх:260,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1974,12 +1985,12 @@
 					]
 				},
 				{
-					id: Раздел4,
+					id: 'Раздел4',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел4,
+			id: 'ПанельВариантЗаполненияРаздел4',
 			style: 'position:absolute;left:6px;top:234px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -2004,12 +2015,13 @@
 			Ширина:640,
 			Верх:234,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2173,12 +2185,12 @@
 					]
 				},
 				{
-					id: Раздел5,
+					id: 'Раздел5',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельВариантЗаполненияРаздел5,
+			id: 'ПанельВариантЗаполненияРаздел5',
 			style: 'position:absolute;left:6px;top:234px;width:640px;height:24px;',
 			Привязка:
 			{
@@ -2203,12 +2215,13 @@
 			Ширина:640,
 			Верх:234,
 			Лево:6,
+			Групповой: true,
 			height: 24,width: 640,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2404,7 +2417,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУВерхняя,
+			id: 'ПанельЭУВерхняя',
 			style: 'position:absolute;left:8px;top:74px;width:654px;height:47px;',
 			Привязка:
 			{
@@ -2429,12 +2442,13 @@
 			Ширина:654,
 			Верх:74,
 			Лево:8,
+			Групповой: true,
 			height: 47,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2599,7 +2613,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЭУНижняя,
+			id: 'ПанельЭУНижняя',
 			style: 'position:absolute;left:8px;top:432px;width:654px;height:26px;',
 			Привязка:
 			{
@@ -2624,12 +2638,13 @@
 			Ширина:654,
 			Верх:432,
 			Лево:8,
+			Групповой: true,
 			height: 26,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2761,7 +2776,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтправки,
+			id: 'ПанельОтправки',
 			style: 'position:absolute;left:8px;top:33px;width:654px;height:41px;',
 			Привязка:
 			{
@@ -2786,17 +2801,18 @@
 			Ширина:654,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 41,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельОтправкиВнутренняя,
+			id: 'ПанельОтправкиВнутренняя',
 			style: 'position:absolute;left:0px;top:0px;width:654px;height:35px;',
 			Привязка:
 			{
@@ -2821,12 +2837,13 @@
 			Ширина:654,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 35,width: 654,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -2843,7 +2860,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДействий,
+			id: 'КоманднаяПанельДействий',
 			style: 'position:absolute;left:0px;top:466px;width:670px;height:25px;',
 			Привязка:
 			{
@@ -2878,8 +2895,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2891,19 +2907,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

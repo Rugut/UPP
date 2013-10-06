@@ -205,7 +205,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -238,7 +238,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:132px;width:636px;height:185px;',
 			Привязка:
 			{
@@ -263,11 +263,12 @@
 			Ширина:636,
 			Верх:132,
 			Лево:8,
+			Групповой: true,
 			height: 185,width: 636,
 			items:
 			[
 				{
-					id: Товары,
+					id: 'Товары',
 					items:
 					[
 		{
@@ -481,7 +482,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТовары,
+			id: 'КоманднаяПанельТовары',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -528,12 +529,12 @@
 					]
 				},
 				{
-					id: Тара,
+					id: 'Тара',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельВозвратнаяТара,
+			id: 'КоманднаяПанельВозвратнаяТара',
 			style: 'position:absolute;left:6px;top:6px;width:622px;height:24px;',
 			Привязка:
 			{
@@ -749,7 +750,7 @@
 					]
 				},
 				{
-					id: Дополнительно,
+					id: 'Дополнительно',
 					items:
 					[
 		{
@@ -942,7 +943,7 @@
 			xtype: 'label',
 			id: 'РамкаДополнительнаяАналитика',
 			text: 'Рамка',
-			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:622px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1157,7 +1158,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:350px;width:652px;height:25px;',
 			Привязка:
 			{
@@ -1249,7 +1250,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:8px;top:76px;width:320px;height:27px;',
 			Привязка:
 			{
@@ -1274,12 +1275,13 @@
 			Ширина:320,
 			Верх:76,
 			Лево:8,
+			Групповой: true,
 			height: 27,width: 320,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Перемещение,
+					id: 'Перемещение',
 					items:
 					[
 		{
@@ -1377,7 +1379,7 @@
 					]
 				},
 				{
-					id: Контрагент,
+					id: 'Контрагент',
 					items:
 					[
 		{
@@ -1478,7 +1480,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельФизЛицо,
+			id: 'ПанельФизЛицо',
 			style: 'position:absolute;left:8px;top:104px;width:320px;height:20px;',
 			Привязка:
 			{
@@ -1503,12 +1505,13 @@
 			Ширина:320,
 			Верх:104,
 			Лево:8,
+			Групповой: true,
 			height: 20,width: 320,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ФизЛицо,
+					id: 'ФизЛицо',
 					items:
 					[
 		{
@@ -1607,7 +1610,7 @@
 					]
 				},
 				{
-					id: Заказ,
+					id: 'Заказ',
 					items:
 					[
 		{
@@ -1711,8 +1714,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1724,19 +1726,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

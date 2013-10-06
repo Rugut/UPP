@@ -390,7 +390,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:514px;height:25px;',
 			Привязка:
 			{
@@ -510,7 +510,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:318px;width:514px;height:25px;',
 			Привязка:
 			{
@@ -573,7 +573,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ОсновнаяПанель,
+			id: 'ОсновнаяПанель',
 			style: 'position:absolute;left:8px;top:80px;width:498px;height:179px;',
 			Привязка:
 			{
@@ -598,17 +598,18 @@
 			Ширина:498,
 			Верх:80,
 			Лево:8,
+			Групповой: true,
 			height: 179,width: 498,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЦеныНоменклатуры,
+					id: 'ЦеныНоменклатуры',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТаблицыТиповЦен,
+			id: 'КоманднаяПанельТаблицыТиповЦен',
 			style: 'position:absolute;left:0px;top:47px;width:497px;height:26px;',
 			Привязка:
 			{
@@ -890,8 +891,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -903,19 +903,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

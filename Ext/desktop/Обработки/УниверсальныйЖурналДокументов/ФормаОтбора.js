@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:5px;top:5px;width:450px;height:266px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:450,
 			Верх:5,
 			Лево:5,
+			Групповой: true,
 			height: 266,width: 450,
 			items:
 			[
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -173,7 +174,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -207,12 +208,12 @@
 					]
 				},
 				{
-					id: Сортировка,
+					id: 'Сортировка',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:6px;width:436px;height:24px;',
 			Привязка:
 			{
@@ -336,7 +337,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:277px;width:460px;height:25px;',
 			Привязка:
 			{
@@ -383,8 +384,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -396,19 +396,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

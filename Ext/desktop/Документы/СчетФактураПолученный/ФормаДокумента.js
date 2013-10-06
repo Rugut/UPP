@@ -205,7 +205,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:792px;height:25px;',
 			Привязка:
 			{
@@ -256,7 +256,7 @@
 			xtype: 'label',
 			id: 'РамкаДокументОснование',
 			text: 'Документ-основание счета-фактуры',
-			style: 'position:absolute;left:8px;top:154px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:154px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -404,7 +404,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДокументыОснования,
+			id: 'ПанельДокументыОснования',
 			style: 'position:absolute;left:8px;top:175px;width:776px;height:143px;',
 			Привязка:
 			{
@@ -429,12 +429,13 @@
 			Ширина:776,
 			Верх:175,
 			Лево:8,
+			Групповой: true,
 			height: 143,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ОдноОснование,
+					id: 'ОдноОснование',
 					items:
 					[
 		{
@@ -500,7 +501,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанныеАванс,
+			id: 'ПанельДанныеАванс',
 			style: 'position:absolute;left:0px;top:41px;width:776px;height:97px;',
 			Привязка:
 			{
@@ -525,15 +526,16 @@
 			Ширина:776,
 			Верх:41,
 			Лево:0,
+			Групповой: true,
 			height: 97,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ОписаниеВозможностей,
+					id: 'ОписаниеВозможностей',
 				},
 				{
-					id: ДанныеАванс,
+					id: 'ДанныеАванс',
 					items:
 					[
 		{
@@ -840,7 +842,7 @@
 			xtype: 'label',
 			id: 'ПлатежноРасчетныйДокумент1',
 			text: 'Реквизиты счета-фактуры на аванс',
-			style: 'position:absolute;left:5px;top:6px;width:771px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:5px;top:6px;width:771px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1149,14 +1151,14 @@
 					]
 				},
 				{
-					id: ДанныеАвансНесколько,
+					id: 'ДанныеАвансНесколько',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'ПлатежноРасчетныйДокумент2',
 			text: 'Реквизиты счета-фактуры на аванс',
-			style: 'position:absolute;left:0px;top:12px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:12px;width:776px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1376,7 +1378,7 @@
 					]
 				},
 				{
-					id: НесколькоОснований,
+					id: 'НесколькоОснований',
 					items:
 					[
 		{
@@ -1497,7 +1499,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСведенияОСчетеФактуре,
+			id: 'ПанельСведенияОСчетеФактуре',
 			style: 'position:absolute;left:8px;top:317px;width:776px;height:67px;',
 			Привязка:
 			{
@@ -1522,19 +1524,20 @@
 			Ширина:776,
 			Верх:317,
 			Лево:8,
+			Групповой: true,
 			height: 67,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаПолучениеСчетаФактуры',
 			text: 'Получение счета-фактуры',
-			style: 'position:absolute;left:0px;top:0px;width:774px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:774px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1679,12 +1682,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НаБумажномНосителе',
 			boxLabel: 'На бумажном носителе',
 			style: 'position:absolute;left:272px;top:19px;width:139px;height:19px;',
@@ -1713,7 +1711,7 @@
 			Лево:272,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВЭлектронномВиде',
 			boxLabel: 'В электронном виде',
 			style: 'position:absolute;left:413px;top:19px;width:124px;height:19px;',
@@ -1741,15 +1739,13 @@
 			Верх:19,
 			Лево:413,
 		},
-			]
-		},
 					]
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИтоги,
+			id: 'ПанельИтоги',
 			style: 'position:absolute;left:8px;top:387px;width:776px;height:24px;',
 			Привязка:
 			{
@@ -1774,12 +1770,13 @@
 			Ширина:776,
 			Верх:387,
 			Лево:8,
+			Групповой: true,
 			height: 24,width: 776,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаВсего,
+					id: 'СтраницаВсего',
 					items:
 					[
 		{
@@ -1940,7 +1937,7 @@
 					]
 				},
 				{
-					id: СтраницаУвеличениеУменьшение,
+					id: 'СтраницаУвеличениеУменьшение',
 					items:
 					[
 		{
@@ -2259,7 +2256,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОрганизация,
+			id: 'ПанельОрганизация',
 			style: 'position:absolute;left:8px;top:57px;width:364px;height:92px;',
 			Привязка:
 			{
@@ -2284,12 +2281,13 @@
 			Ширина:364,
 			Верх:57,
 			Лево:8,
+			Групповой: true,
 			height: 92,width: 364,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2665,7 +2663,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельКорректировка,
+			id: 'ПанельКорректировка',
 			style: 'position:absolute;left:379px;top:82px;width:376px;height:44px;',
 			Привязка:
 			{
@@ -2690,12 +2688,13 @@
 			Ширина:376,
 			Верх:82,
 			Лево:379,
+			Групповой: true,
 			height: 44,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаКорректировочный,
+					id: 'СтраницаКорректировочный',
 					items:
 					[
 		{
@@ -2951,13 +2950,13 @@
 					]
 				},
 				{
-					id: СтраницаОбычный,
+					id: 'СтраницаОбычный',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВходящиеНомерИДата,
+			id: 'ПанельВходящиеНомерИДата',
 			style: 'position:absolute;left:379px;top:32px;width:376px;height:19px;',
 			Привязка:
 			{
@@ -2982,12 +2981,13 @@
 			Ширина:376,
 			Верх:32,
 			Лево:379,
+			Групповой: true,
 			height: 19,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3120,7 +3120,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИсправление,
+			id: 'ПанельИсправление',
 			style: 'position:absolute;left:379px;top:57px;width:376px;height:19px;',
 			Привязка:
 			{
@@ -3145,12 +3145,13 @@
 			Ширина:376,
 			Верх:57,
 			Лево:379,
+			Групповой: true,
 			height: 19,width: 376,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаИсправление,
+					id: 'СтраницаИсправление',
 					items:
 					[
 		{
@@ -3282,7 +3283,7 @@
 					]
 				},
 				{
-					id: СтраницаКорректировка,
+					id: 'СтраницаКорректировка',
 					items:
 					[
 		{
@@ -3419,7 +3420,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:464px;width:792px;height:25px;',
 			Привязка:
 			{
@@ -3475,8 +3476,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3488,19 +3488,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

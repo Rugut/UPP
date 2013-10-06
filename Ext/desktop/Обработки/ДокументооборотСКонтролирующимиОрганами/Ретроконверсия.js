@@ -49,7 +49,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСведения,
+			id: 'ПанельСведения',
 			style: 'position:absolute;left:8px;top:128px;width:449px;height:340px;',
 			Привязка:
 			{
@@ -74,17 +74,18 @@
 			Ширина:449,
 			Верх:128,
 			Лево:8,
+			Групповой: true,
 			height: 340,width: 449,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельЧастичноеПодтверждение,
+			id: 'ПанельЧастичноеПодтверждение',
 			style: 'position:absolute;left:0px;top:69px;width:449px;height:271px;',
 			Привязка:
 			{
@@ -109,17 +110,18 @@
 			Ширина:449,
 			Верх:69,
 			Лево:0,
+			Групповой: true,
 			height: 271,width: 449,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФайлыСведений,
+			id: 'КоманднаяПанельФайлыСведений',
 			style: 'position:absolute;left:0px;top:0px;width:449px;height:24px;',
 			Привязка:
 			{
@@ -260,12 +262,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСогласен1',
 			boxLabel: 'Подтвердить все сведения',
 			style: 'position:absolute;left:0px;top:6px;width:164px;height:15px;',
@@ -294,7 +291,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСогласен2',
 			boxLabel: 'Отклонить все сведения',
 			style: 'position:absolute;left:0px;top:28px;width:150px;height:15px;',
@@ -323,7 +320,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательСогласен3',
 			boxLabel: 'Подтвердить только выбранные сведения:',
 			style: 'position:absolute;left:0px;top:50px;width:240px;height:15px;',
@@ -351,8 +348,6 @@
 			Верх:50,
 			Лево:0,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -361,7 +356,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Подтверждение сведений',
-			style: 'position:absolute;left:8px;top:61px;width:449px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:61px;width:449px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -421,7 +416,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:476px;width:465px;height:25px;',
 			Привязка:
 			{
@@ -468,8 +463,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -481,19 +475,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

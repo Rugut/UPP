@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:568px;height:25px;',
 			Привязка:
 			{
@@ -329,7 +329,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыБанк',
 			text: 'Банк, в котором открыт счет',
-			style: 'position:absolute;left:8px;top:60px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:60px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -536,7 +536,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельБанкаДляРасчетов,
+			id: 'ПанельБанкаДляРасчетов',
 			style: 'position:absolute;left:8px;top:157px;width:552px;height:65px;',
 			Привязка:
 			{
@@ -561,12 +561,13 @@
 			Ширина:552,
 			Верх:157,
 			Лево:8,
+			Групповой: true,
 			height: 65,width: 552,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: НепрямыеРасчеты,
+					id: 'НепрямыеРасчеты',
 					items:
 					[
 		{
@@ -631,7 +632,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыБанкДляРасчетов',
 			text: 'Банк для непрямых расчетов',
-			style: 'position:absolute;left:0px;top:0px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -781,13 +782,13 @@
 					]
 				},
 				{
-					id: ПрямыеРасчеты,
+					id: 'ПрямыеРасчеты',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРеквизитовСчетов,
+			id: 'ПанельРеквизитовСчетов',
 			style: 'position:absolute;left:8px;top:246px;width:552px;height:213px;',
 			Привязка:
 			{
@@ -812,12 +813,13 @@
 			Ширина:552,
 			Верх:246,
 			Лево:8,
+			Групповой: true,
 			height: 213,width: 552,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: РеквизитыСчетаОрганизации,
+					id: 'РеквизитыСчетаОрганизации',
 					items:
 					[
 		{
@@ -944,7 +946,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно',
 			text: 'Дополнительная информация о счете',
-			style: 'position:absolute;left:0px;top:149px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:149px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1241,12 +1243,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВыводитьМесяцВДатеДокумента',
 			boxLabel: 'Числом',
 			style: 'position:absolute;left:13px;top:75px;width:166px;height:16px;',
@@ -1275,7 +1272,7 @@
 			Лево:13,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВыводитьМесяцВДатеДокумента2',
 			boxLabel: 'Прописью',
 			style: 'position:absolute;left:12px;top:94px;width:183px;height:16px;',
@@ -1303,12 +1300,10 @@
 			Верх:94,
 			Лево:12,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: РеквизитыСчетаКонтрагента,
+					id: 'РеквизитыСчетаКонтрагента',
 					items:
 					[
 		{
@@ -1408,7 +1403,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРеквизитыПечатныхФорм',
 			text: 'Настройки печати платежных поручений',
-			style: 'position:absolute;left:8px;top:229px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:229px;width:552px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1500,7 +1495,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:496px;width:568px;height:25px;',
 			Привязка:
 			{
@@ -1556,8 +1551,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1569,19 +1563,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

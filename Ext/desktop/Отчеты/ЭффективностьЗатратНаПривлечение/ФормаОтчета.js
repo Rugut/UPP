@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:478px;height:25px;',
 			Привязка:
 			{
@@ -158,7 +158,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтбора,
+			id: 'ПанельОтбора',
 			style: 'position:absolute;left:345px;top:33px;width:397px;height:107px;',
 			Привязка:
 			{
@@ -183,12 +183,13 @@
 			Ширина:397,
 			Верх:33,
 			Лево:345,
+			Групповой: true,
 			height: 107,width: 397,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -370,7 +371,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПериод,
+			id: 'КоманднаяПанельПериод',
 			style: 'position:absolute;left:475px;top:0px;width:275px;height:25px;',
 			Привязка:
 			{
@@ -403,7 +404,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПериод,
+			id: 'ПанельПериод',
 			style: 'position:absolute;left:485px;top:2px;width:260px;height:19px;',
 			Привязка:
 			{
@@ -428,12 +429,13 @@
 			Ширина:260,
 			Верх:2,
 			Лево:485,
+			Групповой: true,
 			height: 19,width: 260,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Интервал,
+					id: 'Интервал',
 					items:
 					[
 		{
@@ -623,7 +625,7 @@
 					]
 				},
 				{
-					id: Период,
+					id: 'Период',
 					items:
 					[
 		{
@@ -663,13 +665,13 @@
 					]
 				},
 				{
-					id: Пустой,
+					id: 'Пустой',
 				},
 			]
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВыбораПериода,
+			id: 'ПанельВыбораПериода',
 			style: 'position:absolute;left:8px;top:33px;width:331px;height:109px;',
 			Привязка:
 			{
@@ -694,12 +696,13 @@
 			Ширина:331,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 109,width: 331,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1016,7 +1019,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыКонтактнаяИнформация1',
 			text: 'Периоды затрат и оценки результатов',
-			style: 'position:absolute;left:0px;top:0px;width:331px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:331px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1142,8 +1145,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1155,19 +1157,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

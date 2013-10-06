@@ -607,7 +607,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:742px;height:25px;',
 			Привязка:
 			{
@@ -823,7 +823,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСодержимогоСправки,
+			id: 'ПанельСодержимогоСправки',
 			style: 'position:absolute;left:8px;top:204px;width:726px;height:318px;',
 			Привязка:
 			{
@@ -848,11 +848,12 @@
 			Ширина:726,
 			Верх:204,
 			Лево:8,
+			Групповой: true,
 			height: 318,width: 726,
 			items:
 			[
 				{
-					id: Разделы3_5,
+					id: 'Разделы3_5',
 					items:
 					[
 		{
@@ -1351,7 +1352,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИтоговыхСумм,
+			id: 'ПанельИтоговыхСумм',
 			style: 'position:absolute;left:6px;top:172px;width:712px;height:94px;',
 			Привязка:
 			{
@@ -1376,12 +1377,13 @@
 			Ширина:712,
 			Верх:172,
 			Лево:6,
+			Групповой: true,
 			height: 94,width: 712,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница2010,
+					id: 'Страница2010',
 					items:
 					[
 		{
@@ -1886,7 +1888,7 @@
 					]
 				},
 				{
-					id: Страница2011,
+					id: 'Страница2011',
 					items:
 					[
 		{
@@ -2469,7 +2471,7 @@
 					]
 				},
 				{
-					id: Раздел2,
+					id: 'Раздел2',
 					items:
 					[
 		{
@@ -3485,7 +3487,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСтавки,
+			id: 'ПанельСтавки',
 			style: 'position:absolute;left:383px;top:136px;width:141px;height:30px;',
 			Привязка:
 			{
@@ -3510,12 +3512,13 @@
 			Ширина:141,
 			Верх:136,
 			Лево:383,
+			Групповой: true,
 			height: 30,width: 141,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3676,12 +3679,7 @@
 			Лево:274,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательФизлицуСводно',
 			boxLabel: 'сводно (например, в банк)',
 			style: 'position:absolute;left:14px;top:128px;width:353px;height:19px;',
@@ -3710,7 +3708,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательФизлицуВРазрезеКодовОКАТО',
 			boxLabel: 'для декларирования в ИФНС - в разрезе ставок и кодов по ОКАТО:',
 			style: 'position:absolute;left:14px;top:147px;width:367px;height:19px;',
@@ -3738,15 +3736,13 @@
 			Верх:147,
 			Лево:14,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:575px;width:742px;height:25px;',
 			Привязка:
 			{
@@ -3802,8 +3798,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3815,19 +3810,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

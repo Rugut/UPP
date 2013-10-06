@@ -329,7 +329,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:945px;height:25px;',
 			Привязка:
 			{
@@ -788,7 +788,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДанных,
+			id: 'ПанельДанных',
 			style: 'position:absolute;left:8px;top:98px;width:931px;height:373px;',
 			Привязка:
 			{
@@ -813,12 +813,13 @@
 			Ширина:931,
 			Верх:98,
 			Лево:8,
+			Групповой: true,
 			height: 373,width: 931,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Условия,
+					id: 'Условия',
 					items:
 					[
 		{
@@ -1792,7 +1793,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПроцентовОграничений,
+			id: 'ПанельПроцентовОграничений',
 			style: 'position:absolute;left:0px;top:88px;width:772px;height:20px;',
 			Привязка:
 			{
@@ -1817,12 +1818,13 @@
 			Ширина:772,
 			Верх:88,
 			Лево:0,
+			Групповой: true,
 			height: 20,width: 772,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаОбычныйРасчет,
+					id: 'СтраницаОбычныйРасчет',
 					items:
 					[
 		{
@@ -2108,7 +2110,7 @@
 					]
 				},
 				{
-					id: СтраницаОсобыйРасчет,
+					id: 'СтраницаОсобыйРасчет',
 					items:
 					[
 		{
@@ -2700,12 +2702,12 @@
 					]
 				},
 				{
-					id: ОборотБольничного,
+					id: 'ОборотБольничного',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельОборотБольничного,
+			id: 'ПанельОборотБольничного',
 			style: 'position:absolute;left:0px;top:6px;width:931px;height:359px;',
 			Привязка:
 			{
@@ -2730,16 +2732,17 @@
 			Ширина:931,
 			Верх:6,
 			Лево:0,
+			Групповой: true,
 			height: 359,width: 931,
 			items:
 			[
 				{
-					id: Начисления,
+					id: 'Начисления',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНачисления,
+			id: 'КоманднаяПанельНачисления',
 			style: 'position:absolute;left:6px;top:81px;width:917px;height:24px;',
 			Привязка:
 			{
@@ -3266,7 +3269,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КонтекстноеМенюНачисления,
+			id: 'КонтекстноеМенюНачисления',
 			style: 'position:absolute;left:6px;top:119px;width:629px;height:24px;',
 			Привязка:
 			{
@@ -3477,7 +3480,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДоплаты,
+			id: 'ПанельДоплаты',
 			style: 'position:absolute;left:360px;top:28px;width:285px;height:19px;',
 			Привязка:
 			{
@@ -3502,12 +3505,13 @@
 			Ширина:285,
 			Верх:28,
 			Лево:360,
+			Групповой: true,
 			height: 19,width: 285,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3610,7 +3614,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВидыРасчета',
 			text: 'При расчете использовать начисления:',
-			style: 'position:absolute;left:6px;top:6px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3637,7 +3641,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЗаСчетРаботодателя,
+			id: 'ПанельЗаСчетРаботодателя',
 			style: 'position:absolute;left:6px;top:47px;width:917px;height:25px;',
 			Привязка:
 			{
@@ -3662,12 +3666,13 @@
 			Ширина:917,
 			Верх:47,
 			Лево:6,
+			Групповой: true,
 			height: 25,width: 917,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -3832,7 +3837,7 @@
 					]
 				},
 				{
-					id: РасчетСреднего,
+					id: 'РасчетСреднего',
 					items:
 					[
 		{
@@ -3895,7 +3900,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРасчетСреднего,
+			id: 'ПанельРасчетСреднего',
 			style: 'position:absolute;left:6px;top:0px;width:917px;height:289px;',
 			Привязка:
 			{
@@ -3920,17 +3925,18 @@
 			Ширина:917,
 			Верх:0,
 			Лево:6,
+			Групповой: true,
 			height: 289,width: 917,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаДо2011Года,
+					id: 'СтраницаДо2011Года',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднего,
+			id: 'КоманднаяПанельРасчетСреднего',
 			style: 'position:absolute;left:0px;top:51px;width:917px;height:24px;',
 			Привязка:
 			{
@@ -4295,7 +4301,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВидыРасчета1',
 			text: 'Заработок за расчетный период',
-			style: 'position:absolute;left:0px;top:33px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:33px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4352,14 +4358,14 @@
 					]
 				},
 				{
-					id: СтраницаС2011Года,
+					id: 'СтраницаС2011Года',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыВидыРасчета2',
 			text: 'Заработок за расчетные годы',
-			style: 'position:absolute;left:0px;top:33px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:33px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4622,7 +4628,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднего2011,
+			id: 'КоманднаяПанельРасчетСреднего2011',
 			style: 'position:absolute;left:0px;top:50px;width:917px;height:24px;',
 			Привязка:
 			{
@@ -4705,14 +4711,14 @@
 					]
 				},
 				{
-					id: СтраницаПереходногоПериода,
+					id: 'СтраницаПереходногоПериода',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыВидыРасчета3',
 			text: 'Заработок за расчетные годы',
-			style: 'position:absolute;left:0px;top:187px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:187px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4966,7 +4972,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднего2012,
+			id: 'КоманднаяПанельРасчетСреднего2012',
 			style: 'position:absolute;left:0px;top:205px;width:917px;height:24px;',
 			Привязка:
 			{
@@ -5048,7 +5054,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчетСреднего2013,
+			id: 'КоманднаяПанельРасчетСреднего2013',
 			style: 'position:absolute;left:0px;top:43px;width:917px;height:24px;',
 			Привязка:
 			{
@@ -5413,7 +5419,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВидыРасчета4',
 			text: 'Заработок за расчетный период',
-			style: 'position:absolute;left:0px;top:25px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:25px;width:917px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5478,12 +5484,12 @@
 					]
 				},
 				{
-					id: ЗаявлениеВФСС,
+					id: 'ЗаявлениеВФСС',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельДанныхДляФСС,
+			id: 'ПанельДанныхДляФСС',
 			style: 'position:absolute;left:0px;top:6px;width:931px;height:359px;',
 			Привязка:
 			{
@@ -5508,11 +5514,12 @@
 			Ширина:931,
 			Верх:6,
 			Лево:0,
+			Групповой: true,
 			height: 359,width: 931,
 			items:
 			[
 				{
-					id: Заявление,
+					id: 'Заявление',
 					items:
 					[
 		{
@@ -7570,12 +7577,7 @@
 			Лево:616,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеНаСчетВБанке',
 			boxLabel: 'Перечислением на счет в банке:',
 			style: 'position:absolute;left:14px;top:136px;width:185px;height:19px;',
@@ -7604,7 +7606,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПеречислятьПособиеПочтовымПереводом',
 			boxLabel: 'Почтовым переводом по адресу:',
 			style: 'position:absolute;left:14px;top:180px;width:185px;height:19px;',
@@ -7632,12 +7634,10 @@
 			Верх:180,
 			Лево:14,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: РеестрПособий,
+					id: 'РеестрПособий',
 					items:
 					[
 		{
@@ -8739,7 +8739,7 @@
 					]
 				},
 				{
-					id: РеестрПособий2,
+					id: 'РеестрПособий2',
 					items:
 					[
 		{
@@ -9690,7 +9690,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсправление,
+			id: 'ПанельОткрытьИсправление',
 			style: 'position:absolute;left:726px;top:515px;width:83px;height:33px;',
 			Привязка:
 			{
@@ -9715,12 +9715,13 @@
 			Ширина:83,
 			Верх:515,
 			Лево:726,
+			Групповой: true,
 			height: 33,width: 83,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -9758,7 +9759,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОткрытьИсходный,
+			id: 'ПанельОткрытьИсходный',
 			style: 'position:absolute;left:810px;top:515px;width:129px;height:33px;',
 			Привязка:
 			{
@@ -9783,12 +9784,13 @@
 			Ширина:129,
 			Верх:515,
 			Лево:810,
+			Групповой: true,
 			height: 33,width: 129,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -9946,7 +9948,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:555px;width:945px;height:25px;',
 			Привязка:
 			{
@@ -10004,7 +10006,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДополнительныеДействия,
+			id: 'ДополнительныеДействия',
 			style: 'position:absolute;left:0px;top:555px;width:511px;height:25px;',
 			Привязка:
 			{
@@ -10046,8 +10048,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -10059,19 +10060,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

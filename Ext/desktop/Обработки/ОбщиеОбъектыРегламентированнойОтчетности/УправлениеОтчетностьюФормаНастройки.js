@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаОбщиеНастройки',
 			text: 'Прочие общие настройки',
-			style: 'position:absolute;left:8px;top:357px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:357px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -143,7 +143,7 @@
 			xtype: 'label',
 			id: 'РамкаНастройкиФормыОтчетности',
 			text: 'Настройки формы управления отчетностью',
-			style: 'position:absolute;left:8px;top:12px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:12px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -257,7 +257,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройкиКалендаря,
+			id: 'ПанельНастройкиКалендаря',
 			style: 'position:absolute;left:8px;top:118px;width:430px;height:100px;',
 			Привязка:
 			{
@@ -282,19 +282,20 @@
 			Ширина:430,
 			Верх:118,
 			Лево:8,
+			Групповой: true,
 			height: 100,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаОбщиеНастройки1',
 			text: 'Настройки календаря',
-			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -477,7 +478,7 @@
 			xtype: 'label',
 			id: 'РамкаНастройкиПечатиМашиночитаемыхФорм',
 			text: 'Печать машиночитаемых форм',
-			style: 'position:absolute;left:8px;top:227px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:227px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -591,7 +592,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУстановкаКомпонентыПечати,
+			id: 'ПанельУстановкаКомпонентыПечати',
 			style: 'position:absolute;left:8px;top:251px;width:430px;height:16px;',
 			Привязка:
 			{
@@ -616,12 +617,13 @@
 			Ширина:430,
 			Верх:251,
 			Лево:8,
+			Групповой: true,
 			height: 16,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Установить,
+					id: 'Установить',
 					items:
 					[
 		{
@@ -714,7 +716,7 @@
 					]
 				},
 				{
-					id: Переустановить,
+					id: 'Переустановить',
 					items:
 					[
 		{
@@ -812,7 +814,7 @@
 			xtype: 'label',
 			id: 'РамкаОбщиеНастройки2',
 			text: 'Оповещения',
-			style: 'position:absolute;left:8px;top:303px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:303px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -926,7 +928,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельФункциональностьДокументооборотаСФНСВнешняя,
+			id: 'ПанельФункциональностьДокументооборотаСФНСВнешняя',
 			style: 'position:absolute;left:8px;top:415px;width:430px;height:46px;',
 			Привязка:
 			{
@@ -951,19 +953,20 @@
 			Ширина:430,
 			Верх:415,
 			Лево:8,
+			Групповой: true,
 			height: 46,width: 430,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаОбщиеНастройки3',
 			text: 'Документооборот с контролирующими органами',
-			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:430px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1085,7 +1088,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:472px;width:446px;height:25px;',
 			Привязка:
 			{
@@ -1139,8 +1142,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1152,19 +1154,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

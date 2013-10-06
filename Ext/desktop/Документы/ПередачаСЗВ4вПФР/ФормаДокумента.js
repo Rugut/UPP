@@ -81,7 +81,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:891px;height:25px;',
 			Привязка:
 			{
@@ -143,7 +143,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОписанияФорм,
+			id: 'ПанельОписанияФорм',
 			style: 'position:absolute;left:8px;top:149px;width:875px;height:347px;',
 			Привязка:
 			{
@@ -168,17 +168,18 @@
 			Ширина:875,
 			Верх:149,
 			Лево:8,
+			Групповой: true,
 			height: 347,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: АДВ11,
+					id: 'АДВ11',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчеты2010,
+			id: 'КоманднаяПанельРасчеты2010',
 			style: 'position:absolute;left:0px;top:27px;width:875px;height:24px;',
 			Привязка:
 			{
@@ -337,7 +338,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыРасчетыСПФР',
 			text: 'Расчеты с ПФР за 2002 - 2009 годы',
-			style: 'position:absolute;left:0px;top:6px;width:875px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:6px;width:875px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -365,12 +366,12 @@
 					]
 				},
 				{
-					id: Страница2010,
+					id: 'Страница2010',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПачки1,
+			id: 'КоманднаяПанельПачки1',
 			style: 'position:absolute;left:0px;top:84px;width:514px;height:24px;',
 			Привязка:
 			{
@@ -653,7 +654,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы9',
 			text: 'Состав пачки (реестра)',
-			style: 'position:absolute;left:523px;top:68px;width:352px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:523px;top:68px;width:352px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -682,7 +683,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы10',
 			text: 'Пачки СЗВ-6-1 и Реестры СЗВ-6-2',
-			style: 'position:absolute;left:0px;top:68px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:68px;width:514px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -709,7 +710,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизлицаПачек1,
+			id: 'КоманднаяПанельФизлицаПачек1',
 			style: 'position:absolute;left:523px;top:84px;width:352px;height:24px;',
 			Привязка:
 			{
@@ -809,7 +810,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСостояниеПачекДокументов,
+			id: 'ПанельСостояниеПачекДокументов',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:68px;',
 			Привязка:
 			{
@@ -834,12 +835,13 @@
 			Ширина:875,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 68,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -999,12 +1001,12 @@
 					]
 				},
 				{
-					id: Страница2009,
+					id: 'Страница2009',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:0px;top:33px;width:875px;height:314px;',
 			Привязка:
 			{
@@ -1029,16 +1031,17 @@
 			Ширина:875,
 			Верх:33,
 			Лево:0,
+			Групповой: true,
 			height: 314,width: 875,
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПачки,
+			id: 'КоманднаяПанельПачки',
 			style: 'position:absolute;left:6px;top:22px;width:503px;height:24px;',
 			Привязка:
 			{
@@ -1336,7 +1339,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы7',
 			text: 'Состав пачки',
-			style: 'position:absolute;left:515px;top:6px;width:352px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:515px;top:6px;width:352px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1365,7 +1368,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы8',
 			text: 'Пачки СЗВ-4',
-			style: 'position:absolute;left:6px;top:6px;width:503px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:503px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1392,7 +1395,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФизлицаПачек,
+			id: 'КоманднаяПанельФизлицаПачек',
 			style: 'position:absolute;left:515px;top:22px;width:352px;height:24px;',
 			Привязка:
 			{
@@ -1493,12 +1496,12 @@
 					]
 				},
 				{
-					id: Расчеты,
+					id: 'Расчеты',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРасчеты,
+			id: 'КоманднаяПанельРасчеты',
 			style: 'position:absolute;left:6px;top:0px;width:861px;height:24px;',
 			Привязка:
 			{
@@ -1659,7 +1662,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОписания,
+			id: 'ПанельОписания',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:25px;',
 			Привязка:
 			{
@@ -1684,12 +1687,13 @@
 			Ширина:875,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 25,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаОбычная,
+					id: 'СтраницаОбычная',
 					items:
 					[
 		{
@@ -1785,12 +1789,7 @@
 			Лево:0,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательТипСведений',
 			boxLabel: 'ИСХД',
 			style: 'position:absolute;left:89px;top:0px;width:53px;height:19px;',
@@ -1819,7 +1818,7 @@
 			Лево:89,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ТипСведенийПЕНС',
 			boxLabel: 'ПЕНС',
 			style: 'position:absolute;left:146px;top:0px;width:53px;height:19px;',
@@ -1847,12 +1846,10 @@
 			Верх:0,
 			Лево:146,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: СтраницаСпециальная,
+					id: 'СтраницаСпециальная',
 					items:
 					[
 		{
@@ -1894,7 +1891,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтправки,
+			id: 'ПанельОтправки',
 			style: 'position:absolute;left:8px;top:33px;width:875px;height:41px;',
 			Привязка:
 			{
@@ -1919,17 +1916,18 @@
 			Ширина:875,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 41,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельОтправкиВнутренняя,
+			id: 'ПанельОтправкиВнутренняя',
 			style: 'position:absolute;left:0px;top:0px;width:875px;height:35px;',
 			Привязка:
 			{
@@ -1954,12 +1952,13 @@
 			Ширина:875,
 			Верх:0,
 			Лево:0,
+			Групповой: true,
 			height: 35,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 					]
@@ -1972,7 +1971,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельШапка,
+			id: 'ПанельШапка',
 			style: 'position:absolute;left:8px;top:74px;width:875px;height:75px;',
 			Привязка:
 			{
@@ -1997,12 +1996,13 @@
 			Ширина:875,
 			Верх:74,
 			Лево:8,
+			Групповой: true,
 			height: 75,width: 875,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2620,7 +2620,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСЗВ_АДВ,
+			id: 'ПанельСЗВ_АДВ',
 			style: 'position:absolute;left:611px;top:48px;width:243px;height:19px;',
 			Привязка:
 			{
@@ -2645,12 +2645,13 @@
 			Ширина:243,
 			Верх:48,
 			Лево:611,
+			Групповой: true,
 			height: 19,width: 243,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -2683,12 +2684,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СодержитСЗВ',
 			boxLabel: 'Сведения СЗВ-6',
 			style: 'position:absolute;left:66px;top:0px;width:106px;height:19px;',
@@ -2717,7 +2713,7 @@
 			Лево:66,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'НеСодержитСЗВ',
 			boxLabel: 'АДВ-11',
 			style: 'position:absolute;left:178px;top:0px;width:59px;height:19px;',
@@ -2745,8 +2741,6 @@
 			Верх:0,
 			Лево:178,
 		},
-			]
-		},
 					]
 				},
 			]
@@ -2761,7 +2755,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:529px;width:891px;height:25px;',
 			Привязка:
 			{
@@ -2825,8 +2819,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -2838,19 +2831,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

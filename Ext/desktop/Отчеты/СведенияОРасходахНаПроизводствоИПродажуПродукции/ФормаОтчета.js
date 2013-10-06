@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: Панель,
+			id: 'Панель',
 			style: 'position:absolute;left:0px;top:1px;width:820px;height:46px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:820,
 			Верх:1,
 			Лево:0,
+			Групповой: true,
 			height: 46,width: 820,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -273,7 +274,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормыОсновные,
+			id: 'ДействияФормыОсновные',
 			style: 'position:absolute;left:2px;top:47px;width:490px;height:26px;',
 			Привязка:
 			{
@@ -329,7 +330,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормыДополнительные,
+			id: 'ДействияФормыДополнительные',
 			style: 'position:absolute;left:561px;top:47px;width:256px;height:25px;',
 			Привязка:
 			{
@@ -398,7 +399,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПользователя,
+			id: 'ПанельПользователя',
 			style: 'position:absolute;left:514px;top:73px;width:306px;height:485px;',
 			Привязка:
 			{
@@ -423,17 +424,18 @@
 			Ширина:306,
 			Верх:73,
 			Лево:514,
+			Групповой: true,
 			height: 485,width: 306,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельЗакладок,
+			id: 'ПанельЗакладок',
 			style: 'position:absolute;left:0px;top:27px;width:306px;height:458px;',
 			Привязка:
 			{
@@ -458,11 +460,12 @@
 			Ширина:306,
 			Верх:27,
 			Лево:0,
+			Групповой: true,
 			height: 458,width: 306,
 			items:
 			[
 				{
-					id: Отбор,
+					id: 'Отбор',
 					items:
 					[
 		{
@@ -1072,7 +1075,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:6px;top:6px;width:292px;height:24px;',
 			Привязка:
 			{
@@ -1116,7 +1119,7 @@
 					]
 				},
 				{
-					id: Параметры,
+					id: 'Параметры',
 					items:
 					[
 		{
@@ -1320,7 +1323,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПанелиНастроек,
+			id: 'КоманднаяПанельПанелиНастроек',
 			style: 'position:absolute;left:6px;top:2px;width:297px;height:24px;',
 			Привязка:
 			{
@@ -1402,8 +1405,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1415,19 +1417,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

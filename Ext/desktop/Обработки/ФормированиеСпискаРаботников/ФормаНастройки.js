@@ -202,7 +202,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельОтбор,
+			id: 'КоманднаяПанельОтбор',
 			style: 'position:absolute;left:8px;top:72px;width:413px;height:24px;',
 			Привязка:
 			{
@@ -259,7 +259,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыОтбор',
 			text: 'Отборы',
-			style: 'position:absolute;left:8px;top:56px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:56px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -286,7 +286,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельСтраницы,
+			id: 'ПанельСтраницы',
 			style: 'position:absolute;left:8px;top:204px;width:413px;height:167px;',
 			Привязка:
 			{
@@ -311,19 +311,20 @@
 			Ширина:413,
 			Верх:204,
 			Лево:8,
+			Групповой: true,
 			height: 167,width: 413,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПремииРаботниковОрганизаций,
+					id: 'ПремииРаботниковОрганизаций',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -616,7 +617,7 @@
 					]
 				},
 				{
-					id: РазовыеРасчеты,
+					id: 'РазовыеРасчеты',
 					items:
 					[
 		{
@@ -810,7 +811,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно2',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1132,7 +1133,7 @@
 					]
 				},
 				{
-					id: РазовыеРасчетыДляЧастиСмены,
+					id: 'РазовыеРасчетыДляЧастиСмены',
 					items:
 					[
 		{
@@ -1326,7 +1327,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно11',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1354,7 +1355,7 @@
 					]
 				},
 				{
-					id: РазовыеДополнительныеНачисления,
+					id: 'РазовыеДополнительныеНачисления',
 					items:
 					[
 		{
@@ -1640,7 +1641,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно1',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1962,7 +1963,7 @@
 					]
 				},
 				{
-					id: ВводПроцентаДеятельностиЕНВД,
+					id: 'ВводПроцентаДеятельностиЕНВД',
 					items:
 					[
 		{
@@ -2032,7 +2033,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно3',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2152,7 +2153,7 @@
 					]
 				},
 				{
-					id: НевыходыВОрганизацияхДляЦелойСмены,
+					id: 'НевыходыВОрганизацияхДляЦелойСмены',
 					items:
 					[
 		{
@@ -2346,7 +2347,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно4',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2403,7 +2404,7 @@
 					]
 				},
 				{
-					id: НевыходыВОрганизацияхДляЧастиСмены,
+					id: 'НевыходыВОрганизацияхДляЧастиСмены',
 					items:
 					[
 		{
@@ -2597,7 +2598,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно10',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2625,7 +2626,7 @@
 					]
 				},
 				{
-					id: ОплатаСверхурочныхЧасов,
+					id: 'ОплатаСверхурочныхЧасов',
 					items:
 					[
 		{
@@ -2821,7 +2822,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно5',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2849,7 +2850,7 @@
 					]
 				},
 				{
-					id: ОплатаПраздничныхИВыходныхДнейОрганизаций,
+					id: 'ОплатаПраздничныхИВыходныхДнейОрганизаций',
 					items:
 					[
 		{
@@ -2924,7 +2925,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно6',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3010,14 +3011,14 @@
 					]
 				},
 				{
-					id: ВводСпособаОтраженияВРеглУчете,
+					id: 'ВводСпособаОтраженияВРеглУчете',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно7',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3294,14 +3295,14 @@
 					]
 				},
 				{
-					id: ВводРаспределенияОсновногоЗаработка,
+					id: 'ВводРаспределенияОсновногоЗаработка',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно8',
 			text: 'Распределение основного заработка',
-			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3429,7 +3430,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:0px;top:25px;width:413px;height:24px;',
 			Привязка:
 			{
@@ -3474,14 +3475,14 @@
 					]
 				},
 				{
-					id: ПереносЗадолженности,
+					id: 'ПереносЗадолженности',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно9',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3570,7 +3571,7 @@
 					]
 				},
 				{
-					id: РазовыеУдержания,
+					id: 'РазовыеУдержания',
 					items:
 					[
 		{
@@ -3764,7 +3765,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно12',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:5px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4086,14 +4087,14 @@
 					]
 				},
 				{
-					id: ВводРаспределенияЗаработка,
+					id: 'ВводРаспределенияЗаработка',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыРаспределениеЗаработка',
 			text: 'Распределение заработка',
-			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:6px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4203,7 +4204,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельРаспределениеУпрНачислений,
+			id: 'КоманднаяПанельРаспределениеУпрНачислений',
 			style: 'position:absolute;left:0px;top:22px;width:413px;height:24px;',
 			Привязка:
 			{
@@ -4248,7 +4249,7 @@
 					]
 				},
 				{
-					id: РеестрДСВ3,
+					id: 'РеестрДСВ3',
 					items:
 					[
 		{
@@ -4318,7 +4319,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно13',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:0px;top:11px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:11px;width:413px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -4346,7 +4347,7 @@
 					]
 				},
 				{
-					id: ПостоянныеНачисления,
+					id: 'ПостоянныеНачисления',
 					items:
 					[
 		{
@@ -4725,14 +4726,14 @@
 					]
 				},
 				{
-					id: КадровоеПеремещениеОрганизаций,
+					id: 'КадровоеПеремещениеОрганизаций',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыДополнительно14',
 			text: 'Дополнительно',
-			style: 'position:absolute;left:6px;top:8px;width:407px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:8px;width:407px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -5197,7 +5198,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВключатьУволенных,
+			id: 'ПанельВключатьУволенных',
 			style: 'position:absolute;left:8px;top:32px;width:413px;height:19px;',
 			Привязка:
 			{
@@ -5222,12 +5223,13 @@
 			Ширина:413,
 			Верх:32,
 			Лево:8,
+			Групповой: true,
 			height: 19,width: 413,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -5303,7 +5305,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:379px;width:429px;height:25px;',
 			Привязка:
 			{
@@ -5351,8 +5353,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -5364,19 +5365,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

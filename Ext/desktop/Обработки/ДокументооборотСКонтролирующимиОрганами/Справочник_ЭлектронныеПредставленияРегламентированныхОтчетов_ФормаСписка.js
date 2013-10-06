@@ -193,7 +193,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:848px;height:25px;',
 			Привязка:
 			{
@@ -298,7 +298,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельДополнительныйОтбор,
+			id: 'ПанельДополнительныйОтбор',
 			style: 'position:absolute;left:8px;top:56px;width:832px;height:25px;',
 			Привязка:
 			{
@@ -323,17 +323,18 @@
 			Ширина:832,
 			Верх:56,
 			Лево:8,
+			Групповой: true,
 			height: 25,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельЗначениеДополнительногоОтбора,
+			id: 'ПанельЗначениеДополнительногоОтбора',
 			style: 'position:absolute;left:236px;top:1px;width:596px;height:21px;',
 			Привязка:
 			{
@@ -358,12 +359,13 @@
 			Ширина:596,
 			Верх:1,
 			Лево:236,
+			Групповой: true,
 			height: 21,width: 596,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ПоВидуОтчета,
+					id: 'ПоВидуОтчета',
 					items:
 					[
 		{
@@ -432,10 +434,10 @@
 					]
 				},
 				{
-					id: ПоПериодуОтчета,
+					id: 'ПоПериодуОтчета',
 				},
 				{
-					id: ПоВидуДокумента,
+					id: 'ПоВидуДокумента',
 					items:
 					[
 		{
@@ -502,12 +504,7 @@
 			Лево:195,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидДокумента',
 			boxLabel: 'первичный',
 			style: 'position:absolute;left:2px;top:3px;width:74px;height:15px;',
@@ -536,7 +533,7 @@
 			Лево:2,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательВидДокумента1',
 			boxLabel: 'корректирующий',
 			style: 'position:absolute;left:81px;top:3px;width:106px;height:15px;',
@@ -563,8 +560,6 @@
 			Ширина:106,
 			Верх:3,
 			Лево:81,
-		},
-			]
 		},
 					]
 				},
@@ -637,7 +632,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельЦиклыОбменаОтборПоПериодуОтчета,
+			id: 'ПанельЦиклыОбменаОтборПоПериодуОтчета',
 			style: 'position:absolute;left:8px;top:81px;width:832px;height:30px;',
 			Привязка:
 			{
@@ -662,12 +657,13 @@
 			Ширина:832,
 			Верх:81,
 			Лево:8,
+			Групповой: true,
 			height: 30,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -710,7 +706,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОрганизацияИНалоговыйОрган,
+			id: 'ПанельОрганизацияИНалоговыйОрган',
 			style: 'position:absolute;left:8px;top:33px;width:832px;height:20px;',
 			Привязка:
 			{
@@ -735,12 +731,13 @@
 			Ширина:832,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 20,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -938,7 +935,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОбмен,
+			id: 'ПанельОбмен',
 			style: 'position:absolute;left:8px;top:309px;width:832px;height:126px;',
 			Привязка:
 			{
@@ -963,12 +960,13 @@
 			Ширина:832,
 			Верх:309,
 			Лево:8,
+			Групповой: true,
 			height: 126,width: 832,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаФНС,
+					id: 'СтраницаФНС',
 					items:
 					[
 		{
@@ -1138,7 +1136,7 @@
 					]
 				},
 				{
-					id: СтраницаЗаявление,
+					id: 'СтраницаЗаявление',
 					items:
 					[
 		{
@@ -1326,7 +1324,7 @@
 					]
 				},
 				{
-					id: СтраницаПФР,
+					id: 'СтраницаПФР',
 					items:
 					[
 		{
@@ -1460,7 +1458,7 @@
 					]
 				},
 				{
-					id: СтраницаФСС,
+					id: 'СтраницаФСС',
 					items:
 					[
 		{
@@ -1576,7 +1574,7 @@
 					]
 				},
 				{
-					id: СтраницаФСГС,
+					id: 'СтраницаФСГС',
 					items:
 					[
 		{
@@ -1733,8 +1731,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1746,19 +1743,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

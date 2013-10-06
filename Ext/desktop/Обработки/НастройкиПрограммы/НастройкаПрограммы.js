@@ -103,7 +103,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельРазделов,
+			id: 'ПанельРазделов',
 			style: 'position:absolute;left:180px;top:8px;width:542px;height:410px;',
 			Привязка:
 			{
@@ -128,12 +128,13 @@
 			Ширина:542,
 			Верх:8,
 			Лево:180,
+			Групповой: true,
 			height: 410,width: 542,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Основные,
+					id: 'Основные',
 					items:
 					[
 		{
@@ -782,7 +783,7 @@
 					]
 				},
 				{
-					id: CRM,
+					id: 'CRM',
 					items:
 					[
 		{
@@ -861,7 +862,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельШаблоныТелефонов,
+			id: 'КоманднаяПанельШаблоныТелефонов',
 			style: 'position:absolute;left:12px;top:100px;width:148px;height:24px;',
 			Привязка:
 			{
@@ -985,16 +986,11 @@
 					]
 				},
 				{
-					id: ЭлектроннаяПочта,
+					id: 'ЭлектроннаяПочта',
 					items:
 					[
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ИспользованиеВстроенногоПочтовогоКлиента',
 			boxLabel: 'Использовать основной почтовый клиент операционной системы',
 			style: 'position:absolute;left:12px;top:48px;width:372px;height:19px;',
@@ -1023,7 +1019,7 @@
 			Лево:12,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель1',
 			boxLabel: 'Использовать встроенный почтовый клиент',
 			style: 'position:absolute;left:12px;top:105px;width:260px;height:19px;',
@@ -1051,12 +1047,10 @@
 			Верх:105,
 			Лево:12,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ВыводСообщений,
+					id: 'ВыводСообщений',
 					items:
 					[
 		{
@@ -1120,7 +1114,7 @@
 					]
 				},
 				{
-					id: КонтрольОстатков,
+					id: 'КонтрольОстатков',
 					items:
 					[
 		{
@@ -1155,7 +1149,7 @@
 					]
 				},
 				{
-					id: РегламентныеЗадания,
+					id: 'РегламентныеЗадания',
 					items:
 					[
 		{
@@ -1373,7 +1367,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельУничтожатьПерсональныеДанные,
+			id: 'ПанельУничтожатьПерсональныеДанные',
 			style: 'position:absolute;left:12px;top:272px;width:420px;height:47px;',
 			Привязка:
 			{
@@ -1398,12 +1392,13 @@
 			Ширина:420,
 			Верх:272,
 			Лево:12,
+			Групповой: true,
 			height: 47,width: 420,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1471,7 +1466,7 @@
 					]
 				},
 				{
-					id: ОтложенноеПроведение,
+					id: 'ОтложенноеПроведение',
 					items:
 					[
 		{
@@ -1597,7 +1592,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройкаОтложенногоПроведения,
+			id: 'КоманднаяПанельНастройкаОтложенногоПроведения',
 			style: 'position:absolute;left:12px;top:48px;width:148px;height:24px;',
 			Привязка:
 			{
@@ -1687,7 +1682,7 @@
 					]
 				},
 				{
-					id: РасчетСебестоимости,
+					id: 'РасчетСебестоимости',
 					items:
 					[
 		{
@@ -2030,12 +2025,7 @@
 			Лево:191,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписыватьДвиженияРегистровУчетаЗатратВсеСразу',
 			boxLabel: 'все сразу',
 			style: 'position:absolute;left:28px;top:160px;width:242px;height:19px;',
@@ -2064,7 +2054,7 @@
 			Лево:28,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательЗаписыватьДвиженияРегистровУчетаЗатратПоЧастям',
 			boxLabel: 'частями по',
 			style: 'position:absolute;left:28px;top:183px;width:78px;height:19px;',
@@ -2092,12 +2082,10 @@
 			Верх:183,
 			Лево:28,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: Версионирование,
+					id: 'Версионирование',
 					items:
 					[
 		{
@@ -2219,7 +2207,7 @@
 					]
 				},
 				{
-					id: ЭлектронныеДокументы,
+					id: 'ЭлектронныеДокументы',
 					items:
 					[
 		{
@@ -2399,7 +2387,7 @@
 					]
 				},
 				{
-					id: СтраницаРаботаСЗадачами,
+					id: 'СтраницаРаботаСЗадачами',
 					items:
 					[
 		{
@@ -2607,7 +2595,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельИспользуемыеЗадачи,
+			id: 'КоманднаяПанельИспользуемыеЗадачи',
 			style: 'position:absolute;left:316px;top:118px;width:116px;height:24px;',
 			Привязка:
 			{
@@ -2651,7 +2639,7 @@
 					]
 				},
 				{
-					id: СтраницаЗащитаПерсональныхДанных,
+					id: 'СтраницаЗащитаПерсональныхДанных',
 					items:
 					[
 		{
@@ -2685,7 +2673,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ЗащитаПерсональныхДанных,
+			id: 'ЗащитаПерсональныхДанных',
 			style: 'position:absolute;left:12px;top:43px;width:522px;height:359px;',
 			Привязка:
 			{
@@ -2710,17 +2698,18 @@
 			Ширина:522,
 			Верх:43,
 			Лево:12,
+			Групповой: true,
 			height: 359,width: 522,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: РежимДоступен,
+					id: 'РежимДоступен',
 					items:
 					[
 		{
 			xtype: 'panel',
-			id: ПанельКлассИнформационнойСистемы,
+			id: 'ПанельКлассИнформационнойСистемы',
 			style: 'position:absolute;left:0px;top:6px;width:521px;height:29px;',
 			Привязка:
 			{
@@ -2745,12 +2734,13 @@
 			Ширина:521,
 			Верх:6,
 			Лево:0,
+			Групповой: true,
 			height: 29,width: 521,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ЗащитаСоответствуетКлассу,
+					id: 'ЗащитаСоответствуетКлассу',
 					items:
 					[
 		{
@@ -2814,7 +2804,7 @@
 					]
 				},
 				{
-					id: ЗащитаНеСоответствуетКлассу,
+					id: 'ЗащитаНеСоответствуетКлассу',
 				},
 			]
 		},
@@ -2851,7 +2841,7 @@
 			xtype: 'label',
 			id: 'Рамка1',
 			text: 'Информационные системы персональных данных класса 3',
-			style: 'position:absolute;left:0px;top:40px;width:521px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:40px;width:521px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -2909,7 +2899,7 @@
 			xtype: 'label',
 			id: 'Рамка2',
 			text: 'Информационные системы персональных данных класса 2',
-			style: 'position:absolute;left:0px;top:113px;width:521px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:113px;width:521px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3257,7 +3247,7 @@
 			xtype: 'label',
 			id: 'Рамка3',
 			text: '',
-			style: 'position:absolute;left:8px;top:331px;width:513px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:331px;width:513px;height:5px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -3285,7 +3275,7 @@
 					]
 				},
 				{
-					id: РежимНеДоступен,
+					id: 'РежимНеДоступен',
 					items:
 					[
 		{
@@ -3327,7 +3317,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:426px;width:730px;height:25px;',
 			Привязка:
 			{
@@ -3398,8 +3388,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -3411,19 +3400,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

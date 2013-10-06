@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:414px;height:25px;',
 			Привязка:
 			{
@@ -108,7 +108,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельОтбора,
+			id: 'ПанельОтбора',
 			style: 'position:absolute;left:8px;top:33px;width:678px;height:103px;',
 			Привязка:
 			{
@@ -133,12 +133,13 @@
 			Ширина:678,
 			Верх:33,
 			Лево:8,
+			Групповой: true,
 			height: 103,width: 678,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -320,7 +321,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельПериод,
+			id: 'КоманднаяПанельПериод',
 			style: 'position:absolute;left:414px;top:0px;width:280px;height:25px;',
 			Привязка:
 			{
@@ -353,7 +354,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПериод,
+			id: 'ПанельПериод',
 			style: 'position:absolute;left:427px;top:2px;width:258px;height:19px;',
 			Привязка:
 			{
@@ -378,12 +379,13 @@
 			Ширина:258,
 			Верх:2,
 			Лево:427,
+			Групповой: true,
 			height: 19,width: 258,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Интервал,
+					id: 'Интервал',
 					items:
 					[
 		{
@@ -573,7 +575,7 @@
 					]
 				},
 				{
-					id: Период,
+					id: 'Период',
 					items:
 					[
 		{
@@ -613,7 +615,7 @@
 					]
 				},
 				{
-					id: Пустой,
+					id: 'Пустой',
 				},
 			]
 		},
@@ -621,8 +623,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -634,19 +635,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

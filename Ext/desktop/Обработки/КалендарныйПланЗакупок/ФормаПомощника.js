@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельПомощника,
+			id: 'ПанельПомощника',
 			style: 'position:absolute;left:153px;top:8px;width:619px;height:389px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:619,
 			Верх:8,
 			Лево:153,
+			Групповой: true,
 			height: 389,width: 619,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Номенклатура,
+					id: 'Номенклатура',
 					items:
 					[
 		{
@@ -167,7 +168,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНоменклатура',
 			text: 'Номенклатура, для подбора поставщиков',
-			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -194,7 +195,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельТаблицаТоваров,
+			id: 'КоманднаяПанельТаблицаТоваров',
 			style: 'position:absolute;left:0px;top:16px;width:619px;height:24px;',
 			Привязка:
 			{
@@ -259,14 +260,14 @@
 					]
 				},
 				{
-					id: Настройки,
+					id: 'Настройки',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппыНастройка',
 			text: 'Настройка отборов по свойствам и категориям контрагентов',
-			style: 'position:absolute;left:0px;top:95px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:95px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -394,7 +395,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСвойстваИКатегорииКонтрагентов,
+			id: 'КоманднаяПанельСвойстваИКатегорииКонтрагентов',
 			style: 'position:absolute;left:0px;top:115px;width:619px;height:24px;',
 			Привязка:
 			{
@@ -429,7 +430,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастройкаОсновная',
 			text: 'Настройка основных отборов',
-			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -800,7 +801,7 @@
 					]
 				},
 				{
-					id: Результат,
+					id: 'Результат',
 					items:
 					[
 		{
@@ -872,7 +873,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыПодборНоменклатуры',
 			text: 'Подбор номенклатуры по ценам и поставщикам',
-			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:619px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -903,7 +904,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:8px;width:138px;height:389px;',
 			Привязка:
 			{
@@ -928,12 +929,13 @@
 			Ширина:138,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 389,width: 138,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 				},
 			]
 		},
@@ -943,7 +945,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:405px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -1001,8 +1003,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1014,19 +1015,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

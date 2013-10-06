@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:531px;height:25px;',
 			Привязка:
 			{
@@ -65,7 +65,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Панель1,
+			id: 'Панель1',
 			style: 'position:absolute;left:8px;top:84px;width:515px;height:275px;',
 			Привязка:
 			{
@@ -90,11 +90,12 @@
 			Ширина:515,
 			Верх:84,
 			Лево:8,
+			Групповой: true,
 			height: 275,width: 515,
 			items:
 			[
 				{
-					id: ПорядокРасчета,
+					id: 'ПорядокРасчета',
 					items:
 					[
 		{
@@ -949,12 +950,7 @@
 			},
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательУпр',
 			boxLabel: 'упр. учета',
 			style: 'position:absolute;left:133px;top:30px;width:127px;height:19px;',
@@ -983,7 +979,7 @@
 			Лево:133,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательРегл',
 			boxLabel: 'регл. учета',
 			style: 'position:absolute;left:267px;top:30px;width:106px;height:19px;',
@@ -1011,15 +1007,8 @@
 			Верх:30,
 			Лево:267,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокФормированияЦены',
 			boxLabel: 'по поступлению',
 			style: 'position:absolute;left:133px;top:181px;width:127px;height:19px;',
@@ -1048,7 +1037,7 @@
 			Лево:133,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПорядокФормированияЦены2',
 			boxLabel: 'по списанию',
 			style: 'position:absolute;left:267px;top:181px;width:106px;height:19px;',
@@ -1076,15 +1065,8 @@
 			Верх:181,
 			Лево:267,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СоздаватьНовыйДокумент',
 			boxLabel: 'в новый документ',
 			style: 'position:absolute;left:133px;top:234px;width:115px;height:15px;',
@@ -1113,7 +1095,7 @@
 			Лево:133,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПерезаполнятьСуществующийДокумент',
 			boxLabel: 'в существующий',
 			style: 'position:absolute;left:267px;top:234px;width:106px;height:15px;',
@@ -1141,12 +1123,10 @@
 			Верх:234,
 			Лево:267,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: АвтоматическоеФормированиеДокументов,
+					id: 'АвтоматическоеФормированиеДокументов',
 					items:
 					[
 		{
@@ -1431,7 +1411,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:394px;width:531px;height:25px;',
 			Привязка:
 			{
@@ -1487,8 +1467,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1500,19 +1479,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

@@ -390,7 +390,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:431px;height:25px;',
 			Привязка:
 			{
@@ -510,12 +510,7 @@
 			Лево:96,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОперации',
 			boxLabel: '',
 			style: 'position:absolute;left:8px;top:109px;width:415px;height:30px;',
@@ -543,15 +538,8 @@
 			Верх:109,
 			Лево:8,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОперации000',
 			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 000 "Вспомогательный"',
 			style: 'position:absolute;left:8px;top:144px;width:415px;height:35px;',
@@ -579,15 +567,8 @@
 			Верх:144,
 			Лево:8,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОперацииУЕ',
 			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам по расчетам в у.е.',
 			style: 'position:absolute;left:8px;top:183px;width:415px;height:39px;',
@@ -615,15 +596,8 @@
 			Верх:183,
 			Лево:8,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ВидОперации84',
 			boxLabel: 'Ввод остатков по отложенным налоговым активам и обязательствам в корреспонденции со счетом 84 "Нераспределенная прибыль (непокрытый убыток)"',
 			style: 'position:absolute;left:8px;top:179px;width:415px;height:43px;',
@@ -651,15 +625,13 @@
 			Верх:179,
 			Лево:8,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:289px;width:431px;height:25px;',
 			Привязка:
 			{
@@ -721,8 +693,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -734,19 +705,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

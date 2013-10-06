@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'Рамка_Шаг_1',
 			text: '1. Выберите режим отладки кода алгоритмов',
-			style: 'position:absolute;left:8px;top:5px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:5px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			id: 'Рамка_Шаг_2',
 			text: '2. Выгрузите код обработчиков',
-			style: 'position:absolute;left:8px;top:97px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:97px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -80,7 +80,7 @@
 			xtype: 'label',
 			id: 'Рамка_Шаг_3',
 			text: '3. Пояснения к созданию файла внешней обработки',
-			style: 'position:absolute;left:8px;top:157px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:157px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -109,7 +109,7 @@
 			xtype: 'label',
 			id: 'Рамка_Шаг_4',
 			text: '4. Создайте (обновите) файл внешней обработки',
-			style: 'position:absolute;left:8px;top:265px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:265px;width:551px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -226,7 +226,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПодсказкиШаг_1,
+			id: 'ПанельПодсказкиШаг_1',
 			style: 'position:absolute;left:290px;top:25px;width:269px;height:67px;',
 			Привязка:
 			{
@@ -251,12 +251,13 @@
 			Ширина:269,
 			Верх:25,
 			Лево:290,
+			Групповой: true,
 			height: 67,width: 269,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Подсказка_0,
+					id: 'Подсказка_0',
 					items:
 					[
 		{
@@ -291,7 +292,7 @@
 					]
 				},
 				{
-					id: Подсказка_1,
+					id: 'Подсказка_1',
 					items:
 					[
 		{
@@ -326,7 +327,7 @@
 					]
 				},
 				{
-					id: Подсказка_2,
+					id: 'Подсказка_2',
 					items:
 					[
 		{
@@ -421,12 +422,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтладкаАлгоритмов_0',
 			boxLabel: 'без отладки алгоритмов',
 			style: 'position:absolute;left:8px;top:29px;width:279px;height:15px;',
@@ -455,7 +451,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтладкаАлгоритмов_1',
 			boxLabel: 'вызывать алгоритмы как процедуры',
 			style: 'position:absolute;left:8px;top:49px;width:279px;height:15px;',
@@ -484,7 +480,7 @@
 			Лево:8,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'ПереключательОтладкаАлгоритмов_2',
 			boxLabel: 'подставлять код алгоритмов по месту вызова',
 			style: 'position:absolute;left:8px;top:69px;width:279px;height:15px;',
@@ -512,15 +508,13 @@
 			Верх:69,
 			Лево:8,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель2,
+			id: 'КоманднаяПанель2',
 			style: 'position:absolute;left:0px;top:336px;width:567px;height:24px;',
 			Привязка:
 			{
@@ -564,8 +558,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -577,19 +570,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

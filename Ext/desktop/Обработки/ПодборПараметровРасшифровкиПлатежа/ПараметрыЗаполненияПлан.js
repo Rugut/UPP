@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Заполнение',
-			style: 'position:absolute;left:8px;top:25px;width:298px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:25px;width:298px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Порядок погашения',
-			style: 'position:absolute;left:8px;top:95px;width:298px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:95px;width:298px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -141,7 +141,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: Главная,
+			id: 'Главная',
 			style: 'position:absolute;left:0px;top:0px;width:314px;height:25px;',
 			Привязка:
 			{
@@ -215,12 +215,7 @@
 			]
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчитыватьФактическиеЗадолженности',
 			boxLabel: 'По фактической задолженности',
 			style: 'position:absolute;left:14px;top:46px;width:214px;height:15px;',
@@ -249,7 +244,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УчитыватьФактическиеЗадолженности1',
 			boxLabel: 'По оперативной задолженности (с учетом заказов)',
 			style: 'position:absolute;left:14px;top:67px;width:280px;height:15px;',
@@ -277,15 +272,8 @@
 			Верх:67,
 			Лево:14,
 		},
-			]
-		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения',
 			boxLabel: 'Сначала ранние задолженности',
 			style: 'position:absolute;left:14px;top:116px;width:184px;height:15px;',
@@ -314,7 +302,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения1',
 			boxLabel: 'Сначала поздние задолженности',
 			style: 'position:absolute;left:14px;top:136px;width:192px;height:15px;',
@@ -343,7 +331,7 @@
 			Лево:14,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'СпособЗаполнения2',
 			boxLabel: 'По табличной части документа',
 			style: 'position:absolute;left:14px;top:156px;width:180px;height:15px;',
@@ -371,15 +359,13 @@
 			Верх:156,
 			Лево:14,
 		},
-			]
-		},
 		],
 	}],
 	dockedItems:
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:212px;width:314px;height:25px;',
 			Привязка:
 			{
@@ -427,8 +413,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -440,19 +425,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

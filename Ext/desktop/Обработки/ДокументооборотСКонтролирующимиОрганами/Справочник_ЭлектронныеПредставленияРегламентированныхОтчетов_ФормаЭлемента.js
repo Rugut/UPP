@@ -234,7 +234,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:758px;height:25px;',
 			Привязка:
 			{
@@ -311,7 +311,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: '',
-			style: 'position:absolute;left:8px;top:668px;width:742px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:668px;width:742px;height:4px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -340,7 +340,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы3',
 			text: 'Реквизиты отчета',
-			style: 'position:absolute;left:8px;top:85px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:85px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -765,7 +765,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельВидДокумента,
+			id: 'ПанельВидДокумента',
 			style: 'position:absolute;left:8px;top:212px;width:742px;height:28px;',
 			Привязка:
 			{
@@ -790,12 +790,13 @@
 			Ширина:742,
 			Верх:212,
 			Лево:8,
+			Групповой: true,
 			height: 28,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
@@ -1049,7 +1050,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельФайлов,
+			id: 'ПанельФайлов',
 			style: 'position:absolute;left:8px;top:240px;width:742px;height:423px;',
 			Привязка:
 			{
@@ -1074,17 +1075,18 @@
 			Ширина:742,
 			Верх:240,
 			Лево:8,
+			Групповой: true,
 			height: 423,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаКомплектПФР,
+					id: 'СтраницаКомплектПФР',
 					items:
 					[
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельФайлы,
+			id: 'КоманднаяПанельФайлы',
 			style: 'position:absolute;left:0px;top:17px;width:742px;height:25px;',
 			Привязка:
 			{
@@ -1264,7 +1266,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы4',
 			text: 'Файлы комплекта',
-			style: 'position:absolute;left:0px;top:0px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:0px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1292,14 +1294,14 @@
 					]
 				},
 				{
-					id: СтраницаПрочаяОтчетность,
+					id: 'СтраницаПрочаяОтчетность',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Электронное представление',
-			style: 'position:absolute;left:0px;top:2px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:2px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1326,7 +1328,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПредставление,
+			id: 'ПанельПредставление',
 			style: 'position:absolute;left:0px;top:51px;width:742px;height:261px;',
 			Привязка:
 			{
@@ -1351,12 +1353,13 @@
 			Ширина:742,
 			Верх:51,
 			Лево:0,
+			Групповой: true,
 			height: 261,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаТекст,
+					id: 'СтраницаТекст',
 					items:
 					[
 		{
@@ -1392,7 +1395,7 @@
 					]
 				},
 				{
-					id: СтраницаXML,
+					id: 'СтраницаXML',
 				},
 			]
 		},
@@ -1459,7 +1462,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельПриложенияКБухгалтерскойОтчетности,
+			id: 'ПанельПриложенияКБухгалтерскойОтчетности',
 			style: 'position:absolute;left:0px;top:312px;width:742px;height:111px;',
 			Привязка:
 			{
@@ -1484,19 +1487,20 @@
 			Ширина:742,
 			Верх:312,
 			Лево:0,
+			Групповой: true,
 			height: 111,width: 742,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Страница1,
+					id: 'Страница1',
 					items:
 					[
 		{
 			xtype: 'label',
 			id: 'РамкаГруппы6',
 			text: 'Приложения к бухгалтерской отчетности',
-			style: 'position:absolute;left:0px;top:11px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:11px;width:742px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1718,7 +1722,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:701px;width:758px;height:25px;',
 			Привязка:
 			{
@@ -1774,8 +1778,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1787,19 +1790,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

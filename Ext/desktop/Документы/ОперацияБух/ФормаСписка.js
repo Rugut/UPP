@@ -139,7 +139,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: ДействияФормы,
+			id: 'ДействияФормы',
 			style: 'position:absolute;left:0px;top:0px;width:780px;height:25px;',
 			Привязка:
 			{
@@ -261,7 +261,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: Движения,
+			id: 'Движения',
 			style: 'position:absolute;left:8px;top:220px;width:764px;height:242px;',
 			Привязка:
 			{
@@ -286,11 +286,12 @@
 			Ширина:764,
 			Верх:220,
 			Лево:8,
+			Групповой: true,
 			height: 242,width: 764,
 			items:
 			[
 				{
-					id: ДвиженияБУ,
+					id: 'ДвиженияБУ',
 					items:
 					[
 		{
@@ -532,7 +533,7 @@
 					]
 				},
 				{
-					id: ДвиженияНУ,
+					id: 'ДвиженияНУ',
 					items:
 					[
 		{
@@ -761,8 +762,7 @@
 	}],
 	dockedItems:
 	[
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -774,19 +774,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

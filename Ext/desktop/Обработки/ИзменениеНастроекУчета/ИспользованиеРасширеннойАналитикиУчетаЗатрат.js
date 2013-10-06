@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ГлавнаяПанель,
+			id: 'ГлавнаяПанель',
 			style: 'position:absolute;left:0px;top:1px;width:498px;height:416px;',
 			Привязка:
 			{
@@ -45,12 +45,13 @@
 			Ширина:498,
 			Верх:1,
 			Лево:0,
+			Групповой: true,
 			height: 416,width: 498,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ВыборРежима,
+					id: 'ВыборРежима',
 					items:
 					[
 		{
@@ -144,7 +145,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыВариант',
 			text: 'Вариант заполнения регистров',
-			style: 'position:absolute;left:6px;top:49px;width:487px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:49px;width:487px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -199,12 +200,7 @@
 			Лево:47,
 		},
 		{
-			xtype: 'radiogroup',
-			id: '',
-			defaults: {name: 'ccType'},
-			items: [
-		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель_Полный',
 			boxLabel: 'Полный',
 			style: 'position:absolute;left:6px;top:70px;width:117px;height:34px;',
@@ -233,7 +229,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'Переключатель_Выборочный',
 			boxLabel: 'Выборочный',
 			style: 'position:absolute;left:6px;top:118px;width:117px;height:34px;',
@@ -262,7 +258,7 @@
 			Лево:6,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'УправленческийИРегламентированныйУчет',
 			boxLabel: 'Управленческий и регламентированный учет',
 			style: 'position:absolute;left:24px;top:150px;width:468px;height:15px;',
@@ -290,12 +286,10 @@
 			Верх:150,
 			Лево:24,
 		},
-			]
-		},
 					]
 				},
 				{
-					id: ИзменитьНастройкуВыборочная,
+					id: 'ИзменитьНастройкуВыборочная',
 					items:
 					[
 		{
@@ -471,7 +465,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыНастройки',
 			text: 'Данные для заполнения регистров',
-			style: 'position:absolute;left:6px;top:73px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:73px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -498,7 +492,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельНастройки,
+			id: 'КоманднаяПанельНастройки',
 			style: 'position:absolute;left:6px;top:93px;width:370px;height:24px;',
 			Привязка:
 			{
@@ -555,7 +549,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппыДокументы',
 			text: 'Сформированные остатки',
-			style: 'position:absolute;left:6px;top:247px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:247px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -683,7 +677,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельДокументы,
+			id: 'КоманднаяПанельДокументы',
 			style: 'position:absolute;left:6px;top:266px;width:486px;height:24px;',
 			Привязка:
 			{
@@ -768,7 +762,7 @@
 					]
 				},
 				{
-					id: ИзменитьНастройкуПолная,
+					id: 'ИзменитьНастройкуПолная',
 					items:
 					[
 		{
@@ -863,7 +857,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНадписей,
+			id: 'ПанельНадписей',
 			style: 'position:absolute;left:6px;top:53px;width:488px;height:89px;',
 			Привязка:
 			{
@@ -888,12 +882,13 @@
 			Ширина:488,
 			Верх:53,
 			Лево:6,
+			Групповой: true,
 			height: 89,width: 488,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: ОтключениеРежима,
+					id: 'ОтключениеРежима',
 					items:
 					[
 		{
@@ -928,7 +923,7 @@
 					]
 				},
 				{
-					id: РасчетНеОкончен,
+					id: 'РасчетНеОкончен',
 					items:
 					[
 		{
@@ -967,11 +962,11 @@
 					]
 				},
 				{
-					id: РежимИспользованияРасширеннойАналитики,
+					id: 'РежимИспользованияРасширеннойАналитики',
 					items:
 					[
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РегламентированныйУчет',
 			boxLabel: 'Регламентированный учет',
 			style: 'position:absolute;left:24px;top:26px;width:468px;height:15px;',
@@ -1000,7 +995,7 @@
 			Лево:24,
 		},
 		{
-			xtype: 'radio',
+			xtype: 'radiofield',
 			id: 'РегламентированныйУчетСДополнительнойАналитикой',
 			boxLabel: 'Регламентированный учет с дополнительной аналитикой',
 			style: 'position:absolute;left:24px;top:89px;width:468px;height:15px;',
@@ -1032,7 +1027,7 @@
 			xtype: 'label',
 			id: 'РамкаРежимИспользованияРасширеннойАналитики',
 			text: 'Режим использования расширенной аналитики:',
-			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1147,7 +1142,7 @@
 					]
 				},
 				{
-					id: НастройкаАналитикиУчетаЗатрат,
+					id: 'НастройкаАналитикиУчетаЗатрат',
 					items:
 					[
 		{
@@ -1246,7 +1241,7 @@
 			xtype: 'label',
 			id: 'РамкаДетализацияЗатрат',
 			text: 'Детализация затрат:',
-			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:6px;width:486px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1281,7 +1276,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:417px;width:498px;height:25px;',
 			Привязка:
 			{
@@ -1345,8 +1340,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1358,19 +1352,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

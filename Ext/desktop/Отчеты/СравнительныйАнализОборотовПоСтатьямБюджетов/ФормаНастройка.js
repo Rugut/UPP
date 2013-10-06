@@ -20,7 +20,7 @@
 		[
 		{
 			xtype: 'panel',
-			id: ПанельОтчета,
+			id: 'ПанельОтчета',
 			style: 'position:absolute;left:8px;top:8px;width:474px;height:348px;',
 			Привязка:
 			{
@@ -45,11 +45,12 @@
 			Ширина:474,
 			Верх:8,
 			Лево:8,
+			Групповой: true,
 			height: 348,width: 474,
 			items:
 			[
 				{
-					id: Общие,
+					id: 'Общие',
 					items:
 					[
 		{
@@ -259,7 +260,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокПоказателей,
+			id: 'КоманднаяПанельСписокПоказателей',
 			style: 'position:absolute;left:6px;top:197px;width:460px;height:24px;',
 			Привязка:
 			{
@@ -314,7 +315,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Сценарии для сравнения',
-			style: 'position:absolute;left:6px;top:33px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:33px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -509,7 +510,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанель1,
+			id: 'КоманднаяПанель1',
 			style: 'position:absolute;left:6px;top:49px;width:460px;height:24px;',
 			Привязка:
 			{
@@ -576,7 +577,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Показатели для сравнения',
-			style: 'position:absolute;left:6px;top:181px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:6px;top:181px;width:460px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -633,7 +634,7 @@
 					]
 				},
 				{
-					id: Группировки,
+					id: 'Группировки',
 					items:
 					[
 		{
@@ -721,7 +722,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельГруппировки,
+			id: 'КоманднаяПанельГруппировки',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:25px;',
 			Привязка:
 			{
@@ -755,7 +756,7 @@
 					]
 				},
 				{
-					id: Страница2,
+					id: 'Страница2',
 					items:
 					[
 		{
@@ -879,7 +880,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокУсловий,
+			id: 'КоманднаяПанельСписокУсловий',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
 			Привязка:
 			{
@@ -913,7 +914,7 @@
 					]
 				},
 				{
-					id: Поля,
+					id: 'Поля',
 					items:
 					[
 		{
@@ -992,7 +993,7 @@
 		},
 		{
 			xtype: 'toolbar',
-			id: КоманднаяПанельСписокДополнительныхПолей,
+			id: 'КоманднаяПанельСписокДополнительныхПолей',
 			style: 'position:absolute;left:6px;top:0px;width:460px;height:24px;',
 			Привязка:
 			{
@@ -1033,7 +1034,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:364px;width:490px;height:25px;',
 			Привязка:
 			{
@@ -1087,8 +1088,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1100,19 +1100,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

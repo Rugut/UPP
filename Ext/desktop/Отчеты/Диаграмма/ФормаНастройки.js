@@ -230,7 +230,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельНастройки,
+			id: 'ПанельНастройки',
 			style: 'position:absolute;left:8px;top:122px;width:471px;height:127px;',
 			Привязка:
 			{
@@ -255,12 +255,13 @@
 			Ширина:471,
 			Верх:122,
 			Лево:8,
+			Групповой: true,
 			height: 127,width: 471,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: Круговая,
+					id: 'Круговая',
 					items:
 					[
 		{
@@ -413,7 +414,7 @@
 					]
 				},
 				{
-					id: КруговаяОбъемная,
+					id: 'КруговаяОбъемная',
 					items:
 					[
 		{
@@ -595,7 +596,7 @@
 					]
 				},
 				{
-					id: ГистограммаПлоская,
+					id: 'ГистограммаПлоская',
 					items:
 					[
 		{
@@ -810,7 +811,7 @@
 					]
 				},
 				{
-					id: ГистограммаОбъемная,
+					id: 'ГистограммаОбъемная',
 					items:
 					[
 		{
@@ -1025,7 +1026,7 @@
 					]
 				},
 				{
-					id: Изометрическая,
+					id: 'Изометрическая',
 					items:
 					[
 		{
@@ -1299,7 +1300,7 @@
 					]
 				},
 				{
-					id: График,
+					id: 'График',
 					items:
 					[
 		{
@@ -1397,7 +1398,7 @@
 					]
 				},
 				{
-					id: ГрафикСЗаливкой,
+					id: 'ГрафикСЗаливкой',
 					items:
 					[
 		{
@@ -1587,7 +1588,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы1',
 			text: 'Общие',
-			style: 'position:absolute;left:8px;top:8px;width:471px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:8px;width:471px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1616,7 +1617,7 @@
 			xtype: 'label',
 			id: 'РамкаГруппы2',
 			text: 'Индивидуальные, для текущего типа диаграммы',
-			style: 'position:absolute;left:8px;top:101px;width:471px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:101px;width:471px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -1647,7 +1648,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:257px;width:487px;height:25px;',
 			Привязка:
 			{
@@ -1689,8 +1690,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -1702,19 +1702,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });

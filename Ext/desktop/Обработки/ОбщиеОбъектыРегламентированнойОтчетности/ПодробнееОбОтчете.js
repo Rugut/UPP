@@ -22,7 +22,7 @@
 			xtype: 'label',
 			id: 'РамкаФормыОтчета',
 			text: 'Формы отчета',
-			style: 'position:absolute;left:8px;top:9px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:9px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -51,7 +51,7 @@
 			xtype: 'label',
 			id: 'РамкаПериоды',
 			text: 'Возможные периоды представления отчета',
-			style: 'position:absolute;left:8px;top:284px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:8px;top:284px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -78,7 +78,7 @@
 		},
 		{
 			xtype: 'panel',
-			id: ПанельИнформацияОФормахДоступна,
+			id: 'ПанельИнформацияОФормахДоступна',
 			style: 'position:absolute;left:8px;top:28px;width:511px;height:256px;',
 			Привязка:
 			{
@@ -103,12 +103,13 @@
 			Ширина:511,
 			Верх:28,
 			Лево:8,
+			Групповой: true,
 			height: 256,width: 511,
 			tabBar:{hidden:true},
 			items:
 			[
 				{
-					id: СтраницаИнформацияОФормахДоступна,
+					id: 'СтраницаИнформацияОФормахДоступна',
 					items:
 					[
 		{
@@ -245,7 +246,7 @@
 			xtype: 'label',
 			id: 'РамкаОписаниеФормы',
 			text: 'Описание формы',
-			style: 'position:absolute;left:0px;top:169px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;'
+			style: 'position:absolute;left:0px;top:169px;width:511px;height:16px;border-bottom: 2px solid maroon; color: #9F6500; border-width:thin ; border-color: #B3AC86; font-weight: 600;',
 			Привязка:
 			{
 				Горизонтальная: false,
@@ -273,7 +274,7 @@
 					]
 				},
 				{
-					id: СтраницаИнформацияОФормахНЕДоступна,
+					id: 'СтраницаИнформацияОФормахНЕДоступна',
 					items:
 					[
 		{
@@ -344,7 +345,7 @@
 	[
 		{
 			xtype: 'toolbar',
-			id: ОсновныеДействияФормы,
+			id: 'ОсновныеДействияФормы',
 			style: 'position:absolute;left:0px;top:378px;width:527px;height:25px;',
 			Привязка:
 			{
@@ -392,8 +393,7 @@
 				},
 			]
 		},
-	]
-	});
+	],
 	listeners:
 	{
 		resize:
@@ -405,19 +405,21 @@
 				{
 					форма.items.each(function (item)
 					{
-					ПривязкаГраниц(item, item.ПозицияЭлемента);
-					if (item.Групповой)
-					{
-						var элемент = Ext.getCmp(item.id).items.items[0].items.items;
-						for (i = 0; i <= элемент.length -1; i += 1) 
+						//ПривязкаГраниц(item, item.ПозицияЭлемента);
+						if (item.Групповой)
 						{
-							var текЭлемент = элемент[i];
-							ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							var элемент = Ext.getCmp(item.id).items.items[0].items.items;
+							for (var i = 0; i < элемент.length; i++ ) 
+							{
+								var текЭлемент = элемент[i];
+								//ПривязкаГраниц(текЭлемент, текЭлемент.ПозицияЭлемента);
+							}
 						}
-					}
 					});
 				}
+				форма.ПервоеОткрытие = false;
 			}
 		}
 	}
+	});
 });
